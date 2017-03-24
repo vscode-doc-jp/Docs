@@ -1,98 +1,96 @@
 ---
-title: Setting up Visual Studio Code
+title: セットアップ
 MetaDescription: Get Visual Studio Code up and running.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-# Setting up Visual Studio Code
+VS Codeのインストールと起動は簡単に完了できます。ダウンロードサイズは小さく、数分でインストールを完了させVS Codeを試すことができます。
 
-Getting up and running with VS Code is quick and easy. It is a small download so you can install in a matter of minutes and give VS Code a try.
+## クロスプラットフォーム
 
-## Cross Platform
+VS CodeはMac、LinuxおよびWindows OS上で動作する無料のコードエディタです。
 
-VS Code is a free code editor which runs on the Mac, Linux and Windows operating systems.
-
-Follow the platform specific guides below:
+次のOS別ガイドにしたがってセットアップを完了してください:
 
 * [Mac](/docs/setup/mac.md)
 * [Linux](/docs/setup/linux.md)
 * [Windows](/docs/setup/windows.md)
 
-VS Code is lightweight and should run on most available hardware and platform versions. You can review the [System Requirements](/docs/supporting/requirements.md) to check if your computer configuration is supported.
+VS Codeは使用可能なハードウェアおよびプラットフォームとそのバージョンで実行する必要があります。[システム要件](/docs/supporting/requirements.md)を参照して、コンピューターをサポートしているかどうかを確認してください。
 
-## Additional Components
+## 追加コンポーネント
 
-VS Code is an editor first and foremost and prides itself on a small footprint. Unlike traditional IDEs with everything but the kitchen sink, you can tune your installation to the development technologies you care about. Be sure to read the [Additional Components](/docs/setup/additional-components.md) topic after reading the platform guides to learn about customizing your VS Code installation.
+VS Codeはエディタであり、small footprint(場所を取らない)ことに自信を持っています。何でもかんでも詰め込んだ従来のIDEとは異なり、気になる技術に合わせたインストール調整が可能です。VS Codeをカスタマイズする方法については、プラットフォームガイドを参照してから[追加コンポーネント](/docs/setup/additional-components.md)を一読してください。
 
-## Extensions
+## 拡張機能
 
-VS Code [extensions](/docs/editor/extension-gallery.md) let third parties add support for additional:
+VS Codeの[拡張機能](/docs/userguide/extension-gallery.md)は、サードパーティーによる追加のサポートを可能にします:
 
-* Languages - [C++](/docs/languages/cpp.md), [C#](/docs/languages/csharp.md), [Go](/docs/languages/go.md), [Python](/docs/languages/python.md)
-* Tools - [ESLint](https://marketplace.visualstudio.com/items/dbaeumer.vscode-eslint), [JSHint](https://marketplace.visualstudio.com/items/dbaeumer.jshint) , [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell), [Visual Studio Team Services](https://marketplace.visualstudio.com/items?itemName=ms-vsts.team)
-* Debuggers - [Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), [PHP XDebug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug).
-* Keymaps - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim), [Sublime Text](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings), [IntelliJ](https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings), [Emacs](https://marketplace.visualstudio.com/items?itemName=hiro-sun.vscode-emacs), [Atom](https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings), [Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vs-keybindings), [Eclipse](https://marketplace.visualstudio.com/items?itemName=alphabotsec.vscode-eclipse-keybindings)
+* 言語 - [C++](/docs/languages/cpp.md), [C#](/docs/languages/csharp.md), [Go](/docs/languages/go.md), [Python](/docs/languages/python.md)
+* ツール - [ESLint](https://marketplace.visualstudio.com/items/dbaeumer.vscode-eslint), [JSHint](https://marketplace.visualstudio.com/items/dbaeumer.jshint) , [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell), [Visual Studio Team Services](https://marketplace.visualstudio.com/items?itemName=ms-vsts.team)
+* デバッガ - [Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), [PHP XDebug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug).
+* キーマップ - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim), [Sublime Text](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings), [IntelliJ](https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings), [Emacs](https://marketplace.visualstudio.com/items?itemName=hiro-sun.vscode-emacs), [Atom](https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings), [Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vs-keybindings), [Eclipse](https://marketplace.visualstudio.com/items?itemName=alphabotsec.vscode-eclipse-keybindings)
 
-Extensions integrate into VS Code's UI, commands, and task running systems so you'll find it easy to work with different technologies through VS Code's shared interface. Check out the VS Code extension [Marketplace](https://marketplace.visualstudio.com/vscode) to see what's available.
+拡張機能はVS CodeのUI、コマンド、タスクに統合して、VS Codeの共通インターフェイスに沿ってさまざまなテクノロジーで操作できます。その一例を[Marketplace](https://marketplace.visualstudio.com/vscode)で確認してください
 
-## Proxy Server Support
+## プロキシサーバーのサポート
 
-Many enterprises require that their computers run behind a proxy server and don't allow direct access to the Internet. A proxy server intermediary can limit access to the VS Code Extension [Marketplace](https://marketplace.visualstudio.com/vscode) and prevent installing VS Code [extensions](/docs/editor/extension-gallery.md).
+多くの企業ではプロキシサーバーを通すので、直接インターネットにつなげることができません。プロキシサーバーの管理者は、[Marketplace](https://marketplace.visualstudio.com/vscode)へのアクセスを制限し[拡張機能](/docs/userguide/extension-gallery.md)のインストールを禁止できます。
 
-If you work on a machine where Internet traffic needs to go through a proxy server, then configure the proxy server in one of the following ways:
+プロキシサーバーを経由する環境で作業する場合は、次のいずれかの方法で設定を構築してください:
 
-* Set the operating system environment variables `http_proxy` and `https_proxy`
+* OS環境設定で`http_proxy`と`https_proxy`を構築する
 
 ```bash
     SET http_proxy=http://10.203.0.1:5187/
 ```
 
-* Configure the `http.proxy` setting in your user [settings](/docs/getstarted/settings.md) (**File** > **Preferences** > **Settings** or **Code** > **Preferences** > **Settings** on Mac):
+* ユーザー[設定](/docs/getstarted/settings.md)(**ファイル** or **Code** > **基本設定**> **設定**)で `http.proxy`を構築する
 
 ```json
     "http.proxy": "http://10.203.0.1:5187/"
 ```
 
-or for an authenticating proxy
+認証プロキシの場合
 
 ```json
     "http.proxy": "http://userid:password@10.203.0.1:5187/"
 ```
 
-Additionally, use `"http.proxyStrictSSL": false` if your proxy server uses a self-signed certificate.
+また、プロキシサーバーが自己署名証明書を使用している場合は`"http.proxyStrictSSL": false`に設定します。
 
->**Note:** VS Code supports http and https proxies, but not SOCKS proxies.
+>**Note:** VS Codeはhttpおよびhttpsプロキシをサポートしますが、SOCKSプロキシをサポートしません。
 
-## Next Steps
+## 次のステップ
 
-Once you have installed and set up VS Code, these topics will help you learn more about VS Code:
+VS Codeをセットアップし終えたら、次のトピックでVS Codeの詳細を学ぶことができます:
 
 * [Additional Components](/docs/setup/additional-components.md) - Learn how to install Git, Node.js, TypeScript and tools like Yeoman.
 * [User Interface](/docs/getstarted/userinterface.md) - A quick orientation to VS Code.
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
-* [Debugging](/docs/editor/debugging.md) - Debug your source code directly in the VS Code editor.
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
+* [Debugging](/docs/userguide/debugging.md) - Debug your source code directly in the VS Code editor.
 
-If you'd like to getting something running quickly, try the [Node.js tutorial](/docs/nodejs/nodejs-tutorial.md) walkthrough which will have you debugging a Node.js web application with VS Code in minutes.
+早速何かを試したい場合は[Node.js tutorial](/docs/nodejs/nodejs-tutorial.md)のチュートリアルを試してください。数分で Web アプリケーションをデバッグできます。
 
-## Common Questions
+## よくある質問
 
-**Q: What are the system requirements for VS Code?**
+**Q: VS Code のシステム要件は何ですか?**
 
-**A:** We have a list of [System Requirements](/docs/supporting/requirements.md).
+**A:** [システム要件](/docs/supporting/requirements.md)を参照してください。
 
-**Q: How big is VS Code?**
+**Q: VS Code本体のサイズは?**
 
-**A:** VS Code is a small download (< 100 MB) and has a disk footprint of less than 200 MB, so you can quickly install VS Code and try it out.
+**A:** VS Codeのダウンロードサイズは100MB未満で、200MBのディスクを消費します。ですからすぐに VS Code をインストールして使用可能なのです。
 
-**Q: How do I create and run a new project?**
+**Q: 新しいプロジェクトを作成して実行するにはどうすればいいですか?**
 
-**A:** VS Code doesn't include a traditional **File** > **New Project** dialog or pre-installed project templates. You'll need to add [additional components](/docs/setup/additional-components.md) and scaffolders depending on your development interests. With scaffolding tools like [Yeoman](http://yeoman.io/) and the multitude of modules available through the [NPM](https://www.npmjs.com/) package manager, you're sure to find appropriate templates and tools to create your projects.
+**A:** VS Codeには従来の*新規プロジェクト 作成**またはプロジェクトテンプレートは実装されていません。ですから、開発の興味対象に応じて [追加コンポーネント](/docs/setup/additional-components.md)と足組を構成する必要があります。そこで、[Yeoman](http://yeoman.io/)や[NPM](https://www.npmjs.com/) を使用すると、 テンプレート、およびツールを使用してプロジェクトを作成できます。
 
-**Q: How do I know which version I'm running?**
+**Q: VS Codeのバージョンはどこで確認できますか?**
 
-**A:** On Linux and Windows, choose **Help** > **About**. On Mac, use **Code** > **About Visual Studio Code**.
+**A:** LinuxとWindowsでは **[ヘルプ]** > **バージョン情報**。Macでは **Code** > **About Visual Studio Code** で確認します。
 
-**Q: Why is VS Code saying my installation is corrupt?**
+**Q: VS Codeが破損しているとメッセージを出します**
 
-**A:** VS Code has detected that some installation files have been modified, perhaps by an extension. Reinstalling VS Code will replace the affected files. See our [FAQ topic](/docs/supporting/faq.md#installation-appears-to-be-corrupt) for more details.
+**A:** VS Codeはおそらく拡張機能による本体ファイルの変更を検出しました。VS Codeを再インストールすることで、影響を受けたファイルを再設置します。詳細については[FAQ topic](/docs/supporting/faq.md#installation-appears-to-be-corrupt) を参照してください。

@@ -79,11 +79,11 @@ Use **File** > **Preferences** > **Workspace Settings** to bring up the workspac
 
 There are several built-in Markdown snippets included in VS Code - press `kb(editor.action.triggerSuggest)` (Trigger Suggest) and you get a context specific list of suggestions.
 
->**Tip:** You can add in your own User Defined Snippets for Markdown.  Take a look at [User Defined Snippets](/docs/editor/userdefinedsnippets.md) to find out how.
+>**Tip:** You can add in your own User Defined Snippets for Markdown.  Take a look at [User Defined Snippets](/docs/userguide/userdefinedsnippets.md) to find out how.
 
 ## Compiling Markdown into HTML
 
-VS Code integrates with Markdown compilers through the integrated [task runner](/docs/editor/tasks.md).  We can use this to compile `.md` files into `.html` files.  Let's walk through compiling a simple Markdown document.
+VS Code integrates with Markdown compilers through the integrated [task runner](/docs/userguide/tasks.md).  We can use this to compile `.md` files into `.html` files.  Let's walk through compiling a simple Markdown document.
 
 ### Step 1: Install a Markdown compiler
 
@@ -112,7 +112,7 @@ Things you'll need:
 
 * [node](https://nodejs.org)
 * [markdown-it](https://www.npmjs.com/package/markdown-it)
-* [tasks.json](/docs/editor/tasks.md)
+* [tasks.json](/docs/userguide/tasks.md)
 
 ## Section Title
 
@@ -235,7 +235,7 @@ Change your tasks configuration to look like this:
 
 ### Step 4: Run the gulp Build Task
 
-We marked this task as `isBuildTask` so you can execute it by simply pressing `kb(workbench.action.tasks.build)` (**Run Build Task**).  But this time since we've set `isBackground` to true, the task keeps running. At this point, if you create and/or modify other Markdown files, you see the respective HTML files generated and/or changes reflected on save.  You can also enable [Auto Save](/docs/editor/codebasics.md#saveauto-save) to make things even more streamlined.
+We marked this task as `isBuildTask` so you can execute it by simply pressing `kb(workbench.action.tasks.build)` (**Run Build Task**).  But this time since we've set `isBackground` to true, the task keeps running. At this point, if you create and/or modify other Markdown files, you see the respective HTML files generated and/or changes reflected on save.  You can also enable [Auto Save](/docs/userguide/codebasics.md#saveauto-save) to make things even more streamlined.
 
 If you want to stop the task, you can use the **Tasks: Terminate Running Task** command in the  **Command Palette** (`kb(workbench.action.showCommands)`).
 

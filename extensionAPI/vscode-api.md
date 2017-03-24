@@ -5,7 +5,7 @@ TOCTitle: API vscode namespace
 ContentId: 8CEBCDF8-4F0A-4C81-A904-3DEA43480EA6
 PageTitle: Visual Studio Code API Reference
 DateApproved: 4/14/2016
-MetaDescription: Visual Studio Code extensions (plug-ins) API Reference.  
+MetaDescription: Visual Studio Code extensions (plug-ins) API Reference.
 ---
 
 # vscode namespace API
@@ -20,7 +20,7 @@ and <a href="#commands.registerTextEditorCommand">registerTextEditorCommand</a> 
 can be executed <a href="#commands.executeCommand">manually</a> or from a UI gesture. Those are:</p>
 <ul>
 <li>palette - Use the <code>commands</code>-section in <code>package.json</code> to make a command show in
-the <a href="https://code.visualstudio.com/docs/editor/codebasics#_command-palette">command palette</a>.</li>
+the <a href="https://code.visualstudio.com/docs/userguide/codebasics#_command-palette">command palette</a>.</li>
 <li>keybinding - Use the <code>keybindings</code>-section in <code>package.json</code> to enable
 <a href="https://code.visualstudio.com/docs/customization/keybindings#_customizing-shortcuts">keybindings</a>
 for your extension.</li>
@@ -273,7 +273,7 @@ and the <a href="#Extension.exports">exports</a>-property, like below:</p>
 
 
 
-<div class="comment"><p>Namespace for participating in language-specific editor <a href="https://code.visualstudio.com/docs/editor/editingevolved">features</a>,
+<div class="comment"><p>Namespace for participating in language-specific editor <a href="https://code.visualstudio.com/docs/userguide/editingevolved">features</a>,
 like IntelliSense, code actions, diagnostics etc.</p>
 <p>Many programming languages exist and there is huge variety in syntaxes, semantics, and paradigms. Despite that, features
 like automatic word-completion, code navigation, or code checking have become popular across different tools for different
@@ -1515,7 +1515,7 @@ a <a href="#CodeActionProvider.provideCodeActions">code action</a> is run.</p>
 
 
 <div class="comment"><p>The code action interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_code-action">light bulb</a> feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_code-action">light bulb</a> feature.</p>
 <p>A code action can be any command that is <a href="#commands.getCommands">known</a> to the system.</p>
 </div>
 
@@ -1965,7 +1965,7 @@ line completions where <a href="#CompletionItemProvider.provideCompletionItems">
 
 
 <div class="comment"><p>The completion item provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_intellisense">IntelliSense</a>.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_intellisense">IntelliSense</a>.</p>
 <p>When computing <em>complete</em> completion items is expensive, providers can optionally implement
 the <code>resolveCompletionItem</code>-function. In that case it is enough to return completion
 items with a <a href="#CompletionItem.label">label</a> from the
@@ -2275,7 +2275,7 @@ defined.</p>
 
 
 <div class="comment"><p>The definition provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition">go to definition</a>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_go-to-definition">go to definition</a>
 and peek definition features.</p>
 </div>
 
@@ -2399,7 +2399,7 @@ a diagnostics collection and a resource.</p>
 <div class="details collapse" id="details-783">
 <div class="comment"><p>The name of this diagnostic collection, for instance <code>typescript</code>. Every diagnostic
 from this collection will be associated with this name. Also, the task framework uses this
-name when defining <a href="https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher">problem matchers</a>.</p>
+name when defining <a href="https://code.visualstudio.com/docs/userguide/tasks#_defining-a-problem-matcher">problem matchers</a>.</p>
 </div>
 </div>
 
@@ -2838,7 +2838,7 @@ and <a href="#LanguageFilter">language filters</a>.</p>
 
 
 <div class="comment"><p>The document symbol provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_goto-symbol">go to symbol</a>-feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_goto-symbol">go to symbol</a>-feature.</p>
 </div>
 
 #### Methods
@@ -3342,7 +3342,7 @@ current position itself.</p>
 
 
 <div class="comment"><p>The hover provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_hover">hover</a>-feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_hover">hover</a>-feature.</p>
 </div>
 
 #### Methods
@@ -4525,7 +4525,7 @@ requesting references.</p>
 
 
 <div class="comment"><p>The reference provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_peek">find references</a>-feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_peek">find references</a>-feature.</p>
 </div>
 
 #### Methods
@@ -4559,7 +4559,7 @@ signaled by returning <code>undefined</code>, <code>null</code>, or an empty arr
 
 
 <div class="comment"><p>The rename provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_rename-symbol">rename</a>-feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_rename-symbol">rename</a>-feature.</p>
 </div>
 
 #### Methods
@@ -4846,7 +4846,7 @@ active and only one active parameter.</p>
 
 
 <div class="comment"><p>The signature help provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_parameter-hints">parameter hints</a>-feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_parameter-hints">parameter hints</a>-feature.</p>
 </div>
 
 #### Methods
@@ -6728,7 +6728,7 @@ and the installation-wide configuration.</p>
 
 
 <div class="comment"><p>The workspace symbol provider interface defines the contract between extensions and
-the <a href="https://code.visualstudio.com/docs/editor/editingevolved#_open-symbol-by-name">symbol search</a>-feature.</p>
+the <a href="https://code.visualstudio.com/docs/userguide/editingevolved#_open-symbol-by-name">symbol search</a>-feature.</p>
 </div>
 
 #### Methods

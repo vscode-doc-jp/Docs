@@ -57,7 +57,7 @@ There is a lot to discover with C# and the editor, such as format on type, Intel
 
 ![Right Click Menu](images/csharp/editingevolved.png)
 
-For a full description of our editing features, go to the [Basic Editing](/docs/editor/codebasics.md) and [Code Navigation](/docs/editor/editingevolved.md) documentation.
+For a full description of our editing features, go to the [Basic Editing](/docs/userguide/codebasics.md) and [Code Navigation](/docs/userguide/editingevolved.md) documentation.
 
 Here are a few highlights...
 
@@ -73,7 +73,7 @@ We have several built-in snippets included in VS Code that will come up as you t
 
 ![Snippets](images/csharp/snippet.png)
 
->**Tip:** You can add in your own User Defined Snippets for C#.  Take a look at [User Defined Snippets](/docs/editor/userdefinedsnippets.md) to find out how.
+>**Tip:** You can add in your own User Defined Snippets for C#.  Take a look at [User Defined Snippets](/docs/userguide/userdefinedsnippets.md) to find out how.
 
 ## Search for Symbols
 
@@ -108,10 +108,10 @@ There are some basic quick fixes supported in VS Code.  You will see a lightbulb
 Read on to find out about:
 
 * [.NET Core Development](/docs/other/dotnet.md) - get up and running with cross-platform .NET
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
-* [Tasks](/docs/editor/tasks.md) - use tasks to build your project and more
-* [Debugging](/docs/editor/debugging.md) - find out how to use the debugger with your project
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
+* [Tasks](/docs/userguide/tasks.md) - use tasks to build your project and more
+* [Debugging](/docs/userguide/debugging.md) - find out how to use the debugger with your project
 
 ## Common Questions
 
@@ -125,5 +125,5 @@ Read on to find out about:
 
 **Q: How do I build/run my project?**
 
-**A:** VS Code supports tasks for build and natively understand the output of MSBuild, CSC, XBuild.  Find out more in the [Tasks](/docs/editor/tasks.md) documentation.
+**A:** VS Code supports tasks for build and natively understand the output of MSBuild, CSC, XBuild.  Find out more in the [Tasks](/docs/userguide/tasks.md) documentation.
 

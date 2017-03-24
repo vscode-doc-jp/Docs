@@ -39,7 +39,7 @@ Now when you create a `.ts` file as part of the project we will offer up rich ed
 
 ## Transpiling TypeScript into JavaScript
 
-VS Code integrates with `tsc` through our integrated [task runner](/docs/editor/tasks.md).  We can use this to transpile `.ts` files into `.js` files.  Let's walk through transpiling a simple TypeScript Hello World program.
+VS Code integrates with `tsc` through our integrated [task runner](/docs/userguide/tasks.md).  We can use this to transpile `.ts` files into `.js` files.  Let's walk through transpiling a simple TypeScript Hello World program.
 
 ### Step 1: Create a simple TS file
 
@@ -116,7 +116,7 @@ You can click on that icon to get a list of the problems and navigate to them.
 
 You can also use the keyboard to open the list `kb(workbench.actions.view.problems)`.
 
->**Tip:** Tasks offer rich support for many actions. Check the [Tasks](/docs/editor/tasks.md) topic for more information on how to configure them.
+>**Tip:** Tasks offer rich support for many actions. Check the [Tasks](/docs/userguide/tasks.md) topic for more information on how to configure them.
 
 ## Goto Symbol & Show All Symbols
 
@@ -221,10 +221,10 @@ VS Code provides many features for TypeScript out of the box. In addition to wha
 OK, read on to find out about:
 
 * [JavaScript](/docs/languages/javascript.md) - we have several JavaScript specific features in VS Code
-* [Tasks](/docs/editor/tasks.md) - we used tasks to transpile your TS file. Read more to find out what else tasks can do
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
-* [Debugging](/docs/editor/debugging.md) - we support debugging TypeScript Node.js apps
+* [Tasks](/docs/userguide/tasks.md) - we used tasks to transpile your TS file. Read more to find out what else tasks can do
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
+* [Debugging](/docs/userguide/debugging.md) - we support debugging TypeScript Node.js apps
 
 ## Common Questions
 

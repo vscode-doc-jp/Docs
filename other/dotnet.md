@@ -39,8 +39,8 @@ Watch a video tutorial for further setup help on [Windows](https://channel9.msdn
 
 ## Next Steps
 
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 * [Working with C#](/docs/languages/csharp.md) - Learn about the great C# support you'll have when working on your .NET Core application.
-* [Tasks](/docs/editor/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings
+* [Tasks](/docs/userguide/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings
 * [.NET Core Docs](https://docs.microsoft.com/en-us/dotnet/articles/core/) - Visit the .NET Core docs for more information on this powerful cross-platform development solution.

@@ -67,7 +67,7 @@ With the solution file selected, you are now ready to start editing with VS Code
 * Go to symbol
 * Hover
 
-Two topics that will help you are [Basic Editing](/docs/editor/codebasics.md) and [C#](/docs/languages/csharp.md). In the image below, you can see VS Code showing hover context, peeking references and more.
+Two topics that will help you are [Basic Editing](/docs/userguide/codebasics.md) and [C#](/docs/languages/csharp.md). In the image below, you can see VS Code showing hover context, peeking references and more.
 
 ![editing evolved example](images/unity/peekreferences.png)
 
@@ -83,9 +83,9 @@ The community is continually developing more and more valuable extensions for Un
 
 Read on to learn more about:
 
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
-* [Debugging](/docs/editor/debugging.md) - how to use the debugger with your project
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
+* [Debugging](/docs/userguide/debugging.md) - how to use the debugger with your project
 * [C#](/docs/languages/csharp.md) - learn about the C# support in VS Code
 
 ## Common Questions

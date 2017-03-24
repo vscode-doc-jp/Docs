@@ -8,7 +8,7 @@ MetaDescription: Additional info for using task runners in Visual Studio Code.
 
 # Appendix
 
-This is additional information for [tasks](/docs/editor/tasks.md).
+This is additional information for [tasks](/docs/userguide/tasks.md).
 
 ## Schema for tasks.json
 
@@ -59,7 +59,7 @@ interface BaseTaskConfiguration {
 	 * Specifies whether a global command is a background task.
 	 */
 	isBackground?: boolean;
-	
+
 	/**
 	 * The command options used when the command is executed. Can be omitted.
 	 */
@@ -174,7 +174,7 @@ export interface TaskDescription {
 	 * Whether the executed command is kept alive and runs in the background.
 	 */
 	isBackground?: boolean;
-	
+
 	/**
 	 * Controls whether the output view of the running tasks is brought to front or not.
 	 * See BaseTaskConfiguration#showOutput for details.

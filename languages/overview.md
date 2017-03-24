@@ -12,7 +12,7 @@ Here are four of the most popular language extensions:
 
 <div class="marketplace-extensions-languages"></div>
 
-Go to the [Marketplace](https://marketplace.visualstudio.com/vscode) or use our [integrated extension manager](/docs/editor/extension-gallery) and search for your desired programming language to find snippets, code completion/IntelliSense providers, linters, debuggers and more.
+Go to the [Marketplace](https://marketplace.visualstudio.com/vscode) or use our [integrated extension manager](/docs/userguide/extension-gallery) and search for your desired programming language to find snippets, code completion/IntelliSense providers, linters, debuggers and more.
 
 ## Language specific documentation
 
@@ -70,8 +70,8 @@ IntelliSense (`kb(editor.action.triggerSuggest)`) will show you the available la
 
 Now you know that VS Code has support for the languages you care about. Read on...
 
-* [Code Navigation](/docs/editor/editingevolved.md) - Peek and Go to Definition and more
-* [Debugging](/docs/editor/debugging.md) - This is where VS Code really shines
+* [Code Navigation](/docs/userguide/editingevolved.md) - Peek and Go to Definition and more
+* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
 
 ## Common Questions
 

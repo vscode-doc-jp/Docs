@@ -11,7 +11,7 @@ MetaDescription: Learn how to publish Visual Studio Code extensions to the publi
 
 ## vsce - Publishing Tool Reference
 
-[vsce](https://github.com/Microsoft/vsce) is the command line tool you'll use to publish extensions to the [Extension Marketplace](/docs/editor/extension-gallery.md).  You can also load extensions locally and share them via email or a UNC drive.
+[vsce](https://github.com/Microsoft/vsce) is the command line tool you'll use to publish extensions to the [Extension Marketplace](/docs/userguide/extension-gallery.md).  You can also load extensions locally and share them via email or a UNC drive.
 
 ## Installation
 
@@ -113,7 +113,7 @@ You may want to simply package extensions without publishing them to the store. 
 vsce package
 ```
 
-This will package your extension into a `.vsix` file and place it in the current directory. It's possible to install `.vsix` files into Visual Studio Code. See [Install from a VSIX](/docs/editor/extension-gallery.md#install-from-a-vsix) for more details.
+This will package your extension into a `.vsix` file and place it in the current directory. It's possible to install `.vsix` files into Visual Studio Code. See [Install from a VSIX](/docs/userguide/extension-gallery.md#install-from-a-vsix) for more details.
 
 ### Sharing Privately with Others
 
@@ -195,7 +195,7 @@ This will always invoke the [TypeScript](http://www.typescriptlang.org/) compile
 
 ## Next Steps
 
-* [Extension Marketplace](/docs/editor/extension-gallery.md) - Learn more about VS Code's public extension Marketplace.
+* [Extension Marketplace](/docs/userguide/extension-gallery.md) - Learn more about VS Code's public extension Marketplace.
 * [Testing Extensions](/docs/extensions/testing-extensions.md) - Add tests to your extension project to ensure high quality.
 
 ## Common Questions

@@ -51,7 +51,7 @@ var msg = 'Hello World';
 console.log(msg);
 ```
 
-Note that when you typed `console.` [IntelliSense](/docs/editor/intellisense.md) on the `console` object was automatically presented to you. When editing JavaScript files, VS Code will automatically provide you with IntelliSense for the DOM.
+Note that when you typed `console.` [IntelliSense](/docs/userguide/intellisense.md) on the `console` object was automatically presented to you. When editing JavaScript files, VS Code will automatically provide you with IntelliSense for the DOM.
 
 ![console IntelliSense](images/nodejs/consoleintellisense.png)
 
@@ -73,7 +73,7 @@ You should see "Hello World" output to the terminal and then Node.js returns.
 
 ### Integrated Terminal
 
-VS Code has an [integrated terminal](/docs/editor/integrated-terminal.md) which you can use to run shell commands. You can run Node.js directly from there and avoid switching out of VS Code while running command line tools.
+VS Code has an [integrated terminal](/docs/userguide/integrated-terminal.md) which you can use to run shell commands. You can run Node.js directly from there and avoid switching out of VS Code while running command line tools.
 
 **View** > **Integrated Terminal** (`kb(workbench.action.terminal.toggleTerminal)` with the backtick character) will open the integrated terminal and you can run `node app.js` there:
 
@@ -207,8 +207,8 @@ The first thing we'll need to do is get our source code into a GitHub repository
 
 ---
 
-We are going to follow the instructions provided by GitHub to create a new repository on the command line, but with a few changes. 
-It is a good practice to include a `.gitignore` file in your repository that excludes the `node_modules` folder. We'll do this instead of creating a `README.md` file and we'll add and commit all of the files in the workspace (except `node_modules` of course): 
+We are going to follow the instructions provided by GitHub to create a new repository on the command line, but with a few changes.
+It is a good practice to include a `.gitignore` file in your repository that excludes the `node_modules` folder. We'll do this instead of creating a `README.md` file and we'll add and commit all of the files in the workspace (except `node_modules` of course):
 
 ```bash
 echo "node_modules" >> .gitignore
@@ -246,7 +246,7 @@ az appservice web browse -n myUniqueName-ExpressApp -g myExpressAppGroup
 az appservice web source-control config --repo-url https://github.com/yourgithubaccount/myExpressApp -n myUniqueName-ExpressApp -g myExpressAppGroup
 ```
 
-Refresh the site and you should see your Express application hosted in the cloud on Azure! 
+Refresh the site and you should see your Express application hosted in the cloud on Azure!
 
 ![Express app running in Azure](images/nodejs/expressinazure.png)
 
@@ -256,11 +256,11 @@ To test continuous deployment, make a change to the `index.jade` file found in t
 
 ![Commit a change](images/nodejs/commitchange.png)
 
-Use the overflow menu to **Sync** the change with the GitHub repository. 
+Use the overflow menu to **Sync** the change with the GitHub repository.
 
 ![Sync the change](images/nodejs/syncchange.png)
 
-Finally, the site will recognize a change has been pushed and the content will automatically be redeployed. 
+Finally, the site will recognize a change has been pushed and the content will automatically be redeployed.
 
 ![VS Code Rocks](images/nodejs/vscoderocks.png)
 
@@ -268,7 +268,7 @@ Finally, the site will recognize a change has been pushed and the content will a
 
 ## Node.js Extensions
 
-The community is continually developing more and more valuable extensions for Node.js. Here are some of the extensions we have found most useful. 
+The community is continually developing more and more valuable extensions for Node.js. Here are some of the extensions we have found most useful.
 
 * [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets) - Snippets for JavaScript in ES6 syntax.
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Integrates ESLint into VS Code.
@@ -288,7 +288,7 @@ Here are some popular extensions from the [Marketplace](https://marketplace.visu
 There is much more to explore with Visual Studio Code, please try the following topics:
 
 * [Settings](/docs/getstarted/settings.md) - Learn how to customize VS Code for how you like to work.
-* [Debugging](/docs/editor/debugging.md) - This is where VS Code really shines
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
-* [Tasks](/docs/editor/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings
+* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
+* [Tasks](/docs/userguide/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings

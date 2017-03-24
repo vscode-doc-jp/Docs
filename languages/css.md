@@ -36,7 +36,7 @@ For example, to use Emmet CSS abbreviations inside JavaScript:
 }
 ```
 
-We also support [User Defined Snippets](/docs/editor/userdefinedsnippets.md).
+We also support [User Defined Snippets](/docs/userguide/userdefinedsnippets.md).
 
 ## Syntax coloring & color preview
 
@@ -76,7 +76,7 @@ This is supported for Sass and Less variables in the same file. [CSS variables](
 
 ## Transpiling Sass and Less into CSS
 
-VS Code can integrate with Sass and Less transpilers through our integrated [task runner](/docs/editor/tasks.md).  We can use this to transpile `.scss` or `.less` files into `.css` files.  Let's walk through transpiling a simple Sass/Less file.
+VS Code can integrate with Sass and Less transpilers through our integrated [task runner](/docs/userguide/tasks.md).  We can use this to transpile `.scss` or `.less` files into `.css` files.  Let's walk through transpiling a simple Sass/Less file.
 
 ### Step 1: Install a Sass or Less transpiler
 
@@ -242,7 +242,7 @@ Change your tasks configuration to look like this:
 
 ### Step 4: Run the Build Task
 
-We marked this task as `isBuildCommand` so you can execute it by simply pressing `kb(workbench.action.tasks.build)` (**Run Build Task**).  But this time since we've set `isBackground` to true, the task keeps running. If you create and/or modify other Less/Sass files, you will see the respective CSS files generated and/or changes reflected on save.  You can also enable [Auto Save](/docs/editor/codebasics.md#saveauto-save) to make things even more streamlined.
+We marked this task as `isBuildCommand` so you can execute it by simply pressing `kb(workbench.action.tasks.build)` (**Run Build Task**).  But this time since we've set `isBackground` to true, the task keeps running. If you create and/or modify other Less/Sass files, you will see the respective CSS files generated and/or changes reflected on save.  You can also enable [Auto Save](/docs/userguide/codebasics.md#saveauto-save) to make things even more streamlined.
 
 If you want to stop the task, you can use the **Tasks: Terminate Running Task** command in the  **Command Palette** (`kb(workbench.action.showCommands)`).
 
@@ -288,9 +288,9 @@ idSelector | Warn when using selectors for an id `#id` as selectors should not c
 
 Read on to find out about:
 
-* [Configure Tasks](/docs/editor/tasks.md) - Dig into Tasks to help you transpile your Sass and Less to CSS.
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
+* [Configure Tasks](/docs/userguide/tasks.md) - Dig into Tasks to help you transpile your Sass and Less to CSS.
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 * [HTML](/docs/languages/html.md) - CSS is just the start, HTML is also very well supported in VS Code.
 
 ## Common Questions

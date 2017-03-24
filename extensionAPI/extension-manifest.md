@@ -251,4 +251,4 @@ To learn more about VS Code extensibility model, try these topic:
 
 * [Contribution Points](/docs/extensionAPI/extension-points.md) - VS Code contribution points reference
 * [Activation Events](/docs/extensionAPI/activation-events.md) - VS Code activation events reference
-* [Extension Marketplace](/docs/editor/extension-gallery.md) - Read more about the VS Code Extension Marketplace
+* [Extension Marketplace](/docs/userguide/extension-gallery.md) - Read more about the VS Code Extension Marketplace

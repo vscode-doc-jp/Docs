@@ -12,7 +12,7 @@ MetaSocialImage: debugging_Debugging.png
 
 Visual Studio Code has built-in debugging support for the [Node.js](https://nodejs.org/) runtime and can debug JavaScript, TypeScript, and any other language that gets transpiled to JavaScript.
 
-This document explains the details of Node.js debugging. The general debugging feature are described in [Debugging](/docs/editor/debugging.md).
+This document explains the details of Node.js debugging. The general debugging feature are described in [Debugging](/docs/userguide/debugging.md).
 
 ## Supported Node-like Runtimes
 
@@ -445,7 +445,7 @@ To see a tutorial on the basics of Node.js debugging, check out:
 
 To learn about VS Code's task running support, go to:
 
-* [Tasks](/docs/editor/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings
+* [Tasks](/docs/userguide/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings
 
 To write your own debugger extension, visit:
 

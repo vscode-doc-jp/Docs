@@ -28,7 +28,7 @@ In this tutorial, we show you how to set up IntelliSense for a JavaScript projec
 ## Learn More
 
 * [JavaScript IntelliSense](/docs/languages/javascript.md#intellisense) - Define a JavaScript project with `jsconfig.json` to get IntelliSense across files.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 * [Node.js Tutorial](/docs/nodejs/nodejs-tutorial.md) - See IntelliSense in action for Node.js.
 
 ## Next Video

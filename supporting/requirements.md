@@ -1,34 +1,34 @@
 ---
-title: Requirements for Visual Studio Code
+title: システム要件
 MetaDescription: Visual Studio Code hardware and platform (operating system) requirements.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-## Hardware
+## ハードウェア
 
-Visual Studio Code is a small download (< 100 MB) and has a disk footprint of 200 MB. VS Code is lightweight and should easily run on today's hardware.
+Visual Studio Codeのダウンロードサイズは100MB未満で、200MBのディスク領域を消費します。このサイズは今日のハードウェア上で簡単に実行可能です。
 
-We recommend:
+推奨環境:
 
-* 1.6 GHz or faster processor
-* 1 GB of RAM
+* 1.6GHz以上のプロセッサー
+* 1GBのRAM
 
-## Platforms
+## プラットフォーム
 
-VS Code has been tested on the following platforms:
+VS Codeは次のプラットフォームでテストしています:
 
 * OS X Yosemite
-* Windows 7 (with .NET Framework 4.5.2), 8.0, 8.1 and 10 (32-bit and 64-bit)
+* Windows 7 (with .NET Framework 4.5.2), 8.0, 8.1 および 10 (32-bit and 64-bit)
 * Linux (Debian): Ubuntu Desktop 14.04, Debian 7
 * Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 7, Fedora 23
 
-### Additional Windows requirements
+### Windowsの追加要件
 
-.NET Framework 4.5.2 is required for VS Code.  If you are using Windows 7, please make sure [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42643) is installed.
+起動には.NET Framework 4.5.2が必要です。Win7を利用している場合には[.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42643)がインストールされていることを確認してください。
 
-### Additional Linux requirements
+### Linuxの追加要件
 
-* GLIBCXX version 3.4.15 or later
-* GLIBC version 2.15 or later
+* GLIBCXX version 3.4.15 以降
+* GLIBC version 2.15 以降
 
-For a list of currently known issues, see our [FAQ](faq).
+現在知られている問題は[FAQ](faq)を参照してください。

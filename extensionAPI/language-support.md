@@ -66,7 +66,7 @@ In order to support syntax highlighting, your extension needs to registers a Tex
 
 ![Snippets at work](images/language-support/snippets.gif)
 
-With code snippets, you can provide useful source code templates with placeholders. You need to register a file that contains the snippets for your language in your extension's `package.json` file. You can learn about VS Code's snippet schema in [Creating Your Own Snippets](/docs/editor/userdefinedsnippets.md#creating-your-own-snippets).
+With code snippets, you can provide useful source code templates with placeholders. You need to register a file that contains the snippets for your language in your extension's `package.json` file. You can learn about VS Code's snippet schema in [Creating Your Own Snippets](/docs/userguide/userdefinedsnippets.md#creating-your-own-snippets).
 
 ```json
 "contributes": {

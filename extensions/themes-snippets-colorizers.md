@@ -27,7 +27,7 @@ Open the Color Theme picker theme with **File** > **Preferences** > **Color Them
 
 ## Publishing a Theme to the Extension Marketplace
 
-If you'd like to share your new theme with the community, you can publish it to the [Extension Marketplace](/docs/editor/extension-gallery.md). Use the [vsce publishing tool](/docs/extensions/publish-extension.md) to package your theme and publish it to the VS Code Marketplace.
+If you'd like to share your new theme with the community, you can publish it to the [Extension Marketplace](/docs/userguide/extension-gallery.md). Use the [vsce publishing tool](/docs/extensions/publish-extension.md) to package your theme and publish it to the VS Code Marketplace.
 
 > **Tip:** To make it easy for users to find your theme, include the word "theme" in the extension description and set the `Category` to `Theme` in your `package.json`.
 
@@ -256,7 +256,7 @@ Below is an example manifest for Markdown snippets:
 
 Note that snippets need to be associated with a `language` identifier.  This can be a [language supported](/docs/languages/overview.md) directly by VS Code or a language provided by an extension.  Make sure the `language` identifier is correct.
 
-You then use the [vsce publishing tool](/docs/extensions/publish-extension.md) to publish the snippet extension to the [VS Code Extension Marketplace](/docs/editor/extension-gallery.md).
+You then use the [vsce publishing tool](/docs/extensions/publish-extension.md) to publish the snippet extension to the [VS Code Extension Marketplace](/docs/userguide/extension-gallery.md).
 
 > **Tip:** To make it easy for users to find your snippet, include the word "snippet" in the extension description and set the `Category` to `Snippets` in your `package.json`.
 
@@ -312,7 +312,7 @@ To use your extension in your stable VS Code installation, copy the complete out
 
 ## Publishing Language Support to the Extension Marketplace
 
-If you'd like to share your new language with the community, you can publish it to the [Extension Marketplace](/docs/editor/extension-gallery.md). Use the [vsce publishing tool](/docs/extensions/publish-extension.md) to package your extension and publish it to the VS Code Marketplace.
+If you'd like to share your new language with the community, you can publish it to the [Extension Marketplace](/docs/userguide/extension-gallery.md). Use the [vsce publishing tool](/docs/extensions/publish-extension.md) to package your extension and publish it to the VS Code Marketplace.
 
 > **Tip:** To make it easy for users to find your language support, include the language name and words "language" or "language support" in the extension description and set the `Category` to `Languages` in your `package.json`.
 
@@ -320,7 +320,7 @@ We also have recommendations on how to make your extension look great on the VS 
 
 ## Add to your Language Support Extension
 
-When you're adding a new language to VS Code, it is also great to add language [snippets](/docs/editor/userdefinedsnippets.md) to support common editing actions. It is easy to [combine multiple extensions](/docs/extensionAPI/extension-manifest.md#combining-extension-contributions) like snippets and colorizers into the same extension. You can modify the colorizer extension manifest `package.json` to include a `snippets` contribution and the snippets.json.
+When you're adding a new language to VS Code, it is also great to add language [snippets](/docs/userguide/userdefinedsnippets.md) to support common editing actions. It is easy to [combine multiple extensions](/docs/extensionAPI/extension-manifest.md#combining-extension-contributions) like snippets and colorizers into the same extension. You can modify the colorizer extension manifest `package.json` to include a `snippets` contribution and the snippets.json.
 
 ```json
 {

@@ -1,58 +1,56 @@
 ---
-title: Running Visual Studio Code on Windows
+title: WindowsでVisual Studio Codeを起動する
 MetaDescription: Get Visual Studio Code up and running on Windows
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-# Running VS Code on Windows
+## インストール
 
-## Installation
+1. Windows用の[Visual Studio Code](https://go.microsoft.com/fwlink/?LinkID=534107)を入手する
+2.ダウンロードを完了したら、インストーラー(VSCodeSetup-version.exe)を実行します。これには1分ほどかかります
+3. 既定で64bitの場合には `C:\Program Files (x86)\Microsoft VS Code` にインストールします
 
-1. Download the [Visual Studio Code installer](https://go.microsoft.com/fwlink/?LinkID=534107) for Windows.
-2. Once it is downloaded, run the installer (VSCodeSetup-version.exe). This will only take a minute.
-3. By default, VS Code is installed under `C:\Program Files (x86)\Microsoft VS Code` for a 64-bit machine.
+Zip archiveは~~[こちら](/docs/?dv=winzip)~~
 
-You can also find a Zip archive [here](/docs/?dv=winzip).
+>**Note:** 起動には.NET Framework 4.5.2が必要です。Win7を利用している場合には[.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42643)がインストールされていることを確認してください。
 
->**Note:** .NET Framework 4.5.2 is required for VS Code.  If you are using Windows 7, please make sure [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42643) is installed.
+>**Tip:** オプションで`code`を環境変数に追加することが可能です。追加すればそのフォルダから簡単にVS Codeを呼び出せます。ただしコンソールで環境変数の変更を有効にするには、インストール後にコンソールを再起動する必要があります。
 
->**Tip:** Setup will optionally add Visual Studio Code to your `%PATH%`, so from the console you can simply type `code .` to open VS Code on that folder. You will need to restart your console after the installation for the change to the `%PATH%` environmental variable to take effect.
+## アップデート
 
-## Updates
+VS Codeは毎月[新しいリリース](/updates)を提供しています。もし新しい更新が利用可能になればVS Codeは自動更新します。新しい更新の準備が整えばVS Codeでプロントが表示しますので、それに沿って更新します(更新に準備は必要ありません)。 更新を手動で行いたい場合は、[How do I opt out of auto-updates](/docs/supporting/faq.md#how-do-i-opt-out-of-vs-code-autoupdates) を参照してください。
 
-VS Code ships monthly [releases](/updates) and supports auto-update when a new release is available. If you're prompted by VS Code, accept the newest update and it will be installed (you won't need to do anything else to get the latest bits). If you'd rather control VS Code updates manually, see [How do I opt out of auto-updates](/docs/supporting/faq.md#how-do-i-opt-out-of-vs-code-autoupdates).
+## 次のステップ
 
-## Next Steps
-
-Once you have installed VS Code, these topics will help you learn more about VS Code:
+VS Codeをインストールしてセットアップし終えたら、次のトピックでVS Codeの詳細を学ぶことができます:
 
 * [Additional Components](/docs/setup/additional-components.md) - Learn how to install Git, Node.js, TypeScript and tools like Yeoman.
 * [User Interface](/docs/getstarted/userinterface.md) - A quick orientation to VS Code.
 * [User/Workspace Settings](/docs/getstarted/settings.md) - Learn how to configure VS Code to your preferences through settings.
 
-## Common Questions
+## よくある質問
 
-### Trouble with the installer
+### インストーラーのトラブル
 
-Try using the [zip file](/docs/?dv=winzip) instead of the installer.  To use this, unzip VS Code in your **Program Files** folder.
+まずインストーラーの代わりに~~[zip file](/docs/?dv=winzip)~~を試してください。この場合にはVS Codeを**Program Files**に解凍します(解凍場所は自由)。
 
->**Note:** When VS Code is installed via a Zip file, you will need to manually update it for each [release](/updates).
+>**Note:** Zipファイルによるインストールの場合には、[新しいリリース](/updates)ごとに手動で更新する必要があります。
 
-### Icons are missing
+### アイコンが不足しています
 
-I installed Visual Studio Code on my Windows 7 or 8 machine. Why are some icons not appearing in the workbench and editor?
+Win7, 8のマシンにVS Codeをインストールしましたが、一部アイコンを表示しません
 
-VS Code uses [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) icons and we have found instances where the .SVG file extension is associated with something other than `image/svg+xml`. We're considering options to fix it, but for now here's a workaround:
+VS Code のアイコンは[SVG](https://ja.wikipedia.org/wiki/Scalable_Vector_Graphics)によって実現しています。ですから、.SVG は `image/svg+xml` と関連付けられている必要があります。私たちはこれを修正するオプションを検討していますが、現在は次の回避策を試してください:
 
-Using the Command Prompt:
+コマンドプロントによる修正:
 
-1. Open an Administrator Command Prompt.
-2. Type `REG ADD HKCR\.svg /f /v "Content Type" /t REG_SZ /d image/svg+xml`.
+1. 管理者コマンドプロントを開く
+2. `REG ADD HKCR\.svg /f /v "Content Type" /t REG_SZ /d image/svg+xml`を入力
 
-Using the Registry Editor (regedit):
+レジストリエディタ(regedit)による修正:
 
-1. Start `regedit`.
-2. Open the `HKEY_CLASSES_ROOT` key.
-3. Find the `.svg` key.
-4. Set its `Content Type` Data value to `image/svg+xml`.
-5. Exit `regedit`.
+1. `regedit`を実行
+2. `HKEY_CLASSES_ROOT`を開く
+3. `.svg`を検索
+4. `Content Type`の値を`image/svg+xml`に設定
+5. `regedit`を終了

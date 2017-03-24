@@ -76,5 +76,5 @@ vscode://file/FULL/PATH/TO/FILE?LINE:COLUMN
 
 Read on to find out about:
 
-* [Basic Editing](/docs/editor/codebasics.md) - Learn the basics of the VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - VS Code lets you quickly understand and move through your source code.
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn the basics of the VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - VS Code lets you quickly understand and move through your source code.

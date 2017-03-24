@@ -120,7 +120,7 @@ We'll always offer word completion, but for the rich [languages](/docs/languages
 
 JavaScript and TypeScript developers can take advantage of the [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) type definition (typings) file repository to get IntelliSense for common JavaScript libraries (Node.js, React, Angular). You can find a good explanation on using `typings` files in the [JavaScript language](/docs/languages/javascript#_intellisense) topic and the [Node.js](/docs/nodejs/nodejs-tutorial.md#_intellisense-and-typings) tutorial.
 
-Learn more in the [IntelliSense document](/docs/editor/intellisense.md).
+Learn more in the [IntelliSense document](/docs/userguide/intellisense.md).
 
 ## Folding
 
@@ -160,10 +160,10 @@ You've covered the basic user interface - there is a lot more to VS Code.  Read 
 
 * [Intro Video - Setup and Basics](/docs/introvideos/basics.md) - Watch a tutorial on the basics of VS Code.
 * [User/Workspace Settings](/docs/getstarted/settings.md) - Learn how to configure VS Code to your preferences through user and workspace settings.
-* [Code Navigation](/docs/editor/editingevolved.md) - Peek and Goto Definition, and more
-* [Integrated Terminal](/docs/editor/integrated-terminal.md) - Learn about the integrated terminal for quickly performing command line tasks from within VS Code.
-* [IntelliSense](/docs/editor/intellisense.md) - VS Code brings smart code completions.
-* [Debugging](/docs/editor/debugging.md) - This is where VS Code really shines
+* [Code Navigation](/docs/userguide/editingevolved.md) - Peek and Goto Definition, and more
+* [Integrated Terminal](/docs/userguide/integrated-terminal.md) - Learn about the integrated terminal for quickly performing command line tasks from within VS Code.
+* [IntelliSense](/docs/userguide/intellisense.md) - VS Code brings smart code completions.
+* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
 
 ## Common Questions
 

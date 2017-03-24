@@ -52,7 +52,7 @@ Sometimes you will want to control how the output window behaves when running ta
 
 - **always** - The output window is always brought to front. This is the default.
 - **never** - The user must explicitly bring the output window to the front using the **View** > **Toggle Output** command (`kb(workbench.action.output.toggleOutput)`).
-- **silent** - The output window is brought to front only if no [problem matchers](/docs/editor/tasks.md#processing-task-output-with-problem-matchers) are set for the task.
+- **silent** - The output window is brought to front only if no [problem matchers](/docs/userguide/tasks.md#processing-task-output-with-problem-matchers) are set for the task.
 
 ### echoCommand
 
@@ -586,7 +586,7 @@ A full handcrafted tasks.json for a tsc task running in watch mode looks like th
 
 That was tasks - let's keep going...
 
-* [tasks.json Schema](/docs/editor/tasks_appendix.md) - You can review the full `tasks.json` schema and descriptions.
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.* [Language Support](/docs/languages/overview.md) - Learn about our supported programming languages, both shipped with VS Code and through community extensions.
-* [Debugging](/docs/editor/debugging.md) - Debug your source code directly in the VS Code editor.
+* [tasks.json Schema](/docs/userguide/tasks_appendix.md) - You can review the full `tasks.json` schema and descriptions.
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.* [Language Support](/docs/languages/overview.md) - Learn about our supported programming languages, both shipped with VS Code and through community extensions.
+* [Debugging](/docs/userguide/debugging.md) - Debug your source code directly in the VS Code editor.

@@ -1,84 +1,85 @@
 ---
-PageTitle: Themes
+title: テーマ
 MetaDescription: Changing the color theme in Visual Studio Code. You can use color themes provided by VS Code, the community or create your own new themes.  TextMate .tmTheme files are supported.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Color themes let you modify VS Code's background, text, and language syntax colorization to suit your preferences and work environment. VS Code supports light, dark and high contrast themes.
+配色テーマを使用することで好みや作業環境に合わせた、VS Codeの背景、テキスト、言語構文の色に変更できます。VS Codeは大きく分けてlight, dark, high contrastテーマをサポートしています。
 
 ![Preview themes from the Command Palette](images/themes/themes_hero.gif)
 
-## Selecting the Color Theme
+## 配色テーマを選択
 
-The current color theme is configured in the [settings](/docs/getstarted/settings.md).
+現在の配色テーマは、[設定](/docs/getstarted/settings.md)で構成します。
 
 ```javascript
-  // Specifies the color theme used in the workbench.
+  // ワークベンチで使用する配色テーマを指定します。
   "workbench.colorTheme": "Default Dark+"
 }
 ```
 
-However, there is no need to edit the settings directly. It's easier to use the Color Theme Picker to preview and select a theme.
+ただし、直接編集する必要はありません。配色テーマ選択を使用して、テーマをプレビューしながら選択する方が簡単です。
 
-1. Open the Color Theme picker with **File** > **Preferences** > **Color Theme**. (**Code** > **Preferences** > **Color Theme** on Mac)
-2. Use the cursor keys to preview the colors of the theme.
-3. Select the theme you want and hit `kbstyle(Enter)`.
+1. **ファイル**(**Code**>)>**基本設定**>**配色テーマ**でテーマ選択を開きます。
+2.カーソルキーを使用して配色テーマをプレビューします。
+3. 配色テーマを選択して、`kbstyle(Enter)`で確定します。
 
 ![Themes in the Command Palette](images/themes/colorthemes.png)
 
-> **Tip:** By default, the theme is configured in the user settings and applies to all workspaces. But you can also configure a workspace specific theme. To do so, set a theme in the workspace settings.
+> **Tip:** 既定ではユーザー設定に設定するので、すべてのワークスペースで適用します。しかし、ワークスペース特定の配色テーマを選択することも可能です。これには、ワークスペース設定で配色テーマを構成してください。
 
-## Color Themes from the Marketplace
+## Marketplaceから配色テーマを入手
 
-There are several out-of-the-box color themes in VS Code for you to try.
+VS Codeで初めからいくつかの配色テーマを用意しています。
 
-Many more themes have been uploaded to the VS Code [Extension Marketplace](/docs/editor/extension-gallery.md) by the community.  If you find one you want to use, simply install it and restart VS Code and the new theme will be available.
+その他多くのテーマは、コミュニティによってVS Code [Marketplace](/docs/userguide/extension-gallery.md)にアップロードされています。使いたいものを見つけたら、インストールして再起動すれば新しいテーマが利用可能になります。
 
-> **Tip:** To search for themes, type 'theme' in the Extensions view (`kb(workbench.view.extensions)`) search box.
+> **Tip:** テーマを検索するには、Extension ビュー(`kb(workbench.view.extensions)`)で`theme`を検索します。
 
 <div class="marketplace-extensions-themes"></div>
 
-You can also browse the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode/Themes) site directly to find available themes.
+また、[VS Code Marketplace] (https://marketplace.visualstudio.com/vscode/Themes)で直接テーマを検索することもできます。
 
-## Using existing TextMate Themes
+## 既存のTextMateテーマを使用する
 
-You can add existing TextMate color themes (.tmTheme) to VS Code. For example, the [Color Sublime] site has hundreds of TextMate themes available. See the [Adding a new Theme](/docs/extensions/themes-snippets-colorizers.md#adding-a-new-theme) topic in our Extension Authoring section to learn more.
+既存のTextMateカラーテーマ (.tmTheme) をVS Codeに追加できます。たとえば[Color Sublime](http://colorsublime.com/)にはいくつものTextMateテーマが用意されています。詳細についてExtension Authoringセクションの[Adding a new Theme](/docs/extensions/themes-snippets-colorizers.md#adding-a-new-theme)を参照してください。
 
-# Icon Themes
+# アイコンテーマ
 
-File icon themes can be contributed by extensions and selected by users as their favorite set of file icons. File icons are shown in the File Explorer and tabbed headings.
+ファイルアイコンのテーマは拡張機能によって提供され、気に入ったものをユーザーが選択します。ファイルアイコンはファイルエクスプローラーとタブ付き見出しに表示します。
 
-## Selecting the File Icon Theme
+## ファイルアイコンのテーマ選択
 
-The current File Icon theme is persisted in your user [settings](/docs/getstarted/settings.md).
+現在のファイル アイコンのテーマは、ユーザー[設定](/docs/getstarted/settings.md)に設定されます。
 
 ```javascript
-  // Specifies the icon theme used in the workbench.
+{
+  // ワークベンチで使用するアイコンのテーマを指定します。
   "workbench.iconTheme": null
 }
 ```
 
-There is no need to edit the `settings.json` file directly. It is better to use the File Icon Theme picker to preview and select a theme.
+直接`settings.json`を編集する必要はありません。アイコン ファイルテーマ選択を使用して、テーマをプレビューしながら選択する方が簡単です。
 
-1. Open the Icon Theme picker with **File** > **Preferences** > **File Icon Theme**. (**Code** > **Preferences** > **File Icon Theme** on Mac)
-2. Use the cursor keys to preview the icons of the theme.
-3. Select the theme you want and hit `kbstyle(Enter)`.
+1. **ファイル**(**Code**>)>**基本設定**>**ファイル開墾のテーマ**でアイコン選択を開きます。
+2.カーソルキーを使用してファイル アイコンのテーマをプレビューします。
+3.ファイル アイコンのテーマを選択して、`kbstyle(Enter)`で確定します。
 
-By default, no file icon set is configured, therefore the File Explorer shows no icons. Once an icon theme is selected, the selected theme will be remembered and set again when VS Code is started the next time .
+既定では、ファイル アイコン セットは設定されていないため、ファイル エクスプローラーにアイコンを表示しません。ですがファイル アイコンを一度設定すれば、次回 VS Code 起動時から適用して表示します。
 
-VS code ships with two icon themes; **Minimal** and **Seti**. To install more icon themes, select the **Find more in the Marketplace...** item in the icon theme picker.
+VS Code には **Minimal** と **Seti** のアイコンテーマ2つが初めから用意しています。もっと多くアイコンテーマをインストールするには、アイコンテーマ選択で **Find more in the Marketplace...** を選択します。
 
-You can also browse the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode/Themes) site directly to find available themes.
+また、 [VS Code Marketplace] (https://marketplace.visualstudio.com/vscode/Themes) でテーマ を探すこともできます。
 
-## Creating your own File Icon Theme
+## 独自のファイル アイコンのテーマを作成
 
-You can create your own File Icon Theme from icons (preferably SVG), see the [Adding a new Icon Theme](/docs/extensions/themes-snippets-colorizers.md#adding-a-new-icon-theme) topic in our Extension Authoring section for details.
+アイコン(SVGが好ましい)から独自のファイル アイコンのテーマを作成できます。詳細についてExtension Authoringセクションの[Adding a new Theme](/docs/extensions/themes-snippets-colorizers.md#adding-a-new-theme)を参照してください。
 
-## Next Steps
+## 次のステップ
 
-Themes are just one way to customize VS Code. If you'd like to learn more about VS Code customization and extensibility, try these topics:
+テーマは VS Code カスタマイズの1つにすぎません。VS Codeのカスタマイズと拡張性について、次のトピックで詳細を参照してください:
 
 * [Settings](/docs/getstarted/settings) -  Learn how to configure VS Code to your preferences through user and workspace settings.
-* [Snippets](/docs/editor/userdefinedsnippets.md) - Add additional snippets to your favorite language.
+* [Snippets](/docs/userguide/userdefinedsnippets.md) - Add additional snippets to your favorite language.
 * [Extending Visual Studio Code](/docs/extensions/overview.md) - Learn about other ways to extend VS Code.
 * [Themes, Snippets, and Colorizers](/docs/extensions/themes-snippets-colorizers.md) - You can package themes, snippets and language colorizers for use in VS Code.

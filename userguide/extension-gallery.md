@@ -91,7 +91,7 @@ code --disable-extensions /path/to/workspace
 
 ## Command line extension management
 
-To make it easier to automate and configure VS Code, it is possible to list, install, and uninstall extensions from the [command line](/docs/editor/command-line.md). When identifying an extension, provide the full name of the form `publisher.extension`, for example `donjayamanne.python`.
+To make it easier to automate and configure VS Code, it is possible to list, install, and uninstall extensions from the [command line](/docs/userguide/command-line.md). When identifying an extension, provide the full name of the form `publisher.extension`, for example `donjayamanne.python`.
 
 Example:
 

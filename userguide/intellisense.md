@@ -26,7 +26,7 @@ You can trigger IntelliSense in any editor window by typing `kb(editor.action.tr
 
 > **Tip:** The suggestions widget supports CamelCase filtering meaning you can type the letters which are upper cased in a method name to limit the suggestions. For example, "cra" will quickly bring up "createApplication".
 
-If you prefer, you can turn off IntelliSense while you type. See [Customizing IntelliSense](/docs/editor/intellisense.md#customizing-intellisense) below to learn how to disable or customize VS Code's IntelliSense features.
+If you prefer, you can turn off IntelliSense while you type. See [Customizing IntelliSense](/docs/userguide/intellisense.md#customizing-intellisense) below to learn how to disable or customize VS Code's IntelliSense features.
 
 As provided by the language service, you can see **quick info** for each method.
 
@@ -123,7 +123,7 @@ IntelliSense is just one of VS Code's powerful features. Read on to learn more:
 
 * [JavaScript](/docs/languages/javascript.md) - Get the most out of your JavaScript development, including configuring IntelliSense.
 * [Node.js](/docs/nodejs/nodejs-tutorial.md#intellisense-and-typings) - See an example of IntelliSense in action in the Node.js walkthrough.
-* [Debugging](/docs/editor/debugging.md) - Learn how to set up debugging for your application.
+* [Debugging](/docs/userguide/debugging.md) - Learn how to set up debugging for your application.
 
 ## Common Questions
 

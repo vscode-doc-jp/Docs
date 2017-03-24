@@ -4,7 +4,7 @@ MetaDescription: Learn about Visual Studio Code editor features (code completion
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Python is fully supported in Visual Studio Code through [extensions](/docs/editor/extension-gallery.md). Popular extensions in the [Marketplace](https://marketplace.visualstudio.com) provide code completion, linting, debugging, code formatting, snippets, and more.
+Python is fully supported in Visual Studio Code through [extensions](/docs/userguide/extension-gallery.md). Popular extensions in the [Marketplace](https://marketplace.visualstudio.com) provide code completion, linting, debugging, code formatting, snippets, and more.
 
 > [Download VS Code](/download) - If you haven't downloaded VS Code yet, quickly install for your platform (Windows, Mac, Linux).
 
@@ -23,7 +23,7 @@ The examples in this document will use Don Jayamanne's popular and full featured
 
 ## Code Completion
 
-Python extensions support code completion and Intellisense. [Intellisense](/docs/editor/intellisense.md) is a general term for a number of features, including intelligent code completion (in-context method and variable suggestions) across all your files and for built-in and thirty-party modules.
+Python extensions support code completion and Intellisense. [Intellisense](/docs/userguide/intellisense.md) is a general term for a number of features, including intelligent code completion (in-context method and variable suggestions) across all your files and for built-in and thirty-party modules.
 
 Quickly see methods, class members, and documentation.
 
@@ -47,11 +47,11 @@ No more `print` statement debugging! Set breakpoints, inspect data, and use the 
 
 > Tip: Follow the instructions in the [wiki](https://github.com/DonJayamanne/pythonVSCode/wiki/Debugging) for getting started with debugging, including setting up your `launch.json` debugging configuration and troubleshooting common issues.
 
-> Tip: Read more about general information about debugging in Visual Studio Code in the [debugging document](/docs/editor/debugging.md).
+> Tip: Read more about general information about debugging in Visual Studio Code in the [debugging document](/docs/userguide/debugging.md).
 
 ## Snippets
 
-Snippets will take productivity to the next level. You can configure [your own snippets](/docs/editor/userdefinedsnippets.md) and use snippets provided by an extension.
+Snippets will take productivity to the next level. You can configure [your own snippets](/docs/userguide/userdefinedsnippets.md) and use snippets provided by an extension.
 
 <video id="python-snippets-video" src="https://az754404.vo.msecnd.net/public/python-snippets.mp4" poster="/images/python_python-snippets-placeholder.png" autoplay loop controls muted></video>
 
@@ -63,9 +63,9 @@ You will need an [extension](/docs/languages/python.md#install-python-extension)
 
 ## Next Steps
 
-* [Install an Extension](/docs/editor/extension-gallery.md) - Python extension are available in the [Marketplace](https://marketplace.visualstudio.com/vscode).
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
+* [Install an Extension](/docs/userguide/extension-gallery.md) - Python extension are available in the [Marketplace](https://marketplace.visualstudio.com/vscode).
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 
 ## Common Questions
 

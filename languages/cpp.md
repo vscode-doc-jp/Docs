@@ -51,7 +51,7 @@ You should now see a `tasks.json` file in your workspace `.vscode` folder that l
 }
 ```
 
-For more information on tasks, see [Integrate with External Tools via Tasks](/docs/editor/tasks).
+For more information on tasks, see [Integrate with External Tools via Tasks](/docs/userguide/tasks).
 
 **To enable debugging, you will need to generate a `launch.json` file:**
 
@@ -247,7 +247,7 @@ For the `C++ (GDB/LLDB)` debugging environment, you can execute GDB, LLDB and MI
 * Call stack
 * Stepping
 
- For more information on debugging with VS Code, see this introduction to [debugging in VS Code](/docs/editor/debugging.md).
+ For more information on debugging with VS Code, see this introduction to [debugging in VS Code](/docs/userguide/debugging.md).
 
 ## Known Limitations
 
@@ -287,10 +287,10 @@ OS X:
 
 Read on to find out about:
 
-* [Basic Editing](/docs/editor/codebasics.md) - Learn about the powerful VS Code editor.
-* [Code Navigation](/docs/editor/editingevolved.md) - Move quickly through your source code.
-* [Tasks](/docs/editor/tasks.md) - use tasks to build your project and more
-* [Debugging](/docs/editor/debugging.md) - find out how to use the debugger with your project
+* [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
+* [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
+* [Tasks](/docs/userguide/tasks.md) - use tasks to build your project and more
+* [Debugging](/docs/userguide/debugging.md) - find out how to use the debugger with your project
 
 ## Common Questions
 
@@ -304,6 +304,6 @@ Read on to find out about:
 
 **Q: How do I build/run my project?**
 
-**A:** VS Code supports tasks that you can configure to build your application, and natively understands the output of MSBuild, CSC, and XBuild. For more information, see the [Tasks](/docs/editor/tasks.md) documentation.
+**A:** VS Code supports tasks that you can configure to build your application, and natively understands the output of MSBuild, CSC, and XBuild. For more information, see the [Tasks](/docs/userguide/tasks.md) documentation.
 
 If you have any other questions or run into any issues, please file an issue on [GitHub](https://github.com/Microsoft/vscode-cpptools/issues).

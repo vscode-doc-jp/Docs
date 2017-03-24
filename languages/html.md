@@ -83,7 +83,7 @@ For example, to use Emmet HTML abbreviations inside JavaScript:
 }
 ```
 
-We also support [User Defined Snippets](/docs/editor/userdefinedsnippets.md).
+We also support [User Defined Snippets](/docs/userguide/userdefinedsnippets.md).
 
 ## Next Steps
 

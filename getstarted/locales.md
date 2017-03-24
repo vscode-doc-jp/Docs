@@ -1,14 +1,14 @@
 ﻿---
-title: Display Language
+title: 表示言語
 MetaDescription: How to change the display language (locale) of Visual Studio Code.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Visual Studio Code ships with 10 available display languages (locales): English (US), Simplified Chinese, Traditional Chinese, French, German, Italian, Japanese, Korean, Russian and Spanish.  Localized display text for all 10 languages is included in the main VS Code download and as such, doesn't require a secondary install.
+Visual Studio Codeでは次10ヵ国語の言語パックを提供しています。英語(米国)、簡体字中国語、繁体字中国語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ロシア語、スペイン語です。なお言語パックはVS Codeにすでに含まれるため、追加インストールする必要はありません。
 
-By default, VS Code picks up the operating system's display language, falling back to English (US) if the locale is not supported.
+表示言語を既定でOSの言語に設定しますが、言語がサポートされていない場合は英語(米国)を選択します。
 
-## Available Locales
+## 利用可能な言語
 
 Display Language | Locale
 -----------------|-------
@@ -23,31 +23,31 @@ Korean | `ko`
 Russian | `ru`
 Spanish | `es`
 
-## Setting the Language
+## 言語設定
 
-If you want to configure a specific language, you can either use the command line switch `--locale` to specify a locale when you launch a VS Code session or use the **Configure Language** command to persist the display language to use when VS Code is started.
+表示言語を変更したい場合はコマンドラインで`--local`を使った起動で一時的に変更するか、**Configure Language**コマンドで永続的に変更します。次の例を確認してください。
 
-Below is an example of using the `--locale` command line switch to set the VS Code display language to French:
+起動オプション `--locale` オプションによるフランス語に設定する例:
 
 ```bash
 code . --locale=fr
 ```
 
-## Configure Language command
+## 言語設定のコマンド
 
-The **Configure Language** command creates a `locale.json` file in your user VS Code folder.  Set the `locale` attribute to your preferred locale.
+** Configure Language **コマンドは`Code\User`に `locale.json`を作成します。このファイルの`locale`属性を前のLocalに設定することで言語を変更します。
 
-Press `kb(workbench.action.showCommands)` to bring up the **Command Palette** then start typing "config" to filter and display the **Configure Language** command.
+`kb(workbench.action.showCommands)`を押してコマンドパレットを表示したら`config`と入力して`configure Language`でフィルターをかけてください。
 
 ![configure language command ](images/locales/configure-language-command.png)
 
-Press `kbstyle(Enter)` and a `locale.json` file is created with the default value set to your operating system language. You can use IntelliSense (`kb(editor.action.triggerSuggest)`) to select a different supported language locale.
+`kbstyle(Enter)`で確定すれば`locale.json`と規定値をOSの言語で生成します。この値をIntelliSence(`kb(editor.action.triggerSuggest)`)を使用してサポートしている言語を選択します。
 
 ![locale IntelliSense](images/locales/locale-intellisense.png)
 
-Save `locale.json` and restart VS Code to use the new display language.
+`locale.json`を保存したらVS Codeを再起動して新しい表示言語を使用できます。
 
-The example below sets VS Code to display Simplified Chinese `zh-CN`:
+VS Code設定による簡体字中国語に設定する例:
 
 ```json
 {
@@ -56,6 +56,6 @@ The example below sets VS Code to display Simplified Chinese `zh-CN`:
 }
 ```
 
-You can rerun the **Configure Language** command to review and change your `locale.json` file.
+また**Configure Language**を再度実行することで `locale.json`は再度呼びだすことが可能です。
 
->**Note:** Changing the `locale` value requires a restart of VS Code.
+>**Note:** 変更した`locale`の値を適用するにはVS Codeを再起動する必要があります。

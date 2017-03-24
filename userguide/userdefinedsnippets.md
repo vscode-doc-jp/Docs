@@ -17,7 +17,7 @@ The snippet syntax follows the [TextMate snippet syntax](https://manual.macromat
 
 ## Add Snippets from the Marketplace
 
-Many [extensions](/docs/editor/extension-gallery.md) on the VS Code [Marketplace](https://marketplace.visualstudio.com/vscode) include snippets.  If you find one you want to use, simply install it and restart VS Code and the new snippet will be available (see [here](/docs/editor/extension-gallery.md#browse-and-install-extensions) for more instructions on installing an extension).
+Many [extensions](/docs/userguide/extension-gallery.md) on the VS Code [Marketplace](https://marketplace.visualstudio.com/vscode) include snippets.  If you find one you want to use, simply install it and restart VS Code and the new snippet will be available (see [here](/docs/userguide/extension-gallery.md#browse-and-install-extensions) for more instructions on installing an extension).
 
 Below are some popular extensions which include snippets in their language support:
 
@@ -103,7 +103,7 @@ You can also use existing TextMate snippets (.tmSnippets) with VS Code. See the 
 
 ## Next Steps
 
-* [Command Line](/docs/editor/command-line.md) - VS Code has a rich command line interface to open or diff files and install extensions.
+* [Command Line](/docs/userguide/command-line.md) - VS Code has a rich command line interface to open or diff files and install extensions.
 * [Extending Visual Studio Code](/docs/extensions/overview.md) - Learn about other ways to extend VS Code.
 * [Themes, Snippets, and Colorizers](/docs/extensions/themes-snippets-colorizers.md) - You can package themes, snippets and language colorizers for use in VS Code.
 

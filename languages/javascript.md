@@ -10,7 +10,7 @@ Visual Studio Code provides IntelliSense, debugging, and powerful editor feature
 
 ## IntelliSense
 
-VS Code [IntelliSense](/docs/editor/intellisense.md) is intelligent code completion, parameter info, and member lists. VS Code provides IntelliSense using TypeScript definition files (for example node.d.ts) to provide metadata about the JavaScript based frameworks you are consuming in your application. Because TypeScript definition files are written in TypeScript, they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience.
+VS Code [IntelliSense](/docs/userguide/intellisense.md) is intelligent code completion, parameter info, and member lists. VS Code provides IntelliSense using TypeScript definition files (for example node.d.ts) to provide metadata about the JavaScript based frameworks you are consuming in your application. Because TypeScript definition files are written in TypeScript, they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience.
 
 Thanks to a feature called `Automatic Typing Acquisition` you as user do not have to worry about these typings file. VS Code will install them automatically for you.
 
@@ -110,7 +110,7 @@ See [here](/docs/languages/jsconfig.md) for the full documentation of `jsconfig.
 
 ## Debugging
 
-VS Code comes with great debugging support for JavaScript. Set breakpoints, inspect objects, navigate the call stack, and execute code in the Debug Console. See more about debugging [here](/docs/editor/debugging.md).
+VS Code comes with great debugging support for JavaScript. Set breakpoints, inspect objects, navigate the call stack, and execute code in the Debug Console. See more about debugging [here](/docs/userguide/debugging.md).
 
 ### Debug Client Side
 
@@ -124,7 +124,7 @@ Debug Node.js in VS Code using the built-in debugger. Setup is easy and you can 
 
 ## Linters
 
-A [linter](https://en.wikipedia.org/wiki/Lint_%28software%29) is a tool that provides warnings for suspicious looking code. VS Code supports linters through [extensions](/docs/editor/extension-gallery.md). Linters provide warnings, errors, and light bulb actions.
+A [linter](https://en.wikipedia.org/wiki/Lint_%28software%29) is a tool that provides warnings for suspicious looking code. VS Code supports linters through [extensions](/docs/userguide/extension-gallery.md). Linters provide warnings, errors, and light bulb actions.
 
 VS Code provides support for JavaScript linters, including [ESLint](http://eslint.org/), [JSHint](http://jshint.com/) and [StandardJS](http://standardjs.com/).  If enabled, the JavaScript code is validated as you type and you can navigate to reported problems and fix them inside VS Code.
 
@@ -167,7 +167,7 @@ VS Code has several built-in snippets that will come up as you type or you can p
 
 ![built in javascript snippet foreach](images/javascript/javascript_snippets.gif)
 
-> **Tip:** You can add in your own snippets for JavaScript. See [User Defined Snippets](/docs/editor/userdefinedsnippets.md) to find out how.
+> **Tip:** You can add in your own snippets for JavaScript. See [User Defined Snippets](/docs/userguide/userdefinedsnippets.md) to find out how.
 
 You may not want to show snippets. You can disable them by setting `editor.snippetSuggestions` to `"none"` in your [settings](/docs/getstarted/settings.md) file. If you'd like to see snippets, you can specify the order relative to suggestions; at the top (`"top"`), at the bottom (`"bottom"`), or inlined ordered alphabetically (`"inline"`). The default is `"inline"`.
 
@@ -177,7 +177,7 @@ You can enable tab completions with `editor.tabCompletion` setting. After typing
 
 ### Run Babel inside VS Code
 
-The [Babel](https://babeljs.io) transpiler turns ES6 files into readable ES5 JavaScript with Source Maps. You can easily integrate **Babel** into your workflow by adding the configuration below to your `tasks.json` file (located under the workspace's `.vscode` folder). The `isBuildCommand` switch makes this task the **Task: Run Build Task** gesture.  `isBackground` tells VS Code to keep running this task in the background. To learn more, go to [Tasks](/docs/editor/tasks.md).
+The [Babel](https://babeljs.io) transpiler turns ES6 files into readable ES5 JavaScript with Source Maps. You can easily integrate **Babel** into your workflow by adding the configuration below to your `tasks.json` file (located under the workspace's `.vscode` folder). The `isBuildCommand` switch makes this task the **Task: Run Build Task** gesture.  `isBackground` tells VS Code to keep running this task in the background. To learn more, go to [Tasks](/docs/userguide/tasks.md).
 
 ```json
 {
@@ -247,7 +247,7 @@ VS Code provides several formatting settings for JavaScript. They can all be fou
 
 ## Popular Extensions
 
-VS Code ships with excellent support for JavaScript but you can additionally install debuggers, snippets, linters, and other JavaScript tools through [extensions](/docs/editor/extension-gallery.md).
+VS Code ships with excellent support for JavaScript but you can additionally install debuggers, snippets, linters, and other JavaScript tools through [extensions](/docs/userguide/extension-gallery.md).
 
 <div class="marketplace-extensions-javascript"></div>
 
@@ -258,8 +258,8 @@ VS Code ships with excellent support for JavaScript but you can additionally ins
 Read on to find out about:
 
 * [jsconfig.json](/docs/languages/jsconfig.md) - Detailed description of the `jsconfig.json` project file.
-* [IntelliSense](/docs/editor/intellisense.md) - Learn more about IntelliSense and how to use it effectively for your language.
-* [Debugging](/docs/editor/debugging.md) - Learn how to set up debugging for your application.
+* [IntelliSense](/docs/userguide/intellisense.md) - Learn more about IntelliSense and how to use it effectively for your language.
+* [Debugging](/docs/userguide/debugging.md) - Learn how to set up debugging for your application.
 * [Node.js](/docs/nodejs/nodejs-tutorial.md) - A walkthrough to create an Express Node.js application.
 * [TypeScript](/docs/languages/typescript.md) - VS Code has great support for TypeScript which brings structure and strong typing to your JavaScript code.
 

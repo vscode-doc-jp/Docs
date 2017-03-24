@@ -413,7 +413,7 @@ There is also a widget that helps input the key binding rule when editing `keybi
 Now that you know about our Key binding support, what's next...
 
 * [Language Support](/docs/languages/overview.md) - Our Good, Better, Best language grid to see what you can expect
-* [Debugging](/docs/editor/debugging.md) - This is where VS Code really shines
+* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
 * [Node.js](/docs/nodejs/nodejs-tutorial.md) - End to end Node.js scenario with a sample app
 
 ## Common Questions
