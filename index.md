@@ -11,18 +11,18 @@ title: ようこそ
     * Linux
     * ~~Mac~~
     * Windows
-    * ✌~~Additional Compnents~~
+    * Additional Compnents
 * GET STARTED
     * ~~Intro Videos~~
     * ~~User Interface~~
     * Themes
-    * ✌~~Settings~~
+    * Settings
     * ~~Key Bindings~~
     * Display Language
 * USER GUIDE
     * ~~Basic Editing~~
     * ~~Extension Marketplace~~
-    * ✌~~IntelliSense~~
+    * IntelliSense
     * ~~Code Navigation~~
     * ~~Debugging~~
     * Version Control

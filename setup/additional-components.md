@@ -1,46 +1,46 @@
 ---
-title: Additional Components and Tools
+title: 追加コンポーネントとツール
 MetaDescription: Setting up additional components to use with Visual Studio Code.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-VS Code is a small download by design and only includes the minimum number of components shared across most development workflows. Basic functionality like the editor, file management, window management, and preference settings are included. A JavaScript/TypeScript language service and Node.js debugger are also part of the base install.
+VS Codeは小さなインストールで、ほとんどの開発ワークフローで共有するコンポーネントが最小単位で含むよう設計されています。エディタ、ファイル管理、ウィンドウ管理および環境設定などの基本的な機能がその例です。またJavaScript/TypeScript言語サービスとNode.jsデバッガもその一部です。
 
-If you are used to working with larger, monolithic development tools (IDEs), you may be surprised that your scenarios aren't completely supported out of the box.  For example, there isn't a **File** > **New Project** dialog with pre-installed project templates.  Most VS Code users will need to install additional components depending on their specific needs.
+大規模でがっちりした開発ツール(IDE)の操作に慣れている場合、操作の筋書を完全にサポートしていないに驚くでしょう。たとえば**[File]**>**New Project**にはプリインストールされたプロジェクトテンプレートがありません。VS Codeのユーザーは特定のニーズに応じて、追加コンポーネントをインストールする必要があるのです。
 
-## Commonly Used Components
+## よく使われるコンポーネント
 
-Here are a few commonly installed components:
+よくインストールされるコンポーネントを下に紹介します:
 
-- [Git](https://git-scm.com/download) - VS Code has built-in support for source code control using Git but requires Git to be installed separately.
-- [Node.js (includes NPM)](https://nodejs.org/) - A platform and runtime for building and running JavaScript applications.
-- [TypeScript](http://typescriptlang.org) - The TypeScript compiler, `tsc`, for transpiling TypeScript to JavaScript.
+- [Git](https://git-scm.com/download) - VS CodeはGitによるソースコード管理をサポートしていますが、別途でGitをインストールする必要があります。
+- [Node.js (NPM)](https://nodejs.org/) - JavaScriptアプリケーションをビルド、実行するためのプラットフォームおよびランタイム。
+- [TypeScript](http://typescriptlang.org) - `tsc`コンパイラでTypeScriptをJavaScriptにコンパイル。
 
-You'll find the components above mentioned often in our documentation and walkthroughs.
+また上記のコンポーネントは、今後のマニュアルやチュートリアルでよく使用します。
 
-## VS Code Extensions
+## VS Codeの拡張機能
 
-You can extend the VS Code editor itself through [extensions](/docs/userguide/extension-gallery.md). The VS Code community has built hundreds of useful extension available on the VS Code [Marketplace](https://marketplace.visualstudio.com/VSCode).
+VS Codeを[拡張機能](/docs/userguide/extension-gallery.md)を通して拡張することができます。便利ないくつもの拡張機能は[Marketplace](https://marketplace.visualstudio.com/VSCode)でコミュニティーが公開しています。
 
-<div class="marketplace-extensions-top"></div>
+(編集メモ: 本来ならここに人気拡張が8個表示されますが、実装が面倒)
 
-The extensions shown above are the current most popular on Marketplace. Click on an extension tile above to read the description and reviews of the extension.
 
-## Additional Tools
 
-Visual Studio Code integrates with existing tool chains.  We think the following tools will enhance your development experiences.
+## 追加のツール
 
-- [Yeoman](http://yeoman.io/) - An application scaffolding tool, a command line version of **File** > **New Project**.
-- [generator-aspnet](https://www.npmjs.com/package/generator-aspnet) - A Yeoman generator for scaffolding **ASP.NET Core** applications.
-- [generator-hottowel](https://github.com/johnpapa/generator-hottowel) - A Yeoman generator for quickly creating **AngularJS** applications.
-- [Express](http://expressjs.com/) - An application framework for Node.js applications using the **Jade** template engine.
-- [Gulp](http://gulpjs.com/) - A streaming task runner system which integrates easily with VS Code tasks.
-- [Mocha](http://mochajs.org/) - A JavaScript test framework that runs on Node.js.
-- [Bower](https://bower.io/) - A client side package manager.
+Visual Studio Codeは既存の[ツールチェーン](https://ja.wikipedia.org/wiki/ツールチェーン)と統合しています。次のツールは開発経験を強化します。
 
->**Note:** Most of these tools require Node.js and the NPM package manager to install and use.
+- [Yeoman](http://yeoman.io/) - アプリケーションの足場作成**File** > **New Project**のコマンドラインバージョン
+- [generator-aspnet](https://www.npmjs.com/package/generator-aspnet) -**ASP.NET Core**の足場を構築するYeomanジェネレーター
+- [generator-hottowel](https://github.com/johnpapa/generator-hottowel) - A Yeoman gene - **AngularJS** を素早く作成する Yeoman ジェネレーター
+- [Express](http://expressjs.com/) - Node.js向けの**Jade**フレームワーク
+- [Gulp](http://gulpjs.com/) - Tasks と簡単に統合できるストリーミング タスク ランナー
+- [Mocha](http://mochajs.org/) - Node.js で動作する JavaScript テストフレームワーク
+- [Bower](https://bower.io/) - クライアント側のパッケージマネージャー
 
-## Next Steps
+>**Note:** これらほとんどのツールはNode.jsとNPMパッケージマネージャーをインストールして使用する必要があります。
+
+## 次のステップ
 
 * [User Interface](/docs/getstarted/userinterface.md) - A quick orientation around VS Code.
 * [User/Workspace Settings](/docs/getstarted/settings.md) - Learn how to configure VS Code to your preferences through settings.

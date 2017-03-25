@@ -4,100 +4,103 @@ MetaDescription:  Learn about Visual Studio Code IntelliSense (intelligent code 
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-IntelliSense is a general term for a variety of code editing features including: code completion, parameter info, quick info, and member lists. IntelliSense features are sometimes called by other names such as "code completion", "content assist", and "code hinting."
+IntelliSenseとは、メンバーの一覧、パラメーター ヒント、クイック ヒント、入力候補など多数の機能を指す総称です。その特徴から「code completion」「content assist」「code hinting」と呼ばれることもあります。
 
 ![IntelliSense demo](images/intellisense/intellisense.gif)
 
-## IntelliSense for your programming language
+## プログラミング言語のIntelliSense
 
-VS Code IntelliSense is provided for JavaScript, TypeScript, JSON, HTML, CSS, Less, and Sass out of the box. VS Code supports word based completions for any programming language but can also be configured to have richer IntelliSense by installing a language extension.
+初期のIntelliSenseはJavaScript、TypeScript、JSON、CSS、LESS、SASSに補完を提供します。この状態でもそれなりの言語で単語ベースの補完をサポートしますが、言語拡張機能をインストールすることでより豊かなIntelliSenseを構成可能です。
 
-Below are the most popular language extensions in the [Marketplace](https://marketplace.visualstudio.com/vscode). Click on an extension tile below to read the description and reviews to decide which extension is best for you.
+説明とレビューを読んで、最適な拡張機能を決定するために拡張機能のタイルをクリックしてください。
 
-<div class="marketplace-extensions-languages"></div>
+(編集メモ: 本家でここに人気言語4つが表示
 
-## IntelliSense Features
+## IntelliSense の特徴
 
-VS Code IntelliSense features are powered by a language service. A language service provides intelligent code completions based on language semantics and an analysis of your source code. If a language service knows possible completions, the IntelliSense suggestions will pop up as you type. If you continue typing characters, the list of members (variables, methods, etc.) is filtered to include only members containing your typed characters. Pressing `kbstyle(Tab)` or `kbstyle(Enter)` will insert the selected member.
+IntelliSenseの機能は、セマンティクスとソースコードの分析に基づいて高度なコードな補完を生成する言語サーバーによって構成されています。生成された補完はIntelliSenseを通してリスト表示しますが、文字を続けることで IntelliSenseがフィルターをかけて、メンバー(変数, メソッドなど)のより最適なリスト表示が可能になります。こうして出てきた項目は`kbstyle(Tab)`や`kbstyle(Enter)`で確定できます。
 
-You can trigger IntelliSense in any editor window by typing `kb(editor.action.triggerSuggest)` or by typing a trigger character (such as the dot character (`kbstyle(.)`) in JavaScript).
+IntelliSenseを起動するときには、エディタで`kb(editor.action.triggerSuggest)`もしくはトリガーになるような文字(JavaScriptではドット(`kbstyle(.)`)などを入力します。
 
 ![intellisense in package json](images/intellisense/intellisense_packagejson.gif)
 
-> **Tip:** The suggestions widget supports CamelCase filtering meaning you can type the letters which are upper cased in a method name to limit the suggestions. For example, "cra" will quickly bring up "createApplication".
+> **Tip:** IntelliSenseはキャメルケースフィルターをサポートしています。ですから、メソッド名に大文字を入力するだけで、項目を限定することができます。例えば「createApplication」を表示するときは「cra」ですぐに表示可能です。
 
-If you prefer, you can turn off IntelliSense while you type. See [Customizing IntelliSense](/docs/userguide/intellisense.md#customizing-intellisense) below to learn how to disable or customize VS Code's IntelliSense features.
+IntelliSense機能を無効化したり、カスタマイズしたりする詳細方法は[Customizing IntelliSense](/docs/userguide/intellisense.md#customizing-intellisense)を参照してください。
 
-As provided by the language service, you can see **quick info** for each method.
+言語サービスに提供されるように、各メソッドの**クイックヒント**も表示します。
 
 ![quick info](images/intellisense/quick_outline.png)
 
-After choosing a method you are provided with **parameter info**.
+メソッドを選んだあと、**パラメーター情報**を提供しているのが分かるかと思います。
 
 ![parameter info](images/intellisense/paramater_info.png)
 
-When applicable, a language service will surface the underlying types in the quick info and method signatures. In the image above, you can see several `any` types. Because JavaScript is dynamic and doesn't need or enforce types, `any` suggests that the variable can be of any type.
+該当するものがあるとき、言語サービスはクイックヒントと
+とメソッドシグネチャの基になる型を表示します。たとえば上の画像で、いくつかの`any`の種類を確認できます。JavaScriptは動的であり型を強制しないので`any`変数はどんな型でもいいことを示唆しています。
 
-## Types of Completions
+## 入力候補の種類
 
-The JavaScript code below illustrates IntelliSense completions. IntelliSense gives both inferred proposals and the global identifiers of the project. The inferred symbols are presented first, followed by the global identifiers (shown by the document icon).
+下のJavaScriptコードでIntelliSenseによる入力候補の例を示しています。次の画像を見てもわかりますが、候補とプロジェクトのグローバル識別子の両方を表示します。候補のシンボルが最初に表示され、続いてグローバル識別子を表示します。
 
 ![intellisense icons](images/intellisense/intellisense_icons.png)
 
-VS Code IntelliSense offers different types of completions, including language server suggestions, snippets, and simple word based textual completions.
+IntelliSenseは言語サーバーの候補、スニペット、単純な単語のテキスト補完などさまざまな種類の補完を提供します。
 
 |       |         |
 | ----- | ------- |
-| ![method icon](images/intellisense/Method_16x.svg) | Methods, Functions and Constructors |
-| ![variable icon](images/intellisense/Field_16x.svg) | Variables and Fields |
-| ![class](images/intellisense/Class_16x.svg) | Classes |
-| ![interface](images/intellisense/Interface_16x.svg) | Interfaces |
-| ![module](images/intellisense/Namespace_16x.svg) | Modules |
-| ![property](images/intellisense/Property_16x.svg) | Properties and Attributes |
-| ![enumeration icon](images/intellisense/EnumItem_16x.svg) | Values and Enumerations |
-| ![color](images/intellisense/Enumerator_16x.svg) | References |
-| ![keyword](images/intellisense/IntelliSenseKeyword_16x.svg) | Keywords |
-| ![global identifiers](images/intellisense/Document_16x.svg) | Global Identifiers |
-| ![color](images/intellisense/ColorPalette_16x.svg) | Colors |
-| ![unit](images/intellisense/Ruler_16x.svg) | Unit |
-| ![a square with ellipses forming the bottom show snippet prefix](images/intellisense/Snippet_16x.svg) | Snippet Prefixes |
-| ![a square with letters abc word completion](images/intellisense/String_16x.svg) | Words |
-| ![Miscellaneous](images/intellisense/Misc_16x.svg) | Miscellaneous |
+| ![method icon](images/intellisense/Method_16x.svg) | メソッド, 関数, コンストラクター
+| ![variable icon](images/intellisense/Field_16x.svg) | 変数またはフィールド |
+| ![class](images/intellisense/Class_16x.svg) | クラス |
+| ![interface](images/intellisense/Interface_16x.svg) | インターフェイス |
+| ![module](images/intellisense/Namespace_16x.svg) | モジュール |
+| ![property](images/intellisense/Property_16x.svg) | プロパティまたは属性 |
+| ![enumeration icon](images/intellisense/EnumItem_16x.svg) | 値と列挙 |
+| ![color](images/intellisense/Enumerator_16x.svg) | 参照 |
+| ![keyword](images/intellisense/IntelliSenseKeyword_16x.svg) | キーワード |
+| ![global identifiers](images/intellisense/Document_16x.svg) | グローバル識別子 |
+| ![color](images/intellisense/ColorPalette_16x.svg) | 色 |
+| ![unit](images/intellisense/Ruler_16x.svg) | ユニット |
+| ![a square with ellipses forming the bottom show snippet prefix](images/intellisense/Snippet_16x.svg) | スニペットプレフィックス |
+| ![a square with letters abc word completion](images/intellisense/String_16x.svg) | 単語 |
+| ![Miscellaneous](images/intellisense/Misc_16x.svg) | その他 |
 
-## Customizing IntelliSense
+(編集メモ: 無理やり日本語訳にしたのでわかりにくい
 
-You can customize your IntelliSense experience in settings and key bindings.
+## IntelliSenseのカスタマイズ
 
-### Settings
+設定とキーバインドを変更してIntelliSenseの操作をカスタマイズできます。
 
-The settings shown below are the default settings. You can change these settings in your `settings.json` file as described in [User and Workspace Settings](/docs/getstarted/settings.md).
+### 設定
+
+次に示す例は既定の設定です。`settings.json`で設定を変更する場合は[User and Workspace Settings](/docs/getstarted/settings.md)の説明を参照してください。
 
 ```javascript
 {
-    // Controls if quick suggestions should show up while typing
+  // 入力中にクイック候補を表示するかどうかを制御します
     "editor.quickSuggestions": true,
 
-    // Controls if suggestions should be accepted with "Enter" - in addition to "Tab". Helps to avoid ambiguity between inserting new lines and accepting suggestions.
+  // 'Tab' キーに加えて 'Enter' キーで候補を受け入れるかどうかを制御します。改行の挿入や候補の反映の間であいまいさを解消するのに役立ちます。
     "editor.acceptSuggestionOnEnter": true,
 
-    // Controls the delay in ms after which quick suggestions will show up.
+  // クイック候補が表示されるまでの待ち時間 (ミリ秒) を制御します
     "editor.quickSuggestionsDelay": 10,
 
-    // Enable word based suggestions
+  // 単語ベースの修正候補を有効にします。
     "editor.wordBasedSuggestions": true
 
-    // Enable parameter hints
+    // パラメーター ヒントを有効にする
     "editor.parameterHints": true
 }
 ```
 
-By default, VS Code shows snippets and completion proposals in one widget. You can control the behavior with the `editor.snippetSuggestions` setting. To remove snippets from the suggestions widget, set the value to `"none"`. If you'd like to see snippets, you can specify the order relative to suggestions; at the top (`"top"`), at the bottom (`"bottom`"), or inline ordered alphabetically (`"inline"`). The default is `"bottom"`.
+既定では1つのウィジェットで修正候補と一緒にスニペットを表示します。これを`editor.snippetSuggestions`設定で制御することが可能です。このウィジェットからスニペットを削除するには`none`に設定します。スニペットを一緒に表示する場合、その並び替えの方法は指定できます。上部(`"top"`)下部(`"bottom`")アルファベット順(`"inline"`)です。デフォルトは`"bottom`"です。
 
-### Key Bindings
+### キーバインド
 
-The key binding shown below is the default key binding. You can change this key binding in your `keybindings.json` file as described in [Key Bindings](/docs/getstarted/keybindings.md).
+既定のショートカット設定を次の例に示しています。`keybindings.json`の変更方法は[Key Bindings](/docs/getstarted/keybindings.md)を確認してください。
 
-> **Note:** There are many more key bindings relating to IntelliSense. Simply open the **Default Keyboard Shortcuts** (**File** > **Preferences** > **Keyboard Shortcuts**) and search for "suggest".
+> **Note:** 以下の例はIntelliSenseのごく一部設定をまとめています。実際の設定は **File** > **基本設定** > **キーボードショートカット**に移動して「suggest」を検索してください。
 
 ```json
 {
@@ -109,33 +112,32 @@ The key binding shown below is the default key binding. You can change this key 
 }
 ```
 
-## Troubleshooting
+## トラブルシューティング
 
-If you find IntelliSense has stopped working, the language service may not be running. Simply restart VS Code and this should solve the issue. If you are still missing IntelliSense features after installing a language extension, open an issue in the repository of the language extension.
+IntelliSense が機能しないときは、言語サービスが実行されていない可能性があります。そんな場合 VS Code を再起動すればこの問題を解決できる可能性が非常に高いです。言語拡張機能をインストールしても IntelliSense 機能が不足している場合は、そのレポジトリで問題を確認してください。
 
-> **Tip:** For configuring and troubleshooting JavaScript IntelliSense see [here](/docs/languages/javascript.md#intellisense).
+> **Tip:** JavaScript の IntelliSense 設定とトラブルシューティングについては[こちら](/docs/languages/javascript.md#intellisense)を確認できます。
 
-A particular language extension may not support all the VS Code IntelliSense features. Review the extension's README to find out what is supported. If you think there are issues with a language extension, you can usually find the issue repository for an extension through the [Marketplace](https://marketplace.visualstudio.com/vscode). Navigate to the extension's detail page and click the `Support` link.
+入手した言語拡張が IntelliSense 機能を完全にサポートするとは限りません。拡張機能の README で何がサポートされているのか確認します。もし、言語拡張に問題があると思ったら [Marketplace](https://marketplace.visualstudio.com/vscode) で拡張機能を検索して、 サポートリンクを探してください。
 
-## Next Steps
+## 次のステップ
 
-IntelliSense is just one of VS Code's powerful features. Read on to learn more:
+IntelliSenseはVS Codeの強力な機能の1つにすぎません。VS Codeにさらに詳しくなりましょう。
 
 * [JavaScript](/docs/languages/javascript.md) - Get the most out of your JavaScript development, including configuring IntelliSense.
 * [Node.js](/docs/nodejs/nodejs-tutorial.md#intellisense-and-typings) - See an example of IntelliSense in action in the Node.js walkthrough.
 * [Debugging](/docs/userguide/debugging.md) - Learn how to set up debugging for your application.
 
-## Common Questions
+## よくある質問
 
-**Q: Why am I not getting any suggestions?**
+**Q: なぜ何の候補もないのですか?**
 
 ![image of IntelliSense not working](images/intellisense/intellisense_error.png)
 
-**A:** This can be caused by a variety of reasons. First, try restarting VS Code. If the problem persists, consult the language extension's documentation. For JavaScript specific troubleshooting, please see the [JavaScript language topic](/docs/languages/javascript.md#intellisense).
+**A:** これにはさまざまな理由が考えられますが、まずVS Codeを再起動してみてください。それでも問題が解決しないは、言語拡張のドキュメントを参照してください。JavaScirpt特定のトラブルシューティングについては[JavaScript language topic](/docs/languages/javascript.md#intellisense)を参照できます。
 
-**Q: Why am I not seeing method and variable suggestions?**
+**Q: なぜ私の変数を見て候補を表示しないのですか? (なぜ有用な提案をしないのですか)**
 
 ![image of IntelliSense showing no useful suggestions](images/intellisense/missing_typings.png)
 
-**A:** This issue is caused by missing Typings files in JavaScript. You can learn how to solve this issue in the [JavaScript language topic](/docs/languages/javascript.md#intellisense). For other languages, please consult the extension's documentation.
-
+**A:** JavaScriptでTypingsファイルが見つからないのが原因です。[JavaScript language topic](/docs/languages/javascript.md#intellisense)でこの問題を解決する方法を確認することができます。その他言語については拡張機能のドキュメントを参照してください

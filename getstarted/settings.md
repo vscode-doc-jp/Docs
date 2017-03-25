@@ -1,59 +1,59 @@
 ---
-title: User and Workspace Settings
+title: ユーザーとワークスペース設定
 MetaDescription: How to modify Visual Studio Code User and Workspace Settings.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-It is easy to configure VS Code to your liking through settings. Nearly every part of VS Code's editor, user interface, and functional behavior have options you can modify.
+VS Codeを好みの設定で構成できます。VS Codeのエディタ、ユーザーインターフェイス、および機能的な動作のほぼすべての部分に、変更可能なオプションを用意しています
 
-VS Code provides two different scopes for settings:
+VS Codeでは設定用に2つのウィンドウを用意しました:
 
-* **User** These settings apply globally to any instance of VS Code you open
-* **Workspace** These settings are stored inside your workspace in a `.vscode` folder and only apply when the workspace is opened. Settings defined on this scope override the user scope.
+* **ユーザー**設定はVS Codeに登録され、グローバルに開いたものすべてに適用します。
+* **ワークスペース**設定はワークスペースの`.vscode`フォルダに登録され、ワークスペースを開いたときのみに適用します。この設定はユーザー設定よりも優先されます。
 
-## Creating User and Workspace Settings
+## ユーザーとワークスペース設定を作成
 
-The menu command **File** > **Preferences** > **Settings** (**Code** > **Preferences** > **Settings** on Mac) provides entry to configure user and workspace settings. You are provided with a list of Default Settings. Copy any setting that you want to change to the appropriate `settings.json` file. The tabs on the right let you switch quickly between the user and workspace settings files.
+**ファイル**(**Code**) > **基本設定** > **設定**で ユーザーとワークスペースの設定を構成するための項目を用意しています。既定の設定リストがあるので、これから編集したい設定をコピーして`setting.json`に書き込みます。右側のタブを使用すると、ユーザーとワークスペース設定ファイルをすばやく切り替えることができます。
 
-You can also open the user and workspace settings from the **Command Palette** (`kb(workbench.action.showCommands)`) with **Preferences: Open User Settings** and **Preferences: Open Workspace Settings**.
+これを**コマンドパレット** (`kb(workbench.action.showCommands)`) から**Preferences: Open User Settings**か**Preferences: Open Workspace Settings**を実行することでも開くことができます。
 
-In the example below, we disabled line numbers in the editor and configured line wrapping to wrap automatically based on the size of the editor.
+行番号の無効化とビューポートの幅での折り返しを次の例で設定します。
 
 ![Example Settings](images/settings/settings.png)
 
-Changes to settings are reloaded by VS Code after the modified `settings.json` file is saved.
+変更は編集した `setting.json` を保存することで適用します。
 
->**Note:** Workspace settings are useful for sharing project specific settings across a team.
+>**Note:** ワークスペースの設定は、チーム全体でプロジェクト設定を共有するのに便利です。
 
-## Settings File Locations
+## 設定ファイルの場所
 
-Depending on your platform, the user settings file is located here:
+プラットフォーム別ユーザー設定ファイルは次の場所にあります:
 
 * **Windows** `%APPDATA%\Code\User\settings.json`
 * **Mac** `$HOME/Library/Application Support/Code/User/settings.json`
 * **Linux** `$HOME/.config/Code/User/settings.json`
 
-The workspace setting file is located under the `.vscode` folder in your project.
+なおワークスペースの設定ファイルはプロジェクトの`.vscode`フォルダの下にあります。
 
-## Default Settings
+## 既定の設定
 
-When you open settings, we show **Default Settings** to search and discover settings you are looking for. When you search using the big Search bar, it will not only show and highlight the settings matching your criteria, but also filter out those which are not matching. This makes finding settings quick and easy. There are actions available inside **Default Settings** and `settings.json` editors which will help you quickly copy or update a setting.
+設定を開いたとき、検索して見つけるのに役立つ**デフォルト設定**を表示します。大きな検索バーで検索すると、条件に一致する設定を表示および強調表示します。それだけでなく一致しない検索結果も除外します。これにより、設定をすばやく簡単に見つけることが可能です。また、**既定の設定**と**setting.json**エディタで設定をコピーまたは更新に役立つ操作を用意しています。
 
 <img alt="settings groups" src="https://az754404.vo.msecnd.net/public/default-settings.gif" />
 
-**Note**: VS Code extensions can also add their own custom settings and they will be visible in the **Default Settings** list at runtime.
+**Note**: VS Code拡張機能による独自設定の追加も可能で、これは**既定の設定**に表示されます。
 
-### Settings groups
+### 設定グループ
 
-Default settings are represented in groups so that you can navigate them easily. It has **Most Commonly Used** group on the top to see the most common customizations done by VS Code users.
+簡単に設定に辿り着けるように、既定の設定を種類ごとに分類しています。VS Code ユーザーがよく行った設定を確認できるように、**よく使用するもの**を一番上に配置しています。
 
 ![Settings Groups](images/settings/settings-groups.png)
 
-Here is the [copy of default settings](/docs/getstarted/settings.md#copy-of-default-settings) that comes with VS Code.
+またVS Codeに付属の[既定の設定のコピー](/docs/getstarted/settings.md#copy-of-default-settings)をこのページに設けています。
 
-## Language specific editor settings
+## 言語固有のエディタ設定
 
-To customize your editor by language, run the global command **Preferences: Configure language specific settings...** (command id: `workbench.action.configureLanguageBasedSettings`) from the **Command Palette** (`kb(workbench.action.showCommands)`) which opens the language picker. Selecting the language you want, opens the Settings editor with the language entry where you can add applicable settings.
+言語設定を設定するには **コマンドパレット** (`kb(workbench.action.showCommands)`) から **Preferences: Configure language specific settings...** (command id: `workbench.action.configureLanguageBasedSettings`) を実行します。言語を選択すると、言語エントリを設定エディタに追記します。
 
 ![Language mode for File](images/settings/pref-config-lang-settings.png)
 
@@ -61,11 +61,11 @@ To customize your editor by language, run the global command **Preferences: Conf
 
 ![Language mode for File](images/settings/lang-based-settings.png)
 
-If you have a file open and you want to customize the editor for this file type, click on the Language Mode in the Status Bar to the bottom-right of the VS Code window. This opens the Language Mode picker with an option **Configure 'language_name' language based settings...**. Selecting this opens the Settings editor with the language entry where you can add applicable settings.
+もしすでに開いているファイルのファイルタイプをカスタマイズする場合、VS Codeステータスバー右の言語モードをクリックします。これにより、**言語モードの選択**が開きます。この中の言語から選択することで、言語エントリを追記した設定エディタを開きます。
 
-You can also configure language based settings by directly opening `settings.json`. You can scope them to the workspace by placing them in the Workspace settings just like other settings. If you have settings defined for a language in both user and workspace scopes, then they are merged by giving precedence to the ones defined in the workspace.
+もちろん直接 `setting.json` を開くことによっても言語ベースの設定は可能です。他の設定と同じようにワークスペース設定に登録することで、ワークスペース内での適用が可能です。なおユーザーとワークスペースの両方で言語設定を定義している場合は、ワークスペースの設定を優先します。
 
-The following examples customize editor settings for language modes `typescript` and `markdown`.
+次の例は、言語モード`typescript`と` markdown`のエディタ設定をカスタマイズします。
 
 ```json
 {
@@ -82,9 +82,9 @@ The following examples customize editor settings for language modes `typescript`
 }
 ```
 
-You can use IntelliSense in Settings editor to help you find allowed language based settings. All editor settings and some non-editor settings are supported.
+設定エディタでIntelliSenseを使用すると、言語ベースの設定を見つけるのに役立ちます。 すべてのエディタ設定と非エディタ設定をサポートしています。
 
-**Note**: The following settings are not currently supported but will be in the next release. Please refer to [#19511](https://github.com/Microsoft/vscode/issues/19511) for more information.
+**Note**: 次の設定は現在サポートしませんが、次のリリースでサポートする予定です。詳細については[#19511](https://github.com/Microsoft/vscode/issues/19511)を参照してください。
 
 ```json
 editor.tabSize
@@ -93,11 +93,11 @@ editor.detectIndentation
 editor.trimAutoWhitespace
 ```
 
-## Settings and security
+## 設定とセキュリティ
 
-In settings, we allow you to specify some of the executables that VS Code will run to do its work. For example, you can choose which shell the Integrated Terminal should use. For enhanced security, such settings can only be defined in user settings and not at workspace scope.
+VS Code の動作に使うファイルを設定で指定できます。たとえば、統合端末が使用するシェルを選択できます。なおセキュリティを強化するためにも、従来のようにワークスペース毎に個別で定義することはできなくなりました。
 
-Here is the list of settings we donr workspaces:
+ワークスペース設定でサポートしない設定の一覧は次のとおりです:
 
 - git.path
 - terminal.integrated.shell.linux
@@ -110,32 +110,32 @@ Here is the list of settings we donr workspaces:
 - terminal.external.osxExec
 - terminal.external.linuxExec
 
-The first time you open a workspace which defines any of these settings, VS Code will warn you and subsequently always ignore the values after that.
+これら設定のいずれかを設定したワークスペースを開くと、VS Code は警告し、その後は常にその値を無視します。
 
-### Copy of Default Settings
+### 既定の設定のコピー
 
-Below are the default settings and their values.
+次は、既定の設定とその値です。
 
 ```json
 {
-// Most Commonly Used
+// よく使用するもの
 
-  // Controls the font size in pixels.
+  // フォント サイズをピクセル単位で制御します。
   "editor.fontSize": 14,
 
-  // Controls auto save of dirty files. Accepted values:  'off', 'afterDelay', 'onFocusChange' (editor loses focus), 'onWindowChange' (window loses focus). If set to 'afterDelay', you can configure the delay in 'files.autoSaveDelay'.
+  // ダーティ ファイルの自動保存を制御します。有効な値: 'off'、'afterDelay'、'onFocusChange' (エディターがフォーカスを失います)、'onWindowChange' (ウィンドウがフォーカスを失います)。'afterDelay' に設定すると、'files.autoSaveDelay' で遅延を構成できます。
   "files.autoSave": "off",
 
-  // Controls the font family.
+  // フォント ファミリを制御します。
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
 
-  // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  // 1 つのタブに相当するスペースの数。`editor.detectIndentation` がオンの場合、この設定はファイル コンテンツに基づいて上書きされます。
   "editor.tabSize": 4,
 
-  // Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
+  // エディターで空白文字を表示する方法を制御します。'none'、'boundary' および 'all' が使用可能です。'boundary' オプションでは、単語間の単一スペースは表示されません。
   "editor.renderWhitespace": "none",
 
-  // Configure glob patterns for excluding files and folders.
+  // ファイルとフォルダーを除外するための glob パターンを構成します。
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -143,310 +143,311 @@ Below are the default settings and their values.
     "**/.DS_Store": true
   },
 
-  // Controls the cursor style, accepted values are 'block', 'block-outline', 'line', 'line-thin', 'underline' and 'underline-thin'
+  // カーソルのスタイルを制御します。指定できる値は 'block'、'block-outline'、'line'、'line-thin'、'underline'、'underline-thin' です
+
   "editor.cursorStyle": "line",
 
-  // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  // Tab キーを押すとスペースが挿入されます。`editor.detectIndentation` がオンの場合、この設定はファイル コンテンツに基づいて上書きされます。
   "editor.insertSpaces": true,
 
-  // Controls how lines should wrap. Can be:
-  //  - 'off' (disable wrapping),
-  //  - 'on' (viewport wrapping),
-  //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
-  //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+  // 行の折り返し方法を制御します。次の値を指定できます。
+  //  - 'off' (折り返さない)
+  //  - 'on' (ビューポート折り返し)
+  //  - 'wordWrapColumn' ('editor.wordWrapColumn' で折り返し)
+  //  - 'bounded' (ビューポートと 'editor.wordWrapColumn' の最小値で折り返し)。
   "editor.wordWrap": "off",
 
-  // Configure file associations to languages (e.g. '*.extension': 'html'). These have precedence over the default associations of the languages installed.
+  // 言語に対するファイルの関連付けを構成します (例: '*.extension': 'html')。これらの関連付けは、インストールされている言語の既定の関連付けより優先されます。
   "files.associations": {}
 
-// Editor
+// エディター
 
-  // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
+  // プレフィックスが一致する場合にスニペットを挿入します。'quickSuggestions' が無効な場合に最適です。
   "editor.tabCompletion": false,
 
-  // Controls the font family.
+  // フォント ファミリを制御します。
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
 
-  // Controls the font weight.
+  // フォントの太さを制御します。
   "editor.fontWeight": "normal",
 
-  // Controls the font size in pixels.
+  // フォント サイズをピクセル単位で制御します。
   "editor.fontSize": 14,
 
-  // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+  // 行の高さを制御します。fontSize に基づいて lineHeight を計算する場合には、0 を使用します。
   "editor.lineHeight": 0,
 
-  // Controls the display of line numbers. Possible values are 'on', 'off', and 'relative'. 'relative' shows the line count from the current cursor position.
+  //  行番号の表示を制御します。使用可能な値は、'on'、'off'、および 'relative' です。'relative' は現在のカーソル位置からの行数を示します。
   "editor.lineNumbers": "on",
 
-  // Columns at which to show vertical rulers
+  // 垂直ルーラーを表示する列
   "editor.rulers": [],
 
-  // Characters that will be used as word separators when doing word related navigations or operations
+  // 単語に関連したナビゲーションまたは操作を実行するときに、単語の区切り文字として使用される文字
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
 
-  // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  // 1 つのタブに相当するスペースの数。`editor.detectIndentation` がオンの場合、この設定はファイル コンテンツに基づいて上書きされます。
   "editor.tabSize": 4,
 
-  // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  // Tab キーを押すとスペースが挿入されます。`editor.detectIndentation` がオンの場合、この設定はファイル コンテンツに基づいて上書きされます。
   "editor.insertSpaces": true,
 
-  // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+  // ファイルを開くと、そのファイルの内容に基づいて `editor.tabSize` と `editor.insertSpaces` が検出されます。
   "editor.detectIndentation": true,
 
-  // Controls if selections have rounded corners
+  // 選択範囲の角を丸くするかどうかを制御します
   "editor.roundedSelection": true,
 
-  // Controls if the editor will scroll beyond the last line
+  // エディターで最後の行を越えてスクロールするかどうかを制御します
   "editor.scrollBeyondLastLine": true,
 
-  // Controls if the minimap is shown
+  // ミニマップを表示するかどうかを制御します
   "editor.minimap.enabled": false,
 
-  // Render the actual characters on a line (as opposed to color blocks)
+  // 行に (カラー ブロックではなく) 実際の文字を表示します
   "editor.minimap.renderCharacters": true,
 
-  // Limit the width of the minimap to render at most a certain number of columns
+  // 表示するミニマップの最大幅を特定の桁数に制限します
   "editor.minimap.maxColumn": 120,
 
-  // Controls how lines should wrap. Can be:
-  //  - 'off' (disable wrapping),
-  //  - 'on' (viewport wrapping),
-  //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
-  //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+  // 行の折り返し方法を制御します。次の値を指定できます。
+  //  - 'off' (折り返さない)
+  //  - 'on' (ビューポート折り返し)
+  //  - 'wordWrapColumn' ('editor.wordWrapColumn' で折り返し)
+  //  - 'bounded' (ビューポートと 'editor.wordWrapColumn' の最小値で折り返し)。
   "editor.wordWrap": "off",
 
-  // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
+  // 'editor.wordWrap' が 'wordWrapColumn' または 'bounded' の場合に、エディターの折り返し桁を制御します。
   "editor.wordWrapColumn": 80,
 
-  // Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
+  // 折り返し行のインデントを制御します。'none'、'same'、または 'indent' のいずれかを指定できます。
   "editor.wrappingIndent": "same",
 
-  // A multiplier to be used on the `deltaX` and `deltaY` of mouse wheel scroll events
+  // マウス ホイール スクロール イベントの `deltaX` と `deltaY` で使用される乗数
   "editor.mouseWheelScrollSensitivity": 1,
 
-  // Controls if quick suggestions should show up or not while typing
+  // 入力中にクイック候補を表示するかどうかを制御します
   "editor.quickSuggestions": true,
 
-  // Controls the delay in ms after which quick suggestions will show up
+  // クイック候補が表示されるまでの待ち時間 (ミリ秒) を制御します
   "editor.quickSuggestionsDelay": 10,
 
-  // Enables parameter hints
+  // パラメーター ヒントを有効にする
   "editor.parameterHints": true,
 
-  // Controls if the editor should automatically close brackets after opening them
+  // エディターで左角かっこの後に自動的に右角かっこを挿入するかどうかを制御します
   "editor.autoClosingBrackets": true,
 
-  // Controls if the editor should automatically format the line after typing
+  // エディターで入力後に自動的に行の書式設定を行うかどうかを制御します
   "editor.formatOnType": false,
 
-  // Controls if the editor should automatically format the pasted content. A formatter must be available and the formatter should be able to format a range in a document.
+  // 貼り付けた内容がエディターにより自動的にフォーマットされるかどうかを制御します。フォーマッタを使用可能にする必要があります。また、フォーマッタがドキュメント内の範囲をフォーマットできなければなりません。
   "editor.formatOnPaste": false,
 
-  // Controls if suggestions should automatically show up when typing trigger characters
+  // トリガー文字の入力時に候補が自動的に表示されるようにするかどうかを制御します
   "editor.suggestOnTriggerCharacters": true,
 
-  // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
+  // 'Tab' キーに加えて 'Enter' キーで候補を受け入れるかどうかを制御します。改行の挿入や候補の反映の間であいまいさを解消するのに役立ちます。
   "editor.acceptSuggestionOnEnter": true,
 
-  // Controls if suggestions should be accepted on commit characters. For instance in JavaScript the semi-colon (';') can be a commit character that accepts a suggestion and types that character.
+  // コミット文字で候補を受け入れるかどうかを制御します。たとえば、JavaScript ではセミコロン (';') をコミット文字にして、候補を受け入れてその文字を入力することができます。
   "editor.acceptSuggestionOnCommitCharacter": true,
 
-  // Controls whether snippets are shown with other suggestions and how they are sorted.
+  // 他の修正候補と一緒にスニペットを表示するかどうか、およびその並び替えの方法を制御します。
   "editor.snippetSuggestions": "bottom",
 
-  // Controls whether copying without a selection copies the current line.
+  // 選択範囲を指定しないでコピーする場合に現在の行をコピーするかどうかを制御します。
   "editor.emptySelectionClipboard": true,
 
-  // Enable word based suggestions.
+  // 単語ベースの修正候補を有効にします。
   "editor.wordBasedSuggestions": true,
 
-  // Font size for the suggest widget
+  // 候補のウィジェットのフォント サイズ
   "editor.suggestFontSize": 0,
 
-  // Line height for the suggest widget
+  // 候補のウィジェットの行の高さ
   "editor.suggestLineHeight": 0,
 
-  // Controls whether the editor should highlight similar matches to the selection
+  // エディターで選択範囲に類似する一致箇所を強調表示するかどうかを制御します
   "editor.selectionHighlight": true,
 
-  // Controls the number of decorations that can show up at the same position in the overview ruler
+  // 概要ルーラーの同じ位置に表示できる装飾の数を制御します
   "editor.overviewRulerLanes": 3,
 
-  // Control the cursor animation style, possible values are 'blink', 'smooth', 'phase', 'expand' and 'solid'
+  // カーソルのアニメーション スタイルを制御します。指定できる値は 'blink'、'smooth'、'phase'、'expand'、'solid' です
   "editor.cursorBlinking": "blink",
 
-  // Zoom the font of the editor when using mouse wheel and holding Ctrl
+  // Ctrl キーを押しながらマウス ホイールを使用してエディターのフォントをズームします
   "editor.mouseWheelZoom": false,
 
-  // Controls the cursor style, accepted values are 'block', 'block-outline', 'line', 'line-thin', 'underline' and 'underline-thin'
+  // カーソルのスタイルを制御します。指定できる値は 'block'、'block-outline'、'line'、'line-thin'、'underline'、'underline-thin' です
   "editor.cursorStyle": "line",
 
-  // Enables font ligatures
+  // フォントの合字を使用します
   "editor.fontLigatures": false,
 
-  // Controls if the cursor should be hidden in the overview ruler.
+  // 概要ルーラーでカーソルを非表示にするかどうかを制御します。
   "editor.hideCursorInOverviewRuler": false,
 
-  // Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
+  // エディターで空白文字を表示する方法を制御します。'none'、'boundary' および 'all' が使用可能です。'boundary' オプションでは、単語間の単一スペースは表示されません。
   "editor.renderWhitespace": "none",
 
-  // Controls whether the editor should render control characters
+  // エディターで制御文字を表示する必要があるかどうかを制御します
   "editor.renderControlCharacters": false,
 
-  // Controls whether the editor should render indent guides
+  // エディターでインデントのガイドを表示する必要があるかどうかを制御します
   "editor.renderIndentGuides": false,
 
-  // Controls how the editor should render the current line highlight, possibilities are 'none', 'gutter', 'line', and 'all'.
+  // エディターが現在の行をどのように強調表示するかを制御します。考えられる値は 'なし'、'余白'、'行、'すべて' です。
   "editor.renderLineHighlight": "line",
 
-  // Controls if the editor shows code lenses
+  // エディターでコード レンズを表示するかをどうかを制御する
   "editor.codeLens": true,
 
-  // Controls whether the editor has code folding enabled
+  // エディターでコードの折りたたみを有効にするかどうかを制御します
   "editor.folding": true,
 
-  // Highlight matching brackets when one of them is selected.
+  // かっこを選択すると、対応するかっこを強調表示します。
   "editor.matchBrackets": true,
 
-  // Controls whether the editor should render the vertical glyph margin. Glyph margin is mostly used for debugging.
+  // エディターで縦のグリフ余白が表示されるかどうかを制御します。ほとんどの場合、グリフ余白はデバッグに使用されます。
   "editor.glyphMargin": true,
 
-  // Inserting and deleting whitespace follows tab stops
+  // 空白の挿入や削除はタブ位置に従って行われます
   "editor.useTabStops": true,
 
-  // Remove trailing auto inserted whitespace
+  // 自動挿入された末尾の空白を削除する
   "editor.trimAutoWhitespace": true,
 
-  // Keep peek editors open even when double clicking their content or when hitting Escape.
+  // エディターのコンテンツをダブルクリックするか、Esc キーを押しても、ピーク エディターを開いたままにします。
   "editor.stablePeek": false,
 
-  // Controls if the editor should allow to move selections via drag and drop.
+  // ドラッグ アンド ドロップによる選択範囲の移動をエディターが許可する必要があるかどうかを制御します。
   "editor.dragAndDrop": false,
 
-  // Controls if the diff editor shows the diff side by side or inline
+  // 差分エディターが差分を横に並べて表示するか、行内に表示するかを制御します
   "diffEditor.renderSideBySide": true,
 
-  // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
+  // 差分エディターが、先頭または末尾の空白の変更を差分として表示するかどうかを制御します。
   "diffEditor.ignoreTrimWhitespace": true,
 
-  // Controls if the diff editor shows +/- indicators for added/removed changes
+  // 差分エディターが追加/削除された変更に +/- インジケーターを示すかどうかを制御します
   "diffEditor.renderIndicators": true,
 
-  // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
+  // ファイルを保存するときにフォーマットしてください。フォーマッタを使用可能にして、ファイルを自動保存せず、エディターをシャットダウンしないでください。
   "editor.formatOnSave": false,
 
 // Emmet
 
-  // When enabled, emmet abbreviations are expanded when pressing TAB.
+  // これをオンにすると、TAB キーを押したときに emmet 省略記法が展開されます.
   "emmet.triggerExpansionOnTab": true,
 
-  // Preferences used to modify behavior of some actions and resolvers of Emmet.
+  // Emmet の一部のアクションやリゾルバーの動作の変更に使用される設定。
   "emmet.preferences": {},
 
-  // Define profile for specified syntax or use your own profile with specific rules.
+  // 指定した構文に対してプロファイルを定義するか、特定の規則がある独自のプロファイルをご使用ください。
   "emmet.syntaxProfiles": {},
 
-  // An array of languages where emmet abbreviations should not be expanded.
+  // emmet 省略記法を展開すべきでない言語の配列。
   "emmet.excludeLanguages": [
     "markdown"
   ],
 
-  // Path to a folder containing emmet profiles, snippets and preferences
+  // Emmet のプロファイル、スニペット、ユーザー設定を含むフォルダーへのパス
   "emmet.extensionsPath": null,
 
-// Workbench
+// ワークベンチ
 
-  // When enabled, will show the Welcome page on startup.
+  // 有効にすると、スタートアップ時に、ようこそページが表示されます。
   "workbench.welcome.enabled": false,
 
-  // Controls if opened editors should show in tabs or not.
+  // 開いているエディターをタブに表示するかどうかを制御します。
   "workbench.editor.showTabs": true,
 
-  // Controls the position of the editor's tabs close buttons or disables them when set to 'off'.
+  // エディター タブの閉じるボタンの位置を制御するか、[オフ] に設定した場合に無効にします。
   "workbench.editor.tabCloseButton": "right",
 
-  // Controls if opened editors should show with an icon or not. This requires an icon theme to be enabled as well.
+  // 開いているエディターをアイコンで表示するかどうかを制御します。これには、アイコンのテーマを有効にする必要もあります。
   "workbench.editor.showIcons": true,
 
-  // Controls if opened editors show as preview. Preview editors are reused until they are kept (e.g. via double click or editing).
+  // 開いているエディターをプレビューとして表示するかどうかを制御します。プレビュー エディターは、保持されている間、再利用されます (ダブルクリックまたは編集などによって)。
   "workbench.editor.enablePreview": true,
 
-  // Controls if opened editors from Quick Open show as preview. Preview editors are reused until they are kept (e.g. via double click or editing).
+  // Quick Open で開いたエディターをプレビューとして表示するかどうかを制御します。プレビュー エディターは、保持されている間、再利用されます (ダブルクリックまたは編集などによって)。
   "workbench.editor.enablePreviewFromQuickOpen": true,
 
-  // Controls where editors open. Select 'left' or 'right' to open editors to the left or right of the current active one. Select 'first' or 'last' to open editors independently from the currently active one.
+  // エディターを開く場所を制御します。[左] または [右] を選択して、現在アクティブになっているエディターの左または右にエディターを開きます。[最初] または [最後] を選択して、現在アクティブになっているエディターとは別個にエディターを開きます。
   "workbench.editor.openPositioning": "right",
 
-  // Controls if Quick Open should close automatically once it loses focus.
+  // フォーカスを失ったときに Quick Open を自動的に閉じるかどうかを制御します。
   "workbench.quickOpen.closeOnFocusLost": true,
 
-  // Controls if opening settings also opens an editor showing all default settings.
+  // 設定を開くとすべての既定の設定を表示するエディターも開くかどうかを制御します。
   "workbench.settings.openDefaultSettings": true,
 
-  // Controls the location of the sidebar. It can either show on the left or right of the workbench.
+  // サイド バーの位置を制御します。ワークベンチの左右のいずれかに表示できます。
   "workbench.sideBar.location": "left",
 
-  // Controls the visibility of the status bar at the bottom of the workbench.
+  // ワークベンチの下部にステータス バーを表示するかどうかを制御します。
   "workbench.statusBar.visible": true,
 
-  // Controls the visibility of the activity bar in the workbench.
+  // ワークベンチでのアクティビティ バーの表示をコントロールします。
   "workbench.activityBar.visible": true,
 
-  // Specifies the color theme used in the workbench.
+  // ワークベンチで使用する配色テーマを指定します。
   "workbench.colorTheme": "Default Dark+",
 
-  // Specifies the icon theme used in the workbench.
+  // ワークベンチで使用するアイコンのテーマを指定します。
   "workbench.iconTheme": null,
 
-// Window
+// ウィンドウ
 
-  // Controls if files should open in a new window.
-  // - default: files will open in the window with the files' folder open or the last active window unless opened via the dock or from finder (macOS only)
-  // - on: files will open in a new window
-  // - off: files will open in the window with the files' folder open or the last active window
-  // Note that there can still be cases where this setting is ignored (e.g. when using the -new-window or -reuse-window command line option).
+  // ファイルを新しいウィンドウで開くかどうかを制御します。
+  // - default: ファイルのフォルダーが開かれていたウィンドウでファイルを開くか、Dock または Finder を使用して開く場合以外は最後のアクティブ ウィンドウでファイルを開きます (macOS のみ)
+  // - on: 新しいウィンドウでファイルを開きます
+  // - off: ファイルのフォルダーが開かれていたウィンドウまたは最後のアクティブ ウィンドウでファイルを開きます
+  // この設定は無視される場合もあります (-new-window または -reuse-window コマンド ライン オプションを使用する場合など)。
   "window.openFilesInNewWindow": "default",
 
-  // Controls if folders should open in a new window or replace the last active window.
-  // - default: folders will open in a new window unless a folder is picked from within the application (e.g. via the File menu)
-  // - on: folders will open in a new window
-  // - off: folders will replace the last active window
-  // Note that there can still be cases where this setting is ignored (e.g. when using the -new-window or -reuse-window command line option).
+  // フォルダーを新しいウィンドウで開くか、最後のアクティブ ウィンドウで開くかを制御します。
+  // - 既定: アプリケーション内で ([ファイル] メニューなどから) 選択したものでなければ、新しいウィンドウでフォルダーを開く
+  // - オン: 新しいウィンドウでフォルダーを開く
+  // - オフ: 最後のアクティブ ウィンドウでフォルダーを開く
+  // この設定は無視される場合もあります (-new-window または -reuse-window コマンド ライン オプションを使用する場合など)。
   "window.openFoldersInNewWindow": "default",
 
-  // Controls how folders are being reopened after a restart. Select 'none' to never reopen a folder, 'one' to reopen the last folder you worked on or 'all' to reopen all folders of your last session.
+  // 再起動後にフォルダーを再度開く方法を制御します。'none' を選択するとフォルダーを再度開くことはありません。'one' を選択すると最後に作業したフォルダーを再度開きます。'all' を選択すると前回のセッションのフォルダーすべてを再度開きます。
   "window.reopenFolders": "one",
 
-  // Controls if a window should restore to full screen mode if it was exited in full screen mode.
+  // 全画面表示モードで終了した場合に、ウィンドウを全画面表示モードに復元するかどうかを制御します。
   "window.restoreFullscreen": false,
 
-  // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
+  // ウィンドウのズーム レベルを調整します。元のサイズは 0 で、1 つ上げるごとに (1 など) 20% ずつ拡大することを表し、1 つ下げるごとに (-1 など) 20% ずつ縮小することを表します。小数点以下の桁数を入力して、さらに細かくズーム レベルを調整することもできます。
   "window.zoomLevel": 0,
 
-  // Controls the window title based on the active editor. Variables are substituted based on the context:
-  // ${activeEditorShort}: e.g. myFile.txt
-  // ${activeEditorMedium}: e.g. myFolder/myFile.txt
-  // ${activeEditorLong}: e.g. /Users/Development/myProject/myFolder/myFile.txt
-  // ${rootName}: e.g. myProject
-  // ${rootPath}: e.g. /Users/Development/myProject
-  // ${appName}: e.g. VS Code
-  // ${dirty}: a dirty indicator if the active editor is dirty
-  // ${separator}: a conditional separator (" - ") that only shows when surrounded by variables with values
+  // アクティブなエディターに基づいてウィンドウのタイトルを制御します。変数は、コンテキストに基づいて置換されます:
+  // ${activeEditorShort}: 例: myFile.txt
+  // ${activeEditorMedium}: 例: myFolder/myFile.txt
+  // ${activeEditorLong}: 例: /Users/Development/myProject/myFolder/myFile.txt
+  // ${rootName}: 例: myProject
+  // ${rootPath}: 例: /Users/Development/myProject
+  // ${appName}: 例: VS Code
+  // ${dirty}: アクティブなエディターがダーティである場合のダーティ インジケーター
+  // ${separator}: 値のある変数で囲まれた場合にのみ表示される条件付き区切り記号 (" - ")
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
 
-  // Controls the dimensions of opening a new window. By default, a new window will open in the center of the screen with small dimensions. When set to  'inherit', the window will get the same dimensions as the last active one. When set to 'maximized', the window will open maximized and fullscreen if configured to 'fullscreen'.
+  // 新しいウィンドウを開くときのサイズを制御します。既定では、新しいウィンドウは画面の中央に小さいサイズで開きます。'継承' に設定すると、最後のアクティブ ウィンドウと同じサイズで開きます。'最大化' に設定するとウィンドウは最大サイズで開き、'全画面表示' に設定すると全画面になります。
   "window.newWindowDimensions": "default",
 
-  // Control the visibility of the menu bar. A setting of 'toggle' means that the menu bar is hidden and a single press of the Alt key will show it. By default, the menu bar will be visible, unless the window is full screen.
+  // メニュー バーの表示/非表示を制御します。'切り替え' 設定は Alt キーを 1 回押すとメニュー バーの表示/非表示が切り替わることを意味します。既定では、ウィンドウが全画面表示の場合を除き、メニュー バーは表示されます。
   "window.menuBarVisibility": "default",
 
-  // If enabled, will automatically change to high contrast theme if Windows is using a high contrast theme, and to dark theme when switching away from a Windows high contrast theme.
+  // 有効にすると、Windows でハイ コントラスト テーマが使用されている場合にはハイ コントラスト テーマに自動的に変更され、Windows のハイ コントラスト テーマから切り替えられている場合にはダーク テーマに自動的に変更されます。
   "window.autoDetectHighContrast": true,
 
-// Files
+// ファイル
 
-  // Configure glob patterns for excluding files and folders.
+  // ファイルとフォルダーを除外するための glob パターンを構成します。
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -454,182 +455,183 @@ Below are the default settings and their values.
     "**/.DS_Store": true
   },
 
-  // Configure file associations to languages (e.g. '*.extension': 'html'). These have precedence over the default associations of the languages installed.
+  // 言語に対するファイルの関連付けを構成します (例: '*.extension': 'html')。これらの関連付けは、インストールされている言語の既定の関連付けより優先されます。
   "files.associations": {},
 
-  // The default character set encoding to use when reading and writing files.
+  // ファイルの読み取り/書き込みで使用する既定の文字セット エンコーディング。
   "files.encoding": "utf8",
 
-  // The default end of line character.
+  // 既定の改行文字。
   "files.eol": "\r\n",
 
-  // When enabled, will trim trailing whitespace when saving a file.
+  // 有効にすると、ファイルの保存時に末尾の空白をトリミングします。
   "files.trimTrailingWhitespace": false,
 
-  // When enabled, insert a final new line at the end of the file when saving it.
+  // 有効にすると、ファイルの保存時に最新の行を末尾に挿入します。
   "files.insertFinalNewline": false,
 
-  // Controls auto save of dirty files. Accepted values:  'off', 'afterDelay', 'onFocusChange' (editor loses focus), 'onWindowChange' (window loses focus). If set to 'afterDelay', you can configure the delay in 'files.autoSaveDelay'.
+  // ダーティ ファイルの自動保存を制御します。有効な値: 'off'、'afterDelay'、'onFocusChange' (エディターがフォーカスを失います)、'onWindowChange' (ウィンドウがフォーカスを失います)。'afterDelay' に設定すると、'files.autoSaveDelay' で遅延を構成できます。
   "files.autoSave": "off",
 
-  // Controls the delay in ms after which a dirty file is saved automatically. Only applies when 'files.autoSave' is set to 'afterDelay'
+  // ダーティ ファイルの自動保存の遅延をミリ秒単位で制御します。'files.autoSave' が 'afterDelay' に設定されている場合のみ適用されます
   "files.autoSaveDelay": 1000,
 
-  // Configure glob patterns of file paths to exclude from file watching. Changing this setting requires a restart. When you experience Code consuming lots of cpu time on startup, you can exclude large folders to reduce the initial load.
+  // ファイル モニタリングから除外するファイル パスの glob パターンを構成します。この設定を変更すると、再起動が必要になります。始動時に Code が消費する CPU 時間が多い場合は、大規模なフォルダーを除外して初期ロードを減らせます。
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/node_modules/**": true
   },
 
-  // Controls whether unsaved files are remembered between sessions, allowing the save prompt when exiting the editor to be skipped.
+  // エディターを終了するときに保存を確認するダイアログを省略し、保存されていないファイルをセッション後も保持するかどうかを制御します。
   "files.hotExit": "onExit",
 
 // Zen Mode
 
-  // Controls if turning on Zen Mode also puts the workbench into full screen mode.
+  // Zen Mode をオンにするとワークベンチを自動的に全画面モードに切り替えるかどうかを制御します。
   "zenMode.fullScreen": true,
 
-  // Controls if turning on Zen Mode also hides workbench tabs.
+  // Zen Mode をオンにするとワークベンチ タブを非表示にするかどうかを制御します。
   "zenMode.hideTabs": true,
 
-  // Controls if turning on Zen Mode also hides the status bar at the bottom of the workbench.
+  // Zen Mode をオンにするとワークベンチの下部にあるステータス バーを非表示にするかどうかを制御します。
   "zenMode.hideStatusBar": true,
 
-  // Controls if a window should restore to zen mode if it was exited in zen mode.
+  // Zen Mode で終了したウィンドウを Zen Mode に復元するかどうかを制御します。
   "zenMode.restore": false,
 
-// File Explorer
+// エクスプローラー
 
-  // Number of editors shown in the Open Editors pane. Set it to 0 to hide the pane.
+  // [開いているエディター] ウィンドウに表示されているエディターの数。0 に設定するとウィンドウが非表示になります。
   "explorer.openEditors.visible": 9,
 
-  // Controls if the height of the open editors section should adapt dynamically to the number of elements or not.
+  // 開いているエディターのセクションの高さを要素の数に合わせて動的に調整するかどうかを制御します。
   "explorer.openEditors.dynamicHeight": true,
 
-  // Controls if the explorer should automatically reveal and select files when opening them.
+  // エクスプローラーでファイルを開くとき、自動的にファイルの内容を表示して選択するかどうかを制御します。
   "explorer.autoReveal": true,
 
-  // Controls if the explorer should allow to move files and folders via drag and drop.
+  // ドラッグ アンド ドロップを使用したファイルとフォルダーの移動をエクスプローラーが許可するかどうかを制御します。
   "explorer.enableDragAndDrop": true,
 
-// Search
+// 検索
 
-  // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
+  // 検索でファイルとフォルダーを除外するために glob パターンを構成します。files.exclude 設定からすべての glob パターンを継承します。
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true
   },
 
-  // Configure to include results from a global symbol search in the file results for Quick Open.
+  // グローバル シンボル検索の結果を、Quick Open の結果ファイルに含めるように構成します。
   "search.quickOpen.includeSymbols": false,
 
 // Git
 
-  // Is git enabled
+  // git を有効または無効にします
   "git.enabled": true,
 
-  // Path to the git executable
+  // Git 実行可能ファイルのパス
   "git.path": null,
 
-  // Whether auto refreshing is enabled
+  // 自動更新が有効かどうか
   "git.autorefresh": true,
 
-  // Whether auto fetching is enabled.
+  // 自動フェッチの有効/無効。
   "git.autofetch": true,
 
-  // Whether long commit messages should be warned about.
+  // 長いコミット メッセージを警告するかどうか。
   "git.enableLongCommitWarning": true,
 
-  // Always allow large repositories to be managed by Code.
+  // Code による大規模なリポジトリの管理を常に許可します。
   "git.allowLargeRepositories": false,
 
-  // Confirm before synchronizing git repositories.
+  // Git リポジトリを同期する前に確認します。
   "git.confirmSync": true,
 
-  // Controls the git badge counter.
+  // Git バッジ カウンターを制御します。
   "git.countBadge": "all",
 
-  // Controls what type of branches are listed.
+  // 一覧表示する分岐の種類を制御します。
   "git.checkoutType": "all",
 
 // HTTP
 
-  // The proxy setting to use. If not set will be taken from the http_proxy and https_proxy environment variables
+  // 使用するプロキシ設定。設定されていない場合、環境変数 http_proxy および https_proxy から取得されます。
   "http.proxy": "",
 
-  // Whether the proxy server certificate should be verified against the list of supplied CAs.
+  // 提供された CA の一覧と照らしてプロキシ サーバーの証明書を確認するかどうか。
   "http.proxyStrictSSL": true,
 
-  // The value to send as the 'Proxy-Authorization' header for every network request.
+  // すべてのネットワーク要求に対して 'Proxy-Authorization' ヘッダーとして送信する値。
   "http.proxyAuthorization": null,
 
-// Update
+// 更新
 
-  // Configure whether you receive automatic updates from an update channel. Requires a restart after change.
+  // 更新チャネルから自動更新を受信するかどうかを構成します。変更後に再起動が必要です。
   "update.channel": "default",
 
 // CSS
 
   // Controls CSS validation and problem severities.
 
-  // Enables or disables all validations
+  // すべての検証を有効または無効にします
   "css.validate": true,
 
-  // Enables or disables color decorators
+  // カラー デコレーターを有効または無効にします
   "css.colorDecorators.enable": true,
 
-  // When using a vendor-specific prefix make sure to also include all other vendor-specific properties
+  // ベンダー固有のプレフィックスを使用する場合は、他のすべてのベンダー固有のプロパティも必ず含めてください
+
   "css.lint.compatibleVendorPrefixes": "ignore",
 
-  // When using a vendor-specific prefix also include the standard property
+  // ベンダー固有のプレフィックスを使用する場合は、標準のプロパティも含めます
   "css.lint.vendorPrefix": "warning",
 
-  // Do not use duplicate style definitions
+  // 重複するスタイル定義を使用しないでください
   "css.lint.duplicateProperties": "ignore",
 
-  // Do not use empty rulesets
+  // 空の規則セットを使用しないでください
   "css.lint.emptyRules": "warning",
 
-  // Import statements do not load in parallel
+  // 複数の Import ステートメントを同時に読み込むことはできません
   "css.lint.importStatement": "ignore",
 
-  // Do not use width or height when using padding or border
+  // パディングまたは枠線を使用する場合は幅または高さを使用しないでください
   "css.lint.boxModel": "ignore",
 
-  // The universal selector (*) is known to be slow
+  // ユニバーサル セレクター (*) を使用すると処理速度が低下することが分かっています
   "css.lint.universalSelector": "ignore",
 
-  // No unit for zero needed
+  // 0 の単位は必要ありません
   "css.lint.zeroUnits": "ignore",
 
-  // @font-face rule must define 'src' and 'font-family' properties
+  // @font-face 規則で 'src' プロパティと 'font-family' プロパティを定義する必要があります
   "css.lint.fontFaceProperties": "warning",
 
-  // Hex colors must consist of three or six hex numbers
+  // 16 進数の色には、3 つまたは 6 つの 16 進数が含まれる必要があります
   "css.lint.hexColorLength": "error",
 
-  // Invalid number of parameters
+  // 正しくないパラメーターの数
   "css.lint.argumentsInColorFunction": "error",
 
-  // Unknown property.
+  // 不明なプロパティ。
   "css.lint.unknownProperties": "warning",
 
-  // IE hacks are only necessary when supporting IE7 and older
+  // IE ハックは、IE7 以前をサポートする場合にのみ必要です
   "css.lint.ieHack": "ignore",
 
-  // Unknown vendor specific property.
+  // 不明なベンダー固有のプロパティ。
   "css.lint.unknownVendorSpecificProperties": "ignore",
 
-  // Property is ignored due to the display. E.g. with 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect
+  // 表示によりプロパティが無視されます。たとえば、'display: inline' の場合、width、height、margin-top、margin-bottom、および float のプロパティには効果がありません
   "css.lint.propertyIgnoredDueToDisplay": "warning",
 
-  // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+  // !important は使用しないでください。これは CSS 全体の特定性が制御不能になり、リファクタリングが必要なことを示しています。
   "css.lint.important": "ignore",
 
-  // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+  // 'float' は使用しないでください。float を使用すると、レイアウトの一部が変更されたときに CSS が破損しやすくなります。
   "css.lint.float": "ignore",
 
-  // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+  // セレクターには ID を含めないでください。これらの規則と HTML の結合が密接すぎます。
   "css.lint.idSelector": "ignore",
 
   // Traces the communication between VS Code and the CSS language server.
@@ -639,189 +641,195 @@ Below are the default settings and their values.
 
   // Controls SCSS validation and problem severities.
 
-  // Enables or disables all validations
+  // すべての検証を有効または無効にします
   "scss.validate": true,
 
-  // Enables or disables color decorators
+  // カラー デコレーターを有効または無効にします
   "scss.colorDecorators.enable": true,
 
-  // When using a vendor-specific prefix make sure to also include all other vendor-specific properties
+  // ベンダー固有のプレフィックスを使用する場合は、他のすべてのベンダー固有のプロパティも必ず含めてください
   "scss.lint.compatibleVendorPrefixes": "ignore",
 
-  // When using a vendor-specific prefix also include the standard property
+  // ベンダー固有のプレフィックスを使用する場合は、標準のプロパティも含めます
+
   "scss.lint.vendorPrefix": "warning",
 
-  // Do not use duplicate style definitions
+  // 重複するスタイル定義を使用しないでください
+
   "scss.lint.duplicateProperties": "ignore",
 
-  // Do not use empty rulesets
+  // 空の規則セットを使用しないでください
+
   "scss.lint.emptyRules": "warning",
 
-  // Import statements do not load in parallel
+  // 複数の Import ステートメントを同時に読み込むことはできません
+
   "scss.lint.importStatement": "ignore",
 
-  // Do not use width or height when using padding or border
+  // パディングまたは枠線を使用する場合は幅または高さを使用しないでください
+
   "scss.lint.boxModel": "ignore",
 
-  // The universal selector (*) is known to be slow
+  // ユニバーサル セレクター (*) を使用すると処理速度が低下することが分かっています
+
   "scss.lint.universalSelector": "ignore",
 
-  // No unit for zero needed
+  // 0 の単位は必要ありません
   "scss.lint.zeroUnits": "ignore",
 
-  // @font-face rule must define 'src' and 'font-family' properties
+  // @font-face 規則で 'src' プロパティと 'font-family' プロパティを定義する必要があります
   "scss.lint.fontFaceProperties": "warning",
 
-  // Hex colors must consist of three or six hex numbers
+  // 16 進数の色には、3 つまたは 6 つの 16 進数が含まれる必要があります
   "scss.lint.hexColorLength": "error",
 
-  // Invalid number of parameters
+  // 正しくないパラメーターの数
   "scss.lint.argumentsInColorFunction": "error",
 
-  // Unknown property.
+  // 不明なプロパティ。
   "scss.lint.unknownProperties": "warning",
 
-  // IE hacks are only necessary when supporting IE7 and older
+  // IE ハックは、IE7 以前をサポートする場合にのみ必要です
   "scss.lint.ieHack": "ignore",
 
-  // Unknown vendor specific property.
+  // 不明なベンダー固有のプロパティ。
   "scss.lint.unknownVendorSpecificProperties": "ignore",
 
-  // Property is ignored due to the display. E.g. with 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect
+  // 表示によりプロパティが無視されます。たとえば、'display: inline' の場合、width、height、margin-top、margin-bottom、および float のプロパティには効果がありません
   "scss.lint.propertyIgnoredDueToDisplay": "warning",
 
-  // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+  // !important は使用しないでください。これは CSS 全体の特定性が制御不能になり、リファクタリングが必要なことを示しています。
   "scss.lint.important": "ignore",
 
-  // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+  // 'float' は使用しないでください。float を使用すると、レイアウトの一部が変更されたときに CSS が破損しやすくなります。
   "scss.lint.float": "ignore",
 
-  // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+  // セレクターには ID を含めないでください。これらの規則と HTML の結合が密接すぎます。
   "scss.lint.idSelector": "ignore",
 
 // LESS
 
   // Controls LESS validation and problem severities.
 
-  // Enables or disables all validations
+  // すべての検証を有効または無効にします
   "less.validate": true,
 
-  // Enables or disables color decorators
+  // カラー デコレーターを有効または無効にします
   "less.colorDecorators.enable": true,
 
-  // When using a vendor-specific prefix make sure to also include all other vendor-specific properties
+  // ベンダー固有のプレフィックスを使用する場合は、他のすべてのベンダー固有のプロパティも必ず含めてください
   "less.lint.compatibleVendorPrefixes": "ignore",
 
-  // When using a vendor-specific prefix also include the standard property
+  // ベンダー固有のプレフィックスを使用する場合は、標準のプロパティも含めます
   "less.lint.vendorPrefix": "warning",
 
-  // Do not use duplicate style definitions
+  // 重複するスタイル定義を使用しないでください
   "less.lint.duplicateProperties": "ignore",
 
-  // Do not use empty rulesets
+  // 空の規則セットを使用しないでください
   "less.lint.emptyRules": "warning",
 
-  // Import statements do not load in parallel
+  // 複数の Import ステートメントを同時に読み込むことはできません
   "less.lint.importStatement": "ignore",
 
-  // Do not use width or height when using padding or border
+  // パディングまたは枠線を使用する場合は幅または高さを使用しないでください
   "less.lint.boxModel": "ignore",
 
-  // The universal selector (*) is known to be slow
+  // ユニバーサル セレクター (*) を使用すると処理速度が低下することが分かっています
   "less.lint.universalSelector": "ignore",
 
-  // No unit for zero needed
+  // 0 の単位は必要ありません
   "less.lint.zeroUnits": "ignore",
 
-  // @font-face rule must define 'src' and 'font-family' properties
+  // @font-face 規則で 'src' プロパティと 'font-family' プロパティを定義する必要があります
   "less.lint.fontFaceProperties": "warning",
 
-  // Hex colors must consist of three or six hex numbers
+  // 16 進数の色には、3 つまたは 6 つの 16 進数が含まれる必要があります
   "less.lint.hexColorLength": "error",
 
-  // Invalid number of parameters
+  // 正しくないパラメーターの数
   "less.lint.argumentsInColorFunction": "error",
 
-  // Unknown property.
+  // 不明なプロパティ。
   "less.lint.unknownProperties": "warning",
 
-  // IE hacks are only necessary when supporting IE7 and older
+  // IE ハックは、IE7 以前をサポートする場合にのみ必要です
   "less.lint.ieHack": "ignore",
 
-  // Unknown vendor specific property.
+  // 不明なベンダー固有のプロパティ。
   "less.lint.unknownVendorSpecificProperties": "ignore",
 
-  // Property is ignored due to the display. E.g. with 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect
+  // 表示によりプロパティが無視されます。たとえば、'display: inline' の場合、width、height、margin-top、margin-bottom、および float のプロパティには効果がありません
   "less.lint.propertyIgnoredDueToDisplay": "warning",
 
-  // Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+  // !important は使用しないでください。これは CSS 全体の特定性が制御不能になり、リファクタリングが必要なことを示しています。
   "less.lint.important": "ignore",
 
-  // Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+  // 'float' は使用しないでください。float を使用すると、レイアウトの一部が変更されたときに CSS が破損しやすくなります。
   "less.lint.float": "ignore",
 
-  // Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+  // セレクターには ID を含めないでください。これらの規則と HTML の結合が密接すぎます。
   "less.lint.idSelector": "ignore",
 
-// Debug
+// デバッグ
 
-  // Allows setting breakpoint in any file
+  // 任意のファイルにブレークポイントを設定できるようにする
   "debug.allowBreakpointsEverywhere": false,
 
-  // Automatically open explorer view on the end of a debug session
+  // デバッグ セッションの終わりにエクスプローラ ビューを自動的に開きます
   "debug.openExplorerOnEnd": false,
 
-  // Show variable values inline in editor while debugging
+  // デバッグ中にエディターの行内に変数値を表示します
   "debug.inlineValues": false,
 
 // HTML
 
-  // Enable/disable default HTML formatter (requires restart)
+  // 既定の HTML フォーマッタを有効/無効にします (再起動が必要です)
   "html.format.enable": true,
 
-  // Maximum amount of characters per line (0 = disable).
+  // 1 行あたりの最大文字数 (0 = 無効にする)。
   "html.format.wrapLineLength": 120,
 
-  // List of tags, comma separated, that shouldn't be reformatted. 'null' defaults to all tags listed at https://www.w3.org/TR/html5/dom.html#phrasing-content.
+  // 再フォーマットしてはならないタグの、コンマ区切りの一覧。'null' の場合、既定で https://www.w3.org/TR/html5/dom.html#phrasing-content にリストされているすべてのタグになります。
   "html.format.unformatted": "a, abbr, acronym, b, bdo, big, br, button, cite, code, dfn, em, i, img, input, kbd, label, map, object, q, samp, select, small, span, strong, sub, sup, textarea, tt, var",
 
-  // List of tags, comma separated, where the content shouldn't be reformatted. 'null' defaults to the 'pre' tag.
+  // 再フォーマットしてはならないタグを、コンマで区切ってリストにします。'null' は、既定値の 'pre' タグを表します。
   "html.format.contentUnformatted": "pre",
 
-  // Indent <head> and <body> sections.
+  // <head> セクションと <body> セクションをインデントします。
   "html.format.indentInnerHtml": false,
 
-  // Whether existing line breaks before elements should be preserved. Only works before elements, not inside tags or for text.
+  // 要素の前にある既存の改行を保持するかどうか。要素の前でのみ機能し、タグの内側やテキストに対しては機能しません。
   "html.format.preserveNewLines": true,
 
-  // Maximum number of line breaks to be preserved in one chunk. Use 'null' for unlimited.
+  //  1 つのチャンク内に保持できる改行の最大数。無制限にするには、'null' を使います。
   "html.format.maxPreserveNewLines": null,
 
-  // Format and indent {{#foo}} and {{/foo}}.
+  // 書式設定とインデント {{#foo}} および {{/foo}}。
   "html.format.indentHandlebars": false,
 
-  // End with a newline.
+  // 末尾に改行を入れます。
   "html.format.endWithNewline": false,
 
-  // List of tags, comma separated, that should have an extra newline before them. 'null' defaults to "head, body, /html".
+  // 直前に改行を 1 つ入れるタグの、コンマで区切られたリストです。'null' は、既定値の "head, body, /html" を表します。
   "html.format.extraLiners": "head, body, /html",
 
-  // Wrap attributes.
+  // 属性を折り返します。
   "html.format.wrapAttributes": "auto",
 
-  // Configures if the built-in HTML language support suggests Angular V1 tags and properties.
+  // ビルトイン HTML 言語サポートが Angular V1 のタグおよびプロパティを候補表示するかどうかを構成します。
   "html.suggest.angular1": true,
 
-  // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
+  // ビルトイン HTML 言語サポートが Ionic のタグ、プロパティ、および値を候補表示するかどうかを構成します。
   "html.suggest.ionic": true,
 
-  // Configures if the built-in HTML language support suggests HTML5 tags, properties and values.
+  // ビルトイン HTML 言語サポートが HTML5 のタグ、プロパティ、および値を候補表示するかどうかを構成します。
   "html.suggest.html5": true,
 
-  // Configures if the built-in HTML language support validates embedded scripts.
+  // ビルトイン HTML 言語サポートが埋め込みスクリプトを検証するかどうかを構成します。
   "html.validate.scripts": true,
 
-  // Configures if the built-in HTML language support validates embedded styles.
+  // ビルトイン HTML 言語サポートが埋め込みスタイルを検証するかどうかを構成します。
   "html.validate.styles": true,
 
   // Traces the communication between VS Code and the HTML language server.
@@ -829,10 +837,10 @@ Below are the default settings and their values.
 
 // JSON
 
-  // Associate schemas to JSON files in the current project
+  // スキーマを現在のプロジェクトの JSON ファイルに関連付けます
   "json.schemas": [],
 
-  // Enable/disable default JSON formatter (requires restart)
+  // 既定の JSON フォーマッタを有効/無効にします (再起動が必要です)
   "json.format.enable": true,
 
   // Traces the communication between VS Code and the JSON language server.
@@ -840,212 +848,212 @@ Below are the default settings and their values.
 
 // Markdown
 
-  // A list of URLs or local paths to CSS style sheets to use from the markdown preview. Relative paths are interpreted relative to the folder open in the explorer. If there is no open folder, they are interpreted relative to the location of the markdown file. All '\' need to be written as '\\'.
+  // マークダウン プレビューから使用する CSS スタイル シートの URL またはローカル パスの一覧。相対パスは、エクスプローラーで開かれているフォルダーへの絶対パスと解釈されます。開かれているフォルダーがない場合、マークダウン ファイルの場所を基準としていると解釈されます。'' はすべて '\' と入力する必要があります。
   "markdown.styles": [],
 
-  // Sets how YAML front matter should be rendered in the markdown preview. 'hide' removes the front matter. Otherwise, the front matter is treated as markdown content.
+  // マークダウン プレビューで YAML front matter がレンダリングされる方法を設定します。'hide' の場合、front matter が削除されます。その他の場合には、front matter はマークダウン コンテンツとして処理されます。
   "markdown.previewFrontMatter": "hide",
 
-  // Controls the font family used in the markdown preview.
+  // マークダウン プレビューで使用されるフォント ファミリを制御します。
   "markdown.preview.fontFamily": "'Segoe WPC', 'Segoe UI', 'SFUIText-Light', 'HelveticaNeue-Light', sans-serif",
 
-  // Controls the font size in pixels used in the markdown preview.
+  // マークダウン プレビューで使用されるフォント サイズ (ピクセル単位) を制御します。
   "markdown.preview.fontSize": 14,
 
-  // Controls the line height used in the markdown preview. This number is relative to the font size.
+  // マークダウン プレビューで使用される行の高さを制御します。 この数値はフォント サイズを基準とします。
   "markdown.preview.lineHeight": 1.6,
 
-  // Scrolls the markdown preview to reveal the currently selected line from the editor.
+  // エディターの現在の選択行を示すため、マークダウンのプレビューがスクロールします。
   "markdown.preview.scrollPreviewWithEditorSelection": true,
 
-  // Mark the current editor selection in the markdown preview.
+  // マークダウンのプレビューに、エディターの現在の選択範囲を示すマークが付きます。
   "markdown.preview.markEditorSelection": true,
 
-  // When the markdown preview is scrolled, update the view of the editor.
+  // マークダウンのプレビューをスクロールすると、エディターのビューが更新されます。
   "markdown.preview.scrollEditorWithPreview": true,
 
-  // Double click in the markdown preview to switch to the editor.
+  // マークダウンのプレビューでダブルクリックすると、エディターに切り替わります。
   "markdown.preview.doubleClickToSwitchToEditor": true,
 
 // PHP
 
-  // Configures if the built-in PHP language suggestions are enabled. The support suggests PHP globals and variables.
+  // 組み込みの PHP 言語候補機能を有効にするかどうかを設定します。このサポートによって、PHP グローバルと変数の候補が示されます。
   "php.suggest.basic": true,
 
-  // Enable/disable built-in PHP validation.
+  // 組み込みの PHP 検証を有効/無効にします。
   "php.validate.enable": true,
 
-  // Points to the PHP executable.
+  // PHP 実行可能ファイルを指します。
   "php.validate.executablePath": null,
 
-  // Whether the linter is run on save or on type.
+  // リンターを保存時に実行するか、入力時に実行するか。
   "php.validate.run": "onSave",
 
 // TypeScript
 
-  // Specifies the folder path containing the tsserver and lib*.d.ts files to use.
+  // 使用する tsserver と lib*.d.ts ファイルが含まれているフォルダーのパスを指定します。
   "typescript.tsdk": null,
 
-  // Disables automatic type acquisition. Requires TypeScript >= 2.0.6 and a restart after changing it.
+  // 種類の自動的な取得を無効にします。変更後、TypeScript 2.0.6 以降と再起動が必要です。
   "typescript.disableAutomaticTypeAcquisition": false,
 
-  // Check if a global install TypeScript compiler (e.g. tsc) differs from the used TypeScript language service.
+  // グローバル インストール TypeScript コンパイラ (tsc など) が、使用された TypeScript 言語サービスと異なっているかどうかを確認します。
   "typescript.check.tscVersion": true,
 
-  // Enable/disable references CodeLens.
+  // CodeLens の参照を有効/無効にします。
   "typescript.referencesCodeLens.enabled": false,
 
-  // Enables tracing of messages sent to the TS server.
+  // TS サーバーに送信されるメッセージのトレースを有効にします。
   "typescript.tsserver.trace": "off",
 
-  // Complete functions with their parameter signature.
+  // パラメーター シグネチャを含む完全な関数。
   "typescript.useCodeSnippetsOnMethodSuggest": false,
 
-  // Enable/disable TypeScript validation.
+  // TypeScript の検証を有効/無効にします。
   "typescript.validate.enable": true,
 
-  // Enable/disable default TypeScript formatter.
+  // 既定の TypeScript フォーマッタを有効/無効にします。
   "typescript.format.enable": true,
 
-  // Defines space handling after a comma delimiter.
+  // コンマ区切り記号の後のスペース処理を定義します。
   "typescript.format.insertSpaceAfterCommaDelimiter": true,
 
-  //  Defines space handling after a semicolon in a for statement.
+  //  for ステートメント内のセミコロンの後のスペース処理を定義します。
   "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
 
-  // Defines space handling after a binary operator.
+  // 2 項演算子の後のスペース処理を定義します。
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
 
-  // Defines space handling after keywords in a control flow statement.
+  // 制御フロー ステートメント内のキーワードの後のスペース処理を定義します。
   "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
 
-  // Defines space handling after function keyword for anonymous functions.
+  // 匿名関数の関数キーワードの後のスペース処理を定義します。
   "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
 
-  // Defines space handling after opening and before closing non empty parenthesis.
+  // 左右の空でないかっこの間のスペース処理を定義します。.
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
 
-  // Defines space handling after opening and before closing non empty brackets.
+  // 左右の空でない角かっこの間のスペース処理を定義します。
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
 
-  // Defines space handling after opening and before closing template string braces. Requires TypeScript >= 2.0.6.
+  // テンプレート文字列の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
 
-  // Defines space handling after opening and before closing JSX expression braces. Requires TypeScript >= 2.0.6.
+  // JSX 式の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
 
-  // Defines whether an open brace is put onto a new line for functions or not.
+  // 新しい行に関数の始め波かっこを配置するかどうかを定義します。
   "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
 
-  // Defines whether an open brace is put onto a new line for control blocks or not.
+  // 新しい行にコントロール ブロックの始め波かっこを配置するかどうかを定義します。
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
 
-  // Enable/disable JavaScript validation.
+  // JavaScript の検証を有効/無効にします。
   "javascript.validate.enable": true,
 
-  // Enable/disable default JavaScript formatter.
+  // 既定の JavaScript フォーマッタを有効/無効にします。
   "javascript.format.enable": true,
 
-  // Defines space handling after a comma delimiter.
+  // コンマ区切り記号の後のスペース処理を定義します。
   "javascript.format.insertSpaceAfterCommaDelimiter": true,
 
-  //  Defines space handling after a semicolon in a for statement.
+  //  for ステートメント内のセミコロンの後のスペース処理を定義します。
   "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
 
-  // Defines space handling after a binary operator.
+  // 2 項演算子の後のスペース処理を定義します。
   "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
 
-  // Defines space handling after keywords in a control flow statement.
+  // 制御フロー ステートメント内のキーワードの後のスペース処理を定義します。
   "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
 
-  // Defines space handling after function keyword for anonymous functions.
+  // 匿名関数の関数キーワードの後のスペース処理を定義します。
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
 
-  // Defines space handling after opening and before closing non empty parenthesis.
+  // 左右の空でないかっこの間のスペース処理を定義します。
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
 
-  // Defines space handling after opening and before closing non empty brackets.
+  // 左右の空でない角かっこの間のスペース処理を定義します。
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
 
-  // Defines space handling after opening and before closing template string braces. Requires TypeScript >= 2.0.6.
+  // テンプレート文字列の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
 
-  // Defines space handling after opening and before closing JSX expression braces. Requires TypeScript >= 2.0.6.
+  // JSX 式の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
 
-  // Defines whether an open brace is put onto a new line for functions or not.
+  // 新しい行に関数の始め波かっこを配置するかどうかを定義します。
   "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
 
-  // Defines whether an open brace is put onto a new line for control blocks or not.
+  // 新しい行にコントロール ブロックの始め波かっこを配置するかどうかを定義します。
   "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
 
-// Extensions
+// 拡張機能
 
-  // Automatically update extensions
+  // 拡張機能を自動的に更新します
   "extensions.autoUpdate": false,
 
-// External Terminal
+// 外部ターミナル
 
-  // Customizes which terminal to run on Windows.
+  // どのターミナルを Windows で実行するかをカスタマイズします。
   "terminal.external.windowsExec": "%COMSPEC%",
 
-  // Customizes which terminal application to run on OS X.
+  // どのターミナル アプリケーションを OS X で実行するかをカスタマイズします。
   "terminal.external.osxExec": "Terminal.app",
 
-  // Customizes which terminal to run on Linux.
+  // どのターミナルを Linux で実行するかをカスタマイズします。
   "terminal.external.linuxExec": "xterm",
 
-// Integrated Terminal
+// 統合端末
 
-  // The path of the shell that the terminal uses on Linux.
+  // 端末が Linux で使用するシェルのパス。
   "terminal.integrated.shell.linux": "sh",
 
-  // The command line arguments to use when on the Linux terminal.
+  // Linux 端末で使用するコマンド ライン引数。
   "terminal.integrated.shellArgs.linux": [],
 
-  // The path of the shell that the terminal uses on OS X.
+  // 端末が OS X で使用するシェルのパス。
   "terminal.integrated.shell.osx": "sh",
 
-  // The command line arguments to use when on the OS X terminal.
+  // OS X 端末で使用するコマンド ライン引数。
   "terminal.integrated.shellArgs.osx": [],
 
-  // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu), prefer C:\Windows\sysnative over C:\Windows\System32 to use the 64-bit versions.
+  // 端末が Windows で使用するシェルのパス。Windows に付属のシェル (cmd、PowerShell、または Bash on Ubuntu) を使用する場合、64 ビット バージョンを使用するには、C:\Windows\System32 ではなく、C:\Windows\sysnative を選びます。
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
 
-  // The command line arguments to use when on the Windows terminal.
+  // Windows ターミナル上の場合に使用されるコマンド ライン引数。
   "terminal.integrated.shellArgs.windows": [],
 
-  // When set, this will prevent the context menu from appearing when right clicking within the terminal, instead it will copy when there is a selection and paste when there is no selection.
+  // 設定している場合、端末内で右クリックしたときにコンテキスト メニューを表示させず、選択範囲がある場合はコピー、選択範囲がない場合は貼り付けの操作を行います。
   "terminal.integrated.rightClickCopyPaste": true,
 
-  // Controls the font family of the terminal, this defaults to editor.fontFamily's value.
+  // 端末のフォント ファミリを制御します。既定値は editor.fontFamily になります。
   "terminal.integrated.fontFamily": "",
 
-  // Controls whether font ligatures are enabled in the terminal.
+  // 端末でフォントの合字が有効かどうかを制御します。
   "terminal.integrated.fontLigatures": false,
 
-  // Controls the font size in pixels of the terminal.
+  // 端末のフォント サイズをピクセル単位で制御します。
   "terminal.integrated.fontSize": 14,
 
-  // Controls the line height of the terminal, this number is multipled by the terminal font size to get the actual line-height in pixels.
+  // 端末の行の高さを制御します。この数値に端末のフォント サイズを乗算すると、実際の行の高さ (ピクセル単位) になります。
   "terminal.integrated.lineHeight": 1.2,
 
-  // Controls whether the terminal cursor blinks.
+  // 端末のカーソルを点滅させるかどうかを制御します。
   "terminal.integrated.cursorBlinking": false,
 
-  // Controls the style of terminal cursor.
+  // 端末のカーソルのスタイルを制御します。
   "terminal.integrated.cursorStyle": "block",
 
-  // Controls the maximum amount of lines the terminal keeps in its buffer.
+  // 端末がそのバッファーに保持できる最大行数を制御します。
   "terminal.integrated.scrollback": 1000,
 
-  // Controls whether locale variables are set at startup of the terminal, this defaults to true on OS X, false on other platforms.
+  // 端末の開始時にロケール変数を設定するかどうかを制御します。OS X では既定で true になり、その他のプラットフォームでは false です。
   "terminal.integrated.setLocaleVariables": false,
 
-  // An explicit start path where the terminal will be launched, this is used as the current working directory (cwd) for the shell process. This may be particularly useful in workspace settings if the root directory is not a convenient cwd.
+  // 端末を起動する明示的な開始パスです。これはシェル プロセスの現在の作業ディレクトリ (cwd) として使用されます。特にルート ディレクトリが cwd に適していない場合に、ワークスペースの設定で役立ちます。
   "terminal.integrated.cwd": "",
 
-  // A set of command IDs whose keybindings will not be sent to the shell and instead always be handled by Code. This allows the use of keybindings that would normally be consumed by the shell to act the same as when the terminal is not focused, for example ctrl+p to launch Quick Open.
+  // キーバインドがシェルに送信されず、代わりに常に Code で処理されるコマンド ID のセット。これにより、ターミナルがフォーカスされていない場合と同じ動作をするシェルによって通常使用されるキーバインドを使用できるようになります。例: Ctrl+p で Quick Open を起動します。
   "terminal.integrated.commandsToSkipShell": [
     "editor.action.toggleTabFocusMode",
     "workbench.action.debug.continue",
@@ -1085,24 +1093,24 @@ Below are the default settings and their values.
     "workbench.action.terminal.toggleTerminal"
   ],
 
-// Problems Panel
+// 問題ビュー
 
-  // Controls if Problems view should automatically reveal files when opening them
+  // ファイルを開くときに問題ビューに自動的にそのファイルを表示するかどうかを制御します
   "problems.autoReveal": true,
 
-// Telemetry
+// テレメトリ
 
-  // Enable crash reports to be sent to Microsoft.
-  // This option requires restart to take effect.
+  // クラッシュ レポートを Microsoft に送信するように設定します。
+  // このオプションを有効にするには、再起動が必要です。
   "telemetry.enableCrashReporter": true,
 
-  // Enable usage data and errors to be sent to Microsoft.
+  // 利用状況データとエラーを Microsoft に送信できるようにします。
   "telemetry.enableTelemetry": true
 }
 ```
 
-## Common Questions
+## よくある質問
 
-**Q: When does it make sense to use workspace settings?**
+**Q: ワークスペース設定はいつ利用すべきですか?**
 
-**A:** If you're using a workspace that needs custom settings but you don't want to apply them to your other VS Code projects. A good example is language-specific linting rules.
+**A:** カスタム設定が必要なワークスペースを使用して、他のプロジェクトに適用したくない場合です。いい例として言語固有のlintルールです。
