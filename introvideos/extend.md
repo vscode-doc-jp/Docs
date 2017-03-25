@@ -1,14 +1,8 @@
 ---
-Order: 5
-Area: introvideos
-TOCTitle: Extend
-ContentId: c720387b-e6db-4b40-865f-0c0a814b0b12
-PageTitle: Extensions in VS Code
-DateApproved: 3/6/2017
+title: Extension in VS Code
 MetaDescription: Use extensions in Visual Studio Code to add new features, themes, and more.
-MetaSocialImage: opengraph_introvideos.png
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-# Extensions in VS Code
 
 Use extensions to add new features, themes and more. In this tutorial, we will show you how to find extensions, install the ones you like, and disable extensions you don't want to use all the time.
 

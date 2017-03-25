@@ -1,15 +1,8 @@
 ---
-Order:
-Area: introvideos
-TOCTitle: Quick Tour using JavaScript
-ContentId: a51b707c-19f7-41af-b5c2-c296e6e9fea2
-PageTitle: Quick Tour of Visual Studio Code using JavaScript
-DateApproved: 3/6/2017
+title: Quick Tour of VS Code using JavaScript
 MetaDescription: Quick Tour around Visual Studio Code using JavaScript.
-MetaSocialImage: opengraph_introvideos.png
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-
-# Quick Tour of VS Code using JavaScript
 
 This tutorial gives you an overview of the core features of Visual Studio Code, including IntelliSense, debugging, Git version control integration, and more. You'll see these features as we add an endpoint to a JavaScript web app using [Express web framework](https://expressjs.com/).
 

@@ -1,15 +1,8 @@
 ---
-Order:
-Area: introvideos
-TOCTitle: Code Editing
-ContentId: 826efeef-6803-49bd-a500-06c6c42cda19
-PageTitle: Code Editing Features in Visual Studio Code
-DateApproved: 3/6/2017
+title: Code Editing Features in VS Code
 MetaDescription: Take coding to the next level of speed and efficiency with these code editing features.
-MetaSocialImage: opengraph_introvideos.png
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-
-# Code Editing Features in VS Code
 
 In this tutorial, we cover code editing, including the features outlined below. After viewing this overview, read on in the [Learn More](/docs/introvideos/codeediting.md#learn-more) section to see more features.
 

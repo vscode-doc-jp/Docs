@@ -1,15 +1,8 @@
 ---
-Order:
-Area: introvideos
-TOCTitle: Debugging
-ContentId: cf275b3d-c1d8-4a55-b2eb-a8a744882b6a
-PageTitle: Debugging in Visual Studio Code
-DateApproved: 3/6/2017
+title: Debugging in VS Code
 MetaDescription: Debugging is a core feature of Visual Studio Code. Learn how to configure and use debugging in VS Code.
-MetaSocialImage: opengraph_introvideos.png
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-
-# Debugging in VS Code
 
 Debugging is a core feature of Visual Studio Code. In this tutorial, we will show you how to configure and use the debugging basics. We will walk you through debugging a Node.js application.
 

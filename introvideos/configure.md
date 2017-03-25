@@ -1,14 +1,8 @@
 ---
-Order:
-Area: introvideos
-TOCTitle: Customize
-ContentId: d9583ed0-aaf6-4ce1-9a27-bbfb0017b6be
-PageTitle: Customize VS Code
-DateApproved: 3/6/2017
+title: Customize VS Code
 MetaDescription: Learn how to configure Visual Studio Code, including settings, keybindings, and snippets
-MetaSocialImage: opengraph_introvideos.png
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-# Customize VS Code
 
 In this tutorial, we show you how to personalize Visual Studio Code.
 
