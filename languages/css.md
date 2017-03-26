@@ -1,32 +1,28 @@
 ---
-title: CSS, Sass and Less support
+title: CSS, Sass and Lessサポート
 MetaDescription: Find out how Visual Studio Code can support your CSS, Sass and Less development.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Visual Studio Code has built-in support for editing style sheets in CSS `.css`, Sass `.scss` and Less `.less`.  In addition, you can install an extension for greater functionality.
-
-<div class="marketplace-extensions-css"></div>
-
-> Tip: The extensions shown above are dynamically queried. Click on an extension tile above to read the description and reviews to decide which extension is best for you. See more in the [Marketplace](https://marketplace.visualstudio.com).
+Visual Studio Codは、スタイルシートでCSS `.css`、 Sass `.scss`、 Less `.less`による編集を標準でサポートしています。拡張機能をインストールすることでより多くの機能性を得ることができます。
 
 ## IntelliSense
 
-We have support for selectors, properties and values. Use `kb(editor.action.triggerSuggest)` to get a list of context specific options.
+セレクター、プロパティ、値のサポートをしています。`kb(editor.action.triggerSuggest)`を使用して、提案リストを表示してください。
 
 ![IntelliSense in CSS](images/css/intellisense.png)
 
-Proposals contain extensive documentation, including a list of browsers that support the property. To see the full description text of the selected entry, use `kb(toggleSuggestionDetails)`.
+Proposals contain extensive documentation, including a list of browsers that support the property. 選択項目でこれを確認するには`kb(toggleSuggestionDetails)`を使用します。
 
-## Emmet snippets
+## Emmet
 
-Press `kb(editor.emmet.action.expandAbbreviation)` to expand the current abbreviation.
+`kb(editor.emmet.action.expandAbbreviation)`を押すとEmmet 略語を展開します。
 
->**Tip:** See the CSS section of the [Emmet cheat sheet](http://docs.emmet.io/cheat-sheet) for valid abbreviations.
+>**Tip:** 使用可能な略語については [Emmet cheat sheet](http://docs.emmet.io/cheat-sheet) のCSSセクションを参照してください。
 
-If you'd like to use CSS Emmet abbreviations with other languages, you can associate an Emmet syntax profile (such as `css`, `html`) with other languages with the `emmet.syntaxProfiles` [setting](/docs/getstarted/settings.md). The setting takes a [language id](/docs/languages/overview.md#language-id) and associates it with an Emmet profile.
+CSS Emmetを他の言語で使用したい場合は、Emeet構文プロファイル(`html`, `css`など)を `emmet.syntaxProfiles` [設定](/docs/getstarted/settings.md)に関連付けることで可能です。その際の設定には[language id](/docs/languages/overview.md#language-id) を使用してください。
 
-For example, to use Emmet CSS abbreviations inside JavaScript:
+たとえば、JavaScript内でCSSのEmmet略語を使用するには、次のようにします:
 
 ```json
 {
@@ -36,61 +32,61 @@ For example, to use Emmet CSS abbreviations inside JavaScript:
 }
 ```
 
-We also support [User Defined Snippets](/docs/userguide/userdefinedsnippets.md).
+また[User Defined Snippets](/docs/userguide/userdefinedsnippets.md)もサポートしています。
 
-## Syntax coloring & color preview
+## シンタックスとカラープレビュー
 
-As you type, we provide syntax highlighting as well as in context preview of colors.
+入力時に、構文の強調表示と色のプレビューを提供します。
 
 ![Syntax and color](images/css/color.png)
 
->**Note:** You can hide VS Code's color previews by setting the corresponding `.colorDecorators.enable` [settings](/docs/getstarted/settings.md).
+>**Note:** `.colorDecorators.enable`[設定](/docs/getstarted/settings.md)でカラープレビュ－を無効化できます。
 >```json
 >    "css.colorDecorators.enable": false
 >```
 
-## Syntax Verification & Linting
+## 構文の検証とLint
 
-We support CSS version <= 2.1, Sass version <= 3.2 and Less version <= 2.3.
+現在のサポートバージョンは、CSS 2.1以上、Sass 3.2以上、Less 2.3以上です。
 
->**Note:** You can disable VS Code's default CSS, Sass or Less validation by setting the corresponding `.validate` User or Workspace [setting](/docs/getstarted/settings.md) to false.
+> **注意：各`.validate`を変更することで検証を無効化できます。ユーザーまたはワークスペース[設定](/docs/getstarted/settings.md)で次のように無効化してください。
 >```json
 >    "css.validate": false
 >```
 
-## Go to Symbol in file
+## ファイル内のシンボルに移動
 
-Simply press `kb(workbench.action.gotoSymbol)`.
+`kb(workbench.action.gotoSymbol)`を押してください。
 
-## Hovers
+## ホバー
 
-Hovering over a selector or property will provide an HTML snippet that is matched by the CSS rule.
+セレクターまたはプロパティにカーソルを合わせると、CSSルールに一致するHTMLスニペットを表示します。
 
 ![Hover in CSS](images/css/hover.png)
 
-## Go to Declaration and Find References
+## 定義に移動と全ての参照検索
 
-This is supported for Sass and Less variables in the same file. [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) per the [draft standards proposal](https://drafts.csswg.org/css-variables/) are also supported.
+これは、同一ファイル内でのSassとLessの変数をサポートしています。また、[W3C 勧告案](https://drafts.csswg.org/css-variables/)による[CSS変数](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)もサポートしています。
 
->**Note:** Cross file references ('imports') are not resolved.
+>**Note:** ファイル参照('imports')等はサポートしていません。
 
-## Transpiling Sass and Less into CSS
+## SassとLess LessをCSSに変換
 
-VS Code can integrate with Sass and Less transpilers through our integrated [task runner](/docs/userguide/tasks.md).  We can use this to transpile `.scss` or `.less` files into `.css` files.  Let's walk through transpiling a simple Sass/Less file.
+VS Codeは[task runner](/docs/userguide/tasks.md)を利用してSassとLessのTranspilerと統合できます。`.scss`か`.less`を`.css`に変換する際にこれを利用できます。これをシンプルなSass/Lessファイルで確認します。
 
-### Step 1: Install a Sass or Less transpiler
+### Step 1: Sassもしくは LessのTranspilerをインストール
 
-For this walkthrough, let's use either the [node-sass](https://www.npmjs.com/package/node-sass) or [less](https://www.npmjs.com/package/less) Node.js module.
+このチュートリアルでは [node-sass](https://www.npmjs.com/package/node-sass)か[less](https://www.npmjs.com/package/less)のいずれかを使用してみましょう。
 
->**Note:** If you don't have [Node.js](https://nodejs.org) and the [NPM](https://www.npmjs.com/) package manager already installed, you'll need to do so for this walkthrough. [Install Node.js for your platform](https://nodejs.org/en/download/). The Node Package Manager (NPM) is included in the Node.js distribution. You'll need to open a new terminal (command prompt) for `npm` to be on your PATH.
+> **注意：[NPM](https://www.npmjs.com/)のみインストール済みであれば、このチュートリアルを完了させるために[Node.js](https://nodejs.org)も[インストール](https://nodejs.org/en/download/)する必要があります。インストール後は新しく開いた端末(コマンドプロント)から`npm`が利用可能になります。
 
 ```
 npm install -g node-sass less
 ```
 
-### Step 2: Create a simple Sass or Less file
+### Step 2: 簡単なSassもしくはLessの作成
 
-Open VS Code on an empty folder and create a `styles.scss` or `styles.less` file.  Place the following code in that file:
+空のフォルダに`styles.scss`か`styles.less`ファイルを作成したら、VS Codeでそのフォルダを開きます。ファイルに次のコードを追記します:
 
 ```scss
 $padding: 6px;
@@ -112,15 +108,15 @@ nav {
 }
 ```
 
-For the Less version of the above file, just change `$padding` to `@padding`.
+なおLessを利用する場合は、上記で`$padding`を `@padding`に変更してください。
 
->**Note:** This is a very simple example, which is why the source code is almost identical between both file types.  In more advanced scenarios, the syntaxes and constructs will be much different.
+>**Note:** 今回の例は非常に簡単なものでした。ですから2つの書き方は似たものになりました。より高度な編集の場合、構文と構造は大きく異なるものになることに注意してください。
 
-### Step 3: Create tasks.json
+### Step 3: tasks.json を作成
 
-The next step is to set up the task configuration.  To do this open the **Command Palette** with `kb(workbench.action.showCommands)` and type in **Configure Task Runner**, press `kbstyle(Enter)` to select it. In the selection dialog that shows up, select `Others`.
+次の手順は、タスクを構成することです。セットアップには **コマンドパレット**を`kb(workbench.action.showCommands)` で開いて **Configure Task Runner** を入力したら `kbstyle(Enter)` で選択します。次に表示される選択ダイアログで`Others`を選択してください。
 
-This will create a sample `tasks.json` file in the workspace `.vscode` folder.  The initial version of file has an example to run an arbitrary command. We will simply modify that configuration for transpiling Less/Sass instead:
+これは、サンプルの`tasks.json`を`.vscode`フォルダに作成します。ファイルには、任意のコマンドを実行するサンプルが入っているので、これをLess/Sass用に設定を変更します:
 
 ```json
 // Sass configuration
@@ -142,38 +138,38 @@ This will create a sample `tasks.json` file in the workspace `.vscode` folder.  
 }
 ```
 
-VS Code interprets `node-sass` or `lessc` as an external task runner exposing exactly one task: the transpiling of Sass/Less files into CSS files. The command we run is `node-sass styles.scss styles.css` or `lessc styles.less styles.css`.
+VS codeはSass/LessファイルをCSSに変換するタスクであることと、外部タスクランナーが`node-sassか `lessc`であると解釈します。実行するコマンドは`node-sass styles.scss styles.css`か`lessc styles.less styles.css`になります。
 
-### Step 4: Run the Build Task
+### Step 4: ビルドタスクを実行
 
-As this is the only command in the file, you can execute it by simply pressing `kb(workbench.action.tasks.build)` (**Run Build Task**).  The sample Sass/Less file should not have any compile problems, so by running the task all that happens is a corresponding `styles.css` file is created.
+今回のファイル内で唯一のコマンドですから`kb(workbench.action.tasks.build)`(**Run Build Task**)を押すだけで実行できます。サンプルのSass/Lessファイルにはコンパイル上の問題はありません。ですからタスクを実行すれば、それに対応する `styles.css`を作成します。
 
->**Note:** If your build fails or you see an error message such as "An output directory must be specified when compiling a directory", be sure the filenames in your `tasks.json` match the filenames on disk. You can always test your build by running `node-sass styles.scss styles.css` from the command line.
+>**Note:** もしビルドに失敗した場合や"An output directory must be specified when compiling a directory"といったエラーメッセージが表示された場合`tasks.json`のファイル名がディスク上のファイル名と一致するようにしてください。コマンドラインから`node-sass styles.scss styles.css`でビルドテストができるはずです。
 
-## Automating Sass/Less compilation
+## Sass/Lessの自動コンパイル
 
-Let's take things a little further and automate Sass/Less compilation with VS Code.  We can do so with the same task runner integration as before, but with a few modifications.
+それでは、Sass/Lessコンパイルを自動化してみましょう。同じようにタスクを利用しますが、いくつかの変更を施します。
 
-### Step 1: Install Gulp and some plug-ins
+### Step 1: Gulpとプラグインをインストール
 
-We will use [Gulp](http://gulpjs.com/) to create a task that will automate Sass/Less compilation.  We will also use the [gulp-sass](https://www.npmjs.com/package/gulp-sass) plug-in to make things a little easier.  The Less plug-in is [gulp-less](https://www.npmjs.com/package/gulp-less).
+[Gulp](http://gulpjs.com/)を使用してコンパイルを自動化するタスクを作成します。また、[gulp-sass](https://www.npmjs.com/package/gulp-sass)プラグインを使用して少し作成を簡単にします。Lessの場合 [gulp-less](https://www.npmjs.com/package/gulp-less)を使用してください。
 
-We need to install gulp both globally (`-g` switch) and locally:
+gulpはグローバル (`-g`)とローカル両方にインストールする必要があります:
 
 ```
 npm install -g gulp
 npm install gulp gulp-sass gulp-less
 ```
 
-> **Note:** `gulp-sass` and `gulp-less` are Gulp plug-ins for the `node-sass` and `lessc` modules we were using before.  There are many other Gulp Sass and Less plug-ins you can use, as well as plug-ins for Grunt.
+> **Note:** `gulp-sass`と`gulp-less`は、先ほど使った`node-sass`と`lessc`のGulplプラグインです。また、SassとLessプラグインは他にも多くあります。
 
-You can test that your gulp installation was successful but typing `gulp -v`. You should see a version displayed for both the global (CLI) and local installations.
+インストールの成功を`gulp -v`と入力してテストできます。このコマンドを実行すればグローバル(CLI)とローカル両方のバージョンを表示するはずです。
 
-### Step 2: Create a simple Gulp task
+### Step 2: シンプルなGulp taskを作成
 
-Open VS Code on the same folder from before (contains `styles.scss`/`styles.less` and `tasks.json` under the `.vscode` folder), and create `gulpfile.js` at the root.
+VS Codeを前と同じフォルダで開き、ルートに`gulpfile.js`を作成します。
 
-Place the following code in the `gulpfile.js` file:
+`gulpfile.js`ファイルに次のコードを追記します:
 
 ```javascript
 // Sass configuration
@@ -211,18 +207,18 @@ gulp.task('default', ['less'], function() {
 })
 ```
 
-What is happening here?
+ここで起こっていること
 
-1. Our `default` gulp task first runs the `sass` or `less` task once when it starts up.
-2. It then watches for changes to any Sass/Less file at the root of our workspace, for example the current folder open in VS Code.
-3. It takes the set of Sass/Less files that have changed and runs them through our respective compiler, for example `gulp-sass`, `gulp-less`.
-4. We now have a set of CSS files, each named respectively after their original Sass/Less file.  We then put these files in the same directory.
+1. `default`のgulpタスクは、起動時に`sass`または`less`のタスクを一度実行します
+2.ワークスペースルートのSass/Lessファイルの変更を監視します。
+3. 変更されたSass/Lessファイルをそれぞれのコンパイラ`gulp-sass`や`gulp-less`で実行します。
+4. 作成された各CSSファイルに、元のSass/Lessファイル名を付けます。その後これらのファイルを同じディレクトリに配置します。
 
-### Step 3: Modify the configuration in tasks.json for watching
+### Step 3: tasks.jsonを実行し続けるように変更
 
-To complete the tasks integration with VS Code, we will need to modify the task configuration from before to run the default Gulp task we just created. We will set `isBackground` to true so that the task is kept running in the background watching for file changes.
+VS Codeとタスクを完全に統合するには、作成したファイルをさらに変更する必要があります。`isBackground`をtrueに設定して、ファイルの変更をバックグラウンド処理しながらタスクを実行し続けるようにしてみましょう。
 
-Change your tasks configuration to look like this:
+タスク構成を次のように変更します:
 
 ```json
 {
@@ -240,65 +236,65 @@ Change your tasks configuration to look like this:
 }
 ```
 
-### Step 4: Run the Build Task
+### Step 4: ビルドタスクを実行
 
-We marked this task as `isBuildCommand` so you can execute it by simply pressing `kb(workbench.action.tasks.build)` (**Run Build Task**).  But this time since we've set `isBackground` to true, the task keeps running. If you create and/or modify other Less/Sass files, you will see the respective CSS files generated and/or changes reflected on save.  You can also enable [Auto Save](/docs/userguide/codebasics.md#saveauto-save) to make things even more streamlined.
+このタスクは `isBuildCommand`とマークされているので、`kb(workbench.action.tasks.build)` (**Run Build Task**)を押すだけで実行できます。 今回は編集したことでタスクは実行し続けます。他のLess/Sassファイルを作成および変更した場合でも、同じように動作します。また、[自動保存](/docs/userguide/codebasics.md#saveauto-save) を有効にすると、より合理的なものにすることができます。
 
-If you want to stop the task, you can use the **Tasks: Terminate Running Task** command in the  **Command Palette** (`kb(workbench.action.showCommands)`).
+タスクを停止したい場合は**コマンドパレット**(`kb(workbench.action.showCommands)`)で**Tasks: Terminate Running Task**を実行してください。
 
-## Customizing CSS, Sass and Less Settings
+## CSS、Sass、Lessの設定
 
-You can configure the following lint warnings as [User and Workspace Settings](/docs/getstarted/settings.md).
+文法チェックは[User and Workspace Settings](/docs/getstarted/settings.md)で設定できます。
 
-The `validate` setting allows you turn off the built-in validation. You would do this if you rather use a different linter.
-
-Id|Description|Default
----|------------|----
-css.validate | Enables or disables all css validations | true
-less.validate | Enables or disables all less validations | true
-scss.validate | Enables or disables all scss validations | true
-
-To configure an option for CSS, use `css.lint.` as the prefix to the id; for Sass and Less, use `scss.lint.` and `less.lint.`.
-
-Set a setting to `warning` or `error` if you want to enable lint checking, use `ignore` to disable it. Lint checks are performed as you type.
+`validate`の設定を変更すると、標準の検証を無効化できます。別のLintを使用する場合これを設定してください。
 
 Id|Description|Default
 ---|------------|----
-validate | Enables or disables all validations | true
-compatibleVendorPrefixes | When using a property with a vendor-specific prefix (for example `-webkit-transition`), make sure to also include all other vendor-specific properties eg. `-moz-transition`, `-ms-transition` and `-o-transition` | ignore
-vendorPrefix | When using a property with a vendor-specific prefix for example `-webkit-transition`, make sure to also include the standard property if it exists eg. `transition` | warning
-duplicateProperties | Warn about duplicate properties in the same ruleset | ignore
-emptyRules | Warn about empty rulesets | warning
-importStatement | Warn about using an `import` statement as import statements are loaded sequentially which has a negative impact on web page performance | ignore
-boxModel | Do not use `width` or `height` when using `padding` or `border` | ignore
-universalSelector | Warn when using the universal selector `*` as it is known to be slow and should be avoided | ignore
-zeroUnits | Warn when having zero with a unit e.g. `0em` as zero does not need a unit.  | ignore
-fontFaceProperties | Warn when using `@font-face` rule without defining a `src` and `font-family` property | warning
-hexColorLength | Warn when using hex numbers that don't consist of three or six hex numbers | error
-argumentsInColorFunction | Warn when an invalid number of parameters in color functions e.g. `rgb` | error
-unknownProperties | Warn when using an unknown property | warning
-ieHack | Warn when using an IE hack `*propertyName` or `_propertyName` | ignore
-unknownVendorSpecificProperties | Warn when using an unknown vendor-specific property | ignore
-propertyIgnoredDueToDisplay | Warn when using a property that is ignored due to the display. For example with `display: inline`, the `width`, `height`, `margin-top`, `margin-bottom`, and `float` properties have no effect. | warning
-important | Warn when using `!important` as it is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored. | ignore
-float | Warn when using `float` as floats lead to fragile CSS that is easy to break if one aspect of the layout changes. | ignore
-idSelector | Warn when using selectors for an id `#id` as selectors should not contain IDs because these rules are too tightly coupled with the HTML. | ignore
+css.validate | cssすべての検証を有効または無効にします | true
+less.validate | lessすべての検証を有効または無効にします| true
+scss.validate | sassすべての検証を有効または無効にします | true
 
-## Next Steps
+CSSのオプションを設定するには、idの接頭辞として `css.lint.`を使用してください。Sassであれば`scss.lint.`といった具合です。
 
-Read on to find out about:
+文法検証を有効にする場合は`warning`または`error`に設定してください、`ignore`を指定すると無効になります。文法検証は入力時実行します。
+
+Id|Description|Default
+---|------------|----
+validate | すべての検証を有効または無効にします | true
+compatibleVendorPrefixes | ベンダー固有のプレフィックスを使用する場合は、他のすべてのベンダー固有のプロパティも必ず含めてください | ignore
+vendorPrefix | ベンダー固有のプレフィックスを使用する場合は、標準のプロパティも含めます | warning
+duplicateProperties | 重複するスタイル定義を使用しないでください | ignore
+emptyRules | 空の規則セットを使用しないでください | warning
+importStatement | 複数の Import ステートメントを同時に読み込むことはできません | ignore
+boxModel | パディングまたは枠線を使用する場合は幅または高さを使用しないでください | ignore
+universalSelector | ユニバーサル セレクター (*) を使用すると処理速度が低下することが分かっています | ignore
+zeroUnits | 0 の単位は必要ありません  | ignore
+fontFaceProperties | @font-face 規則で 'src' プロパティと 'font-family' プロパティを定義する必要があります | warning
+hexColorLength | 16 進数の色には、3 つまたは 6 つの 16 進数が含まれる必要があります | error
+argumentsInColorFunction | 正しくないパラメーターの数 | error
+unknownProperties | 不明なプロパティ。 | warning
+ieHack | IE ハックは、IE7 以前をサポートする場合にのみ必要です` | ignore
+unknownVendorSpecificProperties | 不明なベンダー固有のプロパティ。 | ignore
+propertyIgnoredDueToDisplay | Warn when using a property that is ignored due to the display. たとえば、'display: inline' の場合、width、height、margin-top、margin-bottom、および float のプロパティには効果がありません
+important | !important は使用しないでください。これは CSS 全体の特定性が制御不能になり、リファクタリングが必要なことを示しています。 | ignore
+float | 'float' は使用しないでください。float を使用すると、レイアウトの一部が変更されたときに CSS が破損しやすくなります。. | ignore
+idSelector | セレクターには ID を含めないでください。これらの規則と HTML の結合が密接すぎます。| ignore
+
+## 次のステップ
+
+次を見てください:
 
 * [Configure Tasks](/docs/userguide/tasks.md) - Dig into Tasks to help you transpile your Sass and Less to CSS.
 * [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
 * [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 * [HTML](/docs/languages/html.md) - CSS is just the start, HTML is also very well supported in VS Code.
 
-## Common Questions
+## よくある質問
 
-**Q: Do you provide a color picker?**
+**Q: カラーピッカーを提供していますか?**
 
-**A:** No, this is currently not supported. There are however several extensions in the Marketplace supporting color pickers.
+**A:** いいえ提供していません。いいえ、しかしMarketplaceにはカラーピッカーをサポートする拡張機能があります。
 
-**Q: Do you support the indentation based Sass syntax (.sass) ?**
+**Q: インデント構文のSass(.sass)シンタックスをサポートしますか ?**
 
-**A:** No, but there are several extensions in the Marketplace supporting the indented flavor of Sass.
+**A:** いいえ、しかしMarketplaceにはインデント構文のSassをサポートする拡張機能があります。

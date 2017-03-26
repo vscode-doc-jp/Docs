@@ -28,8 +28,8 @@ title: ようこそ
     * Version Control
     * ~~Integrated Terminal~~
     * ~~Tasks~~
-    * ✌~~Creating your own Snippets~~
-    * ~~Command Line~~
+    * Creating your own Snippets
+    * Command Line
     * ✌~~Accesibility~~
 * LANGUAGES
     * ✌~~Overview~~
