@@ -36,7 +36,7 @@ title: ようこそ
     * ~~JavaScript~~
     * ~~JSON~~
     * ✌~~HTML~~
-    * ✌~~CSS, Sass and Less~~
+    * CSS, Sass and Less
     * ~~TypeScript~~
     * ~~Markdown~~
     * ~~PHP~~

@@ -14,7 +14,7 @@ Visual Studio Codeでは強力なコマンドラインインターフェイス�
 code .
 ```
 
->**Tip:** 私たちは[Setup](/docs/setup/mac.md)トピックで、ターミナル内からVS Codeを起動するMacユーザー向けの手順を紹介しています。WindowsとLinuxではインストール時に`PATH`環境変数を追加できます。
+>**Tip:** 私たちは[Setup](/docs/setup/mac.md)トピックで、ターミナル内からVS Codeを起動するMacユーザー向けの手順を紹介しています。WindowsとLinuxではインストール時に`PATH`環境変数を追加します。
 
 場合によってはファイルを開いたり作成したりすることもあります。なお指定されたファイルが存在しない場合、VS Codeはそれらを作成します：
 
@@ -45,6 +45,8 @@ Argument|Description
 `--install-extension` | 拡張機能をインストールします。引数として、完全な拡張機能名 `publisher.extension`を指定します。
 `--uninstall-extension` | 拡張機能をアンインストールします。引数として完全な拡張機能名`publisher.extension`を指定します。
 `-w` or `--wait` | 現在のウィンドウを閉じるまでコマンド待機します
+
+(※オリジナルより)
 
 ファイルとフォルダの両方に対して、絶対パスまたは相対パスを使用できます。相対パスは`code`を実行するコマンドプロンプトの現在のディレクトリからのパスです。
 
