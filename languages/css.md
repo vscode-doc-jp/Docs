@@ -16,7 +16,7 @@ Proposals contain extensive documentation, including a list of browsers that sup
 
 ## Emmet
 
-`kb(editor.emmet.action.expandAbbreviation)`を押すとEmmet 略語を展開します。
+`kb(editor.emmet.action.expandAbbreviation)`を押すとEmmet略語を展開します。
 
 >**Tip:** 使用可能な略語については [Emmet cheat sheet](http://docs.emmet.io/cheat-sheet) のCSSセクションを参照してください。
 
@@ -49,7 +49,7 @@ CSS Emmetを他の言語で使用したい場合は、Emeet構文プロファイ
 
 現在のサポートバージョンは、CSS 2.1以上、Sass 3.2以上、Less 2.3以上です。
 
-> **注意：各`.validate`を変更することで検証を無効化できます。ユーザーまたはワークスペース[設定](/docs/getstarted/settings.md)で次のように無効化してください。
+> **注意: 各`.validate`を変更することで検証を無効化できます。ユーザーまたはワークスペース[設定](/docs/getstarted/settings.md)で次のように無効化してください。
 >```json
 >    "css.validate": false
 >```
