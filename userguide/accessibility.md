@@ -1,103 +1,105 @@
 ---
-title: Accessibility
+title: ユーザー補助
 MetaDescription: Visual Studio Code user accessibility features.  Learn here about the various ways VS Code aids user accessibility.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Visual Studio Code has many features to help make the editor accessible to all users. Zoom and High Contrast colors improve editor visibility, keyboard-only navigation allows use without a mouse and the editor has been optimized for screen readers.
+Visual Studio Codeにはすべてのユーザーが使い勝手のよいエディタにする機能が多く備わっています。ズームとハイコントラストはエディタの可読性を向上させ、キーボードナビゲーションによりマウスなしで操作でき、エディタはスクリーンリーダー用へ最適化しています。
 
-## Zoom
+## ズーム
 
-You can increase the Zoom level in VS Code with the **View** > **Zoom In** command (`kb(workbench.action.zoomIn)`).  The zoom level increases by 20% each time the command is executed. The **View** > **Zoom Out** (`kb(workbench.action.zoomOut)`) command lets you decrease the Zoom level.
+VS Codeはエディタのズームレベルを変更可能です。**表示** > **拡大** か `kb(workbench.action.zoomIn)`) でズームレベルを上昇します。ズームレベルを低下する場合は**表示** > **縮小**か`kb(workbench.action.zoomOut)`)を試してください。
+
+なおこれらの操作の場合には、レベルが20%ずつ変化します。
 
 ![Zoomed in editor](images/accessibility/zoomed-in.png)
 
-## Persisted Zoom Level
+## ズームレベルの固定
 
-When you adjust the zoom level with the **View** > **Zoom In / Out** commands, the zoom level is persisted in the `window.zoomLevel` [setting](/docs/getstarted/settings.md). The default value is 0 and each increment increases the zoom level by 20%.
+ズームレベルを調整した場合は`window.zoomLevel`[設定](/docs/getstarted/settings.md)で値を保持できます。このときのデフォルト値は0です。
 
-## High Contrast Theme
+## ハイコントラストテーマ
 
-We support a High Contrast color theme on all platforms.  Use **File** > **Preferences** > **Color Theme** to display the **Select Color Theme** drop-down and select the **High Contrast** theme.
+ハイコントラストをすべてのプラットフォーム上でサポートしています。配色テーマを変更するには**ファイル** > **基本設定** > **配色テーマ**で**配色テーマの選択**を表示した後**High Contrast**を選択します。
 
 ![High Contrast Theme](images/accessibility/high-contrast.png)
 
-## Keyboard Navigation
+## キーボードナビゲーション
 
-You will find that VS Code provides an exhaustive list of commands in the **Command Palette** (`kb(workbench.action.showCommands)`) so that you can run VS Code without using the mouse.  Press `kb(workbench.action.showCommands)` then type a command name (e.g. 'git') to filter the list of commands.
+VS Codeはマウスを使わずに操作できるように**コマンドパレット** (`kb(workbench.action.showCommands)`)でコマンドの完全なリストを提供しています。コマンドパレットでは、入力した文字に基づいて並び替えを行います。
 
-VS Code also has many preset keyboard shortcuts for commands. These are displayed to the right of the command in the **Command Palette**.
+またコマンド用のプリセットキーボードショートカットを沢山用意しています。これらは**コマンドパレット**の右側に表示します。
 
 ![Keyboard shortcuts in Command Palette](images/accessibility/keyboard-shortcuts.png)
 
-You can also set your own keyboard shortcuts. **File** > **Preferences** > **Keyboard Shortcuts** brings up the **Default Keyboard Shortcuts** in the left pane and your customizable `keybindings.json` on the right.  See [Key Bindings](/docs/getstarted/keybindings.md) for more details on customizing or adding your own keyboard shortcuts.
+独自のキーボードショートカットも設定可能です。キーボードショートカット(**ファイル** > **基本設定** > **キーボードショートカット**)は、左側に**既定のショートカット** 右側にカスタマイズ可能な`keybindings.json`を表示します。詳細については[Key Bindings](/docs/getstarted/keybindings.md) を確認してください。
 
-## Tab Navigation
+## タブナビゲーション
 
-You can use the `kbstyle(Tab)` key to jump between VS Code UI controls. Use `kbstyle(Shift+Tab)` to tab in reverse order.  As you tab through the UI controls, you can see an indicator around the UI element once the element gains focus.
+`kbstyle(Tab)`を使ってUIを移動することができます。`kbstyle(Shift+Tab)`で逆順に移動することも可能です。この移動の場合は要素がフォーカスしたとき、UIの周りにインジケーターを表示します。
 
-Some areas that support Tab navigation are:
+タブナビゲーションをサポートする場所は次のとおりです:
 
-* The View switcher (Files, Search, Git, Debug)
-* The header of collapsible sections in a view to expand/collapse
-* Actions in views and sections
-* Actions for items in the tree
+* アクティビティーバー(Files、Search、Git、Debug)
+* 折りたたみ可能なセクションのヘッダー
+* ビューとセクション
+* エクスプローラーのツリーアイテム
 
-## Tab trapping
+## タブトラッピング
 
-By default, pressing the `kbstyle(Tab)` within a source code file inserts the Tab character (or spaces depending on your Indentation setting) and does not leave the open file. You can toggle the trapping of `kbstyle(Tab)` with `kb(editor.action.toggleTabFocusMode)` and subsequent `kbstyle(Tab)` keys will move focus out of the file.  When default `kbstyle(Tab)` trapping is off, you will see an indicator in the Status Bar.
+既定の設定ではソースコードファイル内で`kbstyle(Tab)`を押すとタブ文字(インデント設定に応じてスペース)を挿入して、開いているファイルから離れることはありません。`kb(editor.action.toggleTabFocusMode)`で`kbstyle(Tab)`のトラッピング機能を切り替えたら`kbstyle(Tab)`でファイルからフォーカスを外すことができます。もし`kbstyle(Tab)`トラッピングがオフなら、ステータスバーにインジケーターを表示します。
 
 ![tab moves focus](images/accessibility/tab-moves-focus.png)
 
-You can also toggle `kbstyle(Tab)` trapping from the **Command Palette** (`kb(workbench.action.showCommands)`) with the **Toggle Use of Tab Key for Setting Focus** action.
+**コマンドパレット**(`kb(workbench.action.showCommands)`)から**Toggle Use of Tab Key for Setting Focus**(和訳不明)を実行することでも`kbstyle(Tab)`トラッピングを切り替えることが可能です。
 
-Read-only files never trap the `kbstyle(Tab)` key. The **Integrated Terminal** panel respects the `kbstyle(Tab)` trapping mode and can be toggled with `kb(editor.action.toggleTabFocusMode)`.
+読み取り専用ファイルでは`kbstyle(Tab)`キーを捉えることはありません。**統合ターミナル**は`kbstyle(Tab)`トラップモードを使えるよう`kb(editor.action.toggleTabFocusMode)`で切り替えることができます。
 
-## Screen Readers
+## スクリーンリーダー
 
-VS Code supports screen readers in the editor using a strategy based on paging the text. We have tested using the [NVDA screen reader](http://www.nvaccess.org), but we expect all screen readers to benefit from this support.
+VS Codeはテキストをページング方式にもとづく方法を使用してスクリーンリーダーをサポートしています。私たちは[NVDA screen reader](http://www.nvaccess.org)を使ってテストしていますが、すべてのスクリーンリーダーで機能すると考えています。
 
-The **Go to Next/Previous Error or Warning** actions (`kb(editor.action.marker.next)` and `kb(editor.action.marker.prev)`) allow screen readers to announce the error or warning messages.
+**次/前のエラーまたは警告へ移動**(`kb(editor.action.marker.next)` /`kb(editor.action.marker.prev)`)をしたときスクリーンリーダーはエラーと警告のメッセージを読み上げます。
 
-When the suggestions pop up, they will get announced to screen readers. It is possible to navigate the suggestions using `kbstyle(Alt+Up)` and `kbstyle(Alt+Down)`, you can dismiss the suggestions with `kbstyle(Shift+Escape)` and if suggestions get in your way, you can disable the auto-popup of suggestions with the `editor.quickSuggestions` setting.
+また、提案がポップアップしたときも読み上げます。このとき提案を`kbstyle(Alt+Up)`か`kbstyle(Alt+Down)`で移動するか `kbstyle(Shift+Escape)`を使用して提案を却下できます。もし、この自動のポップアップ表示無効化したいときは`editor.quickSuggestions`で設定してください。
 
-## Accessibility Help
+## アクセシビリティのヘルプ
 
-You can press `kb(editor.action.showAccessibilityHelp)` to trigger the **Show Accessibility Help** dialog while in an editor to check the state of various accessibility options in VS Code:
+`kb(editor.action.showAccessibilityHelp)`を押すと**アクセシビリティのヘルプ**ダイアログを表示して、さまざまな状態を確認できます。
 
 ![accessibility status](images/accessibility/status.png)
 
-## Debugger Accessibility
+## デバッガーのアクセシビリティ
 
-The VS Code debugger UI is user accessible and has the following features:
+デバッガーのアクセシビリティには次の機能があります:
 
-* Changes in debug state are read out (e.g. 'started', 'breakpoint hit', 'terminated', ...).
-* All debug actions are keyboard accessible.
-* Both the Debug View and Debug Console support Tab navigation.
-* Debug hover is keyboard accessible (`kb(editor.action.showHover)`).
+* デバッグステータス(たとえば 開始,ブレークポイント, 終了など)の変更表示。
+* すべてのデバッグアクションへキーボードからの操作。
+* デバッグ表示とデバッグコンソールの両方でタブナビゲーションをサポート。
+* デバッグホバーにキーボードから操作(`kb(editor.action.showHover)`)。
 
-## Current Known Issues
+## 既知の問題
 
-VS Code has some known accessibility issues depending on the platform.
+VS Codeにはプラットフォームに応じていくつかの既知の問題があります。
 
 ### Windows
 
-You can not use the keyboard (right, left arrow keys) to move between top-level menu items (**File**, **Edit**, **View**, etc).  This is due to Electron issue [#2504](https://github.com/atom/electron/issues/2504).
+矢印キーを利用してメニューバーのアイテム間を移動することができません。これはElectronの問題[#2504](https://github.com/atom/electron/issues/2504)によるものです。
 
 ### Mac
 
-There is limited screen reader support for the editor with VoiceOver.
+VoiceOverを使用したエディタのスクリーンリーダーは限られます。
 
 ### Linux
 
-There is no screen reader support for the editor.
+スクリーンリーダーのサポートはありません。
 
-## Next Steps
+## 次のステップ
 
-Read on to find out about:
+次を見てください:
 
 * [Visual Studio Code User Interface](/docs/getstarted/userinterface.md) - A quick orientation to VS Code.
 * [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
 * [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 
-## Common Questions
+## よくある質問

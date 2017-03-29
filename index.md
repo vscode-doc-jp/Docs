@@ -30,7 +30,7 @@ title: ようこそ
     * ~~Tasks~~
     * Creating your own Snippets
     * Command Line
-    * ✌~~Accesibility~~
+    * Accesibility
 * LANGUAGES
     * ✌~~Overview~~
     * ~~JavaScript~~

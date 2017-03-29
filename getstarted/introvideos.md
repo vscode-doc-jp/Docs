@@ -90,5 +90,3 @@ Start your journey with Visual Studio Code with this set of introductory videos.
 		</a>
 	</li>
 </ul>
-
-
