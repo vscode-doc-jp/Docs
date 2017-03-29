@@ -14,10 +14,10 @@ Visual Studio Codeは [Git](http://git-scm.com/)を統合してサポートし�
 
 ![git overview](images/versioncontrol/overview.png)
 
-画像左側のGitアイコンは現在のリポジトリにある**変更の数**表示します。これをクリックすると、次のような詳細を表示します:
+画像左側のGitアイコンは現在のリポジトリーにある**変更の数**表示します。これをクリックすると、次のような詳細を表示します:
 **ステージングしていない変更**、**ステージングした変更**、**未解決の競合マージ**
 
-各項目をクリックすることで**変更したファイル**内の詳細を表示します。ステージングしていない変更は、右のエディタでもファイル編集できることに留意してください。
+各項目をクリックすることで**変更したファイル**内の詳細を表示します。ステージングしていない変更は、右のエディターでもファイル編集できることに留意してください。
 
 またVS Codeの左下には**レポジストリの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意のGit referenceを選択してください。
 
@@ -65,7 +65,7 @@ Visual Studio Codeは [Git](http://git-scm.com/)を統合してサポートし�
 
 ## ガターインジケーター
 
-Gitリポジトリのフォルダを開いて編集に取り組み始めると、VS Codeは便利な注釈ガターと概要ルーラーを追加します。
+Gitリポジトリのフォルダーを開いて編集に取り組み始めると、VS Codeは便利な注釈ガターと概要ルーラーを追加します。
 
 * 赤の三角 : 削除された行
 * 緑のバー : 追加された行
@@ -93,32 +93,32 @@ VS CodeがどのようにGitを使用しているのか見ることができま�
 
 Git出力ウィンドウを表示するには **表示** > **出力** を表示してドロップダウンから`Git`を選択します。
 
-## リポジトリの初期化
+## リポジトリーの初期化
 
-ワークスペースがGitの管理下にない場合は**Initialize git repository**コマンドを利用して簡単にGitリポジトリを作成できます。VS Codeが既存のGitリポジトリを検出しない場合 **このワークスペースはまだ Git ソース管理下にありません。**を表示して、**Initialize git repository**コマンドを利用可能にします。
+ワークスペースがGitの管理下にない場合は**Initialize git repository**コマンドを利用して簡単にGitリポジトリーを作成できます。VS Codeが既存のGitリポジトリーを検出しない場合 **このワークスペースはまだGitソース管理下にありません。**を表示して、**Initialize git repository**コマンドを利用可能にします。
 
 ![Git initialize repository](images/versioncontrol/git-initialize.png)
 
 **Initialize git repository**を実行するとGitレポジストリに必要なメタデータファイルを作成して、ワークスペースファイルをステージされていない変更として表示します。
 
-## Git パッチ/差分 モード
+## Gitパッチ/差分モード
 
-コマンドラインからVS Codeを起動する場合、現在のインスタンスを閉じるまでコマンド待機する`--wait`引数を設定できます。あなたがGitの外部エディタとしてVS Codeを設定するときに便利です。
+コマンドラインからVS Codeを起動する場合、現在のインスタンスを閉じるまでコマンド待機する`--wait`引数を設定できます。あなたがGitの外部エディターとしてVS Codeを設定するときに便利です。
 
 実行手順:
 
 1. コマンドラインで`code --help`を実行できることを確認してください。
-    * ヘルプを表示しない場合は、次を確認します
+    * ヘルプを表示しない場合は、次を確認します。
         * Mac: **コマンドパレット** から **Shell Command: Install 'Code' command in path** を選択
         * Windows: インストール時に**Add to PATH**を選択
         * Linux: インストールを新しい.debか.rpmパッケージで行ったか確認
-2.コマンドラインから`git config --global core.editor "code --wait"`を実行してください。
+2. コマンドラインから`git config --global core.editor "code --wait"`を実行してください。
 
 `git config --global -e`を実行してGitを設定するエディターにVS Codeを使用できます。
 
 ![git config in VS Code](images/versioncontrol/gitconfig.png)
 
-Diffツールとして VS Codeを使うにはGitの設定に次を追加します。
+DiffツールとしてVS Codeを使うにはGitの設定に次を追加します。
 
 ```bash
 [diff]
@@ -129,7 +129,7 @@ Diffツールとして VS Codeを使うにはGitの設定に次を追加しま�
 
 これはVS Codeが受け取れる`--diff`オプションを活用して、2つのファイルを並べて比較します。
 
-VS Codeをエディタとして使用できる例を次に示します:
+VS Codeをエディターとして使用できる例を次に示します:
 
 * `git rebase HEAD~3 -i` - インタラクティブなリベースを行う
 * `git commit` - コミットメッセージに使う
@@ -155,14 +155,14 @@ VS Codeをエディタとして使用できる例を次に示します:
 > git push -u origin master
 ```
 
-**Q: Git の代わりに Team Foundation version control (TFVC) を使用しています。何をすべきですか?****
+**Q: Gitの代わりにTeam Foundation version control (TFVC) を使用しています。何をすべきですか?****
 
 **A:** Team Foundationのコマンドラインツールを使用してください。
 
-* クラスプラットフォームを使う場合: [Cross-Platform Command-Line Client Beginner's Guide](https://msdn.microsoft.com/en-us/library/hh873092.aspx)
-* Windows の場合: [Use Team Foundation version control commands](https://msdn.microsoft.com/en-us/library/vstudio/cc31bk2e.aspx)
+* クラスプラットホームを使う場合: [Cross-Platform Command-Line Client Beginner's Guide](https://msdn.microsoft.com/en-us/library/hh873092.aspx)
+* Windowsの場合: [Use Team Foundation version control commands](https://msdn.microsoft.com/en-us/library/vstudio/cc31bk2e.aspx)
 
-**Q: なぜプル, プッシュ, 同期が終わりませんか?**
+**Q: なぜプル、プッシュ、同期が終わりませんか?**
 
 これは大抵Gitに認証情報がなく、資格情報プロンプトを取得していないことを意味しています。
 
@@ -174,9 +174,9 @@ VS Codeなしで認証情報を登録して、リモートサーバーからプ�
 [Git Credential Manager for Mac and Linux](https://github.com/Microsoft/Git-Credential-Manager-for-Mac-and-Linux)
 [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows).
 
-**Q: Visual Studio Codeを使用して、膨大な数のファイルがあるフォルダのGitリポジトリを誤って初期化しました。それによって VS Code は反応しないかハングします。どうすればいいですか?**
+**Q: Visual Studio Codeを使用して、膨大な数のファイルがあるフォルダーのGitリポジトリーを誤って初期化しました。それによってVS Codeは反応しないかハングします。どうすればいいですか?**
 
-**A:** まず VS Code 終了し、コマンドプロントで次を実行します
+**A:** まずVS Code終了し、コマンドプロントで次を実行します
 
 ```bash
 code -n
@@ -184,17 +184,17 @@ code -n
 
 これはVS Codeを新しいウィンドウで開きます。
 
-次に(意図しないレポジストリの初期化を削除したいと仮定し)、レポを初期化した大きなフォルダ内の`.git`サブフォルダを探して削除します。なお`.git`は隠しフォルダなのでこれを表示する必要があります。たとえばWindowsのコマンドプロンプトで`dir .git /ah`を実行すると、特定のフォルダ内の`.git`という名前の隠しフォルダを表示できます。初期フォルダをどこに作成したかわからない場合は、ルートフォルダで`dir .git /ah /s` を実行してサブフォルダを含む`.git`フォルダを表示します。
+次に(意図しないレポジストリの初期化を削除したいと仮定し)、レポを初期化した大きなフォルダー内の`.git`サブフォルダーを探して削除します。なお`.git`は隠しフォルダーなのでこれを表示する必要があります。たとえばWindowsのコマンドプロンプトで`dir .git /ah`を実行すると、特定のフォルダー内の`.git`という名前の隠しフォルダーを表示できます。初期フォルダーをどこに作成したかわからない場合は、ルートフォルダで`dir .git /ah /s` を実行してサブフォルダーを含む`.git`フォルダーを表示します。
 
 **Q: GitHub DesktopをインストールしていますがVS Codeはこのgitを無視します**
 
-**A:** VS Codeは`git.exe`が`PATH`(`$PATH` on Mac or Linux)にあることを期待します。ですが **GitHub Desktop**は独自にgitバイナリを内包し、`git.exe`を`PATH`に登録しません。
+**A:** VS Codeは`git.exe`が`PATH`(`$PATH` on Mac or Linux)にあることを期待します。ですが **GitHub Desktop**は独自にgitバイナリーを内包し、`git.exe`を`PATH`に登録しません。
 
 次のいずれかを実行します:
 
 * `PATH`に`git.exe`を登録してVS Codeを再起動する
 * `git.path`[設定](/docs/getstarted/settings.md)で`git.exe`の場所を設定する
 
-**GitHub Desktop for win**の場合、通常`git.exe`は`C:\Users\USERNAME\AppData\Local\GitHub\PortableGit_COMMITID\ming32\bin`にあります。AppData\Local\GitHubで`git.exe`を検索すると、バイナリが見つかるはずです。
+**GitHub Desktop for win**の場合、通常`git.exe`は`C:\Users\USERNAME\AppData\Local\GitHub\PortableGit_COMMITID\ming32\bin`にあります。AppData\Local\GitHubで`git.exe`を検索すると、バイナリーが見つかるはずです。
 
 [git-scm](http://git-scm.com/)からGitをインストールすることもできますが、**GitHub Desktop**とは干渉しません。

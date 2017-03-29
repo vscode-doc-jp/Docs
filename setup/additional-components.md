@@ -13,8 +13,8 @@ VS Codeは小さなインストールで、ほとんどの開発ワークフロ�
 よくインストールされるコンポーネントを下に紹介します:
 
 - [Git](https://git-scm.com/download) - VS CodeはGitによるソースコード管理をサポートしていますが、別途でGitをインストールする必要があります。
-- [Node.js (NPM)](https://nodejs.org/) - JavaScriptアプリケーションをビルド、実行するためのプラットフォームおよびランタイム。
-- [TypeScript](http://typescriptlang.org) - `tsc`コンパイラでTypeScriptをJavaScriptにコンパイル。
+- [Node.js (NPM)](https://nodejs.org/) - JavaScriptアプリケーションをビルド、実行するためのプラットホームおよびランタイム。
+- [TypeScript](http://typescriptlang.org) - `tsc`コンパイラーでTypeScriptをJavaScriptにコンパイル。
 
 また上記のコンポーネントは、今後のマニュアルやチュートリアルでよく使用します。
 
@@ -32,10 +32,10 @@ Visual Studio Codeは既存の[ツールチェーン](https://ja.wikipedia.org/w
 
 - [Yeoman](http://yeoman.io/) - アプリケーションの足場作成**File** > **New Project**のコマンドラインバージョン
 - [generator-aspnet](https://www.npmjs.com/package/generator-aspnet) -**ASP.NET Core**の足場を構築するYeomanジェネレーター
-- [generator-hottowel](https://github.com/johnpapa/generator-hottowel) - A Yeoman gene - **AngularJS** を素早く作成する Yeoman ジェネレーター
+- [generator-hottowel](https://github.com/johnpapa/generator-hottowel) - A Yeoman gene - **AngularJS** を素早く作成するYeomanジェネレーター
 - [Express](http://expressjs.com/) - Node.js向けの**Jade**フレームワーク
-- [Gulp](http://gulpjs.com/) - Tasks と簡単に統合できるストリーミング タスク ランナー
-- [Mocha](http://mochajs.org/) - Node.js で動作する JavaScript テストフレームワーク
+- [Gulp](http://gulpjs.com/) - Tasksと簡単に統合できるストリーミング タスク ランナー
+- [Mocha](http://mochajs.org/) - Node.jsで動作するJavaScriptテストフレームワーク
 - [Bower](https://bower.io/) - クライアント側のパッケージマネージャー
 
 >**Note:** これらほとんどのツールはNode.jsとNPMパッケージマネージャーをインストールして使用する必要があります。

@@ -14,7 +14,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
     Sorry you're browser doesn't support HTML 5 video.
 </video>
 
-## Marketplace からスニペットを追加
+## Marketplaceからスニペットを追加
 
 VS Code [Marketplace](https://marketplace.visualstudio.com/vscode) には多くの[拡張機能](/docs/userguide/extension-gallery.md)を用意しています。使いたいものをインストールして再起動すれば、新しいスニペットが利用可能になります。(拡張機能インストールの詳細は[ここ](/docs/userguide/extension-gallery.md#browse-and-install-extensions) for more instructions on installing an extension)を参照してください)
 
@@ -41,14 +41,14 @@ VS Code [Marketplace](https://marketplace.visualstudio.com/vscode) には多く�
 
 上記の例ですと:
 
-* `For Loop` : スニペットの名前
-* `prefix` : IntelliSense とタブ補完の展開トリガーの値を定義します。この場合 `for` を入力すれば補完表示します。
+* `For Loop` : スニペットの名前。
+* `prefix` : IntelliSenseとタブ補完の展開トリガーの値を定義します。この場合 `for` を入力すれば補完表示します。
 * `body` : 展開されるコードやテキストを定義します。個々の要素が別々の行として挿入する単一の文字列か文字列の配列です。
-* `description` : IntelliSense で使用される説明
+* `description` : IntelliSenseで使用される説明。
 
 になります。
 
-上記の例で、`${1:index}`、 `${2:array}`、`${3:element}`の3つのプレースホルダーを使用しました。これらは番号順にトラバース(横断)し、数字とコロンの後の文字列を挿入します。
+上記の例で、`${1:index}`、 `${2:array}`、`${3:element}`の3つのプレースホルダを使用しました。これらは番号順にトラバース(横断)し、数字とコロンの後の文字列を挿入します。
 
 なお新しくスニペットを追加したとき、再起動する必要はありません。
 
@@ -60,14 +60,14 @@ VS Code [Marketplace](https://marketplace.visualstudio.com/vscode) には多く�
 
 タブストップを使用すると、カーソルをスニペットの指定場所に移動させることができます。カーソル位置を`$1`、`$2`のように指定します。番号順にカーソルを移動しますが`$0`は最終的なカーソル位置を示します。同じ番号のタブストップは、入力文字をリンクし同期します。
 
-### プレースホルダー
+### プレースホルダ
 
-プレースホルダーとは`${1:foo}`のような値をもつタブストップです。 まずプレースホルダーテキストを入力して、容易に内容を変更できるように選択状態になります。プレースホルダーは`${1:another ${2:placeholder}}`のように入れ子にすることができます。
+プレースホルダとは`${1:foo}`のような値をもつタブストップです。 まずプレースホルダテキストを入力して、容易に内容を変更できるように選択状態になります。プレースホルダは`${1:another ${2:placeholder}}`のように入れ子にすることができます。
 
 ### 変数
 
-`$name`や`${name:default}`を使うことで、変数の値を挿入することができます。変数を設定していないときは、その**default**または空文字列を挿入します。変数が不明な場合(名前が定義されていない場合)、変数名を挿入してプレースホルダーに変換します。次の変数を使用できます。
-(編集メモ: default は何を指しているのかがわからない 既定値? それとも上の default?
+`$name`や`${name:default}`を使うことで、変数の値を挿入することができます。変数を設定していないときは、その**default**または空文字列を挿入します。変数が不明な場合(名前が定義されていない場合)、変数名を挿入してプレースホルダに変換します。次の変数を使用できます。
+(編集メモ: defaultは何を指しているのかがわからない既定値? それとも上のdefault?)
 
 * `TM_SELECTED_TEXT` : 現在の選択テキストまたは空文字列
 * `TM_CURRENT_LINE` : 現在行の内容
@@ -93,7 +93,7 @@ int         ::= [0-9]+
 text        ::= .*
 ```
 
-## TextMate Snippets を使用する
+## TextMate Snippetsを使用する
 
 またTextMateスニペット(.tmSnippets)を使用することができます。詳細についてExtension Authoringセクションの[Using TextMate Snippets](/docs/extensions/themes-snippets-colorizers.md#using-textmate-snippets)を参照してください。
 

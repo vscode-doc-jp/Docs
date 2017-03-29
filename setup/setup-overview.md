@@ -6,9 +6,9 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 VS Codeのインストールと起動は簡単に完了できます。ダウンロードサイズは小さく、数分でインストールを完了させVS Codeを試すことができます。
 
-## クロスプラットフォーム
+## クロスプラットホーム
 
-VS CodeはMac、LinuxおよびWindows OS上で動作する無料のコードエディタです。
+VS CodeはMac、LinuxおよびWindows OS上で動作する無料のコードエディターです。
 
 次のOS別ガイドにしたがってセットアップを完了してください:
 
@@ -16,11 +16,11 @@ VS CodeはMac、LinuxおよびWindows OS上で動作する無料のコードエ�
 * [Linux](/docs/setup/linux.md)
 * [Windows](/docs/setup/windows.md)
 
-VS Codeは使用可能なハードウェアおよびプラットフォームとそのバージョンで実行する必要があります。[システム要件](/docs/supporting/requirements.md)を参照して、コンピューターをサポートしているかどうかを確認してください。
+VS Codeは使用可能なハードウェアおよびプラットホームとそのバージョンで実行する必要があります。[システム要件](/docs/supporting/requirements.md)を参照して、コンピューターをサポートしているかどうかを確認してください。
 
 ## 追加コンポーネント
 
-VS Codeはエディタであり、small footprint(場所を取らない)ことに自信を持っています。何でもかんでも詰め込んだ従来のIDEとは異なり、気になる技術に合わせたインストール調整が可能です。VS Codeをカスタマイズする方法については、プラットフォームガイドを参照してから[追加コンポーネント](/docs/setup/additional-components.md)を一読してください。
+VS Codeはエディターであり、small footprint(場所を取らない)ことに自信を持っています。何でもかんでも詰め込んだ従来のIDEとは異なり、気になる技術に合わせたインストール調整が可能です。VS Codeをカスタマイズする方法については、プラットホームガイドを参照してから[追加コンポーネント](/docs/setup/additional-components.md)を一読してください。
 
 ## 拡張機能
 
@@ -71,21 +71,21 @@ VS Codeをセットアップし終えたら、次のトピックでVS Codeの詳
 * [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 * [Debugging](/docs/userguide/debugging.md) - Debug your source code directly in the VS Code editor.
 
-早速何かを試したい場合は[Node.js tutorial](/docs/nodejs/nodejs-tutorial.md)のチュートリアルを試してください。数分で Web アプリケーションをデバッグできます。
+早速何かを試したい場合は[Node.js tutorial](/docs/nodejs/nodejs-tutorial.md)のチュートリアルを試してください。数分でWebアプリケーションをデバッグできます。
 
 ## よくある質問
 
-**Q: VS Code のシステム要件は何ですか?**
+**Q: VS Codeのシステム要件は何ですか?**
 
 **A:** [システム要件](/docs/supporting/requirements.md)を参照してください。
 
 **Q: VS Code本体のサイズは?**
 
-**A:** VS Codeのダウンロードサイズは100MB未満で、200MBのディスクを消費します。ですからすぐに VS Code をインストールして使用可能なのです。
+**A:** VS Codeのダウンロードサイズは100MB未満で、200MBのディスクを消費します。ですからすぐにVS Codeをインストールして使用可能なのです。
 
 **Q: 新しいプロジェクトを作成して実行するにはどうすればいいですか?**
 
-**A:** VS Codeには従来の*新規プロジェクト 作成**またはプロジェクトテンプレートは実装されていません。ですから、開発の興味対象に応じて [追加コンポーネント](/docs/setup/additional-components.md)と足組を構成する必要があります。そこで、[Yeoman](http://yeoman.io/)や[NPM](https://www.npmjs.com/) を使用すると、 テンプレート、およびツールを使用してプロジェクトを作成できます。
+**A:** VS Codeには従来の**新規プロジェクト作成**またはプロジェクトテンプレートは実装されていません。ですから、開発の興味対象に応じて[追加コンポーネント](/docs/setup/additional-components.md)と足組を構成する必要があります。そこで、[Yeoman](http://yeoman.io/)や[NPM](https://www.npmjs.com/)を使用すると、 テンプレート、およびツールを使用してプロジェクトを作成できます。
 
 **Q: VS Codeのバージョンはどこで確認できますか?**
 

@@ -74,7 +74,7 @@ CSS Emmetを他の言語で使用したい場合は、Emeet構文プロファイ
 
 VS Codeは[task runner](/docs/userguide/tasks.md)を利用してSassとLessのTranspilerと統合できます。`.scss`か`.less`を`.css`に変換する際にこれを利用できます。これをシンプルなSass/Lessファイルで確認します。
 
-### Step 1: Sassもしくは LessのTranspilerをインストール
+### Step 1: SassもしくはLessのTranspilerをインストール
 
 このチュートリアルでは [node-sass](https://www.npmjs.com/package/node-sass)か[less](https://www.npmjs.com/package/less)のいずれかを使用してみましょう。
 
@@ -86,7 +86,7 @@ npm install -g node-sass less
 
 ### Step 2: 簡単なSassもしくはLessの作成
 
-空のフォルダに`styles.scss`か`styles.less`ファイルを作成したら、VS Codeでそのフォルダを開きます。ファイルに次のコードを追記します:
+空のフォルダに`styles.scss`か`styles.less`ファイルを作成したら、VS Codeでそのフォルダーを開きます。ファイルに次のコードを追記します:
 
 ```scss
 $padding: 6px;
@@ -112,11 +112,11 @@ nav {
 
 >**Note:** 今回の例は非常に簡単なものでした。ですから2つの書き方は似たものになりました。より高度な編集の場合、構文と構造は大きく異なるものになることに注意してください。
 
-### Step 3: tasks.json を作成
+### Step 3: tasks.jsonを作成
 
 次の手順は、タスクを構成することです。セットアップには **コマンドパレット**を`kb(workbench.action.showCommands)` で開いて **Configure Task Runner** を入力したら `kbstyle(Enter)` で選択します。次に表示される選択ダイアログで`Others`を選択してください。
 
-これは、サンプルの`tasks.json`を`.vscode`フォルダに作成します。ファイルには、任意のコマンドを実行するサンプルが入っているので、これをLess/Sass用に設定を変更します:
+これは、サンプルの`tasks.json`を`.vscode`フォルダーに作成します。ファイルには、任意のコマンドを実行するサンプルが入っているので、これをLess/Sass用に設定を変更します:
 
 ```json
 // Sass configuration
@@ -167,7 +167,7 @@ npm install gulp gulp-sass gulp-less
 
 ### Step 2: シンプルなGulp taskを作成
 
-VS Codeを前と同じフォルダで開き、ルートに`gulpfile.js`を作成します。
+VS Codeを前と同じフォルダーで開き、ルートに`gulpfile.js`を作成します。
 
 `gulpfile.js`ファイルに次のコードを追記します:
 
@@ -209,10 +209,10 @@ gulp.task('default', ['less'], function() {
 
 ここで起こっていること
 
-1. `default`のgulpタスクは、起動時に`sass`または`less`のタスクを一度実行します
-2.ワークスペースルートのSass/Lessファイルの変更を監視します。
+1. `default`のgulpタスクは、起動時に`sass`または`less`のタスクを一度実行します。
+2. ワークスペースルートのSass/Lessファイルの変更を監視します。
 3. 変更されたSass/Lessファイルをそれぞれのコンパイラ`gulp-sass`や`gulp-less`で実行します。
-4. 作成された各CSSファイルに、元のSass/Lessファイル名を付けます。その後これらのファイルを同じディレクトリに配置します。
+4. 作成された各CSSファイルに、元のSass/Lessファイル名を付けます。その後これらのファイルを同じディレクトリーに配置します。
 
 ### Step 3: tasks.jsonを実行し続けるように変更
 

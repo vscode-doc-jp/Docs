@@ -18,7 +18,7 @@ IntelliSenseとは、メンバーの一覧、パラメーター ヒント、ク�
 
 ## IntelliSenseの特徴
 
-IntelliSenseの機能は、セマンティクスとソースコードの分析に基づいて高度なコードな補完を生成する言語サーバーによって構成されています。生成された補完はIntelliSenseを通してリスト表示しますが、文字を続けることで IntelliSenseがフィルターをかけて、メンバー(変数, メソッドなど)のより最適なリスト表示が可能になります。こうして出てきた項目は`kbstyle(Tab)`や`kbstyle(Enter)`で確定できます。
+IntelliSenseの機能は、セマンティクスとソースコードの分析に基づいて高度なコードな補完を生成する言語サーバーによって構成されています。生成された補完はIntelliSenseを通してリスト表示しますが、文字を続けることでIntelliSenseがフィルターをかけて、メンバー(変数、メソッドなど)のより最適なリスト表示が可能になります。こうして出てきた項目は`kbstyle(Tab)`や`kbstyle(Enter)`で確定できます。
 
 IntelliSenseを起動するときには、エディタで`kb(editor.action.triggerSuggest)`もしくはトリガーになるような文字(JavaScriptではドット(`kbstyle(.)`)などを入力します。
 
@@ -49,7 +49,7 @@ IntelliSenseは言語サーバーの候補、スニペット、単純な単語�
 
 |       |         |
 | ----- | ------- |
-| ![method icon](images/intellisense/Method_16x.svg) | メソッド, 関数, コンストラクター
+| ![method icon](images/intellisense/Method_16x.svg) | メソッド、関数、コンストラクター
 | ![variable icon](images/intellisense/Field_16x.svg) | 変数またはフィールド |
 | ![class](images/intellisense/Class_16x.svg) | クラス |
 | ![interface](images/intellisense/Interface_16x.svg) | インターフェイス |
@@ -114,11 +114,11 @@ IntelliSenseは言語サーバーの候補、スニペット、単純な単語�
 
 ## トラブルシューティング
 
-IntelliSense が機能しないときは、言語サービスが実行されていない可能性があります。そんな場合 VS Code を再起動すればこの問題を解決できる可能性が非常に高いです。言語拡張機能をインストールしても IntelliSense 機能が不足している場合は、そのレポジトリで問題を確認してください。
+IntelliSenseが機能しないときは、言語サービスが実行されていない可能性があります。そんな場合VS Codeを再起動すればこの問題を解決できる可能性が非常に高いです。言語拡張機能をインストールしてもIntelliSense機能が不足している場合は、そのレポジトリで問題を確認してください。
 
 > **Tip:** JavaScript の IntelliSense 設定とトラブルシューティングについては[こちら](/docs/languages/javascript.md#intellisense)を確認できます。
 
-入手した言語拡張が IntelliSense 機能を完全にサポートするとは限りません。拡張機能の README で何がサポートされているのか確認します。もし、言語拡張に問題があると思ったら [Marketplace](https://marketplace.visualstudio.com/vscode) で拡張機能を検索して、 サポートリンクを探してください。
+入手した言語拡張がIntelliSense機能を完全にサポートするとは限りません。拡張機能のREADMEで何がサポートされているのか確認します。もし、言語拡張に問題があると思ったら [Marketplace](https://marketplace.visualstudio.com/vscode) で拡張機能を検索して、 サポートリンクを探してください。
 
 ## 次のステップ
 

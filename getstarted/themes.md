@@ -21,7 +21,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ただし、直接編集する必要はありません。配色テーマ選択を使用して、テーマをプレビューしながら選択する方が簡単です。
 
 1. **ファイル**(**Code**>)>**基本設定**>**配色テーマ**でテーマ選択を開きます。
-2.カーソルキーを使用して配色テーマをプレビューします。
+2. カーソルキーを使用して配色テーマをプレビューします。
 3. 配色テーマを選択して、`kbstyle(Enter)`で確定します。
 
 ![Themes in the Command Palette](images/themes/colorthemes.png)
@@ -32,7 +32,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 VS Codeで初めからいくつかの配色テーマを用意しています。
 
-その他多くのテーマは、コミュニティによってVS Code [Marketplace](/docs/userguide/extension-gallery.md)にアップロードされています。使いたいものを見つけたら、インストールして再起動すれば新しいテーマが利用可能になります。
+その他多くのテーマは、コミュニティーによってVS Code [Marketplace](/docs/userguide/extension-gallery.md)にアップロードされています。使いたいものを見つけたら、インストールして再起動すれば新しいテーマが利用可能になります。
 
 > **Tip:** テーマを検索するには、Extension ビュー(`kb(workbench.view.extensions)`)で`theme`を検索します。
 
@@ -62,14 +62,14 @@ VS Codeで初めからいくつかの配色テーマを用意しています。
 直接`settings.json`を編集する必要はありません。アイコン ファイルテーマ選択を使用して、テーマをプレビューしながら選択する方が簡単です。
 
 1. **ファイル**(**Code**>)>**基本設定**>**ファイル開墾のテーマ**でアイコン選択を開きます。
-2.カーソルキーを使用してファイル アイコンのテーマをプレビューします。
-3.ファイル アイコンのテーマを選択して、`kbstyle(Enter)`で確定します。
+2. カーソルキーを使用してファイル アイコンのテーマをプレビューします。
+3. ファイル アイコンのテーマを選択して、`kbstyle(Enter)`で確定します。
 
-既定では、ファイル アイコン セットは設定されていないため、ファイル エクスプローラーにアイコンを表示しません。ですがファイル アイコンを一度設定すれば、次回 VS Code 起動時から適用して表示します。
+既定では、ファイル アイコン セットは設定されていないため、ファイル エクスプローラーにアイコンを表示しません。ですがファイル アイコンを一度設定すれば、次回VS Code起動時から適用して表示します。
 
-VS Code には **Minimal** と **Seti** のアイコンテーマ2つが初めから用意しています。もっと多くアイコンテーマをインストールするには、アイコンテーマ選択で **Find more in the Marketplace...** を選択します。
+VS Codeには **Minimal** と **Seti** のアイコンテーマ2つが初めから用意しています。もっと多くアイコンテーマをインストールするには、アイコンテーマ選択で **Find more in the Marketplace...** を選択します。
 
-また、 [VS Code Marketplace] (https://marketplace.visualstudio.com/vscode/Themes) でテーマ を探すこともできます。
+また、[VS Code Marketplace](https://marketplace.visualstudio.com/vscode/Themes)でテーマを探すこともできます。
 
 ## 独自のファイル アイコンのテーマを作成
 
@@ -77,7 +77,7 @@ VS Code には **Minimal** と **Seti** のアイコンテーマ2つが初めか
 
 ## 次のステップ
 
-テーマは VS Code カスタマイズの1つにすぎません。VS Codeのカスタマイズと拡張性について、次のトピックで詳細を参照してください:
+テーマはVS Codeカスタマイズの1つにすぎません。VS Codeのカスタマイズと拡張性について、次のトピックで詳細を参照してください:
 
 * [Settings](/docs/getstarted/settings) -  Learn how to configure VS Code to your preferences through user and workspace settings.
 * [Snippets](/docs/userguide/userdefinedsnippets.md) - Add additional snippets to your favorite language.

@@ -7,7 +7,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ## インストール
 
 1. Windows用の[Visual Studio Code](https://go.microsoft.com/fwlink/?LinkID=534107)を入手する
-2.ダウンロードを完了したら、インストーラー(VSCodeSetup-version.exe)を実行します。これには1分ほどかかります
+2. ダウンロードを完了したら、インストーラー(VSCodeSetup-version.exe)を実行します。これには1分ほどかかります
 3. 既定で64bitの場合には `C:\Program Files (x86)\Microsoft VS Code` にインストールします
 
 Zip archiveは~~[こちら](/docs/?dv=winzip)~~
@@ -40,14 +40,14 @@ VS Codeをインストールしてセットアップし終えたら、次のト�
 
 Win7, 8のマシンにVS Codeをインストールしましたが、一部アイコンを表示しません
 
-VS Code のアイコンは[SVG](https://ja.wikipedia.org/wiki/Scalable_Vector_Graphics)によって実現しています。ですから、.SVG は `image/svg+xml` と関連付けられている必要があります。私たちはこれを修正するオプションを検討していますが、現在は次の回避策を試してください:
+VS Codeのアイコンは[SVG](https://ja.wikipedia.org/wiki/Scalable_Vector_Graphics)によって実現しています。ですから、.SVGは `image/svg+xml` と関連付けられている必要があります。私たちはこれを修正するオプションを検討していますが、現在は次の回避策を試してください:
 
 コマンドプロントによる修正:
 
 1. 管理者コマンドプロントを開く
 2. `REG ADD HKCR\.svg /f /v "Content Type" /t REG_SZ /d image/svg+xml`を入力
 
-レジストリエディタ(regedit)による修正:
+レジストリ エディター(regedit)による修正:
 
 1. `regedit`を実行
 2. `HKEY_CLASSES_ROOT`を開く
