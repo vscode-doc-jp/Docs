@@ -13,9 +13,9 @@ Visual Studio Codeのダウンロードサイズは100MB未満で、200MBのデ�
 * 1.6GHz以上のプロセッサー
 * 1GBのRAM
 
-## プラットフォーム
+## プラットホーム
 
-VS Codeは次のプラットフォームでテストしています:
+VS Codeは次のプラットホームでテストしています:
 
 * OS X Yosemite
 * Windows 7 (with .NET Framework 4.5.2), 8.0, 8.1 および 10 (32-bit and 64-bit)

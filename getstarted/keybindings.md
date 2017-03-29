@@ -1,58 +1,60 @@
 ---
-title: Visual Studio Code Key Bindings
+title: キーバインディング
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Visual Studio Code lets you perform most tasks directly from the keyboard.  This page lists out the default bindings (keyboard shortcuts) and describes how you can update them.
+Visual Studio Codeでは、ほとんどのタスクをキーボードから直接実行することが可能です。このページでは、デフォルトのバインディング(キーボードショートカット)とその更新方法を説明します。
 
->**Note:** If you visit this page on a Mac, you will see the key bindings for the Mac.  If you visit using Windows or Linux, you will see the keys for that platform. If you need the key binding for another platform, hover your mouse over the key you are interested in.
+>**Note:** このページではアクセスしたプラットフォームのキーを表示します。他のプラットフォームを表示したい場合はマウスホバーしてください。
 
-## Keymap Extensions
+## キーマップの拡張機能
 
-Keyboard shortcuts are vital to productivity and changing keyboarding habits can be tough. To help with this, **File** > **Preferences** > **Keymap Extensions** shows you a list of popular keymap extensions. These extensions modify the VS Code shortcuts to match those of other editors so you don't need to learn new keyboard shortcuts. There is also a [Keymaps category](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) of extensions in the Marketplace.
+キーボード ショートカットは生産性にとって不可欠です。ですがキーボードの習慣を変えるのは難しいものです。この問題に対処するために **ファイル** > **基本設定** > **キーマップ拡張機能**では、一般的なキーマップ拡張機能のリストを用意しています。これら拡張機能は、VS Codeのショートカットを他のエディタのショートカットと一致するように変更できるので、新しいキーボードショートカットを習得する必要はありません。Marketplaceで[Keymaps category](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) をより詳細に確認してください。
 
-<div class="marketplace-extensions-keymaps"></div>
 
-> Tip: The extensions shown above are dynamically queried. Click on an extension tile above to read the description and reviews to decide which extension is best for you. See more in the [Marketplace](https://marketplace.visualstudio.com/vscode).
 
-## Keyboard Shortcuts Reference
 
-We also have a printable version of these keyboard shortcuts. **Help** > **Keyboard Shortcut Reference** displays a condensed PDF version suitable for printing as an easy reference.
 
-Below are links to the three platform-specific versions:
+## キーボード ショートカットの参照
+
+印刷可能なキーボードショートカットリストを用意しています。**ヘルプ** > **キーボード ショートカットの参照**で印刷に最適化されたPDFバージョンを表示します。
+
+各プラットホーム別のリンクは次の通りです:
 
 * [Windows](https://go.microsoft.com/fwlink/?linkid=832145)
 * [macOS](https://go.microsoft.com/fwlink/?linkid=832143)
 * [Linux](https://go.microsoft.com/fwlink/?linkid=832144)
 
-## Basic Editing
+## 基本編集
 
->**Note:** The following keys are rendered assuming a standard US keyboard layout. If you use a different keyboard layout, please [read below](/docs/getstarted/keybindings.md#keyboard-layouts).
+>**Note:** 次のキーは標準のUSキーボードを想定してレンタリングしています。異なったキーボードレイアウトを使用する場合は[ここ](/docs/getstarted/keybindings.md#keyboard-layouts)を参照してください。
+
+(※VS Code i18nから引用し対応していない場合英文のままです
 
 Key|Command|Command id
 ---|-------|----------
-`kb(editor.action.clipboardCutAction)`|Cut line (empty selection)|`editor.action.clipboardCutAction`
-`kb(editor.action.clipboardCopyAction)`|Copy line (empty selection)|`editor.action.clipboardCopyAction`
-`kb(editor.action.deleteLines)`|Delete Line|`editor.action.deleteLines`
-`kb(editor.action.insertLineAfter)`|Insert Line Below|`editor.action.insertLineAfter`
-`kb(editor.action.insertLineBefore)`|Insert Line Above|`editor.action.insertLineBefore`
-`kb(editor.action.moveLinesDownAction)`|Move Line Down|`editor.action.moveLinesDownAction`
-`kb(editor.action.moveLinesUpAction)`|Move Line Up|`editor.action.moveLinesUpAction`
-`kb(editor.action.copyLinesDownAction)`|Copy Line Down|`editor.action.copyLinesDownAction`
-`kb(editor.action.copyLinesUpAction)`|Copy Line Up|`editor.action.copyLinesUpAction`
-`kb(editor.action.addSelectionToNextFindMatch)`|Add Selection To Next Find Match|`editor.action.addSelectionToNextFindMatch`
-`kb(editor.action.moveSelectionToNextFindMatch)`|Move Last Selection To Next Find Match|`editor.action.moveSelectionToNextFindMatch`
+`kb(editor.action.clipboardCutAction)`|切り取り|`editor.action.clipboardCutAction`
+`kb(editor.action.clipboardCopyAction)`|コピー|`editor.action.clipboardCopyAction`
+`kb(editor.action.deleteLines)`|行の削除|`editor.action.deleteLines`
+`kb(editor.action.insertLineAfter)`|行を下に挿入|`editor.action.insertLineAfter`
+`kb(editor.action.insertLineBefore)`|行を上に挿入|`editor.action.insertLineBefore`
+`kb(editor.action.moveLinesDownAction)`|行を下へ移動|`editor.action.moveLinesDownAction`
+`kb(editor.action.moveLinesUpAction)`|行を上へ移動|`editor.action.moveLinesUpAction`
+`kb(editor.action.copyLinesDownAction)`|行を下へコピー|`editor.action.copyLinesDownAction`
+`kb(editor.action.copyLinesUpAction)`|行を上へコピー|`editor.action.copyLinesUpAction`
+`kb(editor.action.addSelectionToNextFindMatch)`|選択した項目を次の一致項目に追加|`editor.action.addSelectionToNextFindMatch`
+`kb(editor.action.moveSelectionToNextFindMatch)`|最後に選択した項目を次の一致項目に移動|`editor.action.moveSelectionToNextFindMatch`
 `kb(cursorUndo)`|Undo last cursor operation|`cursorUndo`
-`kb(editor.action.insertCursorAtEndOfEachLineSelected)`|Insert cursor at end of each line selected|`editor.action.insertCursorAtEndOfEachLineSelected`
-`kb(editor.action.selectHighlights)`|Select all occurrences of current selection|`editor.action.selectHighlights`
-`kb(editor.action.changeAll)`|Select all occurrences of current word|`editor.action.changeAll`
+`kb(editor.action.insertCursorAtEndOfEachLineSelected)`|選択した行から複数のカーソルを作成|`editor.action.insertCursorAtEndOfEachLineSelected`
+`kb(editor.action.selectHighlights)`|一致するすべての出現箇所を選択します|`editor.action.selectHighlights`
+`kb(editor.action.changeAll)`|すべての出現箇所を変更|`editor.action.changeAll`
 `kb(expandLineSelection)`|Select current line|`expandLineSelection`
-`kb(editor.action.insertCursorBelow)`|Insert Cursor Below|`editor.action.insertCursorBelow`
-`kb(editor.action.insertCursorAbove)`|Insert Cursor Above|`editor.action.insertCursorAbove`
-`kb(editor.action.jumpToBracket)`|Jump to matching bracket|`editor.action.jumpToBracket`
-`kb(editor.action.indentLines)`|Indent Line|`editor.action.indentLines`
-`kb(editor.action.outdentLines)`|Outdent Line|`editor.action.outdentLines`
+`kb(editor.action.insertCursorBelow)`|カーソルを下に挿入|`editor.action.insertCursorBelow`
+`kb(editor.action.insertCursorAbove)`|カーソルを上に挿入|`editor.action.insertCursorAbove`
+`kb(editor.action.jumpToBracket)`|ブラケットへ移動|`editor.action.jumpToBracket`
+`kb(editor.action.indentLines)`|行のインデント|`editor.action.indentLines`
+`kb(editor.action.outdentLines)`|行のインデント解除|`editor.action.outdentLines`
 `kb(cursorHome)`|Go to Beginning of Line|`cursorHome`
 `kb(cursorEnd)`|Go to End of Line|`cursorEnd`
 `kb(cursorBottom)`|Go to End of File|`cursorBottom`
@@ -61,190 +63,191 @@ Key|Command|Command id
 `kb(scrollLineUp)`|Scroll Line Up|`scrollLineUp`
 `kb(scrollPageDown)`|Scroll Page Down|`scrollPageDown`
 `kb(scrollPageUp)`|Scroll Page Up|`scrollPageUp`
-`kb(editor.fold)`|Fold (collapse) region|`editor.fold`
-`kb(editor.unfold)`|Unfold (uncollapse) region|`editor.unfold`
-`kb(editor.foldRecursively)`|Fold (collapse) all subregions|`editor.foldRecursively`
-`kb(editor.unfoldRecursively)`|Unfold (uncollapse) all subregions|`editor.unfoldRecursively`
-`kb(editor.foldAll)`|Fold (collapse) all regions|`editor.foldAll`
-`kb(editor.unfoldAll)`|Unfold (uncollapse) all regions|`editor.unfoldAll`
-`kb(editor.action.addCommentLine)`|Add Line Comment|`editor.action.addCommentLine`
-`kb(editor.action.removeCommentLine)`|Remove Line Comment|`editor.action.removeCommentLine`
-`kb(editor.action.commentLine)`|Toggle Line Comment|`editor.action.commentLine`
-`kb(editor.action.blockComment)`|Toggle Block Comment|`editor.action.blockComment`
-`kb(actions.find)`|Find|`actions.find`
-`kb(editor.action.startFindReplaceAction)`|Replace|`editor.action.startFindReplaceAction`
-`kb(editor.action.nextMatchFindAction)`|Find Next|`editor.action.nextMatchFindAction`
-`kb(editor.action.previousMatchFindAction)`|Find Previous|`editor.action.previousMatchFindAction`
+`kb(editor.fold)`|折りたたみ|`editor.fold`
+`kb(editor.unfold)`|展開|`editor.unfold`
+`kb(editor.foldRecursively)`|再帰的に折りたたむ|`editor.foldRecursively`
+`kb(editor.unfoldRecursively)`|再帰的に展開する|`editor.unfoldRecursively`
+`kb(editor.foldAll)`|全て折りたたみ|`editor.foldAll`
+`kb(editor.unfoldAll)`|すべて展開|`editor.unfoldAll`
+`kb(editor.action.addCommentLine)`|行コメントの追加|`editor.action.addCommentLine`
+`kb(editor.action.removeCommentLine)`|行コメントの削除|`editor.action.removeCommentLine`
+`kb(editor.action.commentLine)`|行コメントの切り替え|`editor.action.commentLine`
+`kb(editor.action.blockComment)`|ブロック コメントの切り替え|`editor.action.blockComment`
+`kb(actions.find)`|検索|`actions.find`
+`kb(editor.action.startFindReplaceAction)`|置換|`editor.action.startFindReplaceAction`
+`kb(editor.action.nextMatchFindAction)`|次を検索|`editor.action.nextMatchFindAction`
+`kb(editor.action.previousMatchFindAction)`|前を検索|`editor.action.previousMatchFindAction`
 `kb(editor.action.selectAllMatches)`|Select All Occurrences of Find Match|`editor.action.selectAllMatches`
 `kb(toggleFindCaseSensitive)`|Toggle Find Case Sensitive|`toggleFindCaseSensitive`
 `kb(toggleFindRegex)`|Toggle Find Regex|`toggleFindRegex`
 `kb(toggleFindWholeWord)`|Toggle Find Whole Word|`toggleFindWholeWord`
-`kb(editor.action.toggleTabFocusMode)`|Toggle Use of Tab Key for Setting Focus|`editor.action.toggleTabFocusMode`
-`kb(toggleRenderWhitespace)`|Toggle Render Whitespace|`toggleRenderWhitespace`
+`kb(editor.action.toggleTabFocusMode)`|Tabキーを切り替えるとフォーカスが移動します|`editor.action.toggleTabFocusMode`
+`kb(toggleRenderWhitespace)`|空白文字の表示の切り替え|`toggleRenderWhitespace`
 `kb(editor.action.toggleWordWrap)`|Toggle Word Wrap|`editor.action.toggleWordWrap`
 
-## Rich Languages Editing
+## 言語編集
 
 Key|Command|Command id
 ---|-------|----------
-`kb(editor.action.triggerSuggest)`|Trigger Suggest|`editor.action.triggerSuggest`
-`kb(editor.action.triggerParameterHints)`|Trigger Parameter Hints|`editor.action.triggerParameterHints`
+`kb(editor.action.triggerSuggest)`|候補をトリガー|`editor.action.triggerSuggest`
+`kb(editor.action.triggerParameterHints)`|パラメーター ヒントをトリーが|`editor.action.triggerParameterHints`
 `kb(editor.action.formatDocument)`|Format Document|`editor.action.formatDocument`
 `kb(editor.action.formatSelection)`|Format Selection|`editor.action.formatSelection`
-`kb(editor.action.goToDeclaration)`|Go to Definition|`editor.action.goToDeclaration`
-`kb(editor.action.previewDeclaration)`|Peek Definition|`editor.action.previewDeclaration`
-`kb(editor.action.openDeclarationToTheSide)`|Open Definition to the Side|`editor.action.openDeclarationToTheSide`
-`kb(editor.action.quickFix)`|Quick Fix|`editor.action.quickFix`
-`kb(editor.action.referenceSearch.trigger)`|Show References|`editor.action.referenceSearch.trigger`
-`kb(editor.action.rename)`|Rename Symbol|`editor.action.rename`
-`kb(editor.action.inPlaceReplace.down)`|Replace with Next Value|`editor.action.inPlaceReplace.down`
-`kb(editor.action.inPlaceReplace.up)`|Replace with Previous Value|`editor.action.inPlaceReplace.up`
-`kb(editor.action.smartSelect.grow)`|Expand AST Select|`editor.action.smartSelect.grow`
-`kb(editor.action.smartSelect.shrink)`|Shrink AST Select|`editor.action.smartSelect.shrink`
-`kb(editor.action.trimTrailingWhitespace)`|Trim Trailing Whitespace|`editor.action.trimTrailingWhitespace`
-`kb(workbench.action.editor.changeLanguageMode)`|Change Language Mode|`workbench.action.editor.changeLanguageMode`
+`kb(editor.action.goToDeclaration)`|定義へ移動|`editor.action.goToDeclaration`
+`kb(editor.action.previewDeclaration)`|定義をここに表示|`editor.action.previewDeclaration`
+`kb(editor.action.openDeclarationToTheSide)`|定義を横に開く|`editor.action.openDeclarationToTheSide`
+`kb(editor.action.quickFix)`|クイック修正|`editor.action.quickFix`
+`kb(editor.action.referenceSearch.trigger)`|すべての参照の検索|`editor.action.referenceSearch.trigger`
+`kb(editor.action.rename)`|シンボルの名前を変更|`editor.action.rename`
+`kb(editor.action.inPlaceReplace.down)`|次の値に置換|`editor.action.inPlaceReplace.down`
+`kb(editor.action.inPlaceReplace.up)`|前の値に置換|`editor.action.inPlaceReplace.up`
+`kb(editor.action.smartSelect.grow)`|選択範囲を拡大|`editor.action.smartSelect.grow`
+`kb(editor.action.smartSelect.shrink)`|選択範囲を縮小|`editor.action.smartSelect.shrink`
+`kb(editor.action.trimTrailingWhitespace)`|末尾の空白のトリミング|`editor.action.trimTrailingWhitespace`
+`kb(workbench.action.editor.changeLanguageMode)`|言語モードの変更|`workbench.action.editor.changeLanguageMode`
 
-## Navigation
 
-Key|Command|Command id
----|-------|----------
-`kb(workbench.action.showAllSymbols)`|Show All Symbols|`workbench.action.showAllSymbols`
-`kb(workbench.action.gotoLine)`|Go to Line...|`workbench.action.gotoLine`
-`kb(workbench.action.quickOpen)`|Go to File..., Quick Open|`workbench.action.quickOpen`
-`kb(workbench.action.gotoSymbol)`|Go to Symbol...|`workbench.action.gotoSymbol`
-`kb(workbench.actions.view.problems)`|Show Problems|`workbench.actions.view.problems`
-`kb(editor.action.marker.next)`|Go to Next Error or Warning|`editor.action.marker.next`
-`kb(editor.action.marker.prev)`|Go to Previous Error or Warning|`editor.action.marker.prev`
-`kb(workbench.action.showCommands)`|Show All Commands|`workbench.action.showCommands`
-`kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)`|Navigate Editor Group History|`workbench.action.openPreviousRecentlyUsedEditorInGroup`
-`kb(workbench.action.navigateBack)`|Go Back|`workbench.action.navigateBack`
-`kb(workbench.action.navigateForward)`|Go Forward|`workbench.action.navigateForward`
-
-## Editor/Window Management
+## ナビゲーション
 
 Key|Command|Command id
 ---|-------|----------
-`kb(workbench.action.newWindow)`|New Window|`workbench.action.newWindow`
-`kb(workbench.action.closeWindow)`|Close Window|`workbench.action.closeWindow`
-`kb(workbench.action.closeActiveEditor)`|Close Editor|`workbench.action.closeActiveEditor`
-`kb(workbench.action.closeFolder)`|Close Folder|`workbench.action.closeFolder`
-`kb(workbench.action.navigateEditorGroups)`|Cycle Between Editor Groups|`workbench.action.navigateEditorGroups`
-`kb(workbench.action.splitEditor)`|Split Editor|`workbench.action.splitEditor`
-`kb(workbench.action.focusFirstEditorGroup)`|Focus into Left Editor Group|`workbench.action.focusFirstEditorGroup`
-`kb(workbench.action.focusSecondEditorGroup)`|Focus into Side Editor Group|`workbench.action.focusSecondEditorGroup`
-`kb(workbench.action.focusThirdEditorGroup)`|Focus into Right Editor Group|`workbench.action.focusThirdEditorGroup`
-`kb(workbench.action.focusPreviousGroup)`|Focus into Editor Group on the Left|`workbench.action.focusPreviousGroup`
-`kb(workbench.action.focusNextGroup)`|Focus into Editor Group on the Right|`workbench.action.focusNextGroup`
-`kb(workbench.action.moveEditorLeftInGroup)` | Move Editor Left | `workbench.action.moveEditorLeftInGroup`
-`kb(workbench.action.moveEditorRightInGroup)` | Move Editor Right | `workbench.action.moveEditorRightInGroup`
-`kb(workbench.action.moveActiveEditorGroupLeft)`|Move Active Editor Group Left|`workbench.action.moveActiveEditorGroupLeft`
-`kb(workbench.action.moveActiveEditorGroupRight)`|Move Active Editor Group Right|`workbench.action.moveActiveEditorGroupRight`
+`kb(workbench.action.showAllSymbols)`|ワークスペース内のシンボルへ移動|`workbench.action.showAllSymbols`
+`kb(workbench.action.gotoLine)`|指定行へ移動...|`workbench.action.gotoLine`
+`kb(workbench.action.quickOpen)`|ファイルに移動...|`workbench.action.quickOpen`
+`kb(workbench.action.gotoSymbol)`|ファイル内シンボルへ移動...|`workbench.action.gotoSymbol`
+`kb(workbench.actions.view.problems)`|問題を表示する|`workbench.actions.view.problems`
+`kb(editor.action.marker.next)`|次のエラーまたは警告へ移動|`editor.action.marker.next`
+`kb(editor.action.marker.prev)`|前のエラーまたは警告へ移動|`editor.action.marker.prev`
+`kb(workbench.action.showCommands)`|すべてのコマンドの表示|`workbench.action.showCommands`
+`kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)`|グループ内の最近使用したエディターのうち前のエディターを開く|`workbench.action.openPreviousRecentlyUsedEditorInGroup`
+`kb(workbench.action.navigateBack)`|前に戻る|`workbench.action.navigateBack`
+`kb(workbench.action.navigateForward)`|次に進む|`workbench.action.navigateForward`
 
-## File Management
+## エディター/ウィンドウ管理
 
 Key|Command|Command id
 ---|-------|----------
-`kb(workbench.action.files.newUntitledFile)`|New File|`workbench.action.files.newUntitledFile`
-`kb(workbench.action.files.openFile)`|Open File...|`workbench.action.files.openFile`
-`kb(workbench.action.files.save)`|Save|`workbench.action.files.save`
-`kb(workbench.action.files.saveAll)`|Save All|`workbench.action.files.saveAll`
-`kb(workbench.action.files.saveAs)`|Save As...|`workbench.action.files.saveAs`
-`kb(workbench.action.closeActiveEditor)`|Close|`workbench.action.closeActiveEditor`
-`kb(workbench.action.closeOtherEditors)`|Close Others|`workbench.action.closeOtherEditors`
-`kb(workbench.action.closeEditorsInGroup)`|Close Group|`workbench.action.closeEditorsInGroup`
-`kb(workbench.action.closeEditorsInOtherGroups)`|Close Other Groups|`workbench.action.closeEditorsInOtherGroups`
-`kb(workbench.action.closeEditorsToTheLeft)`|Close Group to Left|`workbench.action.closeEditorsToTheLeft`
-`kb(workbench.action.closeEditorsToTheRight)`|Close Group to Right|`workbench.action.closeEditorsToTheRight`
-`kb(workbench.action.closeAllEditors)`|Close All|`workbench.action.closeAllEditors`
-`kb(workbench.action.reopenClosedEditor)`|Reopen Closed Editor|`workbench.action.reopenClosedEditor`
-`kb(workbench.action.keepEditor)`|Keep Open|`workbench.action.keepEditor`
-`kb(workbench.action.openNextRecentlyUsedEditorInGroup)`|Open Next|`workbench.action.openNextRecentlyUsedEditorInGroup`
-`kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)`|Open Previous|`workbench.action.openPreviousRecentlyUsedEditorInGroup`
-`kb(workbench.action.files.copyPathOfActiveFile)`|Copy Path of Active File|`workbench.action.files.copyPathOfActiveFile`
-`kb(workbench.action.files.revealActiveFileInWindows)`|Reveal Active File in Windows|`workbench.action.files.revealActiveFileInWindows`
-`kb(workbench.action.files.showOpenedFileInNewWindow)`|Show Opened File in New Window|`workbench.action.files.showOpenedFileInNewWindow`
-`kb(workbench.files.action.compareFileWith)`|Compare Opened File With|`workbench.files.action.compareFileWith`
+`kb(workbench.action.newWindow)`|新しいウィンドウ|`workbench.action.newWindow`
+`kb(workbench.action.closeWindow)`|ウィンドウを閉じる|`workbench.action.closeWindow`
+`kb(workbench.action.closeActiveEditor)`|エディターを閉じる|`workbench.action.closeActiveEditor`
+`kb(workbench.action.closeFolder)`|フォルダーを閉じる|`workbench.action.closeFolder`
+`kb(workbench.action.navigateEditorGroups)`|エディター グループ間で移動する|`workbench.action.navigateEditorGroups`
+`kb(workbench.action.splitEditor)`|エディターの分割|`workbench.action.splitEditor`
+`kb(workbench.action.focusFirstEditorGroup)`|1番目のエディター グループにフォーカス|`workbench.action.focusFirstEditorGroup`
+`kb(workbench.action.focusSecondEditorGroup)`|2番目のエディター グループにフォーカス|`workbench.action.focusSecondEditorGroup`
+`kb(workbench.action.focusThirdEditorGroup)`|3番目のエディター グループにフォーカス|`workbench.action.focusThirdEditorGroup`
+`kb(workbench.action.focusPreviousGroup)`|前のグループにフォーカス|`workbench.action.focusPreviousGroup`
+`kb(workbench.action.focusNextGroup)`|次のグループにフォーカス|`workbench.action.focusNextGroup`
+`kb(workbench.action.moveEditorLeftInGroup)`|エディターを左へ移動|`workbench.action.moveEditorLeftInGroup`
+`kb(workbench.action.moveEditorRightInGroup)`|エディターを右へ移動|`workbench.action.moveEditorRightInGroup`
+`kb(workbench.action.moveActiveEditorGroupLeft)`|エディター グループを左側に移動する|`workbench.action.moveActiveEditorGroupLeft`
+`kb(workbench.action.moveActiveEditorGroupRight)`|エディター グループを右側に移動する|`workbench.action.moveActiveEditorGroupRight`
 
-## Display
+## ファイル管理
 
 Key|Command|Command id
 ---|-------|----------
-`kb(workbench.action.toggleFullScreen)`|Toggle Full Screen|`workbench.action.toggleFullScreen`
-`kb(workbench.action.toggleZenMode)`|Toggle Zen Mode|`workbench.action.toggleZenMode`
+`kb(workbench.action.files.newUntitledFile)`|無題の新規ファイル|`workbench.action.files.newUntitledFile`
+`kb(workbench.action.files.openFile)`|ファイルを開く...|`workbench.action.files.openFile`
+`kb(workbench.action.files.save)`|保存|`workbench.action.files.save`
+`kb(workbench.action.files.saveAll)`|すべて保存|`workbench.action.files.saveAll`
+`kb(workbench.action.files.saveAs)`|名前を付けて保存...|`workbench.action.files.saveAs`
+`kb(workbench.action.closeActiveEditor)`|エディターを閉じる|`workbench.action.closeActiveEditor`
+`kb(workbench.action.closeOtherEditors)`|その他のエディターを閉じる|`workbench.action.closeOtherEditors`
+`kb(workbench.action.closeEditorsInGroup)`|グループ内のすべてのエディターを閉じる|`workbench.action.closeEditorsInGroup`
+`kb(workbench.action.closeEditorsInOtherGroups)`|他のグループ内のエディターを閉じる|`workbench.action.closeEditorsInOtherGroups`
+`kb(workbench.action.closeEditorsToTheLeft)`|左側のエディターを閉じる|`workbench.action.closeEditorsToTheLeft`
+`kb(workbench.action.closeEditorsToTheRight)`|右側のエディターを閉じる|`workbench.action.closeEditorsToTheRight`
+`kb(workbench.action.closeAllEditors)`|すべてのエディターを閉じる|`workbench.action.closeAllEditors`
+`kb(workbench.action.reopenClosedEditor)`|閉じたエディターを再度開く|`workbench.action.reopenClosedEditor`
+`kb(workbench.action.keepEditor)`|エディターを保持|`workbench.action.keepEditor`
+`kb(workbench.action.openNextRecentlyUsedEditorInGroup)`|グループ内の最近使用したエディターのうち次のエディターを開く|`workbench.action.openNextRecentlyUsedEditorInGroup`
+`kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)`|グループ内の最近使用したエディターのうち前のエディターを開く|`workbench.action.openPreviousRecentlyUsedEditorInGroup`
+`kb(workbench.action.files.copyPathOfActiveFile)`|アクティブ ファイルのパスのコピー|`workbench.action.files.copyPathOfActiveFile`
+`kb(workbench.action.files.revealActiveFileInWindows)`|Windowsエクスプローラーでアクティブファイルを表示する|`workbench.action.files.revealActiveFileInWindows`
+`kb(workbench.action.files.showOpenedFileInNewWindow)`|新しいウィンドウでアクティブ ファイルを開く|`workbench.action.files.showOpenedFileInNewWindow`
+`kb(workbench.files.action.compareFileWith)`|アクティブ ファイルを比較|`workbench.files.action.compareFileWith`
+
+## 表示
+
+Key|Command|Command id
+---|-------|----------
+`kb(workbench.action.toggleFullScreen)`|全画面表示の切り替え|`workbench.action.toggleFullScreen`
+`kb(workbench.action.toggleZenMode)`|Zen Modeの切り替え|`workbench.action.toggleZenMode`
 `kb(workbench.action.exitZenMode)`|Leave Zen Mode|`workbench.action.exitZenMode`
-`kb(workbench.action.zoomIn)`|Zoom in|`workbench.action.zoomIn`
-`kb(workbench.action.zoomOut)`|Zoom out|`workbench.action.zoomOut`
-`kb(workbench.action.zoomReset)`|Reset Zoom|`workbench.action.zoomReset`
-`kb(workbench.action.toggleSidebarVisibility)`|Toggle Sidebar Visibility|`workbench.action.toggleSidebarVisibility`
-`kb(workbench.view.explorer)`|Show Explorer / Toggle Focus|`workbench.view.explorer`
-`kb(workbench.view.debug)`|Show Debug|`workbench.view.debug`
-`kb(workbench.view.git)`|Show Git|`workbench.view.git`
-`kb(workbench.view.extensions)`|Show Extensions|`workbench.view.extensions`
-`kb(workbench.action.output.toggleOutput)`|Show Output|`workbench.action.output.toggleOutput`
-`kb(workbench.action.quickOpenView)`|Quick Open View|`workbench.action.quickOpenView`
-`kb(workbench.view.search)`|Show Search|`workbench.view.search`
-`kb(workbench.action.replaceInFiles)`|Replace in Files|`workbench.action.replaceInFiles`
+`kb(workbench.action.zoomIn)`|拡大|`workbench.action.zoomIn`
+`kb(workbench.action.zoomOut)`|縮小|`workbench.action.zoomOut`
+`kb(workbench.action.zoomReset)`|ズームのリセット|`workbench.action.zoomReset`
+`kb(workbench.action.toggleSidebarVisibility)`|サイドバーの表示の切り替え|`workbench.action.toggleSidebarVisibility`
+`kb(workbench.view.explorer)`|エクスプローラーを表示|`workbench.view.explorer`
+`kb(workbench.view.debug)`|デバッグの表示|`workbench.view.debug`
+`kb(workbench.view.git)`|Gitを表示|`workbench.view.git`
+`kb(workbench.view.extensions)`|拡張機能を表示する|`workbench.view.extensions`
+`kb(workbench.action.output.toggleOutput)`|出力の切り替え|`workbench.action.output.toggleOutput`
+`kb(workbench.action.quickOpenView)`|Quick Openビュー|`workbench.action.quickOpenView`
+`kb(workbench.view.search)`|検索の表示|`workbench.view.search`
+`kb(workbench.action.replaceInFiles)`|複数のファイルで置換|`workbench.action.replaceInFiles`
 `kb(workbench.action.search.toggleQueryDetails)`|Toggle Search Details|`workbench.action.search.toggleQueryDetails`
-`kb(workbench.action.terminal.openNativeConsole)`|Open New Command Prompt|`workbench.action.terminal.openNativeConsole`
+`kb(workbench.action.terminal.openNativeConsole)`|新しいコマンドプロントを開く|`workbench.action.terminal.openNativeConsole`
 `kb(markdown.showPreview)`|Toggle Markdown Preview|`markdown.showPreview`
 `kb(markdown.showPreviewToSide)`|Open Preview to the Side|`markdown.showPreviewToSide`
-`kb(workbench.action.terminal.toggleTerminal)`|Toggle Integrated Terminal|`workbench.action.terminal.toggleTerminal`
+`kb(workbench.action.terminal.toggleTerminal)`|統合端末の切り替え|`workbench.action.terminal.toggleTerminal`
 
-## Preferences
-
-Key|Command|Command id
----|-------|----------
-`kb(workbench.action.openGlobalSettings)`|Open User Settings|`workbench.action.openGlobalSettings`
-`kb(workbench.action.openWorkspaceSettings)`|Open Workspace Settings|`workbench.action.openWorkspaceSettings`
-`kb(workbench.action.openGlobalKeybindings)`|Open Keyboard Shortcuts|`workbench.action.openGlobalKeybindings`
-`kb(workbench.action.openSnippets)`|Open User Snippets|`workbench.action.openSnippets`
-`kb(workbench.action.selectTheme)`|Select Color Theme|`workbench.action.selectTheme`
-`kb(workbench.action.configureLocale)`|Configure Display Language|`workbench.action.configureLocale`
-
-## Debug
+## 基本設定
 
 Key|Command|Command id
 ---|-------|----------
-`kb(editor.debug.action.toggleBreakpoint)`|Toggle Breakpoint|`editor.debug.action.toggleBreakpoint`
-`kb(workbench.action.debug.start)`|Start|`workbench.action.debug.start`
-`kb(workbench.action.debug.continue)`|Continue|`workbench.action.debug.continue`
-`kb(workbench.action.debug.run)`|Start (without debugging)|`workbench.action.debug.run`
-`kb(workbench.action.debug.pause)`|Pause|`workbench.action.debug.pause`
-`kb(workbench.action.debug.stepInto)`|Step Into|`workbench.action.debug.stepInto`
-`kb(workbench.action.debug.stepOut)`|Step Out|`workbench.action.debug.stepOut`
-`kb(workbench.action.debug.stepOver)`|Step Over|`workbench.action.debug.stepOver`
-`kb(workbench.action.debug.stop)`|Stop|`workbench.action.debug.stop`
-`kb(editor.action.showHover)`|Show Hover|`editor.action.showHover`
+`kb(workbench.action.openGlobalSettings)`|ユーザー設定を開く|`workbench.action.openGlobalSettings`
+`kb(workbench.action.openWorkspaceSettings)`|ワークスペース設定を開く|`workbench.action.openWorkspaceSettings`
+`kb(workbench.action.openGlobalKeybindings)`|キーボード ショートカットを開く|`workbench.action.openGlobalKeybindings`
+`kb(workbench.action.openSnippets)`|ユーザー スニペットを開く|`workbench.action.openSnippets`
+`kb(workbench.action.selectTheme)`|配色テーマ|`workbench.action.selectTheme`
+`kb(workbench.action.configureLocale)`|言語を構成する|`workbench.action.configureLocale`
 
-## Tasks
+## デバッグ
+
+Key|Command|Command id
+---|-------|----------
+`kb(editor.debug.action.toggleBreakpoint)`|ブレークポイントの切り替え|`editor.debug.action.toggleBreakpoint`
+`kb(workbench.action.debug.start)`|デバッグの開始|`workbench.action.debug.start`
+`kb(workbench.action.debug.continue)`|続行|`workbench.action.debug.continue`
+`kb(workbench.action.debug.run)`|デバッグなしで開始|`workbench.action.debug.run`
+`kb(workbench.action.debug.pause)`|一時停止|`workbench.action.debug.pause`
+`kb(workbench.action.debug.stepInto)`|ステップ インする|`workbench.action.debug.stepInto`
+`kb(workbench.action.debug.stepOut)`|ステップ アウト|`workbench.action.debug.stepOut`
+`kb(workbench.action.debug.stepOver)`|ステップ オーバー|`workbench.action.debug.stepOver`
+`kb(workbench.action.debug.stop)`|停止|`workbench.action.debug.stop`
+`kb(editor.action.showHover)`|ホバーの表示|`editor.action.showHover`
+
+## タスク
 
 Key|Command|Command id
 ---|-------|----------
 `kb(workbench.action.tasks.build)`|Run Build Task|`workbench.action.tasks.build`
 `kb(workbench.action.tasks.test)`|Run Test Task|`workbench.action.tasks.test`
 
-## Extensions
+## 拡張機能
 
 Key|Command|Command id
 ---|-------|----------
-`kb(workbench.extensions.action.installExtension)`|Install Extension|`workbench.extensions.action.installExtension`
-`kb(workbench.extensions.action.showInstalledExtensions)`|Show Installed Extensions|`workbench.extensions.action.showInstalledExtensions`
-`kb(workbench.extensions.action.listOutdatedExtensions)`|Show Outdated Extensions|`workbench.extensions.action.listOutdatedExtensions`
-`kb(workbench.extensions.action.showRecommendedExtensions)`|Show Recommended Extensions|`workbench.extensions.action.showRecommendedExtensions`
-`kb(workbench.extensions.action.showPopularExtensions)`|Show Popular Extensions|`workbench.extensions.action.showPopularExtensions`
-`kb(workbench.extensions.action.updateAllExtensions)`|Update All Extensions|`workbench.extensions.action.updateAllExtensions`
+`kb(workbench.extensions.action.installExtension)`|拡張機能のインストール|`workbench.extensions.action.installExtension`
+`kb(workbench.extensions.action.showInstalledExtensions)`|インストール済みの拡張機能の表示|`workbench.extensions.action.showInstalledExtensions`
+`kb(workbench.extensions.action.listOutdatedExtensions)`|古くなった拡張機能の表示|`workbench.extensions.action.listOutdatedExtensions`
+`kb(workbench.extensions.action.showRecommendedExtensions)`|お勧めの拡張機能を表示|`workbench.extensions.action.showRecommendedExtensions`
+`kb(workbench.extensions.action.showPopularExtensions)`|人気の拡張機能の表示|`workbench.extensions.action.showPopularExtensions`
+`kb(workbench.extensions.action.updateAllExtensions)`|すべての拡張機能を更新します|`workbench.extensions.action.updateAllExtensions`
 
-## Customizing Shortcuts
+## ショートカットのカスタマイズ
 
-All keyboard shortcuts in VS Code can be customized via the `User/keybindings.json` file.
+VS Code内すべてのキーボードショートカットは`keybindings.json`ファイルでカスタマイズすることができます。
 
-* To configure keyboard shortcuts the way you want, go to the menu under **File**  > **Preferences** > **Keyboard Shortcuts**. (**Code** > **Preferences** > **Keyboard Shortcuts** on Mac)
-* This will open the `Default Keyboard Shortcuts` on the left and your `User/keybindings.json` file where you can overwrite the default bindings on the right.
-* The list above isn't exhaustive. More commands may be listed under "Here are other available commands" in `Default Keyboard Shortcuts`.
+* **ファイル**(**Code**)  > **基本設定** > **キーボード ショートカット**に移動してキーボードショートカットを構成します。
+* これにより、左側に**既定のキーバインド**と右側に`keybindings.json`ファイルを開きます。右側のファイルで既定のキーバインド設定を上書きできます 。
+* なお上記のリストは完全なものではありません。既定のキーボードショートカット下の"Here are other available commands"でより多くを確認できます。
 
-## Keyboard Rules
+## キーボードのルール
 
-The keyboard shortcuts dispatching is done by analyzing a list of rules that are expressed in JSON. Here are some examples:
+キーボードショートカットの割り当ては、JSONによるルールのリストを分析することによって行われます。いくつかの例を次に示します:
 
 ```json
 // Keybindings that are active when the focus is in the editor
@@ -265,28 +268,28 @@ The keyboard shortcuts dispatching is done by analyzing a list of rules that are
 { "key": "ctrl+k ctrl+w",   "command": "workbench.action.closeAllEditors" },
 ```
 
-Each rule consists of:
+各ルールは次の通りです:
 
-* a `key` that describes the pressed keys.
-* a `command` containing the identifier of the command to execute.
-* an **optional** `when` clause containing a boolean expression that will be evaluated depending on the current **context**.
+* `key` : 押されるキー
+* `command` : 実行するコマンドID
+* `when`(オプション) : 現在のコンテキストに応じて評価されるブール式を含める値
 
-Chords (two separate keypress actions) are described by separating the two keypresses with a space. E.g.: `kbstyle(ctrl+k ctrl+c)`.
+Chord(別個のキー操作)は、2つのキーをスペースで区切って記述します。E.g.: `kbstyle(ctrl+k ctrl+c)`。
 
-When a key is pressed:
+キーが押されたとき:
 
-* the rules are evaluated from **bottom** to **top**.
-* the first rule that matches, both the `key` and in terms of `when`, is accepted.
-* no more rules are processed.
-* if a rule is found and has a `command` set, the `command` is executed.
+* ルールは下から上に評価します。
+* `key`と`when`が条件に一致した最初のルールを利用します。
+* それ以降のルールは処理しません。
+* ルールが一致したうえで`command`をセットしていれば、その` command`を実行します。
 
-The additional `User/keybindings.json` rules are appended at runtime to the bottom of the default rules, thus allowing them to overwrite the default rules. The `User/keybindings.json` file is watched by VS Code so editing it while VS Code is running will update the rules at runtime.
+追加の` keybindings.json`ルールは実行時に既定ルールの最後に追加され、既定のルールを上書きします。`keybindings.json`ファイルはVS Codeで監視するので、実行中でもルールを更新できます。
 
-## Accepted keys
+## 利用可能なキー
 
-The `key` is made up of modifiers and the key itself.
+`key`は修飾子とキーで構成します。
 
-The following modifiers are accepted:
+次の修飾子を受け付けます:
 
 Platform|Modifiers
 --|---------
@@ -294,7 +297,7 @@ Mac|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(cmd+)`
 Windows|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(win+)`
 Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
 
-The following keys are accepted:
+次のキーを受け付けます:
 
 * `kbstyle(f1-f19)`, `kbstyle(a-z)`, `kbstyle(0-9)`
 * ``kbstyle(`)``, `kbstyle(-)`, `kbstyle(=)`, `kbstyle([)`, `kbstyle(])`, `kbstyle(\)`, `kbstyle(;)`, `kbstyle(')`, `kbstyle(,)`, `kbstyle(.)`, `kbstyle(/)`
@@ -304,58 +307,58 @@ The following keys are accepted:
 * `kbstyle(numpad0-numpad9)`, `kbstyle(numpad_multiply)`, `kbstyle(numpad_add)`, `kbstyle(nupad_separator)`
 * `kbstyle(numpad_subtract)`, `kbstyle(numpad_decimal)`, `kbstyle(numpad_divide)`
 
-## when Clause Contexts
+## when節のコンテキスト
 
-VS Code gives you fine control over when your key bindings are enabled through the optional `when` clause.  If you key binding doesn't have a `when` clause, the key binding is globally available at all times.
+VS Codeはオプションの`when`節を通して、キーバインディングの有効タイミングを細かく制御できます。なお`when`を設定していないキーバインディングは常に利用可能です。
 
-Below are the some of the possible `when` clause contexts which evaluate to Boolean true/false:
+次はtrue/falseのブーリアン式で評価可能な`when`節のコンテキスト例です:
 
 Context name | True when
 ------------ | ------------
 **Editor contexts** |
-editorFocus | An editor has focus, either the text or a widget.
-editorTextFocus | The text in an editor has focus (cursor is blinking).
-editorHasSelection | Text is selected in the editor.
-editorHasMultipleSelections | Multiple regions of text are selected (multiple cursors).
-editorReadOnly | The editor is read only.
-editorLangId | True when the editor's associated language Id matches. Example: `"editorLangId == typescript"`.
-textCompareEditorVisible | Diff (compare) view is visible.
+editorFocus | エディターにテキストまたはウィジェットいずれかのフォーカスがあるとき
+editorTextFocus | エディター内のテキストにフォーカスがあるとき(カーソル点滅)
+editorHasSelection | エディター内のテキストを選択しているとき
+editorHasMultipleSelections | テキストを複数選択しているとき(マルチカーソル)
+editorReadOnly | エディターが読み取り専用のとき
+editorLangId | エディターの言語IDが一致するとき(e.g.`"editorLangId == typescript"`)
+textCompareEditorVisible | Diff(compare)ビューを表示しているとき
 **Mode contexts** |
-inDebugMode | A debug session is running.
-inSnippetMode | The editor is in snippet mode.
-inQuickOpen | The Quick Open dropdown has focus.
+inDebugMode | デバッグセッションを実行しているとき
+inSnippetMode | スニペットモード内のとき
+inQuickOpen | Quick Openドロップダウンにフォーカスがあるとき
 **Explorer contexts** |
-explorerViewletVisible | True if Explorer view is visible.
-explorerViewletFocus | True if Explorer view has keyboard focus.
-filesExplorerFocus | True if File Explorer section has keyboard focus.
-openEditorsFocus | True if OPEN EDITORS section has keyboard focus.
-explorerResourceIsFolder | True if a folder is selected in the Explorer.
+explorerViewletVisible | エクスプローラービューを表示しているとき
+explorerViewletFocus | エクスプローラービューにキーボードフォーカスがあるとき
+filesExplorerFocus | ファイルエクスプローラーセクションにキーボードフォーカスがあるとき
+openEditorsFocus | 開いているエディターセクションにキーボードフォーカスがあるとき
+explorerResourceIsFolder | エクスプローラー内のフォルダーを選択しているとき
 **Editor widget contexts** |
-findWidgetVisible | Editor Find widget is visible.
-suggestWidgetVisible | Suggestion widget (IntelliSense) is visible.
-suggestWidgetMultipleSuggestions | Multiple suggestions are displayed.
-renameInputVisible | Rename input text box is visible.
-referenceSearchVisible | Find All References peek window is open.
-inReferenceSearchEditor | The Find All References peek window editor has focus.
-config.editor.stablePeek | Keep peek editors open (controlled by `editor.stablePeek` setting).
-quickFixWidgetVisible | Quick Fix widget is visible.
-parameterHintsVisible | Parameter hints are visible (controlled by `editor.parameterHints` setting).
-parameterHintsMultipleSignatures | Multiple parameter hints are displayed.
+findWidgetVisible | エディター検索ウィジェットを表示しているとき
+suggestWidgetVisible | 提案ウィジェット(IntelliSense)を表示しているとき
+suggestWidgetMultipleSuggestions | 複数の提案を表示しているとき
+renameInputVisible | 名前の変更ボックスを表示しているとき
+referenceSearchVisible | すべての参照を検索ウィンドウを開いているとき
+inReferenceSearchEditor | すべての参照を検索ウィンドウにフォーカスがあるとき
+config.editor.stablePeek | ピークエディター(キープ)を開いているとき(`editor.stablePeek`設定によって制御されます)
+quickFixWidgetVisible | クイック修正を表示しているとき
+parameterHintsVisible | パラメーターヒントを表示しているとき(`editor.parameterHints`設定によって制御されます)
+parameterHintsMultipleSignatures | 複数のパラメーターヒントを表示しているとき
 **Integrated terminal contexts** |
-terminalFocus | An integrated terminal has focus.
+terminalFocus | 統合端末にフォーカスがあるとき
 **Global UI contexts** |
-resourceLangId | True when the Explorer or editor title language Id matches. Example: `"resourceLangId == markdown"`
-globalMessageVisible | Message box is visible at the top of VS Code.
-searchViewletVisible | Search view is open.
-replaceActive | Search view Replace text box is open.
+resourceLangId | エクスプローラーもしくはエディターのタイトル言語IDが一致しているとき(e.g.`"resourceLangId == markdown"`)
+globalMessageVisible | VS Code上部のメッセージを表示しているとき
+searchViewletVisible | 検索ビューを開いているとき
+replaceActive | 検索ビューの置換ボックスを開いているとき
 
-The list above isn't exhaustive and you may see some `when` contexts for specific VS Code UI in the `Default Keyboard Shortcuts`.
+上記のリストは完全なものではありません。既定のキーボードショートカットで`when`コンテキストを確認してください。
 
-## Removing a specific key binding rule
+## 特定のキーバインド ルールを削除
 
-You can write a key binding rule that targets the removal of a specific default key binding. With the `keybindings.json`, it was always possible to redefine all the key bindings of VS Code, but it can be very difficult to make a small tweak, especially around overloaded keys, such as `kbstyle(Tab)` or `kbstyle(Escape)`. To remove a specific key binding, simply add a `-` to the `command` and the rule will be a removal rule.
+既定のキーバインドを削除するキーバインド ルールを記述できます。`keybindings.json`ではVS Codeのすべてのキーバインドを再定義することが可能です。ですが`kbstyle(Tab)`や`kbstyle(Escape)`といったキーの一部を微調整をするには向きません。特定のキーバインディングを削除するには`command`に` -`を追加します。これによりルールは削除ルールにかわります。
 
-Here is an example:
+例を次に示します:
 
 ```json
 // In Default Keyboard Shortcuts
@@ -371,13 +374,13 @@ Here is an example:
 
 ```
 
-## Keyboard layouts
+## キーボードレイアウト
 
->**Note:** This section relates only to key bindings, not to typing in the editor.
+>**Note:** このセクションはキーバインディングにのみ関連し、エディタでの入力には関係しません。
 
-The keys above are string representations for virtual keys and do not necessarily relate to the produced character when they are pressed. More precisely:
+上記のキー(印刷文字?)は仮想キーの文字列表現であり、押したときに入力される文字と必ずしも関連しません。詳細:
 
-* Reference: https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85)
+* 参考: [Virtual-Key Codes (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85))
 * `kbstyle(tab)` for `VK_TAB` (`0x09`)
 * `kbstyle(;)` for `VK_OEM_1` (`0xBA`)
 * `kbstyle(=)` for `VK_OEM_PLUS` (`0xBB`)
@@ -392,41 +395,42 @@ The keys above are string representations for virtual keys and do not necessaril
 * `kbstyle(')` for `VK_OEM_7` (`0xDE`)
 * etc.
 
-Different keyboard layouts usually reposition the above virtual keys or change the characters produced when they are pressed. When using a different keyboard layout than the standard US, Visual Studio Code does the following:
+異なったキーボードレイアウトを使用すると、上記の仮想キーの位置が変わっていたり押したときに挿入する文字が異なったりします。異なるキーボードレイアウトを使用する場合、Visual Studio Codeは次の処理を行います:
 
-All the key bindings are rendered in the UI using the current system's keyboard layout. For example, `Split Editor` when using a French (France) keyboard layout is now rendered as `kbstyle(Ctrl+*)`:
+すべてのキーバインディングは、現在のシステムのキーボードレイアウトを使用してUIに表示します。たとえば、フランス語のキーボードレイアウトを使用しているときの `Split Editor`は`kbstyle(Ctrl+*)`としてレンダリングします:
 
 ![render key binding](images/keybinding/render-key-binding.png)
 
-When editing `keybindings.json`, VS Code highlights misleading key bindings - those that are represented in the file with the character produced under the standard US keyboard layout, but which need pressing keys with different labels under the current system's keyboard layout. For example, here is how the `Default keybindings` rules look like when using a French (France) keyboard layout:
+`keybindings.json`を編集するとき、VS Codeは標準のUSキーボードレイアウトで生成された文字で表現します。現在のシステムキーボードレイアウトで異なる印字のキーを押す必要がある場合はそのキーバインディングを強調表示します。たとえばフランスのキーボードレイアウトを使用するときの**既定のキーバインド**ルールは次のようになります:
 
 ![keybindings.json guidance](images/keybinding/keybindings-json.png)
 
-There is also a widget that helps input the key binding rule when editing `keybindings.json`. To launch the **Define Keybinding** widget, press `kb(editor.action.defineKeybinding)`. The widget listens for key presses and renders the serialized JSON representation in the text box and below it, the keys that VS Code has detected under your current keyboard layout. Once you've typed the key combination you want, you can press `kbstyle(Enter)` and a rule snippet will be inserted.
+また`keybindings.json`を編集するときにキーバインドルール追加を助けるウィジェットがあります。このウィジェットを起動するには、 `kb(editor.action.defineKeybinding)`を押します。ウィジェットは、VSのコードは、現在のキーボードレイアウトの下で検出されたキーをキーの押下を待機し、テキストボックスに、それ以下のシリアル化されたJSON表現をレンダリングします。キーの組み合わせを入力しおえたら`kbstyle(Enter)`を押してルールを挿入します。
 
 ![key binding widget](images/keybinding/key-binding-widget.png)
 
->**Note:** Visual Studio Code detects your current keyboard layout on start-up and then caches this information. For a good experience, we recommend restarting VS Code if you change your keyboard layout.
+>**Note:** Visual Studio Codeは起動時に現在のキーボードレイアウトを検出して、この情報をキャッシュします。ですからキーボードレイアウトを変更した場合は、VS Codeの再起動をお勧めします。
 
-## Next Steps
+## 次のステップ
 
-Now that you know about our Key binding support, what's next...
+今回キーバインドサポートについて確認できました。次は何を...
 
 * [Language Support](/docs/languages/overview.md) - Our Good, Better, Best language grid to see what you can expect
 * [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
 * [Node.js](/docs/nodejs/nodejs-tutorial.md) - End to end Node.js scenario with a sample app
 
-## Common Questions
+## よくある質問
 
-**Q: How to find out what command is bound to a specific key?**
+**Q: どのコマンドがキーにバインドされているかを調べるにはどうすればいいですか？**
 
-**A:** In the Default Keyboard Shortcuts, open `Quick Outline` by pressing `kb(workbench.action.gotoSymbol)`
+**A:** 既定のキーボードショートカットで`kb(workbench.action.gotoSymbol)`
+を押して `Quick Outline`を開きます。
 
 ![Key bindings quick outline](images/keybinding/outline.png)
 
-**Q: How to add a key binding to an action? E.g. Add Ctrl+D to Delete Lines**
+**Q: 行を削除するCtrl+Dのようなアクションをキーバインドに追加するにはどうすればいいですか?**
 
-**A:** Find a rule that triggers the action in the Default Keyboard Shortcuts and write a modified version of it in your `User/keybindings.json` file:
+**A:** 既定のキーボード ショートカットのアクションをトリガするルールを見つけて、`keybindings.json`ファイルに変更したバージョンを書きます：
 
 ```json
 // Original, in Default Keyboard Shortcuts
@@ -437,16 +441,15 @@ Now that you know about our Key binding support, what's next...
                                      "when": "editorTextFocus" },
 ```
 
-**Q: How can I add a key binding for only certain file types?**
+**Q: どのように特定ファイルタイプのキーバインドを追加できますか?**
 
-**A:** Use the `editorLangId` context key in your `when` clause:
+**A:** `when`節に`editorLangId`コンテキストキーを使用します:
 
 ```json
 { "key": "shift+alt+a",           "command": "editor.action.blockComment",
                                      "when": "editorTextFocus && editorLangId == csharp" },
 ```
 
-**Q: I have modified my key bindings in `User/keybindings.json`, why don't they work?**
+**Q: キーバインディングを`keybindings.json`で変更しましたが機能しません**
 
-**A:** The most common problem is a syntax error in the file. Otherwise, try removing the `when` clause or picking a different `key`. Unfortunately, at this point, it is a trial and error process.
-
+**A:** 最も一般的な問題はファイルの構文エラーです。 それ以外の場合は `when`節を削除するか、別の`key`を選んでみてください。残念ながら現時点では、このように試行錯誤するしかありません。

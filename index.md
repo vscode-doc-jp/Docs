@@ -17,7 +17,7 @@ title: ようこそ
     * ~~User Interface~~
     * Themes
     * Settings
-    * ~~Key Bindings~~
+    * Key Bindings
     * Display Language
 * USER GUIDE
     * ~~Basic Editing~~
