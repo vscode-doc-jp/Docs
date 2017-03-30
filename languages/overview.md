@@ -1,60 +1,54 @@
 ---
-title: Programming Languages
+title: プログラミング言語
 MetaDescription: In Visual Studio Code we have support for all common languages including smart code completion and debugging.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-## Hundreds of programming languages supported
+## いくつものプログラミング言語サポート
 
-In Visual Studio Code, we have support for almost every major programming language. Several ship in the box, for example, JavaScript, TypeScript, CSS, and HTML but more rich language extensions can be found in the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode/Languages).
+Visual Studio Codeでは主要なプログラミング言語をほとんどサポートしています。例えばJavaScript、TypeScript、CSS、HTMLまた他の言語拡張を [VS Code Marketplace](https://marketplace.visualstudio.com/vscode/Languages)で探して取り入れることが可能です。
 
-Here are four of the most popular language extensions:
+## 言語固有のドキュメント
 
-<div class="marketplace-extensions-languages"></div>
+VS Code docでは、サポートしている一般的な言語について概要をまとめています。[C++](/docs/languages/cpp.html) - [C&#35;](/docs/languages/csharp.html) - [CSS](/docs/languages/css.html) - [Dockerfile](/docs/languages/dockerfile.html) - [Go](/docs/languages/go.html) - [HTML](/docs/languages/html.html) - [JavaScript](/docs/languages/javascript.html) - [JSON](/docs/languages/json.html) - [Less](/docs/languages/css.html) -
+[Markdown](/docs/languages/markdown.html) - [PHP](/docs/languages/php.html) - [Python](/docs/languages/python.html) - [Sass](/docs/languages/css.html) - [T-SQL](/docs/languages/tsql.html) - [TypeScript](/docs/languages/typescript.html).
 
-Go to the [Marketplace](https://marketplace.visualstudio.com/vscode) or use our [integrated extension manager](/docs/userguide/extension-gallery) and search for your desired programming language to find snippets, code completion/IntelliSense providers, linters, debuggers and more.
+リンク先でその言語をVS Codeで使用する方法の概要を紹介しています。ここにない場合でもほとんどの言語拡張のREADMEで、機能の要約が得られることがよくあります。
 
-## Language specific documentation
+## VS Codeの言語機能
 
-On this website, we have a number of topics outlining several of the common languages supported by VS Code. These include: [C++](/docs/languages/cpp.md) - [C&#35;](/docs/languages/csharp.md) - [CSS](/docs/languages/css.md) - [Dockerfile](/docs/languages/dockerfile.md) - [Go](/docs/languages/go.md) - [HTML](/docs/languages/html.md) - [JavaScript](/docs/languages/javascript.md) - [JSON](/docs/languages/json.md) - [Less](/docs/languages/css.md) -
-[Markdown](/docs/languages/markdown.md) - [PHP](/docs/languages/php.md) - [Python](/docs/languages/python.md) - [Sass](/docs/languages/css.md) - [T-SQL](/docs/languages/tsql.md) - [TypeScript](/docs/languages/typescript.md).
+言語と拡張機能によって、サポートの豊かさが異なることに注意してください。
 
-Click on any linked item to get an overview of how to use VS Code in the context of that language.  Most language extensions also contain a summary of their core features in their README.
+* シンタックスハイライトとブラケットマッチング
+* 高性能な補完(IntelliSense)
+* Lintとcorrection
+* コードナビゲーション (定義へ移動 , 全ての参照検索)
+* デバッグ
+* リファクタリング
 
-## Language features in VS Code
+## ファイルの言語変更
 
-The richness of support varies across the different languages and their extensions:
-
-* Syntax highlighting and bracket matching
-* Smart completions (IntelliSense)
-* Linting and corrections
-* Code navigation (Go to Definition, Find All References)
-* Debugging
-* Refactoring
-
-## Changing the language for the selected file
-
-In VS Code, we default the language support for a file based on its filename extension.  However, at times you may wish to change language modes, to do this click on the language indicator - which is located on the right hand of the Status Bar.  This will bring up the **Select Language Mode** drop-down where you can select another language for the current file.
+VS Codeはファイル拡張子に基づいて言語モードを選択します。言語モードを変更する場合は、ステータスバー右にある言語モードの選択をクリックしてください。これにより言語選択モードをドロップダウンに表示します。
 
 ![Language Selector](images/overview/languageselect.png)
 
-**Tip**: You can get the same drop-down by running the **Change Language Mode** command (`kb(workbench.action.editor.changeLanguageMode)`).
+>**Tip**: **言語モードの変更** (`kb(workbench.action.editor.changeLanguageMode)`)コマンドから識別子を確認できます。
 
 ## Language Id
 
-VS Code associates a language mode with a specific language identifier so that various VS Code features can be enabled based on the current language mode.
+VS Codeは現在の言語モードを確定するために、特定の識別子と言語モードを関連付けます。
 
-A language identifier is often (but not always) the lowercased programming language name. Note that casing matters for exact identifier matching ('Markdown' != 'markdown'). Unknown language files have the language identifier `plaintext`.
+言語識別子は言語の名前の小文字表記であることが多いです。ですが例えば、`Markdown`が`markdown`でないことに注意してください。なお未知の言語ファイルは`plaintext`として扱われます。
 
-You can see the list of currently installed languages and their identifiers in the **Change Language Mode** (`kb(workbench.action.editor.changeLanguageMode)`) drop-down.
+インストール済みの言語と識別子を**言語モードの変更** (`kb(workbench.action.editor.changeLanguageMode)`) で確認できます。
 
 ![language identifiers](images/overview/language-identifiers.png)
 
-## Adding a file extension to a language
+## 言語にファイル拡張子を追加
 
-You can add new file extensions to an existing language with the `files.associations` [setting](/docs/getstarted/settings.md).
+`files.associations`[設定](/docs/getstarted/settings.md)で既存の言語に新しいファイル拡張子を設定することができます。
 
-For example, the setting below adds the `.myphp` file extension to the `php` language identifier:
+次の例は `php`言語識別子に`myphp`ファイル拡張子を追加します:
 
 ```json
     "files.associations": {
@@ -62,32 +56,32 @@ For example, the setting below adds the `.myphp` file extension to the `php` lan
     }
 ```
 
-IntelliSense (`kb(editor.action.triggerSuggest)`) will show you the available language identifiers.
+IntelliSense (`kb(editor.action.triggerSuggest)`)で利用可能な識別子を表示するのを確認してください。
 
 ![language id IntelliSense](images/overview/language-id-intellisense.png)
 
-## Next Steps
+## 次のステップ
 
-Now you know that VS Code has support for the languages you care about. Read on...
+このドキュメントでVS Codeが貴方の気になる言語サポートをしていることを知りました。
 
 * [Code Navigation](/docs/userguide/editingevolved.md) - Peek and Go to Definition and more
 * [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
 
-## Common Questions
+## よくある質問
 
-**Q: Can I contribute my own language service?**
+**Q: 私が言語サービスを提供することはできますか?**
 
-**A:** Yes you can! Check out the [example language server](/docs/extensions/example-language-server.md) in the [VS Code Extension Authoring](/docs/extensions/overview.md) documentation.
+**A:** Yes you can! もちろんです [VS Code Extension Authoring](/docs/extensions/overview.md)ドキュメントの [example language server](/docs/extensions/example-language-server.md)を確認してください。
 
-**Q: What if I don't want to create a full language service, can I reuse existing TextMate bundles?**
+**Q: 完全な言語サービスを作成しなくても既存のTaxtMateで代用できますか? **
 
-**A:** Yes, you can also add support for your favorite language through TextMate colorizers. See [Themes, Snippets, and Colorizers](/docs/extensions/themes-snippets-colorizers.md) topic in the Extension Authoring section to learn how to integrate TextMate `.tmLanguage` syntax files into VS Code.
+**A:** はいTextMate colorizersを通して好きな言語サポートを追加することもできます。[Themes, Snippets, and Colorizers](/docs/extensions/themes-snippets-colorizers.md) でVS Code用にTextMate .tmLanguage構文ファイルを統合する方法を確認してください。
 
-**Q: Can I map additional file extensions to a language?**
+**Q: 言語にファイル拡張子を追加することができますか?**
 
-**A:** Yes, with the `files.associations` [setting](/docs/getstarted/settings.md) you can map file extensions to an existing language either globally or per workspace.
+**A:** はい `files.associations`[設定](/docs/getstarted/settings.md)でグローバルでもワークスペース内でも拡張子を追加することで可能です。
 
-Here is an example that will associate more file extensions to the PHP language:
+PHPにより多くのファイル拡張子を関連付ける例です:
 
 ```json
 "files.associations": {
@@ -96,7 +90,7 @@ Here is an example that will associate more file extensions to the PHP language:
 }
 ```
 
-You can also configure full file paths to languages if needed. The following example associates all files in a folder `somefolder` to PHP:
+必要に応じて、言語に完全なファイルパスを設定することも可能です。次の例は`somefoloder`内のすべてのファイルをPHPに関連付けます:
 
 ```json
 "files.associations": {
@@ -104,4 +98,4 @@ You can also configure full file paths to languages if needed. The following exa
 }
 ```
 
-Note that the pattern is a [glob pattern](https://en.wikipedia.org/wiki/Glob_%28programming%29) that will match on the full path of the file if it contains a `/` and will match on the file name otherwise.
+認識方式が、ファイルのフルパスに`/`が含まれる[glob pattern](https://en.wikipedia.org/wiki/Glob_%28programming%29)であることに注意してください。また当然ですが、ファイル名も一致する必要があります。

@@ -36,10 +36,6 @@ VS Codeで初めからいくつかの配色テーマを用意しています。
 
 > **Tip:** テーマを検索するには、Extension ビュー(`kb(workbench.view.extensions)`)で`theme`を検索します。
 
-<div class="marketplace-extensions-themes"></div>
-
-また、[VS Code Marketplace] (https://marketplace.visualstudio.com/vscode/Themes)で直接テーマを検索することもできます。
-
 ## 既存のTextMateテーマを使用する
 
 既存のTextMateカラーテーマ (.tmTheme) をVS Codeに追加できます。たとえば[Color Sublime](http://colorsublime.com/)にはいくつものTextMateテーマが用意されています。詳細についてExtension Authoringセクションの[Adding a new Theme](/docs/extensions/themes-snippets-colorizers.md#adding-a-new-theme)を参照してください。

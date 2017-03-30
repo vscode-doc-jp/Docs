@@ -2,7 +2,6 @@
 title: ようこそ
 ---
 
-### 現在本家の大幅変更に合わせて変更中です
 ✌:以前のコミットで翻訳済み
 ### 翻訳状況
 * Overview
@@ -32,7 +31,7 @@ title: ようこそ
     * Command Line
     * Accesibility
 * LANGUAGES
-    * ✌~~Overview~~
+    * Overview
     * ~~JavaScript~~
     * ~~JSON~~
     * ✌~~HTML~~
