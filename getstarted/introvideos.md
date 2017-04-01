@@ -4,13 +4,13 @@ MetaDescription: Overview of VS Code's Introductory Videos.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Start your journey with Visual Studio Code with this set of introductory videos. The videos are designed to give you a quick overview of the various features of VS Code. VS Code comes with JavaScript and TypeScript support out of the box so the videos use JavaScript in the examples.
+この入門ビデオでVisual Studio Codeの旅を始めましょう。ビデオはVS Codeのさまざまな機能の概要を簡単に把握できるように設計しています。なお、VS CodeはJavaScriptとTypeScript標準でサポートしているためJavaScriptを動画で使用しています。
 
-> Note: If you would like us to cover other topics, please leave [feedback here](https://www.surveymonkey.com/r/H9W7K8J).
+> Note: その他トピックを希望する場合は[フィードバック](https://www.surveymonkey.com/r/H9W7K8J)。
 
 <ul class="video-list">
 	<li class="video">
-		<a href="/docs/introvideos/quicktour">
+		<a href="/docs/introvideos/quicktour.html">
 			<img src="https://img.youtube.com/vi/pI1skOo2yjk/mqdefault.jpg" alt aria-hidden="true" class="thumb"/>
 			<div class="info">
 				<p class="title faux-h3">Quick Tour using JavaScript</p>
@@ -20,7 +20,7 @@ Start your journey with Visual Studio Code with this set of introductory videos.
 		</a>
 	</li>
 	<li class="video">
-		<a href="/docs/introvideos/basics">
+		<a href="/docs/introvideos/basics.html">
 			<img src="https://img.youtube.com/vi/SYRwSyjD8oI/mqdefault.jpg" alt aria-hidden="true" class="thumb"/>
 			<div class="info">
 				<p class="title faux-h3">Setup and Basics</p>
@@ -30,7 +30,7 @@ Start your journey with Visual Studio Code with this set of introductory videos.
 		</a>
 	</li>
 	<li class="video">
-		<a href="/docs/introvideos/configure">
+		<a href="/docs/introvideos/configure.html">
 			<img src="https://img.youtube.com/vi/4wVF4w_53hs/mqdefault.jpg" alt aria-hidden="true" class="thumb"/>
 			<div class="info">
 				<p class="title faux-h3">Customize</p>
@@ -40,7 +40,7 @@ Start your journey with Visual Studio Code with this set of introductory videos.
 		</a>
 	</li>
 	<li class="video">
-		<a href="/docs/introvideos/extend">
+		<a href="/docs/introvideos/extend.html">
 			<img src="https://img.youtube.com/vi/Fed01v3yYNE/mqdefault.jpg" alt aria-hidden="true" class="thumb"/>
 			<div class="info">
 				<p class="title faux-h3">Extensions</p>

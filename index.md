@@ -2,7 +2,6 @@
 title: ようこそ
 ---
 
-✌:以前のコミットで翻訳済み
 ### 翻訳状況
 * Overview
 * SETUP
@@ -12,7 +11,7 @@ title: ようこそ
     * [Windows](/docs/setup/windows.html)
     * [Additional Compnents](/docs/setup/additional-components.html)
 * GET STARTED
-    * ~~Intro Videos~~
+    * [Intro Videos](/docs/getstarted/introvideos.html)
     * ~~User Interface~~
     * [Themes](/docs/getstarted/themes.html)
     * [Settings](/docs/getstarted/settings.html)
@@ -52,7 +51,7 @@ title: ようこそ
 * EXTENSION AUTHORING
 * EXTENSIBILITY REFERENCE
 * OTHER
-    * ~~.NET Core~~
+    * [.NET Core](/docs/other/dotnet.html)
     * ~~Unity~~
     * ~~Office~~
 * Supporting

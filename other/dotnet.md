@@ -4,40 +4,41 @@ MetaDescription: Visual Studio Code has great support for writing and debugging 
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-[.NET Core](https://docs.microsoft.com/en-us/dotnet/articles/welcome) gives you a blazing fast and modular platform for creating server applications that run on Windows, Linux and Mac. Use Visual Studio Code with the C# extension to get a powerful editing experience with full support for C# IntelliSense (smart code completion) and debugging.
+[.NET Core](https://docs.microsoft.com/en-us/dotnet/articles/welcome)はWindows, Linux, Macでサーバーアプリケーションを作成実行できる高速なモジュラープラットホームを提供します。C# IntelliSense(賢いコード補完)とデバッグを完全にサポートする強力な編集経験を得るために、C#拡張機能をもつVisual Studio Codeを利用してください。
 
 ## Getting Started
 
-1. Install [.NET Core](https://microsoft.com/net/core).
-2. Install the [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) from the VS Code Marketplace.
+1. [.NET Core](https://microsoft.com/net/core) をインストール
+2. VS Code Marketplaceから[C# extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)をインストール
 
 ## Hello World
 
-If you'd like to get started with a simple "Hello World" program on .NET Core, follow the steps below:
+.NET Coreを簡単な"Hello World"プログラムから始めるために、以下の手順を行います。
 
-1. Initialize a C# project:
+1.C# プロジェクトを初期化する
 
-  * Open the command prompt (or terminal).
-  * Navigate to the folder where you'd like to create the C# project.
-  * Type `dotnet new`.
-  * This creates a `Program.cs` file in your folder with a simple "Hello World" program already written.
+  * コマンドプロント(ターミナル)を開く。
+  * C# プロジェクトを作成したいフォルダーに移動する。
+  * `dotnet new`を実行する。
+  * これによりフォルダーに"Hello World"プログラムの書かれた`Program.cs`を生成します。
 
-2. Resolve the build assets by typing `dotnet restore`.
+2.`dotnet restore` を実行してビルドアセットを解決する
 
-> Tip: If you are using the MSBuild-based .NET Core Tools, a .csproj project file will be created instead of a project.json, but the `dotnet` commands remain the same. [Read more](https://blogs.msdn.microsoft.com/dotnet/2016/11/16/announcing-net-core-tools-msbuild-alpha/).
+> Tip: MSBuild ベースの.NET Core Toolではproject.jsonの代わりに.csprojectプロジェクトファイルを作成しますが`dotnet`コマンドに変更ありません。[詳細](https://blogs.msdn.microsoft.com/dotnet/2016/11/16/announcing-net-core-tools-msbuild-alpha/)。
 
-  * Running `restore` pulls down the required packages declared in the `project.json` file.
-  * You'll see a new `project.lock.json` file in your project folder.
-  * This file contains information about your project's dependencies to make subsequent restores quicker.
-  * There will be a notification that appears at the top of the window asking if you'd like to add the required assets to build and debug your project. Select Yes.
+  * `restore`を実行して`project.json`ファイルで宣言した必須パッケージを入手する。
+  * これによりプロジェクトフォルダーに新しい`project.lock.json`ファイルを表示します。
+  * このファイルには迅速にリストアするために、プロジェクトの依存関係に関する情報が含まれています。
+  * ここで、プロジェクトのビルドとデバッグに必要なアセットを追加するかどうかを尋ねる通知がウィンドウ上部に表示されます。Yesを選択を選択してください。
 
-3. Run the "Hello World" program by typing `dotnet run`.
+3.`dotnet run`で"Hello World"プログラムを実行する
 
-Watch a video tutorial for further setup help on [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS), or [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
+セットアップのビデオチュートリアルをご覧ください。
+[Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core) |  [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS) | [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu)
 
-> Tip: Continue exploring C# development: [Debug with VS Code and .NET Core](https://docs.microsoft.com/en-us/dotnet/articles/csharp/getting-started/with-visual-studio-code#debug)
+> Tip: C#の開発を続ける: [Debug with VS Code and .NET Core](https://docs.microsoft.com/en-us/dotnet/articles/csharp/getting-started/with-visual-studio-code#debug)
 
-## Next Steps
+## 次のステップ
 
 * [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
 * [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
