@@ -1,13 +1,8 @@
 ---
-Order: 2
-Area: extensions
-TOCTitle: Extension Generator
-ContentId: C733425A-3F06-4DB9-90A0-472EF1DB58D3
-PageTitle: The Yo Code Visual Studio Code Extension Generator
-DateApproved: 3/1/2017
+title: Yo Code - Extension Generator
 MetaDescription: Easily create Visual Studio Code extensions and customizations with the Yo Code generator.
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-# Yo Code - Extension Generator
 
 We have written a [Yeoman generator](https://github.com/Microsoft/vscode-generator-code) to help get you started.
 
@@ -66,8 +61,7 @@ Check out `vsc-extension-quickstart.md`. It's a quick guide with the next steps.
 
 Creates an extension that contributes a language with colorizer.
 
-* Prompts for the location (URL or file path) of an existing TextMate language file (.tmLanguage, .plist or .json). This file will be imported to the new extension. To start a new grammar
-you can skip this by passing an empty name.
+* Prompts for the location (URL or file path) of an existing TextMate language file (.tmLanguage, .plist or .json). This file will be imported to the new extension. To start a new grammar you can skip this by passing an empty name.
 * Prompts for the extension identifier and will create a folder of that name in the current directory
 
 Once created, open VS Code on the created folder and run the extension to test the colorization. Check out `vsc-extension-quickstart.md` for the next steps. Have a look at the language configuration file that has been created and defines configuration options such what style of comments and brackets the language uses.

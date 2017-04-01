@@ -1,78 +1,73 @@
 ---
-Order: 1
-Area: extensions
-TOCTitle: Overview
-ContentId: AD26EFB1-FFC6-4284-BAB8-F3BCB8294728
-PageTitle: Extending Visual Studio Code
-DateApproved: 3/1/2017
+title: Extending Visual Studio Code
 MetaDescription: Visual Studio Code has a rich extensibility model for interacting with and adding to the tool.  Learn how to create your own extensions (plug-ins) for Visual Studio Code.
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-# Extending Visual Studio Code
 
-If you are interested in extending VS Code, you are in the right place. Here we present an outline of the VS Code extensibility documentation and how to quickly build your first VS Code extension.  If you're curious about our design approach to extensibility for VS Code, you can read about it [here](/docs/extensionAPI/patterns-and-principles.md).
+もしVS Codeの拡張機能に興味があるなら、ここ情報は役に立つはずです。ここでは、VS Codeの拡張に関するドキュメント概要と、最初のVS Codeを作成する方法について説明します。VS Codeの拡張に関する設計アプローチに興味があれば、[ここ](/docs/extensionAPI/patterns-and-principles.md)で詳しく確認できます。
 
-If you just want to use existing extensions, see the [Extension Marketplace](/docs/userguide/extension-gallery.md) topic where we show you how to find and install extensions from the VS Code [Marketplace](https://marketplace.visualstudio.com/VSCode).
+既存の拡張機能を使用したい場合は、[Marketplace](/docs/userguide/extension-gallery.md)トピックを確認してください。トピックでVS Code [Marketplace](https://marketplace.visualstudio.com/VSCode)から検索してインストールする方法を紹介しています。
 
-All VS Code extensions share a common model of contribution (registration), activation (loading) and access to the VS Code extensibility API.  There are however two special flavors of VS Code extensions, language servers and debuggers, which have their own additional protocols and are covered in their own sections of the documentation.
+全ての拡張機能はcontribution(登録)、activation (読み込み)およびVS Code拡張APIへのアクセスのコモンモデルを共有します。しかし拡張機能のうち言語サーバーとデバッガは特殊です。これらは独自の追加プロトコルを使用しており、ドキュメントの独自のセクションで解説されます。
 
-1. [Extensions](/docs/extensions/overview.md#extensions) - the base building block
-2. [Language Servers](/docs/extensions/overview.md#language-servers) - for high cost IO or CPU intensive tasks
-3. [Debuggers](/docs/extensions/overview.md#debug-adapter) - wire up an external debugger
+1. [Extensions](#extensions)
+2. [Language Servers](#language-servers)
+3. [Debug Adapter](#debug-adapter)
 
 ## Extensions
 
-All extensions when activated run in our shared extension host process.  This separate process for extensions ensures that VS Code remains responsive through-out.
+すべての拡張機能は共有拡張ホストプロセスで実行します。拡張機能のためのこの別プロセスは、VS Codeが完全な応答を維持することを保証します。
 
-Extensions include support for:
+次のサポートを含みます:
 
-* **Activation** - load an extension when a specific file type is detected, when a specific file exists, or when a command is selected via the Command Palette or a key combination
-* **Editor** - work with the editor's content - read and manipulate text, leverage selection(s)
-* **Workspace** - access open editors, the status bar, information messages and more
-* **Eventing** - connect to the editor life-cycle events such as: open, close, change, and more
-* **Evolved editing** - create providers for rich language support including IntelliSense, Peek, Hover, Diagnostics and much, much more
+* **Activation** - 特定のファイルタイプを検出したとき、コマンドパレットまたはキーの組み合わせでコマンドを選択したとき、拡張機能を呼び出します。
+* **Editor** - 内容に対して、テキスト読み取り、操作、leverage選択(複数化)をします。
+* **Workspace** - 開いているエディター、ステータスバー、情報メッセージなどにアクセスします。
+* **Eventing** - オープン、クローズ、変更などエディターのサイクルイベントに接続します。
+* **Evolved editing** - IntelliSense、Peek、Hover、Diagnosticsなどを含む豊富な言語サポートのプロバイダーを作成します。
 
-We have two end-to-end tutorials to get you going on extension basics:
+拡張機能の基礎を学ぶ十分な2のチュートリアルがあります:
 
-1. **[Hello World](/docs/extensions/example-hello-world.md)** - generate a basic extension, understand an extension's folder structure, the extension manifest, learn how activation works, run and debug your extension and install it locally.
-2. **[Word Count](/docs/extensions/example-word-count.md)** - activate based on a specific file type, update the status bar, respond to changes in the text editor, and dispose your extension when moving off the file.
+1. **[Hello World](/docs/extensions/example-hello-world.md)** - 基本的な拡張機能を作成し、拡張機能のフォルダー構造、マニフェストを理解し、起動の仕組みを学び、拡張機能を実行してデバッグしてローカルにインストールします。
+2. **[Word Count](/docs/extensions/example-word-count.md)** - 特定のファイルタイプでアクティブ化し、ステータスバー更新、テキストエディターの変更に応答、ファイルを閉じたときの拡張機能の破棄を学びます。
 
-Also helpful is [Extensibility Principles and Patterns](/docs/extensionAPI/patterns-and-principles.md) which describes the shared programming patterns used throughout the extensibility API.
+また、拡張API全体で使用する共有プログラミングパターンについての説明[Extensibility Principles and Patterns](/docs/extensionAPI/patterns-and-principles.md)も役立つはずです。
 
 ## Language Servers
 
-Language servers let you create a dedicated process for your extension.  This is a useful design choice for your extension when your extension runs high cost CPU or IO intensive tasks which could slow other extensions.  This is common for tasks that work across all files in a workspace e.g. linters or static analysis suites.
+言語サーバーを使用すると、拡張機能の専用プロセスを作成します。これはあなたの拡張機能が高コストのCPUまたはIOを集中的に実行して、他の拡張機能を遅くする可能性がある場合に有益な設計の選択です。ですから、ワークスペース内すべてのファイルに機能するタスクで一般的です。例:linterやstatic analysis suites
 
-Find out more about [language servers](/docs/extensions/example-language-server.md).
+詳細は[language servers](/docs/extensions/example-language-server.md)をご覧ください。
 
 ## Debug Adapter
 
-VS Code implements a generic debugger UI and relies on debugger extensions and so called "debug adapters" to connect the debug UI to a real debugger or runtime. A debug adapter is a dedicated process that communicates with VS Code through the _VS Code Debug Protocol_ and can be implemented in any language.
+VS Codeは一般的なデバッガUIを実装しています。つまりデバッガの拡張機能やいわゆる"debug adapters"を実際のデバッガやランタイムに接続します。デバッグアダプターは、**VS Code Debug Protocol**を通じてVS Codeと通信する専用のプロセスであり、どの言語でも実装できます。
 
-Find out more about creating [debugger extensions](/docs/extensions/example-debuggers.md).
+詳細は[debugger extensions](/docs/extensions/example-debuggers.mdをご覧ください。
 
 ---
 
-The easiest way to see VS Code extensions in action is via the [Extension Marketplace](/docs/userguide/extension-gallery.md).  You can browse for useful extensions, install them to try them out and get an idea how you might extend VS Code for your own development scenarios.
+VS Code拡張機能を使用するもっとも簡単な方法は[Extension Marketplace](/docs/userguide/extension-gallery.md)を使用することです。これらから便利な拡張機能を試してみると、開発機能を作成するアイディアを確認することもできます。
 
 ## Language Extension Guidelines
 
-To help you decide what language features you'd like to support with your extension, we have a [Language Extension Guidelines](/docs/extensionAPI/language-support.md) topic which shows the various language features available in VS Code (for example, code suggestions and actions, formatting, renaming) and how to implement them through either the language server protocol or by using the extensibility API directly from your extension.
+[Language Extension Guidelines](/docs/extensionAPI/language-support.md)トピックは、拡張機能でサポートしたい言語機能を決定するのに役立ちます。 これはVS Codeで利用可能なさまざまな言語機能(コードの提案や動作、フォーマット、名前の変更など)と、言語サーバープロトコルを使用して実装する方法、または拡張機能から拡張APIを直接使用する方法を紹介しています。
 
 ## Themes, Snippets, and Colorizers
 
-You can have a great editing experience for your programming language with simple things such as syntax highlighting, useful snippets, and a well designed color theme. TextMate customization files provide this support and VS Code lets you easily package and reuse these so you can directly use `.tmTheme`, `.tmSnippets`, and `.tmLanguage` files in your extension. Our [Themes, Snippets, and Colorizers](/docs/extensions/themes-snippets-colorizers.md) topic shows you how to include TextMate files as well as providing guidance on how you can create your own themes, snippets and language colorizers.
+構文ハイライト、便利なスニペット、よくデザインされたカラーテーマなどの簡単な操作で、プログラミング言語の優れた編集経験を得ることができます。TextMateカスタマイズファイルはこのサポートを提供して、VS Codeはこれらを簡単にパッケージ化して再利用します。拡張機能では`.tmTheme`、`.tmSnippets`、`.tmLanguage`を直接利用できます。[Themes, Snippets, and Colorizers](/docs/extensions/themes-snippets-colorizers.md)トピックではTextMateファイルをインクルードする方法と、独自のテーマ、スニペット、言語色付け機能の作成方法に関するガイダンスを提供しています。
 
 ## Writing an Extension
 
-There is a Yeoman [extension generator](/docs/extensions/yocode.md) which makes it very easy to create simple extension projects. These are great for starting out  and you can also find existing extension [examples](/docs/extensions/samples.md).
+Yeoman [extension generator](/docs/extensions/yocode.md)は、簡単な拡張機能のプロジェクト作成を非常に簡単にします。これらは初心者にも適しており、既存の拡張子機能[examples](/docs/extensions/samples.md)もあります。
 
-Extensions can be written in either TypeScript or JavaScript.  VS Code offers a first class extension development experience where you can [develop, build, run, test and debug](/docs/extensions/debugging-extensions.md) all from within VS Code itself.
+拡張機能はTypeScriptかJavaScriptいずれかで書き込むことができます。VS Codeは、VS Code自体の中からすべての[develop, build, run, test and debug](/docs/extensions/debugging-extensions.md)が可能なファーストクラスの拡張機能開発環境を提供します。
 
 ## Testing Extensions
 
-We also have great support for [writing and running tests](/docs/extensions/testing-extensions.md) for your extension.  You can easily create integration tests which call the VS Code APIs and test your code in a running VS Code instance.
+また、拡張機能の[テストの作成と実行](/docs/extensions/testing-extensions.md)に対しても十分なサポートを用意しています。VS Code APIを呼び出して、実行中のVS Codeインスタンスでコードをテストする統合テストを簡単に作成できます。
 
-## Next Steps
+## 次のステップ
 
 * [Your First Extension](/docs/extensions/example-hello-world.md) - Try creating a simple Hello World extension.
 * [Extension API](/docs/extensionAPI/overview.md) - Learn about the VS Code extensibility APIs.

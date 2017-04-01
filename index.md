@@ -48,8 +48,10 @@ title: ようこそ
     * ~~Tutorial-Node.js~~
     * ~~Node.js Debugging~~
     * ~~Extensions~~
-* EXTENSION AUTHORING
+* EXTENSIONS
+    * [Overview](/docs/extensions/overview.html)
 * EXTENSIBILITY REFERENCE
+    * [Overview](docs/extensionsAPI/overview.html)
 * OTHER
     * [.NET Core](/docs/other/dotnet.html)
     * ~~Unity~~
