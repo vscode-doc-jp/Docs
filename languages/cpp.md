@@ -4,42 +4,44 @@ MetaDescription: Find out how to get the best out of Visual Studio Code and C++.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-C/C++ support for Visual Studio Code is provided today as a preview of our work to enable cross-platform C and C++ development using VS Code on Windows, Linux, and Mac. Our focus in this preview release is code editing and navigation support for C and C++ code everywhere that VS Code runs, as well as debugging on Linux, Mac, and Windows.
+今日VS Codeを使用してWindows、Linux、MacでクロスプラットホームC/C++開発ができるように、プレビューのサポート環境を提供しています。このリリースプレビューではLinux、Mac、 Window上でのデバッグなど、コード編集とナビゲーションのサポートを中心に取り上げています。
 
-If you just want a lightweight tool to edit your C++ files, VS Code has you covered but if you want the best possible experience for your existing Visual C++ projects or debugging on Windows, we recommend you use a version of Visual Studio such as [Visual Studio Community](https://www.visualstudio.com/products/visual-studio-community-vs).
+もし、軽量なツールでC++を編集したいときにはVS Codeは最適です。ですが、既存のVisual C++プロジェクトやWindowsでのデバッグに最適な環境を実現するには、[Visual Studio Community](https://www.visualstudio.com/products/visual-studio-community-vs)を使用することをお勧めします。
 
-We're still shaping the C++ experience in VS Code so now is a great time to [provide bug reports, feature requests, and feedback](mailto:c_cpp_support@microsoft.com), and for those of you who use Linux or Mac as your development environment, to [get engaged](http://landinghub.visualstudio.com/c-nonwin) with the Visual Studio team.
+まだVS CodeのC++はプレビュー状態ですので、今こそ[バグレポート, 機能リクエスト, フィードバック](mailto:c_cpp_support@microsoft.com)するときです。LinuxやMacを開発環境として使用している人のために、Visual Studioチームと[get engaged](http://landinghub.visualstudio.com/c-nonwin)してください。
+
+(編集メモ:get engaged : 婚約, 言い交わす
 
 ## Getting Started
 
-**To install the Microsoft C/C++ extension:**
+**Microsoft C/C++ 拡張機能をインストール:**
 
-* Open VS Code.
-* Click the Extensions View icon on the Sidebar.
-* Search for `cpptools`.
-* Click **Install**, then click **Reload**.
-* Open a folder that contains your C/C++ code.
+* VS Codeを開く
+* 拡張機能ビューを開く
+* `cpptools`を検索
+* **Install**して**Reload**にする
+* C/C++コードフォルダーを開く
 
-**To enable code completion and navigation, you will need to generate a `c_cpp_properties.json` file:**
+**コード補完とナビゲーションを有効にするには、`c_cpp_properties.json`を作成する必要があります:**
 
-* Hover over any green squiggle in a source file (e.g. a #include statement).
-* Click the lightbulb that appears underneath the mouse cursor.
-* Click **Add include path to settings**.
+* ソースファイル内の緑破線(e.g. #include文)にカーソルを合わせます
+* カーソル下に表示される電球をクリックします
+* **Add include path to settings**をクリックします
 
-This will generate a `c_cpp_properties.json` file that allows you to add additional include paths to properly enable code navigation and auto-completion.
+これにより`c_cpp_properties.json`を生成します。このファイルを使用することで、 includeパスを追加して、コードナビゲーションと自動補完を有効にすることができます。
 
->**Note:** You can also generate or edit a `c_cpp_properties.json` file with the **C/Cpp: Edit Configurations** command from the __Command Palette__ (`kb(workbench.action.showCommands)`).
+>**Note:** `c_cpp_properties.json`は**コマンドパレット**`kb(workbench.action.showCommands)`から**C/Cpp: Edit Configurations**を実行することでも、生成したり編集できます。
 
-**If you want to build your application from VS Code, you will need to generate a `tasks.json` file:**
+**VS Codeからアプリケーションをビルドするには、`tasks.json`を作成する必要があります:**
 
-* Open the **Command Palette** (`kb(workbench.action.showCommands)`).
-* Select the **Tasks: Configure Task Runner** command and you will see a list of task runner templates.
-* Select **Others** to create a task which runs an external command.
-* Change the `command` to the command line expression you use to build your application (e.g. `g++ -g main.cpp`).
-* Add any required args (e.g. `-g` to build for debugging).
-* You can now build your application with (`kb(workbench.action.tasks.build)`)
+* **コマンドパレット**(`kb(workbench.action.showCommands)`)を開く
+* **Tasks: Configure Task Runner**コマンドを実行して、タスクテンプレートのリストを表示します
+* 外部コマンドを実行するタスクを作成するので**Others**を選択します
+* `command`をアプリケーション構築に使用するコマンドライン式(e.g. `g++ -g main.cpp`)に設定します
+* 必要なargsを追加します(e.g. デバッグ用にビルドする場合は `-g`など)
+* これにより(`kb(workbench.action.tasks.build)`)でアプリケーションをビルドできるようになります
 
-You should now see a `tasks.json` file in your workspace `.vscode` folder that looks something like:
+この時点で`.vscode`フォルダー下の`tasks.json`は、次のように表示するはずです:
 
 ```json
 {
@@ -51,36 +53,36 @@ You should now see a `tasks.json` file in your workspace `.vscode` folder that l
 }
 ```
 
-For more information on tasks, see [Integrate with External Tools via Tasks](/docs/userguide/tasks).
+タスクについての詳細は[Integrate with External Tools via Tasks](/docs/userguide/tasks)を参照してください。
 
-**To enable debugging, you will need to generate a `launch.json` file:**
+**デバッグを有効にするには、`launch.json`を作成する必要があります:**
 
-* Navigate to the Debug view by clicking the Debug icon in the Sidebar.
-* In the **Debug** view, click the **Configure** icon.
-* Select `C++ (GDB/LLDB)` (to use GDB or LLDB) or `C++ (Windows)` (to use the Visual Studio Windows Debugger) from the **Select Environment** dropdown. This creates a `launch.json` file for editing with two configurations:
-  * **C++ Launch** defines the properties for launching your application when you start debugging.
-  * **C++ Attach** defines the properties for attaching to a process that's already running.
-* Update the `program` property with the path to the program you are debugging.
-* If you want your application to build when you start debugging, add a `preLaunchTask` property with the name of the build task you created in `tasks.json` ("g++" in the example above).
+* サイドバーのデバッグアイコンをクリックして、デバッグビューに移動します
+* **デバッグビュー**で、**設定**アイコンをクリックします
+* **環境の選択**から`C++ (GDB/LLDB)`(GDB, LLDB)または`C++ (Windows)`(Visual Studio Windows Debugger)を選択します。これは、2つの`launch.json`を作成します:
+  * **C++ Launch**はデバッグを開始するときにアプリケーションを起動するためのプロパティを定義します。
+  * **C++ Attach**はすでに実行中のプロセスにアタッチするためのプロパティを定義します。
+* `programプロパティを、デバッグしているプログラムへのパスに更新します。
+* デバッグを開始するときにアプリケーションをビルドする場合は、 `tasks.json`で作成したビルドタスクの名前(上記の例で"g++")を含む`preLaunchTask`プロパティを追加します。
 
-To learn more, see [Configuring launch.json for C/C++ debugging](https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md).
+詳細については[Configuring launch.json for C/C++ debugging](https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md)を参照してください。
 
-If you are debugging with GDB on Windows, see [Windows Debugging on Cygwin/MinGW](#debug_windows_gdb).
+Windows上でGDBを使ってデバッグする場合は[Windows Debugging on Cygwin/MinGW](#debug_windows_gdb)を参照してください。
 
-## Editing Code
+## コード編集
 
-### Code Formatting
+### コード整形
 
-The C/C++ extension for Visual Studio Code supports source code formatting using [clang-format](http://clang.llvm.org/docs/ClangFormat.html) which is included with the extension.
+今回使用しているC/C++拡張機能は、内蔵の[clang-format](http://clang.llvm.org/docs/ClangFormat.html)を使用した整形をサポートしています。
 
-You can format an entire file with **Format Document** (`kb(editor.action.formatDocument)`) or just the current selection with **Format Selection** (`kb(editor.action.formatSelection)`) in right-click context menu. You can also configure auto-formatting with the following [settings](/docs/getstarted/settings.md):
+ファイル全体を**Format Document**(`kb(editor.action.formatDocument)`)で整形したり、コンテキストメニュー(右クリック)から**Format Selection** (`kb(editor.action.formatSelection)`)で選択範囲を整形したりできます。また次の[設定](/docs/getstarted/settings.md)でも、自動整形を設定することもできます:
 
-* `C_Cpp.clang_format_formatOnSave` - to format when you save your file.
-* `editor.formatOnType` - to format as you type (triggered on the `kbstyle(;)` character).
+* `C_Cpp.clang_format_formatOnSave` -  ファイル保存時のフォーマット
+* `editor.formatOnType` - トリガー文字(`kbstyle(;)`)を入力時のフォーマット
 
-By default, the clang-format style is set to "file" which means it looks for a `.clang-format` file inside your workspace. If the `.clang-format` file is found, formatting is applied according the settings specified in the file. If no `.clang-format` file is found in your workspace, formatting is applied according to a default style specified in the `C_Cpp.clang_format_fallbackStyle` [setting](/docs/getstarted/settings.md) instead. Currently, the default formatting style is "Visual Studio". Using "Visual Studio" formatting ensures that source code formatting will be compatible in both VS Code and Visual Studio Community.
+既定でclang-format styleは、ワークスペース内の `.clang-format`を使用する"file"に設定されています。つまり `.clang-format` が見つかれば、書式設定はファイルで指定した設定に従います。そして `.clang-format` が見つからない場合 `C_Cpp.clang_format_fallbackStyle` [設定](/docs/customization/userandworkspace.md)を代わりとして使用します。現在、既定のフォーマットスタイルは "Visual Studio" です。"Visual Studio" の書式設定を使用すれば、 VS CodeとVisual Studio Communityの両方において書式に互換性が(確実に)あるということです。
 
-The "Visual Studio" clang-format style is not yet an official OOTB clang-format style but it implies the following clang-format settings:
+"Visual Studio" clang-formatスタイルは、まだ公式のclang-formatスタイルではありませんが、以下のようなclang-format設定になります:
 
 ```json
 UseTab: (VS Code current setting)
@@ -91,9 +93,9 @@ IndentCaseLabels: false
 ColumnLimit: 0
 ```
 
-If you'd like to use a different version of clang-format than the one that ships with the extension, you can use the `C_Cpp.clang_format_path` [setting](/docs/getstarted/settings.md) and set its value to the path where the clang-format binary is installed.
+拡張機能に内包されているバージョンと異なるclang-formatを使用する場合は、 `C_Cpp.clang_format_path` [設定](/docs/getstarted/settings.md)を使用して、 clang-formatバイナルのパスを指定します。
 
-For example on the Windows platform:
+Windowsの例:
 
 ```json
   "C_Cpp.clang_format_path": "C:\\Program Files (x86)\\LLVM\\bin\\clang-format.exe"
@@ -101,133 +103,147 @@ For example on the Windows platform:
 
 ### Fuzzy Auto-Complete (preview)
 
-Fuzzy auto-complete is powered by an enhanced tag-parser approach. Although suggestions are not based on semantic analysis of your code, this feature provides a wider selection of matches than the single-file IntelliSense experience provided today.
+(編集メモ: 以後あいまい自動補完
 
-In particular, this feature's capabilities give a good experience for C code.
+あいまい自動補完は、拡張タグパーサーによって機能します。提案はコードの意味解析に基づくものではありませんが、この機能は現在提供されている単一ファイルIntelliSenseよりも幅広い候補を提供します。
 
-## Navigating Code
+具体的には、 C言語開発で優れた機能を提供します。
 
-The source code navigation features provided by the C/C++ extension are powerful tools for understanding and getting around in your codebase. These features are powered by tags stored in an offline database of symbol information (in the file `browse.VC.db`). With the C/C++ extension installed, this database is generated whenever a folder containing C++ source code files is loaded into VS Code. The platform indicator (Win32 in the figure below) turns red and appears next to a flame icon while the tag-parser is generating this information.
+## ナビゲーションコード
+
+C/C++ 拡張機能が提供するソースコードナビゲーション機能は、コードベースを理解したり回避(?)したりするための強力なツールです。これら機能は、シンボル情報のオフラインデータベース(`browse.VC.db`)に格納されたタグによって提供されています。C/C++ 拡張機能をインストールすると、C++ ソースコードを含むフォルダーをVS Codeが読み込むたびにこのデータベースを作成します。タグパーサーがこの情報を生成している間、プラットホームインジゲーター(下図のWin32)が赤色にかわり、火炎アイコンの隣に表示します。
 
 ![The platform indicator during tag parsing](images/cpp/parsing.png)
 
-When the platform indicator returns to its normal appearance, the source code symbols have been tagged in the offline database and source code navigation features are ready to be used.
+プラットホームインジゲータが通常に戻ったとき、オフラインデータベースにソースコードシンボルがタグ付けされ、ソースコードナビゲーション機能が使用できる状態になります。
 
-### Specifying Additional Include Directories for Better Symbol Support
+### シンボルサポートを最適化する追加のIncludeディレクトリーを指定
 
-To provide the best experience, the C/C++ extension for VS Code needs to know where it can find each header file referenced in your code. By default, the extension searches the current source directory, its sub-directories, and some platform-specific locations. If a referenced header file can't be found, VS Code displays a green squiggle underneath each #include directive that references it.
+VS CodeのC/C++ 拡張機能は最適なコード編集を提供するために、コード内で参照される各ヘッダファイルがどこにあるのか教える必要があります。既定で拡張機能は、現在のソースディレクトリ、サブディレクトリーおよびプラットホーム固有の場所を検索します。参照されるヘッダファイルが見つからない場合、 VS Codeはそれを各 #includeディレクティブの下に緑破線を表示します。
 
-To specify additional include directories to be searched, place your cursor over any #include directive that displays a green squiggle, then click the lightbulb action when it appears. This opens the file `c_cpp_properties.json` for editing; here you can specify additional include directories for each platform configuration individually by adding more directories to its 'includePath' property.
+参照する追加インクルード ディレクトリーを指定するには、 緑破線の付いた #includeディレクティブの上にカーソルを置いて、電球をクリックします。これにより `c_cpp_properties.json` を開きます。このファイルで 'includePath' プロパティにディレクトリーを追加することで、各プラットホーム構成に追加のIncludeディレクトリーを指定できます。
 
 ![Adding an additional include path](images/cpp/includepath.gif)
 
-### Search for Symbols
+### シンボル検索
 
-You can search for symbols in the current file or workspace to navigate your code more quickly.
+現在のファイルまたはワークスペース内のシンボルを検索して、コード内を迅速に移動できます。
 
-To search for a symbol in the current file, press `kb(workbench.action.gotoSymbol)`, then enter the name of the symbol you're looking for. A list of potential matches will appear and be filtered as you type. Choose from the list of matches to navigate to its location.
+現在のファイル内のシンボルを検索するには`kb(workbench.action.gotoSymbol)`を押して、探すシンボルの名前を入力します。入力時にフィルタリングされる一致リストを表示するので、選択して移動します。
 
 ![Searching the current file](images/cpp/filesearch.png)
 
-To search for a symbol in the current workspace, start by pressing `kb(workbench.action.showAllSymbols)` instead, then enter the name of the symbol. A list of potential matches will appear as before. If you choose a match that was found in a file that's not already open, the file will be opened before navigating to the match's location.
+現在のワークスペースでシンボル検索するには、代わりに `kb(workbench.action.showAllSymbols)` を押して、シンボルの名前を入力します。リストは上と同じように表示します。まだ開いていないファイルの一致シンボルへ移動する場合、まずファイルを開きます。
 
 ![Searching in your workspace](images/cpp/workspacesearch.png)
 
-Alternatively, you can search for symbols by accessing these commands through the __Command Palette__ if you prefer. Use __Quick Open__ (`kb(workbench.action.quickOpen)`) then enter the '@' command to search the current file, or the '#' command to search the current workspace. `kb(workbench.action.gotoSymbol)` and `kb(workbench.action.showAllSymbols)` are just shortcuts for the '@' and '#' commands, respectively, so everything works the same.
+あるいは、**コマンドパレット**を介してシンボルを検索することができます。**Quick Open** を使用して現在のファイルを検索するには `@` コマンドを実行し、現在のワークスペースを検索するには `#`コマンドを実行してください。`kb(workbench.action.gotoSymbol)` と `kb(workbench.action.showAllSymbols)` は
+それぞれ上と同じ動作をする '@' と '#' のショートカットです。
 
-### Peek Definition
+### 定義をここに表示
 
-You can take a quick look at how a symbol was defined by using the Peek Definition feature. This feature displays a few lines of code near the definition inside a peek window so you can take a look without navigating away from your current location.
+定義をここに表示を使用することで、シンボルの定義を簡単に確認できます。ピークウィンドウ内に定義を表示するので、現在の場所から離れることなく確認できます。
 
-To peek at a symbol's definition, place your cursor on the symbol anywhere it's used in your source code and then press `kb(editor.action.previewDeclaration)`. Alternatively, you can choose __Peek Definition__ from the context menu (right-click, then choose __Peek Definition__).
+シンボルの定義を見るには、コード内シンボルの上にcursorを置き `kb(editor.action.previewDeclaration)` を押します。もしくは、コンテキストメニュー(右クリック)から**定義をここに移動**でも表示することができます。
 
 ![Peek definition](images/cpp/peekdefn.png)
 
-Currently, the C/C++ extension doesn't parse code in a way that helps it distinguish between competing definitions based on how the symbol is used. These competing definitions arise when the symbol defines different things in different contexts, such as occurs with overloaded functions, classes and their constructors, and other situations. When this happens, each of the competing definitions are listed in the right-hand side of the peek window with the source code of the current selection displayed on the left.
+現在のC/C++ 拡張機能は、シンボルの使用方法にもとづいて 、競合の定義を見分けるのに役立つようにコード解析しません。これらは、オーバーロード関数、クラスおよびそれらコンストラクタなど、違うコンストラクタで違うシンボル定義をするときに発生します。これらが発生した場合、それぞれの競合する定義をピークウィンドウの右側に表示し、現在選択のソースコードが左側に表示されます。
 
-With the peek window open, you browse the list of competing definitions to find the one you're interested in. If you want to navigate to the location of one of the definitions just double-click the definition you're interested in, or by double-clicking anywhere in the source code displayed on the left-hand side of the peek window.
+(編集メモ: 個人的に競合って言葉は悪い意味で使う感じがする
 
-### Go to Definition
+見つけたい定義を見つけるためには、ピークウィンドウを開いて競合する定義リストを参照します。定義に移動するには、目的の定義をダブルクリックするか、ピークウィンドウ左側に表示しているソースコード内の任意の場所をダブルクリックしてください。
 
-You can also quickly navigate to where a symbol is defined by using the Go to Definition feature.
+### 定義に移動
 
-To go to a symbol's definition, place your cursor on the symbol anywhere its used in your code and then press `kb(editor.action.goToDeclaration)`. Alternatively, you can choose __Go to Definition__ from the context menu (right-click, then choose __Go to Definition__). When there's only one definition of the symbol, you'll navigate directly to its location, otherwise the competing definitions are displayed in a peek window as described in the previous section and you have to choose the definition that you want to go to.
+定義に移動を使用して、シンボルを定義している場所に素早く移動することもできます。
 
-## Debugging
+シンボルの定義に移動するには、コード内のシンボル上にカーソルを置き `kb(editor.action.goToDeclaration)` を押します。また、コンテキストメニュー(右クリック)から**定義に移動**を選択することもできます。シンボルの定義が1つの場合、その場所に直接移動します。そうでない場合は、競合する定義を前のセクションで説明したように、ピークウィンドウで表示し、移動する定義を選択する必要があります。
 
-After you have set up the basics of your debugging environment as specified in [Getting Started](/docs/languages/cpp.md#getting-started), you can learn more details about debugging C/C++ in this section.
+## デバッグ
 
-VS Code supports the following debuggers for C/C++ depending on the operating system you are using:
+[Getting Started](/docs/languages/cpp.md#getting-started) で明示したように、デバッグ環境を設定したら、このセクションでC/C++ のデバッグの詳細に関する情報を確認します。
+
+VS Codeは使用しているOSに応じて、 次のC/C++ デバッガをサポートしています:
 
 * **Linux**: GDB
 * **OS X**: LLDB or GDB
-* **Windows**: the Visual Studio Windows Debugger or GDB (using Cygwin or MinGW)
+* **Windows**: Visual Studio Windows Debugger or GDB (Cygwin or MinGW使用時)
 
-### Windows Debugging with GDB on Cygwin/MinGW <a name="debug_windows_gdb"></a>
+### Cygwin/MinGW上のGDBによるWindowsデバッグ <a name="debug_windows_gdb"></a>
 
-You can debug Windows applications created using Cygwin or MinGW by using VS Code. To use Cygwin or MinGW debugging features, the debugger path must be set manually in the launch configuration (`launch.json`). To debug your Cygwin or MinGW application, add the `miDebuggerPath` property and set its value to the location of the corresponding gdb.exe for your Cygwin or MinGW environment.
+VS Codeを使用してCygwinかMinGWを使用して作成したWindowsアプリケーションをデバッグできます。CygwinまたはMinGWのデバッグ機能を使用するには、デバッガーパスを起動構成(`launch.json`)に手動で設定する必要があります。CygwinかMinGWアプリケーションをデバッグするには、 `miDebuggerPath` プロパティを追加し、その値をCygwinかMinGW環境に対応するgdb.exeの場所に設定してください。
 
-For example:
+例えば:
 
 ```json
     "miDebuggerPath": "c:\\mingw\\bin\\gdb.exe"
 ```
 
-Cygwin/MinGW debugging on Windows supports both attach and launch debugging scenarios.
+Windows上でのCygwin/MinGWデバッグは、アタッチとデバッグの両方をサポートします。
 
-### Conditional Breakpoints
+### 条件付きブレークポイント
 
-Conditional breakpoints enable you to break execution on a particular line of code only when the value of the condition is true. To set a conditional breakpoint, right-click on an existing breakpoint and select __Edit Breakpoint__. This opens a small peek window where you can enter the condition that must evaluate to true in order for the breakpoint to be hit during debugging.
+条件付きブレークポイントを使用すると、条件の値がtrueの場合にのみ特定のコード行で実行を中断することができます。条件付きブレークポイントをセットするには、既存のブレークポイントを右クリックして**ブレークポイントの編集**を選択します。ピークウィンドウが開くので、デバッグ中にヒット式がtrueと評価されるように条件を入力してください。
 
 ![A conditional break](images/cpp/condbreak.png)
 
-In the editor, conditional breakpoints are indicated by a breakpoint symbol that has a black equals sign inside of it. You can place the cursor over a conditional breakpoint to show its condition.
+エディター内で条件付きブレークポイントは、黒色の等号を内部に表示するブレークポイント記号で表示します。またカーソルを重ねることで、設定されている条件を表示します。
 
-### Function Breakpoints
+### 関数ブレークポイント
 
-Function breakpoints enable you to break execution at the beginning of a function instead of on a particular line of code. To set a function breakpoint, on the __Debug__ pane right-click inside the __Breakpoints__ section, then choose __Add Function Breakpoint__ and enter the name of the function on which you want to break execution.
+関数ブレークポイントを使用すると、特定のコード行ではなく関数の先頭で実行を中断することができます。設定には、**Debug**ペインで**ブレークポイント**セクションを開き、**関数ブレークポイントの追加**を選択し、実行を中断する関数の名前を入力します。
 
-### Expression Evaluation
+### 式の評価
 
-VS Code supports expression evaluation in several contexts:
+VS Codeは一部コンテキストで式の評価をサポートします:
 
-* You can type an expression into the __Watch__ section of the __Debug__ panel and it will be evaluated each time a breakpoint is hit.
-* You can type an expression into the __Debug Console__ and it will be evaluated only once.
-* You can evaluate any expression that appears in your code while you're stopped at a breakpoint.
+* **Debug** パネルの **ウォッチ式**セクションに式を入力でき、ここではブレークポイントがヒットするたびに評価します。
+* **デバッグコンソール**に式を入力することができます。この式は1回だけ評価します。
+* ブレークポイントで停止している間は、コード内で表示される任意の式を評価できます。
 
-Note that expressions in the __Watch__ section take effect in the application being debugged; an expression that modifies the value of a variable will modify that variable for the duration of the program.
+**ウォッチ式**セクションは、デバッグ中のアプリケーションで有効になることに注意してください。変数の値を変更する式は、プログラムの継続時間中にその変数を変更します。
 
-### Multi-threaded Debugging
+### マルチスレッドのデバッグ
 
-The C/C++ extension for VS Code has the ability to debug multi-threaded programs. All threads and their call stacks appear in the __Call Stack__ section:
+VS CodeのC/C++ 拡張機能には、マルチスレッドプログラムをデバッグする機能を用意しています。すべてのスレッドとその呼び出しスタックは、**Call Stack** セクションに表示します。
 
 ![Multi-threaded process](images/cpp/threads.png)
 
-### Memory Dump Debugging
+### メモリダンプのデバッグ
 
-The C/C++ extension for VS Code also has the ability to debug memory dumps. To debug a memory dump, open your `launch.json` file and add the `coreDumpPath` (for GDB or LLDB) or `dumpPath` (for the Visual Studio Windows Debugger) property to the __C++ Launch__ configuration, set its value to be a string containing the path to the memory dump. This will even work for x86 programs being debugged on an x64 machine.
+VS CodeのC/C++ 拡張機能には、メモリダンプをデバッグするための機能もあります。メモリダンプをデバッグするには `launch.json` を開いて、**C++ Launch** 設定の `coreDumpPath` (GDB, LLDB) か `dumpPath` (Visual Studio Windows Debugger)  プロパティに、メモリ ダンプのパスを含む文字列を指定します。これはx64上で、x86プログラムをデバッグしている状態でも機能します。
 
-### Additional Symbols
+### 追加のシンボル
 
-If there are additional directories where the debugger can find symbol files (e.g., `.pdb` files for the Visual Studio Windows Debugger), they can be specified by adding the `additionalSOLibSearchPath` (for GDB or LLDB) or `symbolSearchPath` (for the Visual Studio Windows Debugger).
+デバッガが使用できるシンボルファイル(e.g.Visual Studio Windows Debugger: `.pdb`)を、保持した追加のディレクトリーがある場合。`additionalSOLibSearchPath` (GDB, LLDB) もしくは `symbolSearchPath` ( Visual Studio Windows Debugger) 設定して追加することができます。
 
-For example:
+例えば:
 
 ```json
     "additionalSOLibSearchPath": "/path/to/symbols;/another/path/to/symbols"
 ```
 
-or
+または
 
 ```json
     "symbolSearchPath": "C:\\path\\to\\symbols;C:\\another\\path\\to\\symbols"
 ```
 
-### Locate source files
+---
+翻訳中にPRによって増えた項目
 
-The source file location can be changed if the source files are not located in the compilation location. This is done by simple replacement pairs added in the `sourceFileMap` section. The first match in this list will be used.
+親: C/C++ for VS Cod...
+場所: ### Additional Symbolsと ### GDB, LLDB and MI Commands (GDB/LLDB) の間
+PR: https://github.com/Microsoft/vscode-docs/pull/877
+commitid: 514d353cf7a7a7b6c12e808061d8114db01793d9
+---
 
-For example:
+### ソースファイルの場所
+
+ソースファイルがコンパイル場所にない場合、ソースファイルの場所を変更することができます。これは `sourceFileMap` セクションに追加した、単純なペア置換によって行います。このリストの最初の一致が使用します。
+
+例えば:
 
 ```json
 "sourceFileMap": {
@@ -236,74 +252,76 @@ For example:
 }
 ```
 
-### GDB, LLDB and MI Commands (GDB/LLDB)
+### GDB, LLDB, MIコマンド (GDB/LLDB)
 
-For the `C++ (GDB/LLDB)` debugging environment, you can execute GDB, LLDB and MI commands directly through the debug console with the `-exec` command, but be careful, executing commands directly in the debug console is untested and might crash VS Code in some cases.
+`C++ (GDB/LLDB)` デバッグ環境では、`-exec` コマンドで直接GDB, LLDB, MIコマンドをデバッグコンソールから実行できます。しかし、デバッグコンソールで直接コマンドを実行するとテストされず、場合によってはVS Codeがクラッシュする可能性があるので注意してください。
 
-### Other Debugging Features
+### その他のデバッグ機能
 
-* Unconditional breakpoints
-* Watch window
-* Call stack
-* Stepping
+* 無条件ブレークポイント
+* ウォッチ ウィンドウ
+* コール スタック
+* ステッピング
 
- For more information on debugging with VS Code, see this introduction to [debugging in VS Code](/docs/userguide/debugging.md).
+VSコードによるデバッグの詳細については、[debugging in VS Code](/docs/userguide/debugging.md)の入門を参照してください。
 
-## Known Limitations
+## 既知の制限
 
-### Symbols and Code Navigation
-
-All platforms:
-
-* Because the extension doesn't parse function bodies, Peek Definition and Go to Definition don't work for symbols defined inside the body of a function.
-
-### Debugging
+### シンボルとコードナビゲーション
 
 All platforms:
 
-* There is no way to specify the source file mappings from the compiled locations to the current location. This prevents debugging an application in a different file system layout than where it was compiled.
+* 拡張機能は関数本体を解析しないので、関数内で定義したシンボルに対して、定義をここに表示と定義に移動は機能しません。
+
+### デバッグ
+
+All platforms:
+
+* コンパイルした場所から現在の場所へのソースファイルマッピングを指定する方法はありません。これは、コンパイルした場所とは別ファイルシステムレイアウトのアプリケーションデバッグを防ぎます。
+
+(編集メモ: ソースファイルマッピングとは
 
 Windows:
 
-* GDB on Cygwin and MinGW cannot break a running process. To set a breakpoint when the application is running (not stopped under the debugger), or to pause the application being debugged, press `kbstyle(Ctrl-C)` in the application's terminal.
-* GDB on Cygwin cannot open core dumps.
+* CygwinとMinGWのGDBは、実行中のプロセスを中断することはできません。アプリケーション実行中にブレークポイントを設定、またはデバッグ中のアプリケーションを一時停止するには、アプリケーションのターミナルで `kbstyle(Ctrl-C)` を押します。
+* CygwinのGDBはコアダンプを開くことができません。
 
 Linux:
 
-* GDB needs elevated permissions to attach to a process. When using *attach to process*, you need to provide your password before the debugging session can begin.
+* GDBは、プロセスにアタッチするために高い権限を必要とします。**プロセスにアタッチ(attach to process)**を使用する場合、デバッグセッションを開始する前にパスワードを入力します。
 
 OS X:
 
 * LLDB:
-    * When debugging with LLDB, if the Terminal window is closed while in break mode, debugging does not stop. Debugging can be stopped by pressing the **Stop** button.
-    * When debugging is stopped the Terminal window is not closed.
+    * LLDBでデバッグする場合、ブレークモード中にターミナルウィンドウを閉じてもデバッグは停止しません。**停止**ボタンを押せば、デバッグを停止できます。
+    * デバッグを停止してもターミナルウィンドウは閉じられません。
 * GDB:
-    * Additional manual install steps need to be completed to use GDB on OS X. See _Manual Installation of GDB for OS X_ in the [README](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
-    * When attaching to a process with GDB, the application being debugged cannot be interrupted. GDB will only bind breakpoints set while the application is not running (either before attaching to the application, or while the application is in a stopped state). This is due to [a bug in GDB](https://sourceware.org/bugzilla/show_bug.cgi?id=20035).
-    * Core dumps cannot be loaded when debugging with GDB because GDB [does not support the core dump format used in OS X](https://www.sourceware.org/ml/gdb/2014-01/msg00036.html).
-    * When attached to a process with GDB, break-all will end the process.
+OS XでGDBを使用するには、追加の手動インストールを完了する必要があります。[README](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) で手動インストール方法を参照してください。
+    * GDB でプロセスにアタッチする場合、デバッグ中のアプリケーションを中断できません。GDB は アプリケーションを実行していない間に設定した、ブレークポイントだけをバインドします(アプリケーションにアタッチする前 か アプリケーションが停止している間)。これは、[GDBバグ](https://sourceware.org/bugzilla/show_bug.cgi?id=20035)によるものです。
+    * GDB は、[OSXで使用するコアダンプ形式をサポートしていない](https://www.sourceware.org/ml/gdb/2014-01/msg00036.html)ため、コアダンプをロードできません。
+    * GDB を持つプロセスにアタッチすると、break-all はプロセスを終了します。
 
-## Next Steps
+## 次のステップ
 
-Read on to find out about:
+次を見てください:
 
 * [Basic Editing](/docs/userguide/codebasics.md) - Learn about the powerful VS Code editor.
 * [Code Navigation](/docs/userguide/editingevolved.md) - Move quickly through your source code.
 * [Tasks](/docs/userguide/tasks.md) - use tasks to build your project and more
 * [Debugging](/docs/userguide/debugging.md) - find out how to use the debugger with your project
 
-## Common Questions
+## よくある質問
 
-**Q: My project won't load.**
+**Q: プロジェクトを読み込みません**
 
-**A:** VS Code doesn't currently support C++ project files, instead it considers a directory of your choosing to be the workspace of your project. Source code files inside that directory and its sub-directories are part of the workspace.
+**A:** 現在VS CodeはC++ プロジェクトファイルをサポートしていませんが、選択したディレクトリをプロジェクトのワークスペースとみなします。そのディレクトリー内のソースコードファイルとそのサブディレクトリーは、ワークスペースの一部です。
 
-**Q: IntelliSense isn't working.**
+**Q: IntelliSenseが動作しません**
 
-**A:** In this release, IntelliSense isn't supported. We plan to enable this and other features in future releases.
+**A:** 現在のリリースでIntelliSenseはサポートしていません。今後のリリースで、IntelliSenseや多くの機能を実装する予定です。
 
-**Q: How do I build/run my project?**
+**Q: プロジェクトをどうやってビルド/実行しますか?**
 
-**A:** VS Code supports tasks that you can configure to build your application, and natively understands the output of MSBuild, CSC, and XBuild. For more information, see the [Tasks](/docs/userguide/tasks.md) documentation.
+**A:** VS Codeはアプリケーションビルドを構成するタスクをサポートし、 MSBuid, CSC, XBuildの出力をネイティブに解析します。詳細は [Tasks](/docs/userguide/tasks.md)を参照してください。
 
-If you have any other questions or run into any issues, please file an issue on [GitHub](https://github.com/Microsoft/vscode-cpptools/issues).
+他に質問がある場合や問題が発生した場合は、[GitHub](https://github.com/Microsoft/vscode-cpptools/issues) に問題を発行してください。

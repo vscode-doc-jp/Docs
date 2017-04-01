@@ -1,66 +1,77 @@
 ---
-ttle: Visual Studio Code FAQ
+title: Visual Studio Code FAQ
 MetaDescription: Our docs contain a Common Questions section. Here are items that don't fit in the other topics.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 1a8eb77e5a36e9c984667acf6b2e6a164334bc27
 ---
 
-Our docs contain a **Common Questions** section as needed for specific topics. We've captured items here that don't fit in the other topics.
+私たちのドキュメントには、特定のトピックについて必要に応じて**よくある質問**のセクションを設けています。そのトピックに当てはまらない項目をここにまとめました。
 
-If you don't see an answer to your question here, check our previously [reported issues](https://github.com/microsoft/vscode/issues) and our [Updates](/updates) notes.
+ここであなたの質問に対する回答が見つからない場合には [reported issues](https://github.com/microsoft/vscode/issues) や [Updates](/updates) を確認してください。
 
-## What is the difference between VS Code and VS Community?
+## VS CodeとVS Communityの違いは何ですか？
 
-Visual Studio Code is a streamlined code editor with support for development operations like debugging, task running and version control. It aims to provide just the tools a developer needs for a quick code-build-debug cycle and leaves more complex workflows to fuller featured IDEs. For more details about the goals of VS Code, see [Why VS Code](/docs/userguide/whyvscode.md).
+Visual Studio Codeはデバッグ、タスク、バージョンコントロールなどによる開発をサポートする合理化されたコードエディターです。開発者が迅速なCcode-Build-Debugに必要なツールだけを提供することを目的としており、複雑なワークフローはフル機能を持ったIDEにおいてきました。VS Codeの詳細な目標については [Why VS Code](/docs/editor/whyvscode.md) を参照してください。
 
-## Which OS's are supported?
+## どのOSをサポートしますか？
 
-VS Code runs on Mac, Linux, and Windows. See [Requirements](requirements) for the supported versions. You can find more platform specific details under [SETUP](/docs/setup/setup-overview.md).
+Mac、Linux、Windowsで動作します。サポートしているバージョンについては[システム要件](/docs/supporting/requirements.html)を参照してください。プラットホーム別の詳細については[SETUP](/docs/setup/setup-overview.html)を参照してください。
 
-## Is VS Code free?
+## VS Codeは無料ですか？
 
-Yes, VS Code is a free, [open source](https://github.com/microsoft/vscode) editor.
+はいVS Codeは無料の[オープンソース](https://github.com/microsoft/vscode)エディターです。
 
-## How do I find what version of VS Code I am using?
+##  VS Codeのバージョンはどこで確認できますか？*
 
-You can find the VS Code version information in the About dialog box.
+バージョン情報ダイアログで確認することができます。
 
-On a Mac, go to **Code** > **About Visual Studio Code**.
+Macでは、 **Code** > **About Visual Studio Code** へ移動します。
 
-On Windows and Linux, go to **Help** > **About**.
+WIndowsとLinuxでは **ヘルプ** > **バージョン情報** へ移動します。
 
-The VS Code version is the first **Version** number listed and has the version format 'major.minor.release', for example '1.6.0'.
+またVS Codeのバージョン番号の見方は 'major.minor.release' です。
 
-## How do I opt out of VS Code auto-updates?
+## VS Codeの自動更新をどこで無効化しますか？
 
-By default, VS Code is set up to auto-update for Mac and Windows users when we release new updates. (Auto-update of VS Code is not supported for Linux.) If you do not want to get automatic updates, you can set the `update.channel` setting from `default` to `none`.
+既定の設定では新しいアップデートがリリースされたときMacとWindowsで自動更新するよう設定されています。自動で更新を入手したくない場合は `update.channel` を `default` から `none` に設定することができます。
 
-To modify the update channel, go to **File** > **Preferences** > **Settings** and add the `update.channel` setting with the value `"none"`.
+**ファイル** > **基本設定** > **設定** に移動して `update.channel` の値を "none" で追加してください。
 
 ```json
     "update.channel": "none"
 ```
 
-You can install a previous release of VS Code by uninstalling your current version and then installing the download provided at the top of a specific release page under [Updates](/updates).
+なおVS Codeを以前のバージョンに戻したいときは、現在のバージョンをアンインストールし[Updates](/updates)から特定バージョンのダウンロードをインストールしてください。
+
+(編集メモ: [有志](https://github.com/satokaz/tips/blob/master/vscode/Previous-Releases.md)によってダウンロードリンクがまとめられています。
+
+>**Note:** LinuxではVS Codeレポジストリを正しくインストールできていれば、他のパッケージと同じ方法で自動更新するはずです。詳細は[Installing VS Code on Linux](/docs/setup/linux.md#updates)を参照してください。
 
 ## Licensing
 
-### Location
+### ライセンスの場所
 
-You can find the VS Code licenses, third party notices and [Chromium](https://www.chromium.org) Open Source credit list under your VS Code installation location `resources\app` folder. VS Code's `ThirdPartyNotices.txt`, Chromium's `Credits_*.html`, and VS Code's English language `LICENSE.txt` are available under `resources\app`. Localized versions of `LICENSE.txt` by Language ID are under `resources\app\licenses`.
+VS Codeのインストール場所から`resources\app`フォルダーの下にVS Codeのライセンス、サードパーティー製品についての通知、[Chromium](https://www.chromium.org) オープンソースクレジットがあります。VS Codeの `ThirdPartyNotices.txt`、Chromiumの `Credits_*.html` そしてVS Codeの  `LICENSE.txt` は `resources\app` の下で利用できます。ローカライズされた `LICENSE.txt` は `resources\app\licenses` にあります。
 
-### Why does Visual Studio Code have a different license than the vscode GitHub repository?
+### なぜVisual Studio Codeはvscode(GitHub repo) と違うライセンスなのですか？
 
-To learn why Visual Studio Code, the product, has a different license than vscode, the open source [GitHub repository](https://github.com/microsoft/vscode), see [issue #60](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005) for a detailed explanation.
+なぜVisual Studio Codeとvscodeが異なるライセンスを持っているのかについては  [issue #60](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005) を参照してください。
 
-## How can I test prerelease versions of VS Code?
+(編集メモ: 内容を簡単にまとめると
+Chrome OpenJDK Xamarin Studio IntelliJなどもブランド製品と公開コードのライセンスは異なっている。これをVS Codeにも適応させようと思った。
 
-Want an early peek at new VS Code features?  You can try prerelease versions of VS Code by installing the "Insiders" build.  The Insiders build installs side by side to your stable VS Code install and has isolated settings, configurations and extensions.  The Insiders build is updated nightly so you'll get the latest bug fixes and feature updates from the day before.
+この仕組みの理由は簡単に言ってしまえば、MSから提供するVS Code(ブランド製品)と公開コードによって作られるvscodeは異なるからだ。例えば、フィードバックシステム、テレメトリレポート、ロゴ、名前などがブランド製品とは異なっている。こうした違いにライセンスを適応させたり違いをはっきりさせたりするため、ライセンスが異なっている。
 
-To install the Insiders build, go to the Insiders [download page](/insiders).
+最後に「Visual Studio Code」を「VS Code」と略したことでvscodeレポジトリと名前が似たことを謝罪します。これが混乱の原因になったことでしょう。
 
-## VS Code gets unresponsive right after opening a folder
+## VS Codeのプレリリース版をどこでテストできますか？
 
-When you open a folder, VS Code will search for typical project files to offer you additional tooling (e.g. the solution picker in the status bar to open a solution). If you open a folder with lots of files, the search can take a large amount of time and CPU resources during which VS Code might be slow to respond. We plan to improve this in the future but for now you can exclude folders from the explorer via settings and they will not be searched for project files:
+新しいVS Code機能を早く体験したいですか？"Insiders" ビルドをインストールすることでVS Codeのプレリリース版を試すことができます。Insiderは通常のVS Codeとは別にインストールを行い、設定、構成、拡張機能は独立しています。Insiderは夜間に更新するので、前日のバグ修正、機能更新を試すことができます。
+
+InsiderビルドはInsidersの [download page](/insiders) で入手してください。
+
+## VS Codeはフォルダーを開くと応答しなくなります
+
+フォルダーを開いたときVS Codeはプロジェクトファイルを検索して追加ツールを提供します(例えばステータスバーのソリューションピッカー)。沢山のファイルとフォルダーを開くとき、検索にCPUリソースを大量に使うため応答が遅くなる場合があります。私たちは将来的に改善するつもりですが、今は設定によりエクスプローラーからフォルダーを除外することで検索量を減らして対応します。
 
 ```json
     "files.exclude": {
@@ -68,54 +79,54 @@ When you open a folder, VS Code will search for typical project files to offer y
     }
 ```
 
-## Missing `csharp-o` extension?
+## `csharp-o` 拡張が見つかりませんか？
 
-If you get an error at startup about a missing `csharp-o` extension, you can fix it by completely deleting its directory from the installation directory:
+起動時に `csharp-o` 拡張機能が見つからないというエラーが発生した場合には、以下のインストールディレクトリーを削除して解決することができます。
 
 ```
 C:\Program Files (x86)\Microsoft VS Code\resources\app\extensions\csharp-o
 ```
 
-## VS Code main window is blank?
+## VS Codeのメインウィンドウは空白ですか？
 
-The Electron shell used by Visual Studio Code has trouble with some GPU (graphics processing unit) hardware acceleration. If VS Code is displaying a blank (empty) main window, you can try disabling GPU acceleration when launching VS Code by adding the Electron `--disable-gpu` command line switch.
+Visual Studio Codeで使うElectronにはいくつかのGPUハードウェアアクセラレーション問題があります。真っ白なウィンドウが表示される場合には`--disable-gpu` を追加して起動してください。こうすることでGPUアクセラレーションを無効化することができます。
 
 ```bash
 code --disable-gpu
 ```
 
-## Installation appears to be corrupt
+## VS Codeが破損しているようです
 
-VS Code does a background check to detect if the installation has been changed on disk. This is done since some extensions directly modify (patch) the VS Code product in such a way that is semi-permanent (until the next update) and this can cause hard to reproduce issues. We are not trying to block VS Code patching, but we want to raise awareness that patching VS Code means you are running an unsupported version. Reinstalling VS Code will replace the modified files and silence the warning.
+VS Codeはインストールファイルの変更を検出するバックグラウンドチェックを行います。これは拡張機能がVS Codeファイルを変更することによって、問題の再現性が低下する可能性があるからです。変更を阻止しようとしているわけではありませんが、変更したことによりサポートされないバージョンを実行しているという意識を高めたいと考えています。VS Codeを再インストールすることで、変更ファイルを置き換え警告が消えます。
 
-## How to disable crash reporting
+## クラッシュレポートを無効にする方法
 
-From **File** > **Preferences** > **Settings**, add the following option to disable crash reporting:
+クラッシュレポートを無効化するには **ファイル** > **基本設定** > **設定** に移動して次を設定します。
 
 ```json
     "telemetry.enableCrashReporter": false
 ```
 
-**Important Notice**: This option requires a restart of VS Code to take effect.
+**Important Notice**: オプションを有効にするには、再起動が必要です。
 
-## How to disable telemetry reporting
+## テレメトリレポートを無効にする方法
 
-VS Code collects usage data and sends it to Microsoft to help improve our products and services.  Read our [privacy statement](https://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409) to learn more.
+VS Codeは利用状況データとエラーを収集しMicorosoftの製品とサービスを改善するレポートを送信します。[プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409)をよく確認してください。
 
-If you don’t wish to send usage data to Microsoft, you can set the `telemetry.enableTelemetry` setting to `false`.
+あなたがMicrosoftにデータを送りたくない場合 `telemetry.enableTelemetry` を `false` に設定することができます。
 
-From **File** > **Preferences** > **Settings**, add the following option to disable telemetry reporting, this will silence all telemetry events from the VS Code shell.
+**ファイル** > **基本設定** > **設定** に移動して次を設定します。
 
 ```json
     "telemetry.enableTelemetry": false
 ```
 
-**Important Notice**: This option requires a restart of VS Code to take effect.  Individual extensions and packages may send addional telemetry and not respect this setting.
+**Important Notice**: このオプションを有効にするには、再起動が必要です。拡張機能の中にはアドオンテレメトリを送信し、この設定を適用しない場合があります。
 
->**Note:** VS Code gives you the option to install Microsoft and third party extensions.  These extensions may be collecting their own usage data and are not controlled by the `telemetry.enableTelemetry` setting.  Consult the specific extension’s documentation to learn about its telemetry reporting.
+>**Note:** VS Code は Microsoft製やサードパーティー製の拡張機能をインストールするオプションを提供しています。これらの拡張機能は、独自のデータ収集をしている可能性があり `telemetry.enableTelemetry` によって制御されません。拡張機能のテレメトリレポートを確認するには、そのマニュアルを確認してください。
 
-## Technical Support
+## 技術サポート
 
-You can ask questions and search for answers on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode) and enter issues and feature requests directly in our [GitHub repository](https://github.com/Microsoft/vscode/blob/master/CONTRIBUTING.md).
+[Stack Overflow](https://stackoverflow.com/questions/tagged/vscode) で質問や回答の検索が可能です。また [GitHub repository](https://github.com/Microsoft/vscode/blob/master/CONTRIBUTING.md) に問題と機能のリクエストを直接届けることもできます。
 
-If you'd like to contact a professional support engineer, you can open a ticket with the [Microsoft assisted support team](https://support.microsoft.com/en-us/assistedsupportproducts).
+サポートエンジニアに直接連絡したくなったら [Microsoft assisted support team](https://support.microsoft.com/en-us/assistedsupportproducts) に連絡してください。

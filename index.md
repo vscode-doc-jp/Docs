@@ -6,36 +6,36 @@ title: ようこそ
 ### 翻訳状況
 * Overview
 * SETUP
-    * Overview
-    * Linux
+    * [Overview](/docs/setup/setup-overview.html)
+    * [Linux](/docs/setup/linux.html)
     * ~~Mac~~
-    * Windows
-    * Additional Compnents
+    * [Windows](/docs/setup/windows.html)
+    * [Additional Compnents](/docs/setup/additional-components.html)
 * GET STARTED
     * ~~Intro Videos~~
     * ~~User Interface~~
-    * Themes
-    * Settings
-    * Key Bindings
-    * Display Language
+    * [Themes](/docs/getstarted/themes.html)
+    * [Settings](/docs/getstarted/settings.html)
+    * [Key Bindings](/docs/getstarted/keybindings.html)
+    * [Display Language](/docs/getstarted/locales.html)
 * USER GUIDE
     * ~~Basic Editing~~
     * ~~Extension Marketplace~~
-    * IntelliSense
+    * [IntelliSense](/docs/userguide/intellisense.html)
     * ~~Code Navigation~~
     * ~~Debugging~~
-    * Version Control
+    * [Version Control](/docs/userguide/versioncontrol.html)
     * ~~Integrated Terminal~~
     * ~~Tasks~~
-    * Creating your own Snippets
-    * Command Line
-    * Accesibility
+    * [Creating your own Snippets](/docs/userguide/userdefinedsnippets.html)
+    * [Command Line](/docs/userguide/command-line.html)
+    * [Accesibility](/docs/userguide/accessibility.html)
 * LANGUAGES
-    * Overview
+    * [Overview](/docs/languages/overview.html)
     * ~~JavaScript~~
     * ~~JSON~~
     * ✌~~HTML~~
-    * CSS, Sass and Less
+    * [CSS, Sass and Less](/docs/languages/css.html)
     * ~~TypeScript~~
     * ~~Markdown~~
     * ~~PHP~~
@@ -44,7 +44,7 @@ title: ようこそ
     * ~~Dockerfile~~
     * ~~T-SQL~~
     * ~~C#~~
-    * ✌~~C++~~
+    * [C++](/docs/languages/cpp.html)
 * NODE.JS/JAVASCRIPT
     * ~~Tutorial-Node.js~~
     * ~~Node.js Debugging~~
@@ -55,3 +55,6 @@ title: ようこそ
     * ~~.NET Core~~
     * ~~Unity~~
     * ~~Office~~
+* Supporting
+    * [FAQ](/docs/supporting/faq.html)
+    * [Requirements](/docs/supporting/requirements.html)
