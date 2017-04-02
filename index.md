@@ -29,6 +29,7 @@ title: ようこそ
     * [Creating your own Snippets](/docs/userguide/userdefinedsnippets.html)
     * [Command Line](/docs/userguide/command-line.html)
     * [Accesibility](/docs/userguide/accessibility.html)
+    * [Why VS Code](/docs/userguide/whyvscode.html)
 * LANGUAGES
     * [Overview](/docs/languages/overview.html)
     * ~~JavaScript~~
@@ -51,8 +52,9 @@ title: ようこそ
 * EXTENSIONS
     * [Overview](/docs/extensions/overview.html)
 * EXTENSIBILITY REFERENCE
-    * [Overview](docs/extensionsAPI/overview.html)
-    * [Extension Manifest](docs/extensionsAPI/extension-manifest.html)
+    * [Overview](docs/extensionapi/overview.html)
+    * [Extension Manifest](docs/extensionapi/extension-manifest.html)
+    * [Activation Events](docs/extensionapi/activation-events.html)
 * OTHER
     * [.NET Core](/docs/other/dotnet.html)
     * ~~Unity~~
@@ -60,3 +62,4 @@ title: ようこそ
 * Supporting
     * [FAQ](/docs/supporting/faq.html)
     * [Requirements](/docs/supporting/requirements.html)
+    * [Errors](docs/supporting/errors.html)

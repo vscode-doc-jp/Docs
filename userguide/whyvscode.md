@@ -4,47 +4,47 @@ MetaDescription: Visual Studio Code provides developers with a new choice of too
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging.
+Visual Studio CodはエディタのシンプルさとIntelli Senseやデバッグ機能などによる強力な開発ツールの両方を兼ね備えています。
 
-First and foremost, it is an editor that gets out of your way. The delightfully frictionless edit-build-debug cycle means less time fiddling with your environment, and more time executing on your ideas.
+何よりもまず、このエディターはあなたの経験したことのないものです。驚くほど煩わしくないEdit-Build-Debugは、環境へ慣れる時間を短縮し、アイディアを実行する時間を増やすことでしょう。
 
 ## Available for macOS, Linux, and Windows
 
-Visual Studio Code supports macOS, Linux, and Windows - so you can hit the ground running, no matter the platform.
+Visual Studio CodeはmacOS、Linux、Windowsをサポートします。ですからプラットホーム環境を考えることなく全力で取り組む(hit the ground running)ことができるのです。
 
 ![Visual Studio Code runs on Mac, Linux and Windows](images/whyvscode/macwinlinux2.png)
 
 ## Edit, build, and debug with ease
 
-At its heart, Visual Studio Code features a lightning fast source code editor, perfect for day-to-day use. With support for hundreds of languages, VS Code helps you be instantly productive with syntax highlighting, bracket-matching, auto-indentation, box-selection, snippets, and more. Intuitive keyboard shortcuts, easy customization and community-contributed keyboard shortcut mappings let you navigate your code with ease.
+Visual Studio Codeは、日常使用に最適で高速軽量のソースコードエディターです。いくつもの言語をサポートするVS Codeでは、構文ハイライト、ブラケットマッチング、自動インデント、矩形選択、スニペットなどを使用して、即座に生産性を向上可能です。また直観的なキーボードショートカットとカスタマイズに加え、コミュニティーによるキーボードショートカットの提供により、コードをより一層簡単にナビゲートすることでしょう。
 
-For serious coding, you'll often benefit from tools with more code understanding than just blocks of text. Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation, and code refactoring.
+難しいコーディングであるほど、ただのテキストブロックよりもコードを深く解析できるツールが恩恵を受けることがよくあります。Visual Studio CodeではIntelliSenseによる補完や豊富なセマンティクス情報とナビゲーション、コードリファクタリング機能を最初から用意しています。
 
-And when the coding gets tough, the tough get debugging. Debugging is often the one feature that developers miss most in a leaner coding experience, so we made it happen. Visual Studio Code includes an interactive debugger, so you can step through source code, inspect variables, view call stacks, and execute commands in the console.
+そしてコーディングが困難なものになると、頑強なデバッグ作業が待ち構えているものです。デバッグは多くの場合、開発者がやる気を失う1つの例です。ですから私達はそれを解決する機能を実現しました。Visual Studio Codeではインタラクティブなデバッガを含み、 ステップ実行、変数の検証、コールスタックの表示、そしてコンソールでのコマンド実行などを用意しています。
 
-VS Code also integrates with build and scripting tools to perform common tasks making everyday workflows faster. VS Code has support for Git so you can work with source control without leaving the editor including viewing pending changes diffs.
+また一般的なビルドやスクリプトツールと統合し、日々のワークフローを一層早くするタスクを実行できます。たとえばGitをサポートするので、エディターを離れることなくソースコントロールを操作することができます。
 
 ## Make it your own
 
-Customize every feature to your liking and install any number of third-party extensions. While most scenarios work "out of the box" with no configuration, VS Code also grows with you, and we encourage you to optimize your experience to suit your unique needs. VS Code is an open source project so you can also contribute to the growing and vibrant community on GitHub.
+あらゆる機能を好みに合わせてカスタマイズし、サードパーティー拡張機能をいくつでもインストールできます。ほとんどのシナリオをすぐに設定なしで使えますが、VS Codeはあなたと共に成長します。ですから自信のニーズに合わせて最適化することをお勧めします。またVS Codeはオ ープンソースプロジェクトですから、GitHubで成長する活気あるコミュニティーに貢献することもできます。
 
 ## Built with love for the Web
 
-VS Code includes enriched built-in support for Node.js development with JavaScript and TypeScript, powered by the same underlying technologies that drive Visual Studio. VS Code also includes great tooling for web technologies such as JSX/React, HTML, CSS, Less, Sass, and JSON.
+VS Codeは、JavaScriptとTypeScriptを使用したNode,js開発のために、豊富なサポートを組み込んでいます。さらにJSX/React、HTML、CSS、Less、Sass、JSONのようなWebテクノロジー用の優れたツールも用意しています。
 
 ## Robust and extensible architecture
 
-Architecturally, Visual Studio Code combines the best of web, native, and language-specific technologies. Using [Electron](https://github.com/electron/electron), VS Code combines web technologies such as JavaScript and Node.js with the speed and flexibility of native apps. VS Code uses a newer, faster version of the same industrial-strength HTML-based editor that has powered the “Monaco” cloud editor, Internet Explorer's F12 Tools, and other projects. Additionally, VS Code uses a tools service architecture that enables it to integrate with many of the same technologies that power Visual Studio, including Roslyn for .NET, TypeScript, the Visual Studio debugging engine, and more.
+Visual Studio Codeはアーキテクチャ設計的にWeb、ネイティブと言語固有の技術の長所を兼ね備えています。[Electron](https://github.com/electron/electron)を使用しているので、JavaScriptやNode.jsのようなWebテクノロジーでネイティブアプリの柔軟性とスピードの組み合わせを実現しているからです。またVS Codeはクラウドエディター"Monako"、Internet Explorer's F12 Tool、および他のプロジェクトに使用される最新で高速なインダルトリアルHTMLベースエディターを使用しています。さらにRoslyn(.NET TypeScript)、Visual Studio debugging engineなど、Visual Studoを強化する多くのテクノロジーと統合できるようにするツール サービス アーキテクチャを採用しています。
 
-Visual Studio Code includes a public extensibility model that lets developers build and use extensions, and richly customize their edit-build-debug experience.
+Visual Studio Codeは拡張モデルを用意していますので、開発者は拡張機能を構築して使用したり、Edit-Build-Debugの経験を豊富にカスタマイズしたりできます。
 
 ## Ready, set, code!
 
-If you prefer a code editor-centric development tool or are building cross-platform web and cloud applications, we invite you to try out Visual Studio Code and let us know what you think!
+もしコードエディター開発が好きな場合や、クロスプラットホームのWebおよびクラウドアプリケーションを作成しているなら、Visual Studio Codeと私達はあなたを歓迎します。あなたの意見を私達に生かしてください！
 
-## Next Steps
+## 次のステップ
 
-Read on to find out about:
+次を見てください:
 
 * [Visual Studio Code User Interface](/docs/getstarted/userinterface.md) - A quick orientation to VS Code.
 * [Basic Editing](/docs/userguide/codebasic.md) - Learn about the VS Code editor features.
