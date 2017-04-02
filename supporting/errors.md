@@ -1,34 +1,34 @@
 ---
-title: Common Error Cases
+title: よくあるエラーケース
 MetaDescription: Several error conditions can easily be resolved by the user this page is designed to help un-block you.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-Some errors that happen in Visual Studio Code can be worked around or resolved by you.  This topic describes several of the most common error conditions, and what you can do to resolve them.
+Visual Studio Codeで起こるエラーのいくつかは、回避したり解決したりすることが可能です。このトピックではよくあるエラーとその解決方法を説明します。
 
-If these steps don't help you, you probably hit a bug. You can check our [reported issues](https://github.com/microsoft/vscode/issues) list to see if others have had the same issue.
+もし、これらの手段で問題が解決しないのなら未知のバグを発生させた可能性があります。[報告された問題](https://github.com/microsoft/vscode/issues)を確認して、他に同じ問題を抱えた人がいないか確認してください。
 
 ## 20002
 
 >**Error:** Cannot find '/usr/bin/gnome-terminal' for launching your Node.js program
 
-On Linux the VS Code Node.js debugger requires the **gnome-terminal** for launching the Node.js program.
-If gnome-terminal is not installed, the VS Code debugger cannot launch your program for debugging.
+LinuxのVS CodeでNode.jsデバッガを使ってNode.jsを起動するには**gnome-terminal**が必要です。
+gnome-terminalをインストールしていない場合、VS Codeデバッガはデバッグのためにプログラムを起動できません。
 
-There are two options for solving this problem:
+この問題を解決するには、次の2つの方法があります:
 
-* Install the gnome-terminal by running the command `sudo apt-get install gnome-terminal` (or the equivalent of your Linux distribution)
-* Manually launch your program in debug mode by passing a `--debug` or `--debug-brk` option to Node.js and then attach the VS Code debugger to port 5858 on 'localhost'.
+* `sudo apt-get install gnome-terminal`(Linux distribution)を実行してgnome-terminalをインストールします。
+* Node.jsに`--debug`か`debug-brk`オプションを設定して、デバッグモードでプログラムを手動起動する。そのごVS Codeデバッガをport 5858にアタッチする。
 
 ## 20003
 
 >**Error:** Attribute 'program' is not absolute; consider adding '${workspaceRoot}/' as a prefix to make it absolute.
 
-Before VS Code release 0.10.11, it was possible to use relative paths in launch configurations. VS Code would silently convert them to absolute paths.
+VS code(release 0.10.11)より前は、起動設定で相対パスを使用できました。そのためVS Codeは暗黙的に絶対パスに変換してきました。
 
-There were two problems with this:
+しかしこれには2つの問題があります:
 
-- VS Code would only fix paths for some well-known attributes like `program`, `cwd`, or `outFiles`. Relative paths passed as an argument or set as an environment variable would not be fixed and this behavior was not transparent.
-- VS Code would only fix paths in the `launch.json` configuration file. It would not touch paths in `tasks.json` and this inconsistency was difficult to understand.
+- VS Codeは`program`、`cwd`、`outFiles`のような一般的な属性パスのみ変換します。ゆえに引数や環境変数に設定される相対パスは固定されず、この動作は不透明でした。
+- VS Codeは`lunch.json`のパスは修正しました。しかし `tasks.json`を修正せず、この矛盾はわかりづらいものでした。
 
-Starting with release 0.10.11, VS Code no longer modifies launch configuration paths.  If you are using relative paths in your launch configurations, you'll need to fix them by prefixing the relative path with `${workspaceRoot}/`.
+以上から0.10.11から起動設定パスの変更をしなくなりました。これにより、起動設定で相対パスを利用している場合は、相対パスの先頭に`${workspaceRoot}/`を付けて絶対パスに修正する必要があります。
