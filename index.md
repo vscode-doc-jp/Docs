@@ -52,6 +52,7 @@ title: ようこそ
     * [Overview](/docs/extensions/overview.html)
 * EXTENSIBILITY REFERENCE
     * [Overview](docs/extensionsAPI/overview.html)
+    * [Extension Manifest](docs/extensionsAPI/extension-manifest.html)
 * OTHER
     * [.NET Core](/docs/other/dotnet.html)
     * ~~Unity~~

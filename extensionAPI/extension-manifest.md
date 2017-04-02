@@ -1,47 +1,42 @@
 ---
-Order: 4
-Area: extensionapi
-TOCTitle: Extension Manifest
-ContentId: C4F184A5-A804-4B0B-9EBA-AFE83B88EE49
-PageTitle: Visual Studio Code Extension Manifest File - package.json
-DateApproved: 3/1/2017
+title: 拡張マニフェストファイル - package.json
 MetaDescription: At the core of Visual Studio Code's extensibility model is an extension (plug-in) manifest file where your extension declares its extension type(s), activation rules and runtime resources.
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-# Extension Manifest File - package.json
 
-Every Visual Studio Code extension needs a manifest file `package.json` at the root of the extension directory structure.
+全てのVisual Studio Code拡張機能には、拡張機能フォルダのルートにマニフェストファイル`package.json`が必要です。
 
 ## Fields
 
 Name | Required | Type | Details
 ---- |:--------:| ---- | -------
-`name` | Y | `string` | The name of the extension - should be all lowercase with no spaces.
-`version` | Y | `string` | [SemVer](http://semver.org/) compatible version.
-`publisher` | Y | `string` | The [publisher name](/docs/extensions/publish-extension.md#publishers-and-personal-access-tokens)
-`engines` | Y | `object` | An object containing at least the `vscode` key matching the versions of VS Code that the extension is compatible with.  Cannot be `*`. For example: `^0.10.5` indicates compatibility with a minimum VS Code version of `0.10.5`.
-`license` | | `string` | Refer to [npm's documentation](https://docs.npmjs.com/files/package.json#license). If you do have a `LICENSE` file in the root of your extension, the value for `license` should be `"SEE LICENSE IN <filename>"`.
-`displayName` | | `string`| The display name for the extension used in the Marketplace.
-`description` | | `string` | A short description of what your extension is and does.
-`categories` | | `string[]` | the categories you want to use for the extensions allowed values: `[Languages, Snippets, Linters, Themes, Debuggers, Formatters, Keymaps, Other]`
-`keywords` | | `array` | An array of **keywords** or **tags** to make it easier to find the extension.
-`galleryBanner` | | `object` | Helps format the Marketplace header to match your icon.  See details below.
-`preview` | | `boolean` | Sets the extension to be flagged as a Preview in the Marketplace.
-`main` | | `string` | The entry point to your extension.
-[`contributes`](/docs/extensionAPI/extension-points.md) | | `object` | An object describing the extension's [contributions](/docs/extensionAPI/extension-points.md).
-[`activationEvents`](/docs/extensionAPI/activation-events.md) | | `array` | An array of the [activation events](/docs/extensionAPI/activation-events.md) for this extension.
-`badges` | | `array` | Array of badges to display in the sidebar of the Marketplace's extension page. Each badge is an object containing 3 properties: `url` for the badge's image URL, `href` for the link users will follow when clicking the badge and `description`.
-`markdown` | | `string` | Controls the Markdown rendering engine used in the Marketplace. Either `github` (default) or `standard`.
-`dependencies` | | `object` | Any runtime Node.js dependencies your extensions needs. Exactly the same as [npm's `dependencies`](https://docs.npmjs.com/files/package.json#dependencies).
-`devDependencies` | | `object` | Any development Node.js dependencies your extension needs. Exactly the same as [npm's `devDependencies`](https://docs.npmjs.com/files/package.json#devdependencies).
-`extensionDependencies` | | `array` | An array with the ids of extensions that this extension depends on. These other extensions will be installed when the primary extension is installed. The id of an extension is always `${publisher}.${name}`. For example: `vscode.csharp`.
-`scripts` | | `object` | Exactly the same as [npm's `scripts`](https://docs.npmjs.com/misc/scripts) but with [extra VS Code specific fields](/docs/extensions/publish-extension.md#pre-publish-step).
-`icon` | | `string` | The path to a 128x128 pixel icon.
+`name` | Y | `string` | 拡張機能の名称です。スペースなしの小文字でなければなりません。
+`version` | Y | `string` | [SemVer](http://semver.org/lang/ja//)に従います。
+`publisher` | Y | `string` | 拡張機能の[公開者名](/docs/extensions/publish-extension.md#publishers-and-personal-access-tokens)です。
+`engines` | Y | `object` | 拡張機能とVS Codeバージョンの互換性です。`vs code`を含む最小バージョンを指定します。`*`を指定することはできません。例: `^0.10.5`を指定したなら`^0.10.5`以降に互換性があることを示します。
+`license` | | `string` | [npm's documentation](https://docs.npmjs.com/files/package.json#license)を参照してください。ルートに`LICENSE`ファイルを配置した場合は値を`"SEE LICENSE IN <filename>"`にすることを推奨します。
+`displayName` | | `string`| Marketplaceで使用する拡張機能の表示名です。
+`description` | | `string` | 短くまとめた拡張機能の説明です。
+`categories` | | `string[]` | 拡張機能のカテゴリーを指定します。値は`[Languages, Snippets, Linters, Themes, Debuggers, Formatters, Keymaps, Other]`を利用可能です。
+`keywords` | | `array` | 検索に役立つ**Keywords**を指定します。
+`galleryBanner` | | `object` | アイコンに合うようにMarketplaceのフォーマット(主にバナー)を指定します。詳細は下記を参照してください。
+`preview` | | `boolean` |MarketplaceのラベルにPreviewフラグを設定します。
+`main` | | `string` | 拡張機能のエントリーポイントを指定します。
+[`contributes`](/docs/extensionAPI/extension-points.md) | | `object` | 拡張機能の[contributions](/docs/extensionAPI/extension-points.md)を指定するオブジェクトです。
+[`activationEvents`](/docs/extensionAPI/activation-events.md) | | `array` | 拡張機能を[ロードするタイミング](/docs/extensionAPI/activation-events.md)を指定します。
+`badges` | | `array` | Marketplaceのサイドバーに表示するバッジの配列です。例: バッジの画像URLを示す`url`、バッジのリンク先`href`と`description`
+`markdown` | | `string` | MarketplaceのMarkdownレンタリングエンジンを制御します。`github`(既定)か`standard`のいずれかを指定します。
+`dependencies` | | `object` | 拡張機能に必要なランタイムNode.js依存関係を指定します。[npm's `dependencies`](https://docs.npmjs.com/files/package.json#dependencies)と同じです。
+`devDependencies` | | `object` | 拡張機能に必要なデベロップメントNode.js依存関係を指定します。[npm's `devDependencies`](https://docs.npmjs.com/files/package.json#devdependencies)と同じです。
+`extensionDependencies` | | `array` | 拡張機能IDの配列を指定します。VS Code内に指定した拡張機能がなければこれらをインストールします。このIDは常に`${publisher}.${name}`です。例: `vscode.csharp` (編集メモ:Extension Packで主に使用します。
+`scripts` | | `object` | [npm's `scripts`](https://docs.npmjs.com/misc/scripts)と同じですが[extra VS Code specific fields](/docs/extensions/publish-extension.md#pre-publish-step)を使用できます。
+`icon` | | `string` | 128x128pxアイコンへのファイルパスを指定します。
 
-Also check [npm's `package.json` reference](https://docs.npmjs.com/files/package.json).
+また[npm's `package.json` reference](https://docs.npmjs.com/files/package.json)を確認してください。
 
 ## Example
 
-Here is a complete `package.json`
+次に完全な`package.json`を示します。
 
 ```json
 {
@@ -111,26 +106,26 @@ Here is a complete `package.json`
 
 ## Marketplace Presentation Tips
 
-Here are some tips and recommendations to make your extension look great when displayed on the [VS Code Marketplace](https://marketplace.visualstudio.com/VSCode).
+ここでは[VS Code Marketplace](https://marketplace.visualstudio.com/VSCode)の見栄えをよくするヒントと推奨事項を説明しています。
 
-Always use the latest `vsce` so `npm install -g vsce` to make sure you have it.
+常に最新の`vsce`を使用できるように`npm install -g vsce`を使用してください。
 
-Have a `README.md` Markdown file in your extension's root folder and we will include the contents in the body of the extension details (on the Marketplace).  You can provide relative path image links in the `REAMDE.md`.
+拡張機能のルートフォルダに`README.md`ファイルを置くことで、その内容をMarketplaceの拡張機能ページ本文に含めます。`REAMDE.md`内では相対パスの画像リンクを使用可能です。
 
-Here are a few examples:
+次に例を示します:
 
 1. [Spell-Checker](https://marketplace.visualstudio.com/items/seanmcbreen.Spell)
 2. [MD Tools](https://marketplace.visualstudio.com/items/seanmcbreen.MDTools)
 
 
-Provide a good display name and description. This is important for the Marketplace and in product displays.  These strings are also used for text search in VS Code and having relevant keywords will help a lot.
+適切な表示名と説明を入力します。これはMarketplaceと製品の表示において重要です。これら文字列はVS Codeのテキスト検索にも使用されるため、関連するワードを使用することで多くに役立ちます。
 
 ```json
     "displayName": "Spelling and Grammar Checker",
     "description": "Detect mistakes as you type and suggest fixes - great for Markdown.",
 ```
 
-An Icon and a contrasting banner color looks great on the Marketplace page header.  The `theme` attribute refers to the font to be used in the banner - `dark` or `light`.
+アイコンと対比的なバナーの色は、Marketplaceのヘッダーを綺麗にします。`theme`属性にはフォントの色`dark`か`light`を指定できます。
 
 ```json
     "icon": "images/spellIcon.svg",
@@ -140,7 +135,7 @@ An Icon and a contrasting banner color looks great on the Marketplace page heade
     },
 ```
 
-There are several optional links (`bugs`, `homepage`, `repository`) you can set and these are displayed under the **Resources** section of the Marketplace.
+あなたが設定できるオプションリンク(`bugs`, `homepage`, `repository`)があります。これはMarketplaceの**Resources**セクション下に表示します。
 
 ```json
     "license": "SEE LICENSE IN LICENSE.md",
@@ -161,9 +156,9 @@ Repository | `repository:url`
 Homepage | `homepage`
 License | `license`
 
-Set a `category` for your extension.  Extensions in the same `category` are grouped together on the Marketplace which improves filtering and discovery.
+拡張機能のために`category`を指定します。同じ`category`内の拡張機能は、Marketplaceで見つけやすいようにタグ分けされます。
 
->**Note:** Only use the values that make sense for your extension - allowed values are `[Languages, Snippets, Linters, Themes, Debuggers, Formatters, Keymaps, Other]`
+>**Note:** あなたの拡張機能にあった値を指定してください。使用できる値は次の通りです。`[Languages, Snippets, Linters, Themes, Debuggers, Formatters, Keymaps, Other]`
 
 ```json
     "categories": [
@@ -171,15 +166,15 @@ Set a `category` for your extension.  Extensions in the same `category` are grou
     ],
 ```
 
->**Tip:** The [Extension Manifest Editor](https://marketplace.visualstudio.com/items?itemName=ms-devlabs.extension-manifest-editor) extension lets you preview how your extension `README.md` and `package.json` metadata will look when published to the Marketplace.
+>**Tip:** [Extension Manifest Editor](https://marketplace.visualstudio.com/items?itemName=ms-devlabs.extension-manifest-editor)を使うと、Marketplaceに公開されたときの`README.md`と`package.json`のメタデータがどのように見えるかをプレビューできます。
 
 ## Combining Extension Contributions
 
-The `yo code` generator lets you easily package TextMate themes, colorizers and snippets and create new extensions.  When the generator is run, it creates a complete standalone extension package for each option.  However it is often more convenient to have a single extension which combines multiple contributions.  For example, if you are adding support for a new language, you'd like to provide users with both the language definition with colorization and also snippets and perhaps even debugging support.
+`yo code`ジェネレーターを使うとTextMateテーマ、カラライザー、スニペットを簡単にパッケージ化して新しい拡張機能を作成できます。これを実行したとき、ジェネレーターはオプションに沿ってそれぞれ完全な独立型の拡張機能パッケージを作成します。しかし、複数のコントリビューションを組み合わせた拡張機能のほうが便利です。たとえば、新しい言語のサポートを追加する場合は、ユーザーにカラライザーとスニペット、さらにはデバッグサポートの両方の言語定義を提供したいと考えると思います。
 
-To combine extension contributions, simply edit an existing extension manifest `package.json` and add the new contributions and associated files.
+拡張機能のコントリビューションを結合するには、既存の拡張マニフェスト`package.json`を編集して、新しいコントリビューションと関連ファイルを追加するだけです。
 
-Below is an extension manifest which includes a LaTex language definition (language identifier and file extensions), colorization (`grammar`), and snippets.
+次は、LaTexの言語定義(言語識別とファイル拡張)、カラライザー(`grammar`)、スニペットを含む拡張マニフェストです。
 
 ```json
 {
@@ -213,17 +208,17 @@ Below is an extension manifest which includes a LaTex language definition (langu
 }
 ```
 
-Notice that the extension manifest `categories` attribute now includes both `Languages` and `Snippets` for easy discovery and filtering on the Marketplace.
+`categories`属性がMarketplace上で見つけやすいように、`Languages`と`Snippets`の両方を含んでいることに注目してください。
 
->**Tip:** Make sure your merged contributions are using the same identifiers.  In the example above, all three contributions are using "latex" as the language identifier.  This lets VS Code know that the colorizer (`grammar`) and snippets are for the LaTeX language and will be active when editing LaTeX files.
+>**Tip:** マージしたコントリビューションが同じ識別子を使用していることを確認してください。上記の例では、言語識別子に"latex"を使用しています。これによりVS Codeは、カラライザー (`grammar`) とスニペットがLaTeX言語用であり、LaTeXファイルを編集するときにアクティブになることを知ることができます。
 
 ## Extension Packs
 
-You can also bundle separate extensions together in 'Extension Packs'. An Extension Pack is a set of extensions that can be installed together. This enables easily sharing your favorite extensions with other users or creating a set of extensions for a particular scenario like PHP development to help a PHP developer get started with VS Code quickly.
+また'Extension Packs'で別の拡張機能を含めることが可能です。Extension Packは、拡張機能を一緒にインストールできるセットのことです。これにより、お気に入りの拡張機能をほかのユーザーと共有したり、PHP開発のような特定シナリオ用の拡張機能セットを作成して、開発の準備を早める手助けできます。
 
-An Extension Pack can include other contributions or simply be a bundling extension that lists other extensions. This dependency is expressed using the `extensionDependencies` attribute inside the `package.json` file.
+Extension Packは他のコントリビューションを含めることができます。これは`package.json`ファイル内の`extensionDependencies`属性を使って表現します。
 
-For example, here is an Extension Pack for PHP that includes a debugger, language service, and formatter:
+次の例ではPHP用のExtension Packにデバッガ、言語サービスおよびフォーマッタを含みます:
 
 ```json
   "extensionDependencies": [
@@ -233,9 +228,9 @@ For example, here is an Extension Pack for PHP that includes a debugger, languag
   ]
 ```
 
-When installing an Extension Pack, VS Code will now also install its extension dependencies.
+これによりExtension Packをインストールすると、VS Codeはその拡張機能の依存関係もインストールするようになりました。
 
-Extension packs should be categorized in the `Extension Packs` Marketplace category:
+なおExtension Packは`Extension Packs`のカテゴリーに分類する必要があります。
 
 ```json
   "categories": [
@@ -243,11 +238,11 @@ Extension packs should be categorized in the `Extension Packs` Marketplace categ
   ],
 ```
 
-To create an extension pack, you can use the `yo code` Yeoman generator. Optionally, it can also seed the pack with the set of extensions you have currently installed in your VS Code instance. In this way, you can easily create an Extension Pack with your favorite extensions, publish it to the Marketplace, and share it with others.
+Extension Packには`yo code` Yeoman generatorを使用できます。オプションでVS Codeインスタンスに現在インストールされている拡張機能をパックに含めることも可能です。このように、お気に入りの拡張機能でExtension Packを簡単に作成し、Marketplaceに公開して他のユーザーと共有することができます。
 
-## Next Steps
+## 次のステップ
 
-To learn more about VS Code extensibility model, try these topic:
+VS Codeの拡張モデルの詳細については次のトピックを試してください:
 
 * [Contribution Points](/docs/extensionAPI/extension-points.md) - VS Code contribution points reference
 * [Activation Events](/docs/extensionAPI/activation-events.md) - VS Code activation events reference
