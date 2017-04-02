@@ -14,14 +14,14 @@ VS Code拡張機能を使用するもっとも簡単な方法は[Extension Marke
 
 Topic|Description
 -----|-----------
-**[package.json Extension Manifest](/docs/extensionAPI/extension-manifest.md)**|全てのVisual Studio Code拡張機能には、拡張機能フォルダのルートにマニフェストファイル`package.json`が必要です。このドキュメントでは、そのファイルの構造と必須フィールドの概要について説明します。
-**[Contribution Points](/docs/extensionAPI/extension-points.md)**|`package.json`をベースにして、貢献できる追加の拡張ポイントがいくつかあります。例: command, theme, debugger
-**[Activation Events](/docs/extensionAPI/activation-events.md)**|VS Code拡張機能を任意のタイミングでアクティブにします。このドキュメントでは `package.json`でサポートしているActivationオプションの概要について説明します。例: 特定のファイルタイプがロードされたとき、コマンドが起動されたときなど
-**[API vscode namespace](/docs/extensionAPI/vscode-api.md)**|完全なVS Code名前空間APIリファレンスを確認します。
-**[API complex commands](/docs/extensionAPI/vscode-api-commands.md)**|VS Code複合コマンドAPIリファレンスを確認します。
-**[Debugging API](/docs/extensionAPI/api-debugging.md)**|デバッガをVS Codeに統合する方法の詳細を学びます。
+**[package.json Extension Manifest](/docs/extensionapi/extension-manifest.md)**|全てのVisual Studio Code拡張機能には、拡張機能フォルダのルートにマニフェストファイル`package.json`が必要です。このドキュメントでは、そのファイルの構造と必須フィールドの概要について説明します。
+**[Contribution Points](/docs/extensionapi/extension-points.md)**|`package.json`をベースにして、貢献できる追加の拡張ポイントがいくつかあります。例: command, theme, debugger
+**[Activation Events](/docs/extensionapi/activation-events.md)**|VS Code拡張機能を任意のタイミングでアクティブにします。このドキュメントでは `package.json`でサポートしているActivationオプションの概要について説明します。例: 特定のファイルタイプがロードされたとき、コマンドが起動されたときなど
+**[API vscode namespace](/docs/extensionapi/vscode-api.md)**|完全なVS Code名前空間APIリファレンスを確認します。
+**[API complex commands](/docs/extensionapi/vscode-api-commands.md)**|VS Code複合コマンドAPIリファレンスを確認します。
+**[Debugging API](/docs/extensionapi/api-debugging.md)**|デバッガをVS Codeに統合する方法の詳細を学びます。
 **[API samples](https://github.com/Microsoft/vscode-extension-samples)**|VS Code拡張機能APIのサンプルコードを確認します。
 
 ## Language Extension Guidelines
 
-[Language Extension Guidelines](/docs/extensionAPI/language-support.md)トピックでは、VS Codeで利用可能な様々な言語機能(コードの提案や動作、フォーマット、名前の変更など)と、それらを実装する方法についてのガイダンスを提供しています。
+[Language Extension Guidelines](/docs/extensionapi/language-support.md)トピックでは、VS Codeで利用可能な様々な言語機能(コードの提案や動作、フォーマット、名前の変更など)と、それらを実装する方法についてのガイダンスを提供しています。
