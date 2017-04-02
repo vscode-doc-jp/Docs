@@ -18,7 +18,7 @@ The remaining document assumes that you are familiar with normal [extension deve
 
 ## Implement your own Language Server
 
-Language servers can be implemented in any language and follow the [Language Server Protocol](https://github.com/Microsoft/language-server-protocol). However, right now VS Code only provides libraries for Node.js. Additional libraries will follow in the future. A good starting point for a language server implementation in Node.js is the example repository [Language Server Node Example](https://github.com/Microsoft/vscode-languageserver-node-example.git). 
+Language servers can be implemented in any language and follow the [Language Server Protocol](https://github.com/Microsoft/language-server-protocol). However, right now VS Code only provides libraries for Node.js. Additional libraries will follow in the future. A good starting point for a language server implementation in Node.js is the example repository [Language Server Node Example](https://github.com/Microsoft/vscode-languageserver-node-example.git).
 
 Clone the repository and then do:
 
@@ -33,7 +33,7 @@ Clone the repository and then do:
 
 ## Explaining the 'Client'
 
-The client is actually a normal VS Code extension. It contains a `package.json` file in the root of the workspace folder. There are three interesting sections of that file.  
+The client is actually a normal VS Code extension. It contains a `package.json` file in the root of the workspace folder. There are three interesting sections of that file.
 
 First look the `activationEvents`:
 
@@ -43,7 +43,7 @@ First look the `activationEvents`:
 ]
 ```
 
-This section tells VS Code to activate the extension as soon as a plain text file is opened (e.g. a file with the extension `.txt`). 
+This section tells VS Code to activate the extension as soon as a plain text file is opened (e.g. a file with the extension `.txt`).
 
 Next look at the `configuration` section:
 
@@ -61,7 +61,7 @@ Next look at the `configuration` section:
 }
 ```
 
-This section contributes `configuration` settings to VS Code. The example will explain how these settings are sent over to the language server on startup and on every change of the settings. 
+This section contributes `configuration` settings to VS Code. The example will explain how these settings are sent over to the language server on startup and on every change of the settings.
 
 The last part adds a dependency to the `vscode-languageclient` library:
 
@@ -93,14 +93,14 @@ export function activate(context: ExtensionContext) {
 	let serverModule = context.asAbsolutePath(path.join('server', 'server.js'));
 	// The debug options for the server
 	let debugOptions = { execArgv: ["--nolazy", "--debug=6004"] };
-	
+
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
 	let serverOptions: ServerOptions = {
 		run : { module: serverModule, transport: TransportKind.ipc },
 		debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
 	}
-	
+
 	// Options to control the language client
 	let clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
@@ -112,11 +112,11 @@ export function activate(context: ExtensionContext) {
 			fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
 		}
 	}
-	
+
 	// Create the language client and start the client.
 	let disposable = new LanguageClient('languageServerExample', 'Language Server Example', serverOptions, clientOptions).start();
-	
-	// Push the disposable to the context's subscriptions so that the 
+
+	// Push the disposable to the context's subscriptions so that the
 	// client can be deactivated on extension deactivation
 	context.subscriptions.push(disposable);
 }
@@ -126,7 +126,7 @@ export function activate(context: ExtensionContext) {
 
 >**Note:** The 'Server' implementation cloned from the GitHub repository has the final walkthrough implementation. To follow the walkthrough, you can create a new `server.ts` or modify the contents of the cloned version.
 
-In the example, the server is also implemented in TypeScript and executed using Node.js. Since VS Code already ships with a Node.js runtime, there is no need to provide your own, unless you have very specific requirements for the runtime. 
+In the example, the server is also implemented in TypeScript and executed using Node.js. Since VS Code already ships with a Node.js runtime, there is no need to provide your own, unless you have very specific requirements for the runtime.
 
 The interesting section in the server's `package.json` file is:
 
@@ -150,7 +150,7 @@ Below is a server implementation that uses the provided simple text document man
 import {
     IPCMessageReader, IPCMessageWriter,
 	createConnection, IConnection,
-	TextDocuments, TextDocument, Diagnostic, DiagnosticSeverity, 
+	TextDocuments, TextDocument, Diagnostic, DiagnosticSeverity,
 	InitializeParams, InitializeResult
 } from 'vscode-languageserver';
 
@@ -165,7 +165,7 @@ let documents: TextDocuments = new TextDocuments();
 documents.listen(connection);
 
 // After the server has started the client sends an initialize request. The server receives
-// in the passed params the rootPath of the workspace plus the client capabilities. 
+// in the passed params the rootPath of the workspace plus the client capabilities.
 let workspaceRoot: string;
 connection.onInitialize((params): InitializeResult => {
 	workspaceRoot = params.rootPath;
@@ -319,7 +319,7 @@ The first interesting feature a language server usually implements is validation
 ```typescript
 // This handler provides the initial list of the completion items.
 connection.onCompletion((textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-    // The pass parameter contains the position of the text document in 
+    // The pass parameter contains the position of the text document in
     // which code complete got requested. For the example we ignore this
     // info and always provide the same completion items.
     return [
@@ -390,7 +390,7 @@ The following language features are currently supported in a language server alo
 * _Rename_: project-wide rename of a symbol.
 * _Document Links_: compute and resolve links inside a document.
 
-The [Language Extension Guidelines](/docs/extensionAPI/language-support.md) topic describes each of the language features above and provides guidance on how to implement them either through the language server protocol or by using the extensibility API directly from your extension.
+The [Language Extension Guidelines](/docs/extensionapi/language-support.md) topic describes each of the language features above and provides guidance on how to implement them either through the language server protocol or by using the extensibility API directly from your extension.
 
 ## Incremental Text Document Synchronization
 
@@ -401,7 +401,7 @@ This has two drawbacks:
 * Lots of data transfer since the whole content of a text document is sent to the server repeatedly.
 * If an existing language library is used, such libraries usually support incremental document updates to avoid unnecessary parsing and abstract syntax tree creation.
 
-The protocol therefore supports incremental document synchronization as well. 
+The protocol therefore supports incremental document synchronization as well.
 
 To make use of incremental document synchronization, a server needs to install three notification handlers:
 
@@ -409,7 +409,7 @@ To make use of incremental document synchronization, a server needs to install t
 * _onDidChangeTextDocument_: is called when the content of a text document changes in VS Code.
 * _onDidCloseTextDocument_: is called when a text document is closed in VS Code.
 
-Below a code snippet that illustrates how to hook these notification handlers on a connection and how to return the right capability on initialize: 
+Below a code snippet that illustrates how to hook these notification handlers on a connection and how to return the right capability on initialize:
 
 ```typescript
 connection.onInitialize((params): InitializeResult => {
@@ -445,8 +445,8 @@ connection.onDidCloseTextDocument((params) => {
 
 To learn more about VS Code extensibility model, try these topic:
 
-* [vscode API Reference](/docs/extensionAPI/vscode-api.md) - Learn about deep language integration with VS Code language services.
-* [Language Extension Guideline](/docs/extensionAPI/language-support.md) - A guide to implementing VS Code's rich language features.
+* [vscode API Reference](/docs/extensionapi/vscode-api.md) - Learn about deep language integration with VS Code language services.
+* [Language Extension Guideline](/docs/extensionapi/language-support.md) - A guide to implementing VS Code's rich language features.
 * [Additional Extension Examples](/docs/extensions/samples.md) - Take a look at our list of example extension projects.
 
 ## Common Questions

@@ -117,7 +117,7 @@ If you now launch this debug configuration, VS Code does not start the mock debu
 With this setup you can now easily edit, transpile, and debug Mock Debug.
 
 But now the real work begins: you will have to replace the 'mock' implementation of the debug adapter in `src/mockDebug.ts` by some 'real' code that talks to your debugger or runtime. This involves understanding and implementing the VS Code Debug Protocol. More details
-about this can be found [here](https://code.visualstudio.com/docs/extensionAPI/api-debugging).
+about this can be found [here](https://code.visualstudio.com/docs/extensionapi/api-debugging).
 
 ## Anatomy of the package.json of a Debug Extension
 

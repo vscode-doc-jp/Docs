@@ -105,6 +105,6 @@ After receiving a response from the *disconnect* request, VS Code will terminate
 To learn more about VS Code extensibility model, try these topics:
 
 * [Example Debuggers](/docs/extensions/example-debuggers.md) - See a working 'mock' debugger example
-* [Extension API Overview](/docs/extensionAPI/overview.md) - Learn about the full VS Code extensibility model.
-* [Extension Manifest File](/docs/extensionAPI/extension-manifest.md) - VS Code package.json extension manifest file reference
-* [Contribution Points](/docs/extensionAPI/extension-points.md) - VS Code contribution points reference
+* [Extension API Overview](/docs/extensionapi/overview.md) - Learn about the full VS Code extensibility model.
+* [Extension Manifest File](/docs/extensionapi/extension-manifest.md) - VS Code package.json extension manifest file reference
+* [Contribution Points](/docs/extensionapi/extension-points.md) - VS Code contribution points reference

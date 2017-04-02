@@ -83,8 +83,8 @@ Let's go through the purpose of all these files and explain what they do:
 
 ### The extension manifest: `package.json`
 
-* Please read the [`package.json` extension manifest reference](/docs/extensionAPI/extension-manifest.md)
-* More information on [`package.json` contribution points](/docs/extensionAPI/extension-points.md)
+* Please read the [`package.json` extension manifest reference](/docs/extensionapi/extension-manifest.md)
+* More information on [`package.json` contribution points](/docs/extensionapi/extension-points.md)
 * Each VS Code extension must have a `package.json` file that describes it and its capabilities.
 * VS Code reads this file during start-up and reacts to each `contributes` section immediately.
 
@@ -135,7 +135,7 @@ Let's go through the purpose of all these files and explain what they do:
  * requests to get loaded (*activationEvents*) when the command `"extension.sayHello"` is invoked.
  * has its *main* JavaScript code in a file called `"./out/src/extension.js"`.
 
-> **Note:** VS Code **does not** load the code of an extension eagerly at start-up. An extension must describe, through the [`activationEvents`](/docs/extensionAPI/activation-events.md) property under what conditions it should get activated (loaded).
+> **Note:** VS Code **does not** load the code of an extension eagerly at start-up. An extension must describe, through the [`activationEvents`](/docs/extensionapi/activation-events.md) property under what conditions it should get activated (loaded).
 
 ### Generated Code
 
@@ -254,8 +254,8 @@ In this walkthrough, we've seen a very simple extension. For a more detailed exa
 
 If you'd like to read more generally about the extension APIs, try these topics:
 
-* [Extension API Overview](/docs/extensionAPI/overview.md) - Learn about the full VS Code extensibility model.
-* [API Principles and Patterns](/docs/extensionAPI/patterns-and-principles.md) - VS Code extensibility is based on several guiding principles and patterns.
-* [Contribution Points](/docs/extensionAPI/extension-points.md) - Details about the various VS Code contribution points.
-* [Activation Events](/docs/extensionAPI/activation-events.md) - VS Code activation events reference
+* [Extension API Overview](/docs/extensionapi/overview.md) - Learn about the full VS Code extensibility model.
+* [API Principles and Patterns](/docs/extensionapi/patterns-and-principles.md) - VS Code extensibility is based on several guiding principles and patterns.
+* [Contribution Points](/docs/extensionapi/extension-points.md) - Details about the various VS Code contribution points.
+* [Activation Events](/docs/extensionapi/activation-events.md) - VS Code activation events reference
 * [Additional Extension Examples](/docs/extensions/samples.md) - Take a look at our list of example extension projects.

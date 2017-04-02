@@ -4,7 +4,7 @@ MetaDescription: Visual Studio Code has a rich extensibility model for interacti
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-もしVS Codeの拡張機能に興味があるなら、ここ情報は役に立つはずです。ここでは、VS Codeの拡張に関するドキュメント概要と、最初のVS Codeを作成する方法について説明します。VS Codeの拡張に関する設計アプローチに興味があれば、[ここ](/docs/extensionAPI/patterns-and-principles.md)で詳しく確認できます。
+もしVS Codeの拡張機能に興味があるなら、ここ情報は役に立つはずです。ここでは、VS Codeの拡張に関するドキュメント概要と、最初のVS Codeを作成する方法について説明します。VS Codeの拡張に関する設計アプローチに興味があれば、[ここ](/docs/extensionapi/patterns-and-principles.md)で詳しく確認できます。
 
 既存の拡張機能を使用したい場合は、[Marketplace](/docs/userguide/extension-gallery.md)トピックを確認してください。トピックでVS Code [Marketplace](https://marketplace.visualstudio.com/VSCode)から検索してインストールする方法を紹介しています。
 
@@ -31,7 +31,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 1. **[Hello World](/docs/extensions/example-hello-world.md)** - 基本的な拡張機能を作成し、拡張機能のフォルダー構造、マニフェストを理解し、起動の仕組みを学び、拡張機能を実行してデバッグしてローカルにインストールします。
 2. **[Word Count](/docs/extensions/example-word-count.md)** - 特定のファイルタイプでアクティブ化し、ステータスバー更新、テキストエディターの変更に応答、ファイルを閉じたときの拡張機能の破棄を学びます。
 
-また、拡張API全体で使用する共有プログラミングパターンについての説明[Extensibility Principles and Patterns](/docs/extensionAPI/patterns-and-principles.md)も役立つはずです。
+また、拡張API全体で使用する共有プログラミングパターンについての説明[Extensibility Principles and Patterns](/docs/extensionapi/patterns-and-principles.md)も役立つはずです。
 
 ## Language Servers
 
@@ -51,7 +51,7 @@ VS Code拡張機能を使用するもっとも簡単な方法は[Extension Marke
 
 ## Language Extension Guidelines
 
-[Language Extension Guidelines](/docs/extensionAPI/language-support.md)トピックは、拡張機能でサポートしたい言語機能を決定するのに役立ちます。 これはVS Codeで利用可能なさまざまな言語機能(コードの提案や動作、フォーマット、名前の変更など)と、言語サーバープロトコルを使用して実装する方法、または拡張機能から拡張APIを直接使用する方法を紹介しています。
+[Language Extension Guidelines](/docs/extensionapi/language-support.md)トピックは、拡張機能でサポートしたい言語機能を決定するのに役立ちます。 これはVS Codeで利用可能なさまざまな言語機能(コードの提案や動作、フォーマット、名前の変更など)と、言語サーバープロトコルを使用して実装する方法、または拡張機能から拡張APIを直接使用する方法を紹介しています。
 
 ## Themes, Snippets, and Colorizers
 
@@ -70,5 +70,5 @@ Yeoman [extension generator](/docs/extensions/yocode.md)は、簡単な拡張機
 ## 次のステップ
 
 * [Your First Extension](/docs/extensions/example-hello-world.md) - Try creating a simple Hello World extension.
-* [Extension API](/docs/extensionAPI/overview.md) - Learn about the VS Code extensibility APIs.
+* [Extension API](/docs/extensionapi/overview.md) - Learn about the VS Code extensibility APIs.
 * [Extension Examples](/docs/extensions/samples.md) - A list of extension samples you can review and build.

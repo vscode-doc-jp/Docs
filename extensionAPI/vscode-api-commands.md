@@ -5,7 +5,7 @@ TOCTitle: Complex Commands
 ContentId: A010AEDF-EF37-406E-96F5-E129408FFDE1
 PageTitle: Visual Studio Code Complex Commands Reference
 DateApproved: 3/1/2017
-MetaDescription: Visual Studio Code extensions (plug-ins) complex commands Reference.  
+MetaDescription: Visual Studio Code extensions (plug-ins) complex commands Reference.
 ---
 
 # Complex Commands
@@ -172,7 +172,7 @@ let success = await commands.executeCommand('vscode.previewHtml', uri);
 
 `cursorMove` - Move cursor to a logical position in the view
 
-* _Cursor move argument object_ 
+* _Cursor move argument object_
 
   Property-value pairs that can be passed through this argument:
 

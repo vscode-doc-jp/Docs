@@ -134,5 +134,5 @@ You can also run extension tests on Windows with [AppVeyor](http://www.appveyor.
 
 * [Debugging your Extension](/docs/extensions/debugging-extensions.md) - Learn more about how to run and debug your extension
 * [vsce](/docs/extensions/publish-extension.md) - Publish your extension with the VSCE command line tool.
-* [Extension Manifest file](/docs/extensionAPI/extension-manifest.md) - VS Code extension manifest file reference
-* [Extension API](/docs/extensionAPI/overview.md) - Learn about the VS Code extensibility APIs
+* [Extension Manifest file](/docs/extensionapi/extension-manifest.md) - VS Code extension manifest file reference
+* [Extension API](/docs/extensionapi/overview.md) - Learn about the VS Code extensibility APIs

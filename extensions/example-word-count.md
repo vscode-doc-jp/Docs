@@ -109,7 +109,7 @@ class WordCounter {
             // Update the status bar
             this._statusBarItem.text = wordCount !== 1 ? `${wordCount} Words` : '1 Word';
             this._statusBarItem.show();
-        } else { 
+        } else {
             this._statusBarItem.hide();
         }
     }
@@ -186,7 +186,7 @@ class WordCounterController {
 }
 ```
 
-We no longer want the Word Count extension to be loaded when a command is invoked but instead be available for each *Markdown* file. 
+We no longer want the Word Count extension to be loaded when a command is invoked but instead be available for each *Markdown* file.
 
 First, replace the body of the `activate` function with this:
 
@@ -225,13 +225,13 @@ Now change your extension so that it is activated upon the opening of a *Markdow
     ]
 ```
 
-The  [`onLanguage:${language}`](/docs/extensionAPI/activation-events.md#activationeventsonlanguage) event takes the language id, in this case "markdown", and will be raised whenever a file of that language is opened.
+The  [`onLanguage:${language}`](/docs/extensionapi/activation-events.md#activationeventsonlanguage) event takes the language id, in this case "markdown", and will be raised whenever a file of that language is opened.
 
 Run the extension by either doing a window reload `kbstyle(Ctrl+R)` or with `kb(workbench.action.debug.start)` and then start editing a Markdown file.  You should now should have a live updating Word Count.
 
 ![Word Count Updating on Events](images/example-word-count/wordcountevent2.gif)
 
-If you set a breakpoint on the `activate` function, you'll notice that it is only called once when the first Markdown file is opened.  The `WordCountController` constructor runs and subscribes to the editor events so that the `updateWordCount` function is called as Markdown files are opened and their text changes. 
+If you set a breakpoint on the `activate` function, you'll notice that it is only called once when the first Markdown file is opened.  The `WordCountController` constructor runs and subscribes to the editor events so that the `updateWordCount` function is called as Markdown files are opened and their text changes.
 
 ## Customizing the Status Bar
 
@@ -253,7 +253,7 @@ to display a [GitHub Octicon](https://octicons.github.com) `pencil` icon to the 
 
 ## Disposing Extension Resources
 
-Now we'll take a deeper look at how extensions should handle VS Code resources through [Disposables](/docs/extensionAPI/patterns-and-principles.md#disposables).
+Now we'll take a deeper look at how extensions should handle VS Code resources through [Disposables](/docs/extensionapi/patterns-and-principles.md#disposables).
 
 When an extension is activated, it is passed an `ExtensionContext` object which has a `subscriptions` collection of Disposables. Extensions can add their Disposable objects to this collection and VS Code will dispose of those objects when the extension is deactivated.
 
@@ -284,7 +284,7 @@ Read about how to [Share an Extension](/docs/extensions/publish-extension.md).
 Read on to find out about:
 
 * [Extension Generator](/docs/extensions/yocode.md) - Learn about other options in the Yo Code extension generator.
-* [Extension API](/docs/extensionAPI/overview.md) - Get an overview of the Extension API.
+* [Extension API](/docs/extensionapi/overview.md) - Get an overview of the Extension API.
 * [Publishing Tool](/docs/extensions/publish-extension.md) - Learn how to publish an extension to the public Marketplace.
-* [Editor API](/docs/extensionAPI/vscode-api.md#window) - Learn more about Text Documents, Text Editors and editing text.
+* [Editor API](/docs/extensionapi/vscode-api.md#window) - Learn more about Text Documents, Text Editors and editing text.
 * [Additional Extension Examples](/docs/extensions/samples.md) - Take a look at our list of example extension projects.

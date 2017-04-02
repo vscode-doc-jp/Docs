@@ -78,15 +78,15 @@ your changes. You have two options to do this:
 
 * [Testing your Extension](/docs/extensions/testing-extensions.md) - Learn how to write unit and integration tests for your extension
 * [Publishing Tool](/docs/extensions/publish-extension.md) - Publish your extension with the vsce command line tool.
-* [Extension Manifest file](/docs/extensionAPI/extension-manifest.md) - VS Code extension manifest file reference
-* [Extension API](/docs/extensionAPI/overview.md) - Learn about the VS Code extensibility APIs
+* [Extension Manifest file](/docs/extensionapi/extension-manifest.md) - VS Code extension manifest file reference
+* [Extension API](/docs/extensionapi/overview.md) - Learn about the VS Code extensibility APIs
 
 ## Common Questions
 
 **Q: How can I use API from my extension that was introduced in a newer release of VS Code?**
 
 **A:** If your extension is using an API that was introduced in a newer release of VS Code, you have to declare this dependency in the
-`engines` field of the `package.json` file of the extension. 
+`engines` field of the `package.json` file of the extension.
 
 Here are the steps:
 

@@ -28,7 +28,7 @@ In addition, you can also review an extension's:
 
 ![extension contributions](images/extension-gallery/extension-contributions.png)
 
-If an extension is an Extension Pack, the **Dependencies** section will display which extensions will be installed. [Extension Packs](/docs/extensionAPI/extension-manifest.md#extension-packs) bundle separate extensions together so they can be easily installed at one time.
+If an extension is an Extension Pack, the **Dependencies** section will display which extensions will be installed. [Extension Packs](/docs/extensionapi/extension-manifest.md#extension-packs) bundle separate extensions together so they can be easily installed at one time.
 
 ![extension dependencies](images/extension-gallery/extension-dependencies.png)
 

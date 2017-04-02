@@ -1,13 +1,8 @@
 ---
-Order: 7
-Area: extensions
-TOCTitle: Themes, Snippets and Colorizers
-ContentId: 448E9027-3AD0-420D-9A58-D428D1B1067D
-PageTitle: Add Themes, Snippets and Colorizers to Visual Studio Code
-DateApproved: 3/1/2017
+title: Themes, Snippets and Colorizers
 MetaDescription: How to add themes, snippets and colorization and bracket matching to Visual Studio Code. TextMate .tmLanguage files are supported.
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
-# Themes, Snippets and Colorizers
 
 Custom themes, snippets and language syntax colorizers bring an editor to life. There are lots of existing TextMate customization files available and VS Code lets you easily package and reuse these. You can directly use `.tmTheme`, `.tmSnippets`, and `.tmLanguage` files in your extensions and share them in the extension [Marketplace](https://marketplace.visualstudio.com/VSCode). This topic describes how to reuse TextMate files as well as create and share your own themes, snippets and colorizers.
 
@@ -31,7 +26,7 @@ If you'd like to share your new theme with the community, you can publish it to 
 
 > **Tip:** To make it easy for users to find your theme, include the word "theme" in the extension description and set the `Category` to `Theme` in your `package.json`.
 
-We also have recommendations on how to make your extension look great on the VS Code Marketplace, see [Marketplace Presentation Tips](/docs/extensionAPI/extension-manifest.md#marketplace-presentation-tips).
+We also have recommendations on how to make your extension look great on the VS Code Marketplace, see [Marketplace Presentation Tips](/docs/extensionapi/extension-manifest.md#marketplace-presentation-tips).
 
 ## Creating a Custom Theme
 
@@ -113,7 +108,7 @@ The following properties are supported:
 
 ### File association
 
-Icons can be associated to folders, folder names, files, file extensions, file names and [language ids](/docs/extensionAPI/extension-points#_contributeslanguages).
+Icons can be associated to folders, folder names, files, file extensions, file names and [language ids](/docs/extensionapi/extension-points#_contributeslanguages).
 
 Additionally each of these associations can be refined for 'light' and 'highContrast' color themes.
 
@@ -153,7 +148,7 @@ The folder icon is optional. If not set, no icon will be shown for folder.
 - `folderExpanded` is the folder icon for expanded folders. The expanded folder icon is optional. If not set, the icon defined for `folder` will be shown.
 - `folderNames` associates folder names to icons. The key of the set is the folder name, not including any path segments. Patterns or wildcards are not supported. Folder name matching is case insensitive.
 - `folderNamesExpanded` associates folder names to icons for expanded folder. The key of the set is the folder name, not including any path segments. Patterns or wildcards are not supported. Folder name matching is case insensitive.
-- `languageIds` associates languages to icons. The key in the set is the language id as defined in the [language contribution point](/docs/extensionAPI/extension-points#_contributeslanguages). The language of a file is evaluated based on the file extensions and file names as defined in the language contribution. Note that the 'first line match' of the language contribution is not considered.
+- `languageIds` associates languages to icons. The key in the set is the language id as defined in the [language contribution point](/docs/extensionapi/extension-points#_contributeslanguages). The language of a file is evaluated based on the file extensions and file names as defined in the language contribution. Note that the 'first line match' of the language contribution is not considered.
 - `fileExtensions` associates file extensions to icons. The key in the set is the file extension name. The extension name is a file name segment after a dot (not including the dot). File names with multiple dots such as `lib.d.ts` can match multiple extensions; 'd.ts' and 'ts'. Extensions are compared case insensitive.
 - `fileNames` associates file names to icons. The key in the set is the full file name, not including any path segments. Patterns or wildcards are not supported. File name matching is case insensitive. A 'fileName' match is the strongest match, and the icon associated to the file name will be preferred over an icon of a matching fileExtension and also of a matching language Id.
 
@@ -231,7 +226,7 @@ Depending on your platform, your user snippets file is located here:
 
 where `(language).json` depends on the targeted language of the snippets (e.g. `markdown.json` for Markdown snippets).  Create a new folder for your extension and copy your snippet file to a `snippets` subdirectory.
 
-Now add an extension manifest package.json file to the extension folder.  The snippet extension manifest follows the structure defined in the [Extension Manifest](/docs/extensionAPI/extension-manifest.md) reference and provides a [`snippets` contribution](/docs/extensionAPI/extension-points.md#contributessnippets).
+Now add an extension manifest package.json file to the extension folder.  The snippet extension manifest follows the structure defined in the [Extension Manifest](/docs/extensionapi/extension-manifest.md) reference and provides a [`snippets` contribution](/docs/extensionapi/extension-points.md#contributessnippets).
 
 Below is an example manifest for Markdown snippets:
 
@@ -260,7 +255,7 @@ You then use the [vsce publishing tool](/docs/extensions/publish-extension.md) t
 
 > **Tip:** To make it easy for users to find your snippet, include the word "snippet" in the extension description and set the `Category` to `Snippets` in your `package.json`.
 
-We also have recommendations on how to make your extension look great on the VS Code Marketplace, see [Marketplace Presentation Tips](/docs/extensionAPI/extension-manifest.md#marketplace-presentation-tips).
+We also have recommendations on how to make your extension look great on the VS Code Marketplace, see [Marketplace Presentation Tips](/docs/extensionapi/extension-manifest.md#marketplace-presentation-tips).
 
 ---
 
@@ -302,7 +297,7 @@ Here is an example for a language with XML-like brackets:
 }
 ```
 
-For more details check out the [languages contribution point documentation](/docs/extensionAPI/extension-points.md#contributeslanguages).
+For more details check out the [languages contribution point documentation](/docs/extensionapi/extension-points.md#contributeslanguages).
 
 The generated `vsc-extension-quickstart.md` file also contains more information on how to run and debug your extension.
 
@@ -316,11 +311,11 @@ If you'd like to share your new language with the community, you can publish it 
 
 > **Tip:** To make it easy for users to find your language support, include the language name and words "language" or "language support" in the extension description and set the `Category` to `Languages` in your `package.json`.
 
-We also have recommendations on how to make your extension look great on the VS Code Marketplace, see [Marketplace Presentation Tips](/docs/extensionAPI/extension-manifest.md#marketplace-presentation-tips).
+We also have recommendations on how to make your extension look great on the VS Code Marketplace, see [Marketplace Presentation Tips](/docs/extensionapi/extension-manifest.md#marketplace-presentation-tips).
 
 ## Add to your Language Support Extension
 
-When you're adding a new language to VS Code, it is also great to add language [snippets](/docs/userguide/userdefinedsnippets.md) to support common editing actions. It is easy to [combine multiple extensions](/docs/extensionAPI/extension-manifest.md#combining-extension-contributions) like snippets and colorizers into the same extension. You can modify the colorizer extension manifest `package.json` to include a `snippets` contribution and the snippets.json.
+When you're adding a new language to VS Code, it is also great to add language [snippets](/docs/userguide/userdefinedsnippets.md) to support common editing actions. It is easy to [combine multiple extensions](/docs/extensionapi/extension-manifest.md#combining-extension-contributions) like snippets and colorizers into the same extension. You can modify the colorizer extension manifest `package.json` to include a `snippets` contribution and the snippets.json.
 
 ```json
 {
