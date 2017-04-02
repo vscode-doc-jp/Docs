@@ -6,7 +6,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 In this tutorial, we show you how to personalize Visual Studio Code.
 
-<iframe src="https://www.youtube.com/embed/4wVF4w_53hs?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<div class="introvideos-youtube"><iframe src="https://www.youtube.com/embed/4wVF4w_53hs?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
 
 ## Outline
 

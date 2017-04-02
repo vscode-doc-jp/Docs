@@ -6,7 +6,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 In this tutorial, we cover code editing, including the features outlined below. After viewing this overview, read on in the [Learn More](/docs/introvideos/codeediting.md#learn-more) section to see more features.
 
-<iframe src="https://www.youtube.com/embed/rsatrlBEFFA?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<div class="introvideos-youtube"><iframe src="https://www.youtube.com/embed/rsatrlBEFFA?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
 
 ## Outline
 

@@ -6,7 +6,7 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 Debugging is a core feature of Visual Studio Code. In this tutorial, we will show you how to configure and use the debugging basics. We will walk you through debugging a Node.js application.
 
-<iframe src="https://www.youtube.com/embed/6cOsxaNC06c?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<div class="introvideos-youtube"><iframe src="https://www.youtube.com/embed/6cOsxaNC06c?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
 
 ## Outline
 
