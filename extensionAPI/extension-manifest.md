@@ -1,5 +1,5 @@
 ---
-title: 拡張マニフェストファイル - package.json
+title: Extension Manifest - package.json
 MetaDescription: At the core of Visual Studio Code's extensibility model is an extension (plug-in) manifest file where your extension declares its extension type(s), activation rules and runtime resources.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
@@ -22,8 +22,8 @@ Name | Required | Type | Details
 `galleryBanner` | | `object` | アイコンに合うようにMarketplaceのフォーマット(主にバナー)を指定します。詳細は下記を参照してください。
 `preview` | | `boolean` |MarketplaceのラベルにPreviewフラグを設定します。
 `main` | | `string` | 拡張機能のエントリーポイントを指定します。
-[`contributes`](/docs/extensionAPI/extension-points.md) | | `object` | 拡張機能の[contributions](/docs/extensionAPI/extension-points.md)を指定するオブジェクトです。
-[`activationEvents`](/docs/extensionAPI/activation-events.md) | | `array` | 拡張機能を[ロードするタイミング](/docs/extensionAPI/activation-events.md)を指定します。
+[`contributes`](/docs/extensionapi/extension-points.md) | | `object` | 拡張機能の[contributions](/docs/extensionapi/extension-points.md)を指定するオブジェクトです。
+[`activationEvents`](/docs/extensionapi/activation-events.md) | | `array` | 拡張機能を[ロードするタイミング](/docs/extensionapi/activation-events.md)を指定します。
 `badges` | | `array` | Marketplaceのサイドバーに表示するバッジの配列です。例: バッジの画像URLを示す`url`、バッジのリンク先`href`と`description`
 `markdown` | | `string` | MarketplaceのMarkdownレンタリングエンジンを制御します。`github`(既定)か`standard`のいずれかを指定します。
 `dependencies` | | `object` | 拡張機能に必要なランタイムNode.js依存関係を指定します。[npm's `dependencies`](https://docs.npmjs.com/files/package.json#dependencies)と同じです。
@@ -244,6 +244,6 @@ Extension Packには`yo code` Yeoman generatorを使用できます。オプシ�
 
 VS Codeの拡張モデルの詳細については次のトピックを試してください:
 
-* [Contribution Points](/docs/extensionAPI/extension-points.md) - VS Code contribution points reference
-* [Activation Events](/docs/extensionAPI/activation-events.md) - VS Code activation events reference
+* [Contribution Points](/docs/extensionapi/extension-points.md) - VS Code contribution points reference
+* [Activation Events](/docs/extensionapi/activation-events.md) - VS Code activation events reference
 * [Extension Marketplace](/docs/userguide/extension-gallery.md) - Read more about the VS Code Extension Marketplace
