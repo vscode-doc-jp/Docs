@@ -51,6 +51,7 @@ title: ようこそ
     * ~~Extensions~~
 * EXTENSIONS
     * [Overview](/docs/extensions/overview.html)
+    * [Extension Generator](/docs/extensions/yocode.html)
 * EXTENSIBILITY REFERENCE
     * [Overview](/docs/extensionapi/overview.html)
     * [Extension Manifest](/docs/extensionapi/extension-manifest.html)

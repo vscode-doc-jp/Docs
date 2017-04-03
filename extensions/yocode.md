@@ -4,21 +4,21 @@ MetaDescription: Easily create Visual Studio Code extensions and customizations 
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-We have written a [Yeoman generator](https://github.com/Microsoft/vscode-generator-code) to help get you started.
+私達は[Yeoman generator](https://github.com/Microsoft/vscode-generator-code)を提供し、拡張機能の公開を手助けしています。
 
-## Install the Generator
+## ジェネレーターのインストール
 
-Install Yeoman and the VS Code Extension generator from the command prompt:
+YeomanとVS Code拡張機能ジェネレーターをコマンドプロントから入手します:
 
 ```bash
 npm install -g yo generator-code
 ```
 
-## Run Yo Code
+## Yo Codeの実行
 
-The Yeoman generator will walk you through the steps required to create your customization or extension prompting for the required information.
+Yeomanは、カスタマイズに必要な情報や拡張機能プロントを作成するために必要な手順を順を追って説明します。
 
-To launch the generator simply type the following in a command prompt:
+ジェネレーターを起動するには、コマンドプロントで次を実行します:
 
 ```bash
 yo code
@@ -26,76 +26,78 @@ yo code
 
 ![yo code output](images/yocode/yocode.png)
 
-## Generator Options
+## ジェネレーターオプション
 
-The generator can either create an extension skeleton for a new extension or create a ready-to-use extension for languages, themes or snippets based on existing TextMate definition files.
+ジェネレーターは新しい拡張機能のひな形を作成したり、既存のTextMate定義ファイルに基づいて言語、テーマ、スニペットに使用する拡張機能を作成したりできます。
 
 ### New Extension in TypeScript
 
-Creates an extension skeleton implementing a 'hello world' command. Use this as a starting point for your own extension.
+"hello world"コマンドを実装する拡張機能を作成します。入門として作成してみてください。
 
-* Prompts for the extension identifier and will create a folder of that name in the current directory
-* Creates a base folder structure with a source, test and output folder
-* Templates out a `package.json` file and an extension main file
-* Sets-up `launch.json` and `tasks.json` so that F5 will compile and run your extension and attach the debugger
-* Optionally sets up a Git repository
+* 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
+* ソース、テスト、出力フォルダーを含むディレクトリーを構築します。
+* `package.json`ファイルと拡張機能のメインファイルをテンプレートとして出力します。
+* ```launch.json`と`tasks.json`を設定して、F5で拡張機能をデバッグしたり、アタッチしたりできるようにします。
+* オプションでGitリポジトリーを設定します。
 
-Once created, open VS Code on the created folder. The folder contains a file `vsc-extension-quickstart.md` as a quick guide with the next steps. The extension is setup so that you get IntelliSense for the extension API.
+作成したフォルダーでVS Codeを開きます。このフォルダーに、次の手順のクイックガイド`vsc-extension-quickstart.md`ファイルがあります。またこの拡張機能は、拡張機能API用のIntelliSenseが機能するようにセットアップ済みです。
 
 ### New Extension in JavaScript
 
-Does the same as `New Extension (TypeScript)`, but for JavaScript. The extension is setup so that you get IntelliSense for the extension API.
+JavaScriptでも上と方法は同じです。この拡張機能は、拡張機能API用のIntelliSenseが機能するようにセットアップ済みです。
 
 ### New Color Theme
 
-Creates an extension that contributes a new color theme based on an existing TextMate color theme.
+TextMateに基づいて新しい配色テーマを提供する拡張機能を作成します。
 
-* Prompts for the location (URL or file path) of the existing TextMate color theme (.tmTheme). This file will be imported into the new extension.
-* Prompts for the color theme name as well as the color base theme (light or dark)
-* Prompts for the extension identifier and will create a folder of that name in the current directory
+* TextMate(.tmTheme)の場所をURLかファイルパスで求められます。このファイルは作成した拡張機能にインポートされます。
+* テーマ名とベーステーマ(light or dark)が求められます。
+* 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
 
-Once created, open VS Code on the created folder and run the extension to test the new theme.
-Check out `vsc-extension-quickstart.md`. It's a quick guide with the next steps.
+作成したフォルダーでVS Codeを開き、拡張機能を実行して新しいテーマをテストします。
+次の手順のクイックガイド`vsc-extension-quickstart.md`を確認してください。
 
 ### New Language Support
 
-Creates an extension that contributes a language with colorizer.
+新しい言語カラライザーを提供する拡張機能を作成します。
 
-* Prompts for the location (URL or file path) of an existing TextMate language file (.tmLanguage, .plist or .json). This file will be imported to the new extension. To start a new grammar you can skip this by passing an empty name.
-* Prompts for the extension identifier and will create a folder of that name in the current directory
+* TextMate(.tmLanguage, .plist or .json)の場所をURLかファイルパスで入力するように求められます。このファイルは作成した拡張機能にインポートします。新しい文法を作成する場合は、空のままにしてこれをスキップします。
+* 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
 
-Once created, open VS Code on the created folder and run the extension to test the colorization. Check out `vsc-extension-quickstart.md` for the next steps. Have a look at the language configuration file that has been created and defines configuration options such what style of comments and brackets the language uses.
+作成したフォルダーをVS Codeで開いて、拡張機能を実行して新しいカラライザーをテストします。次の手順のクイックガイド`vsc-extension-quickstart.md`を確認してください。作成済みの言語構成ファイルを確認して、その言語がどのようなスタイルやコメントを使用するかなどの構成オプションを定義します。
 
 ### New Code Snippets
 
-Creates an extension that contributes new code snippets.
+新しいコードスニペットを提供する拡張機能を作成します。
 
-* Prompts for the folder location that contains TextMate snippets (.tmSnippet) or Sublime snippets (.sublime-snippet). These file are converted to a VS Code snippet file.
-* Prompts for the language for which these snippets will be active
-* Prompts for the extension identifier and will create a folder of that name in the current directory
+* TextMateスニペット(.tmSnippet)かSublimeスニペット(.sublime-snippet)の場所をURLかファイルパスで入力するように求められます。これらは、VS Codeスニペットファイルに変換されます。
+* スニペットを適用する言語を求められます。
+* 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
 
-Once created, open VS Code on the created folder and run the extension to test the snippets. Check out `vsc-extension-quickstart.md` for the next steps.
+作成したフォルダーをVS Codeで開いて、拡張機能を実行して新しいスニペットをテストします。次の手順のクイックガイド`vsc-extension-quickstart.md`を確認してください。
 
-## Your extensions folder
+## 拡張機能フォルダ
 
-To load an extension, you need to copy the files to your VS Code extensions folder `.vscode/extensions`. Depending on your platform it is located in the following folders:
+拡張子をロードするには、あなたのVSコード拡張フォルダ `.vscode / extensions`にファイルをコピーする必要があります。
+
+拡張機能を読み込むには、ファイルをVS Codeの拡張機能フォルダ`.vscode/extensions`にコピーする必要があります。プラットホーム別に次のフォルダーにあります:
 
 * **Windows** `%USERPROFILE%\.vscode\extensions`
 * **Mac** `~/.vscode/extensions`
 * **Linux** `~/.vscode/extensions`
 
-If you want to load your extension each time VS Code runs, copy your project ('side loading') to a new folder under `.vscode/extensions`. For example: `~/.vscode/extensions/myextension`.
+VS Codeを実行するたびに拡張機能を読み込む場合は、プロジェクト('side loading')を`.vscode/extensions`の下の新しいフォルダにコピーします。例: `~/.vscode/extensions/myextension`.
 
-## Next Steps
+## 次のステップ
 
 * [Publishing Tool](/docs/extensions/publish-extension.md) - Learn how to publish your extensions to the VS Code Marketplace.
 * [Hello World](/docs/extensions/example-hello-world.md) - Try the 'Hello World' walkthrough to build your first extension.
 * [Additional Extension Examples](/docs/extensions/samples.md) - Take a look at our list of example extension projects.
 
-## Common Questions
+## よくある質問
 
-**Q: The `yo code` generator doesn't respond to arrow keys on Windows 10.**
+**Q: Windows 10の`yo code`ジェネレーターで矢印キーが反応しません**
 
-**A:** Try starting the Yeoman generator with just `yo` and then select the `Code` generator.
+**A:** `yo`でYeoman起動して、`Code`を選択してください。
 
 ![yo workaround](images/yocode/yo-workaround.png)
