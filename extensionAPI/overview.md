@@ -18,7 +18,7 @@ Topic|Description
 **[Contribution Points](/docs/extensionapi/extension-points.md)**|`package.json`をベースにして、貢献できる追加の拡張ポイントがいくつかあります。例: command, theme, debugger
 **[Activation Events](/docs/extensionapi/activation-events.md)**|VS Code拡張機能を任意のタイミングでアクティブにします。このドキュメントでは `package.json`でサポートしているActivationオプションの概要について説明します。例: 特定のファイルタイプがロードされたとき、コマンドが起動されたときなど
 **[API vscode namespace](/docs/extensionapi/vscode-api.md)**|完全なVS Code名前空間APIリファレンスを確認します。
-**[API complex commands](/docs/extensionapi/vscode-api-commands.md)**|VS Code複合コマンドAPIリファレンスを確認します。
+**[API complex commands](/docs/extensionapi/vscode-api-commands.md)**|VS CodeのComplex Command APIリファレンスを確認します。
 **[Debugging API](/docs/extensionapi/api-debugging.md)**|デバッガをVS Codeに統合する方法の詳細を学びます。
 **[API samples](https://github.com/Microsoft/vscode-extension-samples)**|VS Code拡張機能APIのサンプルコードを確認します。
 

@@ -52,9 +52,11 @@ title: ようこそ
 * EXTENSIONS
     * [Overview](/docs/extensions/overview.html)
 * EXTENSIBILITY REFERENCE
-    * [Overview](docs/extensionapi/overview.html)
-    * [Extension Manifest](docs/extensionapi/extension-manifest.html)
-    * [Activation Events](docs/extensionapi/activation-events.html)
+    * [Overview](/docs/extensionapi/overview.html)
+    * [Extension Manifest](/docs/extensionapi/extension-manifest.html)
+    * [Extension Point](/docs/extensionapi/extension-points.html)
+    * [Activation Events](/docs/extensionapi/activation-events.html)
+    * [Complex Commands](/docs/extensionapi/vscode-api-commands.html)
 * OTHER
     * [.NET Core](/docs/other/dotnet.html)
     * ~~Unity~~
@@ -62,4 +64,4 @@ title: ようこそ
 * Supporting
     * [FAQ](/docs/supporting/faq.html)
     * [Requirements](/docs/supporting/requirements.html)
-    * [Errors](docs/supporting/errors.html)
+    * [Errors](/docs/supporting/errors.html)
