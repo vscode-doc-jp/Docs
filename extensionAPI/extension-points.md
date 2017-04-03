@@ -1,36 +1,30 @@
 ---
-Order: 5
-Area: extensionapi
-TOCTitle: Contribution Points
-ContentId: 2F27A240-8E36-4CC2-973C-9A1D8069F83F
-PageTitle: Visual Studio Code Extension Contribution Points - package.json
-DateApproved: 3/1/2017
+title: Contribution Points - package.json
 MetaDescription: To extend Visual Studio Code, your extension (plug-in) declares which of the various contribution points it is using in its package.json extension manifest file.
+commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-# Contribution Points - package.json
+このドキュメントでは[`package.json`](/docs/extensionapi/extension-manifest.md)で定義する様々なコントリビューションポイントについて説明します。
 
-This document covers the various contribution points that are defined in the [`package.json` extension manifest](/docs/extensionAPI/extension-manifest.md).
-
-* [`configuration`](/docs/extensionAPI/extension-points.md#contributesconfiguration)
-* [`commands`](/docs/extensionAPI/extension-points.md#contributescommands)
-* [`menus`](/docs/extensionAPI/extension-points.md#contributesmenus)
-* [`keybindings`](/docs/extensionAPI/extension-points.md#contributeskeybindings)
-* [`languages`](/docs/extensionAPI/extension-points.md#contributeslanguages)
-* [`debuggers`](/docs/extensionAPI/extension-points.md#contributesdebuggers)
-* [`breakpoints`](/docs/extensionAPI/extension-points.md#contributesbreakpoints)
-* [`grammars`](/docs/extensionAPI/extension-points.md#contributesgrammars)
-* [`themes`](/docs/extensionAPI/extension-points.md#contributesthemes)
-* [`snippets`](/docs/extensionAPI/extension-points.md#contributessnippets)
-* [`jsonValidation`](/docs/extensionAPI/extension-points.md#contributesjsonvalidation)
+* [`configuration`](/docs/extensionapi/extension-points.md#contributesconfiguration)
+* [`commands`](/docs/extensionapi/extension-points.md#contributescommands)
+* [`menus`](/docs/extensionapi/extension-points.md#contributesmenus)
+* [`keybindings`](/docs/extensionapi/extension-points.md#contributeskeybindings)
+* [`languages`](/docs/extensionapi/extension-points.md#contributeslanguages)
+* [`debuggers`](/docs/extensionapi/extension-points.md#contributesdebuggers)
+* [`breakpoints`](/docs/extensionapi/extension-points.md#contributesbreakpoints)
+* [`grammars`](/docs/extensionapi/extension-points.md#contributesgrammars)
+* [`themes`](/docs/extensionapi/extension-points.md#contributesthemes)
+* [`snippets`](/docs/extensionapi/extension-points.md#contributessnippets)
+* [`jsonValidation`](/docs/extensionapi/extension-points.md#contributesjsonvalidation)
 
 ## contributes.configuration
 
-Contribute configuration keys that will be exposed to the user. The user will be able to set these configuration options either from User Settings or from the Workspace Settings.
+ユーザーに公開する設定の構成キーを提供します。これによりユーザーは、ユーザー設定またはワークスペース設定のいずれかで構成オプションを設定できます。
 
-When contributing configuration keys, a JSON schema describing these keys is actually contributed. This ensures the user gets great tooling support when authoring VS Code settings files.
+構成キーを提供することで、キーを記述するJSONスキーマを実際に提供します。これにより、設定を構成する際にユーザーは優れたツールサポートを受けるようになります。
 
-You can read these values from your extension using `vscode.workspace.getConfiguration('myExtension')`.
+あなたはこの値を`vscode.workspace.getConfiguration('myExtension')`を使用して拡張機能から読み込むことができます。
 
 ### Example
 
@@ -59,8 +53,9 @@ You can read these values from your extension using `vscode.workspace.getConfigu
 
 ## contributes.configurationDefaults
 
-Contribute default language specific editor configurations. This will override default editor configurations for the provided language.
-Following example contributes default editor configurations for `markdown` language.
+既定の言語固有のエディター構成を提供します。これにより、提供された言語の既定のエディター構成を上書きします。
+
+次の例は`markdown`の既定のエディター設定を提供します:
 
 ### Example
 
@@ -78,9 +73,9 @@ contributes": {
 
 ## contributes.commands
 
-Contribute an entry consisting of a title and a command to invoke to the Command Palette (`kb(workbench.action.showCommands)`).
+コマンド パレット(`kb(workbench.action.showCommands)`)にコマンドを提供します
 
->**Note:** When a command is invoked (from a key binding or from the Command Palette), VS Code will emit an activationEvent `onCommand:${command}`.
+>**Note:** コマンドが(キーバインドかコマンドパレットから)呼び出されたとき、VS CodeはactivationEvent `onCommand:${command}` を発行します。
 
 ### Example
 
@@ -97,20 +92,20 @@ Contribute an entry consisting of a title and a command to invoke to the Command
 
 ## contributes.menus
 
-Contribute a menu item for a command to the editor or Explorer. The menu item definition contains the command that should be invoked when selected and the condition under which the item should show. The latter is defined with the `when` clause which uses the key bindings [when clause contexts](/docs/getstarted/keybindings.md#when-clause-contexts). In addition to the mandatory `command` property, an alternative command can be defined using the `alt`-property. It will be shown and invoked when pressing `kbstyle(Alt)` while hovering over a menu item. Last, a `group`-property defines sorting and grouping of menu items. The `navigation` group is special as it will always be sorted to the top/beginning of a menu.
+エディターやエクスプローラーへメニュー項目を提供します。この定義には選択したときに呼びだすコマンドと、項目を表示する条件を含みます。後者は、キー バインドの [when clause contexts](/docs/getstarted/keybindings.md#when-clause-contexts)で使う`when`節で定義されます。必須の`command`プロパティに加えて、代替コマンドは`alt`プロパティを使って定義できます。これはメニュー項目をホバーしている間に`kbstyle(Alt)`を押すと表示して呼び出します。最後に`group`プロパティはメニュー項目のソートとグループ化を定義します。その中で`navigation`グループは特別で、常にメニューのトップ(先頭)にソートします。
 
-Currently extension writers can to contribute to:
+現在、開発者は次を提供できます:
 
-* The global Command Palette - `commandPalette`
-* The Explorer context menu - `explorer/context`
-* The editor context menu - `editor/context`
-* The editor title menu - `editor/title`
-* The editor title context menu - `editor/title/context`
-* The debug callstack view context menu - `debug/callstack/context`
+* コマンドパレット  - `commandPalette`
+* エクスプローラーのコンテキスト メニュー - `explorer/context`
+* エディターのコンテキスト メニュー - `editor/context`
+* エディターのタイトル メニュー - `editor/title`
+* エディターのタイトルのコンテキスト メニュー - `editor/title/context`
+* デバッグ コールスタックのコンテキスト メニュー - `debug/callstack/context`
 
->**Note:** When a command is invoked from a (context) menu, VS Code tries to infer the currently selected resource and passes that as a parameter when invoking the command. For instance, a menu item inside the Explorer is passed the URI of the selected resource and a menu item inside an editor is passed the URI of the document.
+>**Note:** コマンドが(コンテキスト)メニューから呼び出されると、VS Codeは現在選択されているリソースを推定しようとして、コマンドを呼び出すときにパラメーターとして渡します。たとえば、エクスプローラー内のメニュー項目は選択したリソースのURLを渡して、エディタ内のメニュー項目ではドキュメントのURLを渡します。
 
-The `commandPalette` menu is special because it contains all commands by default. To make your commands only show in there use the `when`-clause. In addition to a title, commands can also define icons which VS Code will show in the editor menu bar.
+その中で`commandPalette`は全てのコマンドを含んでいるため特殊です。なお、コマンドをその場所にのみ表示するようにするには`when`節を利用します。タイトルに加えて、コマンドはVS Codeがエディターのメニューバーで表示するアイコンを定義することもできます。
 
 ### Example
 
@@ -131,21 +126,21 @@ The `commandPalette` menu is special because it contains all commands by default
 
 ### Sorting of groups
 
-Menu items can be sorted into groups. They are sorted in lexicographical order with the following defaults/rules.
+メニュー項目をグループに分類できます。これらは、以下の既定ルールに沿って辞書式順序でソートします。
 
-The context menu of the editor has these default:
+エディタのコンテキストメニューには、次のデフォルト値があります:
 
-* `navigation` - The `navigation` group comes first in all cases.
-* `1_modification` - This group comes next and contains commands that modify your code.
-* `9_cutcopypaste` - The last default group with the basic editing commands.
+* `navigation` - 常に最初に表示します。
+* `1_modification` - 次にきてコードを変更するコマンドを含みます。
+* `9_cutcopypaste`  - 最後にきて基本的な編集コマンドを含みます。
 
 ![Menu Group Sorting](images/extension-points/groupSorting.png)
 
-You can add menu items to these groups or add new groups of menu items in between, below, or above. Only the editor context menu allows this grouping control.
+あなたはこのグループでメニュー項目を追加したり、メニュー項目の新しいグループを上下中央のいずれかに追加したりできます。エディターのコンテキストメニューのみがこのグループ化の制御許されています。
 
 ### Sorting inside groups
 
-The order inside a group depends the title or an order-attribute. The group-local order of a menu item is specified by appending `@<number>` to the group identifier as shown below:
+グループ内の順序はタイトルや順序属性(order-attribute)に依存します。次に示すように、メニュー項目のグループローカル順序は`@<number>`をグループ識別子に追加することで指定します:
 
 ```json
 "editor/title": [{
@@ -157,17 +152,17 @@ The order inside a group depends the title or an order-attribute. The group-loca
 
 ## contributes.keybindings
 
-Contribute a key binding rule defining what command should be invoked when the user presses a key combination. See the [Key Bindings](/docs/getstarted/keybindings.md) topic where key bindings are explained in detail.
+ユーザーがキーの組み合わせを押したときに呼びだすキー バインドを提供します。キー バインドについて詳しく説明している[Key Bindings](/docs/getstarted/keybindings.md)トピックを確認してください。
 
-Contributing a key binding will cause the Default Keyboard Shortcuts to display your rule, and every UI representation of the command will now show the key binding you have added. And, of course, when the user presses the key combination the command will be invoked.
+キー バインドを提供すると、既定のキーボードショートカットと全てのUI表現に追加のキーバインドを表示します。もちろんユーザーがキーの組み合わせを押せば、コマンドを呼び出せます。
 
->**Note:** Because VS Code runs on Windows, Mac and Linux, where modifiers differ, you can use "key" to set the default key combination and overwrite it with a specific platform.
+>**Note:** VS CodeはWindows、Mac、Linux上で動作します。修飾子が異なる場合には"key"を使用して規定のキー組み合わせを設定し、特定のOS上で上書きしてください。
 
->**Note:** When a command is invoked (from a key binding or from the Command Palette), VS Code will emit an activationEvent `onCommand:${command}`.
+>**Note:** コマンドが(キーバインドかコマンドパレットから)呼び出されたとき、VS CodeはactivationEvent `onCommand:${command}` を発行します。
 
 ### Example
 
-Defining that `kbstyle(Ctrl+F1)` under Windows and Linux and `kbstyle(Cmd+F1)` under Mac trigger the `"extension.sayHello"` command:
+WindowsとLinuxで`kbstyle(Ctrl+F1)`、Macでは`kbstyle(Cmd+F1)`を定義して`"extension.sayHello"`をトリガーします。
 
 ```json
 "contributes": {
@@ -184,30 +179,30 @@ Defining that `kbstyle(Ctrl+F1)` under Windows and Linux and `kbstyle(Cmd+F1)` u
 
 ## contributes.languages
 
-Contribute the definition of a language. This will introduce a new language or enrich the knowledge VS Code has about a language.
+言語の宣言を提供します。これは新しい言語を導入したり、既にVS Codeにある言語に関する情報を補充したりします。
 
-In this context, a language is basically a string identifier that is associated to a file (See `TextDocument.getLanguageId()`).
+これにおいて、言語を基本的にファイルに関連付けられた文字列の識別子で表します。(参照`TextDocument.getLanguageId()`)
 
-VS Code uses three hints to determine the language a file will be associated with. Each "hint" can be enriched independently:
+VS Codeはファイルに関連付けられている言語を決定するために3つのヒントを使用します。それぞれの「ヒント」を個別に補完できます:
 
-1. the extension of the filename (`extensions` below)
-2. the filename (`filenames` below)
-3. the first line inside the file (`firstLine` below)
+1. ファイル名の拡張子(以下`extensions`)
+2. ファイル名(以下`filenames`)
+3. ファイルの最初の行(以下`firstLine`)
 
-When a file is opened by the user, these three rules are applied and a language is determined. VS Code will then emit an activationEvent `onLanguage:${language}` (e.g. `onLanguage:python` for the example below)
+ユーザーがファイルを開くと、これらの3つのルールを適用して、言語を決定します。このときVS CodeはactivationEvent `onLanguage:${language}`を発行します。(下記の例では:`onLanguage:python`)
 
-The `aliases` property contains human readable names under which the language is known. The first item in this list will be picked as the language label (as rendered in the status bar on the right).
+`aliases`プロパティには他人が言語を識別できる名前を指定します。このリストの最初の項目は、右側のステータスバーに表示する言語ラベルとして選択されます。
 
-The `configuration` property specifies a path to the language configuration file. The path is relative to the extension folder, and is typically `./language-configuration.json`. The file uses the JSON format and can contain the following properties:
+`configuration`プロパティは、言語の構成オプションを含むファイルパスを指定します。パスは拡張機能フォルダーとの相対パスで、通常は`./language-configuration.json`です。このファイルはJSON形式を使用し、次のプロパティを含むことができます:
 
-* `comments` - Defines the comment symbols
-  * `blockComment` - The begin and end token used to mark a block comment. Used by the 'Toggle Block Comment' command.
-  * `lineComment` - The begin token used to mark a line comment. Used by the 'Add Line Comment' command.
-* `brackets` - Defines the bracket symbols that influence the indentation of code between the brackets. Used by the editor to determine or correct the new indentation level when entering a new line.
-* `autoClosingPairs` - Defines the open and close symbols for the auto-close functionality. When an open symbol is entered, the editor will insert the close symbol automatically. Auto closing pairs optionally take a `notIn` parameter to deactivate a pair inside strings or comments.
-* `surroundingPairs` - Defines the open and close pairs used to surround a selected string.
+* `comments` - コメント記号を定義します。
+  * `blockComment` - ブロック コメントをマークする開始と終了のトークンを指定します。'Toggle Block Comment'コマンドによって使用されます。
+  * `lineComment` - 行コメントをマークする開始トークンを指定します。 'Add Line Comment'コマンドによって使用されます。
+* `brackets` - 括弧の間のインデントに影響する括弧記号を定義します。新しい行を挿入するときに新しいインデントレベルを決定または修正するためにエディターで使用されます。
+* `autoClosingPairs` - Auto-Close機能の開始と終了の記号を定義します。開始記号を入力すると、エディターは終了記号を挿入します。これは、オプションで`notIn`パラメーターをとってペアの文字列かコマンドを無効化します。
+* `surroundingPairs`  - 文字列を囲う文字の開始と終了のペアを定義します。
 
-If your language configuration file name is or ends with `language-configuration.json`, you will get validation and editing support in VS Code.
+もし言語構成のファイル名が`language-configuration.json`で終わるものであれば、VS Code内で検証と編集ができます。
 
 ### Example
 
@@ -257,16 +252,16 @@ language-configuration.json
 
 ## contributes.debuggers
 
-Contribute a debugger to VS Code. A debugger contribution has the following properties:
+デバッグ アダプターを提供します。これには次のプロパティがあります:
 
-* `type` is a unique ID that is used to identify this debugger in a launch configuration,
-* `label` is the user visible name of this debugger in the UI,
-* `program` the path to the debug adapter that implements the VS Code debug protocol against the real debugger or runtime,
-* `runtime` if the path to the debug adapter is not an executable but needs a runtime,
-* `configurationAttributes` is the schema for launch configuration arguments specific to this debugger,
-* `initialConfigurations` lists launch configurations that are used to populate an initial launch.json,
-* `configurationSnippets` lists launch configurations that are available through IntelliSense when editing a launch.json,
-* `variables` introduces substitution variables and binds them to commands implemented by the debugger extension.
+* `type` は起動設定でこのデバッガーを識別する固有のIDです。
+* `label` はデバッグ アダプターの表示名です。
+* `program` は実際のデバッガーまたはランタイムに対してVS Codeデバッグ プロトコルを実装する、デバッグ アダプター プログラムへのパスです。
+* `runtime` はデバッグ アダプターのプログラム属性が実行可能ファイルではなく、ランタイムが必要な場合に指定します。
+* `configurationAttributes` は`launch.json' を検証するためのJSONスキーマ構成です。
+* `initialConfigurations` は初期 'launch.json'を生成するための構成です。
+* `configurationSnippets` は`launch.json`を編集するときにIntelliSenseで新しい構成を追加するためのスニペットを構成します。
+* `variables` は置換変数を導入して、デバッガー拡張拡張機能で実装したコマンドにバインドします。
 
 ### Example
 
@@ -318,11 +313,11 @@ Contribute a debugger to VS Code. A debugger contribution has the following prop
 }
 ```
 
-For a full walkthrough on how to integrate a `debugger` go to [Debuggers](/docs/extensions/example-debuggers.md).
+`debugger`を統合する方法については[Debuggers](/docs/extensions/example-debuggers.md)を参照してください。
 
 ## contributes.breakpoints
 
-Usually a debugger extension will also have a `contributes.breakpoints` entry where the extension lists the language file types for which setting breakpoints will be enabled.
+通常デバッガー拡張機能でブレークポイントも提供します。これにブレークポイントを有効にする任意の言語ファイルタイプを設定します。
 
 ```json
 "contributes": {
@@ -339,9 +334,9 @@ Usually a debugger extension will also have a `contributes.breakpoints` entry wh
 
 ## contributes.grammars
 
-Contribute a TextMate grammar to a language. You must provide the `language` this grammar applies to, the TextMate `scopeName` for the grammar and the file path.
+TextMate文法を提供します。文法を適応する`language`に文法とファイルパスのためのTextMate `scopeName`を提供しなければなりません。
 
->**Note:** The file containing the grammar can be in JSON (filenames ending in .json) or in XML plist format (all other files).
+>**Note:** 文法を含むファイルは、JSON(.jsonで終わるファイル名)またはXML plist format (全てファイル)にすることができます。
 
 ### Example
 
@@ -355,13 +350,13 @@ Contribute a TextMate grammar to a language. You must provide the `language` thi
 }
 ```
 
-See [Adding Language Colorization](/docs/extensions/themes-snippets-colorizers.md) for instructions on using the [yo code extension generator](/docs/extensions/yocode.md) to quickly package TextMate .tmLanguage files as VS Code extensions.
+TextMateの.tmLanguageファイルを[yo code extension generator](/docs/extensions/yocode.md)を使用して、簡単にパッケージ化する方法を[Adding Language Colorization](/docs/extensions/themes-snippets-colorizers.md) で参照してください。
 
 ![grammars extension point example](images/extension-points/grammars.png)
 
 ## contributes.themes
 
-Contribute a TextMate theme to VS Code. You must specify a label, whether the theme is a dark theme or a light theme (such that the rest of VS Code changes to match your theme) and the path to the file (XML plist format).
+VS CodeにTextMateの配色テーマを提供します。エディターの周囲の色を定義する基本テーマをdarkかlightから選択し、ファイル(XML plist format)へのパスを指定する必要があります。
 
 ### Example
 
@@ -377,7 +372,7 @@ Contribute a TextMate theme to VS Code. You must specify a label, whether the th
 
 ![themes extension point example](images/extension-points/themes.png)
 
-See [Changing the Color Theme](/docs/extensions/themes-snippets-colorizers.md) for instructions on using the [yo code extension generator](/docs/extensions/yocode.md) to quickly package TextMate .tmTheme files as VS Code extensions.
+ [yo code extension generator](/docs/extensions/yocode.md)を使用してTextMate .tmThemeファイルを簡単に拡張機能へパッケージ化する方法については、[Changing the Color Theme](/docs/extensions/themes-snippets-colorizers.md)を参照してください。
 
 ## contributes.snippets
 
@@ -392,7 +387,7 @@ See [Changing the Color Theme](/docs/extensions/themes-snippets-colorizers.md) f
 
 ## contributes.jsonValidation
 
-Contributes a validation schema for a specific type of `json` file.  The `url` value can be either a local path to a schema file included in the extension or a remote server URL such as a [json schema store](http://schemastore.org/json).
+特定`json`ファイルにJSONスキーマ構成を提供します。`url`値には拡張機能内のスキーマへの相対パスか、[scheme](http://schemastore.org/json) URLを指定できます。
 
 ```json
 "contributes": {
@@ -403,9 +398,9 @@ Contributes a validation schema for a specific type of `json` file.  The `url` v
 }
 ```
 
-## Next Steps
+## 次のステップ
 
-To learn more about VS Code extensibility model, try these topic:
+VS Codeの拡張モデルの詳細については次のトピックを試してください:
 
-* [Extension Manifest File](/docs/extensionAPI/extension-manifest.md) - VS Code package.json extension manifest file reference
-* [Activation Events](/docs/extensionAPI/activation-events.md) - VS Code activation events reference
+* [Extension Manifest File](/docs/extensionapi/extension-manifest.md) - VS Code package.json extension manifest file reference
+* [Activation Events](/docs/extensionapi/activation-events.md) - VS Code activation events reference
