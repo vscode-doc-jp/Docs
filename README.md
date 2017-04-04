@@ -48,6 +48,7 @@
 * EXTENSIONS
     * [Overview](/docs/extensions/overview.html)
     * [Extension Generator](/docs/extensions/yocode.html)
+    * [Additional Examples](/docs/extensions/samples.html)
 * EXTENSIBILITY REFERENCE
     * [Overview](/docs/extensionapi/overview.html)
     * [Extension Manifest](/docs/extensionapi/extension-manifest.html)
