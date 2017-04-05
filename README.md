@@ -8,7 +8,7 @@
     * [Additional Compnents](/docs/setup/additional-components.html)
 * GET STARTED
     * [Intro Videos](/docs/getstarted/introvideos.html)
-    * ~~User Interface~~
+    * [User Interface](/docs/getstarted/userinterface.html)
     * [Themes](/docs/getstarted/themes.html)
     * [Settings](/docs/getstarted/settings.html)
     * [Key Bindings](/docs/getstarted/keybindings.html)

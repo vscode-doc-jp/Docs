@@ -1,262 +1,263 @@
 ---
-title: User Interface
+title: ユーザーインターフェイス
 MetaDescription: A quick overview of the Visual Studio Code user interface. Learn about the editor, window management, and special UI to handle source control, extension management, full text search and more.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
 
-At its heart, Visual Studio Code is a code editor. Like many other code editors, VS Code adopts a common user interface and layout of an explorer on the left, showing all of the files and folders you have access to, and an editor on the right, showing the content of the files you have opened.
+Visual Studio Codeはコードエディターです。他の多くのコードエディターと同様に、一般的なユーザーインターフェイスをもっており、左側にすべてのファイルとフォルダーを表示して、右側のエディターでそのコンテンツを開きます。
 
 ![code basics hero](images/userinterface/hero.png)
 
-## Files, Folders & Projects
+## ファイル、フォルダー、プロジェクト
 
-VS Code is file and folder based - you can get started immediately by opening a file or folder in VS Code.
+VS Codeの基本はファイルとフォルダーです。ファイルやフォルダーを開いてすぐに使い始めることができます。
 
-On top of this, VS Code can read and take advantage of a variety of project files defined by different frameworks and platforms. For example, if the folder you opened in VS Code contains one or more `package.json`, `project.json`, `tsconfig.json`, or .NET Core Visual Studio solution and project files, VS Code will read these files and use them to provide additional functionality, such as rich IntelliSense in the editor.
+また、VS Codeは様々なフレームワークとプラットホームで定義されたプロジェクトの定義ファイルを読み込んで利用できます。例えば開いたコンテンツに`package.json`、`project.json`、`tsconfig.json`、.NET Core、Visual Studio solutionといったプロジェクトファイルがあれば、VS Codeはそれを読み込み、エディターで豊富なIntelliSenseなどの追加機能を提供するために使用します。
 
-## Basic Layout
+## 基本レイアウト
 
-VS Code comes with a simple and intuitive layout that maximizes the space provided for the editor while leaving ample room to browse and access the full context of your folder or project. The UI is divided into five areas:
+VS Codeにはフォルダーやプロジェクトの全文を閲覧してアクセスするために最大限活用可能なシンプルで直観的なレイアウトを用意しています。UIは次5つのエリアに分かれています:
 
-* **Editor** The main area to edit your files. You can open up to three editors side by side.
-* **Side Bar** Contains different views like the Explorer to assist you while working on your project.
-* **Status Bar** Information about the opened project and the files you edit.
-* **Activity Bar** Located on the far left-hand side, this lets you switch between views and gives you additional context-specific indicators, like the number of outgoing changes when Git is enabled.
-* **Panels** You can display different panels below the editor region for output or debug information, errors and warnings, or an integrated terminal.
+* **Editor** ファイルを編集するメインエリアです。エディターを3つまで並べて開くことができます。
+* **Side Bar** プロジェクトで作業中に役立つエクスプローラーなど様々なビューを含みます。
+* **Status Bar** 開いているプロジェクトと編集したファイルに関する情報を表示します。
+* **Activity Bar** 一番左に位置してビューを切り替えることができます。Gitが有効になっているときには変更の数をしめすようなコンテンツ特有のインジゲーターを表示します。
+* **Panels** 出力またはデバッグ情報、エラーと警告の表示、統合端末など異なるパネルをエディター下部に表示します。
 
-Each time you start VS Code, it opens up in the same state it was in when you last closed it. The folder, layout, and opened files are preserved.
+VS Codeはフォルダ、レイアウト、開いたファイルを保存するので、最後に閉じた時と同じ状態で開きます。
 
 ![VS Code Layout](images/userinterface/layout.png)
 
-Open files in each editor are displayed with tabbed headers (Tabs) at the top of the editor region. To learn more about tabbed headers, see the [Tabs](/docs/getstarted/userinterface.md#tabs) section below.
+各エディター内で開いているファイルは、エディター領域内上部にタブ付きヘッダ(タブ)で表示します。タブ付きヘッダーの詳細については、下記の[Tabs](/docs/getstarted/userinterface.md#tabs)を参照してください。
 
->**Tip:** You can move the Side Bar to the right hand side (**View** > **Move Sidebar**) or toggle its visibility (`kb(workbench.action.toggleSidebarVisibility)`).
+>**Tip:** 右側にサイドバーを移動することが可能です。(**表示**>**サイド バーを右へ移動**)もしくは(`kb(workbench.action.toggleSidebarVisibility)`)
 
-## Side by Side Editing
+## 並べて編集
 
-You can have up to three editors open side by side. If you already have one editor open, there are multiple ways of opening another editor to the side of the existing one:
+最大3つのエディターを並べて開くことができます。既存にエディターを開いているとき、既存のエディターの横に並べて開く方法を次のように用意しています:
 
-* `kbstyle(Ctrl)` (Mac: `kbstyle(Cmd)`) click on a file in the Explorer.
-* `kb(workbench.action.splitEditor)` to split the active editor into two.
-* **Open to the Side** from the Explorer context menu on a file.
-* Click the **Split Editor** button in the upper right of an editor.
-* Drag and drop a file to the either side of the editor region.
-* `kbstyle(Ctrl+Enter)` (Mac: `kbstyle(Cmd+Enter)`) in the **Quick Open** (`kb(workbench.action.quickOpen)`) file list.
+* エクスプローラーのファイルで`kbstyle(Ctrl)` (Mac: `kbstyle(Cmd)`)クリックします。
+* `kb(workbench.action.splitEditor)`を押してエディターを2つに分割します。
+* エクスプローラーのコンテキストから**横に並べて開く**を実行します。
+* エディター上部の**エディターの分割**ボタンをクリックします。
+* D&Dでエディター領域をいずれかの場所に移動します。
+* **Quick Open** (`kb(workbench.action.quickOpen)`)のファイルリストで`kbstyle(Ctrl+Enter)`(Mac: `kbstyle(Cmd+Enter)`)を押します。
 
 ![Side by Side editing](images/userinterface/sidebyside.png)
 
-Whenever you open another file, the editor that is active will display the content of that file. So if you have two editors side by side and you want to open file 'foo.cs' into the right hand editor, make sure that editor is active (by clicking inside it) before opening file 'foo.cs'.
+別のファイルを開くとき、アクティブ状態のエディターにそのファイル内容を表示します。ですから2つのエディターを並べて表示しているときに、右側に`foo.cs`を表示したいなら、右側がアクティブ状態であることを確認してください。
 
-When you have more than one editor open you can switch between them quickly by holding the `kbstyle(Ctrl)` (Mac: `kbstyle('Cmd')`) key and pressing `kbstyle(1)`, `kbstyle(2)`, or `kbstyle(3)`.
+複数のエディターを開いているときは、`kbstyle(Ctrl)` (Mac: `kbstyle('Cmd')`) を押しながら`kbstyle(1)`、`kbstyle(2)`、`kbstyle(3)`でその間を素早く切り替えることが可能です。
 
->**Tip:** You can resize editors and reorder them. Drag and drop the editor title area to reposition or resize the editor.
+>**Tip:** エディターのサイズを変更したり並び替えるたりする事が可能です。エディタのタイトル領域をD&Dしてエディタの位置を変更するか、サイズを変更します。
 
-## Explorer
+## エクスプローラー
 
-The Explorer is used to browse, open, and manage all of the files and folders in your project.
+エクスプローラーはプロジェクト内のファイルおよびフォルダーを閲覧、展開および管理するために使用します。
 
-After opening a folder in VS Code, the contents of the folder are shown in the Explorer. You can do many things from here:
+VS Codeでフォルダーを開くとエクスプローラーにフォルダーの内容を表示します。次を実行可能です:
 
-* Create, delete, and rename files and folders.
-* Move files and folders with drag and drop.
-* Use the context menu to explore all options.
+* ファイルおよびフォルダーの作成、削除、名前の変更
+* ファイルおよびフォルダーのD&Dによる移動
+* コンテキスト メニューを使用したオプションの表示
 
->**Tip:** You can drag and drop files into the Explorer from outside VS Code to copy them.
+>**Tip:** VS Codeの外部からファイルをエクスプローラーにD&Dを使用してコピーすることもできます。
 
 ![Explorer Menu](images/userinterface/explorer_menu.png)
 
-VS Code works very well with other tools that you might use, especially command-line tools. If you want to run a command-line tool in the context of the folder you currently have open in VS Code, right-click the folder and select **Open in Command Prompt** (or **Open in Terminal** on Mac or Linux).
+VS Codeはその他ツール、特にコマンドラインツールでも問題なく機能します。現在のVS Codeで開いているフォルダのコンテキストでコマンドラインを実行する場合には、フォルダーを右クリックして**Open in Command Prompt**(or **Open in Terminal** on Mac or Linux)を選択します。
 
-You can also navigate to the location of a file or folder in the native Explorer by right-clicking on a file or folder and selecting **Reveal in Explorer** (or **Reveal in Finder** on the Mac or **Open Containing Folder** on Linux).
+また、エクスプローラーでファイルまたはフォルダーの場所を移動するには、ファイルまたはフォルダーを右クリックして**Reveal in Explorer**(or **Reveal in Finder** on the Mac or **Open Containing Folder** on Linux)を選択します。
 
->**Tip:** Type `kb(workbench.action.quickOpen)` (**Quick Open**) to quickly search and open a file by its name.
+>**Tip:** ファイルを名前で素早く検索して開くには`kb(workbench.action.quickOpen)` (**Quick Open**)を入力します。
 
-By default, VS Code excludes some folders from the Explorer (for example. `.git`). Use the `files.exclude` [setting](/docs/getstarted/settings.md) to configure rules for hiding files and folders from the Explorer.
+既定でVS Codeはエクスプローラーからいくつかのフォルダーを除外します(例: `.git`)。エクスプローラーからファイルやフォルダーを非表示にするルールを設定するには`files.exclude`[設定](/docs/getstarted/settings.md)を使用してください。
 
-**Tip:** This is really useful to hide derived resources files, like `\*.meta` in Unity, or `\*.js` in a TypeScript project. For Unity to exclude the `\*.cs.meta` files, the pattern to choose would be: `"**/*.cs.meta": true`. For TypeScript, you can exclude generated JavaScript for TypeScript files with: `"**/*.js": {"when": "$(basename).ts"}`.
+**Tip:** これはUnityの`\*.meta`やTypeScriptの`\*.js`のようなリソースファイルを非表示するのに非常に便利です。Unityで`\*.cs.meta`ファイルを除外する場合のパターンは`"**/*.cs.meta": true`のようになります。TypeScriptで生成されたJavaScriptをTypeScritファイル用に除外することができます `"**/*.js": {"when": "$(basename).ts"}`。
 
-## Open Editors
+## 開いているエディター
 
-At the top of the Explorer is a section labeled **OPEN EDITORS**. This is a list of active files or previews. These are files you previously opened in VS Code that you're working on. For example, a file will be listed in the **OPEN EDITORS** section if you:
+エクスプローラー上部には**開いているエディター**のセクションがあります。これはアクティブなファイルやプレビューのリストであり、以前にVS Codeで開いていたファイルでもあります。ファイルを**開いているエディター**セクションに表示するのは次の場合です:
 
-* Make a change to a file.
-* Double-click a file's header.
-* Double-click a file in the Explorer.
-* Open a file that is not part of the current folder.
+* ファイルに変更を加えたとき
+* ファイルのヘッダーをダブルクリックしたとき
+* エクスプローラーでファイルをダブルクリックしたとき
+* 現在のフォルダーの一部でないファイルを開いたとき
 
-Just click an item in the **OPEN EDITORS** section, and it becomes active in VS Code.
+**開いているエディター**セクションで項目をクリックすると、それがVS Code内でアクティブなエディターになります。
 
-Once you are done with your task, you can remove files individually from the **OPEN EDITORS** section, or you can remove all files by using the **View: Close All Editors** or **View: Close All Editors in Group** actions.
+作業を完了したら**開いているエディター**セクションからファイルを個別に削除するか、**View: Close All Editors**や**View: Close All Editors in Group**を使用してすべてのファイルをこのセクションから削除することができます。
 
-## Views and the Activity Bar
+## ビューとアクティビティバー
 
-The File Explorer is just one of the Views available in VS Code. There are also Views for:
+ファイルエクスプローラーはVS Codeで使用できるビューの1つに過ぎず、次のようなビューがまだあります:
 
-* **Search** - Provides global search and replace across your open folder.
-* **Source Control** - VS Code includes Git source control by default.
-* **Debug** - VS Code's Debug View displays variables, call stacks, and breakpoints.
-* **Extensions** - Install and manage your extensions within VS Code.
+* **Search** - 開いているフォルダー全体の検索、置換を提供します。
+* **Source Control** - VS Codeは規定でGitソース管理を含みます。
+* **Debug** - VS Codeのデバッグビューは変数、コールスタック、ブレークポイントを提供します。
+* **Extensions** - VS Codeの拡張機能をインストールして管理します。
 
-The **Activity Bar** on the left lets you quickly switch between Views. You can also reorder Views by dragging and dropping them on the **Activity Bar** or remove a View entirely (right click **Remove from Activity Bar**).
+左側の**アクティビティバー**によってビューを素早く切り替えることが可能です。この**アクティビティバー**上でD&Dによるビューを並び替えや、ビューを削除(右クリック)することも可能です。
 
 ![activity bar context menu](images/userinterface/activity-bar-context-menu.png)
 
-## Command Palette
+## コマンドパレット
 
-VS Code is equally accessible from the keyboard. The most important key combination to know is `kb(workbench.action.showCommands)`, which brings up the **Command Palette**. From here, you have access to all of the functionality of VS Code, including keyboard shortcuts for the most common operations.
+VS Codeにはキーボードからも同じように操作可能です。キーの組み合わせは**コマンド パレット**`kb(workbench.action.showCommands)`で確認できます。ここから、一般的な操作のキーボードショートカットを含むVS Codeのすべての機能にアクセスできます。
 
 ![Command Palette](images/userinterface/commands.png)
 
-The **Command Palette** provides access to many commands. You can execute editor commands, open files, search for symbols, and see a quick outline of a file, all using the same interactive window. Here are a few tips:
+**コマンド パレット**は多くのコマンドを提供します。同じインタラクティブ(?)ウィンドウを使用して、エディタコマンドの実行、ファイルを開く、シンボルの検索、ファイルの確認などを実行できます。いくつかの例を示します:
 
-* `kb(workbench.action.quickOpen)` will let you navigate to any file or symbol by simply typing its name
-* `kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)` will cycle you through the last set of files opened
-* `kb(workbench.action.showCommands)` will bring you directly to the editor commands
-* `kb(workbench.action.gotoSymbol)` will let you navigate to a specific symbol in a file
-* `kb(workbench.action.gotoLine)` will let you navigate to a specific line in a file
+* `kb(workbench.action.quickOpen)` 名前を入力して、任意のファイルまたはシンボルに移動します
+* `kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)` ループ内の最近使用したエディターのうち前のエディターを開きます
+* `kb(workbench.action.showCommands)` エディターコマンドを表示します
+* `kb(workbench.action.gotoSymbol)` ファイル内シンボルへ移動します
+* `kb(workbench.action.gotoLine)` 指定行へ移動します
 
-Type `?` into the input field to get a list of available commands you can execute from here:
+入力フィールドに`?`を入力して、利用可能なコマンドリストをここから入手します:
 
 ![Quick Open Help](images/userinterface/quickopenhelp.png)
 
-## Configuring the Editor
+## エディター設定
 
-VS Code gives you many options to configure the editor. From the **View** menu, you can hide or toggle various parts of the user interface, such as the **Side Bar**, **Status Bar**, and **Activity Bar**.
+VS Codeはエディターを設定する多くのプションを提供しています。**表示**で **サイド バー**、**ステータス バーr**、 **アクティビティ バー**と言ったユーザーインターフェイスの様々な部分を非表示にしたり切り替えることができます。
 
-### Hide the Menu Bar (Windows, Linux)
+### メニューバーの非表示(Windows Linux)
 
-You can hide the Menu Bar on Windows and Linux with the **View** > **Toggle Menu Bar** command (`kbstyle(Ctrl+U)`). You can still access the Menu Bar by pressing the `kbstyle(Alt)` key.
+WindowsとLInuxでは**表示** > **メニュー バーの切り替え**を使用してメニューバーを非表示にできますこの場合でも`kbstyle(Alt)`を使用してメニューバーに再度アクセス可能です。
 
 
-### Settings
+### 設定
 
-Most editor configurations are kept in settings which can be modified directly. You can set options globally through user settings or per project/folder through workspace settings. Settings values are kept in a `settings.json` [file](/docs/getstarted/settings.md#settings-file-locations).
+ほとんどのエディター設定は直接変更できる状態で保存しています。ユーザー設定を使用してグローバルに開いたものすべてに適用したり、ワークスペース設定でプロジェクト/フォルダーごとに設定したりできます。なお設定値は`settings.json`[file](/docs/getstarted/settings.md#settings-file-locations)で保持します。
 
-* Select **File** > **Preferences** > **Settings** (or press `kb(workbench.action.showCommands)`, type `user` and press `Enter`) to edit the user `settings.json` file.
+* ユーザー`setting.json`ファイルを編集するには**ファイル** > **基本設定** > **設定**に移動します(もしくは`kb(workbench.action.showCommands)`で`user`と`Enter`を入力します)。
 
-* To edit workspace settings, select **File** > **Preferences** > **Settings** and select the **WORKSPACE SETTINGS** Tab (or press `kb(workbench.action.showCommands)`, type `worksp` and press `Enter`) to edit the workspace settings.json file.
+* ワークスペース設定を編集するには **ファイル** > **基本設定** > **設定**に移動して**WORKSPACE SETTINGS** のタブを選択します(もしくは`kb(workbench.action.showCommands)`で`worksp`と`Enter`を入力します)。
 
->**Note for Mac users:** The **Preferences** menu is under **Code** not **File**. For example, **Code** > **Preferences** > **Settings**.
+>**Note for Mac users:** **基本設定**メニューは**ファイル**の下ではなく**Code**の下にあります。例: **Code** > **基本設定** > **設定**
 
 ![workspace settings](images/userinterface/workspace-settings.png)
 
-You will see the VS Code [Default Settings](/docs/getstarted/settings.md#default-settings) in the left window and your editable `settings.json` on the right. You can easily filter settings in the `Default Settings` using the search box at the top. Copy a setting over to the editable `settings.json` on the right by clicking on the edit icon to the left of the setting. Settings with a fixed set values allow you to pick a value as part of their edit icon menu.
+左側のウィンドウにはVS Codeの[既定設定](/docs/getstarted/settings.md#default-settings)を表示して、右側には編集可能な`setting.json`を表示します上部の検索窓を使用して`Default Settings`を検索できます。右側の`setting.json`に設定をコピーするには、設定の左側にある編集アイコンをクリックします。設定値を固定して設定すると、編集アイコンメニューの一部として値を選択します。
 
-After editing your settings, type `kb(workbench.action.files.save)` to save your changes. The changes will take effect immediately.
+設定編集後に変更を保存するには`kb(workbench.action.files.save)を入力します。これによりすぐに有効になります。
 
->**Note:** Workspace settings will override User settings and are useful for sharing project specific settings across a team.
+>**Note:** ワークスペースの設定はチーム全体でプロジェクト設定を共有するのに便利です。
 
-### Zen Mode
+## Zen Mode
 
-Zen Mode lets you focus on your code by hiding all UI except the editor (no Activity Bar, Status Bar, Side Bar and Panel) and going to full screen. Zen mode can be toggled using the View menu, **Command Palette** or by the shortcut `kb(workbench.action.toggleZenMode)`. Double `kbstyle(Esc)` exits Zen Mode. The transition to full screen can be disabled via `zenMode.fullScreen`. Zen Mode can be further tuned by the following settings: `zenMode.hideStatusBar`, `zenMode.hideTabs`, `zenMode.fullScreen` and `zenMode.restore`.
+Zen Modeでは、エディター(アクティビティ バー、ステータスバー、サイドバー、パネル)を除くすべてのUIを非表示にして、フルスクリーン表示にすることでコードに集中します。Zen Modeには**表示**、**コマンド パレット**または`kb(workbench.action.toggleZenMode)`を使用して切り替えることができます。`kbstyle(Esc)`を2回押すとZen Modeは終了します。全画面モードに切り替えるかどうかを`zenMode.fullScreen`で無効化できます。次の設定でZenModeを調整できます:`zenMode.hideStatusBar`、`zenMode.hideTabs`、`zenMode.fullScreen`、`zenMode.restore`
 
-## Tabs
+## タブ
 
-Visual Studio Code shows open items with Tabs (tabbed headings) in the title area above the editor.
+Visual Studio Codeはエディター上のタイトル領域に、タブ(タブ付き見出し)で開いている項目を表示します。
 
-When you open a file, a new Tab is added for that file.
+ファイルを開けばファイルの新しいタブを追加します。
 
 ![tabs hero](images/userinterface/tabs-hero.png)
 
-Tabs let you quickly navigate between items and you can Drag and Drop Tabs to reorder them.
+タブを使用するとアイテム間を素早く移動できますし、ドラッグアンドドロップで並び替えることもできます。
 
-When you have more open items than can fit in the title area, you can use the **Show Opened Editors** command (available through the `...` More button) to display a dropdown of tabbed items.
+タイトルエリアに収まりきらない項目ある場合は **Show Opened Editors** コマンド(か`...`ボタン)を利用して、タブのドロップダウンを表示できます。
 
-If you don't want to use Tabs, you can disable the feature by setting the `workbench.editor.showTabs` [setting](/docs/getstarted/settings.md) to false:
+またタブ機能を使いたくない場合は `workbench.editor.showTabs` [設定](/docs/getstarted/settings.md)を`false`にして無効化することができます:
 
 ```json
     "workbench.editor.showTabs": false
 ```
 
-See the section below to optimize VS Code when [working without Tabs](/docs/getstarted/userinterface.md#working-without-tabs).
+タブなしで作業したい場合のVS Code最適化方法を[タブなしで作業](/docs/getstarted/userinterface.md#working-without-tabs)で参照してください。
 
-### Tab ordering
+## タブ順序
 
-By default, new Tabs are added to the right of the existing Tabs but you can control where you'd like new Tabs to appear with the `workbench.editor.openPositioning` setting.
+既定では新しいタブを既存のタブの右側に追加しますが`workbench.editor.openPositioning`設定で新しいタブを表示する場所を制御できます。
 
-For example, you might like new tabbed items to appear on the left:
+タブを左側に表示するようにするには次を設定します:
 
 ```json
     "workbench.editor.openPositioning": "left"
 ```
 
-## Preview mode
+## プレビューモード
 
-When you simply single-click or select a file in the Explorer, it is shown in a preview mode and reuses an existing Tab. This is useful if you are quickly browsing files and don't want every visited file to have its own Tab. When you start editing the file or use double-click to open the file from the Explorer, a new Tab is dedicated to that file.
+新しいタブで開かず既存のタブを利用するプレビューモードは、エクスプローラーでファイルをシングルクリックまたは選択することでできます。これは複数のファイルを見たいとき、開いたファイルごとのタブを作りたくない場合に便利です。編集を始めるときは、ファイルをダブルクリックして新しいタブでそのファイルを開きます。
 
-Preview mode is indicated by italics in the Tab heading:
+プレビューモードはタブの見出しをイタリック体で表示します:
 
 ![preview mode](images/userinterface/preview-tab.png)
 
-If you'd prefer to not use preview mode and always create a new Tab, you can control the behavior with these settings:
+プレビューモードを使用せず、常に新しいタブを作成したい場合は次の設定で制御できます:
 
-* `workbench.editor.enablePreview` to globally enable or disable preview editors
-* `workbench.editor.enablePreviewFromQuickOpen` to enable or disable preview editors when opened from **Quick Open**
+* `workbench.editor.enablePreview` : 開いているエディタをプレビューとして表示するかどうかを制御
+* `workbench.editor.enablePreviewFromQuickOpen` : Quick Openで開いたエディタをプレビューとして表示するかどうかを制御
 
-## Editor Groups
+## エディタグループ
 
-When you split an editor (using the **Split Editor** or **Open to the Side** commands), a new editor region is created which can hold a group of items.  VS Code allows up to three editor groups which are designated **LEFT**, **CENTER**, and **RIGHT**.
+エディターを分割(**Split Editor**, **Open to the Side**)することで、エディタグループを配置する新しいレイアウトを作成できます。VS Codeは**左**、**中央**、**右**の3つのエディタグループまで作成できます。
 
-You can see these clearly in the **OPEN EDITORS** section at the top of the Explorer view:
+エクスプローラー上部の**開いているエディタ**で現在の配置を見ることができます:
 
 ![tabs editor groups](images/userinterface/tabs-editor-groups.png)
 
-You can Drag and Drop editor groups on the workbench, move individual Tabs between groups and quickly close entire groups (**Close All**).
+これを利用することでワークベンチ上のエディタグループを、ドラッグアンドドロップしたり、グループ間移動でのタブ移動そしてグループをすばやく閉じることができます。(**すべてのエディターを閉じる**)
 
->**Note:** VS Code uses editor groups whether or not you have enabled Tabs.  Without Tabs, editor groups are simply a stack of your open items with the most recently selected item visible in the editor pane.
+>**Note:** VS Codeはタブの有効に関係なしにエディタグループを使用します。タブがない場合は、エディタグループは開いている項目のスタックにすぎず、エディタペインで最後に選択した項目を表示します。
+(編集メモ: 訳し方がわからなかった
 
-### Horizontal layout
+### 水平レイアウト
 
-By default, editor groups are laid out in three vertical columns. If you prefer, you can change the layout to be three horizontal rows with editor groups designated **TOP**, **CENTER**, and **BOTTOM**.
+既定の設定でエディタグループは縦3列にレイアウトします。ですが必要に応じて **上**、**中央**、**下**のように横3行レイアウトに変更することが可能です。
 
-You can toggle the editor group layout between vertical and horizontal with:
+次の方法で垂直と水平レイアウトを切り替えます:
 
-* **View** > **Toggle Editor Group Layout** menu
-* **View: Toggle Editor Group Vertical/ Layout** command in the **Command Palette** (`kb(workbench.action.showCommands)`)
-* Toggle button in the **OPEN EDITORS** tool bar
-* `kb(workbench.action.toggleEditorGroupLayout)` keyboard shortcut
+* **表示** > **エディタ グループ レイアウトの切り替え*
+* **View: Toggle Editor Group Vertical/ Layout**コマンド (コマンドパレット内)
+* **開いているエディタ** のレイアウト切り替えボタン
+* `kb(workbench.action.toggleEditorGroupLayout)` キーボードショートカット
 
-### Keyboard Shortcuts
+### キーボードショートカット
 
-Here are some handy keyboard shortcuts to quickly navigate between editors and editor groups.
+エディタとエディタグループを素早く移動するための便利なキーボードショートカットを次に示します。
 
->If you'd like to modify the default keyboard shortcuts, see [Key Bindings](/docs/getstarted/keybindings.md) for details.
+> 既定のキーボードショートカットを変更する場合は [Key Bindings](/docs/getstarted/keybindings.md)を参照してください。
 
-* `kb(workbench.action.nextEditor)` go to the right editor.
-* `kb(workbench.action.previousEditor)` go to the left editor.
-* `kb(workbench.action.openNextRecentlyUsedEditorInGroup)` open the next editor in the editor group MRU list.
-* `kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)` open the previous editor in the editor group MRU list.
-* `kb(workbench.action.focusFirstEditorGroup)` go to the leftmost editor group.
-* `kb(workbench.action.focusSecondEditorGroup)` go to the center editor group.
-* `kb(workbench.action.focusThirdEditorGroup)` go to the rightmost editor group.
-* `kb(workbench.action.focusPreviousGroup)` go to the previous editor group.
-* `kb(workbench.action.focusNextGroup)` go to the next editor group.
-* `kb(workbench.action.closeActiveEditor)` close the active editor.
-* `kb(workbench.action.closeEditorsInGroup)` close all editors in the editor group.
-* `kb(workbench.action.closeAllEditors)` close all editors.
+* `kb(workbench.action.nextEditor)` 次のエディターで開く
+* `kb(workbench.action.previousEditor)` 以前のエディターを開く
+* `kb(workbench.action.openNextRecentlyUsedEditorInGroup)` グループ内の最近使用したエディターのうち次のエディターを開く
+* `kb(workbench.action.openPreviousRecentlyUsedEditorInGroup)` グループ内の最近使用したエディターのうち前のエディターを開く
+* `kb(workbench.action.focusFirstEditorGroup)` 最初のエディタ グループにフォーカス
+* `kb(workbench.action.focusSecondEditorGroup)` 2番目のエディタ グループにフォーカス
+* `kb(workbench.action.focusThirdEditorGroup)` 3番目のエディタ グループにフォーカス
+* `kb(workbench.action.focusPreviousGroup)` 前のグループにフォーカス
+* `kb(workbench.action.focusNextGroup)` 次のグループにフォーカス
+* `kb(workbench.action.closeActiveEditor)` エディターを閉じる
+* `kb(workbench.action.closeEditorsInGroup)` グループ内のすべてのエディターを閉じる
+* `kb(workbench.action.closeAllEditors)` すべてのエディターを閉じる
 
-## Working without Tabs
+## タブなしで作業
 
-If you prefer not to use Tabs (tabbed headings), you can disable Tabs (tabbed headings) entirely by setting `workbench.editor.showTabs` to false.
+タブ(タブ付き見出し)を使用したくない場合は、この機能を`workbench.editor.showTabs`を`false`にして無効にすることができます。
 
-### Disable Preview mode
+### プレビューモードの無効化
 
-Without Tabs, the **OPEN EDITORS** section of the File Explorer is a quick way to do file navigation.  With [preview editor mode](/docs/getstarted/userinterface.md#preview-mode), files are not added to the **OPEN EDITOR** list nor editor group on single-click open. You can disable this feature through the `workbench.editor.enablePreview` and `workbench.editor.enablePreviewFromQuickOpen` settings.
+ファイルエクスプローラーの**開いているエディタ**はファイル移動をタブなしで素早く行う方法です。[プレビューモード](/docs/getstarted/userinterface.md#preview-mode)ではシングルクリックをしたとき**開いているエディタ**やエディタグループにファイル追加しません。この機能を`workbench.editor.enablePreview`と`workbench.editor.enablePreviewFromQuickOpen`設定で無効化できます。
 
-### Ctrl+Tab to navigate in entire editor history
+## Ctrl+Tabでエディタグループの一覧を表示するのではなく、最近開いた項目一覧にする
 
-You can change keybindings for `kbstyle(Ctrl+Tab)` to show you a list of all opened editors from the history independent from the active editor group.
+`kbstyle(Ctrl+Tab)`のキーバインドを変更して、開いているエディタグループ一覧を、(現在のエディタグループとは関係ない)最近開いた項目を表示することができます。
 
-Edit your [keybindings](/docs/getstarted/keybindings.md) and add the following:
+[キーバインド](/docs/getstarted/keybindings.md) で次を追記します:
 
 ```json
 { "key": "ctrl+tab", "command": "workbench.action.openPreviousEditorFromHistory" },
 { "key": "ctrl+tab", "command": "workbench.action.quickOpenNavigateNext", "when": "inQuickOpen" },
 ```
 
-### Close an entire group instead of a single editor
+### 1つのエディターを閉じるのではなく、全体を閉じるようにする
 
-If you liked the behavior of VS Code closing an entire group when closing one editor, you can bind the following in your [keybindings](/docs/getstarted/keybindings.md).
+既定の設定でkb(workbench.action.closeEditorsInGroup)は1つのエディターを閉じるように割り当てられています。これをぜんぶのエディターを閉じるようにしたくなったら[キーバインド](/docs/getstarted/keybindings.md)に次を設定することができます。
 
 Mac:
 
@@ -270,21 +271,24 @@ Windows/Linux:
 { "key": "ctrl+w", "command": "workbench.action.closeEditorsInGroup" }
 ```
 
-## Window Management
+## ウィンドウ管理
 
-VS Code has some options to control how windows (instances) should be opened or restored between sessions.
+VS Codeにはセッション間でウィンドウ(インスタンス)を開くか復元するかを制御するオプションがあります。
 
-The settings `window.openFoldersInNewWindow` and `window.openFilesInNewWindow` are provided to configure opening new windows or reusing the last active window for files or folders and possible values are `default`, `on` and `off`.
+`window.openFoldersInNewWindow`と`window.openFilesInNewWindow`は
+ファイル、フォルダーを新しいウィンドウで開くか、最後のアクティブ ウィンドウで開くかを制御します。可能な値は`default` ` on` `off`です。
 
-If configured to be `default`, we will make the best guess about reusing a window or not based on the context from where the open request was made. Flip this to `on` or `off` to always behave the same. For example, if you feel that picking a file or folder from the **File** menu should always open into a new window, set this to `on`.
+- default: アプリケーション内で([ファイル] メニューなどから)選択したものでなければ、新しいウィンドウでフォルダーを開く
+- on: 新しいウィンドウでフォルダーを開く
+- off: 最後のアクティブ ウィンドウでフォルダーを開く
 
-Note: There can still be cases where this setting is ignored (for example, when using the `-new-window` or `-reuse-window` command line option).
+Note: この設定は無視される場合もあります (-new-windowまたは -reuse-windowコマンド ライン オプションを使用する場合など)。
 
-The `window.reopenFolders` setting tells VS Code how to restore the opened windows of your previous session. By default, VS Code will
-reopen the last opened folder you worked on (setting: `one`). Change this setting to `none` to never reopen any folders and always start with an empty VS Code instance. Change it to `all` to restore all folders you worked on during your previous session.
+`window.reopenFolders`設定は、VS Codeが再起動後にフォルダーを再度開く方法を制御します。
+規定でVS Codeは、最後に作業したフォルダーを再度開きます(setting: `one`)。フォルダーを再度開くことなく、常に空の状態でVS Codeインスタンスを起動するには`none`に設定を変更します。`all`を選択すると前回のセッションのフォルダーすべてを再度開きます。
 
-## Next Steps
+## 次のステップ
 
-Now that you know the overall layout of VS Code, start to customize the editor to how you like to work by looking at the following topics:
+VS Codeの全体的なレイアウトを確認できました。次のトピックを見てエディタでカスタマイズする方法を確認します:
 
 * [Changing the Theme](/docs/getstarted/themes.md) - Set a Color and/or File Icon theme to your preference.
