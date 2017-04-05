@@ -6,11 +6,11 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 拡張機能は、それが必要になるまで読み込まれません。その結果、拡張機能をアクティブにする必要があるときVS Codeにコンテキストを提供する必要があります。次のアクティブイベントをサポートしています:
 
-* [`onLanguage:${language}`](/docs/extensionapi/activation-events.md#activationeventsonlanguage)
-* [`onCommand:${command}`](/docs/extensionapi/activation-events.md#activationeventsoncommand)
-* [`onDebug:${type}`](/docs/extensionapi/activation-events.md#activationeventsondebug)
-* [`workspaceContains:${toplevelfilename}`](/docs/extensionapi/activation-events.md#activationeventsworkspacecontains)
-* [`*`](/docs/extensionapi/activation-events.md#activationevents)
+* `onLanguage:${language}`
+* `onCommand:${command}`
+* `onDebug:${type}`
+* `workspaceContains:${toplevelfilename}`
+* `*`
 
 また、[`package.json` extension manifest](/docs/extensionapi/extension-manifest.md) の概要と必須フィールドについても説明します。
 

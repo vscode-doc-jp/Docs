@@ -6,18 +6,6 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 
 このドキュメントでは[`package.json`](/docs/extensionapi/extension-manifest.md)で定義する様々なコントリビューションポイントについて説明します。
 
-* [`configuration`](/docs/extensionapi/extension-points.md#contributesconfiguration)
-* [`commands`](/docs/extensionapi/extension-points.md#contributescommands)
-* [`menus`](/docs/extensionapi/extension-points.md#contributesmenus)
-* [`keybindings`](/docs/extensionapi/extension-points.md#contributeskeybindings)
-* [`languages`](/docs/extensionapi/extension-points.md#contributeslanguages)
-* [`debuggers`](/docs/extensionapi/extension-points.md#contributesdebuggers)
-* [`breakpoints`](/docs/extensionapi/extension-points.md#contributesbreakpoints)
-* [`grammars`](/docs/extensionapi/extension-points.md#contributesgrammars)
-* [`themes`](/docs/extensionapi/extension-points.md#contributesthemes)
-* [`snippets`](/docs/extensionapi/extension-points.md#contributessnippets)
-* [`jsonValidation`](/docs/extensionapi/extension-points.md#contributesjsonvalidation)
-
 ## contributes.configuration
 
 ユーザーに公開する設定の構成キーを提供します。これによりユーザーは、ユーザー設定またはワークスペース設定のいずれかで構成オプションを設定できます。

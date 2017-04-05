@@ -1,5 +1,5 @@
 ---
-title: Intro Videos Overview
+title: イントロ ビデオ
 MetaDescription: Overview of VS Code's Introductory Videos.
 commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ---
