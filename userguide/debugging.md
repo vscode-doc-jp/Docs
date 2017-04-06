@@ -1,7 +1,7 @@
 ---
 title: Debugging
 MetaDescription: One of the great things in Visual Studio Code is debugging support.  Set breakpoints, step-in, inspect variables and more.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 One of the key features of Visual Studio Code is its great debugging support. VS Code's built-in debugger helps accelerate your edit, compile and debug loop.

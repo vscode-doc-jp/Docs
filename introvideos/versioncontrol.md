@@ -1,7 +1,7 @@
 ---
 title: Git Version Control in VS Code
 MetaDescription: Learn how to use Git version control basics in VS Code.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 In this tutorial we will learn how to use the basics of Git version control in VS Code.

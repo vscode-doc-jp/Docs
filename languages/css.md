@@ -1,7 +1,7 @@
 ---
 title: CSS, Sass and Lessサポート
 MetaDescription: Find out how Visual Studio Code can support your CSS, Sass and Less development.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Visual Studio Codは、スタイルシートでCSS `.css`、 Sass `.scss`、 Less `.less`による編集を標準でサポートしています。拡張機能をインストールすることでより多くの機能性を得ることができます。

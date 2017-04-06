@@ -1,14 +1,14 @@
 ---
-title: LinuxでVisual Studio Codeを起動する
+title: Linux で VS Code を実行する
 MetaDescription: Get Visual Studio Code up and running on Linux.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 ## インストール
 
 ### DebianとUbuntuディストリビューション
 
-Debian/Ubuntuディストリビューションでインストールするもっとも簡単な方法は、[.deb package (64-bit)](http://go.microsoft.com/fwlink/?LinkID=760868)をソフトウェアセンタからダウンロードしてインストールすることです。
+Debian/Ubuntuディストリビューションでインストールする最も簡単な方法は、[.deb package (64-bit)](http://go.microsoft.com/fwlink/?LinkID=760868)をソフトウェアセンタからダウンロードしてインストールすることです。
 
 ```bash
 sudo dpkg -i <file>.deb
@@ -41,12 +41,19 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 ```
 
-そうしたらパッケージキャッシュを更新して、パッケージからインストールします:
+そうしたらパッケージキャッシュを更新し、`dnf` (Fedora 22以降)を使用してインストールします:
 
+```bash
+dnf check-update
+sudo dnf install code
+```
+
+古い`yum`を使用する場合:
 ```bash
 yum check-update
 sudo yum install code
 ```
+
 ### openSUSEとSLEディストリビューション
 
 上記のyumレポジストリは、openSUREとSLE OSでも動作します。次のスクリプトでキーとリポジトリをインストールしてください:
@@ -65,10 +72,10 @@ sudo zypper install code
 
 ### .rpmパッケージを手動でインストール
 
-[.rpm package (64-bit)](http://go.microsoft.com/fwlink/?LinkID=760867)をダウンロードしてインストールすることもできますが、上記のリポジトリーがある場合を除き自動更新は機能しません。ダウンロードしたパッケージは、パッケージマネージャー(たとえばyum)を使ってインストールできます。
+[.rpm package (64-bit)](http://go.microsoft.com/fwlink/?LinkID=760867)をダウンロードしてインストールすることもできますが、上記のリポジトリーがある場合を除き自動更新は機能しません。ダウンロードしたパッケージは、パッケージマネージャー(例えばdnf)を使ってインストールできます。
 
 ```bash
-sudo yum install <file>.rpm
+sudo dnf install <file>.rpm
 ```
 
 32-bitや.tar.gzでも利用できます。~~[download page](/Download)~~
@@ -105,7 +112,7 @@ sudo update-alternatives --set editor /usr/bin/code
 
 ## 次のステップ
 
-VS Codeをインストールし終えたら、次のトピックでVS Codeの詳細を学ぶことができます。
+VS Codeをインストールし終えたら、以下のトピックでVS Codeの詳細を学ぶことができます。
 
 * [Additional Components](/docs/setup/additional-components.md) - Learn how to install Git, Node.js, TypeScript and tools like Yeoman.
 * [User Interface](/docs/getstarted/userinterface.md) - A quick orientation to VS Code.
@@ -115,7 +122,7 @@ VS Codeをインストールし終えたら、次のトピックでVS Codeの詳
 
 ### Azure VMの問題
 
-"Running without the SUID sandbox"エラーとは何ですか?
+"Running without the SUID sandbox"エラーとは何ですか？
 
 気にしなくて平気です。無視してください。
 
@@ -172,7 +179,7 @@ sudo dnf update
 
 ### code binコマンドは、ウィンドウをUbuntuの最前面に表示しない
 
-VS Codeがすでにディレクトリーを開いているときUbuntuで 'code .'を実行すると、VS Codeを最前面で表示しません。これはOSの機能である`ccsm`を使用して無効にできます。
+VS Codeが既にディレクトリーを開いているときUbuntuで 'code .'を実行すると、VS Codeを最前面で表示しません。これはOSの機能である`ccsm`を使用して無効にできます。
 
 ```
 # Install

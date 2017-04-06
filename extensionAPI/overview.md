@@ -1,7 +1,7 @@
 ---
 title: 拡張機能リファレンス
 MetaDescription: Learn the details of Visual Studio Code's rich extensibility (plug-in) model.  This documentation describes the various extension points, activation rules and specific feature APIs (e.g. working with documents and editors).
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 このドキュメントのこのセクションでは、VS Code拡張機能の様々な機能について詳しく説明します。[extensions](/docs/extensions/overview.md)の見直しだけではなく、['Hello World'](/docs/extensions/example-hello-world.md)の例をより深く掘り下げることによる価値があります。

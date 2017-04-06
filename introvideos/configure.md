@@ -1,7 +1,7 @@
 ---
 title: Customize VS Code
 MetaDescription: Learn how to configure Visual Studio Code, including settings, keybindings, and snippets
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 In this tutorial, we show you how to personalize Visual Studio Code.

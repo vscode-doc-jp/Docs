@@ -1,7 +1,7 @@
 ---
 title: Extension in VS Code
 MetaDescription: Use extensions in Visual Studio Code to add new features, themes, and more.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Use extensions to add new features, themes and more. In this tutorial, we will show you how to find extensions, install the ones you like, and disable extensions you don't want to use all the time.

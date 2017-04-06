@@ -1,7 +1,7 @@
 ---
 title: ユーザーとワークスペース設定
 MetaDescription: How to modify Visual Studio Code User and Workspace Settings.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 VS Codeを好みの設定で構成できます。VS Codeのエディタ、ユーザーインターフェイス、および機能的な動作のほぼすべての部分に、変更可能なオプションを用意しています

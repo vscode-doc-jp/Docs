@@ -1,7 +1,7 @@
 ---
 title: Office
 MetaDescription: This page walks you through how to scaffold out a project for VS Code that extends Office.  See how to use the features of VS Code and integrate your Add-in with Office/Office 365.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 [Office Add-ins](https://dev.office.com/getting-started/addins) run inside an Office application and can interact with the contents of the Office document using the rich JavaScript API.

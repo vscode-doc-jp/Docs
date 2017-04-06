@@ -1,8 +1,10 @@
 ---
 title: Extension Manifest - package.json
 MetaDescription: At the core of Visual Studio Code's extensibility model is an extension (plug-in) manifest file where your extension declares its extension type(s), activation rules and runtime resources.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+
+
 
 全てのVisual Studio Code拡張機能には、拡張機能フォルダのルートにマニフェストファイル`package.json`が必要です。
 
@@ -22,7 +24,7 @@ Name | Required | Type | Details
 `galleryBanner` | | `object` | アイコンに合うようにMarketplaceのフォーマット(主にバナー)を指定します。詳細は下記を参照してください。
 `preview` | | `boolean` |MarketplaceのラベルにPreviewフラグを設定します。
 `main` | | `string` | 拡張機能のエントリーポイントを指定します。
-[`contributes`](/docs/extensionapi/extension-points.md) | | `object` | 拡張機能の[contributions](/docs/extensionapi/extension-points.md)を指定するオブジェクトです。
+[`contributes`](/docs/extensionapi/extension-points.md) | | `object` | 拡張機能の[コントリビューション](/docs/extensionapi/extension-points.md)を指定するオブジェクトです。
 [`activationEvents`](/docs/extensionapi/activation-events.md) | | `array` | 拡張機能を[ロードするタイミング](/docs/extensionapi/activation-events.md)を指定します。
 `badges` | | `array` | Marketplaceのサイドバーに表示するバッジの配列です。例: バッジの画像URLを示す`url`、バッジのリンク先`href`と`description`
 `markdown` | | `string` | MarketplaceのMarkdownレンタリングエンジンを制御します。`github`(既定)か`standard`のいずれかを指定します。
@@ -170,7 +172,7 @@ License | `license`
 
 ## Combining Extension Contributions
 
-`yo code`ジェネレーターを使うとTextMateテーマ、カラライザー、スニペットを簡単にパッケージ化して新しい拡張機能を作成できます。これを実行したとき、ジェネレーターはオプションに沿ってそれぞれ完全な独立型の拡張機能パッケージを作成します。しかし、複数のコントリビューションを組み合わせた拡張機能のほうが便利です。たとえば、新しい言語のサポートを追加する場合は、ユーザーにカラライザーとスニペット、さらにはデバッグサポートの両方の言語定義を提供したいと考えると思います。
+`yo code`ジェネレーターを使うとTextMateテーマ、カラライザー、スニペットを簡単にパッケージ化して新しい拡張機能を作成できます。これを実行したとき、ジェネレータはオプションに沿ってそれぞれ完全な独立型の拡張機能パッケージを作成します。しかし、複数のコントリビューションを組み合わせた拡張機能のほうが便利です。たとえば、新しい言語のサポートを追加する場合は、ユーザーにカラライザーとスニペット、さらにはデバッグサポートの両方の言語定義を提供したいと考えると思います。
 
 拡張機能のコントリビューションを結合するには、既存の拡張マニフェスト`package.json`を編集して、新しいコントリビューションと関連ファイルを追加するだけです。
 
@@ -240,10 +242,21 @@ Extension Packは他のコントリビューションを含めることができ
 
 Extension Packには`yo code` Yeoman generatorを使用できます。オプションでVS Codeインスタンスに現在インストールされている拡張機能をパックに含めることも可能です。このように、お気に入りの拡張機能でExtension Packを簡単に作成し、Marketplaceに公開して他のユーザーと共有することができます。
 
+## 便利なNodeモジュール
+
+VS Code拡張機能の作成に役立つNode.jsモジュールがnpmjsにあります。これらを拡張機能の`dependencies`に含めることができます。
+
+* [vscode-nls](https://www.npmjs.com/package/vscode-nls) - 外部化とローカライズのサポート
+* [vscode-uri](https://www.npmjs.com/package/vscode-uri) - VS Codeとその拡張機能で使用されるURIの実装
+* [jsonc-parser](https://www.npmjs.com/package/jsonc-parser) - コメントを無視してJSONを処理する寛容なパーサー
+* [request-light](https://www.npmjs.com/package/request-light) - 軽量のNode.jsリクエスト ライブラリ（プロキシサポートあり）
+* [vscode-extension-telemetry](https://www.npmjs.com/package/vscode-extension-telemetry) - VS Code拡張機能のためのテレメトリレポートの統一
+* [vscode-languageclient](https://www.npmjs.com/package/vscode-languageclient) - [language server protocol](https://github.com/Microsoft/language-server-protocol)に準じた言語サーバーを簡単に統合
+
 ## 次のステップ
 
 VS Codeの拡張モデルの詳細については次のトピックを試してください:
 
 * [Contribution Points](/docs/extensionapi/extension-points.md) - VS Code contribution points reference
 * [Activation Events](/docs/extensionapi/activation-events.md) - VS Code activation events reference
-* [Extension Marketplace](/docs/userguide/extension-gallery.md) - Read more about the VS Code Extension Marketplace
+* [Extension Marketplace](/docs/getstarted/extension-gallery.md) - Read more about the VS Code Extension Marketplace

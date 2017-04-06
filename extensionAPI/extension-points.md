@@ -1,10 +1,22 @@
 ---
 title: Contribution Points - package.json
 MetaDescription: To extend Visual Studio Code, your extension (plug-in) declares which of the various contribution points it is using in its package.json extension manifest file.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 このドキュメントでは[`package.json`](/docs/extensionapi/extension-manifest.md)で定義する様々なコントリビューションポイントについて説明します。
+
+* [`configuration`](/docs/extensionapi/extension-points.md#contributesconfiguration)
+* [`commands`](/docs/extensionapi/extension-points.md#contributescommands)
+* [`menus`](/docs/extensionapi/extension-points.md#contributesmenus)
+* [`keybindings`](/docs/extensionapi/extension-points.md#contributeskeybindings)
+* [`languages`](/docs/extensionapi/extension-points.md#contributeslanguages)
+* [`debuggers`](/docs/extensionapi/extension-points.md#contributesdebuggers)
+* [`breakpoints`](/docs/extensionapi/extension-points.md#contributesbreakpoints)
+* [`grammars`](/docs/extensionapi/extension-points.md#contributesgrammars)
+* [`themes`](/docs/extensionapi/extension-points.md#contributesthemes)
+* [`snippets`](/docs/extensionapi/extension-points.md#contributessnippets)
+* [`jsonValidation`](/docs/extensionapi/extension-points.md#contributesjsonvalidation)
 
 ## contributes.configuration
 
@@ -42,7 +54,6 @@ commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
 ## contributes.configurationDefaults
 
 既定の言語固有のエディター構成を提供します。これにより、提供された言語の既定のエディター構成を上書きします。
-
 次の例は`markdown`の既定のエディター設定を提供します:
 
 ### Example
@@ -90,6 +101,9 @@ contributes": {
 * エディターのタイトル メニュー - `editor/title`
 * エディターのタイトルのコンテキスト メニュー - `editor/title/context`
 * デバッグ コールスタックのコンテキスト メニュー - `debug/callstack/context`
+* The [SCM title menu](/docs/extensionapi/api-scm.md#menus) - `scm/title`
+* [SCM resource groups](/docs/extensionapi/api-scm.md#menus) menus - `scm/resourceGroup/context`
+* [SCM resources](/docs/extensionapi/api-scm.md#menus) menus - `scm/resource/context`
 
 >**Note:** コマンドが(コンテキスト)メニューから呼び出されると、VS Codeは現在選択されているリソースを推定しようとして、コマンドを呼び出すときにパラメーターとして渡します。たとえば、エクスプローラー内のメニュー項目は選択したリソースのURLを渡して、エディタ内のメニュー項目ではドキュメントのURLを渡します。
 
@@ -124,7 +138,7 @@ contributes": {
 
 ![Menu Group Sorting](images/extension-points/groupSorting.png)
 
-あなたはこのグループでメニュー項目を追加したり、メニュー項目の新しいグループを上下中央のいずれかに追加したりできます。エディターのコンテキストメニューのみがこのグループ化の制御許されています。
+あなたはこのグループでメニュー項目を追加したり、メニュー項目の新しいグループを上下中央のいずれかに追加できます。エディターのコンテキストメニューのみがこのグループ化の制御許されています。
 
 ### Sorting inside groups
 
@@ -142,7 +156,7 @@ contributes": {
 
 ユーザーがキーの組み合わせを押したときに呼びだすキー バインドを提供します。キー バインドについて詳しく説明している[Key Bindings](/docs/getstarted/keybindings.md)トピックを確認してください。
 
-キー バインドを提供すると、既定のキーボードショートカットと全てのUI表現に追加のキーバインドを表示します。もちろんユーザーがキーの組み合わせを押せば、コマンドを呼び出せます。
+キー バインドを提供すると、既定のキーボードショートカットと全てのUI表現に追加のキーバインドを表示します。もちろんユーザーがキーの組み合わせを押すば、コマンドを呼び出せます。
 
 >**Note:** VS CodeはWindows、Mac、Linux上で動作します。修飾子が異なる場合には"key"を使用して規定のキー組み合わせを設定し、特定のOS上で上書きしてください。
 
@@ -167,7 +181,7 @@ WindowsとLinuxで`kbstyle(Ctrl+F1)`、Macでは`kbstyle(Cmd+F1)`を定義して
 
 ## contributes.languages
 
-言語の宣言を提供します。これは新しい言語を導入したり、既にVS Codeにある言語に関する情報を補充したりします。
+言語の宣言を提供します。これは新しい言語を導入したり、既にVS Codeにある言語に関する情報を補充します。
 
 これにおいて、言語を基本的にファイルに関連付けられた文字列の識別子で表します。(参照`TextDocument.getLanguageId()`)
 
@@ -244,12 +258,12 @@ language-configuration.json
 
 * `type` は起動設定でこのデバッガーを識別する固有のIDです。
 * `label` はデバッグ アダプターの表示名です。
-* `program` は実際のデバッガーまたはランタイムに対してVS Codeデバッグ プロトコルを実装する、デバッグ アダプター プログラムへのパスです。
+* `program` は実際のデバッガまたはランタイムに対してVS Codeデッグ プロトコルを実装する、デバッグ アダプター プログラムへのパスです。
 * `runtime` はデバッグ アダプターのプログラム属性が実行可能ファイルではなく、ランタイムが必要な場合に指定します。
 * `configurationAttributes` は`launch.json' を検証するためのJSONスキーマ構成です。
 * `initialConfigurations` は初期 'launch.json'を生成するための構成です。
 * `configurationSnippets` は`launch.json`を編集するときにIntelliSenseで新しい構成を追加するためのスニペットを構成します。
-* `variables` は置換変数を導入して、デバッガー拡張拡張機能で実装したコマンドにバインドします。
+* `variables` は置換変数を導入して、デバッガ拡張拡張機能で実装したコマンドにバインドします。
 
 ### Example
 
@@ -322,7 +336,7 @@ language-configuration.json
 
 ## contributes.grammars
 
-TextMate文法を提供します。文法を適応する`language`に文法とファイルパスのためのTextMate `scopeName`を提供しなければなりません。
+TextMate文法を提供します。あなたは文法を適応する`language`に文法とファイルパスのためのTextMate `scopeName`を提供しなければなりません。
 
 >**Note:** 文法を含むファイルは、JSON(.jsonで終わるファイル名)またはXML plist format (全てファイル)にすることができます。
 

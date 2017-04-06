@@ -1,7 +1,7 @@
 ---
 title: C# programming
 MetaDescription: Find out how to get the best out of Visual Studio Code and C#.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 # Working with C&#35;
 

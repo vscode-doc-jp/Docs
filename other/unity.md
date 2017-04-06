@@ -1,7 +1,7 @@
 ---
 title: Unity
 MetaDescription: Visual Studio Code can replace MonoDevelop as the editor for Unity
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Visual Studio Code can be a great companion to Unity for editing and debugging C# files.  All of the [C#](/docs/languages/csharp.md) features are supported and more.  In the screen below you can see code colorization, bracket matching, IntelliSense, CodeLens and that's just the start.

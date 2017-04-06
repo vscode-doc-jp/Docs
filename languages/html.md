@@ -1,7 +1,7 @@
 ---
 title: HTML Programming
 MetaDescription: Get the best out of Visual Studio Code for HTML development
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 VS Code provides basic support for HTML programming out of the box. Install an extension for greater functionality.

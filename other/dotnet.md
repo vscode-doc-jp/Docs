@@ -1,7 +1,7 @@
 ---
 title: .NET Core
 MetaDescription: Visual Studio Code has great support for writing and debugging .NET Core applications.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 [.NET Core](https://docs.microsoft.com/en-us/dotnet/articles/welcome)はWindows, Linux, Macでサーバーアプリケーションを作成実行できる高速なモジュラープラットホームを提供します。C# IntelliSense(賢いコード補完)とデバッグを完全にサポートする強力な編集経験を得るために、C#拡張機能をもつVisual Studio Codeを利用してください。

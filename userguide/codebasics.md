@@ -1,7 +1,7 @@
 ---
 title: Basic Editing
 MetaDescription: Learn about the basic editing features of Visual Studio Code. Search, multiple selection, code formatting.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Visual Studio Code is an editor first and foremost and includes the features you need for highly productive source code editing. This topic takes you through the basics of the editor and helps you get moving with your code.

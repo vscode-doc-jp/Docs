@@ -1,7 +1,7 @@
 ---
 title: Themes, Snippets and Colorizers
 MetaDescription: How to add themes, snippets and colorization and bracket matching to Visual Studio Code. TextMate .tmLanguage files are supported.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Custom themes, snippets and language syntax colorizers bring an editor to life. There are lots of existing TextMate customization files available and VS Code lets you easily package and reuse these. You can directly use `.tmTheme`, `.tmSnippets`, and `.tmLanguage` files in your extensions and share them in the extension [Marketplace](https://marketplace.visualstudio.com/VSCode). This topic describes how to reuse TextMate files as well as create and share your own themes, snippets and colorizers.

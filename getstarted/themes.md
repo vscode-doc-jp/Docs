@@ -1,7 +1,7 @@
 ---
 title: テーマ
 MetaDescription: Changing the color theme in Visual Studio Code. You can use color themes provided by VS Code, the community or create your own new themes.  TextMate .tmTheme files are supported.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 配色テーマを使用することで好みや作業環境に合わせた、VS Codeの背景、テキスト、言語構文の色に変更できます。VS Codeは大きく分けてlight, dark, high contrastテーマをサポートしています。

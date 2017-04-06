@@ -1,7 +1,7 @@
 ---
 title: プログラミング言語
 MetaDescription: In Visual Studio Code we have support for all common languages including smart code completion and debugging.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 ## いくつものプログラミング言語サポート

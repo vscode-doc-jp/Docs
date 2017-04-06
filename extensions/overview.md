@@ -1,20 +1,16 @@
 ---
 title: Extending Visual Studio Code
 MetaDescription: Visual Studio Code has a rich extensibility model for interacting with and adding to the tool.  Learn how to create your own extensions (plug-ins) for Visual Studio Code.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 もしVS Codeの拡張機能に興味があるなら、ここ情報は役に立つはずです。ここでは、VS Codeの拡張に関するドキュメント概要と、最初のVS Codeを作成する方法について説明します。VS Codeの拡張に関する設計アプローチに興味があれば、[ここ](/docs/extensionapi/patterns-and-principles.md)で詳しく確認できます。
 
-既存の拡張機能を使用したい場合は、[Marketplace](/docs/userguide/extension-gallery.md)トピックを確認してください。トピックでVS Code [Marketplace](https://marketplace.visualstudio.com/VSCode)から検索してインストールする方法を紹介しています。
+既存の拡張機能を使用したい場合は、[Marketplace](/docs/getstarted/extension-gallery.md)トピックを確認してください。トピックでVS Code [Marketplace](https://marketplace.visualstudio.com/VSCode)から検索してインストールする方法を紹介しています。
 
-全ての拡張機能はcontribution(登録)、activation (読み込み)およびVS Code拡張APIへのアクセスのコモンモデルを共有します。しかし拡張機能のうち言語サーバーとデバッガは特殊です。これらは独自の追加プロトコルを使用しており、ドキュメントの独自のセクションで解説されます。
+全ての拡張機能はcontribution(登録)、activation (読み込み)およびVS Code拡張APIへのアクセスのコモンモデルを共有します。しかし拡張機能のうち言語サーバーとデバッガーは特殊です。これらは独自の追加プロトコルを使用しており、ドキュメントの独自のセクションで解説されます。
 
-1. [Extensions](#extensions)
-2. [Language Servers](#language-servers)
-3. [Debug Adapter](#debug-adapter)
-
-## Extensions
+## 拡張機能
 
 すべての拡張機能は共有拡張ホストプロセスで実行します。拡張機能のためのこの別プロセスは、VS Codeが完全な応答を維持することを保証します。
 

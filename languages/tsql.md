@@ -1,7 +1,7 @@
 ---
 title: Transact-SQL
 MetaDescription: Learn about Visual Studio Code editor features (code completion, debugging, snippets, linting) for Transact-SQL.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Turn Visual Studio Code into a powerful editor for [Transact-SQL]  (T-SQL) development with the [mssql] extension available in the VS Code Marketplace. The [mssql] extension is optimized to work with SQL Server running on-premises, in any cloud, Azure SQL Database, and Azure SQL Data Warehouse.

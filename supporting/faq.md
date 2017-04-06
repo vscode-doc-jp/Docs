@@ -10,7 +10,7 @@ commitid: 1a8eb77e5a36e9c984667acf6b2e6a164334bc27
 
 ## VS CodeとVS Communityの違いは何ですか？
 
-Visual Studio Codeはデバッグ、タスク、バージョンコントロールなどによる開発をサポートする合理化されたコードエディターです。開発者が迅速なCcode-Build-Debugに必要なツールだけを提供することを目的としており、複雑なワークフローはフル機能を持ったIDEにおいてきました。VS Codeの詳細な目標については [Why VS Code](/docs/editor/whyvscode.md) を参照してください。
+Visual Studio Codeはデバッグ、タスク、バージョンコントロールなどによる開発をサポートする合理化されたコードエディターです。開発者が迅速なCcode-Build-Debugに必要なツールだけを提供することを目的としており、複雑なワークフローはフル機能を持ったIDEにおいてきました。VS Codeの詳細な目標については [Why VS Code](/docs/getstarted/whyvscode.md) を参照してください。
 
 ## どのOSをサポートしますか？
 

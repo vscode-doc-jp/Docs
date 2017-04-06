@@ -1,7 +1,7 @@
 ---
 title: VS Code Extension Marketplace
 MetaDescription: Find out how to discover, add, update, disable and uninstall Visual Studio Code extensions (plug-ins) through the Extension Marketplace.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 **Increase the power of Visual Studio Code through Extensions**

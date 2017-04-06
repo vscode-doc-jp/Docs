@@ -1,12 +1,22 @@
 ---
 title: キーバインディング
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 Visual Studio Codeでは、ほとんどのタスクをキーボードから直接実行することが可能です。このページでは、デフォルトのバインディング(キーボードショートカット)とその更新方法を説明します。
 
 >**Note:** このページではアクセスしたプラットフォームのキーを表示します。他のプラットフォームを表示したい場合はマウスホバーしてください。
+
+## エディターのキーボードショートカット
+
+Visual Studio Codeは**キーボードショートカット**エディターを使用して、豊富で簡単なキーボードショートカットの編集ができます。これはキーバインドの有無にかかわらず使用可能なすべてのコマンドを一覧表示して、使用可能なアクションを使用してキーバインドを簡単に変更/削除/リセットできます。また上部には、コマンドやキーバインドの検索に役立つ検索窓があります。 * **ファイル**(**Code**)  > **基本設定** > **キーボード ショートカット**に移動してキーボードショートカットを構成します。
+
+![Keyboard Shortcuts](images/keybinding/keyboard-shortcuts.gif)
+
+ここで最も重要なのは、キーボードレイアウトに合わせてキーバインドを確認できることです。例えばドイツ語に変更された場合、USレイアウトで表される`cmd+\`キーは`ctrl+shift+alt+cmd+7`と表します。キーバインドを入力するダイアログでは、キーボードレイアウトごとに正しいキーボードバインドを割り当てます。
+
+高度なカスタマイズをするには[Advanced Customizations](/docs/getstarted/keybindings.md#advanced-customizations)を参照してください。
 
 ## キーマップの拡張機能
 
@@ -26,9 +36,11 @@ Visual Studio Codeでは、ほとんどのタスクをキーボードから直�
 * [macOS](https://go.microsoft.com/fwlink/?linkid=832143)
 * [Linux](https://go.microsoft.com/fwlink/?linkid=832144)
 
-## 基本編集
+## Default Keyboard Shortcuts
 
 >**Note:** 次のキーは標準のUSキーボードを想定してレンタリングしています。異なったキーボードレイアウトを使用する場合は[ここ](/docs/getstarted/keybindings.md#keyboard-layouts)を参照してください。
+
+### 基本編集
 
 (※VS Code i18nから引用し対応していない場合英文のままです
 
@@ -85,7 +97,7 @@ Key|Command|Command id
 `kb(toggleRenderWhitespace)`|空白文字の表示の切り替え|`toggleRenderWhitespace`
 `kb(editor.action.toggleWordWrap)`|Toggle Word Wrap|`editor.action.toggleWordWrap`
 
-## 言語編集
+### 言語編集
 
 Key|Command|Command id
 ---|-------|----------
@@ -94,6 +106,7 @@ Key|Command|Command id
 `kb(editor.action.formatDocument)`|Format Document|`editor.action.formatDocument`
 `kb(editor.action.formatSelection)`|Format Selection|`editor.action.formatSelection`
 `kb(editor.action.goToDeclaration)`|定義へ移動|`editor.action.goToDeclaration`
+`kb(editor.action.showHover)`|ホバーの表示|`editor.action.showHover`
 `kb(editor.action.previewDeclaration)`|定義をここに表示|`editor.action.previewDeclaration`
 `kb(editor.action.openDeclarationToTheSide)`|定義を横に開く|`editor.action.openDeclarationToTheSide`
 `kb(editor.action.quickFix)`|クイック修正|`editor.action.quickFix`
@@ -107,7 +120,7 @@ Key|Command|Command id
 `kb(workbench.action.editor.changeLanguageMode)`|言語モードの変更|`workbench.action.editor.changeLanguageMode`
 
 
-## ナビゲーション
+### ナビゲーション
 
 Key|Command|Command id
 ---|-------|----------
@@ -143,7 +156,7 @@ Key|Command|Command id
 `kb(workbench.action.moveActiveEditorGroupLeft)`|エディター グループを左側に移動する|`workbench.action.moveActiveEditorGroupLeft`
 `kb(workbench.action.moveActiveEditorGroupRight)`|エディター グループを右側に移動する|`workbench.action.moveActiveEditorGroupRight`
 
-## ファイル管理
+### ファイル管理
 
 Key|Command|Command id
 ---|-------|----------
@@ -168,7 +181,7 @@ Key|Command|Command id
 `kb(workbench.action.files.showOpenedFileInNewWindow)`|新しいウィンドウでアクティブ ファイルを開く|`workbench.action.files.showOpenedFileInNewWindow`
 `kb(workbench.files.action.compareFileWith)`|アクティブ ファイルを比較|`workbench.files.action.compareFileWith`
 
-## 表示
+### 表示
 
 Key|Command|Command id
 ---|-------|----------
@@ -193,7 +206,7 @@ Key|Command|Command id
 `kb(markdown.showPreviewToSide)`|Open Preview to the Side|`markdown.showPreviewToSide`
 `kb(workbench.action.terminal.toggleTerminal)`|統合端末の切り替え|`workbench.action.terminal.toggleTerminal`
 
-## 基本設定
+### 基本設定
 
 Key|Command|Command id
 ---|-------|----------
@@ -204,7 +217,7 @@ Key|Command|Command id
 `kb(workbench.action.selectTheme)`|配色テーマ|`workbench.action.selectTheme`
 `kb(workbench.action.configureLocale)`|言語を構成する|`workbench.action.configureLocale`
 
-## デバッグ
+### デバッグ
 
 Key|Command|Command id
 ---|-------|----------
@@ -217,16 +230,16 @@ Key|Command|Command id
 `kb(workbench.action.debug.stepOut)`|ステップ アウト|`workbench.action.debug.stepOut`
 `kb(workbench.action.debug.stepOver)`|ステップ オーバー|`workbench.action.debug.stepOver`
 `kb(workbench.action.debug.stop)`|停止|`workbench.action.debug.stop`
-`kb(editor.action.showHover)`|ホバーの表示|`editor.action.showHover`
+`kb(editor.debug.action.showDebugHover)`|ホバーの表示|`editor.debug.action.showDebugHover`
 
-## タスク
+### タスク
 
 Key|Command|Command id
 ---|-------|----------
 `kb(workbench.action.tasks.build)`|Run Build Task|`workbench.action.tasks.build`
 `kb(workbench.action.tasks.test)`|Run Test Task|`workbench.action.tasks.test`
 
-## 拡張機能
+### 拡張機能
 
 Key|Command|Command id
 ---|-------|----------
@@ -237,13 +250,13 @@ Key|Command|Command id
 `kb(workbench.extensions.action.showPopularExtensions)`|人気の拡張機能の表示|`workbench.extensions.action.showPopularExtensions`
 `kb(workbench.extensions.action.updateAllExtensions)`|すべての拡張機能を更新します|`workbench.extensions.action.updateAllExtensions`
 
-## ショートカットのカスタマイズ
+## 高度なカスタマイズ
 
 VS Code内すべてのキーボードショートカットは`keybindings.json`ファイルでカスタマイズすることができます。
 
-* **ファイル**(**Code**)  > **基本設定** > **キーボード ショートカット**に移動してキーボードショートカットを構成します。
+* キーボードショートカットをで設定するには、**Keyboard Shortcuts**エディターを開き、`keybindings.json`をクリックします。
 * これにより、左側に**既定のキーバインド**と右側に`keybindings.json`ファイルを開きます。右側のファイルで既定のキーバインド設定を上書きできます 。
-* なお上記のリストは完全なものではありません。既定のキーボードショートカット下の"Here are other available commands"でより多くを確認できます。
+* なお上記のリストは完全なものではありません。**既定のキーボードショートカット**下の"Here are other available commands"でより多くを確認できます。
 
 ## キーボードのルール
 
@@ -307,6 +320,20 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
 * `kbstyle(numpad0-numpad9)`, `kbstyle(numpad_multiply)`, `kbstyle(numpad_add)`, `kbstyle(nupad_separator)`
 * `kbstyle(numpad_subtract)`, `kbstyle(numpad_decimal)`, `kbstyle(numpad_divide)`
 
+## コマンドの引数
+
+引数を指定してコマンドを呼びだすことができます。これは、特定のファイルやフォルダーに対して同じ操作を繰り返し実行する場合などに便利な機能となります。カスタムキーボードショートカットを追加するだけで、必要な操作を正確に実行できます。
+
+既存の`kbstyle(Enter)`キーを上書きする例です：
+
+```json
+  { "key": "enter", "command": "type",
+                    "args": { "text": "Hello World" },
+                    "when": "editorTextFocus" }
+```
+
+"command": "type" により、Enterキーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディターに出力する動作となります。
+
 ## when節のコンテキスト
 
 VS Codeはオプションの`when`節を通して、キーバインディングの有効タイミングを細かく制御できます。なお`when`を設定していないキーバインディングは常に利用可能です。
@@ -351,8 +378,12 @@ resourceLangId | エクスプローラーもしくはエディターのタイト
 globalMessageVisible | VS Code上部のメッセージを表示しているとき
 searchViewletVisible | 検索ビューを開いているとき
 replaceActive | 検索ビューの置換ボックスを開いているとき
+**Configuration settings contexts** |
+config.editor.minimap.enabled | `editor.minimap.enabled`設定が`true`のとき
 
-上記のリストは完全なものではありません。既定のキーボードショートカットで`when`コンテキストを確認してください。
+>**Note**: 任意のユーザーまたはワークスペース設定で接頭辞`"config."`を持つブール値を使用できます。
+
+上記のリストは完全なものではありません。**既定のキーボードショートカット**で`when`コンテキストを確認してください。
 
 ## 特定のキーバインド ルールを削除
 
@@ -378,9 +409,9 @@ replaceActive | 検索ビューの置換ボックスを開いているとき
 
 >**Note:** このセクションはキーバインディングにのみ関連し、エディタでの入力には関係しません。
 
-上記のキー(印刷文字?)は仮想キーの文字列表現であり、押したときに入力される文字と必ずしも関連しません。詳細:
+上記のキー(印刷文字？)は仮想キーの文字列表現であり、押したときに入力される文字と必ずしも関連しません。詳細:
 
-* 参考: [Virtual-Key Codes (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85))
+* 参考: [Virtual-Key Codes (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731)
 * `kbstyle(tab)` for `VK_TAB` (`0x09`)
 * `kbstyle(;)` for `VK_OEM_1` (`0xBA`)
 * `kbstyle(=)` for `VK_OEM_PLUS` (`0xBB`)
@@ -416,7 +447,7 @@ replaceActive | 検索ビューの置換ボックスを開いているとき
 今回キーバインドサポートについて確認できました。次は何を...
 
 * [Language Support](/docs/languages/overview.md) - Our Good, Better, Best language grid to see what you can expect
-* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
+* [Debugging](/docs/getstarted/debugging.md) - This is where VS Code really shines
 * [Node.js](/docs/nodejs/nodejs-tutorial.md) - End to end Node.js scenario with a sample app
 
 ## よくある質問
@@ -428,9 +459,9 @@ replaceActive | 検索ビューの置換ボックスを開いているとき
 
 ![Key bindings quick outline](images/keybinding/outline.png)
 
-**Q: 行を削除するCtrl+Dのようなアクションをキーバインドに追加するにはどうすればいいですか?**
+**Q: 行を削除するCtrl+Dのようなアクションをキーバインドに追加するにはどうすればいいですか？**
 
-**A:** 既定のキーボード ショートカットのアクションをトリガするルールを見つけて、`keybindings.json`ファイルに変更したバージョンを書きます：
+**A:** 既定のキーボード ショートカットのアクションをトリガするルールを見つけて、`keybindings.json`ファイルに変更したバージョンを書きます:
 
 ```json
 // Original, in Default Keyboard Shortcuts
@@ -441,7 +472,7 @@ replaceActive | 検索ビューの置換ボックスを開いているとき
                                      "when": "editorTextFocus" },
 ```
 
-**Q: どのように特定ファイルタイプのキーバインドを追加できますか?**
+**Q: どのように特定ファイルタイプのキーバインドを追加できますか？**
 
 **A:** `when`節に`editorLangId`コンテキストキーを使用します:
 

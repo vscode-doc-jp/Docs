@@ -1,7 +1,7 @@
 ---
 title: Code Editing Features in VS Code
 MetaDescription: Take coding to the next level of speed and efficiency with these code editing features.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 In this tutorial, we cover code editing, including the features outlined below. After viewing this overview, read on in the [Learn More](/docs/introvideos/codeediting.md#learn-more) section to see more features.

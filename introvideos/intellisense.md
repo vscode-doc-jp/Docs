@@ -1,7 +1,7 @@
 ---
 title: IntelliSense in VS Code
 MetaDescription: IntelliSense is a fundamental feature for Visual Studio Code. In this article, learn how to use IntelliSense for JavaScript in VS Code.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 In this tutorial, we show you how to set up IntelliSense for a JavaScript project.

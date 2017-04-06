@@ -1,7 +1,7 @@
 ---
 title: 追加コンポーネントとツール
 MetaDescription: Setting up additional components to use with Visual Studio Code.
-commitid: 97b7ae9996f77dd4aa822fe8908c50863c4410d9
+commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
 
 VS Codeは小さなインストールで、ほとんどの開発ワークフローで共有するコンポーネントが最小単位で含むよう設計されています。エディタ、ファイル管理、ウィンドウ管理および環境設定などの基本的な機能がその例です。またJavaScript/TypeScript言語サービスとNode.jsデバッガもその一部です。
