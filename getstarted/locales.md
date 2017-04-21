@@ -1,14 +1,14 @@
 ﻿---
 title: 表示言語
 MetaDescription: How to change the display language (locale) of Visual Studio Code.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
 ---
 
 Visual Studio Codeでは次10ヵ国語の言語パックを提供しています。英語(米国)、簡体字中国語、繁体字中国語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ロシア語、スペイン語です。なお言語パックはVS Codeにすでに含まれるため、追加インストールする必要はありません。
 
 表示言語を既定でOSの言語に設定しますが、言語がサポートされていない場合は英語(米国)を選択します。
 
-## 利用可能な言語
+## 利用可能な言語 <a id="available-locales"></a>
 
 Display Language | Locale
 -----------------|-------
@@ -23,7 +23,7 @@ Korean | `ko`
 Russian | `ru`
 Spanish | `es`
 
-## 言語設定
+## 言語設定 <a id="setting-the-language"></a>
 
 表示言語を変更したい場合はコマンドラインで`--local`を使った起動で一時的に変更するか、**Configure Language**コマンドで永続的に変更します。次の例を確認してください。
 
@@ -33,7 +33,7 @@ Spanish | `es`
 code . --locale=fr
 ```
 
-## 言語設定のコマンド
+## 言語設定のコマンド <a id="configure-language-command"></a>
 
 ** Configure Language **コマンドは`Code\User`に `locale.json`を作成します。このファイルの`locale`属性を前のLocalに設定することで言語を変更します。
 
