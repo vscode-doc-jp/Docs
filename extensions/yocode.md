@@ -1,14 +1,14 @@
 ---
 title: Yo Code - Extension Generator
 MetaDescription: Easily create Visual Studio Code extensions and customizations with the Yo Code generator.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
 ---
 
 私達は[Yeoman generator](https://github.com/Microsoft/vscode-generator-code)を提供し、拡張機能の公開を手助けしています。
 
 ## ジェネレーターのインストール
 
-YeomanとVS Code拡張機能ジェネレーターをコマンドプロントから入手します:
+YeomanとVS Code拡張機能ジェネレータをコマンドプロントから入手します:
 
 ```bash
 npm install -g yo generator-code
@@ -26,23 +26,23 @@ yo code
 
 ![yo code output](images/yocode/yocode.png)
 
-## ジェネレーターオプション
+## ジェネレータオプション
 
 ジェネレーターは新しい拡張機能のひな形を作成したり、既存のTextMate定義ファイルに基づいて言語、テーマ、スニペットに使用する拡張機能を作成したりできます。
 
-### New Extension in TypeScript
+### New Extension (TypeScript)
 
 "hello world"コマンドを実装する拡張機能を作成します。入門として作成してみてください。
 
 * 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
 * ソース、テスト、出力フォルダーを含むディレクトリーを構築します。
 * `package.json`ファイルと拡張機能のメインファイルをテンプレートとして出力します。
-* ```launch.json`と`tasks.json`を設定して、F5で拡張機能をデバッグしたり、アタッチしたりできるようにします。
+* `launch.json`と`tasks.json`を設定して、F5で拡張機能をデバッグしたり、アタッチしたりできるようにします。
 * オプションでGitリポジトリーを設定します。
 
 作成したフォルダーでVS Codeを開きます。このフォルダーに、次の手順のクイックガイド`vsc-extension-quickstart.md`ファイルがあります。またこの拡張機能は、拡張機能API用のIntelliSenseが機能するようにセットアップ済みです。
 
-### New Extension in JavaScript
+### New Extension (JavaScript)
 
 JavaScriptでも上と方法は同じです。この拡張機能は、拡張機能API用のIntelliSenseが機能するようにセットアップ済みです。
 
@@ -75,6 +75,17 @@ TextMateに基づいて新しい配色テーマを提供する拡張機能を作
 * 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
 
 作成したフォルダーをVS Codeで開いて、拡張機能を実行して新しいスニペットをテストします。次の手順のクイックガイド`vsc-extension-quickstart.md`を確認してください。
+
+### New Extension Pack
+
+お気に入りの拡張機能で新しいExtension Packを提供する拡張機能を作成します。
+
+* インストールされている拡張機能をExtension Packに追加するかを求められます。
+* 拡張機能の識別子を求められます。現在のディレクトリーにその名前でフォルダーを作成します。
+
+新しいExtension Packを公開する前に`package.json`ファイルの`extensionDependencies`を確認してください。
+
+作成したフォルダーでVS Codeを開き、拡張機能を実行して新しいExntension Packをテストします。次の手順のクイックガイド`vsc-extension-quickstart.md`を確認してください。
 
 ## 拡張機能フォルダ
 
