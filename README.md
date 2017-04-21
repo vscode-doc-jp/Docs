@@ -55,6 +55,7 @@
     * [Extension Point](/docs/extensionapi/extension-points.html)
     * [Activation Events](/docs/extensionapi/activation-events.html)
     * [Complex Commands](/docs/extensionapi/vscode-api-commands.html)
+    * [Source Control API](/docs/extensionapi/api-scm.html)
 * OTHER
     * [.NET Core](/docs/other/dotnet.html)
     * ~~Unity~~
