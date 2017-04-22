@@ -18,12 +18,12 @@ Visual Studio Codeは**キーボードショートカット**エディターを�
 
 高度なカスタマイズをするには[Advanced Customizations](/docs/getstarted/keybindings.md#advanced-customizations)を参照してください。
 
-## キーマップの拡張機能 <a id="keymap-extensions></a>
+## キーマップの拡張機能 <a id="keymap-extensions"></a>
 
 キーボード ショートカットは生産性にとって不可欠です。ですがキーボードの習慣を変えるのは難しいものです。この問題に対処するために **ファイル** > **基本設定** > **キーマップ拡張機能**では、一般的なキーマップ拡張機能のリストを用意しています。これら拡張機能は、VS Codeのショートカットを他のエディタのショートカットと一致するように変更できるので、新しいキーボードショートカットを習得する必要はありません。Marketplaceで[Keymaps category](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)を詳細に確認してください。
 
 
-## キーボード ショートカットの参照 <a id="keyboard-shortcuts-reference></a>
+## キーボード ショートカットの参照 <a id="keyboard-shortcuts-reference"></a>
 
 印刷可能なキーボードショートカットリストを用意しています。**ヘルプ** > **キーボード ショートカットの参照**で印刷に最適化されたPDFバージョンを表示します。
 
