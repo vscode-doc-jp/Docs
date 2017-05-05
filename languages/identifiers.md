@@ -1,6 +1,10 @@
-# Language Identifiers
+---
+title: Language Identifiers
+MetaDescription: In Visual Studio Code we have support for all common languages including smart code completion and debugging.
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+---
 
-In VS Code, each language mode has a unique specific language identifier. That identifier is rarely seen by the user except in the settings, for example, when associating file extensions to a language:
+VS Codeでは、各言語モードに固有の言語識別子があります。識別子は、たとえばファイル拡張子を言語に関連付ける場合など、設定を除いてユーザーが見ることはほとんどありません。
 
 ```json
     "files.associations": {
@@ -8,11 +12,12 @@ In VS Code, each language mode has a unique specific language identifier. That i
     }
 ```
 
-Note that casing matters for exact identifier matching ('Markdown' != 'markdown')
+正確に識別を一致するためのケーシング事項('Markdown' != 'markdown')
 
-The language identifier becomes essential for VS Code extension developers when adding new language capabilities or when replacing a language support.
+言語識別子は、新しい言語機能を追加するときや言語サポートを置き換えるときに、VS Code拡張機能の開発者にとって不可欠になります。
 
-Every language defines its *id* through the `languages` configuration point:
+
+すべての言語は`languages`構成オプションを通じて*id*を定義します:
 
 ```json
     "languages": [{
@@ -22,7 +27,7 @@ Every language defines its *id* through the `languages` configuration point:
     }]
 ```
 
-Language supports are added using the language identifier:
+言語サポートは、言語識別子を利用して追加します:
 
 ```json
     "grammars": [{
@@ -40,16 +45,16 @@ Language supports are added using the language identifier:
 languages.registerCompletionItemProvider('php', new PHPCompletionItemProvider(), '.', '$')
 ```
 
-## New identifier guidelines
+## 新しい識別子のガイドライン <a href="new-identifier-guidelines"></a>
 
-When defining a new language identifier, use the following guidelines:
+新しい言語識別子を定義するときは、次のガイドラインを使用してください:
 
-- Use the lowercased programming language name.
-- Search for other extensions in the Marketplace to find out if a language identifier has already been used.
+- 小文字のプログラミング言語名を使用します。
+-  Marketplaceで他の拡張機能を検索して、言語識別子が既に使用されているかどうかを確認します。
 
-## Known language identifiers
+## 既知の言語識別子 <a href="known-language-identifiers"></a>
 
-The following table lists all known language identifiers:
+次に既知のすべての言語識別子を示します:
 
 Language | Identifier
 -------- | ----------

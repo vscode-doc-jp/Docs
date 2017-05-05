@@ -41,6 +41,7 @@
     * ~~T-SQL~~
     * ~~C#~~
     * [C++](/docs/languages/cpp.html)
+    * [Language Identifiers](/docs/languages/identifiers.html)
 * NODE.JS/JAVASCRIPT
     * ~~Tutorial-Node.js~~
     * ~~Node.js Debugging~~
