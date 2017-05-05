@@ -1,7 +1,7 @@
 ---
 title: Complex Commands Reference
 MetaDescription: Visual Studio Code extensions (plug-ins) complex commands Reference.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 このドキュメントではVisual Studio Code Complex Commandの指定方法を説明します。これはパラメーターを必要とし、値を返すのでComplex Command(直訳: 複合コマンド)と呼びます。これを`executeCommand`APIと組み合わせて使用してください。

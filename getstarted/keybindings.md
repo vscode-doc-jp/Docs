@@ -2,6 +2,7 @@
 title: キーバインディング
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
 commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
+status: old
 ---
 
 Visual Studio Codeでは、ほとんどのタスクをキーボードから直接実行することが可能です。このページではデフォルトのバインディング(キーボードショートカット)とその更新方法を説明します。

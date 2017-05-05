@@ -1,7 +1,8 @@
 ---
 title: バージョン管理
 MetaDescription: Visual Studio Code has integrated Git support for the most common commands.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68 
+commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
+status: old
 ---
 
 Visual Studio Codeでは統合した[Git](https://git-scm.com/) をサポートしています。これは開発中のコミット管理をするための優れた選択肢になります。

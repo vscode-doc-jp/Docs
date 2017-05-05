@@ -1,8 +1,13 @@
 ---
-title: PHP Programming
+Order: 8
+Area: languages
+TOCTitle: PHP
+ContentId: DD4E5A59-1586-4A5D-8047-3D58B2FE6937
+PageTitle: PHP Programming with Visual Studio Code
+DateApproved: 5/4/2017
 MetaDescription: Learn about Visual Studio Code editor features (syntax highlighting, snippets, linting) and extensions for PHP.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# PHP Programming in VS Code
 
 Visual Studio Code is a great editor for PHP development. You get features like syntax highlighting and bracket matching, IntelliSense (code completion), and snippets out of the box and you can add more functionality through community created VS Code [extensions](/docs/userguide/extension-gallery.md).
 

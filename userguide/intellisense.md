@@ -1,7 +1,7 @@
 ---
 title: IntelliSense
 MetaDescription:  Learn about Visual Studio Code IntelliSense (intelligent code completion).
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 IntelliSenseとは、メンバーの一覧、パラメーター ヒント、クイック ヒント、入力候補など多数の機能を指す総称です。その特徴から「code completion」「content assist」「code hinting」と呼ばれることもあります。
@@ -125,7 +125,7 @@ IntelliSenseが機能しないときは、言語サービスが実行されて�
 IntelliSenseはVS Codeの強力な機能の1つにすぎません。VS Codeにさらに詳しくなりましょう。
 
 * [JavaScript](/docs/languages/javascript.md) - Get the most out of your JavaScript development, including configuring IntelliSense.
-* [Node.js](/docs/nodejs/nodejs-tutorial.md#intellisense-and-typings) - See an example of IntelliSense in action in the Node.js walkthrough.
+* [Node.js](/docs/nodejs/nodejs-tutorial.md) - See an example of IntelliSense in action in the Node.js walkthrough.
 * [Debugging](/docs/userguide/debugging.md) - Learn how to set up debugging for your application.
 
 ## よくある質問

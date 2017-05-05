@@ -1,7 +1,7 @@
 ---
 title: CSS, Sass and Lessサポート
 MetaDescription: Find out how Visual Studio Code can support your CSS, Sass and Less development.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 Visual Studio Codは、スタイルシートでCSS `.css`、 Sass `.scss`、 Less `.less`による編集を標準でサポートしています。拡張機能をインストールすることでより多くの機能性を得ることができます。
@@ -18,7 +18,7 @@ Proposals contain extensive documentation, including a list of browsers that sup
 
 `kb(editor.emmet.action.expandAbbreviation)`を押すとEmmet略語を展開します。
 
->**Tip:** 使用可能な略語については [Emmet cheat sheet](http://docs.emmet.io/cheat-sheet) のCSSセクションを参照してください。
+>**Tip:** 使用可能な略語については [Emmet cheat sheet](https://docs.emmet.io/cheat-sheet) のCSSセクションを参照してください。
 
 CSS Emmetを他の言語で使用したい場合は、Emeet構文プロファイル(`html`, `css`など)を `emmet.syntaxProfiles` [設定](/docs/getstarted/settings.md)に関連付けることで可能です。その際の設定には[language id](/docs/languages/overview.md#language-id) を使用してください。
 

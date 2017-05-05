@@ -1,7 +1,7 @@
 ---
 title: 追加コンポーネントとツール
 MetaDescription: Setting up additional components to use with Visual Studio Code.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 VS Codeは小さなインストールで、ほとんどの開発ワークフローで共有するコンポーネントが最小単位で含むよう設計されています。エディタ、ファイル管理、ウィンドウ管理および環境設定などの基本的な機能がその例です。またJavaScript/TypeScript言語サービスとNode.jsデバッガもその一部です。
@@ -14,7 +14,7 @@ VS Codeは小さなインストールで、ほとんどの開発ワークフロ�
 
 - [Git](https://git-scm.com/download) - VS CodeはGitによるソースコード管理をサポートしていますが、別途でGitをインストールする必要があります。
 - [Node.js (NPM)](https://nodejs.org/) - JavaScriptアプリケーションをビルド、実行するためのプラットホームおよびランタイム。
-- [TypeScript](http://typescriptlang.org) - `tsc`コンパイラーでTypeScriptをJavaScriptにコンパイル。
+- [TypeScript](https://typescriptlang.org) - `tsc`コンパイラーでTypeScriptをJavaScriptにコンパイル。
 
 また上記のコンポーネントは、今後のマニュアルやチュートリアルでよく使用します。
 
@@ -33,9 +33,9 @@ Visual Studio Codeは既存の[ツールチェーン](https://ja.wikipedia.org/w
 - [Yeoman](http://yeoman.io/) - アプリケーションの足場作成**File** > **New Project**のコマンドラインバージョン
 - [generator-aspnet](https://www.npmjs.com/package/generator-aspnet) -**ASP.NET Core**の足場を構築するYeomanジェネレーター
 - [generator-hottowel](https://github.com/johnpapa/generator-hottowel) - A Yeoman gene - **AngularJS** を素早く作成するYeomanジェネレーター
-- [Express](http://expressjs.com/) - Node.js向けの**Jade**フレームワーク
+- [Express](https://expressjs.com/) - Node.js向けの**Jade**フレームワーク
 - [Gulp](http://gulpjs.com/) - Tasksと簡単に統合できるストリーミング タスク ランナー
-- [Mocha](http://mochajs.org/) - Node.jsで動作するJavaScriptテストフレームワーク
+- [Mocha](https://mochajs.org/) - Node.jsで動作するJavaScriptテストフレームワーク
 - [Bower](https://bower.io/) - クライアント側のパッケージマネージャー
 
 >**Note:** これらほとんどのツールはNode.jsとNPMパッケージマネージャーをインストールして使用する必要があります。

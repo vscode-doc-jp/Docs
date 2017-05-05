@@ -1,7 +1,7 @@
 ---
 title: Source Control API
 MetaDescription: Visual Studio Code extensions (plug-ins) Source Control API.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 VIsual Studio Codeでは、extensionAPIを通してSource Control Mnagement(以下SCM)機能を定義できます。共通のユーザーインターフェイスを利用するスリムで強力なAPIがあり、異なるSCMをVS Codeに統合できます。

@@ -2,6 +2,7 @@
 title: Running Visual Studio Code on Mac
 MetaDescription: Get Visual Studio Code up and running on Mac.
 commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+status: old
 ---
 
 ## Installation

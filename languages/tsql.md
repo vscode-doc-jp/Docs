@@ -1,8 +1,13 @@
 ---
-title: Transact-SQL
+Order: 12
+Area: languages
+TOCTitle: T-SQL
+ContentId: 5325cf50-e4c7-11e6-bf01-fe55135034f3
+PageTitle: Transact-SQL with VS Code
+DateApproved: 1/24/2017
 MetaDescription: Learn about Visual Studio Code editor features (code completion, debugging, snippets, linting) for Transact-SQL.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# Transact-SQL in VS Code
 
 Turn Visual Studio Code into a powerful editor for [Transact-SQL]  (T-SQL) development with the [mssql] extension available in the VS Code Marketplace. The [mssql] extension is optimized to work with SQL Server running on-premises, in any cloud, Azure SQL Database, and Azure SQL Data Warehouse.
 
@@ -14,7 +19,7 @@ Connect to SQL databases, type T-SQL code, execute T-SQL code, view results, and
 
 Add T-SQL language support to VS Code by installing the [mssql] extension from the VS Code marketplace as follows:
 
-1. Open the **Extensions** view from VS Code side bar (`kb(workbench.view.extensions)`).
+1. Open the **Extensions** view from VS Code Side Bar (`kb(workbench.view.extensions)`).
 2. Type "mssql" in the search bar, click **Install**, and reload VS Code when prompted.
 
 ![install mssql extension](images/tsql/install-mssql.png)
@@ -70,7 +75,7 @@ T-SQL snippets provide code templates for commonly used T-SQL statements. Type "
 * [SQL Server Videos] on Channel9
 
 [Transact-SQL]: https://msdn.microsoft.com/en-us/library/bb510741.aspx
-[mssql]: http://aka.ms/mssql-marketplace
+[mssql]: https://aka.ms/mssql-marketplace
 [Download VS Code]: https://code.visualstudio.com/download
 [SQL Server 2016 Developer Edition]: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [Build an app]: https://aka.ms/sqldev

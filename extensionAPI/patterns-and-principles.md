@@ -1,9 +1,13 @@
 ---
-title: Extensibility Patterns and Principles
-DateApproved: 3/1/2017
+Order: 2
+Area: extensionapi
+TOCTitle: Principles and Patterns
+ContentId: 36C1E34B-2F41-4AA0-9443-015D92EF85FB
+PageTitle: Visual Studio Code Extensibility Patterns and Principles
+DateApproved: 5/4/2017
 MetaDescription: The Visual Studio Code extensibility (plug-in) API is designed around a set of guiding patterns and principles to promote extension consistency, correctness and ease of development.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# Extensibility Principles and Patterns
 
 ## Our Approach to Extensibility
 
@@ -21,8 +25,7 @@ Extensions are wonderful but extensions can also affect startup performance or t
 
 We have built this architecture with the end-user in mind, as this architecture allows us to ensure that the end-user is always in control of VS Code: the user can open, type or save files at any time, VS Code ensures a responsive UI irrespective of what extensions are doing.
 
-The `extension host` is a Node.js process and it exposes the VS Code API to extension writers. VS Code provides debugging support for
-extensions running inside the `extension host`.
+The `extension host` is a Node.js process and it exposes the VS Code API to extension writers. VS Code provides debugging support for extensions running inside the `extension host`.
 
 ### Performance - Extension Activation
 
@@ -91,13 +94,19 @@ var subscription = fsWatcher.onDidDelete(listener);
 subscriptions.dispose(); // stop listening
 ```
 
-Names of events follow the `on[Will|Did]VerbNoun?` pattern. The name signals if the event is going to happens *(onWill)* or already happened *(onDid)*, what happened *(verb)*, and the context *(noun)* unless obvious from the context.
+Names of events follow the `on[Will|Did]VerbNoun?` pattern. The name signals if the event is going to happen *(onWill)* or already happened *(onDid)*, what happened *(verb)*, and the context *(noun)* unless obvious from the context.
 
 An example from the VS Code API is `window.onDidChangeActiveTextEditor` which is an event fired when the active text editor *(noun)* has been (*onDid*) changed (*verb*).
+
+## Strict null
+
+The VS Code API uses the `undefined` and `null` TypeScript types where appropriate to support [strict null checking](https://github.com/Microsoft/TypeScript/pull/7140).
 
 ## Using Node.js Modules with Extensions
 
 Your extension can depend on [Node.js](https://nodejs.org) modules at runtime. Similarly to a node module itself, you can add those dependencies to your [`package.json` extension manifest](/docs/extensionapi/extension-manifest.md) using the `dependencies` field.
+
+There are even VS Code specific Node.js modules which are [useful in extension development](/docs/extensionapi/extension-manifest.md#useful-node-modules).
 
 ### Installation and Packaging
 
@@ -107,7 +116,7 @@ You can create a `.vscodeignore` file to exclude some files from being included 
 
 ## Next Steps
 
-* [Extension Manifest File](/docs/extensionapi/extension-manifest.md) - VS Code package.json extension manifest file reference
+* [Extension Manifest File](/docs/extensionapi/extension-manifest.md) - Visual Studio Code package.json extension manifest file reference
 * [Contribution Points](/docs/extensionapi/extension-points.md) - VS Code contribution points reference
 * [Activation Events](/docs/extensionapi/activation-events.md) - VS Code activation events reference
 

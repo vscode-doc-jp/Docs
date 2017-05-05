@@ -1,10 +1,15 @@
 ---
-title: Working with Dockerfiles
+Order: 11
+Area: languages
+TOCTitle: Dockerfile
+ContentId: 42F8B9F8-BD03-4159-9479-17C5BDE30531
+PageTitle: Working with Dockerfiles in Visual Studio Code
+DateApproved: 5/4/2017
 MetaDescription: Find out how to get the best out of Visual Studio Code and Docker.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# Working with Docker
 
-[Docker](http://www.docker.com) is a very popular container platform that lets you easily package, deploy, and consume applications and services. Whether you are a seasoned Docker developer or just getting started, Visual Studio Code makes it easy to author `Dockerfile` and `docker-compose.yml` files in your workspace.
+[Docker](https://www.docker.com) is a very popular container platform that lets you easily package, deploy, and consume applications and services. Whether you are a seasoned Docker developer or just getting started, Visual Studio Code makes it easy to author `Dockerfile` and `docker-compose.yml` files in your workspace.
 
 ## Install the Docker extension
 
@@ -20,7 +25,7 @@ While here, you can install many other extensions to make you more productive wi
 
 ## Dockerfiles
 
-With Docker, you can build images by specifying the step by step commands needed to build the image in a `Dockerfile`. A Dockerfile is simply a text file that contains the build instructions.
+With Docker, you can build images by specifying the step by step commands needed to build the image in a `Dockerfile`. A Dockerfile is just a text file that contains the build instructions.
 
 VS Code understands the structure of Dockerfiles as well as the available set of instructions, meaning we can give you a great experience when authoring these files in the tool.
 
@@ -38,7 +43,7 @@ In addition to snippets for authoring your `Dockerfile`, Visual Studio Code will
 ![Dockerfile hover tooltip](images/docker/dockerfiletooltip.png)
 
 For more information on Dockerfiles, check out [Dockerfile best practices](
-https://docs.docker.com/articles/dockerfile_best-practices/) on [docker.com](http://docker.com).
+https://docs.docker.com/articles/dockerfile_best-practices/) on [docker.com](https://docker.com).
 
 ## Docker Compose
 

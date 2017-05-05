@@ -1,7 +1,7 @@
 ---
-title: Why Visual Studio Code?
+title: Why did we build Visual Studio Code?
 MetaDescription: Visual Studio Code provides developers with a new choice of tool that combines the simplicity of a code editor with the best tooling for their core edit-build-debug cycle. Visual Studio Code is available for macOS, Linux, and Windows.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 Visual Studio CodはエディタのシンプルさとIntelli Senseやデバッグ機能などによる強力な開発ツールの両方を兼ね備えています。
@@ -47,5 +47,5 @@ Visual Studio Codeは拡張モデルを用意していますので、開発者�
 次を見てください:
 
 * [Visual Studio Code User Interface](/docs/getstarted/userinterface.md) - A quick orientation to VS Code.
-* [Basic Editing](/docs/userguide/codebasic.md) - Learn about the VS Code editor features.
+* [Intro Videos](/docs/getstarted/introvideos.md) - Learn about the VS Code editor features.
 * [Debugging](/docs/userguide/debugging.md) - OK time for the really fun stuff - break, step, watch.

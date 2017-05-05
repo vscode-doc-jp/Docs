@@ -1,7 +1,7 @@
 ---
 title: 独自のスニペットを作成
 MetaDescription: It is easy to add code snippets to Visual Studio Code both for your own use or to share with others on the public Extension Marketplace. TextMate .tmSnippets files are supported.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 コードスニペットとは、ループや条件文など繰り返し使うコードパターンを簡単に生成するテンプレートのことです。

@@ -1,7 +1,7 @@
 ---
 title: Extension Manifest - package.json
 MetaDescription: At the core of Visual Studio Code's extensibility model is an extension (plug-in) manifest file where your extension declares its extension type(s), activation rules and runtime resources.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 
@@ -19,7 +19,7 @@ Name | Required | Type | Details
 `license` | | `string` | [npm's documentation](https://docs.npmjs.com/files/package.json#license)を参照してください。ルートに`LICENSE`ファイルを配置した場合は値を`"SEE LICENSE IN <filename>"`にすることを推奨します。
 `displayName` | | `string`| Marketplaceで使用する拡張機能の表示名です。
 `description` | | `string` | 短くまとめた拡張機能の説明です。
-`categories` | | `string[]` | 拡張機能のカテゴリーを指定します。値は`[Languages, Snippets, Linters, Themes, Debuggers, Formatters, Keymaps, Other]`を利用可能です。
+`categories` | | `string[]` | 拡張機能のカテゴリーを指定します。値は`[Languages, Snippets, Linters, Themes, Debuggers, Formatters, Keymaps, Other, Extension Packs]`を利用可能です。
 `keywords` | | `array` | 検索に役立つ**Keywords**を指定します。
 `galleryBanner` | | `object` | アイコンに合うようにMarketplaceのフォーマット(主にバナー)を指定します。詳細は下記を参照してください。
 `preview` | | `boolean` |MarketplaceのラベルにPreviewフラグを設定します。

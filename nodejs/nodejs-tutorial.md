@@ -1,10 +1,10 @@
 ---
 Order: 2
 Area: nodejs
-TOCTitle: Tutorial - Node.js
+TOCTitle: Node.js Tutorial
 ContentId: ED394CD2-D09E-4E3A-96AD-6D3D8337BA9D
-PageTitle: Node.js Tutorial in VS Code
-DateApproved: 3/10/2017
+PageTitle: Build Node.js Apps with VS Code
+DateApproved: 5/4/2017
 MetaDescription: Visual Studio Code has great support for writing and debugging Node.js applications. This tutorial takes you from Hello World to a full Express web application.
 MetaSocialImage: nodejs_runtimes_node.png
 ---
@@ -13,6 +13,8 @@ MetaSocialImage: nodejs_runtimes_node.png
 [Node.js](https://nodejs.org/) is a platform for building fast and scalable server applications using JavaScript. Node.js is the runtime and [NPM](https://www.npmjs.com/) is the Package Manager for Node.js modules.
 
 VS Code has support for the JavaScript and TypeScript languages out-of-the-box as well as Node.js debugging. However, to run a Node.js application, you will need to install the Node.js runtime on your machine.
+
+>**Are you new to VS Code?** Learn more and download a [faster Node.js editor here](/nodejs).
 
 To get started in this walkthrough, [install Node.js for your platform](https://nodejs.org/en/download/). The Node Package Manager is included in the Node.js distribution. You'll need to open a new terminal (command prompt) for the `node` and `npm` command line tools to be on your PATH.
 
@@ -85,7 +87,7 @@ For this walkthrough, you can use either an external terminal or the VS Code int
 
 As mentioned in the introduction, VS Code ships with a debugger for Node.js applications. Let's try debugging our simple Hello World application.
 
-To set a breakpoint in `app.js`, put the editor cursor on the first line and press `kb(editor.debug.action.toggleBreakpoint)` or simply click in the editor left gutter next to the line numbers. A red circle will appear in the gutter.
+To set a breakpoint in `app.js`, put the editor cursor on the first line and press `kb(editor.debug.action.toggleBreakpoint)` or click in the editor left gutter next to the line numbers. A red circle will appear in the gutter.
 
 ![app.js breakpoint set](images/nodejs/app-js-breakpoint-set.png)
 
@@ -103,7 +105,7 @@ Now that you've seen VS Code in action with "Hello World", the next section show
 
 ## Express Tutorial
 
-[Express](http://expressjs.com/) is a very popular application framework for building and running Node.js applications. You can scaffold (create) a new Express application using the Express Generator tool. The Express Generator is shipped as an NPM module and installed by using the NPM command line tool `npm`.
+[Express](https://expressjs.com/) is a very popular application framework for building and running Node.js applications. You can scaffold (create) a new Express application using the Express Generator tool. The Express Generator is shipped as an NPM module and installed by using the NPM command line tool `npm`.
 
 >**Tip:** To test that you've got `npm` correctly installed on your computer, type `npm --help` from a terminal and you should see the usage documentation.
 
@@ -152,15 +154,15 @@ code .
 
 >**Note:** If you've been using the VS Code integrated terminal to install the Express generator and scaffold the app, you can open the `myExpressApp` folder from your running VS Code instance with the **File** > **Open Folder...** command.
 
-The [Node.js](https://nodejs.org/api/) and [Express](http://expressjs.com/api.html) documentation does a great job explaining how to build rich applications using the platform and framework. Visual Studio Code will make you more productive developing these types of applications by providing great code editing and navigation experiences.
+The [Node.js](https://nodejs.org/api/) and [Express](https://expressjs.com/api.html) documentation does a great job explaining how to build rich applications using the platform and framework. Visual Studio Code will make you more productive developing these types of applications by providing great code editing and navigation experiences.
 
 Open the file `app.js` and hover over the Node.js global object `__dirname`. Notice how VS Code understands what `__dirname` is. Even more interesting, you can get full IntelliSense against the Node.js framework. For example, you can require `http` and get full IntelliSense against the `http` class as you type in Visual Studio Code.
 
 ![http IntelliSense](images/nodejs/intellisense.png)
 
-VS Code uses TypeScript Type Declaration (typings) files (for example `node.d.ts`) to provide metadata to VS Code about the JavaScript based frameworks you are consuming in your application. Type Declaration files are written in TypeScript so they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience. Thanks to a feature called `Automatic Typing Acquisition`, you do not have to worry about downloading these Type Declaration files, VS Code will install them automatically for you.
+VS Code uses TypeScript type declaration (typings) files (for example `node.d.ts`) to provide metadata to VS Code about the JavaScript based frameworks you are consuming in your application. Type declaration files are written in TypeScript so they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience. Thanks to a feature called `Automatic Typing Acquisition`, you do not have to worry about downloading these type declaration files, VS Code will install them automatically for you.
 
-You can also write code that references modules in other files. For example, in `app.js` we require the `./routes/index` module, which exports an `Express.Router` class. If you bring up IntelliSense on `routes`, you can see the shape of the `Router` class.
+You can also write code that references modules in other files. For example, in `app.js` we require the `./routes/index` module, which exports an `Express.Router` class. If you bring up IntelliSense on `index`, you can see the shape of the `Router` class.
 
 ![Express.Router IntelliSense](images/nodejs/moduleintellisense.png)
 
@@ -193,95 +195,11 @@ Save the new file and make sure **Launch Program** is selected in the configurat
 
 ![Debug session](images/nodejs/debugsession.png)
 
-## Deploying your Application to the Cloud
+## Deploying your Application
 
-Let's finish up this walkthrough by deploying our application to the cloud. While it is possible to deploy directly to a web site, it is not a best practice. Instead, we will set up continuous deployment from a GitHub repository to an Azure App Service website (Azure's Platform as a Service offering). With this setup, you can use version control to roll back changes, configure different branches to deploy to different development "slots" (e.g. development or production) and more.
-
-If this sounds complicated, don't worry, it isn't :).
-
-> If you don't have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/) for a free 30 day account with $200 in Azure Credits to try out any combination of Azure services.
-
-The first thing we'll need to do is get our source code into a GitHub repository. Browse to your GitHub account and [create a new public repository](https://github.com/new).
-
-![Create a new GitHub repository](images/nodejs/newgithubrepo.png)
+If you'd like to learn how to deploy your web application, check out the [Node.js Deployment to the Cloud](/nodejs-deployment) tutorial where we show how to run your website in Azure.
 
 ---
-
-We are going to follow the instructions provided by GitHub to create a new repository on the command line, but with a few changes.
-It is a good practice to include a `.gitignore` file in your repository that excludes the `node_modules` folder. We'll do this instead of creating a `README.md` file and we'll add and commit all of the files in the workspace (except `node_modules` of course):
-
-```bash
-echo "node_modules" >> .gitignore
-git init
-git add .
-git commit -m "first commit"
-git remote add origin https://github.com/**YourGitHubAccount**/myExpressApp.git
-git push -u origin master
-```
-
-Next, we will create an Azure Website to host our app. Once we have that, we'll configure the site to pull and deploy from the Git repository every time we push changes. To create the site, we'll use the new, cross platform Azure CLI.
-
-> [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-
-The following CLI commands will create our site and set up continuous deployment. Make sure you name your site properly per the comments.
-
-```bash
-# Follow the login instructions
-az login
-
-# Create an Azure Resource Group which is essentially a container for all of your application resources.
-az group create -l westus -n myExpressAppGroup
-
-# Create an Azure App Service Plan which is essentially the machine on which your application will be hosted.
-# In this walkthrough, we will use a FREE plan which will host your app on a machine with other websites.
-az appservice plan create -n myExpressAppPlan -g myExpressAppGroup -l westus --sku FREE
-
-# Now create the website and give it a unique name as it will be referenced as http://**myUniqueName-ExpressApp**.azurewebsites.net
-az appservice web create -n myUniqueName-ExpressApp -g myExpressAppGroup -p myExpressAppPlan
-
-# Let's test that our site is up and running. It will be a temporary site as we have not deployed any code here yet.
-az appservice web browse -n myUniqueName-ExpressApp -g myExpressAppGroup
-
-# Configure the site for continuous deployment through our GitHub repository.
-az appservice web source-control config --repo-url https://github.com/yourgithubaccount/myExpressApp -n myUniqueName-ExpressApp -g myExpressAppGroup
-```
-
-Refresh the site and you should see your Express application hosted in the cloud on Azure!
-
-![Express app running in Azure](images/nodejs/expressinazure.png)
-
----
-
-To test continuous deployment, make a change to the `index.jade` file found in the `views` folder and make a local commit.
-
-![Commit a change](images/nodejs/commitchange.png)
-
-Use the overflow menu to **Sync** the change with the GitHub repository.
-
-![Sync the change](images/nodejs/syncchange.png)
-
-Finally, the site will recognize a change has been pushed and the content will automatically be redeployed.
-
-![VS Code Rocks](images/nodejs/vscoderocks.png)
-
----
-
-## Node.js Extensions
-
-The community is continually developing more and more valuable extensions for Node.js. Here are some of the extensions we have found most useful.
-
-* [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets) - Snippets for JavaScript in ES6 syntax.
-* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Integrates ESLint into VS Code.
-* [JSHint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint) - Integrates JSHint into VS Code.
-* [Add JSDoc comments](https://marketplace.visualstudio.com/items?itemName=stevencl.addDocComments) - Adds **JSDoc** @param and @return tags for selected function signatures in JS and TS.
-* [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) - This extension enables running [js-beautify](http://jsbeautifier.org/) in VS Code.
-
-Here are some popular extensions from the [Marketplace](https://marketplace.visualstudio.com/vscode).
-
-<div class="marketplace-extensions-node"></div>
-
-> Tip: The extensions shown above are dynamically queried. Click on an extension tile above to read the description and reviews to decide which extension is best for you. See more in the [Marketplace](https://marketplace.visualstudio.com/vscode).
-
 
 ## Next Steps
 

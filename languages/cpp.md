@@ -1,7 +1,7 @@
 ---
 title: C++ programming
 MetaDescription: Find out how to get the best out of Visual Studio Code and C++.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 今日VS Codeを使用してWindows、Linux、MacでクロスプラットホームC/C++開発ができるように、プレビューのサポート環境を提供しています。このリリースプレビューではLinux、Mac、 Window上でのデバッグなど、コード編集とナビゲーションのサポートを中心に取り上げています。
@@ -73,7 +73,7 @@ Windows上でGDBを使ってデバッグする場合は[Windows Debugging on Cyg
 
 ### コード整形
 
-今回使用しているC/C++拡張機能は、内蔵の[clang-format](http://clang.llvm.org/docs/ClangFormat.html)を使用した整形をサポートしています。
+今回使用しているC/C++拡張機能は、内蔵の[clang-format](https://clang.llvm.org/docs/ClangFormat.html)を使用した整形をサポートしています。
 
 ファイル全体を**Format Document**(`kb(editor.action.formatDocument)`)で整形したり、コンテキストメニュー(右クリック)から**Format Selection** (`kb(editor.action.formatSelection)`)で選択範囲を整形したりできます。また次の[設定](/docs/getstarted/settings.md)でも、自動整形を設定することもできます:
 

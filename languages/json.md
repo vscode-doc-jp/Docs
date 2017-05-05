@@ -1,8 +1,13 @@
 ---
-title: JSON editing
+Order: 3
+Area: languages
+TOCTitle: JSON
+ContentId: FB3B14D9-A59A-4968-ACFC-5FB5D4E9B70E
+PageTitle: JSON editing in Visual Studio Code
+DateApproved: 5/4/2017
 MetaDescription: Edit JSON files in Visual Studio Code
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# Editing JSON with VS Code
 
 JSON is a data format that is common in configuration files like `package.json` or `project.json`. We also use it extensively in VS Code for our configuration files.  When opening a file that ends with `.json`, VS Code provides features out of the box to make it simpler to write or modify the file's content.
 
@@ -41,7 +46,7 @@ You can format your JSON document using `kb(editor.action.formatDocument)` or **
 
 ## JSON Schemas & Settings
 
-To understand the structure of JSON files, we use [JSON schemas](http://spacetelescope.github.io/understanding-json-schema/). JSON schemas describe the shape of the JSON file, as well as value sets, default values, and descriptions.
+To understand the structure of JSON files, we use [JSON schemas](https://spacetelescope.github.io/understanding-json-schema/). JSON schemas describe the shape of the JSON file, as well as value sets, default values, and descriptions.
 
 Servers like [JSON Schema Store](http://schemastore.org) provide schemas for most of the common JSON based configuration files. However, schemas can also be defined in a file in the VS Code workspace, as well as the VS Code settings files.
 
@@ -154,10 +159,3 @@ Use the property `defaultSnippets` to specify any number of snippets for the giv
 
 Note that `defaultSnippets` is not part of the JSON schema spec but a VS Code specific schema extension.
 
-## JSON Extensions
-
-In addition, you can install an extension for greater functionality.
-
-<div class="marketplace-extensions-json"></div>
-
-> Tip: The extensions shown above are dynamically queried. Click on an extension tile above to read the description and reviews to decide which extension is best for you. See more in the [Marketplace](https://marketplace.visualstudio.com).

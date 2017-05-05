@@ -1,8 +1,13 @@
 ---
-title: Code Navigation
+Order: 5
+Area: editor
+TOCTitle: Code Navigation
+ContentId: 8966BBFD-C66D-4283-9DCA-8CAC0179886E
+PageTitle: Code Navigation in Visual Studio Code
+DateApproved: 5/4/2017
 MetaDescription: Visual Studio Code is a first class editor - but it's also so much more with features such as IntelliSense and smart code navigation.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# Code Navigation
 
 Visual Studio Code has a high productivity code editor which, when combined with programming language services, gives you the power of an IDE and the speed of a text editor. In this topic, we'll first describe VS Code's language intelligence features (suggestions, parameter hints, smart code navigation) and then show the power of the core text editor.
 
@@ -78,7 +83,7 @@ Some languages like C# support inline reference information, that is updated liv
 
 ## Rename symbol
 
-Some languages support rename symbol across files. Simply press `kb(editor.action.rename)` and then type the new desired name and press `kbstyle(Enter)`. All usages of the symbol will be renamed, across files.
+Some languages support rename symbol across files. Press `kb(editor.action.rename)` and then type the new desired name and press `kbstyle(Enter)`. All usages of the symbol will be renamed, across files.
 
 ![Rename](images/editingevolved/rename.png)
 
@@ -95,6 +100,10 @@ Warnings or Errors can be generated either via [configured tasks](/docs/userguid
 > **Tip:** To loop through errors or warnings in the current file, you can press `kb(editor.action.marker.next)` or `kb(editor.action.marker.prev)` which will show an inline zone detailing the problem and possible code actions (if available):
 
 ![Errors and Warnings Inline](images/editingevolved/errorsinline.png)
+
+## Code Action
+
+Warnings and Errors can provide Code Actions (also known as Quick Fixes) to help fix issues. These will be displayed in the editor in the left margin as a lightbulb. Clicking on the lightbulb will either display the Code Action options or perform the action.
 
 ## Next Steps
 

@@ -1,7 +1,7 @@
 ---
 title: ユーザー補助
 MetaDescription: Visual Studio Code user accessibility features.  Learn here about the various ways VS Code aids user accessibility.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 Visual Studio Codeにはすべてのユーザーが使い勝手のよいエディターにする機能が多く備わっています。ズームとハイコントラストはエディターの可読性を向上させ、キーボードナビゲーションによりマウスなしで操作でき、エディタはスクリーンリーダー用へ最適化しています。
@@ -57,7 +57,7 @@ VS Codeはマウスを使わずに操作できるように**コマンドパレ�
 
 ## スクリーンリーダー
 
-VS Codeはテキストをページング方式にもとづく方法を使用してスクリーンリーダーをサポートしています。私たちは[NVDA screen reader](http://www.nvaccess.org)を使ってテストしていますが、すべてのスクリーンリーダーで機能すると考えています。
+VS Codeはテキストをページング方式にもとづく方法を使用してスクリーンリーダーをサポートしています。私たちは[NVDA screen reader](https://www.nvaccess.org)を使ってテストしていますが、すべてのスクリーンリーダーで機能すると考えています。
 
 **次/前のエラーまたは警告へ移動**(`kb(editor.action.marker.next)` /`kb(editor.action.marker.prev)`)をしたときスクリーンリーダーはエラーと警告のメッセージを読み上げます。
 

@@ -1,8 +1,14 @@
 ---
-title: Integrated Terminal
+Order: 9
+Area: editor
+TOCTitle: Integrated Terminal
+ContentId: 7B4DC928-2414-4FC7-9C76-E4A13D6675FE
+PageTitle: Integrated Terminal in Visual Studio Code
+DateApproved: 5/4/2017
 MetaDescription: Visual Studio Code has an integrated terminal so you can work in the shell of your choice without leaving the editor.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+
+# Integrated Terminal
 
 In Visual Studio Code, you can open an integrated terminal, initially starting at the root of your workspace. This can be very convenient as you don't have to switch windows or alter the state of an existing terminal to perform a quick command line task.
 
@@ -28,7 +34,7 @@ Remove terminal instances by pressing the trash can button.
 
 ## Configuration
 
-The shell used defaults to `$SHELL` on Linux and OS X, and PowerShell on Windows. These can be overridden manually by setting `terminal.integrated.shell.*` in [settings](/docs/getstarted/settings.md). Arguments can be passed to the terminal shell on Linux and OS X using the `terminal.integrated.shellArgs.*` settings.
+The shell used defaults to `$SHELL` on Linux and OS X, PowerShell on Window 10 and cmd.exe on earlier versions of Windows. These can be overridden manually by setting `terminal.integrated.shell.*` in [settings](/docs/getstarted/settings.md). Arguments can be passed to the terminal shell on Linux and OS X using the `terminal.integrated.shellArgs.*` settings.
 
 ### Windows
 
@@ -108,7 +114,7 @@ The terminal will attempt to run the selected text.
 
 ![Run selected text result](images/integrated-terminal/terminal_run_selected_result.png)
 
-If no text is selected in the active editor, the entire file contents is run in the terminal. This is useful if you want to run an entire script or batch file. Simply open the file and run **Terminal: Run Selected Text in Active Terminal**.
+If no text is selected in the active editor, the entire file contents is run in the terminal. This is useful if you want to run an entire script or batch file. Open the file and run **Terminal: Run Selected Text in Active Terminal**.
 
 ### Copy & Paste
 
@@ -127,3 +133,7 @@ While focus is in the integrated terminal, many key bindings will not work as th
 ### Why is VS Code shortcut X not working when the terminal has focus?
 
 Currently the terminal consumes many key bindings, preventing Visual Studio Code from reacting to them. Some examples are `kbstyle(F1)` to open the **Command Palette** and `kbstyle(Ctrl+P)` for **Quick Open** on Linux and Windows. This is necessary as various terminal programs and/or shells may respond to these key bindings themselves. There are plans to explore a blacklist that would prevent certain key bindings from being handled by the terminal (see [#7269](https://github.com/Microsoft/vscode/issues/7269)).
+
+### Integrated terminal exited with code 1 on Windows 10
+
+This can happen if you run VS Code in compatibility mode which may be turned on automatically if you have upgraded Windows. You can change this by right-clicking the executable and selecting properties, then uncheck "Run this program in compatibility mode" in the compatibility tab.

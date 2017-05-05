@@ -1,7 +1,7 @@
 ﻿---
 title: 表示言語
 MetaDescription: How to change the display language (locale) of Visual Studio Code.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 Visual Studio Codeでは次10ヵ国語の言語パックを提供しています。英語(米国)、簡体字中国語、繁体字中国語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ロシア語、スペイン語です。なお言語パックはVS Codeにすでに含まれるため、追加インストールする必要はありません。

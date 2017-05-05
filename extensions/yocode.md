@@ -1,7 +1,7 @@
 ---
 title: Yo Code - Extension Generator
 MetaDescription: Easily create Visual Studio Code extensions and customizations with the Yo Code generator.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 私達は[Yeoman generator](https://github.com/Microsoft/vscode-generator-code)を提供し、拡張機能の公開を手助けしています。

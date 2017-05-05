@@ -1,8 +1,13 @@
 ---
-title: Python Programming
+Order: 9
+Area: languages
+TOCTitle: Python
+ContentId: c2cb770d-571d-4edf-9eb9-b5b8977c21a0
+PageTitle: Python with Visual Studio Code
+DateApproved: 5/4/2017
 MetaDescription: Learn about Visual Studio Code editor features (code completion, debugging, snippets, linting) for Python.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
 ---
+# Python on Visual Studio Code
 
 Python is fully supported in Visual Studio Code through [extensions](/docs/userguide/extension-gallery.md). Popular extensions in the [Marketplace](https://marketplace.visualstudio.com) provide code completion, linting, debugging, code formatting, snippets, and more.
 

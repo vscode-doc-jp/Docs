@@ -1,12 +1,14 @@
 ---
 title: プログラミング言語
 MetaDescription: In Visual Studio Code we have support for all common languages including smart code completion and debugging.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 ## いくつものプログラミング言語サポート
 
 Visual Studio Codeでは主要なプログラミング言語をほとんどサポートしています。例えばJavaScript、TypeScript、CSS、HTMLまた他の言語拡張を [VS Code Marketplace](https://marketplace.visualstudio.com/vscode/Languages)で探して取り入れることが可能です。
+
+>**Note**: もしVS Codeの表示言語を変更したいなら、[表示言語](/docs/getstarted/locales.md)トピックを確認してください
 
 ## 言語固有のドキュメント
 
@@ -43,6 +45,8 @@ VS Codeは現在の言語モードを確定するために、特定の識別子�
 インストール済みの言語と識別子を**言語モードの変更** (`kb(workbench.action.editor.changeLanguageMode)`) で確認できます。
 
 ![language identifiers](images/overview/language-identifiers.png)
+
+既知の識別子を[language identifier reference](/docs/languages/identifiers.md)で見つけることができます。
 
 ## 言語にファイル拡張子を追加
 
