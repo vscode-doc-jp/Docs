@@ -1,8 +1,7 @@
 ---
 title: ユーザーとワークスペース設定
 MetaDescription: How to modify Visual Studio Code User and Workspace Settings.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
-status: old
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 VS Codeを好みの設定で構成できます。VS Codeのエディタ、ユーザーインターフェイス、および機能的な動作のほぼすべての部分に、変更可能なオプションを用意しています
@@ -14,7 +13,7 @@ VS Codeでは設定用に2つのウィンドウを用意しました:
 
 ## ユーザーとワークスペース設定を作成 <a id="creating-user-and-worksspace-settings"></a>
 
-**ファイル**(**Code**) > **基本設定** > **設定**でユーザーとワークスペースの設定を構成するための項目を用意しています。既定の設定リストがあるので、これから編集したい設定をコピーして`setting.json`に書き込みます。右側のタブを使用すると、ユーザーとワークスペース設定ファイルをすばやく切り替えることができます。
+**ファイル**(**Code**) > **基本設定** > **設定**でユーザーとワークスペースの設定を構成するための項目を用意しています。設定リストがあるので、これから編集したい設定をコピーして`setting.json`に書き込みます。右側のタブを使用すると、ユーザーとワークスペース設定ファイルをすばやく切り替えることができます。
 
 これを**コマンドパレット** (`kb(workbench.action.showCommands)`) から**Preferences: Open User Settings**か**Preferences: Open Workspace Settings**を実行することでも開くことができます。
 
@@ -106,7 +105,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
 ### 既定の設定のコピー  <a id="copy-of-default-settings"></a>
 
-次は、既定の設定とその値です。
+次は、既定の設定とその値です。 (version 1.12.1:翻訳をメモリから当てました)
 
 ```json
 {
@@ -361,6 +360,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
 // ワークベンチ
 
+  // 有効にすると、エディターを 1 つも開いていないときに透かしのヒントが表示されます。
+  "workbench.tips.enabled": true,
+
   // 開いているエディターをタブに表示するかどうかを制御します。
   "workbench.editor.showTabs": true,
 
@@ -400,9 +402,6 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ファイルを表示しているエディターを、ファイルが削除されるかその他のプロセスによって名前を変更された場合に、自動的に閉じるかどうかを制御します。これを無効にすると、このような場合にエディターはダーティで開かれたままになります。アプリケーション内で削除すると、必ずエディターは閉じられ、ダーティ ファイルは閉じられることがなく、データは保存されませんのでご注意ください。
   "workbench.editor.closeOnFileDelete": true,
 
-  // 有効にすると、エディターを 1 つも開いていないときに透かしのヒントが表示されます。
-  "workbench.tips.enabled": true,
-
   // 有効にすると、スタートアップ時に、ようこそページが表示されます。
   "workbench.welcome.enabled": false,
 
@@ -412,8 +411,8 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ワークベンチで使用するアイコンのテーマを指定します。
   "workbench.iconTheme": null,
 
-  // 現在選択されている色のテーマから一部の色が上書きされます。次のリリースで色の名前が変更されるため、この設定は試験的なものです。
-  "workbench.experimental.colorCustomizations": null,
+  // 現在選択している配色テーマで配色を上書きします。
+  "workbench.colorCustomizations": {},
 
 // ウィンドウ
 
@@ -518,6 +517,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // Zen Mode をオンにするとワークベンチの下部にあるステータス バーを非表示にするかどうかを制御します。
   "zenMode.hideStatusBar": true,
 
+  // Zen Mode をオンにするとワークベンチの左側にあるアクティビティ バーを非表示にするかを制御します。
+  "zenMode.hideActivityBar": true,
+
   // Zen Mode で終了したウィンドウを Zen Mode に復元するかどうかを制御します。
   "zenMode.restore": false,
 
@@ -551,35 +553,6 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // グローバル シンボル検索の結果を、Quick Open の結果ファイルに含めるように構成します。
   "search.quickOpen.includeSymbols": false,
-
-// Git
-
-  // git を有効または無効にします
-  "git.enabled": true,
-
-  // Git 実行可能ファイルのパス
-  "git.path": null,
-
-  // 自動更新が有効かどうか
-  "git.autorefresh": true,
-
-  // 自動フェッチの有効/無効。
-  "git.autofetch": true,
-
-  // 長いコミット メッセージを警告するかどうか。
-  "git.enableLongCommitWarning": true,
-
-  // Code による大規模なリポジトリの管理を常に許可します。
-  "git.allowLargeRepositories": false,
-
-  // Git リポジトリを同期する前に確認します。
-  "git.confirmSync": true,
-
-  // Git バッジ カウンターを制御します。
-  "git.countBadge": "all",
-
-  // 一覧表示する分岐の種類を制御します。
-  "git.checkoutType": "all",
 
 // HTTP
 
@@ -813,6 +786,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
  // 浮動デバッグ操作バーを非表示にするかどうかを制御します
   "debug.hideActionBar": false,
 
+  // グローバル デバッグ起動構成。ワークスペース間で共有される 'launch.json' の代わりとして使用する必要があります
+  "launch": {},
+
 // HTML
 
   // 既定の HTML フォーマッタを有効/無効にします (再起動が必要です)
@@ -889,7 +865,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   "markdown.previewFrontMatter": "hide",
 
   // マークダウン プレビューで使用されるフォント ファミリを制御します。
-  "markdown.preview.fontFamily": "'Segoe WPC', 'Segoe UI', 'SFUIText-Light', 'HelveticaNeue-Light', sans-serif",
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
   // マークダウン プレビューで使用されるフォント サイズ (ピクセル単位) を制御します。
   "markdown.preview.fontSize": 14,
@@ -908,6 +884,12 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // マークダウンのプレビューでダブルクリックすると、エディターに切り替わります。
   "markdown.preview.doubleClickToSwitchToEditor": true,
+
+  // [試験的]拡張機能にマークダウン プレビューへの拡張を許可します。
+  "markdown.enableExperimentalExtensionApi": false,
+
+  // マークダウン拡張機能のデバッグログを有効にします。
+  "markdown.trace": "off",
 
 // PHP
 
@@ -934,16 +916,19 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // グローバル インストール TypeScript コンパイラ (tsc など) が、使用された TypeScript 言語サービスと異なっているかどうかを確認します。
   "typescript.check.tscVersion": true,
 
+  // 型定義の自動取得に NPM がインストールされているかどうかを確認する
+  "typescript.check.npmIsInstalled": true,
+
   // Enable/disable references CodeLens.Requires TypeScript >= 2.0.6.
   "typescript.referencesCodeLens.enabled": false,
 
   // Enable/disable implementations CodeLens. Requires TypeScript >= 2.2.0.
   "typescript.implementationsCodeLens.enabled": false,
 
-  // ファイルへの TS サーバーのログの記録を有効にします。
+  // ファイルへの TS サーバーのログを有効にします。このログは TS サーバーの問題を診断するために使用できます。ログには、プロジェクトのファイルパス、ソースコード、その他の潜在的に機密性の高い情報が含まれている場合があります。
   "typescript.tsserver.log": "off",
 
-  // TS サーバーに送信されるメッセージのトレースを有効にします。
+  // TS サーバーに送信されるメッセージのトレースを有効にします。このトレースは TS サーバーの問題を診断するために使用できます。トレースには、プロジェクトのファイルパス、ソースコード、その他の潜在的に機密性の高い情報が含まれている場合があります。
   "typescript.tsserver.trace": "off",
 
   // パラメーター シグネチャを含む完全な関数。
@@ -978,6 +963,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // 左右の空でない角かっこの間のスペース処理を定義します。
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+
+  // 左右の空でないかっこの間のスペース処理を定義します。TypeScript が 2.3.0 以上である必要があります。
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
 
   // テンプレート文字列の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
@@ -1021,6 +1009,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // 左右の空でない角かっこの間のスペース処理を定義します。
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
 
+  // 左右の空でないかっこの間のスペース処理を定義します。TypeScript が 2.3.0 以上である必要があります。
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
   // テンプレート文字列の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
 
@@ -1032,6 +1023,12 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // 新しい行にコントロール ブロックの始め波かっこを配置するかどうかを定義します。
   "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+
+  //  自動 JSDoc コメントを有効/無効にします
+  "jsDocCompletion.enabled": true,
+
+  // JavaScript ファイルのセマンティック チェックを有効/無効にします。既存の jsconfi.json や tsconfi.json ファイルの設定はこれより優先されます。TypeScript は 2.3.1 以上である必要があります。
+  "javascript.implicitProjectConfig.checkJs": false,
 
 // 拡張機能
 
@@ -1086,7 +1083,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // 端末の行の高さを制御します。この数値に端末のフォント サイズを乗算すると、実際の行の高さ (ピクセル単位) になります。
   "terminal.integrated.lineHeight": 1.2,
 
-  // Whether to enable bold text within the terminal, this requires support from the terminal shell.
+  // ターミナル内で太字を有効にするかどうか。これにはターミナルシェルからのサポートがひつようです。
   "terminal.integrated.enableBold": true,
 
   // 端末のカーソルを点滅させるかどうかを制御します。
@@ -1164,7 +1161,77 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // クラッシュ レポートを Microsoft に送信するように設定します。
   // このオプションを有効にするには、再起動が必要です。
-  "telemetry.enableCrashReporter": true
+  "telemetry.enableCrashReporter": true,
+
+// 既定の構成オーバーライド
+
+  // [go] 言語に対して上書きされるエディター設定を構成します。
+  "[go]":  {
+    "editor.insertSpaces": false
+  },
+
+  // [json] 言語に対して上書きされるエディター設定を構成します。
+  "[json]":  {
+    "editor.quickSuggestions": {
+        "strings": true
+    }
+  },
+
+  // [makefile] 言語に対して上書きされるエディター設定を構成します。
+  "[makefile]":  {
+    "editor.insertSpaces": false
+  },
+
+  // [markdown] 言語に対して上書きされるエディター設定を構成します。
+  "[markdown]":  {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false
+  },
+
+  // [yaml] 言語に対して上書きされるエディター設定を構成します。
+  "[yaml]":  {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+
+// Gulp
+
+  // Gulp タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "gulp.autoDetect": "on",
+
+// Grunt
+
+  // Grunt タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "grunt.autoDetect": "on",
+
+// Git
+
+  // Git が有効になっているかどうか
+  "git.enabled": true,
+
+  // Git 実行可能ファイルのパス
+  "git.path": null,
+
+  // 自動更新が有効かどうか
+  "git.autorefresh": true,
+
+  // 自動フェッチが有効かどうか
+  "git.autofetch": true,
+
+  // Git リポジトリを同期する前に確認する
+  "git.confirmSync": true,
+
+  // Git バッジ カウンターを制御します。`all`  はすべての変更をカウントします。 `tracked` は追跡している変更のみカウントします。 `off` はカウントをオフします。
+  "git.countBadge": "all",
+
+  // `Checkout to...` を実行するときに表示されるブランチの種類を制御します。`all` はすべての参照を表示します。`local` はローカル ブランチのみ、`tags`  はタグのみ、`remote` はリモート ブランチのみを表示します。
+  "git.checkoutType": "all",
+
+  // 旧 Git の警告を無視します
+  "git.ignoreLegacyWarning": false,
+
+  // リポジトリ内に変更が多い場合は警告を無視します
+  "git.ignoreLimitWarning": false
 }
 ```
 
@@ -1172,4 +1239,4 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
 **Q: ワークスペース設定はいつ利用すべきですか？**
 
-**A:** カスタム設定が必要なワークスペースを使用して、他のプロジェクトに適用したくない場合です。いい例として言語固有のlintルールです。
+**A:** カスタム設定が必要なワークスペースを使用していて、他のプロジェクトに適用したくない場合です。いい例として言語固有のlintルールです。
