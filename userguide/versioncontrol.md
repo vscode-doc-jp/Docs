@@ -1,17 +1,17 @@
 ---
 title: バージョン管理
 MetaDescription: Visual Studio Code has integrated Git support for the most common commands.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
-status: old
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
 Visual Studio Codeでは統合した[Git](https://git-scm.com/) をサポートしています。これは開発中のコミット管理をするための優れた選択肢になります。
 
->**Note:** VS CodeではPCにインストールされたGitを利用します。ですから機能を使えるように[Gitをインストール](https://git-scm.com/download)してください。少なくともバージョン`2.0.0`以上をインストールします。
+>**Note:** VS CodeではPCにインストールされたGitを利用します。
+機能を使うために、まず[Gitをインストール](https://git-scm.com/download)してください。少なくともバージョン`2.0.0`以上をインストールします。
 
 >**Tip:** VS CodeはGitレポジストリで大きな効果を発揮します。もしGitのプライベートホストを持っていない場合は、無料の[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs)をぜひ活用してください。[Click here to sign-up](https://go.microsoft.com/fwlink/?LinkID=307137&campaign=o~msft~code~vc)
 
-## 概要
+## 概要 <a id="overview"></a>
 
 ![git overview](images/versioncontrol/overview.png)
 
@@ -19,11 +19,11 @@ Visual Studio Codeでは統合した[Git](https://git-scm.com/) をサポート�
 
 各項目をクリックすることで**変更したファイル**内の詳細を表示します。ステージしていない変更は、右のエディターでもファイル編集できることに留意してください。
 
-またVS Codeの左下には**レポジストリの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意のGit referenceを選択してください。
+またVS Codeの左下には**レポジストリの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意の参照を選択してください。
 
 > **Tip:** GitリポジトリのサブディレクトリをVS Codeで開いた場合でもGitは通常通り動作し、リポジトリ内のすべての変更を表示します。ただし現在のワークスペース外ファイル変更は、それを示すツールチップと共に表示します。
 
-## Gitステータスバーの操作
+## Gitステータスバーの操作 <a id="git-status-bar-actions"></a>
 
 チェックアウトしたブランチが上流ブランチに設定されている場合、ブランチインジゲーターの隣に**同期**ボタンを表示します。
 
@@ -33,7 +33,7 @@ Visual Studio Codeでは統合した[Git](https://git-scm.com/) をサポート�
 
 ![git status bar publish](images/versioncontrol/git-status-bar-publish.png)
 
-## コミット
+## コミット <a id="commit"></a>
 
 **ステージング**と**ステージング解除**はファイルのコンテキスト操作か、D&Dによって行います。
 
@@ -41,11 +41,9 @@ Visual Studio Codeでは統合した[Git](https://git-scm.com/) をサポート�
 
 私たちは段階的に行うコミット方式が良いワークフローになることを知っています。例えば先ほどの画像では`config.js`だけをコミットに含みます。次に、連続したコミット操作によって `vinyl-zip.js` `tests.js` の両方を別々にコミットすることでしょう。
 
-(編集メモ: 原文の意味がくみ取れず直訳
-
 より具体的な**コミット操作**はGitビュー上部の `...`メニューで確認できます。
 
-## ブランチとタグ
+## ブランチとタグ <a id="branches-and-tags"></a>
 
 **Quick Open**を使用してVS Code内でブランチを作成およびチェックアウトすることができます。`kb(workbench.action.quickOpen)`を押して`git`と`kbstyle(Space)`を入力します。これによって以下を表示します:
 
@@ -57,13 +55,13 @@ Visual Studio Codeでは統合した[Git](https://git-scm.com/) をサポート�
 
 `git branch`コマンドを使用することで、すぐに新しいブランチを作成できます。VS Codeでは新しいブランチ名を入力するだけで、 ブランチを作成しそれに切り替えます。
 
-## リモート
+## リモート <a id="remotes"></a>
 
 チェックアウトしたブランチが、リモートで[上流リンク](https://git-scm.com/book/ch3-5.html)であれば、 VS Codeは**プッシュ**、**プル**、**同期**の便利な操作を可能にします(**sync**は**push**のあと**pull**)。`...`メニュー でこれら操作を確認できます。
 
 >**Tip:** VS Codeがその都度Gitリモートに認証情報を問い合わせるのを避けるために、[set up a credential helper](https://help.github.com/articles/caching-your-github-password-in-git/)を設定するべきです。これを設定したくない場合は `git.autofetch`[設定](/docs/getstarted/settings.md)で自動フェチを無効にすることを検討してください。
 
-## ガターインジケーター
+## ガターインジケーター <a id="gutter-indicators"></a>
 
 Gitリポジトリのフォルダーを開いて編集を始めたなら、VS Codeは便利な注釈ガターと概要ルーラーを追加します。
 
@@ -73,13 +71,13 @@ Gitリポジトリのフォルダーを開いて編集を始めたなら、VS Co
 
 ![Gutter indicators](images/editingevolved/gutter.png)
 
-## マージの競合
+## マージの競合 <a id="merge-conficts"></a>
 
 ![Git merge](images/versioncontrol/merge.png)
 
 競合はVS Codeによって認識できますので、マーカー提供して解決の手伝いをしようとします。解決したなら競合するファイルをステージングして、変更をコミットしてください。
 
-## 差分表示
+## 差分表示 <a id="viewing-diffs"></a>
 
 私たちのGitツールはVS Code内で差分表示をサポートしています。
 
@@ -87,13 +85,13 @@ Gitリポジトリのフォルダーを開いて編集を始めたなら、VS Co
 
 >**Tip:** エクスプローラーか**OPEN EDITORS**リストで1つめのファイルを右クリックして**変更を開く**を選択します。その後2つ目のファイルを同じように選択することで、2つのファイルを比較することができます。あるいは`kb(workbench.action.showCommands)`を押して**File: Compare Active File With...**を選択して以前開いたファイルを表示することでも可能です。
 
-## Git出力ウィンドウ
+## Git出力ウィンドウ <a id="git-output-window"></a>
 
 VS CodeがどのようにGitを使用しているのか見ることができます。何か変なことが起きている場合や、興味がある場合に便利です:)
 
 Git出力ウィンドウを表示するには **表示** > **出力** を表示してドロップダウンから`Git`を選択します。
 
-## リポジトリーの初期化
+## リポジトリーの初期化 <a id="initialize-a-repository"></a>
 
 ワークスペースがGitの管理下にない場合は**Initialize git repository**コマンドを利用して簡単にGitリポジトリーを作成できます。VS Codeが既存のGitリポジトリーを検出しない場合「**このワークスペースはまだGitソース管理下にありません。**」を表示して、**Initialize git repository**コマンドを利用可能にします。
 
@@ -101,7 +99,7 @@ Git出力ウィンドウを表示するには **表示** > **出力** を表示�
 
 **Initialize git repository**を実行するとGitレポジストリに必要なメタデータファイルを作成して、ワークスペースファイルをステージされていない変更として表示します。
 
-## Gitパッチ/差分モード
+## Gitパッチ/差分モード <a id="git-pass/diff-mode"></a>
 
 コマンドラインからVS Codeを起動する場合、現在のインスタンスを閉じるまでコマンド待機する`--wait`引数を設定できます。Gitの外部エディターとしてVS Codeを設定するときに便利です。
 
@@ -155,12 +153,9 @@ VS Codeをエディターとして使用できる例を以下に示します:
 > git push -u origin master
 ```
 
-**Q: Gitの代わりにTeam Foundation version control (TFVC) を使用しています。何をすべきですか？****
+**Q: Gitの代わりにTeam Foundation version control (TFVC) を使用しています。何をすべきですか？**
 
-**A:** Team Foundationのコマンドラインツールを使用してください。
-
-* クラスプラットホームを使う場合: [Cross-Platform Command-Line Client Beginner's Guide](https://msdn.microsoft.com/en-us/library/hh873092.aspx)
-* Windowsの場合: [Use Team Foundation version control commands](https://msdn.microsoft.com/en-us/library/vstudio/cc31bk2e.aspx)
+**A:**  [Visual Studio Team Services Extension](https://marketplace.visualstudio.com/items?itemName=ms-vsts.team)を使用して、TFVCサポートを得てください。
 
 **Q: なぜプル、プッシュ、同期が終わりませんか？**
 

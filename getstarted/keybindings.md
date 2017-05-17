@@ -1,9 +1,9 @@
 ---
 title: キーバインディング
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
-status: old
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
+
 
 Visual Studio Codeでは、ほとんどのタスクをキーボードから直接実行することが可能です。このページではデフォルトのバインディング(キーボードショートカット)とその更新方法を説明します。
 
@@ -11,24 +11,27 @@ Visual Studio Codeでは、ほとんどのタスクをキーボードから直�
 
 ## エディターのキーボードショートカット <a id="keyboard-shortcuts-editor"></a>
 
-Visual Studio Codeは**キーボードショートカット**エディターを使用して、豊富で簡単なキーボードショートカットの編集ができます。これはキーバインドの有無にかかわらず使用可能なすべてのコマンドを一覧表示して、使用可能なアクションを使用してキーバインドを簡単に変更/削除/リセットできます。また上部には、コマンドやキーバインドの検索に役立つ検索窓があります。 * **ファイル**(**Code**)  > **基本設定** > **キーボード ショートカット**に移動してキーボードショートカットを構成します。
+Visual Studio Codeは**キーボードショートカット**エディターを使用して、豊富で簡単なキーボードショートカットの編集ができます。これはキーバインドの有無にかかわらず使用可能なすべてのコマンドを一覧表示して、使用可能なアクションを使用してキーバインドを簡単に変更/削除/リセットできます。また上部には、コマンドやキーバインドの検索に役立つ検索窓があります。 **ファイル**(**Code**)  > **基本設定** > **キーボード ショートカット**に移動してキーボードショートカットを構成します。
 
 ![Keyboard Shortcuts](images/keybinding/keyboard-shortcuts.gif)
 
 ここで最も重要なのは、キーボードレイアウトに合わせてキーバインドを確認できることです。例えばドイツ語に変更された場合、USレイアウトで表される`cmd+\`キーは`ctrl+shift+alt+cmd+7`と表します。キーバインドを入力するダイアログでは、キーボードレイアウトごとに正しいキーボードバインドを割り当てます。
 
-高度なカスタマイズをするには[Advanced Customizations](/docs/getstarted/keybindings.md#advanced-customizations)を参照してください。
+高度なカスタマイズをするには[Advanced Customizations](/docs/getstarted/keybindings.md#advanced-customization)を参照してください。
 
 ## キーマップの拡張機能 <a id="keymap-extensions"></a>
 
-キーボード ショートカットは生産性にとって不可欠です。ですがキーボードの習慣を変えるのは難しいものです。この問題に対処するために **ファイル** > **基本設定** > **キーマップ拡張機能**では、一般的なキーマップ拡張機能のリストを用意しています。これら拡張機能は、VS Codeのショートカットを他のエディタのショートカットと一致するように変更できるので、新しいキーボードショートカットを習得する必要はありません。Marketplaceで[Keymaps category](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)を詳細に確認してください。
+キーボード ショートカットは生産性にとって不可欠です。ですがキーボードの習慣を変えるのは難しいものです。この問題に対処するために **ファイル** > **基本設定** > **キーマップ拡張機能**では、一般的なキーマップ拡張機能のリストを用意しています。これら拡張機能は、VS Codeのショートカットを他のエディタのショートカットと一致するように変更できるので、新しいキーボードショートカットを習得する必要はありません。Marketplaceで[Keymaps category](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) をより詳細に確認してください。
+
+
+
 
 
 ## キーボード ショートカットの参照 <a id="keyboard-shortcuts-reference"></a>
 
 印刷可能なキーボードショートカットリストを用意しています。**ヘルプ** > **キーボード ショートカットの参照**で印刷に最適化されたPDFバージョンを表示します。
 
-各プラットホーム別のリンクは次の通りです:
+各プラットフォーム別のリンクは次の通りです:
 
 * [Windows](https://go.microsoft.com/fwlink/?linkid=832145)
 * [macOS](https://go.microsoft.com/fwlink/?linkid=832143)
@@ -57,8 +60,8 @@ Key|Command|Command id
 `kb(editor.action.moveSelectionToNextFindMatch)`|最後に選択した項目を次の一致項目に移動|`editor.action.moveSelectionToNextFindMatch`
 `kb(cursorUndo)`|Undo last cursor operation|`cursorUndo`
 `kb(editor.action.insertCursorAtEndOfEachLineSelected)`|選択した行から複数のカーソルを作成|`editor.action.insertCursorAtEndOfEachLineSelected`
-`kb(editor.action.selectHighlights)`|一致するすべての出現箇所を選択します|`editor.action.selectHighlights`
-`kb(editor.action.changeAll)`|すべての出現箇所を変更|`editor.action.changeAll`
+`kb(editor.action.selectHighlights)`|一致するすべての出現個所を選択します|`editor.action.selectHighlights`
+`kb(editor.action.changeAll)`|すべての出現個所を変更|`editor.action.changeAll`
 `kb(expandLineSelection)`|Select current line|`expandLineSelection`
 `kb(editor.action.insertCursorBelow)`|カーソルを下に挿入|`editor.action.insertCursorBelow`
 `kb(editor.action.insertCursorAbove)`|カーソルを上に挿入|`editor.action.insertCursorAbove`
@@ -192,7 +195,7 @@ Key|Command|Command id
 `kb(workbench.action.toggleSidebarVisibility)`|サイドバーの表示の切り替え|`workbench.action.toggleSidebarVisibility`
 `kb(workbench.view.explorer)`|エクスプローラーを表示|`workbench.view.explorer`
 `kb(workbench.view.debug)`|デバッグの表示|`workbench.view.debug`
-`kb(workbench.view.git)`|Gitを表示|`workbench.view.git`
+`kb(workbench.view.scm)`|ソース管理を表示|`workbench.view.scm`
 `kb(workbench.view.extensions)`|拡張機能を表示する|`workbench.view.extensions`
 `kb(workbench.action.output.toggleOutput)`|出力の切り替え|`workbench.action.output.toggleOutput`
 `kb(workbench.action.quickOpenView)`|Quick Openビュー|`workbench.action.quickOpenView`
@@ -320,7 +323,7 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
 
 ## コマンドの引数 <a id="command-arguments"></a>
 
-引数を指定してコマンドを呼びだすことができます。多くの場合、特定のファイルやフォルダー上で同じ操作を実行する場合に便利です。
+引数を指定してコマンドを呼び出すことができます。多くの場合、特定のファイルやフォルダ上で同じ操作を実行する場合に便利です。
 
 既存の`kbstyle(Enter)`キーを上書きする例です：
 
@@ -330,7 +333,7 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
                     "when": "editorTextFocus" }
 ```
 
-"command": "type" により、Enterキーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディターに出力する動作となります。
+"command": "type" により、Enter キーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディタに出力する動作となります。
 
 ## when節のコンテキスト <a id="when-caulse-contexts"></a>
 
@@ -403,11 +406,11 @@ config.editor.minimap.enabled | `editor.minimap.enabled`設定が`true`のとき
 
 ```
 
-## キーボードレイアウト
+## キーボードレイアウト <a id="keyboard-layouts"></a>
 
 >**Note:** このセクションはキーバインディングにのみ関連し、エディタでの入力には関係しません。
 
-上記のキー(印刷文字？)は仮想キーの文字列表現であり、押したときに入力される文字と必ずしも関連しません。詳細:
+上記のキー(印刷文字?)は仮想キーの文字列表現であり、押したときに入力される文字と必ずしも関連しません。詳細:
 
 * 参考: [Virtual-Key Codes (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731)
 * `kbstyle(tab)` for `VK_TAB` (`0x09`)
@@ -481,4 +484,4 @@ config.editor.minimap.enabled | `editor.minimap.enabled`設定が`true`のとき
 
 **Q: キーバインディングを`keybindings.json`で変更しましたが機能しません**
 
-**A:** よくある例としてファイルの構文エラーです。 それ以外の場合は `when`節を削除するか、別の`key`を選んでみてください。残念ながら現時点では、このように試行錯誤するしかありません。
+**A:** よくある例としてファイルの構文エラーです。 そうでなければ `when`節を削除するか、別の`key`を選んでみてください。残念ながら現時点では、このように試行錯誤するしかありません。
