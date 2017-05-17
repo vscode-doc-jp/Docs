@@ -1,10 +1,8 @@
 ---
-title: VS Code Theme Color Reference
+title: Theme Color Reference
 MetaDescription: Reference for Visual Studio Code theme colors.
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
-status: old
 ---
-# Theme Color Reference
 
 You can customize your active Visual Studio Code [color theme](/docs/getstarted/themes.md) with the `workbench.colorCustomizations` user [setting](/docs/getstarted/settings.md).
 

@@ -1,14 +1,8 @@
 ---
-Order: 2
-Area: nodejs
-TOCTitle: Node.js Tutorial
-ContentId: ED394CD2-D09E-4E3A-96AD-6D3D8337BA9D
-PageTitle: Build Node.js Apps with VS Code
-DateApproved: 5/4/2017
+title: Build Node.js Apps with VS Code
 MetaDescription: Visual Studio Code has great support for writing and debugging Node.js applications. This tutorial takes you from Hello World to a full Express web application.
-MetaSocialImage: nodejs_runtimes_node.png
+commitid: 730a1acf7f1e98be80d306adf1ca12f695b8e461
 ---
-# Node.js Tutorial in VS Code
 
 [Node.js](https://nodejs.org/) is a platform for building fast and scalable server applications using JavaScript. Node.js is the runtime and [NPM](https://www.npmjs.com/) is the Package Manager for Node.js modules.
 
