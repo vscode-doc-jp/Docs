@@ -1,34 +1,30 @@
 ﻿﻿---
-Order: 10
-Area: editor
-TOCTitle: Tasks
-ContentId: F5EA1A52-1EF2-4127-ABA6-6CEF5447C608
-PageTitle: Tasks in Visual Studio Code
-DateApproved: 5/4/2017
+title: タスク
 MetaDescription: Expand your development workflow with task integration in Visual Studio Code (Gulp, Grunt, Jake and more).
+commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
 
-# Integrate with External Tools via Tasks
+# タスクを利用して外部ツールと統合する <a id="integrate-with-external-tools-via-tasks"></a>
 
-Lots of tools exist to automate tasks like building, packaging, testing or deploying software systems. Examples include [Make](https://en.wikipedia.org/wiki/Make_software), [Ant](https://ant.apache.org/), [Gulp](http://gulpjs.com/), [Jake](http://jakejs.com/), [Rake](http://rake.rubyforge.org/) and [MSBuild](https://github.com/Microsoft/msbuild).
+ビルド、パッケージング、テストやソフトウェアのシステム構築などのタスクを自動化するツールが多数存在します。いわゆる [Make](https://en.wikipedia.org/wiki/Make_software), [Ant](https://ant.apache.org/), [Gulp](http://gulpjs.com/), [Jake](http://jakejs.com/), [Rake](http://rake.rubyforge.org/), [MSBuild](https://github.com/Microsoft/msbuild)のことです。
 
 ![VS Code can talk to a variety of external tools](images/tasks/tasks_hero.png)
 
-These tools are mostly run from the command line and automate jobs outside the inner software development loop (edit, compile, test and debug).  Given their importance in the development life-cycle, it is very helpful to be able to run them and analyze their results from within VS Code.
+これらのツールは主にコマンドラインから実行され、ソフトウェア開発(編集 コンパイル テスト デバッグ)以外のジョブを自動化します。開発ライフサイクルにおけるこれらの重要性を考えると、VS Codeから実行してその結果を分析できることはとても便利だといえます。
 
->Please note that task support is only available when working on a workspace folder. It is not available when editing single files.
+> **Note:** タスクはワークスペースフォルダー上で作業している場合にのみ使用できます。つまり、一つのファイルを編集時は使用できません。
 
-## Hello World
+## Hello World <a id="hello-world"></a>
 
-Let's start with a simple "Hello World" task which will display text to the **OUTPUT** panel when run.
+実行時に**出力**パネルにテキストを表示する、単純な"Hello World"タスクから始めてみましょう。
 
-Tasks are defined in a workspace `tasks.json` file and VS Code has templates for common task runners. In the **Command Palette** (`kb(workbench.action.showCommands)`), you can filter on 'task' and can see the various Task related commands.
+`tasks.json`ファイルはワークスペース内で定義可能で、VS Codeは一般的なタスクのテンプレートを用意しています。**コマンドパレット**(`kb(workbench.action.showCommands)`)では、`task`でフィルターをかけて、タスクに関連するコマンドを確認できます。
 
 ![tasks in command palette](images/tasks/tasks-command-palette.png)
 
-Select the **Tasks: Configure Task Runner** command and you will see a list of task runner templates. Select **Others** to create a task which runs an external command.
+まず**Tasks: Configure Task Runner**コマンドを選択して、テンプレートのリストを表示します。次に、外部コマンドを実行する**Others**を選択してください。
 
-You should now see a `tasks.json` file in your workspace `.vscode` folder with the following content:
+ワークスペースの`.vscode`フォルダに`tasks.json`ファイルが次の内容で表示されるはずです:
 
 ```json
 {
@@ -40,39 +36,39 @@ You should now see a `tasks.json` file in your workspace `.vscode` folder with t
 }
 ```
 
-In this example, we are just running the `echo` shell command with "Hello World" as an argument.
+今回の例では"Hello World"を引数として、シェルコマンド`echo`を実行していきます。
 
-Test the `echo` task by running **Tasks: Run Task** and selecting `echo` from the dropdown. The **OUTPUT** panel will open and you'll see the text "Hello World".
+タスク`echo`をテストしてみましょう。**Tasks: Run Task**を実行して、ドロップダウンから`echo`を選択してください。**出力**パネルが開き、"Hello World"というテキストを確認できます。
 
-You can get IntelliSense on `tasks.json` variables and their values with hover and trigger smart completions with `kb(editor.action.triggerSuggest)`.
+`tasks.json`ではIntelliSenseを利用可能です。変数とその値にホバーして`kb(editor.action.triggerSuggest)`でトリガーできます。
 
 ![tasks IntelliSense](images/tasks/tasks-intellisense.png)
 
->**Tip:** You can run your task through **Quick Open** (`kb(workbench.action.quickOpen)`) by typing 'task', `kbstyle(Space)` and the command name. In this case, 'task echo'.
+>**Tip:** **Quick Open**(`kb(workbench.action.quickOpen)`)で"`task``kbstyle(Space) <commandname>"と入力すればタスクを実行できます。今回の場合は 'task echo'です。
 
-## Output Window Behavior
+## 出力ウィンドウの動作 <a id="output-window-behavior"></a>
 
-Sometimes you will want to control how the output window behaves when running tasks. For instance, you may want to maximize editor space and only look at task output if you think there is a problem. The property **showOutput** controls this and the valid values are:
+場合によっては、タスクを実行時に出力ウィンドウの動作を制御したいこと思うことでしょう。たとえば、タスクに問題があるときは、エディターを最大化して、タスク出力ウィンドウのみを表示したいと思うかもしれません。**showOutput**プロパティはこれを制御できます。有効な値は次の通りです:
 
-- **always** - The output window is always brought to front. This is the default.
-- **never** - The user must explicitly bring the output window to the front using the **View** > **Output** command (`kb(workbench.action.output.toggleOutput)`).
-- **silent** - The output window is brought to front only if no [problem matchers](/docs/userguide/tasks.md#processing-task-output-with-problem-matchers) are set for the task.
+- **always** - 出力ウィンドウを常に前面表示します。(既定)。
+- **never** - ユーザーが **表示** > **出力**(`kb(workbench.action.output.toggleOutput)`) を実行して出力ウィンドウを開くまで確認できません。
+- **silent** - タスクに[問題マッチャー](/docs/userguide/tasks.md#processing-task-output-with-problem-matchers)が設定されていない場合にのみ、出力ウィンドウを全面に表示します。
 
 ### echoCommand
 
-To see the exact command VS Code is running, you can enable the `echoCommand` setting in `tasks.json`:
+VS Codeが実行している正確なコマンドを確認するには、`tasks.json`内の`echoCommand`設定を有効にします:
 
 ![tasks echoCommand](images/tasks/tasks-echoCommand.png)
 
->**Note:** VS Code ships with predefined `tasks.json` templates to run npm, MSBuild, maven and other command line tools. A great way to learn about tasks is to review these templates and see which tools or task runners are similar to other tools you may be using.
+>**Note:**VS Codeにはnpm、MSBuild、mavenおよびその他のコマンドラインを実行するために、定義済みの`tasks.json`テンプレートが同梱されています。タスクについて学習したいならこのテンプレートを確認し、使用している他のツールに類似したツールやタスクランナーを確認することが最適です。
 
 ## command and tasks[]
 
-`tasks.json` takes a single `command` value which can be a task runner like gulp or grunt or any command line tool like a compiler or linter. By default the `command` will show up in the **Tasks: Run Task** dropdown.
+`tasks.json`は単一の`command`値をとります。この値はGuplやGruntといったタスクランナーや、任意のコマンドラインツール(コンパイラーやlinter)の値になります。既定で`command`は、**Tasks: Run Task**のドロップダウンに利用されます。
 
-You can also define multiple tasks in a `tasks` array in order to pass different arguments or use different settings when the `command` is run.
+また`tasks`配列に複数のタスクを定義して、異なる引数を渡したり`command`を実行したときに異なる設定を使うこともできます。
 
-Here's a simple example passing different arguments to the `echo` command:
+次は、異なる引数を`echo`コマンドに渡す簡単な例です:
 
 ```json
 {
@@ -96,20 +92,20 @@ Here's a simple example passing different arguments to the `echo` command:
 }
 ```
 
-Now when you run **Tasks: Run Task**, you will now see two tasks in the dropdown `hello` and `bye`. We set `suppressTaskName` to true as by default the task name is also passed to the command which would result in "echo hello Hello World".
+いま**Tasks: Run Task**を実行すれば、ドロップダウンに`hello`と`bye`という2つのタスクが確認できます。私たちは`suppressTaskName`をtrueに設定しました。これによりタスク名もコマンドに渡されます。結果は"echo hello Hello World"になるでしょう。
 
 ![tasks array](images/tasks/tasks-array.png)
 
-Some `tasks.json` properties such as `showOutput` and `suppressTaskName` can be set both globally and then overridden in specific tasks. The `tasks` `args` property values are appended to the global arguments. The final command line is constructed as follows:
+`showOutput`や`suppressTaskName`は、グローバルに設定したり特定のタスクで上書きしたりすることが可能です。`tasks args`プロパティ値はグローバル変数に追加されます。その結果のコマンドラインは次の通りです:
 
-* If `suppressTaskName` is `true`, the command line is `command 'global args' 'task args'`.
-* If `suppressTaskName` is `false`, it is `command 'global args' taskName 'task args'`.
+* `suppressTaskName`が`true`: `command 'global args' 'task args'`
+* `suppressTaskName`が`false`:`command 'global args' taskName 'task args'`
 
-There are also `tasks` specific properties. One useful property is `isBuildCommand`, which if set to true, will run the task with the **Tasks: Run Build Task** (`kb(workbench.action.tasks.build)`) command.
+`tasks`固有のプロパティもあります。便利なプロパティの1つは`isBuildCommand`です。これをtrueに設定すると、**Tasks: Run Build Task** (`kb(workbench.action.tasks.build)`)を実行しただけでそのタスクを実行します。
 
-## Running multiple commands
+## 複数のコマンドを実行 <a id="running-multiple-commands"></a>
 
-If you want to run multiple different commands you can specify different commands per task. A `tasks.json` file using commands per task looks like this:
+複数の異なるコマンドを実行したいとき、タスクごとに異なるコマンドを指定することが可能です。タスクごとにコマンドを使用するときの`tasks.json`ファイルは次のようになります:
 
 ```json
 {
@@ -133,13 +129,13 @@ If you want to run multiple different commands you can specify different command
 }
 ```
 
-The first task start the TypeScript compiler in watch mode, the second one starts the gulp build. If a tasks specifies a local command to run the task name is not included into the command line (`suppressTaskName` is `true` by default for these tasks). Since a local command can specify local arguments, there is no need for adding it by default. If a `tasks.json` file specifies both global and task local commands, the task local commands win over the global command. There is no merging between a global and a task local command.
+1つ目のタスクはwatchモードでTypeScriptコンパイラーを開始し、2番目のタスクはgulpのビルドを開始します。タスクがローカルコマンドを指定すると、実行時にタスク名はコマンドラインに含まれません(`suppressTaskName`は既定で`true`です)。ローカルのコマンドはローカル引数を指定できるので、既定ではそれを追加する必要はありません。もし`tasks.json`ファイルがグローバルとタスクのローカルコマンドの両方を指定するなら、タスクのローカルコマンドが優先されます。つまり、グローバルコマンドとタスクのローカルコマンドは一緒になることがないのです。
 
-## Binding keyboard shortcuts to tasks
+## タスクにキーボードショートカットをバインド <a id="binding-keyboard-shortcuts-totasks"></a>
 
-If you need to run a task frequently, you can also define a keyboard shortcut for the task.
+タスクを頻繁に実行する必要があるとき、タスクのキーボードショートカットを定義することもできます。
 
-For example to bind `ctrl+h` to the `build` task from above, add the following to your `keybindings.json` file:
+たとえば`ctrl+h`を`build`に上書きするバインドなら、`keybindings.json`に次を追加します:
 
 ```json
 {
@@ -149,24 +145,24 @@ For example to bind `ctrl+h` to the `build` task from above, add the following t
 }
 ```
 
-## Variable substitution
+## 変数置換 (変数) <a id="variable-substitution"></a>
 
-When authoring tasks configurations, it is often useful to have a set of predefined common variables.  VS Code supports variable substitution inside strings in the `tasks.json`  file and has the following predefined variables:
+タスクを構成するとき、事前に定義された共通変数を利用すると便利なことがよくあります。VS Codeは`tasks.json`ファイル内で文字列の変数置換をサポートしており、次の定義された変数を持っています:
 
-- **${workspaceRoot}** the path of the folder opened in VS Code
-- **${workspaceRootFolderName}** the name of the folder opened in VS Code without any slashes (/)
-- **${file}** the current opened file
-- **${relativeFile}** the current opened file relative to `workspaceRoot`
-- **${fileBasename}** the current opened file's basename
-- **${fileBasenameNoExtension}** the current opened file's basename without the extension
-- **${fileDirname}** the current opened file's dirname
-- **${fileExtname}** the current opened file's extension
-- **${cwd}** the task runner's current working directory on startup
-- **${lineNumber}** the current selected line number in the active file
+- **${workspaceRoot}** VS Codeで開いたフォルダーのパス
+- **${workspaceRootFolderName}** VS Codeで開いたスラッシュ(/)を含まないフォルダーの名前
+- **${file}** 現在開いているファイル
+- **${relativeFile}** `workspaceRoot`と相対的な現在開いているファイル
+- **${fileBasename}** 現在開いているファイルのベース名
+- **${fileBasenameNoExtension}** 現在開いているファイルから拡張子を含まないファイルの名前
+- **${fileDirname}** 現在開いているファイルのディレクトリ名
+- **${fileExtname}** 現在開いているファイルの拡張子
+- **${cwd}** タスクランナー起動時の現在の作業ディレクトリ
+- **${lineNumber}** アクティブなファイルの現在選択されている行番号
 
-You can also reference environment variables through **${env.Name}** (e.g. ${env.PATH}). Be sure to match the environment variable name's casing, for example `env.Path` on Windows.
+ **${env.Name}**を利用して、環境変数を参照することもできます(例:${env.PATH})。環境変数のNAMEは必ず大文字と小文字を区別してください。例: `env.Path`(windows)
 
-Below is an example of a configuration that passes the current opened file to the TypeScript compiler.
+次の例は、現在開いているファイルをTypeScriptのコンパイラーに渡す設定の例です。
 
 ```json
 {
@@ -175,11 +171,11 @@ Below is an example of a configuration that passes the current opened file to th
 }
 ```
 
-## Operating System Specific Properties
+## OS特有のプロパティ <a id="operating-system-specific-properties"></a>
 
-The task system supports defining values (for example, the command to be executed) specific to an operating system. To do so, put an operating system specific literal into the `tasks.json` file and specify the corresponding properties inside that literal.
+タスクシステムは、OS固有の定義をサポートしています。これを行うには、`tasks.json`ファイルにOSのリテラル(名前)を書き込み、その中に対応するプロパティを指定します。
 
-Below is an example that uses the Node.js executable as a command and is treated differently on Windows and Linux:
+次の例は、Node.jsの実行可能ファイルの場所をコマンドとして使用する例であり、WindowsとLinuxで異なった扱い受けます:
 
 ```json
 {
@@ -193,9 +189,9 @@ Below is an example that uses the Node.js executable as a command and is treated
 }
 ```
 
-Valid operating properties are `windows` for Windows, `linux` for Linux and `osx` for Mac. Properties defined in an operating system specific scope override properties defined in the global scope.
+有効なプロパティは、Windowsでは`windows`、Linuxでは`linux`、Macでは`osx`です。OS特有のスコープで定義したプロパティは、グローバルスコープで定義するプロパティより優先されます。
 
-In the example below:
+例:
 
 ```json
 {
@@ -207,9 +203,9 @@ In the example below:
 }
 ```
 
-Output from the executed task is never brought to front except for Windows where it is always shown.
+実行したタスクからの出力は、常に表示されるWindowsを除いて前面には表示しません。
 
-Tasks local commands can be made operating specific as well. The syntax is the same as for global commands. Here an example that adds an OS specific argument to a command:
+タスクのローカルコマンドもまた同様に動作させることができます。構文はグローバルコマンドと同じです。OS固有の引数をコマンドに追加する例を次に示します:
 
 ```json
 {
@@ -233,33 +229,33 @@ Tasks local commands can be made operating specific as well. The syntax is the s
 }
 ```
 
-## Examples of Tasks in Action
+## 実践的なタスクの例 <a id="examples-of-tasks-in-action"></a>
 
-To highlight the power of Tasks, here are a few examples of how VS Code can use Tasks to integrate external tools like linters and compilers.
+タスクの機能を最大限活用するために、VS Codeのタスクを使用してlintやコンパイラーなどの外部ツールを統合する方法を次に示します:
 
-### Transpiling TypeScript to JavaScript
+### TypeScriptをJavaScriptに変換
 
-The [TypeScript topic](/docs/languages/typescript.md#transpiling-typescript-into-javascript) includes an example that creates a task to transpile TypeScript to JavaScript and observe any related errors from within VS Code.
+[TypeScriptトピック](/docs/languages/typescript.md#transpiling-typescript-into-javascript)では、TypeScriptをJavaScriptに変換し、VS Code内で関連するエラーを監視するタスクを作成する例を解説します。
 
-### Compiling Markdown to HTML
+### MarkdownをHTMLにコンパイル
 
-The Markdown topic provides two examples for compiling Markdown to HTML:
+Markdownトピックでは、MarkdownをHTMLにコンパイルするための2つの例を解説しています。
 
-1. [Manually compiling with a Build task](/docs/languages/markdown.md#compiling-markdown-into-html)
-2. [Automation of the compile step with a file watcher](/docs/languages/markdown.md#automating-markdown-compilation)
+1. [ビルドタスクを利用して手動のコンパイルを行う](/docs/languages/markdown.md#compiling-markdown-into-html)
+2. [file watcherによるコンパイル手順の自動化](/docs/languages/markdown.md#automating-markdown-compilation)
 
-### Transpiling Less and Sass into CSS
+### LessとSassをCSSへ変換
 
-The CSS topic provides examples of how to use Tasks to generate CSS files.
+CSSトピックでは、タスクを使用してCSSファイルを生成する方法の例を開設しています。
 
-1. [Manually transpiling with a Build task](/docs/languages/css.md#transpiling-sass-and-less-into-css)
-2. [Automation of the compile step with a file watcher](/docs/languages/css.md#automating-sassless-compilation)
+1. [ビルドタスクを利用して手動で変換を行う](/docs/languages/css.md#transpiling-sass-and-less-into-css)
+2. [file watcherによるコンパイル手順の自動化](/docs/languages/css.md#automating-sassless-compilation)
 
-## Autodetecting Gulp, Grunt and Jake Tasks
+## Gulp, Grunt, Jakeタスクの自動検出
 
-VS Code can autodetect tasks from within Gulp, Grunt and Jake files.  This adds their tasks to the task list without requiring additional configuration (unless you need to use a problem matcher, more on that in a moment).
+VS CodeはGulp、Grunt、Jakeファイルのタスクを自動検出できます。これにより、追加の構成を必要とせずにタスクリストにタスクを追加します(問題マッチャーを使用する必要がある場合を除きます )。
 
-To help make this example more concrete, let's use this simple Gulp file.  This defines two tasks: build and debug. The first compiles C# code using [Mono](http://www.mono-project.com/)'s compiler. The second starts the MyApp under the Mono debugger.
+この例を具体的にするために、次の簡単なGulpファイルを使用してみましょう。これは、ビルドとデバッグの2つのタスクを定義しています。1つ目は[Mono](http://www.mono-project.com/)を使用してC#のコードをコンパイルします。2つ目はMonoデバッガのもとでMyAppを開始します。
 
 ```javascript
 var gulp = require("gulp");
@@ -280,37 +276,37 @@ gulp.task('debug', ['build'], function(done) {
 });
 ```
 
-Pressing `kb(workbench.action.showCommands)` and then typing `Run Task` followed by `kbstyle(Enter)` will list all available tasks. Selecting one and pressing `kbstyle(Enter)` will execute the task.
+`kb(workbench.action.showCommands)`をおし、`Run Task`に続けて`kbstyle(Enter)`を入力すれば、利用可能なタスクの一覧を表示します。その中から選択して`kbstyle(Enter)`で確定すれば、そのタスクを実行します。
 
 ![Task list](images/tasks/gulpautodetect.png)
 
->**Note:** Gulp, Grunt and Jake are autodetected only if the corresponding files (for example `gulpfile.js`) are present in the root of the opened folder.
+>**Note:** Gulp、Grunt、Jakeの自動検出は、対応するファイル(例: `guplfile.js`)が開いているフォルダーのルートに存在する場合のみ機能します。
 
-## Processing Task Output with Problem Matchers
+## 問題マッチャーによるタスク出力の処理 <a id="processing-task-output-with-problem-matchers"></a>
 
-VS Code can process the output from a task with a problem matcher and we ship with a number of them 'in the box':
+VS Codeは問題マッチャーを利用して、タスクからの出力を処理することができます。次に標準の例を示します:
 
-- **TypeScript**: `$tsc` assumes that file names in the output are relative to the opened folder.
-- **TypeScript Watch**: `$tsc-watch` matches problems reported from the `tsc` compiler when executed in watch mode.
-- **JSHint**: `$jshint` assumes that file names are reported as an absolute path.
-- **JSHint Stylish**: `$jshint-stylish` assumes that file names are reported as an absolute path.
-- **ESLint Compact**: `$eslint-compact` assumes that file names in the output are relative to the opened folder.
-- **ESLint Stylish**: `$eslint-stylish` assumes that file names in the output are relative to the opened folder.
-- **Go**: `$go` matches problems reported from the `go` compiler. Assumes that file names are relative to the opened folder.
-- **CSharp and VB Compiler**: `$mscompile` assumes that file names are reported as an absolute path.
-- **Less**: `$lessCompile` assumes that file names are reported as absolute path.
+- **TypeScript**: `$tsc`は出力のファイル名が開かれたフォルダーと相対的であることを前提としています。
+- **TypeScript Watch**: `$tsc-watch`はwatchモードで実行されたとき、`tsc`コンパイラーから報告される問題と一致します。
+- **JSHint**: `$jshint`はファイル名が絶対パスとして報告されることを前提としています。
+- **JSHint Stylish**: `$jshint-stylish`はファイル名が絶対パスとして報告されることを前提としています。
+- **ESLint Compact**: `$eslint-compact`は出力のファイル名が開かれたフォルダーと相対的であることを前提としています。
+- **ESLint Stylish**: `$eslint-stylish` は出力のファイル名が開かれたフォルダーと相対的であることを前提としています。
+- **Go**: `$go`は`go`コンパイラーから報告される問題と一致します。ファイル名は開いているファイルと相対であることを前提とします。
+- **CSharp and VB Compiler**: `$mscompile`はファイル名が絶対パスとして報告されることを前提としています。
+- **Less**: `$lessCompile`はファイル名が絶対パスとして報告されることを前提としています。
 
-Problem matchers scan the task output text for known warning or error strings and report these inline in the editor and in the Problems panel. Problem matchers can be set globally or in a specific task entry.
+問題マッチャーは既知の警告やエラー文字列を確認するために、タスクの出力テキストを解析して、エディターと問題パネルにインラインで報告します。問題マッチャーは、グローバルか特定タスクのエントリー内で設定できます。
 
-You can also create your own problem matcher which we'll talk about soon.
+また、独自の問題マッチャーも作成可能です。これについて後で解説していきます。
 
-## Mapping Gulp, Grunt and Jake Output to Problem Matchers
+## Gulp, Grunt, Jake出力のマッピング
 
-You need to configure the tasks in a `tasks.json` file (located under your workspace `.vscode` folder) if you want to do more than just run the task.  For example, you might want to match reported problems and highlight them within VS Code, or to trigger a build task using the **Tasks: Run Build Task** command (`kb(workbench.action.tasks.build)`).
+タスクを実行するだけでなくもっと多くのことをしたい場合、`tasks.json`ファイル(ワークスペースの`.vscode`内)にタスクを構成する必要があります。たとえば、報告された問題をVS Code内で参照したり、**Tasks: Run Build Task**(`kb(workbench.action.tasks.build)`)を使用してビルドタスクをトリガしたいと思ったときです。
 
-If you don't already have a `tasks.json` under your workspace `.vscode` folder, running the **Tasks: Configure Task Runner** action from the **Command Palette** (`kb(workbench.action.showCommands)`) will offer you a set of templates to pick from.
+ワークスペースの`.vscode`フォルダー内に`tasks.json`がまだない場合は、**コマンドパレット**(`kb(workbench.action.showCommands)`)から**Tasks: Configure Task Runner**を実行することで、テンプレートを用意できます。
 
-For this example, select `Gulp` from the list. Given a `gulpfile.js` like the example above, this will generate a `tasks.json` file like this:
+今回の例ではリストから`Gulp`を選択します。上記の例のように `gulpfile.js`が与えられた場合の`tasks.json`は次のようになります:
 
 ```json
 {
@@ -337,9 +333,9 @@ For this example, select `Gulp` from the list. Given a `gulpfile.js` like the ex
 }
 ```
 
-Since we execute the Mono compiler to compile C# files, we should use the `$msCompile` problem matcher to detect any problems reported by the compiler.
+Monoコンパイラーを実行してC#ファイルをコンパイルするので、`$msCompile`の問題マッチャーを使用して、コンパイラーによって報告された問題を検出しなければなりません。
 
-The `problemMatcher` property will then be:
+その`problemMatcher`プロパティは次のようになります:
 
 ```json
             "problemMatcher": [
@@ -347,29 +343,29 @@ The `problemMatcher` property will then be:
             ]
 ```
 
-Several things to note about this `tasks.json`:
+この`tasks.json`についていくつか確認しておきましょう:
 
-1. We want to run the gulp command in a shell (VS Code directly executing it) so we used **isShellCommand**.
-2. We added an explicit **tasks** property which allowed us to *optionally* augment a task that was in the `gulpfile.js`.
-3. We defined a problem matcher **$msCompile** to process the output - since we are compiling C# using the Mono compiler, the built-in one works as *msc* adheres to the Microsoft compiler pattern.
+1. gulpコマンドを(直接VS Codeが)シェルを実行するようにしたいので、**isShellCommand**を使用しました。
+2. 明示的に**tasks**プロパティを追加しました。これにより`gulpfile.js`内にオプションのタスクを増やすことができました。
+3. 問題マッチャー**$msCompile**を定義して、出力を処理しました。C#コンパイルにMonoコンパイラーを使用しているので、Microsoftコンパイラーのパターンに順守し、**msc**として動作します。
 
-## Defining a Problem Matcher
+## 問題マッチャーの定義
 
-VS Code ships some of the most common problem matchers out of the box.  However, there are lots of compilers and linting tools out there, all of which produce their own style of errors and warnings.  So let's talk about how to make your own problem matcher.
+VS Codeは一般的な問題のマッチャーのいくつかを同封しています。ですが実際には、多くのコンパイラーとlintのツールがあります。そしてこれらツールはそれぞれ独自の形式のエラーと警告を生成します。独自の問題マッチャーを確認していきましょう。
 
-We have a `helloWorld.c` program in which the developer mistyped **printf**
-as **prinft**. Compiling it with [gcc](https://gcc.gnu.org/) will produce the following warning:
+ここに、開発者が**printf**と間違って入力した**prinft**を含む`helloWorld.c`プログラムがあります。
+これを[gcc](https://gcc.gnu.org/)でコンパイルすれば次の警告を表示します:
 
 ```bash
 helloWorld.c:5:3: warning: implicit declaration of function ‘prinft’
 ```
 
-We want to produce a problem matcher that can capture the message in the output and show a corresponding problem in VS Code.  Problem matchers heavily rely on [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). The section below assumes
-you are familiar with regular expressions.
+出力のメッセージをキャプチャして、VS Codeで該当する問題を表示できる問題マッチャーを作りたいと思います。問題マッチャーは[正規表現](https://en.wikipedia.org/wiki/Regular_expression)に大きく依存しています。
+次のセクションは、正規表現に精通していることを前提にしています。
 
->**Tip:** We have found the [RegEx101 playground](https://regex101.com/) a really good way to develop and test regular expressions.
+>**Tip:** 私たちは[RegEx101 playground](https://regex101.com/)が正規表現を確認するときにいい方法であることを確認しています。
 
-A matcher that captures the above warning (and errors) looks like:
+上記の警告(エラー)をキャプチャするマッチャーは次のようになります:
 
 ```json
 {
@@ -395,9 +391,9 @@ A matcher that captures the above warning (and errors) looks like:
 }
 ```
 
-Please note that the file, line and message properties are mandatory.
+ファイル、行、メッセージのプロパティが必須であることに注意してください。
 
-Here is a finished `tasks.json` file with the code above (comments removed) wrapped with the actual task details:
+次の`tasks.json`ファイルは先ほどの例からコメントを削除した、実際のタスクです:
 
 ```json
 {
@@ -419,22 +415,22 @@ Here is a finished `tasks.json` file with the code above (comments removed) wrap
 }
 ```
 
-Running it inside VS Code and pressing `kb(workbench.actions.view.problems)` to get the list of problems gives you the following output:
+VS Code内でこれを実行し、`kb(workbench.actions.view.problems)`をおして次のような問題のリストを表示します:
 
 ![GCC Problem Matcher](images/tasks/problemmatcher.png)
 
-There are a couple more properties that can be used inside a pattern. These are:
+パターン内で使用可能なプロパティはもう複数あります:
 
 - **location** if the problem location is line or line,column or startLine,startColumn,endLine,endColumn then our generic location match group can be used.
 - **endLine** the match group index for the problem's end line. Can be omitted if no end line value is provided by the compiler.
 - **endColumn** the match group index for the problem's end column. Can be omitted if no end column value is provided by the compiler.
 - **code** the match group index for the problem's code. Can be omitted if no code value is provided by the compiler.
 
->**Note:** A functional pattern must at least provide a match group for file, message and line or location.
+>**Note:** これらパターンにはファイル、メッセージ、行、場所のマッチグループを指定する必要があります。
 
-## Defining a Multi-Line Problem Matcher
+## 複数行の問題マッチャーの定義
 
-Some tools spread problems found in a source file over several lines, especially if stylish reporters are used. An example is [ESLint](http://eslint.org/); in stylish mode it produces output like this:
+いくつかのツールではstylishを利用している場合に、ソースファイル内の問題を複数行に広げて表現します。例として[ESLint](http://eslint.org/)をとります。このstylishモードでは次のような出力を得ます:
 
 ```bash
 test.js
@@ -442,11 +438,11 @@ test.js
 ✖ 1 problems (1 errors, 0 warnings)
 ```
 
-Our problem matcher is line-based so we need to capture the file name (test.js) with a different regular expression than the actual problem location and message (1:0   error  Missing "use strict" statement).
+私たちの問題マッチャーは行を基準とするので、メッセージ(1:0   error  Missing "use strict" statement)で使用したものとは異なる正規表現を使用して、test.js(ファイル名)をキャプチャする必要があります。
 
-To do this we use an array of problem patterns for the **pattern** property. This way you define a pattern per each line you want to match.
+これを行うには、**pattern**プロパティで複数の問題パターンを使用します。この方法で、一致させたい行ごとにパターンを定義します。
 
-The following problem pattern matches the output from ESLint in stylish mode - but still has one small issue which we will resolve next.  The code below has a first regular expression to capture the file name and the second to capture the line, column, severity, message and error code:
+次の問題パターンは、stylishモードにおいてESLintからの出力に対応できます。ですが、これにはまだ問題がありますのでこの次で解決しましょう。次のコードで、1番目の正規表現はファイル名を取得し、2番目の正規表現は行、列、重大度、メッセージおよびエラーコードを取得します。
 
 ```json
 {
@@ -469,7 +465,7 @@ The following problem pattern matches the output from ESLint in stylish mode - b
 }
 ```
 
-Of course it's never quite that simple, and this pattern will not work if there is more than one problem on a resource. For instance, imagine the following output from ESLint:
+もちろんこれほど簡単なものではなく、リソースに他複数の問題があるならこれは機能しません。たとえば、ESLintからの次の出力を想像してみてください:
 
 ```bash
 test.js
@@ -482,13 +478,13 @@ test.js
 ✖ 6 problems (6 errors, 0 warnings)
 ```
 
-The pattern's first regular expression will match "test.js", the second "1:0  error ...". The next line "1:9  error ..." is processed but not matched by the first regular expression and so no problem is captured.
+パターンの最初の正規表現は "test.js"と一致し、次に "1:0  error ...".と一致します。次の行の"1:9  error ..."は処理されますが、先ほどの正規表現では一致しないため問題はキャプチャされません。
 
-To make this work, the last regular expression of a multi-line pattern can specify the **loop** property. If set to **true**, it instructs the task system to apply the last pattern of a multi-line matcher to the lines in the output as long as the regular expression matches.
+これを機能させるために、パターン最後の正規表現で**loop**プロパティを指定することができます。**true**に設定すると正規表現が一致するかぎり、出力内の各行にし対してマッチャーの最後のパターンを適用し続けるようにタスクシステムに指示します。
 
-The information captured by all previous patterns is combined with the information captured by the last pattern and turned into a problem inside VS Code.
+すべてのパターンでキャプチャされた情報は、最後のパターンでキャプチャされた情報と組み合わせて、VS Code内の問題に変換されます。
 
-Here is a problem matcher to fully capture ESLint stylish problems:
+これはESLintにおけるstylish問題を完全にキャプチャするための問題マッチャーです:
 
 ```json
 {
@@ -512,18 +508,19 @@ Here is a problem matcher to fully capture ESLint stylish problems:
 }
 ```
 
-## Background / Watching tasks
+## バックグラウンド / 監視 タスク
 
-Some tools support running in the background while watching the file system for changes and then triggering an action when a file changes on disk. With `Gulp` such functionality is provided through the npm module [gulp-watch](https://www.npmjs.com/package/gulp-watch). The TypeScript compiler `tsc` has built in support for this via the `--watch command` line option.
+いくつかのツールはバックグラウンドでの動作をサポートしています。これはファイルシステムでファイルの変更を監視し、ディスク上でファイルが変更されたときにタスクをトリガーします。`Gulp`はこのような機能を[gulp-watch](https://www.npmjs.com/package/gulp-watch)により提供しています。TypeScriptコンパイラ`tsc`では、これを`--watch command`のラインオプションによってサポートしています。
 
-To provide feedback that a background task is active in VS Code and producing problem results, a problem matcher has to use additional information to detect these `state` changes in the output. Let's take the `tsc` compiler as an example. When the compiler is started in watch mode, it prints the following additional information to the console:
+
+バックグランドのタスクはVS Code内でのフィードバックを提供するために、問題マッチャーは出力における追加の情報を検出するために、いずれも状態を示す追加の情報を使用する必要があります。`tsc`を例にとってみましょう。コンパイラーがwatchモードで起動されると、次の追加情報がコンソールに出力されます:
 
 ```
 > tsc --watch
 12:30:36 PM - Compilation complete. Watching for file changes.
 ```
 
-When a file changes on disk which contains a problem, the following output appears:
+ディスク上の問題があるファイルが変更されると、次の出力を表示します:
 
 ```
 12:32:35 PM - File change detected. Starting incremental compilation...
@@ -531,16 +528,16 @@ src/messages.ts(276,9): error TS2304: Cannot find name 'candidate'.
 12:32:35 PM - Compilation complete. Watching for file changes.
 ```
 
-Looking at the output shows the following pattern:
+出力では次のようなパターンを監視しています:
 
-- The compiler runs when `File change detected. Starting incremental compilation...` is printed to the console.
-- The compiler stops when `Compilation complete. Watching for file changes.` is printed to the console.
-- Between those two strings problems are reported.
-- The compiler also runs once the initial start (without printing `File change detected. Starting incremental compilation...` to the console).
+- `File change detected. Starting incremental compilation...`がコンソールに表示されているときコンパイラーを実行します。
+-  `Compilation complete. Watching for file changes.`がコンソールに表示されているときコンパイラーを停止します。
+- この間に問題は報告されます。
+- またコンパイラーは最初の開始(`File change detected. Starting incremental compilation...`がコンソールに表示されていない場合)でも一度実行します。
 
-To capture this information, a problem matcher can provide a `watching` property.
+この情報をキャプチャするために、問題マッチャーは`watching`プロパティを提供できます。
 
-For the tsc compiler, this looks like follows:
+tscコンパイラーの場合は次のようになります:
 
 ```json
 "watching": {
@@ -550,9 +547,9 @@ For the tsc compiler, this looks like follows:
 }
 ```
 
-In addition to the `watching` property on the problem matcher, the task itself has to be marked as `isBackground` so that the task keeps running in the background.
+問題マッチャーの`watching`プロパティに加えて、タスク自体に`isBackground`とマークして、タスクがバッググラウンドで実行し続けるようにする必要があります。
 
-A full handcrafted tasks.json for a tsc task running in watch mode looks like this:
+watchモードで機能するtscタスクの完全なtasks.jsonは次のようになります:
 
 ```json
 {
@@ -586,7 +583,7 @@ A full handcrafted tasks.json for a tsc task running in watch mode looks like th
 }
 ```
 
-## Next Steps
+## 次のステップ
 
 That was tasks - let's keep going...
 

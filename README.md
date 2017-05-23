@@ -21,7 +21,7 @@
     * ~~Debugging~~
     * [Version Control](/docs/userguide/versioncontrol.html)
     * ~~Integrated Terminal~~
-    * ~~Tasks~~
+    * [Tasks](/docs/userguide/tasks.html)
     * [Creating your own Snippets](/docs/userguide/userdefinedsnippets.html)
     * [Command Line](/docs/userguide/command-line.html)
     * [Accesibility](/docs/userguide/accessibility.html)
