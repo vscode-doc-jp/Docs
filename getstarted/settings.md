@@ -1,16 +1,15 @@
 ---
-title: ユーザーとワークスペース設定
+title: Visual Studio Code の設定
 MetaDescription: How to modify Visual Studio Code User and Workspace Settings.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
-status: old
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
-VS Codeを好みの設定で構成できます。VS Codeのエディタ、ユーザーインターフェイス、および機能的な動作のほぼすべての部分に、変更可能なオプションを用意しています
+VS Codeを好みの設定に構成することは簡単です。VS Codeのエディター、ユーザインターフェイスおよび機能のほぼすべての部分に、変更可能なオプションがあります。
 
-VS Codeでは設定用に2つのウィンドウを用意しました:
+VS Codeでは設定用の2つのウィンドウを用意しています:
 
-* **ユーザー**設定はVS Codeに登録され、グローバルに開いたもの全てに適用します。
-* **ワークスペース**設定はワークスペースの`.vscode`フォルダーに登録され、ワークスペースを開いたときのみに適用します。この設定はユーザー設定よりも優先します。
+* **ユーザー**設定はVS Codeに登録され、開いたすべての場所でグローバルに適用します。
+* **ワークスペース**設定はワークスペースの`.vscode`フォルダーに保存して、それを開いたときのみ適用します。この設定はユーザー設定よりも優先します。
 
 ## ユーザーとワークスペース設定を作成 <a id="creating-user-and-worksspace-settings"></a>
 
@@ -18,11 +17,11 @@ VS Codeでは設定用に2つのウィンドウを用意しました:
 
 これを**コマンドパレット** (`kb(workbench.action.showCommands)`) から**Preferences: Open User Settings**か**Preferences: Open Workspace Settings**を実行することでも開くことができます。
 
-行番号の無効化とビューポートの幅での折り返しを次の例で設定します。
+次の例は、行番号の無効化とビューの幅での折り返しを設定します。
 
 ![Example Settings](images/settings/settings.png)
 
-変更は編集した `setting.json` を保存することで適用します。
+設定の変更は編集した `setting.json` を保存することで適用します。
 
 >**Note:** ワークスペースの設定は、チーム全体でプロジェクト設定を共有するのに便利です。
 
@@ -38,7 +37,7 @@ VS Codeでは設定用に2つのウィンドウを用意しました:
 
 ## 既定の設定  <a id="default-settings"></a>
 
-設定を開いたとき、検索して見つけるのに役立つ**デフォルト設定**を表示します。大きな検索バーで検索すると、条件に一致する設定を表示および強調表示します。それだけでなく一致しない検索結果も除外します。これにより、設定をすばやく簡単に見つけることが可能です。また、**既定の設定**と**setting.json**エディターで設定をコピーまたは更新に役立つ操作を用意しています。
+設定を開いたとき、検索して見つけるのに役立つ**既定の設定**を表示します。大きな検索バーで検索すると、条件に一致する設定を表示および強調表示します。それだけでなく一致しない検索結果も除外します。これにより、設定をすばやく簡単に見つけることが可能です。また、**既定の設定**と**setting.json**エディターで設定をコピーまたは更新に役立つ操作を用意しています。
 
 <img alt="settings groups" src="https://az754404.vo.msecnd.net/public/default-settings.gif" />
 
@@ -56,11 +55,11 @@ VS Codeでは設定用に2つのウィンドウを用意しました:
 
 言語設定を設定するには **コマンドパレット** (`kb(workbench.action.showCommands)`) から **Preferences: Configure language specific settings...** (command id: `workbench.action.configureLanguageBasedSettings`) を実行します。言語を選択すると、言語エントリーを設定エディターに追記します。
 
-![Language mode for File](images/settings/pref-config-lang-settings.png)
+![Configure language specific settings command](images/settings/pref-config-lang-settings.png)
 
-![Language mode for File](images/settings/lang-selection.png)
+![Select language drop down](images/settings/lang-selection.png)
 
-![Language mode for File](images/settings/lang-based-settings.png)
+![Add language specific setting](images/settings/lang-based-settings.png)
 
 もし既に開いているファイルのファイルタイプをカスタマイズする場合、VS Codeステータスバー右の言語モードをクリックします。これにより、**言語モードの選択**が開きます。この中の言語から選択することで、言語エントリーを追記した設定エディターを開きます。
 
@@ -106,17 +105,17 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
 ### 既定の設定のコピー  <a id="copy-of-default-settings"></a>
 
-次は、既定の設定とその値です。 (version 1.12.1:翻訳をメモリから当てました)
+次は、既定の設定とその値です。
 
 ```json
 {
 // よく使用するもの
 
-  // フォント サイズをピクセル単位で制御します。
-  "editor.fontSize": 14,
-
   // ダーティ ファイルの自動保存を制御します。有効な値: 'off'、'afterDelay'、'onFocusChange' (エディターがフォーカスを失います)、'onWindowChange' (ウィンドウがフォーカスを失います)。'afterDelay' に設定すると、'files.autoSaveDelay' で遅延を構成できます。
   "files.autoSave": "off",
+
+  // フォント サイズをピクセル単位で制御します。
+  "editor.fontSize": 14,
 
   // フォント ファミリを制御します。
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
@@ -127,18 +126,11 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // エディターで空白文字を表示する方法を制御します。'none'、'boundary' および 'all' が使用可能です。'boundary' オプションでは、単語間の単一スペースは表示されません。
   "editor.renderWhitespace": "none",
 
-  // ファイルとフォルダーを除外するための glob パターンを構成します。
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true
-  },
-
   // カーソルのスタイルを制御します。指定できる値は 'block'、'block-outline'、'line'、'line-thin'、'underline'、'underline-thin' です
-
   "editor.cursorStyle": "line",
+
+  // マウスで複数のカーソルを追加するときに使用する修飾キーです。`ctrlCmd` は Windows および Linux 上の `Control` キーと OSX 上の `Command` キーにマップします。「定義に移動」や「リンクを開く」のマウス操作は、マルチカーソルの修飾キーと競合しないように適用されます。
+  "editor.multiCursorModifier": "alt",
 
   // Tab キーを押すとスペースが挿入されます。`editor.detectIndentation` がオンの場合、この設定はファイル コンテンツに基づいて上書きされます。
   "editor.insertSpaces": true,
@@ -149,6 +141,15 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   //  - 'wordWrapColumn' ('editor.wordWrapColumn' で折り返し)
   //  - 'bounded' (ビューポートと 'editor.wordWrapColumn' の最小値で折り返し)。
   "editor.wordWrap": "off",
+
+  // ファイルとフォルダーを除外するための glob パターンを構成します。
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
 
   // 言語に対するファイルの関連付け (例 "*.extension": "html") を構成します。これらの関連付けは、インストールされている言語の既定の関連付けより優先されます。
   "files.associations": {}
@@ -169,6 +170,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // 行の高さを制御します。fontSize に基づいて lineHeight を計算する場合には、0 を使用します。
   "editor.lineHeight": 0,
+
+  // 文字の間隔をピクセル単位で制御します。
+  "editor.letterSpacing": 0,
 
   //  行番号の表示を制御します。使用可能な値は、'on'、'off'、および 'relative' です。'relative' は現在のカーソル位置からの行数を示します。
   "editor.lineNumbers": "on",
@@ -195,13 +199,19 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   "editor.scrollBeyondLastLine": true,
 
   // ミニマップを表示するかどうかを制御します
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
 
   // 行に (カラー ブロックではなく) 実際の文字を表示します
   "editor.minimap.renderCharacters": true,
 
   // 表示するミニマップの最大幅を特定の桁数に制限します
   "editor.minimap.maxColumn": 120,
+
+  // エディターの選択から検索ウィジェット内の検索文字列を与えるかどうかを制御します
+  "editor.find.seedSearchStringFromSelection": true,
+
+  // エディター内で複数の文字もしくは行が選択されているときに選択範囲を検索するフラグを有効にするかどうかを制御します
+  "editor.find.autoFindInSelection": false,
 
   // 行の折り返し方法を制御します。次の値を指定できます。
   //  - 'off' (折り返さない)
@@ -218,6 +228,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // マウス ホイール スクロール イベントの `deltaX` と `deltaY` で使用される乗数
   "editor.mouseWheelScrollSensitivity": 1,
+
+  // マウスで複数のカーソルを追加するときに使用する修飾キーです。`ctrlCmd` は Windows および Linux 上の `Control` キーと OSX 上の `Command` キーにマップします。「定義に移動」や「リンクを開く」のマウス操作は、マルチカーソルの修飾キーと競合しないように適用されます。
+  "editor.multiCursorModifier": "alt",
 
   // 入力中に候補を自動的に表示するかどうかを制御します
   "editor.quickSuggestions": {
@@ -244,14 +257,14 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // トリガー文字の入力時に候補が自動的に表示されるようにするかどうかを制御します
   "editor.suggestOnTriggerCharacters": true,
 
-  // 'Tab' キーに加えて 'Enter' キーで候補を受け入れるかどうかを制御します。改行の挿入や候補の反映の間であいまいさを解消するのに役立ちます。
-  "editor.acceptSuggestionOnEnter": true,
+  // 'Tab' キーに加えて 'Enter' キーで候補を受け入れるかどうかを制御します。改行の挿入や候補の反映の間であいまいさを解消するのに役立ちます。'smart' 値は文字を変更するときに、Enter キーを押すだけで提案を反映することを意味します。
+  "editor.acceptSuggestionOnEnter": "on",
 
   // コミット文字で候補を受け入れるかどうかを制御します。たとえば、JavaScript ではセミコロン (';') をコミット文字にして、候補を受け入れてその文字を入力することができます。
   "editor.acceptSuggestionOnCommitCharacter": true,
 
   // 他の修正候補と一緒にスニペットを表示するかどうか、およびその並び替えの方法を制御します。
-  "editor.snippetSuggestions": "bottom",
+  "editor.snippetSuggestions": "inline",
 
   // 選択範囲を指定しないでコピーする場合に現在の行をコピーするかどうかを制御します。
   "editor.emptySelectionClipboard": true,
@@ -299,7 +312,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   "editor.renderControlCharacters": false,
 
   // エディターでインデントのガイドを表示する必要があるかどうかを制御します
-  "editor.renderIndentGuides": false,
+  "editor.renderIndentGuides": true,
 
   // エディターが現在の行をどのように強調表示するかを制御します。考えられる値は 'なし'、'余白'、'行、'すべて' です。
   "editor.renderLineHighlight": "line",
@@ -309,6 +322,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // エディターでコードの折りたたみを有効にするかどうかを制御します
   "editor.folding": true,
+
+  // 余白上の折りたたみコントロールを自動的に非表示にするかどうかを制御します 。
+  "editor.showFoldingControls": "mouseover",
 
   // かっこを選択すると、対応するかっこを強調表示します。
   "editor.matchBrackets": true,
@@ -326,7 +342,10 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   "editor.stablePeek": false,
 
   // ドラッグ アンド ドロップによる選択範囲の移動をエディターが許可する必要があるかどうかを制御します。
-  "editor.dragAndDrop": false,
+  "editor.dragAndDrop": true,
+
+  // エディターをスクリーン リーダーに最適化されたモードで実行するかどうかを制御します。
+  "editor.accessibilitySupport": "auto",
 
   // 差分エディターが差分を横に並べて表示するか、行内に表示するかを制御します
   "diffEditor.renderSideBySide": true,
@@ -359,10 +378,13 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // Emmet のプロファイル、スニペット、ユーザー設定を含むフォルダーへのパス
   "emmet.extensionsPath": null,
 
+  // すべての emmet 機能に対して、新しい emmet モジュールをお試しください (最終的に、以前の単一 emmet ライブラリは置き換えられます)。
+"emmet.useNewEmmet"：false、
+
 // ワークベンチ
 
-  // 有効にすると、エディターを 1 つも開いていないときに透かしのヒントが表示されます。
-  "workbench.tips.enabled": true,
+  // 有効にすると、スタートアップ時に、ようこそページが表示されます。
+  "workbench.welcome.enabled": false,
 
   // 開いているエディターをタブに表示するかどうかを制御します。
   "workbench.editor.showTabs": true,
@@ -403,14 +425,14 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ファイルを表示しているエディターを、ファイルが削除されるかその他のプロセスによって名前を変更された場合に、自動的に閉じるかどうかを制御します。これを無効にすると、このような場合にエディターはダーティで開かれたままになります。アプリケーション内で削除すると、必ずエディターは閉じられ、ダーティ ファイルは閉じられることがなく、データは保存されませんのでご注意ください。
   "workbench.editor.closeOnFileDelete": true,
 
-  // 有効にすると、スタートアップ時に、ようこそページが表示されます。
-  "workbench.welcome.enabled": false,
+  // 有効にすると、エディターを 1 つも開いていないときに透かしのヒントが表示されます。
+  "workbench.tips.enabled": true,
 
   // ワークベンチで使用する配色テーマを指定します。
   "workbench.colorTheme": "Default Dark+",
 
   // ワークベンチで使用するアイコンのテーマを指定します。
-  "workbench.iconTheme": null,
+  "workbench.iconTheme": "vs-seti",
 
   // 現在選択している配色テーマで配色を上書きします。
   "workbench.colorCustomizations": {},
@@ -422,7 +444,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // - on: 新しいウィンドウでファイルを開きます
   // - off: ファイルのフォルダーが開かれていたウィンドウまたは最後のアクティブ ウィンドウでファイルを開きます
   // この設定は無視される場合もあります (-new-window または -reuse-window コマンド ライン オプションを使用する場合など)。
-  "window.openFilesInNewWindow": "default",
+  "window.openFilesInNewWindow": "off",
 
   // フォルダーを新しいウィンドウで開くか、最後のアクティブ ウィンドウで開くかを制御します。
   // - 既定: アプリケーション内で ([ファイル] メニューなどから) 選択したものでなければ、新しいウィンドウでフォルダーを開く
@@ -451,11 +473,14 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ${separator}: 値のある変数で囲まれた場合にのみ表示される条件付き区切り記号 (" - ")
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
 
-  // 新しいウィンドウを開くときのサイズを制御します。既定では、新しいウィンドウは画面の中央に小さいサイズで開きます。'継承' に設定すると、最後のアクティブ ウィンドウと同じサイズで開きます。'最大化' に設定するとウィンドウは最大サイズで開き、'全画面表示' に設定すると全画面になります。
+  // 既に 1 つ以上のウィンドウを開いているとき、新しく開くウィンドウのサイズを制御します。既定では、新しいウィンドウを画面中央に小さいサイズで開きます。'inherit' に設定すると、最後のアクティブ ウィンドウと同じサイズで開きます。'maximized' に設定するとウィンドウは最大サイズで開き、'fullscreen' に設定すると全画面になります。この設定は、最初に開いたウィンドウに適用されないことに注意してください。最初のウィンドウは常に、前回閉じたサイズと位置で復元します。
   "window.newWindowDimensions": "default",
 
   // メニュー バーの表示/非表示を制御します。'切り替え' 設定は Alt キーを 1 回押すとメニュー バーの表示/非表示が切り替わることを意味します。既定では、ウィンドウが全画面表示の場合を除き、メニュー バーは表示されます。
   "window.menuBarVisibility": "default",
+
+  // 有効にすると、Alt キー ショートカットを使用してメイン メニューを開くことができます。ニーモニックを無効にすると、これらの Alt キー ショートカットをエディター コマンドの代わりにバインドできます。
+  "window.enableMenuBarMnemonics": true,
 
   // 有効にすると、Windows でハイ コントラスト テーマが使用されている場合にはハイ コントラスト テーマに自動的に変更され、Windows のハイ コントラスト テーマから切り替えられている場合にはダーク テーマに自動的に変更されます。
   "window.autoDetectHighContrast": true,
@@ -480,7 +505,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // 有効な場合、ファイルを開くときに文字セット エンコードを推測します
   "files.autoGuessEncoding": false,
 
-  // 既定の改行文字。
+  // 既定の改行文字。LF の場合には \n を CRLF の場合には \r\n を使用してください。
   "files.eol": "\r\n",
 
   // 有効にすると、ファイルの保存時に末尾の空白をトリミングします。
@@ -498,7 +523,8 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ファイル モニタリングから除外するファイル パスの glob パターンを構成します。この設定を変更すると、再起動が必要になります。始動時に Code が消費する CPU 時間が多い場合は、大規模なフォルダーを除外して初期ロードを減らせます。
   "files.watcherExclude": {
     "**/.git/objects/**": true,
-    "**/node_modules/**": true
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
   },
 
   // エディターを終了するときに保存を確認するダイアログを省略し、保存されていないファイルをセッション後も保持するかどうかを制御します。
@@ -787,6 +813,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
  // 浮動デバッグ操作バーを非表示にするかどうかを制御します
   "debug.hideActionBar": false,
 
+  // 内部デバッグ コンソールの動作を制御します。
+  "debug.internalConsoleOptions": "openOnFirstSessionStart",
+
   // グローバル デバッグ起動構成。ワークスペース間で共有される 'launch.json' の代わりとして使用する必要があります
   "launch": {},
 
@@ -866,7 +895,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   "markdown.previewFrontMatter": "hide",
 
   // マークダウン プレビューで使用されるフォント ファミリを制御します。
-  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown.preview.fontFamily": "system-ui, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
   // マークダウン プレビューで使用されるフォント サイズ (ピクセル単位) を制御します。
   "markdown.preview.fontSize": 14,
@@ -917,10 +946,16 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // グローバル インストール TypeScript コンパイラ (tsc など) が、使用された TypeScript 言語サービスと異なっているかどうかを確認します。
   "typescript.check.tscVersion": true,
 
-  // 型定義の自動取得に NPM がインストールされているかどうかを確認する
+  // 型定義の自動取得に使用される NPM 実行可能ファイルへのパスを指定します。TypeScript 2.3.4 以上が必要です。
+  "typescript.npm": null,
+
+  // 型定義の自動取得に NPM がインストールされているかどうかを確認します。
   "typescript.check.npmIsInstalled": true,
 
-  // Enable/disable references CodeLens.Requires TypeScript >= 2.0.6.
+  // JavaScript ファイル内で CodeLens の参照を有効/無効にします。
+  "javascript.referencesCodeLens.enabled": false,
+
+  // TypeScript ファイル内で CodeLens の参照を有効/無効にします。TypeScript が 2.0.6 以上である必要があります。
   "typescript.referencesCodeLens.enabled": false,
 
   // Enable/disable implementations CodeLens. Requires TypeScript >= 2.2.0.
@@ -1031,10 +1066,19 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // JavaScript ファイルのセマンティック チェックを有効/無効にします。既存の jsconfi.json や tsconfi.json ファイルの設定はこれより優先されます。TypeScript は 2.3.1 以上である必要があります。
   "javascript.implicitProjectConfig.checkJs": false,
 
+  // JavaScript の候補リスト内でファイルから一意の名前を含むかどうかを有効/無効にします。
+  "javascript.nameSuggestions": true,
+
+  // tsc タスクの自動検出をオンにするかオフにするかを制御します。
+  "typescript.tsc.autoDetect": "on",
+
 // 拡張機能
 
   // 拡張機能を自動的に更新します
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": true,
+
+  // 拡張機能の推奨事項を無視する
+  "extensions.ignoreRecommendations": false,
 
 // 外部ターミナル
 
@@ -1164,6 +1208,14 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // このオプションを有効にするには、再起動が必要です。
   "telemetry.enableCrashReporter": true,
 
+// Emmet configuration
+
+  // Shows expanded emmet abbreviations as suggestions
+  "emmet.showExpandedAbbreviation": true,
+
+  // Shows possible emmet abbreviations as suggestions
+  "emmet.showAbbreviationSuggestions": true,
+
 // 既定の構成オーバーライド
 
   // [go] 言語に対して上書きされるエディター設定を構成します。
@@ -1195,16 +1247,6 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
     "editor.tabSize": 2
   },
 
-// Gulp
-
-  // Gulp タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
-  "gulp.autoDetect": "on",
-
-// Grunt
-
-  // Grunt タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
-  "grunt.autoDetect": "on",
-
 // Git
 
   // Git が有効になっているかどうか
@@ -1233,10 +1275,48 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // リポジトリ内に変更が多い場合は警告を無視します
   "git.ignoreLimitWarning": false
+
+  // Git リポジトリをクローンする既定の場所
+  "git.defaultCloneDirectory": null,
+
+  // ステージされた変更がない場合はすべての変更をコミットします。
+  "git.enableSmartCommit": false,
+
+// Grunt
+
+  // Grunt タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "grunt.autoDetect": "on",
+
+// Npm
+
+  // npm スクリプトの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "npm.autoDetect": "on",
+
+// マージの競合
+
+  // エディター内のマージ競合ブロックで CodeLens を有効/無効にします
+  "merge-conflict.codeLens.enabled": true,
+
+  // エディター内でマージの競合デコレーターを有効/無効にします。
+  "merge-conflict.decorators.enabled": true,
+
+// Gulp
+
+  // Gulp タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "gulp.autoDetect": "on",
+
+// Jake
+
+  // Jake タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "jake.autoDetect": "on"
 }
 ```
 
 ## よくある質問
+
+**Q:「設定を書き込めません」と表示されます**
+
+**A:** 設定を使用とするとき(たとえば、自動保存を有効にする、新しいテーマの選択など)"Unable to write settings. Please open User Settings to correct errors/warnings in the file and try again."というエラーが出るかもしれません。これは`settings.json`が文法的に正しくないかエラーがあることを意味します。このエラーとはカンマや設定値が抜けているなど単純なものになります。**ファイル** > **基本設定** > **設定**を開いて、赤の波線で強調表示されるエラーを確認してください。
 
 **Q: ワークスペース設定はいつ利用すべきですか？**
 
