@@ -1,5 +1,5 @@
 ---
-title: ユーザー補助
+title: アクセシビリティ
 MetaDescription: Visual Studio Code user accessibility features.  Learn here about the various ways VS Code aids user accessibility.
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
