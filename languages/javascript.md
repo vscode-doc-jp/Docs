@@ -4,12 +4,12 @@ Area: languages
 TOCTitle: JavaScript
 ContentId: F54BB3D4-76FB-4547-A9D0-F725CEBB905C
 PageTitle: JavaScript Programming with Visual Studio Code
-DateApproved: 5/4/2017
+DateApproved: 6/8/2017
 MetaDescription: Get the best out of Visual Studio Code for JavaScript development
 ---
 # JavaScript in VS Code
 
-Visual Studio Code provides IntelliSense, debugging, and powerful editor features for JavaScript. VS Code uses the [JavaScript language service](https://github.com/Microsoft/TypeScript/wiki/Salsa) to make authoring JavaScript easy. In addition to syntactical features like format, format on type and outlining, you also get language service features such as **Peek**, **Go to Definition**, **Find all References**, and **Rename Symbol**.
+Visual Studio Code provides IntelliSense, debugging, and powerful editor features for JavaScript. VS Code uses the [JavaScript language service](https://github.com/Microsoft/TypeScript/wiki/JavaScript-Language-Service-in-Visual-Studio) to make authoring JavaScript easy. In addition to syntactical features like format, format on type and outlining, you also get language service features such as **Peek**, **Go to Definition**, **Find all References**, and **Rename Symbol**.
 
 ![JavaScript find all references](images/javascript/javascript_find_all_references.png)
 
@@ -17,11 +17,11 @@ Visual Studio Code provides IntelliSense, debugging, and powerful editor feature
 
 VS Code [IntelliSense](/docs/userguide/intellisense.md) is intelligent code completion, parameter info, and member lists. VS Code provides IntelliSense using TypeScript type declaration (typings) files (for example, `node.d.ts`) to provide metadata about the JavaScript based frameworks you are consuming in your application. Type declaration files are written in TypeScript so they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience.
 
-Thanks to a feature called `Automatic Typing Acquisition` you as a user do not have to worry about these type declaration file. VS Code will install them automatically for you.
+Thanks to a feature called `Automatic Type Acquisition` you as a user do not have to worry about these type declaration file. VS Code will install them automatically for you.
 
 ![JavaScript intellisense animation](images/javascript/javascript_intellisense.gif)
 
-For the details of how JavaScript IntelliSense works, including being based on type inference, JsDoc annotations, TypeScript declarations, and mixing JavaScript and TypeScript projects, see the [JavaScript language service documentation](https://github.com/Microsoft/TypeScript/wiki/Salsa).
+For the details of how JavaScript IntelliSense works, including being based on type inference, JsDoc annotations, TypeScript declarations, and mixing JavaScript and TypeScript projects, see the [JavaScript language service documentation](https://github.com/Microsoft/TypeScript/wiki/JavaScript-Language-Service-in-Visual-Studio).
 
 When type inference does not provide the desired information, type information may be provided explicitly with JSDoc annotations. This document describes the [JSDoc annotations](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript) currently supported. In addition to objects, methods, and properties, the JavaScript IntelliSense window also provides basic word completion for the symbols in your file.
 
@@ -55,9 +55,15 @@ If you are using Visual Studio Code 1.8+, you can alternately explicitly list pa
 
 Now when you `require` or `import` **lodash**, VS Code will use the automatically downloaded type declaration files for the library to provide rich Intellisense. Most common JavaScript libraries have type declaration files available. You can search for a library's type declaration file package using the [TypeSearch](https://microsoft.github.io/TypeSearch) site.
 
+### Fixing NPM not installed warning for Automatic Type Acquisition
+
+Automatic Type Acquisition (ATA) uses [npm](https://www.npmjs.com) to install and manage Type Declaration (typings) files. To ensure that Automatic Type Acquisition works properly, first ensure that you have npm installed on your machine.
+
+If you have npm installed but still see a warning message, you can explicitly tell VS Code where npm is installed with the `"typescript.npm"` setting. This should be set to the full path of the npm executable on your machine, and this does not have to match the version of npm you are using to manage packages in your workspace. `typescript.npm` requires TypeScript 2.3.4+.
+
 ## JavaScript Project (jsconfig.json)
 
-The presence of a [jsconfig.json](/docs/languages/jsconfig.md) file in a directory indicates that the directory is the root of a JavaScript project. `jsconfig.json` specifies the root files and the options for the language features provided by the [JavaScript language service](https://github.com/Microsoft/TypeScript/wiki/Salsa). For common setups a `jsconfig.json` file is not required, however, there are situations when you will want to add a `jsconfig.json`.
+The presence of a [jsconfig.json](/docs/languages/jsconfig.md) file in a directory indicates that the directory is the root of a JavaScript project. `jsconfig.json` specifies the root files and the options for the language features provided by the [JavaScript language service](https://github.com/Microsoft/TypeScript/wiki/JavaScript-Language-Service-in-Visual-Studio). For common setups a `jsconfig.json` file is not required, however, there are situations when you will want to add a `jsconfig.json`.
 
 - Not all files should be in your JavaScript project (for example, you want to exclude some files from showing IntelliSense). This situation is common with front-end and back-end code.
 - Your workspace contains more than one project context. In this situation, you should add a `jsconfig.json` file at the root folder for each project.
@@ -205,6 +211,53 @@ To enable type checking for JavaScript files that are part of a `jsconfig.json` 
 This enables type checking for all JavaScript files in the project. You can use `// @ts-nocheck` to disable type checking per file.
 
 JavaScript type checking requires TypeScript 2.3. If you are unsure what version of TypeScript is currently active in your workspace, simply run the **TypeScript: Select TypeScript Version** command to check.
+
+### Global Variables and Type Checking
+
+Let's say that you are working in legacy JavaScript code that uses global variables or non-standard DOM APIs:
+
+```ts
+window.onload = function() {
+    if (window.webkitNotifications.requestPermission() === CAN_NOTIFY) {
+        window.webkitNotifications.createNotification(null, 'Woof!', '🐶').show()
+    } else {
+        alert('Could not notify')
+    }
+}
+```
+
+If you try to use `// @ts-check` with the above code, you'll see a number of errors about the use of global variables:
+
+1. `Line 2` - `Property 'webkitNotifications' does not exist on type 'Window'.`
+2. `Line 2` - `Cannot find name 'CAN_NOTIFY'.`
+3. `Line 3` - `Property 'webkitNotifications' does not exist on type 'Window'.`
+
+If you want to continue using `// @ts-check` but are confident that these are not actual issues with your application, you have to let TypeScript know about these global variables.
+
+To start, [create a `jsconfig.json`](#_javascript-project-jsconfigjson) at the root of your project:
+
+```json
+{
+    "compilerOptions": { },
+    "exclude": [
+        "node_modules"
+    ]
+}
+```
+
+Then reload VS Code to make sure the change is applied. The presence of a `jsconfig.json` lets TypeScript know that your Javascript files are part of a larger project.
+
+Now create a `globals.d.ts` file somewhere your workspace:
+
+```ts
+interface Window {
+    webkitNotifications: any;
+}
+
+declare var CAN_NOTIFY: number;
+```
+
+`d.ts` files are type declarations. In this case, `globals.d.ts` lets TypeScript know that a global `CAN_NOTIFY` exists and that a `webkitNotifications` property exists on `window`. You can read more about writing `d.ts` [here](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html). `d.ts` files do not change how JavaScript is evaluated, they are used only for providing better JavaScript language support.
 
 ## Linters
 

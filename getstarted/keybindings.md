@@ -2,6 +2,7 @@
 title: キーバインディング
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+status: old
 ---
 
 

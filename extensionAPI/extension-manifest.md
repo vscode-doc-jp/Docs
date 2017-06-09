@@ -2,6 +2,7 @@
 title: Extension Manifest - package.json
 MetaDescription: At the core of Visual Studio Code's extensibility model is an extension (plug-in) manifest file where your extension declares its extension type(s), activation rules and runtime resources.
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+status: old
 ---
 
 

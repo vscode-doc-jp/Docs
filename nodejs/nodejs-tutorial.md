@@ -1,8 +1,14 @@
 ---
-title: Build Node.js Apps with VS Code
+Order: 2
+Area: nodejs
+TOCTitle: Node.js Tutorial
+ContentId: ED394CD2-D09E-4E3A-96AD-6D3D8337BA9D
+PageTitle: Build Node.js Apps with VS Code
+DateApproved: 6/8/2017
 MetaDescription: Visual Studio Code has great support for writing and debugging Node.js applications. This tutorial takes you from Hello World to a full Express web application.
-commitid: 730a1acf7f1e98be80d306adf1ca12f695b8e461
+MetaSocialImage: nodejs_runtimes_node.png
 ---
+# Node.js Tutorial in VS Code
 
 [Node.js](https://nodejs.org/) is a platform for building fast and scalable server applications using JavaScript. Node.js is the runtime and [NPM](https://www.npmjs.com/) is the Package Manager for Node.js modules.
 
@@ -154,7 +160,7 @@ Open the file `app.js` and hover over the Node.js global object `__dirname`. Not
 
 ![http IntelliSense](images/nodejs/intellisense.png)
 
-VS Code uses TypeScript type declaration (typings) files (for example `node.d.ts`) to provide metadata to VS Code about the JavaScript based frameworks you are consuming in your application. Type declaration files are written in TypeScript so they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience. Thanks to a feature called `Automatic Typing Acquisition`, you do not have to worry about downloading these type declaration files, VS Code will install them automatically for you.
+VS Code uses TypeScript type declaration (typings) files (for example `node.d.ts`) to provide metadata to VS Code about the JavaScript based frameworks you are consuming in your application. Type declaration files are written in TypeScript so they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience. Thanks to a feature called `Automatic Type Acquisition`, you do not have to worry about downloading these type declaration files, VS Code will install them automatically for you.
 
 You can also write code that references modules in other files. For example, in `app.js` we require the `./routes/index` module, which exports an `Express.Router` class. If you bring up IntelliSense on `index`, you can see the shape of the `Router` class.
 

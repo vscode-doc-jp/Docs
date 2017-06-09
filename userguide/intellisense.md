@@ -2,6 +2,7 @@
 title: IntelliSense
 MetaDescription:  Learn about Visual Studio Code IntelliSense (intelligent code completion).
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+status: old
 ---
 
 IntelliSenseとは、メンバーの一覧、パラメーター ヒント、クイック ヒント、入力候補など多数の機能を指す総称です。その特徴から「code completion」「content assist」「code hinting」と呼ばれることもあります。

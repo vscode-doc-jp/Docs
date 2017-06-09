@@ -1,7 +1,7 @@
 ---
 title: Extending extensions Visual Studio Code
 MetaDescription: Visual Studio Code has a rich extensibility model for interacting with and adding to the tool.  Learn how to create your own extensions (plug-ins) for Visual Studio Code.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
 もしVS Codeの拡張機能に興味があるなら、ここ情報は役に立つはずです。ここでは、VS Codeの拡張に関するドキュメント概要と、最初のVS Codeを作成する方法について説明します。VS Codeの拡張に関する設計アプローチに興味があれば、[ここ](/docs/extensionapi/patterns-and-principles.md)で詳しく確認できます。

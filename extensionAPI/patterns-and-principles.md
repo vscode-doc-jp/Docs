@@ -4,7 +4,7 @@ Area: extensionapi
 TOCTitle: Principles and Patterns
 ContentId: 36C1E34B-2F41-4AA0-9443-015D92EF85FB
 PageTitle: Visual Studio Code Extensibility Patterns and Principles
-DateApproved: 5/4/2017
+DateApproved: 6/8/2017
 MetaDescription: The Visual Studio Code extensibility (plug-in) API is designed around a set of guiding patterns and principles to promote extension consistency, correctness and ease of development.
 ---
 # Extensibility Principles and Patterns
@@ -62,7 +62,7 @@ Being independent of a specific promise library is expressed in the API by the `
 In most cases the use of promises is optional and when VS Code calls into an extension, it can handle the _result type_ as well as a `Thenable` of the _result type_. When the use of a promise is optional, the API indicates this by returning `or`-types.
 
 ```typescript
-	provideNumber(): number | Thenable<number>
+provideNumber(): number | Thenable<number>
 ```
 
 ## Cancellation Tokens
@@ -91,7 +91,7 @@ var subscription = fsWatcher.onDidDelete(listener);
 
 // do more stuff
 
-subscriptions.dispose(); // stop listening
+subscription.dispose(); // stop listening
 ```
 
 Names of events follow the `on[Will|Did]VerbNoun?` pattern. The name signals if the event is going to happen *(onWill)* or already happened *(onDid)*, what happened *(verb)*, and the context *(noun)* unless obvious from the context.

@@ -1,7 +1,7 @@
 ---
 title: WindowsでVisual Studio Codeを起動する
 MetaDescription: Get Visual Studio Code up and running on Windows
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
 ## インストール

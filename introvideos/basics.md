@@ -1,7 +1,7 @@
 ---
 title: Setup and Basics of VS Code
 MetaDescription: Download and learn the basics of Visual Studio Code.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
 In this tutorial, we walk you through setting up Visual Studio Code and give an overview of the basic features.

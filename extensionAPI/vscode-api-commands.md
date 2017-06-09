@@ -1,12 +1,17 @@
 ---
-title: Complex Commands Reference
+Order: 7
+Area: extensionapi
+TOCTitle: Complex Commands
+ContentId: A010AEDF-EF37-406E-96F5-E129408FFDE1
+PageTitle: Visual Studio Code Complex Commands Reference
+DateApproved: 6/8/2017
 MetaDescription: Visual Studio Code extensions (plug-ins) complex commands Reference.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
+# Complex Commands
 
-このドキュメントではVisual Studio Code Complex Commandの指定方法を説明します。これはパラメーターを必要とし、値を返すのでComplex Command(直訳: 複合コマンド)と呼びます。これを`executeCommand`APIと組み合わせて使用してください。
+This document lists the set of Visual Studio Code complex commands. They are called complex commands because they require parameters and often return a value. You can use the commands in conjunction with the `executeCommand` API.
 
-HTML文書をプレビューする方法の例を次に示します:
+The following is a sample of how to preview a HTML document:
 
 ```javascript
 let uri = Uri.parse('file:///some/path/to/file.html');
@@ -15,278 +20,287 @@ let success = await commands.executeCommand('vscode.previewHtml', uri);
 
 ## Commands
 
-`vscode.executeWorkspaceSymbolProvider` - すべてのworkspace symbol providerを実行します。
+`vscode.executeWorkspaceSymbolProvider` - Execute all workspace symbol provider.
 
-* _query_ 検索文字列
-* _(returns)_ SymbolInformation-instancesの配列に解決します。
-
-
-`vscode.executeDefinitionProvider` - すべてのdefinition providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _position_ シンボルのポジション
-* _(returns)_ Location-instancesの配列に解決します。
-
-`vscode.executeImplementationProvider` - すべてのimplementation providersを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _position_ シンボルのポジション
-* _(returns)_ Location-instanceの配列に解決します。
+* _query_ Search string
+* _(returns)_ A promise that resolves to an array of SymbolInformation-instances.
 
 
-`vscode.executeHoverProvider` - すべてのhover providerを実行します。
+`vscode.executeDefinitionProvider` - Execute all definition provider.
 
-* _uri_ テキストドキュメントのUri
-* _position_ シンボルのポジション
-* _(returns)_ Hover-instancesの配列に解決します。
+* _uri_ Uri of a text document
+* _position_ Position of a symbol
+* _(returns)_ A promise that resolves to an array of Location-instances.
 
+`vscode.executeImplementationProvider` - Execute all implementation providers.
 
-`vscode.executeDocumentHighlights` - document highlight providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _position_ テキストドキュメント内の位置
-* _(returns)_ DocumentHighlight-instancesの配列に解決します。
-
-
-`vscode.executeReferenceProvider` - reference providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _position_ テキストドキュメント内の位置
-* _(returns)_ Location-instancesの配列に解決します。
+* _uri_ Uri of a text document
+* _position_ Position of a symbol
+* _(returns)_ A promise that resolves to an array of Location-instance.
 
 
-`vscode.executeDocumentRenameProvider` -  rename providerを実行します。
+`vscode.executeHoverProvider` - Execute all hover provider.
 
-* _uri_ テキストドキュメントのUri
-* _position_ テキストドキュメント内の位置
-* _newName_ 新しいシンボル名
-* _(returns)_ WorkspaceEditに解決します。
-
-
-`vscode.executeSignatureHelpProvider` - signature help providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _position_ テキストドキュメント内の位置
-* _triggerCharacter_ (optional) signature helpをトリガーする文字(`,` や`(`など)
-* _(returns)_ SignatureHelpに解決します。
+* _uri_ Uri of a text document
+* _position_ Position of a symbol
+* _(returns)_ A promise that resolves to an array of Hover-instances.
 
 
-`vscode.executeDocumentSymbolProvider` - document symbol providerを実行します。
+`vscode.executeDocumentHighlights` - Execute document highlight provider.
 
-* _uri_ テキストドキュメントのUri
-* _(returns)_ SymbolInformation-instancesの配列に解決します。
-
-
-`vscode.executeCompletionItemProvider` - completion item providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _position_ テキストドキュメント内の位置
-* _triggerCharacter_ (optional) completionをトリガーする文字(`,`や`(`など)
-* _(returns)_ CompletionList-instanceに解決します。
+* _uri_ Uri of a text document
+* _position_ Position in a text document
+* _(returns)_ A promise that resolves to an array of DocumentHighlight-instances.
 
 
-`vscode.executeCodeActionProvider` - code action providerを実行します。
+`vscode.executeReferenceProvider` - Execute reference provider.
 
-* _uri_ テキストドキュメントのUri
-* _range_ テキストドキュメントの選択範囲
-* _(returns)_ Command-instancesの配列に解決します。
-
-
-`vscode.executeCodeLensProvider` - CodeLens providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _(returns)_ CodeLens-instancesの配列に解決します。
+* _uri_ Uri of a text document
+* _position_ Position in a text document
+* _(returns)_ A promise that resolves to an array of Location-instances.
 
 
-`vscode.executeFormatDocumentProvider` -  document format providerを実行します。
+`vscode.executeDocumentRenameProvider` - Execute rename provider.
 
-* _uri_ テキストドキュメントのUri
-* _options_ フォーマットオプション
-* _(returns)_ TextEditsの配列に解決します。
-
-
-`vscode.executeFormatRangeProvider` - range format providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _range_ テキストドキュメントの選択範囲
-* _options_ フォーマットオプション
-* _(returns)_ TextEditsの配列に解決します。
+* _uri_ Uri of a text document
+* _position_ Position in a text document
+* _newName_ The new symbol name
+* _(returns)_ A promise that resolves to a WorkspaceEdit.
 
 
-`vscode.executeFormatOnTypeProvider` - document format providerを実行します。
+`vscode.executeSignatureHelpProvider` - Execute signature help provider.
 
-* _uri_ テキストドキュメントのUri
-* _position_ テキストドキュメント内の位置
-* _ch_ 入力された文字
-* _options_ フォーマットオプション
-* _(returns)_ TextEditsの配列に解決します。
-
-
-`vscode.executeLinkProvider` - document link providerを実行します。
-
-* _uri_ テキストドキュメントのUri
-* _(returns)_ DocumentLink-instancesの配列に解決します。
+* _uri_ Uri of a text document
+* _position_ Position in a text document
+* _triggerCharacter_ (optional) Trigger signature help when the user types the character, like `,` or `(`
+* _(returns)_ A promise that resolves to SignatureHelp.
 
 
-`vscode.previewHtml` - エディター ビューでリソースのHTMLレンタリングをします。
+`vscode.executeDocumentSymbolProvider` - Execute document symbol provider.
 
-* _uri_ プレビューするリソースのUri
-* _column_ (optional) プレビューする列
-* _label_ (optional) 他人が理解できるプレビューのタイトル
-
-
-`vscode.openFolder` - newWindow引数に応じて、現在のウィンドウまたは新しいウィンドウでフォルダーを開きます。newWindowパラメーターがtrueに設定されていない限り、同じウィンドウで現在の拡張機能ホストプロセスを閉じて、指定したフォルダーで新しいウィンドウを作成します。
-
-* _uri_ (optional) 開くフォルダーのUriです。指定しない場合は、ネイティブのダイアログがユーザーにフォルダーを訪ねます。
-* _newWindow_ (optional) 新しいウィンドウまたは同じウィンドウでフォルダーを開くかを指定します。既定では同じウィンドウで開きます。
+* _uri_ Uri of a text document
+* _(returns)_ A promise that resolves to an array of SymbolInformation-instances.
 
 
-`vscode.startDebug` - デバッグ セッションを開始します。
+`vscode.executeCompletionItemProvider` - Execute completion item provider.
 
-* _configuration_ (optional) 使用する'launch.json'内デバッグ構成の名前。または、使用するconfiguration jsonオブジェクトです。
-
-
-`vscode.diff` - (内容を確認する)差分エディターで提供されたリソースを開きます。
-
-* _left_ 差分エディターの左側リソース
-* _right_ 差分エディターの右側リソース
-* _title_ (optional) 他人が理解できる差分エディターのタイトル
+* _uri_ Uri of a text document
+* _position_ Position in a text document
+* _triggerCharacter_ (optional) Trigger completion when the user types the character, like `,` or `(`
+* _(returns)_ A promise that resolves to a CompletionList-instance.
 
 
-`vscode.open` - エディターで提供されたリソースを開きます。テキスト、バイナリファイルまたはhttp(s) URLを指定できます。
+`vscode.executeCodeActionProvider` - Execute code action provider.
 
-* _resource_ 開くリソース
-* _column_ (optional) 開く行
+* _uri_ Uri of a text document
+* _range_ Range in a text document
+* _(returns)_ A promise that resolves to an array of Command-instances.
 
 
-`cursorMove` - ビュー内の論理位置にカーソルを移動します。
+`vscode.executeCodeLensProvider` - Execute CodeLens provider.
+
+* _uri_ Uri of a text document
+* _(returns)_ A promise that resolves to an array of CodeLens-instances.
+
+
+`vscode.executeFormatDocumentProvider` - Execute document format provider.
+
+* _uri_ Uri of a text document
+* _options_ Formatting options
+* _(returns)_ A promise that resolves to an array of TextEdits.
+
+
+`vscode.executeFormatRangeProvider` - Execute range format provider.
+
+* _uri_ Uri of a text document
+* _range_ Range in a text document
+* _options_ Formatting options
+* _(returns)_ A promise that resolves to an array of TextEdits.
+
+
+`vscode.executeFormatOnTypeProvider` - Execute document format provider.
+
+* _uri_ Uri of a text document
+* _position_ Position in a text document
+* _ch_ Character that got typed
+* _options_ Formatting options
+* _(returns)_ A promise that resolves to an array of TextEdits.
+
+
+`vscode.executeLinkProvider` - Execute document link provider.
+
+* _uri_ Uri of a text document
+* _(returns)_ A promise that resolves to an array of DocumentLink-instances.
+
+
+`vscode.previewHtml` - Render the HTML of the resource in an editor view.
+
+* _uri_ Uri of the resource to preview.
+* _column_ (optional) Column in which to preview.
+* _label_ (optional) An human readable string that is used as title for the preview.
+
+See [working with the HTML preview](/docs/extensionapi/vscode-api-commands.md#working-with-the-html-preview) for more information about the HTML preview's integration with the editor and for best practices for extension authors.
+
+
+`vscode.openFolder` - Open a folder in the current window or new window depending on the newWindow argument. Note that opening in the same window will shutdown the current extension host process and start a new one on the given folder unless the newWindow parameter is set to true.
+
+* _uri_ (optional) Uri of the folder to open. If not provided, a native dialog will ask the user for the folder
+* _newWindow_ (optional) Whether to open the folder in a new window or the same. Defaults to opening in the same window.
+
+
+`vscode.startDebug` - Start a debugging session.
+
+* _configuration_ (optional) Name of the debug configuration from 'launch.json' to use. Or a configuration json object to use.
+
+
+`vscode.diff` - Opens the provided resources in the diff editor to compare their contents.
+
+* _left_ Left-hand side resource of the diff editor
+* _right_ Right-hand side resource of the diff editor
+* _title_ (optional) Human readable title for the diff editor
+* _options_ (optional) Editor options, see vscode.TextDocumentShowOptions
+
+
+`vscode.open` - Opens the provided resource in the editor. Can be a text or binary file, or a http(s) url
+
+* _resource_ Resource to open
+* _column_ (optional) Column in which to open
+
+
+`cursorMove` - Move cursor to a logical position in the view
 
 * _Cursor move argument object_
 
-  この引数を渡すことのできるプロパティ値のペア:
+  Property-value pairs that can be passed through this argument:
 
-  * 'to': カーソルを移動する論理位置値で、必須項目です。
+  * 'to': A mandatory logical position value providing where to move the cursor.
     ```
     'left', 'right', 'up', 'down'
     'wrappedLineStart', 'wrappedLineEnd', 'wrappedLineColumnCenter'
     'wrappedLineFirstNonWhitespaceCharacter', 'wrappedLineLastNonWhitespaceCharacter'
     'viewPortTop', 'viewPortCenter', 'viewPortBottom', 'viewPortIfOutside'
     ```
-  * 'by': 移動する単位です。デフォルトは 'to'値に基づいて計算されます。
+  * 'by': Unit to move. Default is computed based on 'to' value.
     ```
     'line', 'wrappedLine', 'character', 'halfLine'
     ```
-  * 'value': 移動する単位の数です。デフォルトは '1'です。
-  * 'select': 'true'ならテキストを選択します。デフォルトは'false'です。
+  * 'value': Number of units to move. Default is '1'.
+  * 'select': If 'true' makes the selection. Default is 'false'.
 
 
-`editorScroll` - 指定した方向にエディターをスクロールします。
+`editorScroll` - Scroll editor in the given direction
 
 * _Editor scroll argument object_
 
-  この引数を渡すことのできるプロパティ値のペア:
+  Property-value pairs that can be passed through this argument:
 
-  * 'to': 移動する方向値で、必須項目です。
+  * 'to': A mandatory direction value.
     ```
     'up', 'down'
     ```
-  * 'by': 移動する単位です。デフォルトは 'to'値に基づいて計算されます。
+  * 'by': Unit to move. Default is computed based on 'to' value.
     ```
     'line', 'wrappedLine', 'page', 'halfPage'
     ```
-  * 'value': 移動する単位の数です。デフォルトは '1'です。
-  * 'revealCursor': 'true'を指定すると、ビューポートの外側にある場合にカーソルを表示します。
+  * 'value': Number of units to move. Default is '1'.
+  * 'revealCursor': If 'true' reveals the cursor if it is outside view port.
 
 
-`revealLine` - 指定した論理位置で与えられた行を明確にします。
+`revealLine` - Reveal the given line at the given logical position
 
 * _Reveal line argument object_
 
-  この引数を渡すことのできるプロパティ値のペア:
+  Property-value pairs that can be passed through this argument:
 
-  * 'lineNumber': 行番号値で、必須項目です。
-  * 'at': 行を明確にする論理位置です。
+  * 'lineNumber': A mandatory line number value.
+  * 'at': Logical position at which line has to be revealed .
     ```
     'top', 'center', 'bottom'
     ```
 
 
-`editor.unfold` - エディター内のコンテンツを展開します。
+`editor.unfold` - Unfold the content in the editor
 
 * _Unfold editor argument_
 
-  この引数を渡すことのできるプロパティ値のペア:
+  Property-value pairs that can be passed through this argument:
 
-  * 'level': 展開するレベルの番号
+  * 'level': Number of levels to unfold
 
 
-`editor.fold` - エディター内のコンテンツを折りたたみます。
+`editor.fold` - Fold the content in the editor
 
 * _Fold editor argument_
 
-  この引数を渡すことのできるプロパティ値のペア:
+  Property-value pairs that can be passed through this argument:
 
-  * 'levels': 折りたたむレベルの番号
-  * 'up': 'true'の場合、与えられたレベルの番号以上のものを折りたたむ
-
-
-`editor.action.showReferences` - ファイル内のある位置で参照を表示します。
-
-* _uri_ 参照を表示するテキストドキュメント
-* _position_ 表示する位置
-* _locations_ 場所の配列
+  * 'levels': Number of levels to fold
+  * 'up': If 'true', folds given number of levels up otherwise folds down
 
 
-`moveActiveEditor` - アクティブなエディターをタブかグループで移動します。
+`editor.action.showReferences` - Show references at a position in a file
+
+* _uri_ The text document in which to show references
+* _position_ The position at which to show
+* _locations_ An array of locations.
+
+
+`moveActiveEditor` - Move the active editor by tabs or groups
 
 * _Active editor move argument_
 
-  引数のプロパティ:
+  Argument Properties:
 
-  * 'to': 移動先を指定する文字列値
-  * 'by': 移動方法を指定する文字列値です。タブまたはグループを指定します。
-  * 'value': 移動する位置または絶対位置を指定する数値
+  * 'to': String value providing where to move.
+  * 'by': String value providing the unit for move. By tab or by group.
+  * 'value': Number value providing how many positions or an absolute position to move.
 
-# HTMPプレビューを使用した作業
+## Working With the HTML Preview
 
-## Styling
-HTML表示するbody要素には、次のCSSクラスの中で、現在使用しているものにしたがって動的に色付けを行います: `vscode-light`、`vscode-dark`、`vscode-high-contrast`
+### Styling
 
-## Links
-ドキュメントに含まれるリンクはVS Codeで処理します。`file`リソースと[virtual](https://github.com/Microsoft/vscode/blob/master/src/vs/vscode.d.ts#L3295)リソースをサポートし、`command`スキームを使用してコマンドを起動します。JSONでエンコードされた引数を渡すには、command-uriのクエリ部分を使用します。ですからURLエンコードする必要が有ることに注意してください。
+The body element of the displayed HTML is dynamically annotated with one of the following CSS classes in order to communicate the kind of color theme VS Code is currently using: `vscode-light`, `vscode-dark`, or `vscode-high-contrast`.
 
-次のスニペットは_previewHtml_コマンドを呼び出してURIを渡すcommand-linkを定義します:
+### Links
+
+Links contained in the document will be handled by VS Code whereby it supports `file`-resources and [virtual](https://github.com/Microsoft/vscode/blob/master/src/vs/vscode.d.ts#L3295) resources as well as triggering commands using the `command` scheme. Use the query part of a command-uri to pass along JSON encoded arguments. Note that URL encoding must be applied.
+
+The snippet below defines a command link that calls the _previewHtml_ command and passes along an URI:
 
 ```javascript
   let href = encodeURI('command:vscode.previewHtml?' + JSON.stringify(someUri));
   let html = '<a href="' + href + '">Show Resource...</a>.';
 ```
 
-## Security Tips
-拡張機能の製作者は、HTMLプレビューを使用する場合、悪意のコンテンツからユーザーを保護する責任があります。主な危険性は、攻撃者がHTMLプレビューを使用してスクリプトを実行したり、その他悪意の攻撃を実行する悪質なワークスペースを作成可能ということです。通常のWebセキュリティーの最善慣行に加えて、ユーザーを保護するための具体的なヒントやトリックをいくつか紹介します。
+### Security Tips
+
+As an extension author, if you use an HTML preview, you are responsible for protecting users from potentially malicious content. The primary danger is that an attacker could craft a malicious workspace that uses your HTML preview to execute scripts or perform other insecure activities. In addition to normal web security best practices, here are a few specific tips and tricks to help protect users.
 
 ### Sanitizing Content
-最初の防衛線として、プレビュー用のHTMLを作成するとき、ワークスペース設定やユーザーシステム上のファイルからのすべての入力を適切にサニタイズ(処理)します。HTMLコンテンツの場合は、安全なタグと属性のホワイトリストを使用することを検討してください。[sanitize-html](https://www.npmjs.com/package/sanitize-html)のようなライブラリーがこれを手助けします。
+
+As a first line of defense, when constructing an HTML document for the preview, make sure to appropriately sanitize all input that comes from workspace settings or from files on a user's system. For HTML content, consider using a whitelist of safe tags and attributes. Libraries such as [sanitize-html](https://www.npmjs.com/package/sanitize-html) can help with this.
 
 ### Disabling Scripts
-プレビューでJavaScriptを実行する必要がない場合は、スクリプトの実行を完全に無効にすることで、セキュリティーをさらに強化することができます。これを実行する方法の1つは、信頼できないコンテンツを`iframe`の中に`sandbox`属性を設定して読み込むことです。この場合、コンテンツは `srcdoc`属性を使用して読み込みます:
+
+If your preview does not need to execute JavaScript, you can further enhance security by disabling script execution entirely. One way to accomplish this is by loading untrusted content inside of an `iframe`  with the `sandbox` attribute set. In this case, the content would be loaded using the `srcdoc` attribute:
 
 ```html
 <iframe sandbox srcdoc="<!DOCTYPE html>..."></iframe>
 ```
 
-プレビューで画像などのローカルリソースを読み込む必要があるなら、代わりに`sandbox="allow-same-origin"`の使用を試してください:
+If your preview still needs to load some local resources such as images, try using `sandbox="allow-same-origin"` instead:
 
 ```html
 <iframe sandbox="allow-same-origin" srcdoc="<!DOCTYPE html>..."></iframe>
 ```
 
-`sandbox="allow-same-origin"`は`iframe`内のスクリプト実行を無効にしますが、スタイルシートや画像など、ユーザーシステムからのリソースを読み込むことができます。通常プレビューがそれを絶対必要としない限り、ローカルリソースへのアクセスを無効化することが最善です。
+`sandbox="allow-same-origin"` disables script execution inside the `iframe` but allows loading resources from a user's system, such as stylesheets and images. In general, it is best to disable access to local resources unless your preview absolutely needs it.
 
 ### Using a Content Security Policy
-プレビューの機能がスクリプトに依存する場合は、[Content Security Policy (CSP)](https://developer.mozilla.org/ja/docs/Web/Security/CSP)を使用して、信頼できないコンテンツからのスクリプトを無効にすることを検討してください。
 
-例として、、ユーザーのローカルシステムからのイメージ作成とスタイルシートを許可して、すべてのスクリプトを無効にするCSPを次に示します:
+If your preview's functionality depends on scripts, consider disabling scripts that come from untrusted user content using a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). Content security policy allow fine grained control over which resources may be loaded.
+
+For example, here's a content security policy that allows images from anywhere, allows stylesheets from a user's local system, and disables all scripts:
 
 ```html
 <!DOCTYPE html>
@@ -301,7 +315,7 @@ HTML表示するbody要素には、次のCSSクラスの中で、現在使用し
 </html>
 ```
 
-スクリプトを選択的に有効化するには、動的に生成した[nonce](https://developers.google.com/web/fundamentals/security/csp/)を使用して、特定の信頼できるスクリプトをホワイトリストに登録することがいい方法です。
+To selectively enable scripts, the best approach for the HTML preview is to use a dynamically generated [nonce](https://developers.google.com/web/fundamentals/security/csp/) to whitelist certain trusted scripts:
 
 ```html
 <!DOCTYPE html>

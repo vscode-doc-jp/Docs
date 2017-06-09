@@ -2,6 +2,7 @@
 title: アクセシビリティ
 MetaDescription: Visual Studio Code user accessibility features.  Learn here about the various ways VS Code aids user accessibility.
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+status: old
 ---
 
 Visual Studio Codeにはすべてのユーザーが使い勝手のよいエディターにする機能が多く備わっています。ズームとハイコントラストはエディターの可読性を向上させ、キーボードナビゲーションによりマウスなしで操作でき、エディタはスクリーンリーダー用へ最適化しています。

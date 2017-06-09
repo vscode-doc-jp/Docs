@@ -1,7 +1,12 @@
 ---
-title: C# programming
+Order: 13
+Area: languages
+TOCTitle: C#
+ContentId: 40C8AAC1-C00D-4E91-8877-737A598346B6
+PageTitle: C# programming with Visual Studio Code
+DateApproved: 5/9/2016
 MetaDescription: Find out how to get the best out of Visual Studio Code and C#.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
+MetaSocialImage: csharp_languages_csharp.png
 ---
 # Working with C&#35;
 
@@ -18,7 +23,7 @@ For detailed instructions on:
 
 >**Note:** VS Code does not support debugging applications running on the Desktop .NET Framework.
 
-Due to this focus, many standard C# project types are not recognized by VS Code.  An example of a non-supported project type is an ASP.NET MVC Application (though ASP.NET Core is supported).  In these cases, if you simply want to have a lightweight tool to edit a file - VS Code has you covered.  If you want the best possible experience for those projects and development on Windows in general, we recommend you use [Visual Studio Community](https://www.visualstudio.com/products/visual-studio-community-vs).
+Due to this focus, many standard C# project types are not recognized by VS Code.  An example of a non-supported project type is an ASP.NET MVC Application (though ASP.NET Core is supported).  In these cases, if you want to have a lightweight tool to edit a file - VS Code has you covered.  If you want the best possible experience for those projects and development on Windows in general, we recommend you use [Visual Studio Community](https://www.visualstudio.com/products/visual-studio-community-vs).
 
 ## Installing C&#35; support
 
@@ -34,10 +39,11 @@ In addition to the [Microsoft C# extension](https://marketplace.visualstudio.com
 
 ## Roslyn and OmniSharp
 
-Visual Studio Code uses the power of [Roslyn](https://github.com/dotnet/roslyn) and [OmniSharp](http://www.omnisharp.net) to offer an enhanced C# experience.  We offer support for both:
+Visual Studio Code uses the power of [Roslyn](https://github.com/dotnet/roslyn) and [OmniSharp](http://www.omnisharp.net) to offer an enhanced C# experience.  We offer support for:
 
 - .NET Core projects
 - MSBuild projects
+- C# scripts (CSX)
 
 On startup the best matching projects are loaded automatically but you can also choose your projects manually.  The status bar will show what projects have been loaded and also allows you to select a different set of projects. To do so, click on the status bar projects item and select *Change projects…*.  In the image below a single project has been picked up:
 
@@ -47,7 +53,7 @@ The available options include:
 
 * Selecting a ```project.json``` file will open a .NET Core project and VS Code will load that project plus the referenced projects.
 * Selecting a ```*.sln``` file opens a MSBuild-project. It will load the referenced ```*.csproj``` projects and sibling or descendant ```project.json``` files but no other project files that are referenced from the solution file.
-* Selecting a ```folder``` will make VS Code scan for ```*.sln``` and ```project.json``` files and VS Code will attempt to load them all.
+* Selecting a ```folder``` will make VS Code scan for ```*.sln```, ```project.json``` and ```*.csx``` files (C# scripts) and VS Code will attempt to load them all.
 
 Once the project is loaded the enhanced experiences light up...
 

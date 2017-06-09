@@ -1,7 +1,8 @@
 ---
 title: Activation Events - package.json
 MetaDescription: To support lazy activation of Visual Studio Code extensions (plug-ins), your extension controls when it should be loaded through a set of activation events in the package.json extension manifest file.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+status: old
 ---
 
 拡張機能は、それが必要になるまで読み込まれません。その結果、拡張機能をアクティブにする必要があるときVS Codeにコンテキストを提供する必要があります。次のアクティブイベントをサポートしています:
