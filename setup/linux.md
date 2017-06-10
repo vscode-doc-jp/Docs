@@ -1,15 +1,14 @@
 ---
-title: Linux で VS Code を実行する
+title: LinuxでVisual Studio Codeを起動する
 MetaDescription: Get Visual Studio Code up and running on Linux.
-commitid: 49a1336d8b6540c91f2be83be49c254f368663d4
-status: old
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
-## インストール
+## インストール <a id="installation"></a>
 
-### DebianとUbuntuディストリビューション
+### DebianとUbuntu
 
-Debian/Ubuntuディストリビューションでインストールする最も簡単な方法は、[.deb package (64-bit)](http://go.microsoft.com/fwlink/?LinkID=760868)をソフトウェアセンタからダウンロードしてインストールすることです。
+Debian/Ubuntuディストリビューションでインストールする最も簡単な方法は、[.deb package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760868)をソフトウェアセンタからダウンロードしてインストールすることです。
 
 ```bash
 sudo dpkg -i <file>.deb
@@ -23,10 +22,10 @@ sudo apt-get install -f # Install dependencies
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 ```
 
-そうしたらパッケージキャッシュを更新して、パッケージからインストールします:
+次にパッケージキャッシュを更新して、パッケージからインストールします:
 
 ```bash
 sudo apt-get update
@@ -42,7 +41,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 ```
 
-そうしたらパッケージキャッシュを更新し、`dnf` (Fedora 22以降)を使用してインストールします:
+次にパッケージキャッシュを更新し、`dnf` (Fedora 22以降)を使用してインストールします:
 
 ```bash
 dnf check-update
@@ -50,12 +49,13 @@ sudo dnf install code
 ```
 
 古い`yum`を使用する場合:
+
 ```bash
 yum check-update
 sudo yum install code
 ```
 
-### openSUSEとSLEディストリビューション
+### openSUSEとSLE
 
 上記のyumレポジストリは、openSUREとSLE OSでも動作します。次のスクリプトでキーとリポジトリをインストールしてください:
 
@@ -64,16 +64,20 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
 ```
 
-そうしたらパッケージキャッシュを更新して、パッケージからインストールします:
+次にパッケージキャッシュを更新して、パッケージからインストールします:
 
 ```bash
 sudo zypper refresh
 sudo zypper install code
 ```
 
+### Arch Linux用のAURpackage
+
+コミュニティーが管理しているArch User Repository(AUR) [package for VS Code](https://aur.archlinux.org/packages/visual-studio-code)があります。
+
 ### .rpmパッケージを手動でインストール
 
-[.rpm package (64-bit)](http://go.microsoft.com/fwlink/?LinkID=760867)をダウンロードしてインストールすることもできますが、上記のリポジトリーがある場合を除き自動更新は機能しません。ダウンロードしたパッケージは、パッケージマネージャー(例えばdnf)を使ってインストールできます。
+[.rpm package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760867)をダウンロードしてインストールすることもできますが、上記のリポジトリーがある場合を除き自動更新は機能しません。ダウンロードしたパッケージは、パッケージマネージャー(例えばdnf)を使ってインストールできます。
 
 ```bash
 sudo dnf install <file>.rpm
@@ -99,7 +103,7 @@ JavaScriptとNode.jsの詳細を知りたくなったら、VS CodeでNode.jsを�
 
 次のコマンドで、`xdg-open`でテキストファイル(`text/plain`)を開くときに使用する既定のテキストエディターを設定します:
 
-```
+```bash
 xdg-mime default code.desktop text/plain
 ```
 
@@ -107,7 +111,7 @@ xdg-mime default code.desktop text/plain
 
 Debianのディストリビューションでは、MIMEタイプを気にすることなく[alternatives system](https://wiki.debian.org/DebianAlternatives)を使用して、既定の**エディタ**を設定できます。これを設定するには、以下を実行してcodeを選択します:
 
-```
+```bash
 sudo update-alternatives --set editor /usr/bin/code
 ```
 
@@ -147,17 +151,17 @@ cat /proc/sys/fs/inotify/max_user_watches
 
 `/etc/sysctl.conf`に次の文をファイルの最後に追加することで、監視対象数上限を増やします:
 
-```
+```bash
 fs.inotify.max_user_watches=524288
 ```
 
 新しい値は`sudo sysctl -p`を実行して適用してください。[Arch Linux](https://www.archlinux.org/)は少し異なる動作をすることに注意してください。[view this page for advice](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)
 
-監視可能なファイルの最大数は524288ですが、特にメモリーが制限されている環境にいる場合は、その数を減らすことをお勧めします。各ファイル監視は[540bytes(32bit) ~ 1kB(64bit)](http://stackoverflow.com/a/7091897/1156119)消費します。ですから524288 wathcesすべてを消費すると仮定すれば、上限が256MB(32bit)か512MB(64bit) になると仮定できます。
+監視可能なファイルの最大数は524288ですが、特にメモリーが制限されている環境にいる場合は、その数を減らすことをお勧めします。各ファイル監視は[540bytes(32bit) ~ 1kB(64bit)](https://stackoverflow.com/a/7091897/1156119)消費します。ですから524288 wathcesすべてを消費すると仮定すれば、上限が256MB(32bit)か512MB(64bit) になると仮定できます。
 
 ### Ubuntu版で中国語を表示しません
 
-現在修正中です。その間次の方法で回避してください。**ファイル** > **基本設定** > **設定**を選択したら、次のように`editor.fontFamily`を設定します。
+現在修正中です。その間 次の方法で回避してください。 **ファイル** > **基本設定** > **設定** を選択したら、次のように `editor.fontFamily` を設定します。
 
 ```json
     "editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
@@ -182,7 +186,7 @@ sudo dnf update
 
 VS Codeが既にディレクトリーを開いているときUbuntuで 'code .'を実行すると、VS Codeを最前面で表示しません。これはOSの機能である`ccsm`を使用して無効にできます。
 
-```
+```bash
 # Install
 sudo apt-get update
 sudo apt-get install compizconfig-settings-manager

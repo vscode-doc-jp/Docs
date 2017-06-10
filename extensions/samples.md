@@ -1,18 +1,17 @@
 ---
 title: Extension Examples
 MetaDescription: Learn from existing Visual Studio Code extension examples.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
-status: old
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
-## 基本
+## Extension Basics
 
 私たちは拡張機能のコアコンセプトの概念を2つのチュートリアルでカバーしています:
 
 * **[Your First Extension](/docs/extensions/example-hello-world.md)** -  拡張機能のコアコンセプトをチュートリアルで説明します。
 * **[Word Count Extension](/docs/extensions/example-word-count.md)** - 最後に行う別のチュートリアルです。
 
-## サンプル
+## Sample Extensions
 
 Sample|Description|Type|In Marketplace
 ------|-----------|----|---------
@@ -24,9 +23,10 @@ Sample|Description|Type|In Marketplace
 **[TSLint](https://github.com/Microsoft/vscode-tslint)**|TSLintに基づいてTypeScriptを検証します。|[Language Server](/docs/extensions/example-language-server.md)|Y
 **[Spelling and Grammar Checker](https://github.com/Microsoft/vscode-spell-check)**|設定可能なMarkdownのスペルと文法チェッカーです。外部WEBサービスを呼び出し、アクティベーションのサポートと辞書を追加してエラーマッピングを行います。設定ファイルの変更をリアルタイムで監視します。|[Extension](/docs/extensions/example-hello-world.md)|Y
 **[Mock Debugger](https://github.com/Microsoft/vscode-mock-debug)**|デバッガをビルドしてテストするのに役立ちます。|[Debuggers](/docs/extensions/example-debuggers.md)|Y
-**[Go Language Support](https://github.com/microsoft/vscode-go)**|[Go Lang](https://golang.org/) の豊富なサポートです。IntelliSense、Debug、Peek、Rename、Syntax ...|[Extension](/docs/extensionapi/vscode-api.md#languages)|Y
+**[Go Language Support](https://github.com/microsoft/vscode-go)**|[Go Lang](https://golang.org/) の豊富なサポート - IntelliSense、Debug、Peek、Rename、Syntax ...|[Extension](/docs/extensionapi/vscode-api.md#languages)|Y
+**[Tree Data Provider](https://github.com/Microsoft/vscode-extension-samples/tree/master/tree-view-sample)**|`TreeDataProvider` APIを使用してVS Codeにカスタムビューを提供する方法を説明します|[Extension](/docs/extensionapi/vscode-api.md#TreeDataProvider)|N
 
-## ツール
+## Tools to Help you build an Extension
 
 Tool|Purpose
 ----|-------
@@ -34,11 +34,11 @@ Tool|Purpose
 **[Debugging Extensions](/docs/extensions/debugging-extensions.md)**|私たちは拡張機能の開発、デバッグ、ローカルテストを簡単に行うための努力を行っています。
 **[Publishing Tool](/docs/extensions/publish-extension.md)**|利用可能な拡張機能があるなら[extension Marketplace](/docs/userguide/extension-gallery.md)でそれを共有しましょう。それを行うシンプルなコマンドラインツールがあります。そのソースコードを[ここ](https://github.com/Microsoft/vsce)で確認できます。
 
-## チュートリアル
+## Tutorial samples
 
 Tutorial|Description
 --------|-----------
-**[Node.js](https://github.com/Microsoft/vscode-samples)**|Node.js Express [トライアル](/docs/nodejs/nodejs-tutorial.md)
+**[Node.js](https://github.com/Microsoft/vscode-samples)**|Node.js Express [tutorial](/docs/nodejs/nodejs-tutorial.md)
 
 ## 次のステップ
 
