@@ -1,8 +1,7 @@
 ---
 title: IntelliSense
 MetaDescription:  Learn about Visual Studio Code IntelliSense (intelligent code completion).
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
-status: old
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
 IntelliSenseとは、メンバーの一覧、パラメーター ヒント、クイック ヒント、入力候補など多数の機能を指す総称です。その特徴から「code completion」「content assist」「code hinting」と呼ばれることもあります。
@@ -13,27 +12,27 @@ IntelliSenseとは、メンバーの一覧、パラメーター ヒント、ク�
 
 初期のIntelliSenseはJavaScript、TypeScript、JSON、CSS、LESS、SASSに補完を提供します。この状態でもそれなりの言語で単語ベースの補完をサポートしますが、言語拡張機能をインストールすることでより豊かなIntelliSenseを構成可能です。
 
-説明とレビューを読んで、最適な拡張機能を決定するために拡張機能のタイルをクリックしてください。
 
-(編集メモ: 本家でここに人気言語4つが表示
 
-## IntelliSenseの特徴
+
+
+## IntelliSenseの特徴 <a id="intellisense-features"></a>
 
 IntelliSenseの機能は、セマンティクスとソースコードの分析に基づいて高度なコードな補完を生成する言語サーバーによって構成されています。生成された補完はIntelliSenseを通してリスト表示しますが、文字を続けることでIntelliSenseがフィルターをかけて、メンバー(変数、メソッドなど)のより最適なリスト表示が可能になります。こうして出てきた項目は`kbstyle(Tab)`や`kbstyle(Enter)`で確定できます。
 
-IntelliSenseを起動するときには、エディタで`kb(editor.action.triggerSuggest)`もしくはトリガーになるような文字(JavaScriptではドット(`kbstyle(.)`)などを入力します。
+IntelliSenseを起動するときには、エディタで`kb(editor.action.triggerSuggest)`もしくはトリガーになるような文字(javascriptではドット(`kbstyle(.)`)などを入力します。
 
 ![intellisense in package json](images/intellisense/intellisense_packagejson.gif)
 
 > **Tip:** IntelliSenseはキャメルケースフィルターをサポートしています。ですから、メソッド名に大文字を入力するだけで、項目を限定することができます。例えば「createApplication」を表示するときは「cra」ですぐに表示可能です。
 
-IntelliSense機能を無効化したり、カスタマイズしたりする詳細方法は[Customizing IntelliSense](/docs/userguide/intellisense.md#customizing-intellisense)を参照してください。
+必要に応じて、入力中にIntelliSenseをオフにすることもできます。IntelliSense機能を無効化したり、カスタマイズしたりする詳細方法は [Customizing IntelliSense](/docs/userguide/intellisense.md#customizing-intellisense)を参照してください。
 
-言語サービスに提供されるように、各メソッドの**クイックヒント**も表示します。
+言語サービスから提供があるとき、`kb(toggleSuggestionDetails)`をおすか情報のアイコンをおすことで、各メソッドの**quick info**を確認することができます。メソッドに関するドキュメントが横に展開されます。展開されたドキュメントはそのまま残り、リストを移動すると更新します。`kb(toggleSuggestionDetails)`をもう一度おすか、閉じるアイコンをクリックしてこれを閉じることができます。
 
-![quick info](images/intellisense/quick_outline.png)
+![quick info](images/intellisense/intellisense_docs.gif)
 
-メソッドを選んだあと、**パラメーター情報**を提供しているのが分かるかと思います。
+メソッドを選んだあと、**パラメーター情報**を提供しているのがわかるかと思います。
 
 ![parameter info](images/intellisense/paramater_info.png)
 
@@ -42,7 +41,7 @@ IntelliSense機能を無効化したり、カスタマイズしたりする詳�
 
 ## 入力候補の種類
 
-下のJavaScriptコードでIntelliSenseによる入力候補の例を示しています。次の画像を見てもわかりますが、候補とプロジェクトのグローバル識別子の両方を表示します。候補のシンボルが最初に表示され、続いてグローバル識別子を表示します。
+下のJavaScriptコードでIntelliSenseによる入力候補の例を示しています。以下の画像を見てもわかりますが、候補とプロジェクトのグローバル識別子の両方を表示します。候補のシンボルが最初に表示され、続いてグローバル識別子を表示します。
 
 ![intellisense icons](images/intellisense/intellisense_icons.png)
 
@@ -66,15 +65,13 @@ IntelliSenseは言語サーバーの候補、スニペット、単純な単語�
 | ![a square with letters abc word completion](images/intellisense/String_16x.svg) | 単語 |
 | ![Miscellaneous](images/intellisense/Misc_16x.svg) | その他 |
 
-(編集メモ: 無理やり日本語訳にしたのでわかりにくい
-
-## IntelliSenseのカスタマイズ
+## IntelliSenseのカスタマイズ <a id="customizing-intellisense"></a>
 
 設定とキーバインドを変更してIntelliSenseの操作をカスタマイズできます。
 
 ### 設定
 
-次に示す例は既定の設定です。`settings.json`で設定を変更する場合は[User and Workspace Settings](/docs/getstarted/settings.md)の説明を参照してください。
+以下に示す例は既定の設定です。`settings.json`で設定を変更する場合は[User and Workspace Settings](/docs/getstarted/settings.md)の説明を参照してください。
 
 ```javascript
 {
@@ -88,20 +85,20 @@ IntelliSenseは言語サーバーの候補、スニペット、単純な単語�
     "editor.quickSuggestionsDelay": 10,
 
   // 単語ベースの修正候補を有効にします。
-    "editor.wordBasedSuggestions": true
+    "editor.wordBasedSuggestions": true,
 
     // パラメーター ヒントを有効にする
     "editor.parameterHints": true
 }
 ```
 
-既定では1つのウィジェットで修正候補と一緒にスニペットを表示します。これを`editor.snippetSuggestions`設定で制御することが可能です。このウィジェットからスニペットを削除するには`none`に設定します。スニペットを一緒に表示する場合、その並び替えの方法は指定できます。上部(`"top"`)下部(`"bottom`")アルファベット順(`"inline"`)です。デフォルトは`"bottom`"です。
+既定では1つのウィジェットで修正候補と一緒にスニペットを表示します。これを`editor.snippetSuggestions`設定で制御することが可能です。このウィジェットからスニペットを削除するには`none`に設定します。スニペットを一緒に表示する場合、その並び替えの方法は指定できます。上部(`"top"`) 下部(`"bottom`") アルファベット順(`"inline"`)です。デフォルトは`"bottom`"です。
 
 ### キーバインド
 
-既定のショートカット設定を次の例に示しています。`keybindings.json`の変更方法は[Key Bindings](/docs/getstarted/keybindings.md)を確認してください。
+次に示すキーバインディングは、既定の設定です。これらは[Key Bindings](/docs/getstarted/keybindings.md)にしたがって`keybindings.json`ファイルで変更することができます。
 
-> **Note:** 以下の例はIntelliSenseのごく一部設定をまとめています。実際の設定は **File** > **基本設定** > **キーボードショートカット**に移動して「suggest」を検索してください。
+> **Note:** 以下の例はIntelliSenseのごく一部設定をまとめています。*Default Keyboard Shortcuts** (**File** > **Preferences** > **Keyboard Shortcuts**) を開いて"suggest"を検索てください。
 
 ```json
 {
@@ -109,13 +106,22 @@ IntelliSenseは言語サーバーの候補、スニペット、単純な単語�
        "key": "ctrl+space",
        "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "toggleSuggestionDetails",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+alt+space",
+        "command": "toggleSuggestionFocus",
+        "when": "editorTextFocus && suggestWidgetVisible" },
     }
-}
 ```
 
 ## トラブルシューティング
 
-IntelliSenseが機能しないときは、言語サービスが実行されていない可能性があります。そんな場合VS Codeを再起動すればこの問題を解決できる可能性が非常に高いです。言語拡張機能をインストールしてもIntelliSense機能が不足している場合は、そのレポジトリで問題を確認してください。
+IntelliSenseが機能しないときは、言語サービスが実行されていない可能性があります。VS Codeを再起動すればこの問題は解決するはずです。言語拡張機能をインストールしてもIntelliSense機能が不足している場合は、そのレポジトリで問題を確認してください。
 
 > **Tip:** JavaScript の IntelliSense 設定とトラブルシューティングについては[こちら](/docs/languages/javascript.md#intellisense)を確認できます。
 
@@ -131,14 +137,14 @@ IntelliSenseはVS Codeの強力な機能の1つにすぎません。VS Codeに�
 
 ## よくある質問
 
-**Q: なぜ何の候補もないのですか?**
+**Q: なぜ何の候補もないのですか？**
 
 ![image of IntelliSense not working](images/intellisense/intellisense_error.png)
 
-**A:** これにはさまざまな理由が考えられますが、まずVS Codeを再起動してみてください。それでも問題が解決しないは、言語拡張のドキュメントを参照してください。JavaScirpt特定のトラブルシューティングについては[JavaScript language topic](/docs/languages/javascript.md#intellisense)を参照できます。
+**A:** これには様々な理由が考えられます。まずVS Codeを再起動してみてください。それでも問題が解決しないは、言語拡張のドキュメントを参照してください。JavaScirpt特定のトラブルシューティングについては[JavaScript language topic](/docs/languages/javascript.md#intellisense)を参照できます。
 
-**Q: なぜ私の変数を見て候補を表示しないのですか? (なぜ有用な提案をしないのですか)**
+**Q: メソッドと変数の提案が表示されないのはなぜですか？**
 
 ![image of IntelliSense showing no useful suggestions](images/intellisense/missing_typings.png)
 
-**A:** JavaScriptでTypingsファイルが見つからないのが原因です。[JavaScript language topic](/docs/languages/javascript.md#intellisense)でこの問題を解決する方法を確認することができます。その他言語については拡張機能のドキュメントを参照してください
+**A:** この問題はJavaScriptに型定義(typings)ファイルが見つからないことが原因です。[TypeSearch](https://microsoft.github.io/TypeSearch)を利用して、型定義ファイルのパッケージが特定のライブラリーで使用可能かどうかを確認できます。この問題の詳細は[JavaScript 言語のトピック](/docs/languages/javascript.md#intellisense)にあります。その他言語については拡張機能のドキュメントを参照してください
