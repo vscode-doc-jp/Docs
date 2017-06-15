@@ -1,193 +1,190 @@
 ---
-Order: 2
-Area: editor
-TOCTitle: Basic Editing
-ContentId: DE4EAE2F-4542-4363-BB74-BE47D64141E6
-PageTitle: Basic Editing in Visual Studio Code
-DateApproved: 5/4/2017
+title: 基本的な編集
 MetaDescription: Learn about the basic editing features of Visual Studio Code. Search, multiple selection, code formatting.
-MetaSocialImage: codebasics_CodeBasics.png
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
-# Basic Editing
+Visual Studio Codeとは何よりもまずエディターであり、生産的なソースコード編集に必要な機能を含んでいます。このトピックではエディターの基本を紹介します。コードの編集に役立ててください。
 
-Visual Studio Code is an editor first and foremost and includes the features you need for highly productive source code editing. This topic takes you through the basics of the editor and helps you get moving with your code.
+## キーボードショートカット <a id="keyboard-shortcuts"></a>
 
-## Keyboard shortcuts
+高い生産性のために、コードを書いている途中でもキーボード上に手を置き続けられることは重要なことです。VS Codeにはデフォルトのキーボードショートカットが豊富に用意されているのはもちろん、それをカスタマイズすることもできます。
 
-Being able to keep your hands on the keyboard when writing code is crucial for high productivity. VS Code has a rich set of default keyboard shortcuts as well as allowing you to customize them.
+* [Keyboard Shortcuts Reference](/docs/getstarted/keybindings.md#keyboard-shortcuts-reference) - Reference Sheetをダウンロードして、よく使用される一般的なキーバインドショートカットを確認します。
+* [Install a Keymap extension](/docs/getstarted/keybindings.md#keymap-extensions) - キーマップの拡張機能をインストールして、使い慣れたエディター(Sublime Text、Atom、Vimなど)のキーボードショートカットVS Codeで使用します。
+* [Customize Keyboard Shortcuts](/docs/getstarted/keybindings.md#customizing-shortcuts) - 好みに合わせてキーボードショートカットショートカットを変更します。
 
-* [Keyboard Shortcuts Reference](/docs/getstarted/keybindings.md#keyboard-shortcuts-reference) - Learn the most commonly used and popular keyboard shortcuts by downloading the reference sheet.
-* [Install a Keymap extension](/docs/getstarted/keybindings.md#keymap-extensions) - Use the keyboard shortcuts of your old editor (such as Sublime Text, Atom, and Vim) in VS Code by installing a Keymap extension.
-* [Customize Keyboard Shortcuts](/docs/getstarted/keybindings.md#customizing-shortcuts) - Change the default keyboard shortcuts to fit your style.
+## 複数の選択範囲 (マルチカーソル) <a id="multiple-selections-multicursor"></a>
 
-## Multiple selections (multi-cursor)
+VS Codeは高度な連立の編集ができるように、マルチカーソルをサポートしています。`kbstyle(Alt+Click)`を使用して2個目のカーソル(薄く表示)を追加することができます。各カーソルは、それがおかれているコンテキストに基づいて独立的に動作します。追加のカーソルを追加するのによく使う方法は、`kb(editor.action.insertCursorBelow)`(下に挿入)や`kb(editor.action.insertCursorAbove)`(上に挿入)です。
 
-VS Code supports multiple cursors for fast simultaneous edits. You can add secondary cursors (rendered thinner) with `kbstyle(Alt+Click)`. Each cursor operates independently based on the context it sits in. A common way to add more cursors is with `kb(editor.action.insertCursorBelow)` or `kb(editor.action.insertCursorAbove)` that insert cursors below or above.
-
-> **Note:** Your graphics card driver (for example NVIDIA) might overwrite these default shortcuts.
+> **Note:** ビデオカードのドライバー(例: NVIDIA)がこれら既定のショートカットを上書きすることがあります。
 
 ![Multi-cursor](images/editingevolved/multicursor.gif)
 
-`kb(editor.action.addSelectionToNextFindMatch)` selects the word at the cursor, or the next occurrence of the current selection.
+`kb(editor.action.addSelectionToNextFindMatch)`はカーソルの単語または次の出現箇所を選択します。
 
 ![Multi-cursor-next-word](images/editingevolved/multicursor-word.gif)
 
-> **Tip:** You can also add more cursors with `kb(editor.action.selectHighlights)`, which will add a selection at each occurrence of the current selected text.
+> **Tip:** また、追加のカーソルを`kb(editor.action.selectHighlights)`を使用することでも追加できます。これは現在選択しているテキストの出現個所のそれぞれに選択範囲を追加します。
 
-### Shrink/expand selection
+### 選択範囲の縮小/拡大 <a id="column-box-selection"></a>
 
-Quickly shrink or expand the current selection. Trigger it with `kb(editor.action.smartSelect.shrink)` and `kb(editor.action.smartSelect.grow)`
+現在の選択範囲をすばやく縮小または拡大できます。`kb(editor.action.smartSelect.shrink)`と`kb(editor.action.smartSelect.grow)`でこれを実行できます。
 
-Here's an example of expanding the selection with `kb(editor.action.smartSelect.grow)`:
+次に`kb(editor.action.smartSelect.grow)`を使用して選択範囲を拡大する例を示します:
 
 ![Expand selection](images/editingevolved/expandselection.gif)
 
-## Column (box) selection
+## 列 (短形) の選択<a id="column-box-selection"></a>
 
-Hold `kbstyle(Shift)` and `kbstyle(Alt)` while dragging to do column selection:
+行選択をするには`kbstyle(Shift)`と`kbstyle(Alt)`を押しながらドラッグします:
 
 ![Column text selection](images/editingevolved/column-select.gif)
 
-There are also default key bindings for column selection on Mac and Windows, but not on Linux.
+MacとWindowsには行選択のための既定のキーバインドがありますが、Linuxにはありません。
 
 Key|Command|Command id
 ---|-------|----------
-`kb(cursorColumnSelectDown)`|Column Select Down|`cursorColumnSelectDown`
-`kb(cursorColumnSelectUp)`|Column Select Up|`cursorColumnSelectUp`
-`kb(cursorColumnSelectLeft)`|Column Select Left|`cursorColumnSelectLeft`
-`kb(cursorColumnSelectRight)`|Column Select Right|`cursorColumnSelectRight`
-`kb(cursorColumnSelectPageDown)`|Column Select Page Down|`cursorColumnSelectPageDown`
-`kb(cursorColumnSelectPageUp)`|Column Select Page Up|`cursorColumnSelectPageUp`
+`kb(cursorColumnSelectDown)`|下に短形選択|`cursorColumnSelectDown`
+`kb(cursorColumnSelectUp)`|上に短形選択|`cursorColumnSelectUp`
+`kb(cursorColumnSelectLeft)`|左に短形選択|`cursorColumnSelectLeft`
+`kb(cursorColumnSelectRight)`|右に短形選択|`cursorColumnSelectRight`
+`kb(cursorColumnSelectPageDown)`|ページ ダウン 短形選択 |`cursorColumnSelectPageDown`
+`kb(cursorColumnSelectPageUp)`|ページ アップ 短形選択|`cursorColumnSelectPageUp`
 
-You can [edit](/docs/getstarted/keybindings.md) your `keybindings.json` to bind them to something more familiar if you wish.
+必要に応じて、`keybindings.json`を[編集](/docs/getstarted/keybindings.md)してより親しみやすいものに設定することができます。
 
-## Save / Auto Save
+## 保存/自動保存 <a id="save-auto-save"></a>
 
-By default, VS Code requires an explicit action to save your changes to disk, `kb(workbench.action.files.save)`.
+既定では、VS Codeはディスクへ変更書き込むに操作(`kb(workbench.action.files.save)`)が必要です。
 
-However, it's easy to turn on `Auto Save`, which will save your changes after a configured delay or when focus leaves the editor. With this option turned on, there is no need to explicitly save the file. The easiest way to turn on `Auto Save` is with the **File** > **Auto Save** toggle which turns on and off save after a delay.
+ですが問題ありません。`Auto Save`を有効にするのはとても簡単です。これは設定した遅延タイミングやエディターからフォーカスを離したときに変更を保存します。このオプションを有効化するとファイルを保存するのに操作が必要ありません。`Auto Save`を有効にする最も簡単な方法は、**ファイル**>**自動保存**で切り替えてオンまたはオフにすることです。
 
-For more control over `Auto Save`, open **User Settings** or **Workspace Settings** and find the associated settings:
+自動保存をより制御するには、ユーザーかワークスペース[設定](/docs/getstarted/settings.md)を開いて次の関連する設定を見つけてください:
 
-* `files.autoSave`: Can have the values:
-  * `off` - to disable auto save.
-  * `afterDelay` - to save files after a configured delay.
-  * `onFocusChange` - to save files when focus moves out of the editor of the dirty file.
-  * `onWindowChange` - to save files when the focus moves out of the VS Code window.
-* `files.autoSaveDelay`: Configures the delay in milliseconds when `files.autoSave` is configured to `afterDelay`.
+* `files.autoSave`: 次の値をとります。
+  * `off` - 自動保存を無効にします。
+  * `afterDelay` - 設定した遅延でファイルを保存します。
+  * `onFocusChange` -フォーカスがダーティーファイルのエディターから移動したときにファイルを保存します。
+  * `onWindowChange` - フォーカスがVS Codeから移動したときにファイルを保存します。
+* `files.autoSaveDelay`: `files.autoSave`が`afterDelay`に設定されているときにミリ秒で遅延を構成します。
 
-## Hot Exit
+## Hot Exit <a id="hot-exit"></a>
 
-VS Code will remember unsaved changes to files when you exit by default. Hot exit is triggered when the application is closed via **File** > **Exit** (**Code** > **Quit** on macOS) or when the last window is closed.
+既定でVS Codeは、編集を終了するときに保存していない変更を記憶します。Hot Exitは、アプリケーションが**ファイル**>**終了**(**Code**>**Quit**)によって閉じたときか、最後のウィンドウが閉じられたときに実行されます。
 
-Hot exit can be disabled by changing the setting `files.hotExit` to `false`.
+`files.hotExit`設定に次の値を設定してHot Exitを構成できます:
 
-## Search Across Files
+* `"off"`: Hot Exitを無効にします。
+* `"onExit"`: アプリケーションを閉じた(Windows/Linux上で最後のウィンドウを閉じた)とき、または`workbench.action.quit`コマンドを(**コマンドパレット**、ショートカット、メニューから)実行したときにHot Exitを実行します。バックアップしてあるすべてのウィンドウは、次回の起動時に復元されます。
+* `"onExit"`: アプリケーションを閉じた(Windows/Linux上で最後のウィンドウを閉じた)とき、または`workbench.action.quit`コマンドを(**コマンドパレット**、ショートカット、メニューから)実行したときにHot Exitを実行します。また最後のウィンドウであるかどうかにかかわらず、フォルダーを開いている任意のウィンドウを閉じたときもこれを実行します。フォルダーを開いていないすべてのウィンドウは、次回の再起動時に復元されます。閉じるまえのフォルダーのウィンドウを復元するには`window.reopenFolders`を`all`に設定します。
 
-VS Code allows you to quickly search over all files in the currently-opened folder.  Press `kb(workbench.view.search)` and enter in your search term. Search results are grouped into files containing the search term, with an indication of the hits in each file and its location. Expand a file to see a preview of all of the hits within that file. Then single-click on one of the hits to view it in the editor.
+## ファイル間の検索 <a id="search-across-files"></a>
+
+VS Codeでは、現在開いているフォルダー内すべてのファイルを素早く検索することができます。`kb(workbench.view.search)`を押して、検索文字を入力します。検索結果は、検索文字を含むファイルごとにグループ分けされ、各ファイルのヒット数とその場所を表示します。ファイル内すべてのヒット項目をプレビューするには、ファイルを展開してください。次にヒット項目の1つをシングルクリックして、エディターでそれを表示します。
 
 ![A simple text search across files](images/codebasics/search.png)
 
->**Tip:** We support regular expression searching in the search box, too.
+>**Tip:** 検索窓では正規表現による検索をサポートしています。
 
-You can configure advanced search options by typing `kb(workbench.action.search.toggleQueryDetails)`. This will show additional fields to configure the search.
+`kb(workbench.action.search.toggleQueryDetails)`を入力することで、高度な検索オプションを構成できます。これにより、検索を構成する追加のフィードを表示します。
 
 ![Advanced search options](images/codebasics/searchadvanced.png)
 
-In the two input boxes below the search box, you can include and exclude files. Click on the toggle to the right to enable the glob pattern syntax:
+検索ボックスの下にある2つの入力ボックスで、ファイルを含めるか除外するるかを指定できます。globパターンの構文を有効にするには、右のトグルをクリックしてください:
 
-* `*` to match one or more characters in a path segment
-* `?` to match on one character in a path segment
-* `**` to match any number of path segments, including none
-* `{}` to group conditions (e.g. `{**/*.html,**/*.txt}` matches all HTML and text files)
-* `[]` to declare a range of characters to match (e.g., `example.[0-9]` to match on `example.0`, `example.1`, …)
+* `*` はパスセグメントで1個以上の文字と一致します
+* `?* `*` はパスセグメントで1個の文字と一致します
+* `**` はnoneを含む任意の数のパスセグメントに一致します
+* `{}` は条件をグループ化します (例:`{**/*.html,**/*.txt}` すべてのHTMLとテキストファイルに一致します)
+* `[]` は一致する文字の範囲を宣言します (例: `example.[0-9]` は `example.0`, `example.1`, … に一致します)
 
-VS Code excludes some folders by default to reduce the number of search results that you are not interested in (for example: `node_modules`). Open [settings](/docs/getstarted/settings.md) to change these rules under the `files.exclude` and `search.exclude` section.
+既定でVS Codeはいくつかのフォルダーを除外して、興味のない検索結果の数を減らします(例: `node_modules`)。これらのルールを変更するには[設定](/docs/getstarted/settings.md)を開いて、`files.exclude`と`search.exclude`セクションを変更します。
 
->**Tip:** From the Explorer you can right-click on a folder and select **Find in Folder** to search inside a folder only.
+>**Tip:** エクスプローラーからフォルダーを右クリックして、**フォルダー内を検索**を選択するとフォルダー内のみを検索します。
 
-You can also Search and Replace across files. Expand the Search widget to display the Replace text box.
+また、ファイル間で検索と置換を行うこともできます。検索ウィジェットを展開して、置換テキストボックスを表示します。
 
 ![search and replace](images/codebasics/global-search-replace.png)
 
-When you type text into the Replace text box, you will see a diff display of the pending changes. You can replace across all files from the Replace text box, replace all in one file or replace a single change.
+置換テキストボックスにテキストを入力するとき、保留中の変更の差分を表示します。置換テキストボックスからファイル間すべてを置き換えたり、1つのファイル内をすべて置換したり、1つの変更を置き換えたりすることができます。
 
 ![search and replace diff view](images/codebasics/search-replace-example.png)
 
->**Tip:** You can quickly reuse a previous search term by using `kb(search.history.showNext)` and `kb(search.history.showPrevious)` to navigate through your search term history.
+>**Tip:** `kb(search.history.showNext)`と`kb(search.history.showPrevious)` を使用して検索文字の履歴を移動することで、素早く以前の検索文字を再利用できます。
 
-## IntelliSense
+## IntelliSense <a id="intellisense"></a>
 
-We'll always offer word completion, but for the rich [languages](/docs/languages/overview.md), such as JavaScript, JSON, HTML, CSS, Less, Sass, C# and TypeScript, we offer a true IntelliSense experience. If a language service knows possible completions, the IntelliSense suggestions will pop up as you type. You can always manually trigger it with `kb(editor.action.triggerSuggest)`.  By default, `kbstyle(Tab)` or `kbstyle(Enter)` are the accept keyboard triggers but you can also [customize these key bindings](/docs/getstarted/keybindings.md).
+JavaScript、JSON、HTML、CSS、Less、Sass、C#、TypeScriptのとき真のIntelliSense体験を提供します。これらRich [Languages](/docs/languages/overview.md)でなくとも、私たちは常に単語による補完を提供しています。もし言語サービスが候補を提案できる状態にあれば、入力時にIntelliSenseは候補をポップアップ表示します。これを`kb(editor.action.triggerSuggest)`でいつでも手動で起動することができます。既定で`kbstyle(Tab)`や`kbstyle(Enter)`はキーボードのトリガーをうけつけますが、これらのキーバインドを[カスタマイズ](/docs/getstarted/keybindings.md)することもできます。
 
-> **Tip:** The suggestions filtering supports CamelCase so you can type the letters which are upper cased in a method name to limit the suggestions. For example, "cra" will quickly bring up "createApplication".
+> **Tip:** 提案に対するフィルタはCamelCaseサポートしています。メソッド名に大文字を入力するだけで、項目を限定することができます。たとえば"createApplication"を表示するときは"cra"ですぐに表示可能です。
 
-> **Tip:** IntelliSense suggestions can be configured via the `editor.quickSuggestions` and `editor.suggestOnTriggerCharacters` [settings](/docs/getstarted/settings.md).
+> **Tip:** IntelliSenseの提案は`editor.quickSuggestions`と`editor.suggestOnTriggerCharacters` [設定](/docs/getstarted/settings.md)を通して構成できます。
 
-JavaScript and TypeScript developers can take advantage of the [npmjs](https://www.npmjs.com) type declaration (typings) file repository to get IntelliSense for common JavaScript libraries (Node.js, React, Angular). You can find a good explanation on using type declaration files in the [JavaScript language](/docs/languages/javascript.md#intellisense) topic and the [Node.js](/docs/nodejs/nodejs-tutorial.md) tutorial.
+JavaScriptとTypeScriptの開発者は、[npmjs](https://www.npmjs.com)の型定義(typings)ファイルリポジトリーの利点を、一般的なJavaScriptライブラリー(Node.js、React、Angular)に対するIntelliSenseを手に入れることで得ることができます。[JavaScript](/docs/languages/javascript.md#intellisense)トピックと[Node.js](/docs/nodejs/nodejs-tutorial.md)トライアルで、型定義ファイルを使用する方法について確認できます。
 
-Learn more in the [IntelliSense document](/docs/userguide/intellisense.md).
+詳細は[IntelliSenseドキュメント](/docs/userguide/intellisense.md)を参照してください。
 
-## Formatting
+## フォーマット <a id="formatting"></a>
 
-VS Code has great support for source code formatting. The editor has two explicit format actions:
+VS Codeではソースコードのフォーマットに対する十分なサポートを用意しています。エディターには2つのはっきりしたフォーマット操作があります:
 
-* **Format Document** (`kb(editor.action.formatDocument)`) - Format the entire active file.
-* **Format Selection** (`kb(editor.action.formatSelection)`) - Format the selected text.
+* **Format Document** (`kb(editor.action.formatDocument)`) - アクティなファイル全体をフォーマットします。
+* **Format Selection** (`kb(editor.action.formatSelection)`) - 選択したテキストをフォーマットします。
 
-You can invoke these from the **Command Palette** (`kb(workbench.action.showCommands)`) or the editor context menu.
+これらを**コマンドパレット** (`kb(workbench.action.showCommands)`)か、エディターのコンテキストメニューから呼びだすことができます。
 
-VS Code has default formatters for JavaScript, TypeScript, JSON, and HTML. Each language has specific formatting options (for example, `html.format.indentInnerHtml`) which you can tune to your preference in your user or workspace [settings](/docs/getstarted/settings.md). You can also disable the default language formatter if you have another extension installed that provides formatting for the same language.
+VS CodeにはJavaScript、TypeScript、JSON、HTML用の既定のフォーマッターがあります。各言語にはユーザーやワークスペース[設定](/docs/getstarted/settings.md)で好みに応じたフォーマットオプションがあります(例: `html.format.indentInnerHtml`)。また、同じ言語のフォーマットを提供する別の拡張機能がインストールされている場合は、既定のフォーマットを無効にすることもできます。
 
 ```json
 "html.format.enable": false
 ```
 
-Along with manually invoking code formatting, you can also trigger formatting based on user gestures such as typing, saving or pasting. These are off by default but you can enable these behaviors through the following [settings](/docs/getstarted/settings.md):
+手動でコードのフォーマットを呼びだすのと一緒に、入力、保存、貼り付けなどのユーザー操作によってフォーマットをトリガーすることもできます。これらは既定でオフになっていますが、次の[設定](/docs/getstarted/settings.md)を通して有効にすることができます:
 
-* `editor.formatOnType` - Format the line after typing.
-* `editor.formatOnSave` - Format a file on save.
-* `editor.formatOnPaste` - Format the pasted content.
+* `editor.formatOnType` - 入力後に行をフォーマットします。
+* `editor.formatOnSave` - 保存時にファイルをフォーマットします。
+* `editor.formatOnPaste` - 貼り付けた内容をフォーマットします。
 
->Note: Not all formatters support format on paste as to do so they must support formatting a selection or range of text.
+>Note: すべてのフォーマッターが貼り付け時のフォーマットをサポートしているわけではありません。これにはフォーマッターが選択範囲やテキストの範囲のフォーマットをサポートしている必要があります。
 
-In addition to the default formatters, you can find extensions on the Marketplace to support other languages or formatting tools. There is a `Formatters` category so you can easily search and find [formatting extensions](https://marketplace.visualstudio.com/search?target=VSCode&category=Formatters&sortBy=Downloads). In the **Extensions** view search box, type 'formatters' or 'category:formatters' to see a filtered list of extensions within VS Code.
+既定のフォーマッターに加えMarketplace上に、他の言語やフォーマットツールをサポートする拡張機能を見つけることができます。`Formatters`カテゴリーがありますから、簡単に検索して[formatting extensions](https://marketplace.visualstudio.com/search?target=VSCode&category=Formatters&sortBy=Downloads)を見つけることができます。**拡張機能**ビューの検索ボックスで、'formatters'や'category:formatters'を入力してVS Code内でフィルター済みの拡張機能リストを確認できます。
 
-## Folding
+## 折りたたみ <a id="folding"></a>
 
-You can fold regions of source code using the folding icons on the gutter between line numbers and line start. Move the mouse over the gutter to fold and unfold regions. The folding regions are evaluated based on the indentation of lines. A folding region starts when a line has a smaller indent than one or more following lines, and ends when there is a line with the same or smaller indent.
+ガター上の行番号と行の開始の間にある折りたたみアイコンを使用して、ソースコードの領域を折りたたむことができます。マウスをガター上に動かして、領域の展開と折りたたみます。折りたたみの領域は、行のインデントに基づいて評価されます。折りたたみ領域は、1つ以上の次の行よりインデントが小さい場合に開始して、インデントが同じかこれより小さいときに終了します。
 
-You can also use the following actions:
+次の操作でも使用できます:
 
- * Fold (`kb(editor.fold)`) folds the innermost uncollapsed region at the cursor
- * Unfold (`kb(editor.unfold)`) unfolds the collapsed region at the cursor
- * Fold All (`kb(editor.foldAll)`) folds all region in the editor
- * Unfold All (`kb(editor.unfoldAll)`) unfolds all regions in the editor
- * Fold Level X (`kb(editor.foldLevel2)` for level 2) folds all regions of level X, except the region at the current cursor position
+ * Fold (`kb(editor.fold)`) カーソルの位置で最も内側の非折りたたみ領域を折りたたみます
+ * Unfold (`kb(editor.unfold)`) カーソルの位置で折りたたみ領域を展開します
+ * Fold All (`kb(editor.foldAll)`) エディター内のすべての領域を折りたたみます
+ * Unfold All (`kb(editor.unfoldAll)`) エディター内のすべての領域を展開します
+ * Fold Level X (`kb(editor.foldLevel2)` for level 2) カーソルの位置の領域を除いて、レベルXですべての領域を折りたたみます
 
 ![Folding](images/codebasics/folding.png)
 
-## File Encoding Support
+## 文字エンコードのサポート <a id="file-encoding-support"></a>
 
-Set the file encoding globally or per workspace by using the `files.encoding` setting in **User Settings** or **Workspace Settings**.
+**ユーザー設定**または**ワークスペース設定**の`files.encoding`設定を使用して、グローバルまたはワークスペースごとにファイルエンコーディングを設定します。
 
 ![files.encoding setting](images/codebasics/filesencodingsetting.png)
 
-You can view the file encoding in the status bar.
+ステータスバーでファイルのエンコードを表示します。
 
 ![Encoding in status bar](images/codebasics/fileencoding.png)
 
-Click on the encoding button in the status bar to reopen or save the active file with a different encoding.
+ステータスバーのエンコードボタンをクリックすると、アクティブなファイルを別のエンコードで開きなおすか保存します。
 
 ![Reopen or save with a different encoding](images/codebasics/encodingclicked.png)
 
-Then choose an encoding.
+次にエンコードを選択します。
 
 ![Select an encoding](images/codebasics/encodingselection.png)
 
-## Next Steps
+## 次のステップ
 
-You've covered the basic user interface - there is a lot more to VS Code.  Read on to find out about:
+VS Codeの多くの内ユーザインターフェイスの基礎を確認しました。次を見てください:
 
 * [Intro Video - Setup and Basics](/docs/introvideos/basics.md) - Watch a tutorial on the basics of VS Code.
 * [User/Workspace Settings](/docs/getstarted/settings.md) - Learn how to configure VS Code to your preferences through user and workspace settings.
@@ -196,26 +193,26 @@ You've covered the basic user interface - there is a lot more to VS Code.  Read 
 * [IntelliSense](/docs/userguide/intellisense.md) - VS Code brings smart code completions.
 * [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines
 
-## Common Questions
+## よくある質問
 
-**Q: Is it possible to globally search and replace?**
+**Q: グローバルに検索して置換することは可能ですか？**
 
-**A:** Yes, expand the Search view text box to include a replace text field. You can search and replace across all the files in your workspace. Note that if you did not open VS Code on a folder, the search will only run on the currently open files.
+**A:** はい可能です。検索ビューのテキストボックスを展開して置換テキストのフィールドを表示してください。ワークスペース内のすべてのファイル間を検索して置き換えることができます。VS Codeのフォルダーを開いていなかった場合は、現在開いているファイルに対してのみに機能することに注意してください。
 
 ![global search and replace](images/codebasics/global-search-replace.png)
 
-**Q: How do I turn on word wrap?**
+**Q: 文字の折り返しを有効にするにはどうすればいいですか？**
 
-**A:** You can control word wrap through the `editor.wordWrap` [setting](/docs/getstarted/settings.md). By default `editor.wordwrap` is `off` but if you set to it to `on`, text will wrap on the editor's viewport width.
+**A:** `editor.wordWrap` [設定](/docs/getstarted/settings.md)を通して文字の折り返しを制御できます。既定で`editor.wordwrap`は`off`ですが、`on`に設定するとテキストはエディターのビューポート幅で折り返します。
 
 ```json
     "editor.wordwrap": "on"
 ```
 
-You can toggle word wrap for the VS Code session with `kb(editor.action.toggleWordWrap)`. Restarting VS Code will pick up the persisted `editor.wordwrap` value.
+`kb(editor.action.toggleWordWrap)`を使用して、VS Codeセクションの文字の折り返しを切り替えることができます。VS Codeを再起動すると、永続化した`editor.wordwrap`値が取得されます。
 
-You can also add vertical column rulers to the editor with the `editor.rulers` setting which takes an array of column character positions where you'd like vertical rulers.
+`editor.rulers`設定を利用して、垂直カラムのルーラーをエディターに追加することもできます。
 
-**Q: How can I show more files in the OPEN EDITORS section?**
+**Q: 開いているエディターのセクションにもっと多くのファイルを表示するにはどうすればいいですか？**
 
-**A:** You can configure the appearance of **OPEN EDITORS** through your [settings](/docs/getstarted/settings.md). For example, you can set the maximum number of visible files before a scroll bar appears via the `explorer.openEditors.visible` setting and whether the **OPEN EDITORS** section should dynamically set its height via `explorer.openEditors.dynamicHeight`.
+**A:** [設定](/docs/getstarted/settings.md)を通して**開いているエディター**の外見を構成できます。たとえば、マウスホバーせずに表示するファイルの最大数を`explorer.openEditors.visible`設定を介して設定したり、**開いているエディター**セクションの高さを動的に変えるかどうかを`explorer.openEditors.dynamicHeight`を介して設定したりできます。

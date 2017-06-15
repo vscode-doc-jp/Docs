@@ -18,7 +18,7 @@ title: ようこそ
     * [Key Bindings](/docs/getstarted/keybindings.html)
     * [Display Language](/docs/getstarted/locales.html)
 * USER GUIDE
-    * ~~Basic Editing~~
+    * [Basic Editing](/docs/userguide/codebasics.html)
     * ~~Extension Marketplace~~
     * [IntelliSense](/docs/userguide/intellisense.html)
     * ~~Code Navigation~~
