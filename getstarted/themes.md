@@ -1,11 +1,10 @@
 ---
 title: テーマ
 MetaDescription: Changing the color theme in Visual Studio Code. You can use color themes provided by VS Code, the community or create your own new themes.  TextMate .tmTheme files are supported.
-commitid: 376b3af6621b565b0e76f35f9afadbf4d949be68
-status: old
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
 
-## 配色テーマ <a id="color-themes"></a>
+# 配色テーマ <a id="color-themes"></a>
 
 配色テーマを使用することで好みや作業環境に合わせたVS Codeの背景、テキスト、言語構文の色に変更できます。VS Codeは大きく分けてlight、dark、high contrastテーマをサポートしています。
 
@@ -39,9 +38,19 @@ VS Codeで初めからいくつかの配色テーマを用意しています。
 
 > **Tip:** テーマを検索するには、Extension ビュー(`kb(workbench.view.extensions)`)で`theme`を検索します。
 
+<div class="marketplace-extensions-themes"></div>
 
+また、 [VS Code Marketplace] (https://marketplace.visualstudio.com/vscode/Themes) でテーマを探すこともできます。
 
+## 配色テーマをカスタマイズする <a id="customize-a-color-theme"></a>
 
+>**Note**: VS Code 1.12以降でサポートされます。
+
+`workbench.colorCustomizations`ユーザー[設定](/docs/getstarted/settings.md)を使用して、アクティな配色テーマをカスタマイズするすることもできます。ツリーリスト(ファイルエクスプローラー、提案ウィジェット)、差分エディター、アクティビティーバー、通知、スクロールバー、分割ビュー、ボタンなどのVS CodeUIの要素を設定できます。
+
+![activity bar theming](images/themes/theme-activitybar.gif)
+
+`workbench.colorCustomizations`の値を設定しているときにIntelliSenseを使うことができます。カスタマイズ可能な配色のリストについては [Theme Color Reference](/docs/getstarted/theme-color-reference.md)を参照してください。
 
 ## 既存のTextMateテーマを使用する <a id="using-existing-textmate-themes"></a>
 
