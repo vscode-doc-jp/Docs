@@ -32,7 +32,7 @@ Visual Studio Codeは**キーボードショートカット**エディターを�
 
 印刷可能なキーボードショートカットリストを用意しています。**ヘルプ** > **キーボード ショートカットの参照**で印刷に最適化されたPDFバージョンを表示します。
 
-各プラットフォーム別のリンクは次の通りです:
+各プラットホーム別のリンクは次の通りです:
 
 * [Windows](https://go.microsoft.com/fwlink/?linkid=832145)
 * [macOS](https://go.microsoft.com/fwlink/?linkid=832143)
@@ -61,8 +61,8 @@ Key|Command|Command id
 `kb(editor.action.moveSelectionToNextFindMatch)`|最後に選択した項目を次の一致項目に移動|`editor.action.moveSelectionToNextFindMatch`
 `kb(cursorUndo)`|Undo last cursor operation|`cursorUndo`
 `kb(editor.action.insertCursorAtEndOfEachLineSelected)`|選択した行から複数のカーソルを作成|`editor.action.insertCursorAtEndOfEachLineSelected`
-`kb(editor.action.selectHighlights)`|一致するすべての出現個所を選択します|`editor.action.selectHighlights`
-`kb(editor.action.changeAll)`|すべての出現個所を変更|`editor.action.changeAll`
+`kb(editor.action.selectHighlights)`|一致するすべての出現箇所を選択します|`editor.action.selectHighlights`
+`kb(editor.action.changeAll)`|すべての出現箇所を変更|`editor.action.changeAll`
 `kb(expandLineSelection)`|Select current line|`expandLineSelection`
 `kb(editor.action.insertCursorBelow)`|カーソルを下に挿入|`editor.action.insertCursorBelow`
 `kb(editor.action.insertCursorAbove)`|カーソルを上に挿入|`editor.action.insertCursorAbove`
@@ -324,7 +324,7 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
 
 ## コマンドの引数 <a id="command-arguments"></a>
 
-引数を指定してコマンドを呼び出すことができます。多くの場合、特定のファイルやフォルダ上で同じ操作を実行する場合に便利です。
+引数を指定してコマンドを呼びだすことができます。多くの場合、特定のファイルやフォルダー上で同じ操作を実行する場合に便利です。
 
 既存の`kbstyle(Enter)`キーを上書きする例です：
 
@@ -334,7 +334,7 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
                     "when": "editorTextFocus" }
 ```
 
-"command": "type" により、Enter キーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディタに出力する動作となります。
+"command": "type" により、Enter キーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディターに出力する動作となります。
 
 ## when節のコンテキスト <a id="when-caulse-contexts"></a>
 

@@ -67,7 +67,7 @@ Chrome OpenJDK Xamarin Studio IntelliJなどもブランド製品と公開コー
 
 新しいVS Code機能を早く体験したいですか？"Insiders" ビルドをインストールすることでVS Codeのプレリリース版を試すことができます。Insiderは通常のVS Codeとは別にインストールを行い、設定、構成、拡張機能は独立しています。Insiderは夜間に更新するので、前日のバグ修正、機能更新を試すことができます。
 
-InsiderビルドはInsidersの [download page](/insiders) で入手してください。
+InsiderビルドはInsidersの~~[download page](/insiders)~~で入手してください。
 
 ## VS Codeはフォルダーを開くと応答しなくなります
 
