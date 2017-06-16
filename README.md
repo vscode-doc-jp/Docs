@@ -1,37 +1,37 @@
 ### 翻訳状況
 * Overview
 * SETUP
-    * [Overview](/docs/setup/setup-overview.html)
-    * [Linux](/docs/setup/linux.html)
+    * [Overview](setup/setup-overview.md)
+    * [Linux](setup/linux.md)
     * ~~Mac~~
-    * [Windows](/docs/setup/windows.html)
-    * [Additional Compnents](/docs/setup/additional-components.html)
+    * [Windows](setup/windows.md)
+    * [Additional Compnents](setup/additional-components.md)
 * GET STARTED
-    * [Intro Videos](/docs/getstarted/introvideos.html)
-    * [User Interface](/docs/getstarted/userinterface.html)
-    * [Themes](/docs/getstarted/themes.html)
-    * [Settings](/docs/getstarted/settings.html)
-    * [Key Bindings](/docs/getstarted/keybindings.html)
-    * [Display Language](/docs/getstarted/locales.html)
+    * [Intro Videos](getstarted/introvideos.md)
+    * [User Interface](getstarted/userinterface.md)
+    * [Themes](getstarted/themes.md)
+    * [Settings](getstarted/settings.md)
+    * [Key Bindings](getstarted/keybindings.md)
+    * [Display Language](getstarted/locales.md)
 * USER GUIDE
-    * [Basic Editing](/docs/userguide/codebasics.html)
+    * [Basic Editing](userguide/codebasics.md)
     * ~~Extension Marketplace~~
-    * [IntelliSense](/docs/userguide/intellisense.html)
+    * [IntelliSense](userguide/intellisense.md)
     * ~~Code Navigation~~
     * ~~Debugging~~
-    * [Version Control](/docs/userguide/versioncontrol.html)
+    * [Version Control](userguide/versioncontrol.md)
     * ~~Integrated Terminal~~
-    * [Tasks](/docs/userguide/tasks.html)
-    * [Creating your own Snippets](/docs/userguide/userdefinedsnippets.html)
-    * [Command Line](/docs/userguide/command-line.html)
-    * [Accesibility](/docs/userguide/accessibility.html)
-    * [Why VS Code](/docs/userguide/whyvscode.html)
+    * [Tasks](userguide/tasks.md)
+    * [Creating your own Snippets](userguide/userdefinedsnippets.md)
+    * [Command Line](userguide/command-line.md)
+    * [Accesibility](userguide/accessibility.md)
+    * [Why VS Code](userguide/whyvscode.md)
 * LANGUAGES
-    * [Overview](/docs/languages/overview.html)
+    * [Overview](languages/overview.md)
     * ~~JavaScript~~
     * ~~JSON~~
     * ✌~~HTML~~
-    * [CSS, Sass and Less](/docs/languages/css.html)
+    * [CSS, Sass and Less](languages/css.md)
     * ~~TypeScript~~
     * ~~Markdown~~
     * ~~PHP~~
@@ -40,28 +40,28 @@
     * ~~Dockerfile~~
     * ~~T-SQL~~
     * ~~C#~~
-    * [C++](/docs/languages/cpp.html)
-    * [Language Identifiers](/docs/languages/identifiers.html)
+    * [C++](languages/cpp.md)
+    * [Language Identifiers](languages/identifiers.md)
 * NODE.JS/JAVASCRIPT
     * ~~Tutorial-Node.js~~
     * ~~Node.js Debugging~~
     * ~~Extensions~~
 * EXTENSIONS
-    * [Overview](/docs/extensions/overview.html)
-    * [Extension Generator](/docs/extensions/yocode.html)
-    * [Additional Examples](/docs/extensions/samples.html)
+    * [Overview](extensions/overview.md)
+    * [Extension Generator](extensions/yocode.md)
+    * [Additional Examples](extensions/samples.md)
 * EXTENSIBILITY REFERENCE
-    * [Overview](/docs/extensionapi/overview.html)
-    * [Extension Manifest](/docs/extensionapi/extension-manifest.html)
-    * [Extension Point](/docs/extensionapi/extension-points.html)
-    * [Activation Events](/docs/extensionapi/activation-events.html)
-    * [Complex Commands](/docs/extensionapi/vscode-api-commands.html)
-    * [Source Control API](/docs/extensionapi/api-scm.html)
+    * [Overview](extensionapi/overview.md)
+    * [Extension Manifest](extensionapi/extension-manifest.md)
+    * [Extension Point](extensionapi/extension-points.md)
+    * [Activation Events](extensionapi/activation-events.md)
+    * [Complex Commands](extensionapi/vscode-api-commands.md)
+    * [Source Control API](extensionapi/api-scm.md)
 * OTHER
-    * [.NET Core](/docs/other/dotnet.html)
+    * [.NET Core](other/dotnet.md)
     * ~~Unity~~
     * ~~Office~~
 * Supporting
-    * [FAQ](/docs/supporting/faq.html)
-    * [Requirements](/docs/supporting/requirements.html)
-    * [Errors](/docs/supporting/errors.html)
+    * [FAQ](supporting/faq.md)
+    * [Requirements](supporting/requirements.md)
+    * [Errors](supporting/errors.md)
