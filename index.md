@@ -34,7 +34,7 @@ title: ようこそ
     * [Overview](/docs/languages/overview.html)
     * ~~JavaScript~~
     * ~~JSON~~
-    * ✌~~HTML~~
+    * ~~HTML~~
     * [CSS, Sass and Less](/docs/languages/css.html)
     * ~~TypeScript~~
     * ~~Markdown~~
