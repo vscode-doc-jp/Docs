@@ -1,84 +1,79 @@
 ---
-Order: 4
-Area: languages
-TOCTitle: HTML
-ContentId: 43095EAF-4B93-407C-A6F9-6DB173D79088
-PageTitle: HTML Programming with Visual Studio Code
-DateApproved: 6/8/2017
+title: HTML Programming
 MetaDescription: Get the best out of Visual Studio Code for HTML development
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
-# HTML Programming in VS Code
 
-VS Code provides basic support for HTML programming out of the box. Install an extension for greater functionality.
+VS Codeは初めからHTMLプログラミングの基本的なサポートを提供しています。拡張機能をインストールすることでより多くの機能性を得ることができます。
 
-<div class="marketplace-extensions-html-curated"></div>
 
-> Tip: Click on an extension tile above to read the description and reviews to decide which extension is best for you. See more in the [Marketplace](https://marketplace.visualstudio.com).
 
-## IntelliSense
 
-As you type in HTML, we offer suggestions via HTML IntelliSense.  In the image below you can see a suggested HTML element closure `</div>` as well as a context specific list of suggested elements.
+
+## IntelliSense <a id="intellisense"></a>
+
+HTMLで入力するとき、HTMLのIntelliSenseを介して候補を提供します。次の画像では、HTML閉じタグ要素  `</ div>`と候補された要素のコンテキストリストを確認できます。
 
 ![HTML IntelliSense](images/html/htmlintellisense.png)
 
-We also offer up suggestions for elements, tags, some values (as defined in HTML 5), Ionic and AngularJS tags,
+また、要素、タグ、HTML 5で定義されるいくつかの値、Ionic、AngularJSタグのための候補も提供しています。
 
-You can also work with embedded CSS and JavaScript. However, note that script and style includes are not followed, the language support only looks at the content of the HTML file.
+埋め込みCSSとJavaScriptでも動作します。ただし、ScriptとStyleのIncludeでは実行されないことに注意してください。言語サポートはHTMLファイルの内容のみを参照します。
 
-You can trigger suggestions at any time by pressing `kb(editor.action.triggerSuggest)`.
+`kb(editor.action.triggerSuggest)` を押すことでIntelliSenseをいつでも起動できます。
 
-You can also control which built-in code completion providers are active. Override these in your user or workspace [settings](/docs/getstarted/settings.md) if you prefer not to see the corresponding suggestions.
+また、ビルトインの補完プロバイダーをアクティブにするかどうかを制御することもできます。候補を表示したくない場合は、 ユーザーまたはワークスペース[設定](/docs/getstarted/settings.md)で次を設定します。
 
 ```json
-// Configures if the built-in HTML language suggests Angular V1 tags and properties.
+  // ビルトイン HTML 言語サポートが Angular V1 のタグおよびプロパティを候補表示するかどうかを構成します。
 "html.suggest.angular1": true,
 
-// Configures if the built-in HTML language suggests Ionic tags, properties and values.
+  // ビルトイン HTML 言語サポートが Ionic のタグ、プロパティ、および値を候補表示するかどうかを構成します。
 "html.suggest.ionic": true,
 
-// Configures if the built-in HTML language suggests HTML5 tags, properties and values.
+  // ビルトイン HTML 言語サポートが HTML5 のタグ、プロパティ、および値を候補表示するかどうかを構成します。
 "html.suggest.html5": true
 ```
 
-## Hover
+## ホバー <a id="hover"></a>
 
-Move the mouse over HTML tags or embedded styles and JavaScript to get more information on the symbol under the cursor.
+HTMLタグや埋め込みStyle、JavaScriptの上にマウスを移動すると、カーソルの下にシンボルの詳細を表示します。
 
 ![HTML Hover](images/html/htmlhover.png)
 
-## Validation
+## 検証 <a id="validation"></a>
 
-The HTML language support performs validation on all embedded JavaScript and CSS.
+HTMLの言語サポートは、埋め込まれたすべてのJavaScriptとCSSの検証を行います。
 
-You can turn that validation off with the following settings:
+次の設定で検証をオフにすることができます:
 
 ```json
-// Configures if the built-in HTML language support validates embedded scripts.
-"html.validate.scripts": true,
+  // ビルトイン HTML 言語サポートが埋め込みスクリプトを検証するかどうかを構成します。
+  "html.validate.scripts": true
 
-// Configures if the built-in HTML language support validates embedded styles.
-"html.validate.styles": true
+  // ビルトイン HTML 言語サポートが埋め込みスタイルを検証するかどうかを構成します。
+  "html.validate.styles": true,
 ```
 
-## Format HTML
+## HTMLのフォーマット <a id="format-html"></a>
 
-To improve the formatting of your HTML source code, press `kb(editor.action.formatSelection)` and the selected area will be reformatted.
+HTMLのソースコードの書式を整えるために、`kb(editor.action.formatSelection)`を押して選択範囲をフォーマットすることができます。
 
->**Tip:** The formatter does not format the tags listed in the `html.format.unformatted` settings. Embedded JavaScript is formatted unless 'script' tags are excluded.
+>**Tip:** フォーマッタは`html.format.unformatted`設定に登録しているタグをフォーマットしません。埋め込みJavaScrirptは`script`タグを除外していない限り、フォーマットされます。
 
->**Tip:** Configure the HTML formatter settings in the [User and Workspace Settings](/docs/getstarted/settings.md).
+>**Tip:** [ユーザーとワークスペース設定](/docs/getstarted/settings.md)でHTMLのフォーマッターを構成できます。
 
-## Emmet snippets
+## Emmet <a id="emmet-snippets"></a>
 
-We support Emmet snippet expansion. To expand an Emmet abbreviation, press `kb(editor.emmet.action.expandAbbreviation)`.
+Emmetスニペットの拡張機能をサポートしています。Emmetの略語を展開するには`kb(editor.emmet.action.expandAbbreviation)`を押します。
 
 ![Emmet HTML support built-in](images/html/emmetsnippet.gif)
 
->**Tip:** See the HTML section of the [Emmet cheat sheet](https://docs.emmet.io/cheat-sheet) for valid abbreviations.
+>**Tip:** 有効な略語については(https://docs.emmet.io/cheat-sheet)のHTMLセクションを参照してください。
 
-If you'd like to use HTML Emmet abbreviations with other languages, you can associate an Emmet syntax profile (such as `html`, `css`) with other languages with the `emmet.syntaxProfiles` [setting](/docs/getstarted/settings.md). The setting takes a [language id](/docs/languages/overview.md#language-id) and associates it with an Emmet profile.
+HTML Emmetの略語を他の言語で使用したい場合はEmeet構文プロファイル(`html`, `css`など)を`emmet.syntaxProfiles`[設定](/docs/getstarted/settings.md)に関連付けることでできます。この設定は[language id](/docs/languages/overview.md#language-id)を使用してEmmetプロファイルに関連付けます。
 
-For example, to use Emmet HTML abbreviations inside JavaScript:
+たとえば、JavaScript内でEmmet HTML略語を使用するには、次のようにします:
 
 ```json
 {
@@ -88,10 +83,10 @@ For example, to use Emmet HTML abbreviations inside JavaScript:
 }
 ```
 
-We also support [User Defined Snippets](/docs/userguide/userdefinedsnippets.md).
+また[User Defined Snippets](/docs/userguide/userdefinedsnippets.md)もサポートしています。
 
-## Next Steps
+## 次のステップ
 
-Read on to find out about:
+次を見てください:
 
 * [CSS, Less and Sass](/docs/languages/css.md) - VS Code has first class support for CSS including Less and Sass.

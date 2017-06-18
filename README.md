@@ -30,7 +30,7 @@
     * [Overview](languages/overview.md)
     * ~~JavaScript~~
     * ~~JSON~~
-    * ~~HTML~~
+    * [HTML](languages/html.md)
     * [CSS, Sass and Less](languages/css.md)
     * ~~TypeScript~~
     * ~~Markdown~~

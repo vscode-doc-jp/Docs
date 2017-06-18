@@ -1,5 +1,5 @@
 ---
-title: C++ programming
+title: C++ Programming
 MetaDescription: Find out how to get the best out of Visual Studio Code and C++.
 commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
