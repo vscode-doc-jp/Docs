@@ -1,116 +1,110 @@
 ---
-Order: 5
-Area: editor
-TOCTitle: Code Navigation
-ContentId: 8966BBFD-C66D-4283-9DCA-8CAC0179886E
-PageTitle: Code Navigation in Visual Studio Code
-DateApproved: 5/4/2017
+title: Code Navigation
 MetaDescription: Visual Studio Code is a first class editor - but it's also so much more with features such as IntelliSense and smart code navigation.
+commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
 ---
-# Code Navigation
 
-Visual Studio Code has a high productivity code editor which, when combined with programming language services, gives you the power of an IDE and the speed of a text editor. In this topic, we'll first describe VS Code's language intelligence features (suggestions, parameter hints, smart code navigation) and then show the power of the core text editor.
+Visual Studio Codeには機能性の高いコードエディターが備わっています。これを言語サービスと組み合わせることにより、IDEの機能とテキストエディターの快適性を得ることが可能です。このトピックではまず、VS Codeの言語インテリジェンス機能(提案、パラメータヒント、スマートコードナビゲーション)について説明し、コアテキストエディターの機能を紹介します。
 
-## Quick File Navigation
+## すばやいファイル移動 <a id="quick-file-navigation"></a>
 
-The Explorer is great for navigating between files when you are exploring a project. However, when you are working on a task, you will find yourself quickly jumping between the same set of files. VS Code provides two powerful commands to navigate in and across files with easy-to-use key bindings.
+エクスプローラーはプロジェクトを捜索するときに、ファイル間を移動するのに最適です。しかしあなたがタスクを実行しているとき、同じファイルの間をすばやく移動できることに気が付くでしょう。VS Codeには使いやすいキーバインドを利用して、ファイル間を移動する2つの強力なコマンドが用意されています。
 
-Hold `kbstyle(Ctrl)` and press `kbstyle(Tab)` to view a list of all files open in an editor group. To open one of these files, use `kbstyle(Tab)` again to pick the file you want to navigate to, then release `kbstyle(Ctrl)` to open it.
+エディターグループで開いているファイルのすべてのリストを表示するには、`kbstyle(Ctrl)`を押しながら`kbstyle(Tab)`を押します。これらのファイルの1つを開くには、再度`kbstyle(Tab)`を使用して移動したいファイルを選択し、`kbstyle(Ctrl)`を離してそれを開きます。
 
 ![Quick Navigation](images/editingevolved/quicknav.png)
 
-Alternatively, you can use `kb(workbench.action.navigateBack)` and `kb(workbench.action.navigateForward)` to navigate between files and edit locations. If you are jumping around between different lines of the same file, these shortcuts allow you to navigate between those locations easily.
+もしくは、`kb(workbench.action.navigateBack)`と`kb(workbench.action.navigateForward)`を使用してファイル間を移動して、位置を変更します。同じファイルの異なる行の間を移動している場合、これらのショートカットキーを使用してそれらの位置を簡単に移動できます。
 
->**Tip:** You can open any file by its name when you type `kb(workbench.action.quickOpen)` (**Quick Open**).
+>**Tip:** `kb(workbench.action.quickOpen)`(**ファイルに移動する**)を利用すると任意のファイルをそのファイル名で開くことができます。
 
-## Go to Definition
+## 定義に移動 <a id="go-to-definition"></a>
 
-If a [language](/docs/languages/overview.md) supports it, you can go to the definition of a symbol by pressing `kb(editor.action.goToDeclaration)`.
+[言語](/docs/languages/overview.md)がこれをサポートしている場合は、`kb(editor.action.goToDeclaration)`を押してシンボルの定義に移動することができます。
 
-If you press `kbstyle(Ctrl)` and hover over a symbol, a preview of the declaration will appear:
+`kbstyle(Ctrl)`を押しながらシンボルにカーソルを合わせると、宣言のプレビューを表示します:
 
 ![Ctrl Hover](images/editingevolved/ctrlhover.png)
 
-> **Tip:** You can jump to the definition with `kbstyle(Ctrl+Click)` or open the definition to the side with `kbstyle(Ctrl+Alt+Click)`.
+> **Tip:** `kbstyle(Ctrl+Click)`で定義にジャンプしたり、`kbstyle(Ctrl+Alt+Click)`で定義を横に開くことができます。
 
-## Go to Type Definition
+## 型定義に移動 <a id="go-to-type-definition"></a>
 
-Some [languages](/docs/languages/overview.md) also support jumping to the type definition of a symbol by pressing `kb(editor.action.goToTypeDefinition)`. This will take you to the definition of the type of a symbol.
+いくつかの[言語](/docs/languages/overview.md) では`kb(editor.action.goToTypeDefinition)`を押すことによってシンボルの型定義に移動することもサポートしています。これはシンボルの型定義を表示します。
 
-## Go to Implementation
+## 実装に移動 <a id="go-to-implementation></a>
 
-[Languages](/docs/languages/overview.md) can also support jumping to the implementation of a symbol by pressing `kb(editor.action.goToImplementation)`. For an interface, this shows all the implementers of that interface and for abstract methods, this shows all concrete implementations of that method.
+対応する[言語](/docs/languages/overview.md)では`kb(editor.action.goToImplementation)`を押すことによってシンボルの実装に移動することもサポートしています。インスタンスの場合はそのインターフェイスのすべての実装を表示して、抽象メソッドの場合はメソッドのすべての具体的な実装を表示します。
 
-## Go to Symbol
+## シンボルに移動 <a id="go-to-symbol"></a>
 
-You can navigate symbols inside a file with `kb(workbench.action.gotoSymbol)`. By typing `kbstyle(:)` the symbols will be grouped by category. Just press `kbstyle(Up)` or `kbstyle(Down)` and navigate to the place you want.
+`kb(workbench.action.gotoSymbol)`を使用してファイル内のシンボルに移動することができます。`kbstyle(:)`を入力すると、そのシンボルがカテゴリー別にグループ化されます。あとは`kbstyle(Up)`や`kbstyle(Down)`を押して、望む場所へ移動するだけです。
 
 ![Go to Symbol](images/editingevolved/gotosymbol.png)
 
-## Open symbol by name
+## シンボルを名前で開く <a id="open-symbol-by-name"></a>
 
-Some languages support jumping to a symbol across files with `kb(workbench.action.showAllSymbols)`. Just type the first letter of a type you want to navigate to, regardless of which file contains it, and press `kbstyle(Enter)`.
+いくつかの言語は`kb(workbench.action.showAllSymbols)`を使用する、ファイル間のシンボル移動をサポートしています。どのファイルに含まれているかにかかわらず、移動したい型の先頭文字を入力して、`kbstyle(Enter)`を押すだけです。
 
 ![Open symbol by name](images/editingevolved/symbol.png)
 
-## Peek
+## Peek(のぞき見) <a id="peek"></a>
 
-We think there's nothing worse than a big context switch when all you want is to quickly check something. That's why we support peeked editors. When you execute a **Find All References** search (via `kb(editor.action.referenceSearch.trigger)`), or a **Peek Definition** (via `kb(editor.action.previewDeclaration)`), we embed the result inline:
+私たちが考える最悪なことは、何かを素早くチェックしたいだけのときに大きなコンテキストに切り替えることです。そんな訳でPeek(のぞき見)エディターをサポートしています。**すべての参照の検索**検索(via `kb(editor.action.referenceSearch.trigger)`)または**定義をここに表示**(via `kb(editor.action.previewDeclaration)`)を実行したとき、結果をインラインに埋め込みます:
 
 ![Find All References](images/editingevolved/references.png)
 
-You can navigate between different references in the peeked editor and make quick edits right there. Clicking on the peeked editor filename or double-clicking in the result list will open the reference in the outer editor.
+表示されたPeekエディターで異なった参照の間を移動して、すぐに編集することができます。表示されたPeekエディターのファイル名をクリックするか、結果リストをダブルクリックすると外部のエディターでその参照を開きます。
 
-> **Tip:** Additionally, the peek window is closed if you press `kbstyle(Escape)` or double-click in the peek editor region. You can disable this behavior with the `editor.stablePeek` [setting](/docs/getstarted/settings.md).
+> **Tip:** さらに、`kbstyle(Escape)`を押すかPeekエディターの領域をダブルクリックするとPeekウィンドウを閉じます。この動作は`editor.stablePeek`[設定](/docs/getstarted/settings.md)で無効にすることができます。
 
-## Bracket matching
+## ブラケットマッチング <a id="bracket-matching"></a>
 
-Matching brackets will be highlighted as soon as the cursor is near one of them.
+ブラケットマッチングはかっこを選択すると、対応するかっこを強調表示します。
 
 ![Bracket Matching](images/editingevolved/brackets.png)
 
-> **Tip:** You can jump to the matching bracket with `kb(editor.action.jumpToBracket)`
+> **Tip:** `kb(editor.action.jumpToBracket)`で対応するかっこに移動できます。
 
-## Reference information
+## 参照情報 <a id="reference-information"></a>
 
-Some languages like C# support inline reference information, that is updated live. This allows you to quickly analyze the impact of your edit or the popularity of your specific method or property throughout your project:
+C#のようないくつかの言語はリアルタイムでインラインの参照情報をサポートしています。これにより編集による影響や、プロジェクトのいたるところの特定メソッドやプロパティのpopularity(需要?)を素早く分析できます。
 
 ![Reference information](images/editingevolved/referenceinfo.png)
 
-> **Tip:** Directly invoke the **Find All References** action by clicking on these annotations.
+> **Tip:** これらのコメントをクリックすると、**すべての参照の検索**アクションが直接呼び出されます。
 
-> **Tip:** Reference information shown in CodeLens can be turned on or off through the `editor.codeLens` setting.
+> **Tip:** CodeLensに表示される参照情報は`editor.codeLens`設定を通してオンまたはオフにできます。
 
-## Rename symbol
+## シンボルの名前を変更 <a id="rename-symbol"></a>
 
-Some languages support rename symbol across files. Press `kb(editor.action.rename)` and then type the new desired name and press `kbstyle(Enter)`. All usages of the symbol will be renamed, across files.
+いくつかの言語ではファイル間でシンボルの名前変更をサポートします。`kb(editor.action.rename)`を押して、希望する新しい名前を入力したら`kbstyle(Enter)`を押してください。すべてのシンボルの用法はファイル間で変更されます。
 
 ![Rename](images/editingevolved/rename.png)
 
-## Errors & Warnings
+## エラーと警告 <a id="errors-warnings"></a>
 
-Warnings or Errors can be generated either via [configured tasks](/docs/userguide/tasks.md), by rich language services, or by linters, that constantly analyze your code in the background. Since we love bug-free code, warnings and errors show up in multiple places:
+警告やエラーは、[構成済みのタスク](/docs/editor/tasks.md)を介して、言語サービスによって、またはバックグランドで絶えず解析するLinterによって生成されます。私たちはバグのないコードが好きですから、警告とエラーは複数の場所で目立つように表示します:
 
-* In the status bar, there is a summary of all errors and warnings counts.
-* You can click on the summary or press `kb(workbench.actions.view.problems)` to display the **PROBLEMS** panel with a list of all current errors.
-* If you open a file that has errors or warnings, they will be rendered inline with the text and in the overview ruler.
+* ステータスバーには、すべてのエラーと警告の件数と概要が表示されます。
+* 概要をクリックするか`kb(workbench.actions.view.problems)`を押すと、現在のエラーのすべてのリストを表示する**問題**パネルが表示されます。
+* エラーや警告を含むファイルを開くと、エラーと警告はテキストでまた概要ルーラー内でインラインにレンダリングされます。
 
 ![errors in problems panel](images/editingevolved/errors.png)
 
-> **Tip:** To loop through errors or warnings in the current file, you can press `kb(editor.action.marker.next)` or `kb(editor.action.marker.prev)` which will show an inline zone detailing the problem and possible code actions (if available):
+> **Tip:** 現在のファイルでエラーや警告のループ移動は`kb(editor.action.marker.next)`や`kb(editor.action.marker.prev)`を押すことで出来ます。これはインラインで問題と利用可能なコードアクションを表示します。
 
 ![Errors and Warnings Inline](images/editingevolved/errorsinline.png)
 
-## Code Action
+## コードアクション <a id="code-action"></a>
 
-Warnings and Errors can provide Code Actions (also known as Quick Fixes) to help fix issues. These will be displayed in the editor in the left margin as a lightbulb. Clicking on the lightbulb will either display the Code Action options or perform the action.
+警告とエラーはコードアクション(Quick Fixesとも呼ばれます)を問題を解決するために提供します。これらはエディターの左端に電球アイコンとして表示し、電球をクリックすると、コードアクションを表示するかアクションを実行します。
 
-## Next Steps
+## 次のステップ
 
-Now that you know how the editor works, time to try a few other things...
+エディターの仕組みを確認しました。ほかにも試してみてください...
 
 * [Intro Video - Code Editing](/docs/introvideos/codeediting.md) - Watch an introductory video on code editing features.
 * [User Interface](/docs/getstarted/userinterface.md) - In case you missed a basic orientation around VS Code.
 * [Key Bindings](/docs/getstarted/keybindings.md) - Learn how to modify key bindings to your preference.
-* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines.
-
+* [Debugging](/docs/editor/debugging.md) - This is where VS Code really shines.

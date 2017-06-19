@@ -21,7 +21,7 @@ title: ようこそ
     * [Basic Editing](/docs/userguide/codebasics.html)
     * ~~Extension Marketplace~~
     * [IntelliSense](/docs/userguide/intellisense.html)
-    * ~~Code Navigation~~
+    * [Code Navigation](docs/userguide/editingevolved.html)
     * ~~Debugging~~
     * [Version Control](/docs/userguide/versioncontrol.html)
     * ~~Integrated Terminal~~

@@ -17,7 +17,7 @@
     * [Basic Editing](userguide/codebasics.md)
     * ~~Extension Marketplace~~
     * [IntelliSense](userguide/intellisense.md)
-    * ~~Code Navigation~~
+    * [Code Navigation](docs/userguide/editingevolved.md)
     * ~~Debugging~~
     * [Version Control](userguide/versioncontrol.md)
     * ~~Integrated Terminal~~
