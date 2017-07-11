@@ -50,6 +50,7 @@
     * [Overview](extensions/overview.md)
     * [Extension Generator](extensions/yocode.md)
     * [Additional Examples](extensions/samples.md)
+    * [Publishing Extensions](extensions/publish-extension.md)
 * EXTENSIBILITY REFERENCE
     * [Overview](extensionapi/overview.md)
     * [Extension Manifest](extensionapi/extension-manifest.md)
