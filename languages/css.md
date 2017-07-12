@@ -1,5 +1,5 @@
 ---
-title: CSS, Sass and Lessサポート
+title: CSS, Sass and Less
 MetaDescription: Find out how Visual Studio Code can support your CSS, Sass and Less development.
 commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
 ---
