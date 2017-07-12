@@ -1,7 +1,7 @@
 ---
 title: セットアップ
 MetaDescription: Get Visual Studio Code up and running.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 Visual Studio Codeの起動と実行は素早く簡単です。そのダウンロードサイズは小さく、数分でインストールしてVS Codeを試すことができます。

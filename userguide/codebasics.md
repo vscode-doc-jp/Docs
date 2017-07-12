@@ -1,7 +1,7 @@
 ---
 title: 基本的な編集
 MetaDescription: Learn about the basic editing features of Visual Studio Code. Search, multiple selection, code formatting.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 Visual Studio Codeとは何よりもまずエディターであり、生産的なソースコード編集に必要な機能を含んでいます。このトピックではエディターの基本を紹介します。コードの編集に役立ててください。
 
@@ -77,7 +77,7 @@ Key|Command|Command id
 
 * `"off"`: Hot Exitを無効にします。
 * `"onExit"`: アプリケーションを閉じた(Windows/Linux上で最後のウィンドウを閉じた)とき、または`workbench.action.quit`コマンドを(**コマンドパレット**、ショートカット、メニューから)実行したときにHot Exitを実行します。バックアップしてあるすべてのウィンドウは、次回の起動時に復元されます。
-* `"onExit"`: アプリケーションを閉じた(Windows/Linux上で最後のウィンドウを閉じた)とき、または`workbench.action.quit`コマンドを(**コマンドパレット**、ショートカット、メニューから)実行したときにHot Exitを実行します。また最後のウィンドウであるかどうかにかかわらず、フォルダーを開いている任意のウィンドウを閉じたときもこれを実行します。フォルダーを開いていないすべてのウィンドウは、次回の再起動時に復元されます。閉じるまえのフォルダーのウィンドウを復元するには`window.reopenFolders`を`all`に設定します。
+* `"onExit"`: アプリケーションを閉じた(Windows/Linux上で最後のウィンドウを閉じた)とき、または`workbench.action.quit`コマンドを(**コマンドパレット**、ショートカット、メニューから)実行したときにHot Exitを実行します。また最後のウィンドウであるかどうかにかかわらず、フォルダーを開いている任意のウィンドウを閉じたときもこれを実行します。フォルダーを開いていないすべてのウィンドウは、次回の再起動時に復元されます。閉じるまえのフォルダーのウィンドウを復元するには`window.restorewindows`を`all`に設定します。
 
 ## ファイル間の検索 <a id="search-across-files"></a>
 

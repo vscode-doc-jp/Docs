@@ -1,7 +1,7 @@
 ---
 title: HTML Programming
 MetaDescription: Get the best out of Visual Studio Code for HTML development
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 VS Codeは初めからHTMLプログラミングの基本的なサポートを提供しています。拡張機能をインストールすることでより多くの機能性を得ることができます。

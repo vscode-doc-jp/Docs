@@ -1,7 +1,7 @@
 ---
 title: イントロ ビデオ
 MetaDescription: Overview of VS Code's Introductory Videos.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 この入門ビデオでVisual Studio Codeの旅を始めましょう。ビデオはVS Codeのさまざまな機能の概要を簡単に把握できるように設計しています。なお、VS CodeはJavaScriptとTypeScript標準でサポートしているためJavaScriptを動画で使用しています。

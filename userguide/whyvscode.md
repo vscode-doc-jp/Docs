@@ -1,7 +1,7 @@
 ---
 title: Why did we build Visual Studio Code?
 MetaDescription: Visual Studio Code provides developers with a new choice of tool that combines the simplicity of a code editor with the best tooling for their core edit-build-debug cycle. Visual Studio Code is available for macOS, Linux, and Windows.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 Visual Studio CodはエディタのシンプルさとIntelli Senseやデバッグ機能などによる強力な開発ツールの両方を兼ね備えています。

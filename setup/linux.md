@@ -1,7 +1,7 @@
 ---
 title: LinuxでVisual Studio Codeを起動する
 MetaDescription: Get Visual Studio Code up and running on Linux.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 ## インストール <a id="installation"></a>

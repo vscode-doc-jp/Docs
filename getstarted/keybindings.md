@@ -1,16 +1,14 @@
 ---
 title: キーバインディング
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
-commitid: 1f68e5e21c25890c3261c4f7c6203c8bb8a4ffe3
-status: old
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
-
-Visual Studio Codeでは、ほとんどのタスクをキーボードから直接実行することが可能です。このページではデフォルトのバインディング(キーボードショートカット)とその更新方法を説明します。
+Visual Studio Codeでは、ほとんどのタスクをキーボードから直接実行することが可能です。このページでは、デフォルトのバインディング(キーボードショートカット)とその更新方法を説明します。
 
 >**Note:** このページではアクセスしたプラットフォームのキーを表示します。他のプラットフォームを表示したい場合はマウスホバーしてください。
 
-## エディターのキーボードショートカット <a id="keyboard-shortcuts-editor"></a>
+## エディターのキーボードショートカット <a href="keyboard-shortcuts-editor"></a>
 
 Visual Studio Codeは**キーボードショートカット**エディターを使用して、豊富で簡単なキーボードショートカットの編集ができます。これはキーバインドの有無にかかわらず使用可能なすべてのコマンドを一覧表示して、使用可能なアクションを使用してキーバインドを簡単に変更/削除/リセットできます。また上部には、コマンドやキーバインドの検索に役立つ検索窓があります。 **ファイル**(**Code**)  > **基本設定** > **キーボード ショートカット**に移動してキーボードショートカットを構成します。
 
@@ -18,9 +16,9 @@ Visual Studio Codeは**キーボードショートカット**エディターを�
 
 ここで最も重要なのは、キーボードレイアウトに合わせてキーバインドを確認できることです。例えばドイツ語に変更された場合、USレイアウトで表される`cmd+\`キーは`ctrl+shift+alt+cmd+7`と表します。キーバインドを入力するダイアログでは、キーボードレイアウトごとに正しいキーボードバインドを割り当てます。
 
-高度なカスタマイズをするには[Advanced Customizations](/docs/getstarted/keybindings.md#advanced-customization)を参照してください。
+より高度なキーボードショートカットのカスタマイズをするには[Advanced Customizations](/docs/getstarted/keybindings.md#advanced-customization)を参照してください。
 
-## キーマップの拡張機能 <a id="keymap-extensions"></a>
+## キーマップの拡張機能 <a href="keymap-extensions"></a>
 
 キーボード ショートカットは生産性にとって不可欠です。ですがキーボードの習慣を変えるのは難しいものです。この問題に対処するために **ファイル** > **基本設定** > **キーマップ拡張機能**では、一般的なキーマップ拡張機能のリストを用意しています。これら拡張機能は、VS Codeのショートカットを他のエディタのショートカットと一致するように変更できるので、新しいキーボードショートカットを習得する必要はありません。Marketplaceで[Keymaps category](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) をより詳細に確認してください。
 
@@ -28,7 +26,7 @@ Visual Studio Codeは**キーボードショートカット**エディターを�
 
 
 
-## キーボード ショートカットの参照 <a id="keyboard-shortcuts-reference"></a>
+## キーボード ショートカットの参照 <a href="keyboard-shortcuts-reference"></a>
 
 印刷可能なキーボードショートカットリストを用意しています。**ヘルプ** > **キーボード ショートカットの参照**で印刷に最適化されたPDFバージョンを表示します。
 
@@ -38,9 +36,21 @@ Visual Studio Codeは**キーボードショートカット**エディターを�
 * [macOS](https://go.microsoft.com/fwlink/?linkid=832143)
 * [Linux](https://go.microsoft.com/fwlink/?linkid=832144)
 
+## キーバインドの競合の検出 <a id="detecting-keybinding-confilicts"></a>
+
+多くの拡張機能がインストールされている場合や、ショートカットの[カスタマイズ](/docs/getstarted/keybindings.md#advanced-customization)をしている場合に、同じキーボードショートカットへ複数のコマンドをマッピングしていると、競合が発生することがあります。これにより特にエディターの移動で異なるキーバインドが実行され、混乱を招く可能性があります。
+
+ **キーボードショートカット**エディターには、ショートカットの競合をフィルターして表示するコンテキストメニューの**競合の表示**があります。
+
+![show keybinding conflicts menu](images/keybinding/show-conflicts-menu.png)
+
+多重に定義されていると思うキーバインドを使用するコマンドを選択して、複数のコマンドが定義されているかどうか、キーバインドのソース、いつアクティブになるかを確認できます。
+
+![show keybinding conflicts result](images/keybinding/show-conflicts-result.png)
+
 ## Default Keyboard Shortcuts
 
->**Note:** 次のキーは標準のUSキーボードを想定してレンタリングしています。異なったキーボードレイアウトを使用する場合は[ここ](/docs/getstarted/keybindings.md#keyboard-layouts)を参照してください。
+>**Note:** 次のキーは標準のUSキーボードを想定してレンタリングしています。異なったキーボードレイアウトを使用する場合は[ここ](/docs/getstarted/keybindings.md#keyboard-layouts)を参照してください。現在アクティブなキーボードショートカットはVS Code内(**コマンドパレット** (**表示** -> **コマンドパレット**)か**キーボードショートカット**エディター(**ファイル** > **基本設定** > **キーボードショートカット**))で表示することができます。
 
 ### 基本編集
 
@@ -252,7 +262,7 @@ Key|Command|Command id
 `kb(workbench.extensions.action.showPopularExtensions)`|人気の拡張機能の表示|`workbench.extensions.action.showPopularExtensions`
 `kb(workbench.extensions.action.updateAllExtensions)`|すべての拡張機能を更新します|`workbench.extensions.action.updateAllExtensions`
 
-## 高度なカスタマイズ <a id="advanced-customization"></a>
+## 高度なカスタマイズ <a href="advanced-customization"></a>
 
 VS Code内すべてのキーボードショートカットは`keybindings.json`ファイルでカスタマイズすることができます。
 
@@ -260,7 +270,7 @@ VS Code内すべてのキーボードショートカットは`keybindings.json`�
 * これにより、左側に**既定のキーバインド**と右側に`keybindings.json`ファイルを開きます。右側のファイルで既定のキーバインド設定を上書きできます 。
 * なお上記のリストは完全なものではありません。**既定のキーボードショートカット**下の"Here are other available commands"でより多くを確認できます。
 
-## キーボードのルール <a id="keyboard-rules"></a>
+## キーボードのルール <a href="keyboard-rules"></a>
 
 キーボードショートカットの割り当ては、JSONによるルールのリストを分析することによって行われます。いくつかの例を次に示します:
 
@@ -300,7 +310,7 @@ Chord(別個のキー操作)は、2つのキーをスペースで区切って記
 
 追加の` keybindings.json`ルールは実行時に既定ルールの最後に追加され、既定のルールを上書きします。`keybindings.json`ファイルはVS Codeで監視するので、実行中でもルールを更新できます。
 
-## 利用可能なキー <a id="accepted-keys"></a>
+## 利用可能なキー <a href="accepted-keys"></a>
 
 `key`は修飾子とキーで構成します。
 
@@ -322,7 +332,7 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
 * `kbstyle(numpad0-numpad9)`, `kbstyle(numpad_multiply)`, `kbstyle(numpad_add)`, `kbstyle(nupad_separator)`
 * `kbstyle(numpad_subtract)`, `kbstyle(numpad_decimal)`, `kbstyle(numpad_divide)`
 
-## コマンドの引数 <a id="command-arguments"></a>
+## コマンドの引数 <a href="command-arguments"></a>
 
 引数を指定してコマンドを呼びだすことができます。多くの場合、特定のファイルやフォルダー上で同じ操作を実行する場合に便利です。
 
@@ -334,9 +344,9 @@ Linux|`kbstyle(ctrl+)`, `kbstyle(shift+)`, `kbstyle(alt+)`, `kbstyle(meta+)`
                     "when": "editorTextFocus" }
 ```
 
-"command": "type" により、Enter キーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディターに出力する動作となります。
+"command": "type" により、Enterキーが入力されると {"text"： "Hello World"} を最初の引数として受け取り、”Hello World” をエディターに出力する動作となります。
 
-## when節のコンテキスト <a id="when-caulse-contexts"></a>
+## when節のコンテキスト <a href="when-caulse-contexts"></a>
 
 VS Codeはオプションの`when`節を通して、キーバインディングの有効タイミングを細かく制御できます。なお`when`を設定していないキーバインディングは常に利用可能です。
 
@@ -377,6 +387,7 @@ parameterHintsMultipleSignatures | 複数のパラメーターヒントを表示
 terminalFocus | 統合端末にフォーカスがあるとき
 **Global UI contexts** |
 resourceLangId | エクスプローラーもしくはエディターのタイトル言語IDが一致しているとき(e.g.`"resourceLangId == markdown"`)
+resourceFilename | エクスプローラーもしくはエディターのファイル名が一致しているとき(e.g.`"resourceFilename == gulpfile.js"`)
 globalMessageVisible | VS Code上部のメッセージを表示しているとき
 searchViewletVisible | 検索ビューを開いているとき
 replaceActive | 検索ビューの置換ボックスを開いているとき
@@ -387,7 +398,7 @@ config.editor.minimap.enabled | `editor.minimap.enabled`設定が`true`のとき
 
 上記のリストは完全なものではありません。**既定のキーボードショートカット**で`when`コンテキストを確認してください。
 
-## 特定のキーバインド ルールを削除 <a id="removing-a-specific-ke-binding-rule"></a>
+## 特定のキーバインド ルールを削除 <a href="removing-a-specific-ke-binding-rule"></a>
 
 既定のキーバインドを削除するキーバインド ルールを記述できます。`keybindings.json`ではVS Codeのすべてのキーバインドを再定義することが可能です。ですが`kbstyle(Tab)`や`kbstyle(Escape)`といったキーの一部を微調整をするには向きません。特定のキーバインディングを削除するには`command`に` -`を追加します。これによりルールは削除ルールにかわります。
 
@@ -407,7 +418,7 @@ config.editor.minimap.enabled | `editor.minimap.enabled`設定が`true`のとき
 
 ```
 
-## キーボードレイアウト <a id="keyboard-layouts"></a>
+## キーボードレイアウト <a href="keyboard-layouts"></a>
 
 >**Note:** このセクションはキーバインディングにのみ関連し、エディタでの入力には関係しません。
 
@@ -485,4 +496,4 @@ config.editor.minimap.enabled | `editor.minimap.enabled`設定が`true`のとき
 
 **Q: キーバインディングを`keybindings.json`で変更しましたが機能しません**
 
-**A:** よくある例としてファイルの構文エラーです。 そうでなければ `when`節を削除するか、別の`key`を選んでみてください。残念ながら現時点では、このように試行錯誤するしかありません。
+**A:** 最もよくある問題はファイルの構文エラーです。 そうでなければ `when`節を削除するか、別の`key`を選んでみてください。残念ながら現時点では、このように試行錯誤するしかありません。

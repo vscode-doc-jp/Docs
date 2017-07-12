@@ -2,6 +2,7 @@
 title: ユーザーインターフェイス
 MetaDescription: A quick overview of the Visual Studio Code user interface. Learn about the editor, window management, and special UI to handle source control, extension management, full text search and more.
 commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+status: old
 ---
 
 Visual Studio Codeはコードエディターです。他の多くのコードエディターと同様に、一般的なユーザーインターフェイスをもっており、左側にすべてのファイルとフォルダーを表示して、右側のエディターでそのコンテンツを開きます。

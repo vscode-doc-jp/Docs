@@ -1,7 +1,7 @@
 ---
 title: Code Navigation
 MetaDescription: Visual Studio Code is a first class editor - but it's also so much more with features such as IntelliSense and smart code navigation.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 Visual Studio Codeには機能性の高いコードエディターが備わっています。これを言語サービスと組み合わせることにより、IDEの機能とテキストエディターの快適性を得ることが可能です。このトピックではまず、VS Codeの言語インテリジェンス機能(提案、パラメータヒント、スマートコードナビゲーション)について説明し、コアテキストエディターの機能を紹介します。
@@ -84,7 +84,7 @@ C#のようないくつかの言語はリアルタイムでインラインの参
 
 ## エラーと警告 <a id="errors-warnings"></a>
 
-警告やエラーは、[構成済みのタスク](/docs/editor/tasks.md)を介して、言語サービスによって、またはバックグランドで絶えず解析するLinterによって生成されます。私たちはバグのないコードが好きですから、警告とエラーは複数の場所で目立つように表示します:
+警告やエラーは、[構成済みのタスク](/docs/userguide/tasks.md)を介して、言語サービスによって、またはバックグランドで絶えず解析するLinterによって生成されます。私たちはバグのないコードが好きですから、警告とエラーは複数の場所で目立つように表示します:
 
 * ステータスバーには、すべてのエラーと警告の件数と概要が表示されます。
 * 概要をクリックするか`kb(workbench.actions.view.problems)`を押すと、現在のエラーのすべてのリストを表示する**問題**パネルが表示されます。
@@ -107,4 +107,4 @@ C#のようないくつかの言語はリアルタイムでインラインの参
 * [Intro Video - Code Editing](/docs/introvideos/codeediting.md) - Watch an introductory video on code editing features.
 * [User Interface](/docs/getstarted/userinterface.md) - In case you missed a basic orientation around VS Code.
 * [Key Bindings](/docs/getstarted/keybindings.md) - Learn how to modify key bindings to your preference.
-* [Debugging](/docs/editor/debugging.md) - This is where VS Code really shines.
+* [Debugging](/docs/userguide/debugging.md) - This is where VS Code really shines.

@@ -1,7 +1,7 @@
 ---
 title: VS Code Theme Color Reference
 MetaDescription: Reference for Visual Studio Code theme colors.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 # Theme Color Reference
 
@@ -261,7 +261,7 @@ For coloring inserted and removed text, use either a background or a border colo
 The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover.
 
 - `editorWidget.background`: Background color of editor widgets, such as Find/Replace.
-- `editorWidgetBorder`: Border color of the editor widget unless the widget does not contain a border or defines its own border color.
+- `editorWidget.border`: Border color of the editor widget unless the widget does not contain a border or defines its own border color.
 
 - `editorSuggestWidget.background`: Background color of the suggestion widget.
 - `editorSuggestWidget.border`: Border color of the suggestion widget.
@@ -285,7 +285,7 @@ The editor marker view shows when navigating to errors and warnings in the edito
 
 ## Peek View Colors
 
-Peek views are used to show references and declararions as a view inside the editor.
+Peek views are used to show references and declarations as a view inside the editor.
 
 ![Peek view](images/theme-color-reference/peek-view.png)
 
@@ -305,7 +305,7 @@ Peek views are used to show references and declararions as a view inside the edi
 
 ## Merge Conflicts
 
-Merge conflict deocrations are shown when the editor contains special diff ranges.
+Merge conflict decorations are shown when the editor contains special diff ranges.
 
 ![Merge ranges](images/theme-color-reference/merge-ranges.png)
 
@@ -354,8 +354,19 @@ The Status Bar is shown in the bottom of the workbench.
 
 Notifications slide in from the top of the workbench.
 
+![Notification bar](images/theme-color-reference/notification-bar.png)
+
 - `notification.background`: Notifications background color.
 - `notification.foreground`: Notifications foreground color.
+- `notification.buttonBackground`: Notifications button background color.
+- `notification.buttonHoverBackground`: Notifications button hover background color.
+- `notification.buttonForeground`: Notifications button foreground color.
+- `notification.infoBackground`: Notifications info badge background color.
+- `notification.infoForeground`: Notifications info badge foreground color.
+- `notification.warningBackground`: Notifications warning badge background color.
+- `notification.warningForeground`: Notifications warning badge foreground color.
+- `notification.errorBackground`: Notifications error badge background color.
+- `notification.errorForeground`: Notifications error badge foreground color.
 
 ## Extensions
 

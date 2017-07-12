@@ -2,6 +2,7 @@
 title: タスク
 MetaDescription: Expand your development workflow with task integration in Visual Studio Code (Gulp, Grunt, Jake and more).
 commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+status: old
 ---
 
 # タスクを利用して外部ツールと統合する <a id="integrate-with-external-tools-via-tasks"></a>

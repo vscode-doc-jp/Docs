@@ -2,6 +2,7 @@
 title: コマンドライン
 MetaDescription: Visual Studio Code command line options. Learn to control VS Code startup.
 commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+status: old
 ---
 
 Visual Studio Codeではエディターの起動方法を制御できる強力なコマンドラインインターフェイスを用意しています。ファイルの比較、拡張機能のインストール、表示言語の変更でさえも起動時に設定できます。

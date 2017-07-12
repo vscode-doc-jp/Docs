@@ -1,7 +1,7 @@
 ---
-title: Visual Studio Code の設定
+title: 設定
 MetaDescription: How to modify Visual Studio Code User and Workspace Settings.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 VS Codeを好みの設定に構成することは簡単です。VS Codeのエディター、ユーザインターフェイスおよび機能のほぼすべての部分に、変更可能なオプションがあります。
@@ -61,7 +61,7 @@ VS Codeでは設定用の2つのウィンドウを用意しています:
 
 ![Add language specific setting](images/settings/lang-based-settings.png)
 
-もし既に開いているファイルのファイルタイプをカスタマイズする場合、VS Codeステータスバー右の言語モードをクリックします。これにより、**言語モードの選択**が開きます。この中の言語から選択することで、言語エントリーを追記した設定エディターを開きます。
+もし既に開いているファイルのファイルタイプをカスタマイズする場合、VS Codeステータスバー右の言語モードをクリックします。これにより、**言語モードの選択**が開きます。    }この中の言語から選択することで、言語エントリーを追記した設定エディターを開きます。
 
 もちろん直接`setting.json`を開くことによっても言語ベースの設定は可能です。他の設定と同じようにワークスペース設定に登録することで、ワークスペース内での適用が可能です。なおユーザーとワークスペースの両方で言語設定を定義している場合は、ワークスペースの設定を優先します。
 
@@ -152,7 +152,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   },
 
   // 言語に対するファイルの関連付け (例 "*.extension": "html") を構成します。これらの関連付けは、インストールされている言語の既定の関連付けより優先されます。
-  "files.associations": {}
+  "files.associations": {},
 
 // エディター
 
@@ -201,6 +201,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ミニマップを表示するかどうかを制御します
   "editor.minimap.enabled": true,
 
+  // ミニマップのスライダーを自動的に非表示にするかどうかを制御します。
+  "editor.minimap.showSlider": "mouseover",
+
   // 行に (カラー ブロックではなく) 実際の文字を表示します
   "editor.minimap.renderCharacters": true,
 
@@ -242,7 +245,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // クイック候補が表示されるまでの待ち時間 (ミリ秒) を制御します
   "editor.quickSuggestionsDelay": 10,
 
-  // パラメーター ヒントを有効にする
+  // 入力時にパラメーター ドキュメントと型情報を表示するポップアップを有効にする
   "editor.parameterHints": true,
 
   // エディターで左角かっこの後に自動的に右角かっこを挿入するかどうかを制御します
@@ -253,6 +256,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // 貼り付けた内容がエディターにより自動的にフォーマットされるかどうかを制御します。フォーマッタを使用可能にする必要があります。また、フォーマッタがドキュメント内の範囲をフォーマットできなければなりません。
   "editor.formatOnPaste": false,
+
+  // ユーザーが入力や貼り付け、行の移動をしたとき、エディターがインデントを自動的に調整するかどうかを制御します。言語のインデント ルールを使用できる必要があります。
+  "editor.autoIndent": false,
 
   // トリガー文字の入力時に候補が自動的に表示されるようにするかどうかを制御します
   "editor.suggestOnTriggerCharacters": true,
@@ -347,6 +353,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // エディターをスクリーン リーダーに最適化されたモードで実行するかどうかを制御します。
   "editor.accessibilitySupport": "auto",
 
+//エディタがリンクを検出してクリック可能にするかどうかを制御する
+"editor.links"：true、
+
   // 差分エディターが差分を横に並べて表示するか、行内に表示するかを制御します
   "diffEditor.renderSideBySide": true,
 
@@ -361,10 +370,10 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
 // Emmet
 
-  // これをオンにすると、TAB キーを押したときに emmet 省略記法が展開されます.
+  // 有効にすると、TAB キーを押したときに emmet 省略記法が展開されます。emmet.useNewemmet が true に設定されているときは適用されません。
   "emmet.triggerExpansionOnTab": true,
 
-  // Emmet の一部のアクションやリゾルバーの動作の変更に使用される設定。
+  // Emmet の一部のアクションやリゾルバーの動作の変更に使用される基本設定。emmet.useNewemmet が true に設定されているときは適用されません。
   "emmet.preferences": {},
 
   // 指定した構文に対してプロファイルを定義するか、特定の規則がある独自のプロファイルをご使用ください。
@@ -375,16 +384,35 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
     "markdown"
   ],
 
-  // Emmet のプロファイル、スニペット、ユーザー設定を含むフォルダーへのパス
+  // Emmet のプロファイル、スニペット、基本設定を含むフォルダーへのパス。emmet.useNewEmmet が true に設定されている場合、プロファイルのみが拡張パスから受け入れられます。
   "emmet.extensionsPath": null,
 
   // すべての emmet 機能に対して、新しい emmet モジュールをお試しください (最終的に、以前の単一 emmet ライブラリは置き換えられます)。
 "emmet.useNewEmmet"：false、
 
+  // Applicable only when emmet.useNewEmmet is set to true.
+  // Shows expanded emmet abbreviations as suggestions.
+  // The option "inMarkupAndStylesheetFilesOnly" applies to html, haml, jade, slim, xml, xsl, css, scss, sass, less and stylus.
+  // The option "always" applies to all parts of the file regardless of markup/css.
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+
+  // Applicable only when emmet.useNewEmmet is set to true.
+  // Shows possible emmet abbreviations as suggestions. Not applicable in stylesheets or when emmet.showExpandedAbbreviation is set to "never".
+  "emmet.showAbbreviationSuggestions": true,
+
+  // Applicable only when emmet.useNewEmmet is set to true.
+  // Enable emmet abbreviations in languages that are not supported by default. Add a mapping here between the language and emmet supported language.
+  //  Eg: {"vue-html": "html", "javascript": "javascriptreact"}
+  "emmet.includeLanguages": {},
+
+  // Applicable only when emmet.useNewEmmet is set to true.
+  // Variables to be used in emmet snippets
+  "emmet.variables": {},
+
 // ワークベンチ
 
-  // 有効にすると、スタートアップ時に、ようこそページが表示されます。
-  "workbench.welcome.enabled": false,
+  // 前のセッションからエディターが復元されていない場合に、起動時に表示するかどうかを制御します。'none' を選択するとエディターなしで開始します。'welcomePage' を選択するとウェルカム ページを開きます (既定)。'newUntitledFile' を選択すると新しい無題のファイルを開きます (フォルダーを開いていない場合のみ)。
+  "workbench.startupEditor": "welcomePage",
 
   // 開いているエディターをタブに表示するかどうかを制御します。
   "workbench.editor.showTabs": true,
@@ -406,6 +434,12 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // 任意の表示グループが開かれた場合に、そこにエディターを表示するかどうかを制御します。無効にした場合、エディターは現在のアクティブなエディター グループに優先して開かれます。有効にした場合は、現在のアクティブなエディター グループにもう一度開くのではなく、既に開いているエディターが表示されます。特定のグループ内や現在アクティブなグループの横に強制的にエディターを開いた場合などに、この設定が無視される場合もあることにご注意ください。
   "workbench.editor.revealIfOpen": false,
+
+  // コマンド パレットで最近使用したコマンド履歴を保持する数を制御します。0 に設定するとコマンド履歴を無効にします。
+  "workbench.commandPalette.history": 50,
+
+  // 次回開いたとき、コマンド パレットの最後の入力を復元するかどうかを制御します。
+  "workbench.commandPalette.preserveInput": false,
 
   // フォーカスを失ったときに Quick Open を自動的に閉じるかどうかを制御します。
   "workbench.quickOpen.closeOnFocusLost": true,
@@ -431,7 +465,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ワークベンチで使用する配色テーマを指定します。
   "workbench.colorTheme": "Default Dark+",
 
-  // ワークベンチで使用するアイコンのテーマを指定します。
+  // ワークベンチで使用するアイコンのテーマを指定します。'null' を指定するとファイル アイコンが表示されなくなります。
   "workbench.iconTheme": "vs-seti",
 
   // 現在選択している配色テーマで配色を上書きします。
@@ -453,8 +487,8 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // この設定は無視される場合もあります (-new-window または -reuse-window コマンド ライン オプションを使用する場合など)。
   "window.openFoldersInNewWindow": "default",
 
-  // 再起動後にフォルダーを再度開く方法を制御します。'none' を選択するとフォルダーを再度開くことはありません。'one' を選択すると最後に作業したフォルダーを再度開きます。'all' を選択すると前回のセッションのフォルダーすべてを再度開きます。
-  "window.reopenFolders": "one",
+  // 再起動後にウィンドウを再度開く方法を制御します。'none' を選択すると常に空のウィンドウで開始します。'one' を選択すると最後に使用したウィンドウを再度開きます。'folders' を選択すると開いていたすべてのウィンドウを再度開きます。'all' を選択すると前回のセッションのすべてのウィンドウを再度開きます。
+  "window.restoreWindows": "one",
 
   // 全画面表示モードで終了した場合に、ウィンドウを全画面表示モードに復元するかどうかを制御します。
   "window.restoreFullscreen": false,
@@ -466,12 +500,14 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ${activeEditorShort}: 例: myFile.txt
   // ${activeEditorMedium}: 例: myFolder/myFile.txt
   // ${activeEditorLong}: 例: /Users/Development/myProject/myFolder/myFile.txt
-  // ${rootName}: 例: myProject
-  // ${rootPath}: 例: /Users/Development/myProject
+  // ${folderName}: 例: myFolder
+  // ${folderPath}: 例: /Users/Development/myFolder
+  // ${rootName}: 例: myFolder1, myFolder2, myFolder3
+  // ${rootPath}: 例: /Users/Development/myWorkspace
   // ${appName}: 例: VS Code
   // ${dirty}: アクティブなエディターがダーティである場合のダーティ インジケーター
   // ${separator}: 値のある変数で囲まれた場合にのみ表示される条件付き区切り記号 (" - ")
-  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
+  "window.title": "${dirty}${activeEditorShort}${separator}${folderName}${separator}${appName}",
 
   // 既に 1 つ以上のウィンドウを開いているとき、新しく開くウィンドウのサイズを制御します。既定では、新しいウィンドウを画面中央に小さいサイズで開きます。'inherit' に設定すると、最後のアクティブ ウィンドウと同じサイズで開きます。'maximized' に設定するとウィンドウは最大サイズで開き、'fullscreen' に設定すると全画面になります。この設定は、最初に開いたウィンドウに適用されないことに注意してください。最初のウィンドウは常に、前回閉じたサイズと位置で復元します。
   "window.newWindowDimensions": "default",
@@ -520,7 +556,8 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ダーティ ファイルの自動保存の遅延をミリ秒単位で制御します。'files.autoSave' が 'afterDelay' に設定されている場合のみ適用されます
   "files.autoSaveDelay": 1000,
 
-  // ファイル モニタリングから除外するファイル パスの glob パターンを構成します。この設定を変更すると、再起動が必要になります。始動時に Code が消費する CPU 時間が多い場合は、大規模なフォルダーを除外して初期ロードを減らせます。
+  // ファイル監視から除外するファイル パスの glob パターンを設定します。パターンは絶対パスで一致する必要があります (つまり、適切に一致するには、プレフィックス ** を指定するか、完全パスを指定します
+  // )。この設定を変更した場合は、再起動が必要になります。始動時に Code が消費する CPU 時間が多い場合は、大きいフォルダーを除外すれば初期の負荷を減らすことができます。
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -529,6 +566,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // エディターを終了するときに保存を確認するダイアログを省略し、保存されていないファイルをセッション後も保持するかどうかを制御します。
   "files.hotExit": "onExit",
+
+  // 新しい試験的な File Watcher を使用します。
+  "files.useExperimentalFileWatcher": false,
 
   // 新しいファイルに割り当てられる既定の言語モード。
   "files.defaultLanguage": "",
@@ -894,8 +934,11 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // マークダウン プレビューで YAML front matter がレンダリングされる方法を設定します。'hide' の場合、front matter が削除されます。その他の場合には、front matter はマークダウン コンテンツとして処理されます。
   "markdown.previewFrontMatter": "hide",
 
+  // マークダウン プレビューで改行をレンダリングする方法を設定します。'true' に設定すると改行ごとに <br> を作成します。
+  "markdown.preview.breaks": false,
+
   // マークダウン プレビューで使用されるフォント ファミリを制御します。
-  "markdown.preview.fontFamily": "system-ui, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
   // マークダウン プレビューで使用されるフォント サイズ (ピクセル単位) を制御します。
   "markdown.preview.fontSize": 14,
@@ -979,6 +1022,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // コンマ区切り記号の後のスペース処理を定義します。
   "typescript.format.insertSpaceAfterCommaDelimiter": true,
 
+  // コンストラクター キーワードの後にスペース処理を定義します。TypeScript が 2.3.0 以上である必要があります。
+  "typescript.format.insertSpaceAfterConstructor": false,
+
   //  for ステートメント内のセミコロンの後のスペース処理を定義します。
   "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
 
@@ -1009,6 +1055,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // JSX 式の始め波かっこの後と終わり波かっこの前のスペース処理を定義します。TypeScript が 2.0.6 以上である必要があります。
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
 
+  // TypeScript の型アサーションの後のスペース処理を定義します。TypeScript が 2.4 以上である必要があります。
+  "typescript.format.insertSpaceAfterTypeAssertion": false,
+
   // 新しい行に関数の始め波かっこを配置するかどうかを定義します。
   "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
 
@@ -1023,6 +1072,9 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // コンマ区切り記号の後のスペース処理を定義します。
   "javascript.format.insertSpaceAfterCommaDelimiter": true,
+
+  // コンストラクター キーワードの後にスペース処理を定義します。TypeScript が 2.3.0 以上である必要があります。
+  "javascript.format.insertSpaceAfterConstructor": false,
 
   //  for ステートメント内のセミコロンの後のスペース処理を定義します。
   "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
@@ -1108,7 +1160,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   ],
 
   // 端末が Windows で使用するシェルのパス。Windows に付属のシェル (cmd、PowerShell、または Bash on Ubuntu) を使用する場合、64 ビット バージョンを使用するには、C:\Windows\System32 ではなく、C:\Windows\sysnative を選びます。
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 
   // Windows ターミナル上の場合に使用されるコマンド ライン引数。
   "terminal.integrated.shellArgs.windows": [],
@@ -1162,6 +1214,10 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
     "workbench.action.focusFirstEditorGroup",
     "workbench.action.focusSecondEditorGroup",
     "workbench.action.focusThirdEditorGroup",
+    "workbench.action.navigateDown",
+    "workbench.action.navigateLeft",
+    "workbench.action.navigateRight",
+    "workbench.action.navigateUp",
     "workbench.action.openNextRecentlyUsedEditorInGroup",
     "workbench.action.openPreviousRecentlyUsedEditorInGroup",
     "workbench.action.quickOpen",
@@ -1178,8 +1234,10 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
     "workbench.action.terminal.focusAtIndex7",
     "workbench.action.terminal.focusAtIndex8",
     "workbench.action.terminal.focusAtIndex9",
+    "workbench.action.terminal.focusFindWidget",
     "workbench.action.terminal.focusNext",
     "workbench.action.terminal.focusPrevious",
+    "workbench.action.terminal.hideFindWidget",
     "workbench.action.terminal.kill",
     "workbench.action.terminal.new",
     "workbench.action.terminal.paste",
@@ -1191,6 +1249,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
     "workbench.action.terminal.scrollToTop",
     "workbench.action.terminal.scrollUp",
     "workbench.action.terminal.scrollUpPage",
+    "workbench.action.terminal.selectAll",
     "workbench.action.terminal.toggleTerminal"
   ],
 
@@ -1208,15 +1267,7 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // このオプションを有効にするには、再起動が必要です。
   "telemetry.enableCrashReporter": true,
 
-// Emmet configuration
-
-  // Shows expanded emmet abbreviations as suggestions
-  "emmet.showExpandedAbbreviation": true,
-
-  // Shows possible emmet abbreviations as suggestions
-  "emmet.showAbbreviationSuggestions": true,
-
-// 既定の構成オーバーライド
+  // 既定の構成オーバーライド
 
   // [go] 言語に対して上書きされるエディター設定を構成します。
   "[go]":  {
@@ -1282,11 +1333,6 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
   // ステージされた変更がない場合はすべての変更をコミットします。
   "git.enableSmartCommit": false,
 
-// Grunt
-
-  // Grunt タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
-  "grunt.autoDetect": "on",
-
 // Npm
 
   // npm スクリプトの自動検出をオンにするかオフにするかを制御します。既定はオンです。
@@ -1299,6 +1345,11 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
   // エディター内でマージの競合デコレーターを有効/無効にします。
   "merge-conflict.decorators.enabled": true,
+
+// Grunt
+
+  // Grunt タスクの自動検出をオンにするかオフにするかを制御します。既定はオンです。
+  "grunt.autoDetect": "on",
 
 // Gulp
 
@@ -1314,10 +1365,10 @@ VS Codeの動作に使うファイルを設定で指定できます。たとえ�
 
 ## よくある質問
 
-**Q:「設定を書き込めません」と表示されます**
+**Q: 「設定を書き込めません」と表示されます**
 
-**A:** 設定を使用とするとき(たとえば、自動保存を有効にする、新しいテーマの選択など)"Unable to write settings. Please open User Settings to correct errors/warnings in the file and try again."というエラーが出るかもしれません。これは`settings.json`が文法的に正しくないかエラーがあることを意味します。このエラーとはカンマや設定値が抜けているなど単純なものになります。**ファイル** > **基本設定** > **設定**を開いて、赤の波線で強調表示されるエラーを確認してください。
+**A:** 設定を使用とするとき(たとえば、自動保存を有効にする、新しいテーマの選択など)に"Unable to write settings. Please open User Settings to correct errors/warnings in the file and try again."というエラーが出るかもしれません。これは`settings.json`が文法的に正しくないかエラーがあることを意味します。このエラーとはカンマや設定値が抜けているなど単純なものになります。**ファイル** > **基本設定** > **設定**を開いて、赤の波線で強調表示されるエラーを確認してください。
 
 **Q: ワークスペース設定はいつ利用すべきですか？**
 
-**A:** カスタム設定が必要なワークスペースを使用していて、他のプロジェクトに適用したくない場合です。いい例として言語固有のlintルールです。
+**A:** カスタム設定が必要なワークスペースを使用していて、他のプロジェクトに適用したくない場合です。よくある例としては言語固有のlintルールです。
