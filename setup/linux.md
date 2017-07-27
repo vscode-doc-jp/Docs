@@ -34,7 +34,7 @@ sudo apt-get install code # or code-insiders
 
 ### RHEL, FedoraとCentOSディストリビューション
 
-現在yumレポジストリにVS Code安定版64-bitを準備しています。次のスクリプトでキーとリポジトリをインストールしてください:
+現在yumリポジトリにVS Code安定版64-bitを準備しています。次のスクリプトでキーとリポジトリをインストールしてください:
 
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -57,7 +57,7 @@ sudo yum install code
 
 ### openSUSEとSLE
 
-上記のyumレポジストリは、openSUREとSLE OSでも動作します。次のスクリプトでキーとリポジトリをインストールしてください:
+上記のyumリポジトリは、openSUREとSLE OSでも動作します。次のスクリプトでキーとリポジトリをインストールしてください:
 
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -87,7 +87,7 @@ sudo dnf install <file>.rpm
 
 ## アップデート
 
-VS Codeは毎月[新しいリリース](/updates)を提供しています。VS Codeレポジストリを正しくインストールできていれば、他のパッケージと同じ方法で自動更新するはずです。
+VS Codeは毎月[新しいリリース](/updates)を提供しています。VS Codeリポジトリを正しくインストールできていれば、他のパッケージと同じ方法で自動更新するはずです。
 
 ## Node.js
 

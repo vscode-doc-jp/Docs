@@ -44,7 +44,7 @@ WIndowsとLinuxでは **ヘルプ** > **バージョン情報** へ移動しま�
 
 (編集メモ: [有志](https://github.com/satokaz/tips/blob/master/vscode/Previous-Releases.md)によってダウンロードリンクがまとめられています。
 
->**Note:** LinuxではVS Codeレポジストリを正しくインストールできていれば、他のパッケージと同じ方法で自動更新するはずです。詳細は[Installing VS Code on Linux](/docs/setup/linux.md#updates)を参照してください。
+>**Note:** LinuxではVS Codeリポジトリを正しくインストールできていれば、他のパッケージと同じ方法で自動更新するはずです。詳細は[Installing VS Code on Linux](/docs/setup/linux.md#updates)を参照してください。
 
 ## Licensing
 
