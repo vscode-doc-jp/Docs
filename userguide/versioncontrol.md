@@ -17,13 +17,13 @@ VS CodeにはGitのソースコントロールマネージャー(SCM)拡張機�
 
 >**Note:** VS CodeではPCにインストールされたGitを利用します。ですからまず[Gitをインストール](https://git-scm.com/download)する必要があります。少なくともバージョン`2.0.0`以上をインストールしてください。
 
->**Tip:** VS CodeはGitレポジストリで大きな効果を発揮します。もしGitのプライベートホストを持っていない場合は、無料の[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs)をぜひ活用してください。[Click here to sign-up](https://go.microsoft.com/fwlink/?LinkID=307137&campaign=o~msft~code~vc)
+>**Tip:** VS CodeはGitリポジトリで大きな効果を発揮します。もしGitのプライベートホストを持っていない場合は、無料の[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs)をぜひ活用してください。[Click here to sign-up](https://go.microsoft.com/fwlink/?LinkID=307137&campaign=o~msft~code~vc)
 
 左側にあるSCMアイコンは、現在のリポジトリー内の**変更の数**を表示します。これをクリックすると、現在のリポジトリー内にある変更を詳細表示します: **CHANGES**、**STAGED CHANGES**、**MERGE CHANGES**
 
 各項目をクリックすることで**変更したファイル**内の詳細を表示します。ステージしていない変更は、右のエディターでもファイル編集できることに留意してください。
 
-またVS Codeの左下には**レポジストリの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意の参照を選択してください。
+またVS Codeの左下には**リポジトリの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意の参照を選択してください。
 
 > **Tip:** GitリポジトリのサブディレクトリをVS Codeで開くことができます。この場合でもGitは通常通り動作し、リポジトリ内のすべての変更を表示します。ただし現在のワークスペース外ファイル変更は、それを示すツールチップと共に表示します。
 
@@ -103,7 +103,7 @@ Git出力ウィンドウを表示するには **表示** > **出力** を表示�
 
 ![Git initialize repository](images/versioncontrol/git-initialize.png)
 
-**Initialize git repository**を実行するとGitレポジストリに必要なメタデータファイルを作成して、ワークスペースファイルをステージされていない変更として表示します。
+**Initialize git repository**を実行するとGitリポジトリに必要なメタデータファイルを作成して、ワークスペースファイルをステージされていない変更として表示します。
 
 ## Gitパッチ/差分モード <a href="git-pass/diff-mode"></a>
 
@@ -151,7 +151,7 @@ VS Codeをエディターとして使用できる例を以下に示します:
 
 ## よくある質問
 
-**Q: レポジストリを初期化しましたが`...`メニューがグレーのままです**
+**Q: リポジトリを初期化しましたが`...`メニューがグレーのままです**
 
 **A:** **プッシュ、プル、同期** するにはGitのoriginを設定する必要があります。レポから必要なURLを取得してください。URLを取得したら、コマンドライン操作をしてGit設定にURLを追加します。例えばVisual Studio Team Servicesの場合:
 
@@ -186,7 +186,7 @@ code -n
 
 これはVS Codeを新しいウィンドウで開きます。
 
-次に(意図しないレポジストリの初期化を削除したいと仮定し)、レポを初期化した大きなフォルダー内の`.git`サブフォルダーを探して削除します。なお`.git`は隠しフォルダーなのでこれを表示する必要があります。例えばWindowsのコマンドプロンプトで`dir .git /ah`を実行すると、特定のフォルダー内の`.git`という名前の隠しフォルダーを表示できます。初期フォルダーをどこに作成したかわからない場合は、ルートフォルダで`dir .git /ah /s` を実行してサブフォルダーを含む`.git`フォルダーを表示します。
+次に(意図しないリポジトリの初期化を削除したいと仮定し)、レポを初期化した大きなフォルダー内の`.git`サブフォルダーを探して削除します。なお`.git`は隠しフォルダーなのでこれを表示する必要があります。例えばWindowsのコマンドプロンプトで`dir .git /ah`を実行すると、特定のフォルダー内の`.git`という名前の隠しフォルダーを表示できます。初期フォルダーをどこに作成したかわからない場合は、ルートフォルダで`dir .git /ah /s` を実行してサブフォルダーを含む`.git`フォルダーを表示します。
 
 **Q: GitHub DesktopをインストールしていますがVS CodeはこのGitを無視します**
 
