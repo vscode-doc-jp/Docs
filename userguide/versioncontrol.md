@@ -1,17 +1,22 @@
 ---
 title: バージョン管理
 MetaDescription: Visual Studio Code has integrated Git support for the most common commands.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
-status: old
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
-Visual Studio Codeにはソースコントロールが統合されており、[Git](https://git-scm.com)のサポートが入っています。その他のソースコントロールは[拡張機能](/docs/userguide/extension-gallery.md)を通して利用可能です。
+Visual Studio Codeではソースコントロールを統合しており、[Git](https://git-scm.com/)のサポートを初めから含んでいます。その他のソースコントロールは[拡張機能](/docs/userguide/extension-gallery.md)を通して利用可能です。
 
-## Gitサポート <a id="git-support"></a>
+## SCMプロバイダーの切り替え  <a id="switch-scm-providers"></a>
+
+既定でVS Codeは、Gitのソースコントロールプロバイダーが有効になっていますが、別のSCMプロバイダーをインストールして切り替えることができます。**ソースコントロール**ビューの**その他**(...)ボタンをクリックすることで、**SCMプロバイダーを切り替える**コマンドを表示できます。このコマンドは、**拡張機能**ビューから**Install Additional SCM Providers...**を実行して入手するSCMプロバイダーの一覧を表示します。
+
+![switch SCM providers](images/versioncontrol/switch-scm-providers.png)
+
+## Gitのサポート <a id="git-support"></a>
 
 VS CodeにはGitのソースコントロールマネージャー(SCM)拡張機能が付属しています。ほとんどのソースコントロールUIとワークフローは、他のSCM拡張機能と共通しています。ですからGitサポートについて確認することは他のプロバイダーでの使い方を理解するのに役立ちます。
 
->**Note:** Gitを初めて利用するなら、[git-scm](https://git-scm.com/documentation)の[book](https://git-scm.com/book)、[video](https://git-scm.com/video/what-is-git)、[cheat sheets](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)が入門に役に立つことでしょう。VS CodeのドキュメントはGitに慣れていることを前提としています。
+>**Note:** Gitを初めて利用するなら、[git-scm](https://git-scm.com/documentation)の[book](https://git-scm.com/book)、[video](https://git-scm.com/video/what-is-git)、[cheat sheets](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)が入門に役に立つことでしょう。このドキュメントはGitに慣れていることを前提としています。
 
 ![git overview](images/versioncontrol/overview.png)
 
@@ -23,13 +28,13 @@ VS CodeにはGitのソースコントロールマネージャー(SCM)拡張機�
 
 各項目をクリックすることで**変更したファイル**内の詳細を表示します。ステージしていない変更は、右のエディターでもファイル編集できることに留意してください。
 
-またVS Codeの左下には**リポジトリの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意の参照を選択してください。
+またVS Codeの左下には**リポジトリーの状態**を示すインジゲーターがあります。状態として**現在のブランチ**、**dirty indicators**そして**incoming and outgoing commits**を示します。ブランチから**チェックアウト**するには、このボタンを押してリストから任意の参照を選択してください。
 
 > **Tip:** GitリポジトリのサブディレクトリをVS Codeで開くことができます。この場合でもGitは通常通り動作し、リポジトリ内のすべての変更を表示します。ただし現在のワークスペース外ファイル変更は、それを示すツールチップと共に表示します。
 
 ## Gitステータスバーの操作 <a href="git-status-bar-actions"></a>
 
-チェックアウトしたブランチが上流ブランチに設定されているときは、ブランチインジゲーターの隣に**Synchronize changes**ボタンを表示します。
+チェックアウトしたブランチが上流ブランチに設定されているときは、ブランチインジゲーターの隣に**Synchronize changes**ボタンを表示します。**Synchronize Changes**はローカルリポジトリにリモートから変更をプルし、ローカルのコミットをアップストリームにプッシュします。
 
 ![git status bar sync](images/versioncontrol/git-status-bar-sync.png)
 
@@ -47,7 +52,7 @@ VS CodeにはGitのソースコントロールマネージャー(SCM)拡張機�
 
 より具体的な**コミット操作**はGitビュー上部の `...`メニューで確認できます。
 
-## リポジトリをクローン
+## リポジトリをクローン <a id="cloning-a-repository"></a>
 
 **コマンド パレット** (`kb(workbench.action.showCommands)`)で**Git: Clone**コマンドを使用するとGitリポジトリをクローンすることができます。その後リモートリポジトリーのURLと、ローカルリポジトリーを配置するディレクトリーを確認されます。
 
@@ -81,7 +86,7 @@ Gitリポジトリのフォルダーを開いて編集を始めたなら、VS Co
 
 ![Git merge](images/versioncontrol/merge.png)
 
-競合はVS Codeによって認識できますので、マーカー提供して解決の手伝いをしようとします。解決したなら競合するファイルをステージングして、変更をコミットしてください。
+競合はVS Codeによって認識できますので、マーカー提供して解決の手伝いをしようとします。解決したら競合するファイルをステージングして、変更をコミットします。
 
 ## 差分表示 <a href="viewing-diffs"></a>
 
@@ -103,7 +108,7 @@ Git出力ウィンドウを表示するには **表示** > **出力** を表示�
 
 ![Git initialize repository](images/versioncontrol/git-initialize.png)
 
-**Initialize git repository**を実行するとGitリポジトリに必要なメタデータファイルを作成して、ワークスペースファイルをステージされていない変更として表示します。
+**Initialize git repository**を実行するとGitリポジトリーに必要なメタデータファイルを作成して、ワークスペースファイルをステージされていない変更として表示します。
 
 ## Gitパッチ/差分モード <a href="git-pass/diff-mode"></a>
 
@@ -151,11 +156,11 @@ VS Codeをエディターとして使用できる例を以下に示します:
 
 ## よくある質問
 
-**Q: リポジトリを初期化しましたが`...`メニューがグレーのままです**
+**Q: リポジトリーを初期化しましたが`...`メニューがグレーのままです**
 
 **A:** **プッシュ、プル、同期** するにはGitのoriginを設定する必要があります。レポから必要なURLを取得してください。URLを取得したら、コマンドライン操作をしてGit設定にURLを追加します。例えばVisual Studio Team Servicesの場合:
 
-```
+```bash
 > git remote add origin https://<AccountName>.visualstudio.com/DefaultCollection/_git/<RepoName>
 > git push -u origin master
 ```
@@ -186,7 +191,7 @@ code -n
 
 これはVS Codeを新しいウィンドウで開きます。
 
-次に(意図しないリポジトリの初期化を削除したいと仮定し)、レポを初期化した大きなフォルダー内の`.git`サブフォルダーを探して削除します。なお`.git`は隠しフォルダーなのでこれを表示する必要があります。例えばWindowsのコマンドプロンプトで`dir .git /ah`を実行すると、特定のフォルダー内の`.git`という名前の隠しフォルダーを表示できます。初期フォルダーをどこに作成したかわからない場合は、ルートフォルダで`dir .git /ah /s` を実行してサブフォルダーを含む`.git`フォルダーを表示します。
+次に(意図しないリポジトリーの初期化を削除したいと仮定し)、レポを初期化した大きなフォルダー内の`.git`サブフォルダーを探して削除します。なお`.git`は隠しフォルダーなのでこれを表示する必要があります。例えばWindowsのコマンドプロンプトで`dir .git /ah`を実行すると、特定のフォルダー内の`.git`という名前の隠しフォルダーを表示できます。初期フォルダーをどこに作成したかわからない場合は、ルートフォルダで`dir .git /ah /s` を実行してサブフォルダーを含む`.git`フォルダーを表示します。
 
 **Q: GitHub DesktopをインストールしていますがVS CodeはこのGitを無視します**
 
