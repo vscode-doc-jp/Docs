@@ -1,8 +1,7 @@
 ---
 title: コマンドライン
 MetaDescription: Visual Studio Code command line options. Learn to control VS Code startup.
-commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
-status: old
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
 Visual Studio Codeではエディターの起動方法を制御できる強力なコマンドラインインターフェイスを用意しています。ファイルの比較、拡張機能のインストール、表示言語の変更でさえも起動時に設定できます。
@@ -13,6 +12,12 @@ Visual Studio Codeではエディターの起動方法を制御できる強力�
 
 ```
 code .
+```
+
+Visual Studio Code Insidersビルドを使用している場合は次を入力します:
+
+```
+code-insiders .
 ```
 
 >**Tip:** 私たちは[Setup](/docs/setup/mac.md)トピックで、ターミナル内からVS Codeを起動するMacユーザー向けの手順を紹介しています。WindowsとLinuxではインストール時に`PATH`環境変数を追加できます。
@@ -80,8 +85,10 @@ vscode://file/FULL/PATH/TO/FILE
 行と列を指定してファイルを開く
 
 ```
-vscode://file/FULL/PATH/TO/FILE?LINE:COLUMN
+vscode://file/FULL/PATH/TO/FILE:LINE:COLUMN
 ```
+
+> Note: URLを解析してリダイレクトできるブラウザーやファイルエクスプローラーなどのアプリケーション内でこのURL使用できます。たとえばWindowsでは、Windows Explorerに`vscode://` で直接渡したり、コマンドラインには`start vscode://file/FULL/PATH/TO/FILE`を渡したりすることができます。
 
 ## 次のステップ
 

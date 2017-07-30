@@ -2,6 +2,7 @@
 title: C++ Programming
 MetaDescription: Find out how to get the best out of Visual Studio Code and C++.
 commitid: 42757495f4d9a4a7a959e45a7eb459c388b04aaf
+status: old
 ---
 
 今日VS Codeを使用してWindows、Linux、MacでクロスプラットホームC/C++開発ができるように、プレビューのサポート環境を提供しています。このリリースプレビューではLinux、Mac、 Window上でのデバッグなど、コード編集とナビゲーションのサポートを中心に取り上げています。
