@@ -15,7 +15,7 @@ Visual Studio Code 1.13以前のバージョンを使用している場合は、
 
 ![VS Code can talk to a variety of external tools](images/tasks/tasks_hero.png)
 
-これらのツールは主にコマンドラインから実行され、ソフトウェア開発(編集, コンパイル, テスト, デバッグ)以外のジョブを自動化します。開発ライフサイクルにおけるこれらの重要性を考えると、VS Codeからツールを実行してその結果を分析できることはとても便利だといえます。
+これらのツールは主にコマンドラインから実行され、ソフトウェア開発(編集, コンパイル, テスト, デバッグ)以外のジョブを自動化します。開発ライフサイクルにおけるこれらの重要性を考えると、VS Codeからツールを実行してその結果を分析できることはとても便利だといえるでしょう。
 
 >**Note:** タスクはワークスペースフォルダー上で作業している場合にのみ使用できます。つまり、1つのファイルを編集しているときは使用できません。
 
@@ -45,13 +45,13 @@ class Startup {
 Startup.main();
 ```
 
-`kb(workbench.action.tasks.build)`を押すか**タスク**メニューから**ビルドタスクの実行...**を実行すると、次のピッカーを表示します:
+そして`kb(workbench.action.tasks.build)`を押すか**タスク**メニューから**ビルドタスクの実行...**を実行すると、次のピッカーを表示できます:
 
 ![TypeScript Build Task](images/tasks/typescript-build.png)
 
-エントリーを選択するとTypeScriptコンパイラーが実行され、TypeScriptファイルがJavaScriptファイルに変換されます。コンパイラーが終了したとき、`HelloWorld.js`ファイルがあるはずです。
+エントリーを選択するとTypeScriptコンパイラーが実行され、TypeScriptファイルがJavaScriptファイルに変換されます。このコンパイラーが終了したとき、`HelloWorld.js`ファイルがあるはずです。
 
-このTypeScriptのビルドタスクを既定のビルドタスクとして定義して、**ビルドタスクの実行** (`kb(workbench.action.tasks.build)`)を実行するだけでこれが実行されるようにできます。これを行うには**タスク**メニューから**既定のビルドタスクの構成**を選択してください。これにより利用可能なビルドタスクのピッカーが表示されます。そこで**TypeScript**を選択することで、VS Codeは次の`tasks.json`ファイルを生成します:
+このTypeScriptのビルドタスクを既定のビルドタスクとして定義して、**ビルドタスクの実行** (`kb(workbench.action.tasks.build)`)を実行するだけで直接これを実行するように構成できます。これを行うには**タスク**メニューから**既定のビルドタスクの構成**を選択します。これにより利用可能なビルドタスクのピッカーが表示されます。ここで**TypeScript**を選択するとVS Codeは次の`tasks.json`ファイルを生成します:
 
 ```json
 {
@@ -71,17 +71,17 @@ Startup.main();
 }
 ```
 
-`0.1.0`バージョンの`tasks.json`ファイルとは異なり、これは新しいタスクを定義しません。これはVS CodeのTypeScript拡張機能によってTypeScriptのコンパイラータスクに提供され、既定のビルドタスクになります。(?)これにより`kb(workbench.action.tasks.build)`を押すことでTypeScriptコンパイラーが実行できるようになります。
+`0.1.0`バージョンの`tasks.json`ファイルとは異なり、これは新しいタスクを定義しません。これはVS CodeのTypeScript拡張機能によってTypeScriptのコンパイラータスクに提供され、既定のビルドタスクになります。(?)これにより`kb(workbench.action.tasks.build)`を押すことでTypeScriptコンパイラーが実行できるようになるのです。
 
 ## タスクの自動検出 <a id="task-auto-detection"></a>
 
-現在VS Codeでは、Gulp、Grunt、Jake、npmのタスクを自動検出します。私たちはMavenとC# `dotnet`コマンドでもサポートするように、拡張機能の作成者と協力して対応中です。ランタイムにNode.jsを使用するJavaScriptアプリケーションを開発する場合、たいていは依存関係とスクリプトの実行を記述する`package.json`があります。ここで既に[eslint-starter](https://github.com/spicydonuts/eslint-starter)の例をクローンしている場合は、メニューから**タスクの実行**を実行すれば次のリストが表示されます:
+現在VS Codeでは、Gulp、Grunt、Jake、npmのタスクを自動検出します。私たちはMavenとC# `dotnet`コマンドでもサポートするように、拡張機能の作成者と協力して対応中です。ランタイムにNode.jsを使用するJavaScriptアプリケーションを開発する場合、たいていは依存関係とスクリプトの実行を記述する`package.json`が用意されています。ここで、既に[eslint-starter](https://github.com/spicydonuts/eslint-starter)の例をクローンしている場合、メニューから**タスクの実行**を実行すれば次のリストを表示できます:
 
 ![Tasks ESLint starter](images/tasks/eslint-starter.png)
 
-必要なNode.jsモジュールをインストールするために**npm: install**を選択します。問題マッチャーを選択するように求められたら、**Continue without scanning the build output**(タスクの出力をスキャンしません)を選択してください。(編集メモ: この誤訳は次のバージョンのころに治ると思います17/07/29)これにより必要なNode.jsモジュールがすべてインストールされます。
+今回は必要なNode.jsモジュールをインストールするために**npm: install**を選択します。問題マッチャーを選択するように求められたら、**Continue without scanning the build output**(タスクの出力をスキャンしません)を選択してください。(編集メモ: この誤訳は次のバージョンのころに治ると思います17/07/29)これにより必要なNode.jsモジュールがすべてインストールされます。
 
-次に`server.js`ファイルを開いて、statementの最後にセミゴロンを追加します(ES Lint starterはセミコロンなしのstatementを設定することに注意してください)。そうしたら**タスクの実行**をもう一度実行します。今回は**npm: run lint**タスクを選択します。問題マッチャーを選択す量に求められたら、**ESLint stylish**を選択してください。
+次に`server.js`ファイルを開いて、statementの最後にセミゴロンを追加します(ES Lint starterはセミコロンなしのstatementを設定することに注意してください)。そうしたら**タスクの実行**をもう一度実行します。今回は**npm: run lint**タスクを選択します。もし問題マッチャーを選択す量に求められたら、**ESLint stylish**を選択してください。
 
 ![Tasks ESLint Problem Matcher Selection](images/tasks/eslint-problem-matcher-selection.png)
 
@@ -108,13 +108,13 @@ Startup.main();
 }
 ```
 
-これは、VS Codeが問題の形式にESLintのstylishを使用して、**npm lint**の出力をスキャンするように指示します。
+これは、VS Codeが問題の形式にESLintのstylishを使用して、**npm lint**の出力をスキャンするように指示するコードになります。
 
 Gulp、Grunt、Jakeの場合でも同じように自動検出が機能します。下記は[vscode-node-debug](https://github.com/Microsoft/vscode-node-debug)拡張機能に検出されたタスクの例です。
 
 ![Gulp task auto-detection](images/tasks/gulp-auto-detect.png)
 
->**Tip:** **Quick Open**(`kb(workbench.action.quickOpen)`)で"`task``kbstyle(Space) <commandname>"と入力すればタスクを実行できます。今回の場合は'task lint'です。
+>**Tip:** **Quick Open**(`kb(workbench.action.quickOpen)`)で"`task``kbstyle(Space) <commandname>"と入力した場合でもタスクを実行できます。今回の場合は'task lint'です。
 
 ## カスタムタスク <a id="custom-tasks"></a>
 
@@ -124,7 +124,7 @@ Gulp、Grunt、Jakeの場合でも同じように自動検出が機能します�
 
 >**Note:** タスクランナーのテンプレートが表示されない場合は、フォルダー内に`tasks.json`ファイルが既にある可能性があります。(既にある場合はエディターでこれが開かれます。)今回はファイルを閉じて削除するか名前を変更してください。
 
-私たちはより多くの自動検出の対応に取り組んでおり、このリストは今後さらに小さくなる予定です。私たちは独自のカスタムタスクを作成したいので、リストから**Others**を選択します。これによりタスクのひな形を持つ`task.json`が開きます。内容を次のように置き換えます:
+私たちはより多くの自動検出の対応に取り組んでおり、このリストは今後さらに小さくなる予定です。ここで私たちは独自のカスタムタスクを作成したいので、リストから**Others**を選択します。これによりタスクのひな形を持つ`task.json`が開きます。内容を次のように置き換えてください:
 
 ```json
 {
@@ -158,11 +158,11 @@ Gulp、Grunt、Jakeの場合でも同じように自動検出が機能します�
 - **group**: タスクが属するグループを定義します。この例では`test`グループに属しています。テストグループに属するコマンドは**コマンドパレット**から**テストタスクの実行**で実行できます。
 - **presentation**: タスク出力をユーザインターフェイスで処理する方法を制御します。今回の例では、常に出力を統合ターミナルで表示する`always`で、実行するタスクすべてで新しいターミナルが作られます。
 
-ワークスペースを構成するタスクプロパティはこの他にもあります。`kb(editor.action.triggerSuggest)`を使用してIntelliSenseを使用すれば、有効なプロパティの概要を知ることができます。
+ワークスペースを構成するタスクプロパティはこの他にもあります。`kb(editor.action.triggerSuggest)`を使用してIntelliSenseを使用すれば、有効なプロパティの概要を知ることが可能です。
 
 ![Tasks IntelliSense](images/tasks/intellisense.png)
 
-グローバルメニューバーに加えて、タスクのコマンドは**コマンドパレット**(`kb(workbench.action.showCommands)`)を使用してアクセスできます。ここでは'task'でフィルターをかけることでタスクのコマンドに関係するものを確認できます。
+メニューバーからに加えて、タスクのコマンドは**コマンドパレット**(`kb(workbench.action.showCommands)`)を使用してアクセスできます。ここでは'task'でフィルターをかけることでタスクのコマンドに関係するものを確認できます。
 
 ![tasks in command palette](images/tasks/command-palette.png)
 
@@ -242,7 +242,7 @@ Gulp、Grunt、Jakeの場合でも同じように自動検出が機能します�
 
 ## 自動検出タスクのカスタマイズ <a id="customizing-auto-detected-tasks"></a>
 
-上記の通り、`tasks.json`ファイルで自動検出タスクをカスタマイズすることができます。通常はpresentationプロパティを編集するか、問題マッチャーでタスクの出力をスキャンしてエラーと警告を探します。**タスクの実行**のリストから直接カスタマイズすることができます。右の歯車アイコンを押して対応するタスクを`tasks.json`ファイルに挿入します。ESLintを使用しているJavaScriptをLintする次のGulpファイルがあるとします(https://github.com/adametry/gulp-eslint から引用):
+上記の通り、`tasks.json`ファイルで自動検出タスクをカスタマイズすることができます。通常はpresentationプロパティを編集するか、問題マッチャーでタスクの出力をスキャンしてエラーと警告を探します。この他にも**タスクの実行**のリストから直接カスタマイズすることができます。右の歯車アイコンを押して対応するタスクを`tasks.json`ファイルに挿入する方法です。ESLintを使用しているJavaScriptをLintする次のGulpファイルがあるとします(https://github.com/adametry/gulp-eslint から引用):
 
 
 ```js
@@ -271,11 +271,11 @@ gulp.task('default', ['lint'], function () {
 });
 ```
 
-**タスク**メニューから**タスクの実行**を実行すると、次のピッカーを表示します:
+ここで**タスク**メニューから**タスクの実行**を実行すると、次のピッカーが表示されるはずです:
 
 ![Configure Task](images/tasks/configure-tasks.png)
 
-歯車アイコンを押します。これにより次の内容で`tasks.json`が作成されます:
+この歯車アイコンを押してください。これにより次の内容で`tasks.json`が作成されます:
 
 ```json
 {
@@ -292,7 +292,7 @@ gulp.task('default', ['lint'], function () {
 }
 ```
 
-通常は問題マッチャー(この場合は`$eslint-stylish`)を追加するかpresentation設定を編集します。
+通常であれば問題マッチャー(この場合は`$eslint-stylish`)を追加するかpresentation設定を編集することになります。
 
 ## 問題マッチャーによるタスク出力の処理 <a id="processing-task-output-with-problem-matchers"></a>
 
@@ -424,15 +424,15 @@ CSSトピックでは、タスクを使用してCSSファイルを生成する�
 
 ## 問題マッチャーの定義 <a id="defining-a-problem-matcher"></a>
 
-VS Codeは一般的な問題のマッチャーのいくつかを同封しています。ですが実際には多くのコンパイラーとlintのツールがあり、これらツールはそれぞれ独自の形式のエラーと警告を生成します。この形式を利用して独自の問題マッチャーを作成することができます。
+VS Codeは一般的な問題のマッチャーのいくつかを同封しています。多くのコンパイラーとlintのツールがありこれらツールはそれぞれ独自の形式のエラーと警告を生成しますが、この性質を利用して独自の問題マッチャーを作成することが可能です。
 
-ここに、開発者が**printf**を**prinft**と間違えた`helloWorld.c`プログラムがあります。これを[gcc](https://gcc.gnu.org/)でコンパイルすれば次の警告を表示します:
+ここに、開発者が**printf**を**prinft**と間違えた`helloWorld.c`プログラムがあるとします。これを[gcc](https://gcc.gnu.org/)でコンパイルすれば次の警告を表示します:
 
 ```bash
 helloWorld.c:5:3: warning: implicit declaration of function ‘prinft’
 ```
 
-出力のメッセージをキャプチャして、VS Codeで該当する問題を表示できる問題マッチャーを作りたいと思います。問題マッチャーは[正規表現](https://en.wikipedia.org/wiki/Regular_expression)に大きく依存しています。次のセクションは正規表現に精通していることを前提としています。
+出力のメッセージをキャプチャして、VS Codeで該当する問題を表示できる問題マッチャーを作りたいと思います。なお問題マッチャーは[正規表現](https://en.wikipedia.org/wiki/Regular_expression)に大きく依存しています。次のセクションは正規表現に精通していることを前提としています。
 
 >**Tip:** 私たちは[RegEx101 playground](https://regex101.com/)が正規表現を確認する最適な方法であることを確認しています。
 
@@ -501,7 +501,7 @@ VS Code内でこれを実行し、`kb(workbench.actions.view.problems)`をおし
 
 ## 複数行の問題マッチャーの定義 <a id="defining-a-multi-line-problem-matcher></a>
 
-いくつかのツールではstylishを利用している場合に、ソースファイル内の問題を複数行に広げて表現します。例として[ESLint](http://eslint.org/)をとります。このstylishモードでは次のような出力を得ます:
+いくつかのツールではstylishを利用している場合に、ソースファイル内の問題を複数行に広げて表現します。例として[ESLint](http://eslint.org/)をとると、このstylishモードでは次のような出力を得ます:
 
 ```bash
 test.js
@@ -581,9 +581,9 @@ test.js
 
 ## バックグラウンド / 監視タスク <a id="background-watching-tasks"></a>
 
-いくつかのツールはバックグラウンドでの動作をサポートしています。これはファイルシステムでファイルの変更を監視し、ディスク上でファイルが変更されたときにタスクをトリガーします。`Gulp`はこのような機能を[gulp-watch](https://www.npmjs.com/package/gulp-watch)により提供しています。TypeScriptコンパイラ`tsc`では、これを`--watch command`のラインオプションによってサポートしています。
+いくつかのツールはバックグラウンドでの動作をサポートしています。これはファイルシステムでファイルの変更を監視し、ディスク上でファイルが変更されたときにタスクをトリガーします。`Gulp`ではこのような機能を[gulp-watch](https://www.npmjs.com/package/gulp-watch)により提供しています。TypeScriptコンパイラ`tsc`では、これを`--watch command`のラインオプションによってサポートしています。
 
-バックグランドのタスクはVS Code内でのフィードバックを提供するために、問題マッチャーは出力における追加の情報を検出するために、いずれも状態を示す追加の情報を使用する必要があります。`tsc`を例にとってみましょう。コンパイラーがwatchモードで起動されると、次の追加情報がコンソールに出力されます:
+バックグランドのタスクはVS Code内でのフィードバックを提供するために、また問題マッチャーは出力における追加の情報を検出するために、いずれも状態を示す追加の情報を使用する必要があります。`tsc`を例にとってみましょう。コンパイラーがwatchモードで起動されると、次の追加情報がコンソールに出力されます:
 
 ```
 > tsc --watch
@@ -662,8 +662,7 @@ watchモードで機能する`tsc`タスクの完全な`tasks.json`は次のよ�
 - **isTestCommand**: 代わりに`"group": "test"プロパティを使用します。
 - **echoCommand**: 代わりに`"presentation" : { "echo": "..." }`プロパティを使用します。
 - **showOutput**: 代わりに`"presentation" : { "reveal": "..." }`プロパティを使用します。
-- **suppressTaskName**: 既定ではタスクのバージョンが`0.1.0`のとき、タスク名が引数のリストが追加されます。`2.0.0`バージョンではタスクごとのコマンドをサポートしているので、コマンドをタスクにインライン化してそれに応じた引数を指定します。
-次の`0.1.0`の構成を考えます:
+- **suppressTaskName**: 既定ではタスクのバージョンが`0.1.0`のとき、タスク名が引数のリストが追加されます。`2.0.0`バージョンではタスクごとのコマンドをサポートしているので、コマンドをタスクにインライン化してそれに応じた引数を指定します。次の`0.1.0`の構成を考えて見ます:
 
 ```json
 {
