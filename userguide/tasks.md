@@ -5,6 +5,9 @@ commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 # タスクを利用して外部ツールと統合する <a id="integrate-with-external-tools-via-tasks"></a>
 
+
+> 編集メモ: 追加資料[Tasks Appendix](/docs/userguide/tasks-appendix.md)
+
 ---
 
 Visual Studio Code 1.13以前のバージョンを使用している場合は、以前のバージョンのタスク[ドキュメント](/docs/userguide/tasks-v1.md)を参照してください。

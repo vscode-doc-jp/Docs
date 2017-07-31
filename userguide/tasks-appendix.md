@@ -4,33 +4,33 @@ MetaDescription: Additional info for using task runners in Visual Studio Code.
 commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
 
-This is additional information for [tasks](/docs/userguide/tasks.md).
+これは[タスク](/docs/userguide/tasks.md)の追加情報です
 
 ## Schema for tasks.json
 
-The following interfaces define the schema of the tasks.json file.
+次の interface が tasks.json ファイルの schema を定義しています。
 
 ```typescript
 
 interface TaskConfiguration extends BaseTaskConfiguration {
 
     /**
-     * The configuration's version number
+     * タスクのバージョン情報
      */
     version: "0.2.0";
 
     /**
-     * Windows specific task configuration
+     * Windows 固有の構成
      */
     windows?: BaseTaskConfiguration;
 
     /**
-     * Mac specific task configuration
+     * Mac 固有の構成
      */
     osx?: BaseTaskConfiguration;
 
     /**
-     * Linux specific task configuration
+     * Linux 固有の構成
      */
     linux?: BaseTaskConfiguration;
 }
@@ -38,133 +38,133 @@ interface TaskConfiguration extends BaseTaskConfiguration {
 interface BaseTaskConfiguration {
 
     /**
-     * The type of a custom task. Tasks of type "shell" are executed
-     * inside a shell (e.g. bash, cmd, powershell, ...)
+     * タスクの種類
+     * "shell" タイプのタスクはシェル内で実行します (例: bash, cmd, powershell)
      */
     type: "shell" | "process";
 
     /**
-     * The command to be executed. Can be an external program or a shell
-     * command.
+     * 実際に実行されるコマンド
+     * 外部プログラムまたはシェルコマンドを指定できます
      */
     command: string;
 
     /**
-     * Specifies whether a global command is a background task.
+     * グローバルコマンドがバックグラウンドタスクであるかどうか指定します
      */
     isBackground?: boolean;
 
     /**
-     * The command options used when the command is executed. Can be omitted.
+     * コマンドが実行されるときに使用するコマンドオプション (省略可)
      */
     options?: CommandOptions;
 
     /**
-     * The arguments passed to the command. Can be omitted.
+     * コマンドに渡す引数 (省略可)
      */
     args?: string[];
 
     /**
-     * The presentation options.
+     * presentation(いわゆるユーザーインターフェイスでの表示方法)オプション
      */
     presentation?: PresentationOptions;
 
     /**
-     * The problem matcher to be used if a global command is executed (e.g. no tasks
-     * are defined). A tasks.json file can either contain a global problemMatcher
-     * property or a tasks property but not both.
+     * グローバルコマンドが実行された場合に使用する問題マッチャー (例:タスクが定義されていないとき)
+     * tasks.json ファイルには global problemMatcher プロパティー または tasks プロパティのいずれかを含めることができます
+     * 両方を含めることはできません
      */
     problemMatcher?: string | ProblemMatcher | (string | ProblemMatcher)[];
 
     /**
-     * The configuration of the available tasks. A tasks.json file can either
-     * contain a global problemMatcher property or a tasks property but not both.
+     * 利用可能なタスクの構成
+     * tasks.json ファイルには global problemMatcher プロパティーまたは tasks プロパティのいずれかを含めることができます
+     * 両方を含めることはできません
      */
     tasks?: TaskDescription[];
 }
 
 
 /**
- * Options to be passed to the external program or shell
+ * 外部プログラムまたはシェルに渡すオプション
  */
 export interface CommandOptions {
 
     /**
-     * The current working directory of the executed program or shell.
-     * If omitted Ticino's current workspace root is used.
+     * 実行されるプログラムまたはシェルの作業ディレクトリ
+     * これを省略すると Ticino のルートが使用されます
      */
     cwd?: string;
 
     /**
-     * The environment of the executed program or shell. If omitted
-     * the parent process' environment is used.
+     * 実行されるプログラムまたはシェルの環境
+     * これを省略すると親のプロセス環境が使用されます
      */
     env?: { [key:string]:string; };
 
     /**
-      * Configuration of the shell when task type is `shell`
+      * タスクの種類が `shell` のときのシェルの構成
       */
      shell: {
 
         /**
-        * The shell to use.
+        * 使用するシェル
         */
         executable: string;
 
         /**
-        * The arguments to be passed to the shell executable to run in command mode
-        * (e.g ['-c'] for bash or ['/S', '/C'] for cmd.exe).
+        * コマンドモードで実行するために実行可能なシェルに渡される引数
+        * (例: bash: ['-c'] もしくは cmd.exe ['/S', '/C'])
         */
         args?: string[];
     }
 }
 
 /**
- * The description of a task.
+ * タスクの説明
  */
 interface TaskDescription {
 
     /**
-     * The task's name
+     * タスクの名前
      */
     taskName: string;
 
     /**
-     * The type of a custom task. Tasks of type "shell" are executed
-     * inside a shell (e.g. bash, cmd, powershell, ...)
+     * タスクの種類
+     * "shell" タイプのタスクはシェル内で実行します (例: bash, cmd, powershell)
      */
     type: "shell" | "process";
 
     /**
-     * The command to execute. If the type is "shell" it should be the full
-     * command line including any additional arguments passed to the command.
+     * 実行するコマンド
+     * 種類が "shell" のときは、コマンドに渡された追加の引数を含む完全なコマンドでなければなりません
      */
     command: string;
 
     /**
-     * Whether the executed command is kept alive and runs in the background.
+     * 実行されるコマンドをバックグランドで実行し続けるかどうか
      */
     isBackground?: boolean;
 
     /**
-     * Additional arguments passed to the command. Should be used if type
-     * is "process".
+     * コマンドに渡す追加の引数
+     * 種類が "process" のときに使用しなければなりません
      */
     args?: string[];
 
     /**
-     * Defines the group to which this tasks belongs
+     * タスクの属するグループを定義します
      */
     group?: "build" | "string";
 
     /**
-     * The presentation options.
+     * presentation(いわゆるユーザーインターフェイスでの表示方法)オプション
      */
     presentation?: PresentationOptions;
 
     /**
-     * The problem matcher(s) to use to capture problems in the tasks
-     * output.
+     * タスク出力をキャプチャするのに使用する問題マッチャー
      */
     problemMatcher?: string | ProblemMatcher | (string | ProblemMatcher)[];
 }
@@ -172,109 +172,98 @@ interface TaskDescription {
 interface PresentationOptions {
 
     /**
-     * Controls whether the task output is reveal in the user interface.
-     * Defaults to `always`.
+     * タスク出力をユーザーインターフェイスで表示するかどうかを制御します
+     * 既定は "always" です
      */
     reveal?: "never" | "silent" | "always";
 
     /**
-     * Controls whether the command associated with the task is echoed
-     * in the user interface.
+     * タスクに関連付けられたコマンドがユーザーインターフェイスにエコーされるかどうかを制御します
      */
     echo?: boolean;
 
     /**
-     * Controls whether the panel showing the task output is taking focus.
+     * タスク出力のパネルにフォーカスするかどうかを制御します
      */
     focus?: boolean;
 
     /**
-     * Controls if the task panel is used for this task only (dedicated),
-     * shared between tasks (shared) or if a new panel is created on
-     * every task execution (new). Defaults to `shared`
+     * タスクパネルの使用方法を、そのタスク専用(dedicated)、共有(shared)、常に新しいパネル(new)のいずれかに制御します
+     * 既定は `shared` です
      */
     panel?: "shared" | "dedicated" | "new";
 }
 
 /**
- * A description of a problem matcher that detects problems
- * in build output.
+ * ビルド出力で問題を検出する問題マッチャーの説明
  */
 interface ProblemMatcher {
 
     /**
-     * The name of a base problem matcher to use. If specified the
-     * base problem matcher will be used as a template and properties
-     * specified here will replace properties of the base problem
-     * matcher
+     * 使用する基本問題マッチャーの名前
+     * 指定するとこの基本問題マッチャーがテンプレートとして使用され
+     * ここで指定されたプロパティは基本問題マッチャーのプロパティを置き換えます
      */
     base?: string;
 
     /**
-     * The owner of the produced VS Code problem. This is typically
-     * the identifier of a VS Code language service if the problems are
-     * to be merged with the one produced by the language service
-     * or 'external'. Defaults to 'external' if omitted.
+     * 生成された VS Code problem の owner
+     * 通常は、問題が言語サービスまたは 'external' によって生成されたものとマージされる場合の、VS Code 言語サービスの識別子
+     * 省略したときの 既定は 'external' です
      */
     owner?: string;
 
     /**
-     * The severity of the VS Code problem produced by this problem matcher.
+     * 問題マッチャーによって生成された VS Code problem の重大度
      *
-     * Valid values are:
-     *   "error": to produce errors.
-     *   "warning": to produce warnings.
-     *   "info": to produce infos.
+     * 有効値:
+     *   "error": エラーとして生成
+     *   "warning": 警告として生成
+     *   "info": 情報として生成
      *
-     * The value is used if a pattern doesn't specify a severity match group.
-     * Defaults to "error" if omitted.
+     * この値はパターンに severity match group を指定していないとき使用されます
+     * 省略したときは"error" です
      */
     severity?: string;
 
     /**
-     * Defines how filename reported in a problem pattern
-     * should be read. Valid values are:
-     *  - "absolute": the filename is always treated absolute.
-     *  - "relative": the filename is always treated relative to
-     *    the current working directory. This is the default.
-     *  - ["relative", "path value"]: the filename is always
-     *    treated relative to the given path value.
+     * 問題パターンで報告されたファイル名の読み方を定義します
+     * 有効値:
+     *  - "absolute": ファイル名を常に絶対的に扱います
+     *  - "relative": ファイル名を現在のワーキング ディレクトリと相対的に扱います (既定)
+     *  - ["relative", "path value"]: ファイル名を常に指定したパス値と相対的に扱います
      */
     fileLocation?: string | string[];
 
     /**
-     * The name of a predefined problem pattern, the inline definition
-     * of a problem pattern or an array of problem patterns to match
-     * problems spread over multiple lines.
+     * 事前に定義した問題パターンの名前、問題パターンのインライン定義、複数行問題に一致する問題パターンの配列
      */
     pattern?: string | ProblemPattern | ProblemPattern[];
 
     /**
-     * Additional information used to detect when a background task (like a watching task in Gulp)
-     * is active.
+     * バックグラウンド タスク (Guplの監視タスクなど) がアクティブなときを検出するのに使用する追加情報
      */
     background?: BackgroundMatcher;
 }
 
 /**
- * A description to track the start and end of a background task.
+ * バックグラウンド タスクの開始と終了を追跡するための記述
  */
 interface BackgroundMatcher {
 
     /**
-     * If set to true the watcher is in active mode when the task
-     * starts. This is equals of issuing a line that matches the
-     * beginPattern.
+     * true に設定すると wathcer はタスクの開始時にアクティブモ モードになります
+     * これは beginPattern で一致する行を発生させるのと同じ働きです
      */
     activeOnStart?: boolean;
 
     /**
-     * If matched in the output the start of a background task is signaled.
+     * 出力に一致したとき、バックグランド タスクの開始が通知されます
      */
     beginsPattern?: string;
 
     /**
-     * If matched in the output the end of a background task is signaled.
+     * 出力に一致したとき、バックグランド タスクの終了が通知されます
      */
     endsPattern?: string;
 }
@@ -282,72 +271,70 @@ interface BackgroundMatcher {
 interface ProblemPattern {
 
     /**
-     * The regular expression to find a problem in the console output of an
-     * executed task.
+     * 実行されたタスクのコンソール出力で問題を見つける正規表現
      */
     regexp: string;
 
     /**
-     * The match group index of the filename.
+     * ファイル名の match group index
      */
     file: number;
 
     /**
-     * The match group index of the problems's location. Valid location
-     * patterns are: (line), (line,column) and (startLine,startColumn,endLine,endColumn).
-     * If omitted the line and column properties are used.
+     * 問題の位置の match group index
+     * 有効な位置のパターン: (line), (line,column), (startLine,startColumn,endLine,endColumn)
+     * 省略すると (line,column) プロパティが使用されます
      */
     location?: number;
 
     /**
-     * The match group index of the problem's line in the source file.
-     * Can only be omitted if location is specified.
+     * ソースファイル内の問題行の match group index
+     * location を指定したときのみ省略できます
      */
     line?: number;
 
     /**
-     * The match group index of the problem's column in the source file.
+     * ソースファイル内の問題列の match group index
      */
     column?: number;
 
     /**
-     * The match group index of the problem's end line in the source file.
+     * ソースファイル内の問題最終行の match group index
      *
-     * Defaults to undefined. No end line is captured.
+     * 既定は未定義です 最終行はキャプチャされません
      */
     endLine?: number;
 
     /**
-     * The match group index of the problem's end column in the source file.
+     * ソースファイル内の問題最終列の match group index
      *
-     * Defaults to undefined. No end column is captured.
+     * 既定は未定義です 最終列はキャプチャされません
      */
     endColumn?: number;
 
     /**
-     * The match group index of the problem's severity.
+     * 問題の重大度の match group index
      *
-     * Defaults to undefined. In this case the problem matcher's severity
-     * is used.
+     * 既定は未定義です 問題マッチャーの重大度が使用されます
      */
     severity?: number;
 
     /**
-     * The match group index of the problem's code.
+     * 問題コードの match group index
      *
-     * Defaults to undefined. No code is captured.
+     * 既定は未定義です コードはキャプチャされません
      */
     code?: number;
 
     /**
-     * The match group index of the message. Defaults to 0.
+     * メッセージの match group index
+     * 既定は 0 です
      */
     message: number;
 
     /**
-     * Specifies if the last pattern in a multi line problem matcher should
-     * loop as long as it does match a line consequently. Only valid on the
-     * last problem pattern in a multi line problem matcher.
+     * 複数行問題マッチャーの最後の問題パターンが、行に一致する限りループするかどうかを制御します
+     * 複数行問題マッチャーの最後の問題パターンでのみ有効です
      */
     loop?: boolean;
 }
