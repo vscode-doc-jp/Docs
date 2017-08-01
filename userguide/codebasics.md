@@ -1,5 +1,5 @@
 ---
-title: 基本的な編集
+title: 編集の基本
 MetaDescription: Learn about the basic editing features of Visual Studio Code. Search, multiple selection, code formatting.
 commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
