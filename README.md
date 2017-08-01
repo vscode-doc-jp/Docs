@@ -18,7 +18,7 @@
     * ~~Extension Marketplace~~
     * [IntelliSense](userguide/intellisense.md)
     * [Code Navigation](docs/userguide/editingevolved.md)
-    * ~~Debugging~~
+    * [Debugging](docs/userguide/debugging.md)
     * [Version Control](userguide/versioncontrol.md)
     * ~~Integrated Terminal~~
     * [Tasks](userguide/tasks.md)

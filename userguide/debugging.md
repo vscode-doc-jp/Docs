@@ -1,60 +1,49 @@
 ---
-Order: 6
-Area: editor
-TOCTitle: Debugging
-ContentId: 4E9A74AA-D778-4D1C-B369-83763B3C340F
-PageTitle: Debugging in Visual Studio Code
-DateApproved: 5/4/2017
+pagetitle: Visual Studio Code でデバッグ
+title: デバッグ
 MetaDescription: One of the great things in Visual Studio Code is debugging support.  Set breakpoints, step-in, inspect variables and more.
-MetaSocialImage: debugging_Debugging.png
+commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
 ---
-# Debugging
 
-One of the key features of Visual Studio Code is its great debugging support. VS Code's built-in debugger helps accelerate your edit, compile and debug loop.
+Visual Studio Codeの魅力的な機能の1つは優れたデバッグの対応です。VS Codeのデバッガは編集、コンパイル、デバッグのループを高速化します。
 
 ![Debugging diagram](images/debugging/debugging_hero.png)
 
-## Debugger Extensions
+## デバッガ拡張機能 <a id="debugger-extensions"></a>
 
-VS Code has built-in debugging support for the [Node.js](https://nodejs.org/) runtime and can debug JavaScript, TypeScript, and any other language that gets transpiled to JavaScript.
+VS Codeにはビルドインの[Node.js](https://nodejs.org/)ランタイムデバックのサポートがありJavaScript、TypeScript、JavaScriptに変換(transpiled)されたその他の言語をデバッグ可能です。
 
-For debugging other languages and runtimes (including [PHP](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby), [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go), [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), [Python](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python), [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Powershell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell) and [many others](https://marketplace.visualstudio.com/search?term=debug&target=VSCode&category=Debuggers&sortBy=Relevance)), look for `Debuggers` [extensions](/docs/userguide/extension-gallery.md) in our VS Code [Marketplace](https://marketplace.visualstudio.com/vscode/Debuggers) or click on **Install Additional Debuggers** in the top level Debug menu.
+その他の言語のデバッグとランタイムには (including [PHP](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby), [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go), [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), [Python](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python), [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Powershell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell) and [many others](https://marketplace.visualstudio.com/search?term=debug&target=VSCode&category=Debuggers&sortBy=Relevance)), look for `Debuggers` [extensions](/docs/userguide/extension-gallery.md) in our VS Code [Marketplace](https://marketplace.visualstudio.com/vscode/Debuggers)を入手するか、デバッグメニューの**Install Additional Debuggers**を利用します。
 
-Below are several popular extensions which include debugging support:
+## デバッグの開始 <a id="start-debugging"></a>
 
-<div class="marketplace-extensions-debuggers"></div>
+次のドキュメントは組み込み[Node.js](https://nodejs.org/)デバッガに基づいていますが、ほとんどのコンセプトと機能は他のデバッガでも同様に適用できます。
 
-> Tip: The extensions shown above are dynamically queried. Click on an extension tile above to read the description and reviews to decide which extension is best for you.
+なおデバッグについて読み進める前に、Node.jsアプリケーションを作成すると便利です。[Node.js walkthrough](/docs/nodejs/nodejs-tutorial.md)にしたがってNode.jsをインストールして簡単な"Hello World"JavaScriptアプリケーション(`app.js`)を作成して見てください。簡単なアプリケーションを用意しておけば、このページでVS Codeのデバッグ機能を通して利用できるでしょう。
 
-## Start Debugging
+## デバッグビュー <a id="debug-view"></a>
 
-The following documentation is based on the built-in [Node.js](https://nodejs.org/) debugger, but most of the concepts and features are applicable to other debuggers as well.
-
-It is helpful to first create a sample Node.js application before reading about debugging. You can follow the [Node.js walkthrough](/docs/nodejs/nodejs-tutorial.md) to install Node.js and create a simple "Hello World" JavaScript application (`app.js`). Once you have a simple application all set up, this page will take you through VS Code debugging features.
-
-## Debug View
-
-To bring up the Debug view, click on the Debugging icon in the **Activity Bar** on the side of VS Code.
+デバッグビューを表示するには、VS Codeの横にある**アクティビティーバー**でデバッグアイコンをクリックします。
 
 ![Debug icon](images/debugging/debugicon.png)
 
-The Debug view displays all information related to debugging and has a top bar with debugging commands and configuration settings.
+デバッグビューではデバッグに関するすべての情報を表示しており、デバッグコマンドと構成の設定を含むトップバーがあります。
 
-## Debug Menu
+## デバッグメニュー <a id="debug-menu"></a>
 
-The top level debug menu has the most common debug commands:
+一番上のデバッグメニューには最も一般的なデバッグコマンドが用意されています。
 
 ![Debug menu](images/debugging/debug-menu.png)
 
-## Launch Configurations
+## 起動構成 <a id="launch-configurations"></a>
 
-To debug a simple app in VS Code, press `kb(workbench.action.debug.start)` and VS Code will try to debug your currently active file.
+VS Codeで単純なアプリケーションをデバッグするには`kb(workbench.action.debug.start)`を押します。これによりVS Codeは現在アクティブなファイルのデバッグを開始しようとします。
 
->**Tip**: You can debug a simple application even if you don't have a folder open in VS Code but it is not possible to manage launch configurations and setup advanced debugging. For that, you have to open a folder in your workspace.
+>**Tip**: VS Codeでフォルダーを開いていなくても簡単なアプリケーションをデバッグするすることができますが、起動構成を管理して高度なデバッグを設定することはできません。
 
-For advanced debugging, you first have to open a folder and then set up your launch configuration file - `launch.json`. Click on the Configure gear icon on the Debug view top bar and VS Code will generate a `launch.json` file under your workspace's `.vscode` folder. VS Code will try to automatically detect your debug environment, if unsuccessful you will have to choose your debug environment manually.
+高度なデバッグをするには、まずフォルダーを開いて起動構成ファイル`launch.json`を準備する必要があります。デバッグビューのトップバーにある歯車アイコンをクリックすると、VS Codeはワークスペースの`.vscode`フォルダーの下に`launch.json`ファイルを作成します。なおVS Codeはデバッグ環境を自動的に検出しようとしますが、これに失敗したときはデバッグ環境を自分で選択する必要があります。
 
-Here is the one generated for Node.js debugging:
+Node.jsのデバッグ用に生成されたファイルは次の通りです:
 
 ```json
 {
@@ -77,27 +66,27 @@ Here is the one generated for Node.js debugging:
 }
 ```
 
-Note that the attributes available in these launch configurations vary from debugger to debugger. You can use IntelliSense to find out which attributes exist for a specific debugger. In addition, hover help is available for all attributes. If you see green squigglies in your launch configuration, hover over them to learn what the problem is and try to fix them before launching a debug session.
+ここでこれら起動構成に利用できる属性はデバッガごとに異なることに注意してください。IntelliSenseを使用すると特定のデバッガの属性を見つけることができますし、すべての属性に対してホバーヘルプが利用可能です。もし起動構成で緑色の提案がみえたら、その上にカーソルをホバーして問題の内容を確認し、デバッグセッションを起動する前に修正するようにしてください。
 
-VS Code debuggers typically support launching a program in debug mode or attaching to an already running program. Depending on the request (`attach` or `launch`) different attributes are required and our `launch.json` validation and suggestions should help with that.
+通常VS Codeのデバッガではデバッグモードでプログラムを起動するか、既に実行中のプログラムにアタッチすることが可能です。そのリクエスト(`attach`や`launch`)によって異なった属性が必要となります。これには`launch.json`の検証と提案が役立つはずです。
 
-Review the generated values and make sure that they make sense for your project and debugging environment.
+生成された値を確認して、プロジェクトとデバッグ環境に適しているかどうかを確認してください。
 
-To add a new configuration to an existing `launch.json`, use one of the following techniques:
+既存の`launch.json`に新しい構成を追加するには、次の方法のいずれかを利用します:
 
-* Use IntelliSense if your cursor is located inside the configurations array.
-* Press the **Add Configuration** button to invoke snippet IntelliSense at the start of the array.
-* Choose **Add Configuration...** option in the debug dropdown.
+* カーソルが構成の配列にあるときはIntelliSenseを利用します。
+* 配列の先頭にスニペットを呼びだすには**構成の追加**ボタンを押します。
+* デバッグドロップダウンの**構成の追加**オプションを選択します。
 
 ![launch json suggestions](images/debugging/add-config.gif)
 
-Select the configuration named `Launch` using the **Configuration dropdown** in the Debug view. Once you have your launch configuration set, start your debug session with `kb(workbench.action.debug.start)`.
+デバッグビューの**構成のドロップダウン**で`Launch`という構成を選択します。起動構成を設定出来たら`kb(workbench.action.debug.start)`を使用してデバッグセッションを開始します。
 
-The other way to run your configuration is through **Command Palette** (`kb(workbench.action.showCommands)`), by filtering on **Debug: Select and Start Debugging** or typing `'debug '`, and selecting the configuration you want to debug.
+構成を設定するもう1つの方法には**コマンドパレット** (`kb(workbench.action.showCommands)`)を通して**Debug: Select and Start Debugging*を選択または、`'debug '`を入力してデバッグしたい構成を選択します。
 
-### Global Launch Configuration
+### グローバル起動構成 <a id="global-launch-configuration"></a>
 
-We support adding a `"launch"` object inside your user settings. This `"launch"` configuration will then be shared across your workspaces. For example:
+ユーザー設定には`"launch"`オプジェクトを追加できます。この`"launch"`構成はワークスペース全体で共有されます。例:
 ```json
 "launch": {
     "version": "0.2.0",
@@ -110,66 +99,66 @@ We support adding a `"launch"` object inside your user settings. This `"launch"`
 }
 ```
 
->**Tip**: If a workspace contains a `"launch.json"` the global launch configuration is ignored.
+>**Tip**: ワークスペースに`"launch.json"`があるときはグローバル起動構成が無視されます。
 
-## Debug actions
+## デバッグ動作 <a id="debug-actions"></a>
 
-Once a debug session starts, the **Debug actions pane** will appear on the top of the editor.
+デバッグセッションが開始したときは、**デバッグ動作のパネル**がエディター上部に現れます。
 
 ![Debug Actions](images/debugging/actions.png)
 
-* Continue / Pause `kb(workbench.action.debug.continue)`
-* Step Over `kb(workbench.action.debug.stepOver)`
-* Step Into `kb(workbench.action.debug.stepInto)`
-* Step Out `kb(workbench.action.debug.stepOut)`
-* Restart `kb(workbench.action.debug.restart)`
-* Stop `kb(workbench.action.debug.stop)`
+* 続行 / 一時停止 `kb(workbench.action.debug.continue)`
+* ステップオーバー `kb(workbench.action.debug.stepOver)`
+* ステップイン `kb(workbench.action.debug.stepInto)`
+* ステップアウト `kb(workbench.action.debug.stepOut)`
+* 再起動`kb(workbench.action.debug.restart)`
+* 停止 `kb(workbench.action.debug.stop)`
 
-## Launch.json attributes
+## Launch.jsonの属性 <a id="launchjson-attributes"></a>
 
-There are many `launch.json` attributes to help support different debuggers and debugging scenarios. As mentioned above, you can use IntelliSense (`kb(editor.action.triggerSuggest)`) to see the list of available attributes once you have specified a value for the `type` attribute.
+さまざまなデバッガとデバッグ方法に対応するために多くの`launch.json`属性が用意されています。上記の`type`属性の値を指定するときのように、IntelliSense (`kb(editor.action.triggerSuggest)`)を使用して利用可能な属性を確認することができます。
 
 ![launch json suggestions](images/debugging/launch-json-suggestions.png)
 
-The following attributes are mandatory for every launch configuration:
+次の属性はすべての起動構成で必須です:
 
-* `type` - the type of debugger to use for this launch configuration. Every installed debug extension introduces a type, for example, `node` for the built-in node debugger, or `php` and `go` for the PHP and Go extensions.
-* `request` - the request type of this launch configuration. Currently supported are `launch` and `attach`.
-* `name` - friendly name which appears in the Debug launch configuration dropdown.
+* `type` - 起動構成に使用するデバッガの種類。インストールされたすべての拡張機能は型(例: ビルトインnodeデバッガでは`node`、`php`(PHP拡張機能)、`go`(Go拡張機能))を持っています。
+* `request` - 起動構成のリクエストタイプ。現在サポートされているのは`launch`と`attach`です。
+* `name` - デバッグ起動構成のドロップダウンに表示する親しみやすい名前。
 
-Here are some optional attributes available to all launch configurations:
+すべての起動構成で利用可能なオプション属性は次の通りです:
 
-* `preLaunchTask` - to launch a task before the start of a debug session, set this attribute to the name of a task specified in [tasks.json](/docs/userguide/tasks.md) (located under the workspace's `.vscode` folder).
-* `internalConsoleOptions` - control visibility of the Debug Console panel during a debugging session
-* `debugServer` - **for debug extension authors only**: connect to the specified port instead of launching the debug adapter
+* `preLaunchTask` - デバッグセッションの開始前に起動するタスク。属性は[tasks.json](/docs/userguide/tasks.md)(ワークスペースの`.vscode`フォルダーの下)で指定したタスクの名前になります。
+* `internalConsoleOptions` - デバッグセッション中のデバッグコンソールパネルの動作制御。
+* `debugServer` - **拡張機能作成者用**: 起動するデバッグアダプターの代わりに接続する特定のポート。
 
-Many debuggers support some of the following attributes:
+多くのデバッガで次の属性の一部をサポートしています:
 
-* `program` - executable or file to run when launching the debugger
-* `args` - arguments passed to the program to debug
-* `env` - environment variables
-* `cwd` - current working directory for finding dependencies and other files
-* `port` - port when attaching to a running process
-* `stopOnEntry` - break immediately when the program launches
-* `console` - what kind of console to use, for example, `internalConsole`, `integratedTerminal`, `externalTerminal`.
+* `program` - デバッガを起動するときに起動する実行可能ファイルもしくはファイル
+* `args` - デバッグするプログラムに渡される引数
+* `env` - 環境変数
+* `cwd` - 環境依存とその他のファイルを見つけ出すために利用する現在の作業ディレクトリ
+* `port` - 実行中のプロセスにアタッチするときのポート
+* `stopOnEntry` - プログラムを起動したとき指定したものを停止します
+* `console` - 使用するコンソールの種類。例:`internalConsole`, `integratedTerminal`, `externalTerminal`
 
-## Variable substitution
+## 変数置換 (変数) <a id="variable-substitution"></a>
 
-VS Code supports variable substitution inside strings in `launch.json` and has the following predefined variables:
+VS Codeは`launch.json`ファイル内で文字列の変数置換をサポートしており、次の定義された変数を持っています:
 
-- **${workspaceRoot}** - the path of the folder opened in VS Code
-- **${workspaceRootFolderName}** - the name of the folder opened in VS Code without any slashes (/)
-- **${file}** - the current opened file
-- **${relativeFile}** - the current opened file relative to `workspaceRoot`
-- **${fileBasename}** - the current opened file's basename
-- **${fileBasenameNoExtension}** - the current opened file's basename with no file extension
-- **${fileDirname}** - the current opened file's dirname
-- **${fileExtname}** - the current opened file's extension
-- **${cwd}** - the task runner's current working directory on startup
-- **${lineNumber}** - the current selected line number in the active file
+- **${workspaceRoot}** - VS Codeで開いたフォルダーのパス
+- **${workspaceRootFolderName}** - VS Codeで開いたスラッシュ(/)を含まないフォルダーの名前
+- **${file}** - 現在開いているファイル
+- **${relativeFile}** - `workspaceRoot`と相対的な現在開いているファイル
+- **${fileBasename}** - 現在開いているファイルのベース名
+- **${fileBasenameNoExtension}** - 現在開いているファイルから拡張子を含まないファイルの名前
+- **${fileDirname}** - 現在開いているファイルのディレクトリ名
+- **${fileExtname}** - 現在開いているファイルの拡張子
+- **${cwd}** - タスクランナー起動時の現在の作業ディレクトリ
+- **${lineNumber}** - アクティブなファイルの現在選択されている行番号
 
 
-You can also reference environment variables through **${env:Name}** syntax (for example, ${env:PATH}). Be sure to match the environment variable name's casing, for example `${env:Path}` on Windows.
+ **${env.Name}**を利用して、環境変数を参照することもできます(例:${env.PATH})。環境変数のNAMEは必ず大文字と小文字を区別してください。例: `env.Path`(windows)
 
 ```json
 {
@@ -182,28 +171,73 @@ You can also reference environment variables through **${env:Name}** syntax (for
 }
 ```
 
-You can reference VS Code settings and commands using the following syntax:
+VS Codeの設定とコマンドは次の構文を使用して参照できます:
 
-* **${config:Name}** - example: `${config:editor.fontSize}`
-* **${command:CommandID}** - example: `${command:explorer.newFolder}`
+* **${config:Name}** - 例: `${config:editor.fontSize}`
+* **${command:CommandID}** - 例: `${command:explorer.newFolder}`
 
-## Run mode
+## OS特有のプロパティ <a id="operating-system-specific-properties"></a>
+`Launch.json`は、OS固有の定義値(例:プログラムに渡す引数)をサポートしています。これを行うには`launch.json`ファイルにOSのリテラル(名前)を書き込み、その中に対応するプロパティを指定します。
 
-In addition to debugging a program, VS Code supports running the program. The **Run** action is triggered with `kb(workbench.action.debug.run)` and uses the currently selected launch configuration. Many of the launch configuration attributes are supported in 'Run' mode. VS Code maintains a debug session while the program is running and pressing the **Stop** button terminates the program.
+次の例は`"args"`をLinux-MacとWindowsで異なった引数を渡す例です:
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "./node_modules/gulp/bin/gulpfile.js",
+            "args": ["myFolder/path/app.js"],
+            "windows": {
+                "args": ["myFolder\\path\\app.js"]
+            }
+        }
+    ]
+}
+```
+有効なプロパティはWindowsでは`windows`、Linuxでは`linux`、Macでは`osx`です。OS特有のスコープで定義したプロパティは、グローバルスコープで定義するプロパティより優先されます。
 
->**Tip**: The **Run** action is always available, but not all debugger extensions support 'Run'. In this case 'Run' will be the same as 'Debug'.
+例:
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "./node_modules/gulp/bin/gulpfile.js",
+            "stopOnEntry": true,
+            "osx": {
+                "stopOnEntry": false
+            }
+        }
+    ]
+}
+```
+このプログラムはOSXを除くOSでエントリー時に一時停止されます。
 
-## Multi-target debugging
+## 実行モード <a id="run-mode"></a>
 
-For debugging complex scenarios involving more than one process (for example, a client and a server), VS Code supports multi-target debugging.
+プログラムのデバッグに加えVS Codeはプログラムの実行をサポートしています。この**実行**アクション`kb(workbench.action.debug.run)`では起動構成の多くがサポートされており、現在選択されている起動構成を使用してプログラムを起動します。VS Codeはプログラムを実行している間デバッグセッションを維持し、**停止**ボタンを押すとプログラムが終了します。
 
-Using multi-target debugging is simple: after you've started a first debug session, you can just launch another session. As soon as a second session is up and running, the VS Code UI switches to _multi-target mode_:
+>**Tip**: 常に**実行**アクションは利用できますが、すべてのデバック拡張機能で'Run'がサポートされているわけではありません。今回の場合'Run'は'Debug'と同じです。
 
-- The individual sessions now show up as top level elements in the **CALL STACK** view.<BR>![Callstack View](images/debugging/debug-callstack.png)
-- The floating debug widget shows the currently _active session_ (and all other sessions are available in a dropdown menu).<BR>![Debug Actions Widget](images/debugging/debug-actions-widget.png)
-- Debug actions (for example, all actions in the floating debug widget) are performed on the active session. The active session can be changed either by using the drop down menu in the floating debug widget or by selecting a different element in the **CALL STACK** view.
+## マルチターゲットのデバッグ <a id="multi-target-debugging"></a>
 
-An alternative way to start multiple debug session is by using a so-called _compound_ launch configuration. A compound launch configuration lists the names of two or more launch configurations that should be launched in parallel. Compound launch configurations show up in the launch configuration drop down menu.
+VS Codeはマルチターゲットのデバッグをサポートしており、1つ以上のプロセス(例:クライアントやサーバー)を含む複雑なシナリオをデバッグできます。
+
+マルチターゲットのデバッグはとてもシンプルです。最初のデバッグセッションを開始しすれば別のセッションも開始するからです。2つめのセッションが起動して実行されるとVS CodeのUIは_multi-target mode_に切り替わります:
+
+- 個々のセッションは**CALL STACK**ビューでトップレベル要素として表示するようになります。
+![Callstack View](images/debugging/debug-callstack.png)
+- 浮動デバッグウィジェットには現在_アクティブなセッション_を表示します(他すべてのセッションはドロップダウンメニューで利用可能です)。
+![Debug Actions Widget](images/debugging/debug-actions-widget.png)
+- デバッグアクション(例:浮動デバッグウィジェットのすべてのアクション)はアクティブセッションで実行されます。アクティブなセッションは、浮動デバッグウィジェットのドロップダウンを利用するか、**CALL STACK**ビューでこれと別の要素を選択して変更します。
+
+複数のデバッグセッションを開始する別の方法はいわゆる_compound_ 起動構成を使用する方法です。この起動構成では2つ以上の起動構成の名前を並べて起動します。ドロップダウンメニューでこれを確認してください。
 
 ```json
 {
@@ -233,80 +267,80 @@ An alternative way to start multiple debug session is by using a so-called _comp
 }
 ```
 
-## Breakpoints
+## ブレークポイント <a id="breakpoints"></a>
 
-Breakpoints can be toggled by clicking on the **editor margin**. Finer breakpoint control (enable/disable/reapply) can be done in the Debug view's **BREAKPOINTS** section.
+**エディターマージン**をクリックするとブレークポイントを切り替えることができます。デバッグビューの**BREAKPOINTS**セクションで細かいブレークポイントの制御(有効/無効/再適用)を行うこともできます。
 
-* Breakpoints in the editor margin are normally shown as red filled circles.
-* Disabled breakpoints have a filled gray circle.
-* Column breakpoints are shown inline in the editor.
-* When a debugging sessions starts, breakpoints that cannot be registered with the debugger change to a gray hollow circle. The same might happen if the source is edited while a debug session without live-edit support is running.
+* 通常エディターマージンのブレークポイントは赤く塗りつぶされた円で表示されます。
+* 無効なブレークポイントはグレーの円です。
+* 列ブレークポイントはエディターのインラインで表示します。
+* デバッグセッションが開始されると、デバッガに登録できないブレークポイントはグレーの中抜きの円に変わります。live-edit support(?)なしのデバッグセッションが実行中にソースが編集されるときも同じことが起きる可能性があります。
 
-The **Reapply All Breakpoints** command sets all breakpoints again to their original location. This is helpful if your debug environment is "lazy" and "misplaces" breakpoints in source code that has not yet been executed.
+**すべてのブレークポイントを再適用する**コマンドはすべてのブレークポイントを元の位置で再設定します。これはデバッグ環境が実行されていないソースコードで、"lazy"で"misplaces"なブレークポイントの時に役立ちます。
 
-A powerful VS Code debugging feature is the ability to set conditions either based on expressions or hit counts.
+VS Codeの優れたデバッグ機能は式やヒット数に基づいて設定する機能です。
 
-- **Expression condition**: The breakpoint will be hit whenever the expression evaluates to `true`.
-- **Hit count**: The 'hit count' controls how many times a breakpoint needs to be hit before it will 'break' execution. Whether a 'hit count' is respected and how the exact syntax of the expression looks like depends on the debugger extension used.
+- **Expression condition**: 式が`true`と評価されるたびにブレークポイントがヒットします。
+- **Hit count**: 'hit count'はブレークポイントがヒットする必要がある回数を制御します。'hit count'が尊重されるかや式の評価方法は使用するデバッグ拡張機能によって異なります。
 
-You can add a condition and/or hit count either when creating the breakpoint with the **Add Conditional Breakpoint** action or with the **Edit Breakpoint...** action for existing breakpoints. In both cases an inline text box with a drop down menu opens where the expressions can be entered:
+**条件付きブレークポイントの追加**アクションや既存のブレークポイントに**ブレークポイントの編集...**を使用して条件またはヒットカウントを追加できます。どちらの場合も式を入力できるドロップダウンメニューがあるインラインテキストボックスが開きます:
 
 ![HitCount](images/debugging/hitCount.gif)
 
-If a debugger does not support conditional breakpoints the **Add Conditional Breakpoint** action will be missing.
+デバッガが条件付きブレークポイントをサポートしていない場合は**条件次ブレークポイントの追加**アクションは失われます。
 
-A **column breakpoint** can be set using `kb(editor.debug.action.toggleColumnBreakpoint)` or through the context menu during a debug session. Column breakpoint will only be hit when the execution reaches that column. This is particularly useful when debugging minified code which contains multiple statements on a single line. Column breakpoints can also have conditions, editing multiple breakpoints on a line is possible through the context menu in the editor glyph margin.
+**列のブレークポイント**は`kb(editor.debug.action.toggleColumnBreakpoint)`を使用するか、デバッグセッション中にコンテキストメニューを介して設定できます。列のブレークポイントは実行がその列に達するとヒットします。これは1つの表に複数のステートメントを含むminifiedコードをデバッグする場合特に便利です。列ブレークポイントに条件を付けることもできます。エディタグリフマージンのコンテキストメニューを通して列にこれを編集してください。
 
-## Function breakpoints
+## 関数ブレークポイント <a id="function-breakpoints"></a>
 
-Instead of placing breakpoints directly in source code, a debugger can support creating breakpoints by specifying a function name. This is useful in situations where source is not available but a function name is known.
+デバッカーはソースコードにブレークポイントを直接的に配置する他に、関数名を指定してブレークポイントを作成することができます。これはソースが利用できない状況で関数名がわかっている場合に便利です。
 
-A 'function breakpoint' is created by pressing the **+** button in the **BREAKPOINTS** section header and entering the function name:
+関数ブレークポイントは**BREAKPOINS**セクションヘッダで**+**buttonをおして、関数名を入力することで作成されます:
 
 <img alt="function breakpoint" src="https://az754404.vo.msecnd.net/public/function-breakpoint.gif" />
 
-## Data inspection
+## データの検査 <a id="data-inspection"></a>
 
-Variables can be inspected in the **VARIABLES** section of the Debug view or by hovering over their source in the editor. Variables and expression evaluation is relative to the selected stack frame in the **CALL STACK** section.
+変数はデバッグビューの**VARIABLES**セクションで検査するか、エディターでそのソースをホバーすることで検査できます。変数と式の評価は**CALL STACK**セクションで選択したスタックフレームと対応します。
 
 ![Debug Variables](images/debugging/variables.png)
 
-Variables and expressions can also be evaluated and watched in the Debug view's **WATCH** section.
+変数と式はデバッグビューの**WATCH**セクションで評価して監視することもできます。
 
 ![Debug Watch](images/debugging/watch.png)
 
-Variable values can be modified with the **Set Value** action from the variable's context menu.
+変数値は変数のコンテキストメニューから**値の設定**アクションで変更できます。
 
-## Debug Console
+## デバッグコンソール <a id="debug-console"></a>
 
-Expressions can be evaluated in the **Debug Console**. To open the Debug Console, use the **Open Console** action at the top of the Debug pane or use the **Command Palette** (`kb(workbench.action.showCommands)`). The Debug Console shows suggestions while typing. If you need to enter multiple lines, use Shift + Enter between the lines and then send all lines for evaluation with Enter.
+式を**デバッグコンソール**で評価することが可能です。デバッグコンソールを開くにはデバッグパネル上部にある**コンソールを開く**を利用するか、 **コマンドパレット** (`kb(workbench.action.showCommands)`)を使用してください。デバッグコンソールでは入力中に提案が表示されます。複数の行を入力する必要があるときは、行の間でShift + Enterキーを利用し、Enterキーを押して評価するすべての行を送信します。
 
 ![Debug Console](images/debugging/debugconsole.png)
 
-## Next Steps
+## 次のステップ
 
-To learn about VS Code's Node.js debugging support, take a look at:
+VS CodeのNode.jsサポートについては:
 
 * [Node.js](/docs/nodejs/nodejs-debugging.md) - Node.js debugging is included in VS Code.
 
-To see a tutorial on the basics of Node.js debugging, check out:
+Node.jsデバッグの基本に関するチュートリアル:
 
 * [Intro Video - Debugging](/docs/introvideos/debugging.md) - Introductory video showcasing the basics of debugging.
 
-To learn about VS Code's task running support, go to:
+VS Codeのタスクについて:
 
 * [Tasks](/docs/userguide/tasks.md) - Running tasks with Gulp, Grunt and Jake.  Showing Errors and Warnings
 
-To write your own debugger extension, visit:
+独自のデバッガ拡張機能を作成するには:
 
 * [Debuggers](/docs/extensions/example-debuggers.md) - Steps to create a VS Code debug extension starting from a mock sample
 
-## Common Questions
+## よくある質問
 
-**Q: What are the supported debugging scenarios?**
+**Q: サポートされているデバッグシナリオはなんですか？**
 
-**A:** Debugging of Node.js based applications is supported on Linux, Mac, and Windows out of the box with VS Code. Many other scenarios are supported by [VS Code extensions](https://marketplace.visualstudio.com/vscode/Debuggers?sortBy=Downloads) available on the Marketplace.
+**A:** VS Codeを使用するNode.jsベースのアプリケーションのデバッグはLinux、macOS、Windowsで初めから利用できます。そのほかにもMarketplaceで多くのシナリオをサポートする[VS Code extensions](https://marketplace.visualstudio.com/vscode/Debuggers?sortBy=Downloads)があります。
 
-**Q: I do not see any launch configurations in the debug view drop down, what is wrong?**
+**Q: デバッグビューのドロップダウンメニューで起動構成が表示されません**
 
-**A:** The most common problem is that you did not set up `launch.json` yet or there is a syntax error in the `launch.json` file. Or you might need to open a folder, since no folder debugging does not support launch configurations.
+**A:** よくある問題としては`launch.json`をまだ設定していないか、`launch.json`に構文エラーがあることです。もしくはフォルダーなしのデバッグで起動構成をサポートしおらず、フォルダーを開く必要があるのかもしれません。
