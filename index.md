@@ -24,7 +24,7 @@ title: ようこそ
     * [Code Navigation](/docs/userguide/editingevolved.html)
     * [Debugging](/docs/userguide/debugging.html)
     * [Version Control](/docs/userguide/versioncontrol.html)
-    * ~~Integrated Terminal~~
+    * [Integrated Terminal](/docs/userguide/integrated-terminal.html)
     * [Tasks](/docs/userguide/tasks.html)
     * [Creating your own Snippets](/docs/userguide/userdefinedsnippets.html)
     * [Command Line](/docs/userguide/command-line.html)

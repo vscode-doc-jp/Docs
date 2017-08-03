@@ -20,7 +20,7 @@
     * [Code Navigation](docs/userguide/editingevolved.md)
     * [Debugging](docs/userguide/debugging.md)
     * [Version Control](userguide/versioncontrol.md)
-    * ~~Integrated Terminal~~
+    * [Integrated Terminal](userguide/integrated-terminal.md)
     * [Tasks](userguide/tasks.md)
     * [Creating your own Snippets](userguide/userdefinedsnippets.md)
     * [Command Line](userguide/command-line.md)
