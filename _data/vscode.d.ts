@@ -6,251 +6,262 @@
 declare module 'vscode' {
 
 	/**
-	 * The version of the editor.
+	 * エディターのバージョン
 	 */
 	export const version: string;
 
 	/**
-	 * Represents a reference to a command. Provides a title which
-	 * will be used to represent a command in the UI and, optionally,
-	 * an array of arguments which will be passed to the command handler
-	 * function when invoked.
+	 * コマンドへの参照を表示します
+	 *
+	 * UI でコマンドを表すために使用されます。オプションで呼び出されたとき、コマンド ハンドラに渡される引数の配列を提供します。
+
 	 */
 	export interface Command {
 		/**
-		 * Title of the command, like `save`.
+		 * `save`のようなコマンドのタイトル
 		 */
 		title: string;
 
 		/**
-		 * The identifier of the actual command handler.
+		 * 実際のコマンドハンドラの識別子
 		 * @see [commands.registerCommand](#commands.registerCommand).
 		 */
 		command: string;
 
 		/**
-		 * A tooltip for for command, when represented in the UI.
+		 * UI で表示されたときのコマンド用ツールチップ
 		 */
 		tooltip?: string;
 
 		/**
-		 * Arguments that the command handler should be
-		 * invoked with.
+		 * コマンドハンドラが呼び出されるべき引数
+
 		 */
 		arguments?: any[];
 	}
 
 	/**
-	 * Represents a line of text, such as a line of source code.
+	 * ソース コードなどのテキスト行を表します
 	 *
-	 * TextLine objects are __immutable__. When a [document](#TextDocument) changes,
-	 * previously retrieved lines will not represent the latest state.
+	 * TextLine のオブジェクトは  __immutable__ です。[ドキュメント](#TextDocument) が変更されるとき、以前に取得された行は最新の状態を表しません。
+	 *
 	 */
 	export interface TextLine {
 
 		/**
-		 * The zero-based line number.
+		 * 0 から始まる行番号 (0オリジン)
 		 */
 		readonly lineNumber: number;
 
 		/**
-		 * The text of this line without the line separator characters.
+		 * 行の区切り文字がない、行のテキスト
 		 */
 		readonly text: string;
 
 		/**
-		 * The range this line covers without the line separator characters.
+		 * 行の区切り文字がない、行の範囲
 		 */
 		readonly range: Range;
 
 		/**
-		 * The range this line covers with the line separator characters.
+		 * 行の区切り文字で、行の範囲
 		 */
 		readonly rangeIncludingLineBreak: Range;
 
 		/**
-		 * The offset of the first character which is not a whitespace character as defined
-		 * by `/\s/`. **Note** that if a line is all whitespaces the length of the line is returned.
+		 * `/\s/` によって定義された空白文字ではない最初の文字のオフセット
+		 * **注** 行がすべて空白の場合行の長さが返されます。
 		 */
 		readonly firstNonWhitespaceCharacterIndex: number;
 
 		/**
-		 * Whether this line is whitespace only, shorthand
-		 * for [TextLine.firstNonWhitespaceCharacterIndex](#TextLine.firstNonWhitespaceCharacterIndex) === [TextLine.text.length](#TextLine.text).
+		 * 行が空白のみであるかどうか
+		 *略語 : [TextLine.firstNonWhitespaceCharacterIndex](#TextLine.firstNonWhitespaceCharacterIndex) === [TextLine.text.length](#TextLine.text)
 		 */
 		readonly isEmptyOrWhitespace: boolean;
 	}
 
 	/**
-	 * Represents a text document, such as a source file. Text documents have
-	 * [lines](#TextLine) and knowledge about an underlying resource like a file.
+	 * ソース ファイルなどのテキスト ドキュメントを表します
+         *
+	 * テキスト ドキュメントは [lines](#TextLine) とファイルのような元となるリソースに関する情報を持っています。
 	 */
 	export interface TextDocument {
 
 		/**
-		 * The associated URI for this document. Most documents have the __file__-scheme, indicating that they
-		 * represent files on disk. However, some documents may have other schemes indicating that they are not
-		 * available on disk.
+		 * このドキュメントに関連する URL
+		 *
+		 * ほとんどのドキュメントは __file__ スキームをもち、ディスク上のファイルを表します。
+		 *
+		 * ただし、ドキュメントによってはディスク上で利用できないことを表すのスキームを持つことがあります。
 		 */
 		readonly uri: Uri;
 
 		/**
-		 * The file system path of the associated resource. Shorthand
-		 * notation for [TextDocument.uri.fsPath](#TextDocument.uri). Independent of the uri scheme.
+		 * 関連リソースのファイル システム パス
+		 *
+		 * 略記法 [TextDocument.uri.fsPath](#TextDocument.uri)。Uri のスキームとは独立しています。
 		 */
 		readonly fileName: string;
 
 		/**
-		 * Is this document representing an untitled file.
+		 * このドキュメントが無題のファイルかどうか
 		 */
 		readonly isUntitled: boolean;
 
 		/**
-		 * The identifier of the language associated with this document.
+		 * このドキュメントに関連する言語の識別子
 		 */
 		readonly languageId: string;
 
 		/**
-		 * The version number of this document (it will strictly increase after each
-		 * change, including undo/redo).
+		 * このドキュメントのバージョン番号
+		 *
+		 * 取り消し/やり直しを含む各変更後に、厳密に増加します。
 		 */
 		readonly version: number;
 
 		/**
-		 * `true` if there are unpersisted changes.
+		 * 無修正の変更がある場合は `true`
 		 */
 		readonly isDirty: boolean;
 
 		/**
-		 * `true` if the document have been closed. A closed document isn't synchronized anymore
-		 * and won't be re-used when the same resource is opened again.
+		 * ドキュメントが閉じられている場合は `true`
+		 *
+		  *閉じたドキュメントは同期されず、同じリソースが再度開かれたときに再利用されません。
 		 */
 		readonly isClosed: boolean;
 
 		/**
-		 * Save the underlying file.
+		 * 元となるファイルを保存します
 		 *
-		 * @return A promise that will resolve to true when the file
-		 * has been saved. If the file was not dirty or the save failed,
-		 * will return false.
+		 * @return (promise)ファイルが保存されたとき true に解決されます。
+		 *ファイルがダーティーでないか保存に失敗したときは false が返ります。
+
 		 */
 		save(): Thenable<boolean>;
 
 		/**
-		 * The [end of line](#EndOfLine) sequence that is predominately
-		 * used in this document.
+		 * このドキュメントで主に使用されている [end of line](#EndOfLine)シークエンス
+
 		 */
 		readonly eol: EndOfLine;
 
 		/**
-		 * The number of lines in this document.
+		 * このドキュメント内で行の番号
 		 */
 		readonly lineCount: number;
 
 		/**
-		 * Returns a text line denoted by the line number. Note
-		 * that the returned object is *not* live and changes to the
-		 * document are not reflected.
+		 * 行番号を意味するテキスト行を返します
 		 *
-		 * @param line A line number in [0, lineCount).
-		 * @return A [line](#TextLine).
+		 * 返されるオブジェクトは live では**なく**、ドキュメントへの変更は反映されないことに注意してください。
+
+		 *
+		 * @param line A line number [0, lineCount]
+		 * @return [行](#TextLine)
 		 */
 		lineAt(line: number): TextLine;
 
 		/**
-		 * Returns a text line denoted by the position. Note
-		 * that the returned object is *not* live and changes to the
-		 * document are not reflected.
+		 * position を示すテキスト行を返します
 		 *
-		 * The position will be [adjusted](#TextDocument.validatePosition).
+		 * 返されるオブジェクトは live では**なく**、ドキュメントへの変更は反映されないことに注意してください。
+
+		 *
+		 * position は[調整](#TextDocument.validatePosition)されます。
 		 *
 		 * @see [TextDocument.lineAt](#TextDocument.lineAt)
 		 * @param position A position.
-		 * @return A [line](#TextLine).
+		 * @return [行](#TextLine)
 		 */
 		lineAt(position: Position): TextLine;
 
 		/**
-		 * Converts the position to a zero-based offset.
+		 * positionを zero-based offset に変換します
 		 *
-		 * The position will be [adjusted](#TextDocument.validatePosition).
+		 * position は[調整](#TextDocument.validatePosition)されます。
 		 *
 		 * @param position A position.
-		 * @return A valid zero-based offset.
+		 * @return 有効な zero-based offset
 		 */
 		offsetAt(position: Position): number;
 
 		/**
-		 * Converts a zero-based offset to a position.
+		 * zero-based offset を position に変換します
 		 *
 		 * @param offset A zero-based offset.
-		 * @return A valid [position](#Position).
+		 * @return 有効な [position](#Position)
 		 */
 		positionAt(offset: number): Position;
 
 		/**
-		 * Get the text of this document. A substring can be retrieved by providing
-		 * a range. The range will be [adjusted](#TextDocument.validateRange).
+		 * このドキュメントのテキストを取得します
+		 *
+		 * 範囲を指定すると部分文字列を取得できます。範囲は [調整](#TextDocument.validateRange)されます。
 		 *
 		 * @param range Include only the text included by the range.
-		 * @return The text inside the provided range or the entire text.
+		 * @return 指定された範囲内のテキストまたはテキスト全体
 		 */
 		getText(range?: Range): string;
 
 		/**
-		 * Get a word-range at the given position. By default words are defined by
-		 * common separators, like space, -, _, etc. In addition, per languge custom
-		 * [word definitions](#LanguageConfiguration.wordPattern) can be defined. It
-		 * is also possible to provide a custom regular expression.
+		 * 与えられた位置で単語の範囲を取得します
 		 *
-		 * * *Note 1:* A custom regular expression must not match the empty string and
-		 * if it does, it will be ignored.
-		 * * *Note 2:* A custom regular expression will fail to match multiline strings
-		 * and in the name of speed regular expressions should not match words with
-		 * spaces. Use [`TextLine.text`](#TextLine.text) for more complex, non-wordy, scenarios.
+		 * 既定で単語は、 space, -, _, etc などのような区切り文字で定義されます。
+		 * さらに、言語ごとにカスタムな[単語の定義](#LanguageConfiguration.wordPattern)を定義できます。
+		 * これにはカスタムな正規表現を提供することも可能です。
 		 *
-		 * The position will be [adjusted](#TextDocument.validatePosition).
+		 * * *Note 1:* カスタム正規表現は、空の文字列と一致してはいけません。一致した場合は無視されます。
+		 *
+
+		 * * *Note 2:* カスタムの正規表現は複数行の文字列に一致せず、speed の名前で正規表現は単語をスペースに一致させるべきではありません。
+		 *
+		 * より複雑で、単語性でない場合は [`TextLine.text`](#TextLine.text) を使用してください。
+		 *
+		 * position は[調整](#TextDocument.validatePosition)されます。
 		 *
 		 * @param position A position.
 		 * @param regex Optional regular expression that describes what a word is.
-		 * @return A range spanning a word, or `undefined`.
+		 * @return 単語にまたがる範囲または`undefined`
 		 */
 		getWordRangeAtPosition(position: Position, regex?: RegExp): Range | undefined;
 
 		/**
-		 * Ensure a range is completely contained in this document.
+		 * このドキュメントに range が完全に含まれていることを確認します
 		 *
 		 * @param range A range.
-		 * @return The given range or a new, adjusted range.
+		 * @return 指定された範囲または新しい調整済み範囲
 		 */
 		validateRange(range: Range): Range;
 
 		/**
-		 * Ensure a position is contained in the range of this document.
+		 * このドキュメントの範囲内に、position が含まれていることを確認します
 		 *
 		 * @param position A position.
-		 * @return The given position or a new, adjusted position.
+		 * @return 指定された位置または新しい調整された位置
 		 */
 		validatePosition(position: Position): Position;
 	}
 
 	/**
-	 * Represents a line and character position, such as
-	 * the position of the cursor.
+	 * カーソルの位置のような行と文字の位置を表します
+
 	 *
-	 * Position objects are __immutable__. Use the [with](#Position.with) or
-	 * [translate](#Position.translate) methods to derive new positions
-	 * from an existing position.
+	 * Position オブジェクトは  __immutable__ です。既存の位置から新しい位置を導出するには [with](#Position.with) か [translate](#Position.translate) メソッドを使用してください。
+
+
 	 */
 	export class Position {
 
 		/**
-		 * The zero-based line value.
+		 * 0 から始まる行の値
 		 */
 		readonly line: number;
 
 		/**
-		 * The zero-based character value.
+		 * 0 から始まる文字値
 		 */
 		readonly character: number;
 
@@ -261,94 +272,94 @@ declare module 'vscode' {
 		constructor(line: number, character: number);
 
 		/**
-		 * Check if `other` is before this position.
+		 * 指定する位置の前に `other` があるか確認します
 		 *
 		 * @param other A position.
-		 * @return `true` if position is on a smaller line
-		 * or on the same line on a smaller character.
+		 * @return 位置が前にある場合、または前の文字で同じ行にある場合は `true`
+
 		 */
 		isBefore(other: Position): boolean;
 
 		/**
-		 * Check if `other` is before or equal to this position.
+		 * `other` が指定する位置の前か等しいかどうかを確認します
 		 *
 		 * @param other A position.
-		 * @return `true` if position is on a smaller line
-		 * or on the same line on a smaller or equal character.
+		 * @return 位置が前にある場合、または前の文字または同じ文字の同じ行にある場合は `true`
+
 		 */
 		isBeforeOrEqual(other: Position): boolean;
 
 		/**
-		 * Check if `other` is after this position.
+		 * 指定する位置の後ろに `other` があるか確認します
 		 *
 		 * @param other A position.
-		 * @return `true` if position is on a greater line
-		 * or on the same line on a greater character.
+		 * @return 位置が後ろにある場合、または後ろの文字で同じ行にある場合は `true`
+
 		 */
 		isAfter(other: Position): boolean;
 
 		/**
-		 * Check if `other` is after or equal to this position.
+		 * `other` が指定する位置の後ろか等しいかどうかを確認します
 		 *
 		 * @param other A position.
-		 * @return `true` if position is on a greater line
-		 * or on the same line on a greater or equal character.
+		 * @return 位置が後ろにある場合、または後ろの文字または同じ文字の同じ行にある場合は `true`
+
 		 */
 		isAfterOrEqual(other: Position): boolean;
 
 		/**
-		 * Check if `other` equals this position.
+		 * `other` が指定する位置に等しいか確認します
 		 *
 		 * @param other A position.
-		 * @return `true` if the line and character of the given position are equal to
-		 * the line and character of this position.
+		 * @return 指定された位置の行と文字がこの位置の行と文字と等しい場合は `true`
+
 		 */
 		isEqual(other: Position): boolean;
 
 		/**
-		 * Compare this to `other`.
+		 * 指定したものを `other` と比較
 		 *
 		 * @param other A position.
-		 * @return A number smaller than zero if this position is before the given position,
-		 * a number greater than zero if this position is after the given position, or zero when
-		 * this and the given position are equal.
+		 * @return この位置が指定された位置の前にある場合は 0 より小さい数値。この位置が指定された位置の後ろにある場合は 0 より大きい数値。これと指定した位置が等しい場合は 0 です。
+
+
 		 */
 		compareTo(other: Position): number;
 
 		/**
-		 * Create a new position relative to this position.
+		 * 指定する位置に相対的な新しい位置を作成します
 		 *
 		 * @param lineDelta Delta value for the line value, default is `0`.
 		 * @param characterDelta Delta value for the character value, default is `0`.
-		 * @return A position which line and character is the sum of the current line and
-		 * character and the corresponding deltas.
+		 * @return 行と文字の位置は、現在の行と文字と対応するデルタの合計です
+
 		 */
 		translate(lineDelta?: number, characterDelta?: number): Position;
 
 		/**
-		 * Derived a new position relative to this position.
+		 * 指定する位置と相対的な新しい位置を派生します
 		 *
 		 * @param change An object that describes a delta to this position.
-		 * @return A position that reflects the given delta. Will return `this` position if the change
-		 * is not changing anything.
+		 * @return 指定されたデルタを反映する位置。その変更が何も変更しない場合 `this`(この) の位置に戻ります。
+
 		 */
 		translate(change: { lineDelta?: number; characterDelta?: number; }): Position;
 
 		/**
-		 * Create a new position derived from this position.
+		 * 指定したポジションから派生した新しいポジションを作成します
 		 *
 		 * @param line Value that should be used as line value, default is the [existing value](#Position.line)
 		 * @param character Value that should be used as character value, default is the [existing value](#Position.character)
-		 * @return A position where line and character are replaced by the given values.
+		 * @return 行と文字が指定された値で置き換えられた位置
 		 */
 		with(line?: number, character?: number): Position;
 
 		/**
-		 * Derived a new position from this position.
+		 * 指定した位置から新しい位置を派生します
 		 *
 		 * @param change An object that describes a change to this position.
-		 * @return A position that reflects the given change. Will return `this` position if the change
-		 * is not changing anything.
+		 * @return 指定した変更を反映する位置。その変更が何も変更しない場合 `this`(この) の位置に戻ります。
+
 		 */
 		with(change: { line?: number; character?: number; }): Position;
 	}
