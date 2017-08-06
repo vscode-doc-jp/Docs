@@ -43,8 +43,11 @@
     * [C++](languages/cpp.md)
     * [Language Identifiers](languages/identifiers.md)
 * NODE.JS/JAVASCRIPT
-    * ~~Tutorial-Node.js~~
+    * ~~Node.js Tutorial~~
     * ~~Node.js Debugging~~
+    * ~~Node.js Deployment~~
+    * ~~React Tutorial~~
+    * ~~Angular Tutorial~~
     * ~~Extensions~~
 * EXTENSIONS
     * [Overview](extensions/overview.md)

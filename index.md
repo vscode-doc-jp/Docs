@@ -47,8 +47,11 @@ title: ようこそ
     * [C++](/docs/languages/cpp.html)
     * [Language Identifiers](/docs/languages/identifiers.html)
 * NODE.JS/JAVASCRIPT
-    * ~~Tutorial-Node.js~~
+    * ~~Node.js Tutorial~~
     * ~~Node.js Debugging~~
+    * ~~Node.js Deployment~~
+    * ~~React Tutorial~~
+    * ~~Angular Tutorial~~
     * ~~Extensions~~
 * EXTENSIONS
     * [Overview](/docs/extensions/overview.html)
