@@ -54,28 +54,30 @@ declare module 'vscode' {
 		readonly lineNumber: number;
 
 		/**
-		 * 行の区切り文字がない、行のテキスト
+		 * 行の区切り文字がない、この行のテキスト
 		 */
 		readonly text: string;
 
 		/**
-		 * 行の区切り文字がない、行の範囲
+		 * 行の区切り文字がない、この行の範囲
 		 */
 		readonly range: Range;
 
 		/**
-		 * 行の区切り文字で、行の範囲
+		 * 行の区切り文字で、この行の範囲
 		 */
 		readonly rangeIncludingLineBreak: Range;
 
 		/**
 		 * `/\s/` によって定義された空白文字ではない最初の文字のオフセット
-		 * **注** 行がすべて空白の場合行の長さが返されます。
+		 *
+		 * **Note** 行がすべて空白の場合行の長さが返されます。
 		 */
 		readonly firstNonWhitespaceCharacterIndex: number;
 
 		/**
-		 * 行が空白のみであるかどうか
+		 * この行が空白のみであるかどうか
+		 *
 		 *略語 : [TextLine.firstNonWhitespaceCharacterIndex](#TextLine.firstNonWhitespaceCharacterIndex) === [TextLine.text.length](#TextLine.text)
 		 */
 		readonly isEmptyOrWhitespace: boolean;
@@ -160,7 +162,7 @@ declare module 'vscode' {
 
 		 *
 		 * @param line A line number [0, lineCount]
-		 * @return [行](#TextLine)
+		 * @return [line](#TextLine)
 		 */
 		lineAt(line: number): TextLine;
 
@@ -170,18 +172,18 @@ declare module 'vscode' {
 		 * 返されるオブジェクトは live では**なく**、ドキュメントへの変更は反映されないことに注意してください。
 
 		 *
-		 * position は[調整](#TextDocument.validatePosition)されます。
+		 * position は [adjusted](#TextDocument.validatePosition) されます。
 		 *
 		 * @see [TextDocument.lineAt](#TextDocument.lineAt)
 		 * @param position A position.
-		 * @return [行](#TextLine)
+		 * @return [line](#TextLine)
 		 */
 		lineAt(position: Position): TextLine;
 
 		/**
 		 * positionを zero-based offset に変換します
 		 *
-		 * position は[調整](#TextDocument.validatePosition)されます。
+		 * position は [adjusted](#TextDocument.validatePosition) されます。
 		 *
 		 * @param position A position.
 		 * @return 有効な zero-based offset
@@ -199,7 +201,7 @@ declare module 'vscode' {
 		/**
 		 * このドキュメントのテキストを取得します
 		 *
-		 * 範囲を指定すると部分文字列を取得できます。範囲は [調整](#TextDocument.validateRange)されます。
+		 * 範囲を指定すると部分文字列を取得できます。範囲は [adjusted](#TextDocument.validateRange) されます。
 		 *
 		 * @param range Include only the text included by the range.
 		 * @return 指定された範囲内のテキストまたはテキスト全体
@@ -210,7 +212,7 @@ declare module 'vscode' {
 		 * 与えられた位置で単語の範囲を取得します
 		 *
 		 * 既定で単語は、 space, -, _, etc などのような区切り文字で定義されます。
-		 * さらに、言語ごとにカスタムな[単語の定義](#LanguageConfiguration.wordPattern)を定義できます。
+		 * さらに、言語ごとにカスタムな [word definitions](#LanguageConfiguration.wordPattern) を定義できます。
 		 * これにはカスタムな正規表現を提供することも可能です。
 		 *
 		 * * *Note 1:* カスタム正規表現は、空の文字列と一致してはいけません。一致した場合は無視されます。
@@ -220,7 +222,7 @@ declare module 'vscode' {
 		 *
 		 * より複雑で、単語性でない場合は [`TextLine.text`](#TextLine.text) を使用してください。
 		 *
-		 * position は[調整](#TextDocument.validatePosition)されます。
+		 * position は [adjusted](#TextDocument.validatePosition) されます。
 		 *
 		 * @param position A position.
 		 * @param regex Optional regular expression that describes what a word is.
@@ -272,7 +274,7 @@ declare module 'vscode' {
 		constructor(line: number, character: number);
 
 		/**
-		 * 指定する位置の前に `other` があるか確認します
+		 * この位置の前に `other` があるか確認します
 		 *
 		 * @param other A position.
 		 * @return 位置が前にある場合、または前の文字で同じ行にある場合は `true`
@@ -281,7 +283,7 @@ declare module 'vscode' {
 		isBefore(other: Position): boolean;
 
 		/**
-		 * `other` が指定する位置の前か等しいかどうかを確認します
+		 * `other` がこの位置の前か等しいかどうかを確認します
 		 *
 		 * @param other A position.
 		 * @return 位置が前にある場合、または前の文字または同じ文字の同じ行にある場合は `true`
@@ -290,7 +292,7 @@ declare module 'vscode' {
 		isBeforeOrEqual(other: Position): boolean;
 
 		/**
-		 * 指定する位置の後ろに `other` があるか確認します
+		 * この位置の後ろに `other` があるか確認します
 		 *
 		 * @param other A position.
 		 * @return 位置が後ろにある場合、または後ろの文字で同じ行にある場合は `true`
@@ -299,7 +301,7 @@ declare module 'vscode' {
 		isAfter(other: Position): boolean;
 
 		/**
-		 * `other` が指定する位置の後ろか等しいかどうかを確認します
+		 * `other` がこの位置の後ろか等しいかどうかを確認します
 		 *
 		 * @param other A position.
 		 * @return 位置が後ろにある場合、または後ろの文字または同じ文字の同じ行にある場合は `true`
@@ -308,7 +310,7 @@ declare module 'vscode' {
 		isAfterOrEqual(other: Position): boolean;
 
 		/**
-		 * `other` が指定する位置に等しいか確認します
+		 * `other` がこの位置に等しいか確認します
 		 *
 		 * @param other A position.
 		 * @return 指定された位置の行と文字がこの位置の行と文字と等しい場合は `true`
@@ -317,7 +319,7 @@ declare module 'vscode' {
 		isEqual(other: Position): boolean;
 
 		/**
-		 * 指定したものを `other` と比較
+		 * これを `other` と比較
 		 *
 		 * @param other A position.
 		 * @return この位置が指定された位置の前にある場合は 0 より小さい数値。この位置が指定された位置の後ろにある場合は 0 より大きい数値。これと指定した位置が等しい場合は 0 です。
@@ -327,7 +329,7 @@ declare module 'vscode' {
 		compareTo(other: Position): number;
 
 		/**
-		 * 指定する位置に相対的な新しい位置を作成します
+		 * この位置に相対的な新しい位置を作成します
 		 *
 		 * @param lineDelta Delta value for the line value, default is `0`.
 		 * @param characterDelta Delta value for the character value, default is `0`.
@@ -337,7 +339,7 @@ declare module 'vscode' {
 		translate(lineDelta?: number, characterDelta?: number): Position;
 
 		/**
-		 * 指定する位置と相対的な新しい位置を派生します
+		 * この位置と相対的な新しい位置を派生します
 		 *
 		 * @param change An object that describes a delta to this position.
 		 * @return 指定されたデルタを反映する位置。その変更が何も変更しない場合 `this`(この) の位置に戻ります。
@@ -346,7 +348,7 @@ declare module 'vscode' {
 		translate(change: { lineDelta?: number; characterDelta?: number; }): Position;
 
 		/**
-		 * 指定したポジションから派生した新しいポジションを作成します
+		 * このポジションから派生した新しいポジションを作成します
 		 *
 		 * @param line Value that should be used as line value, default is the [existing value](#Position.line)
 		 * @param character Value that should be used as character value, default is the [existing value](#Position.character)
@@ -355,7 +357,7 @@ declare module 'vscode' {
 		with(line?: number, character?: number): Position;
 
 		/**
-		 * 指定した位置から新しい位置を派生します
+		 * この位置から新しい位置を派生します
 		 *
 		 * @param change An object that describes a change to this position.
 		 * @return 指定した変更を反映する位置。その変更が何も変更しない場合 `this`(この) の位置に戻ります。
@@ -365,28 +367,30 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * A range represents an ordered pair of two positions.
-	 * It is guaranteed that [start](#Range.start).isBeforeOrEqual([end](#Range.end))
+	 * 範囲は順序付けられた 2 つの位置のペアで表します
 	 *
-	 * Range objects are __immutable__. Use the [with](#Range.with),
-	 * [intersection](#Range.intersection), or [union](#Range.union) methods
-	 * to derive new ranges from an existing range.
+	 * これは [start](#Range.start).isBeforeOrEqual([end](#Range.end)) が補償されるということです。
+	 *
+	 * Range オブジェクトは __immutable__ です。既存の範囲から新しい範囲を導出するには、[with](#Range.with)、[with](#Range.with)、[union](#Range.union) メソッドを使用してください。
+
+
 	 */
 	export class Range {
 
 		/**
-		 * The start position. It is before or equal to [end](#Range.end).
+		 * 開始位置。これは [end](#Range.end) と同じかそれより前です。
 		 */
 		readonly start: Position;
 
 		/**
-		 * The end position. It is after or equal to [start](#Range.start).
+		 * 終了位置。これは [start](#Range.start) と同じかそれより後ろです。
 		 */
 		readonly end: Position;
 
 		/**
-		 * Create a new range from two positions. If `start` is not
-		 * before or equal to `end`, the values will be swapped.
+		 * 2 つの位置から新しい範囲を作成します
+		 *
+		 * `start` が `end` の前になければ値は入れ替えられます。
 		 *
 		 * @param start A position.
 		 * @param end A position.
@@ -394,8 +398,9 @@ declare module 'vscode' {
 		constructor(start: Position, end: Position);
 
 		/**
-		 * Create a new range from number coordinates. It is a shorter equivalent of
-		 * using `new Range(new Position(startLine, startCharacter), new Position(endLine, endCharacter))`
+		 * 数値座標から新しい範囲を作成します
+		 *
+		 * これは `new Range(new Position(startLine, startCharacter), new Position(endLine, endCharacter))` を使用することと同じです。
 		 *
 		 * @param startLine A zero-based line value.
 		 * @param startCharacter A zero-based character value.
@@ -405,90 +410,92 @@ declare module 'vscode' {
 		constructor(startLine: number, startCharacter: number, endLine: number, endCharacter: number);
 
 		/**
-		 * `true` if `start` and `end` are equal.
+		 * `start` と `end` が等しい場合は `true` を返します
 		 */
 		isEmpty: boolean;
 
 		/**
-		 * `true` if `start.line` and `end.line` are equal.
+		 * `start.line` と `end.line` が等しい場合は `true` を返します
 		 */
 		isSingleLine: boolean;
 
 		/**
-		 * Check if a position or a range is contained in this range.
+		 * この範囲に位置もしくは範囲が含まれているかどうかを確認します
 		 *
 		 * @param positionOrRange A position or a range.
-		 * @return `true` if the position or range is inside or equal
+		 * @return 位置または範囲が指定した範囲の中またはそれに等しい場合は `true` を返します
 		 * to this range.
 		 */
 		contains(positionOrRange: Position | Range): boolean;
 
 		/**
-		 * Check if `other` equals this range.
+		 *`other` がこの範囲に等しいかどうかを確認します
 		 *
 		 * @param other A range.
-		 * @return `true` when start and end are [equal](#Position.isEqual) to
-		 * start and end of this range.
+		 * @return 指定した範囲の開始と終了には、開始と終了が[equal](#Position.isEqual)とき `true` になります
+
 		 */
 		isEqual(other: Range): boolean;
 
 		/**
-		 * Intersect `range` with this range and returns a new range or `undefined`
-		 * if the ranges have no overlap.
+		 * この範囲で `range` をインターセクトして、範囲に重複がない場合は、新しい範囲または `undefined` を返します
+
 		 *
 		 * @param range A range.
-		 * @return A range of the greater start and smaller end positions. Will
-		 * return undefined when there is no overlap.
+		 * @return その後ろの開始位置とその前の終了位置の範囲。
+		 * 重複がない場合は未定義に戻ります。
 		 */
 		intersection(range: Range): Range | undefined;
 
 		/**
-		 * Compute the union of `other` with this range.
+		 * この範囲で `other` のユニオンを計算します
 		 *
 		 * @param other A range.
-		 * @return A range of smaller start position and the greater end position.
+		 * @return その前の開始位置とその後ろの終了位置の範囲。
 		 */
 		union(other: Range): Range;
 
 		/**
-		 * Derived a new range from this range.
+		 * この範囲から新しい範囲を派生します
 		 *
 		 * @param start A position that should be used as start. The default value is the [current start](#Range.start).
 		 * @param end A position that should be used as end. The default value is the [current end](#Range.end).
-		 * @return A range derived from this range with the given start and end position.
-		 * If start and end are not different `this` range will be returned.
+		 * @return 指定された開始位置と終了位置で範囲から派生した範囲。
+		 * 開始と終了が一緒の場合は `this` (こ) の範囲が返されます。
 		 */
 		with(start?: Position, end?: Position): Range;
 
 		/**
-		 * Derived a new range from this range.
+		 * この範囲から新しい範囲を派生します
 		 *
 		 * @param change An object that describes a change to this range.
-		 * @return A range that reflects the given change. Will return `this` range if the change
-		 * is not changing anything.
+		 * @return 指定された変更を反映する範囲。その変更が何も変更しない場合 `this`(こ) の範囲に戻ります。
+
 		 */
 		with(change: { start?: Position, end?: Position }): Range;
 	}
 
 	/**
-	 * Represents a text selection in an editor.
+	 * エディター内のテキスト選択範囲を表します
 	 */
 	export class Selection extends Range {
 
 		/**
-		 * The position at which the selection starts.
-		 * This position might be before or after [active](#Selection.active).
+		 * 選択が始まる範囲の位置
+		 *
+		 * この位置は [active](#Selection.active) の前後にある必要があります。
 		 */
 		anchor: Position;
 
 		/**
-		 * The position of the cursor.
-		 * This position might be before or after [anchor](#Selection.anchor).
+		 * カーソルの位置
+		 *
+		 * この位置は [anchor](#Selection.anchor) の前後にある必要があります。
 		 */
 		active: Position;
 
 		/**
-		 * Create a selection from two postions.
+		 * 2 つの位置から選択範囲を作成します
 		 *
 		 * @param anchor A position.
 		 * @param active A position.
@@ -496,7 +503,7 @@ declare module 'vscode' {
 		constructor(anchor: Position, active: Position);
 
 		/**
-		 * Create a selection from four coordinates.
+		 * 4 つの座標から選択範囲を作成します
 		 *
 		 * @param anchorLine A zero-based line value.
 		 * @param anchorCharacter A zero-based character value.
@@ -506,44 +513,45 @@ declare module 'vscode' {
 		constructor(anchorLine: number, anchorCharacter: number, activeLine: number, activeCharacter: number);
 
 		/**
-		 * A selection is reversed if [active](#Selection.active).isBefore([anchor](#Selection.anchor)).
+		 * [active](#Selection.active).isBefore([anchor](#Selection.anchor)) の場合選択範囲が逆になります
 		 */
 		isReversed: boolean;
 	}
 
 	/**
-	 * Represents sources that can cause [selection change events](#window.onDidChangeTextEditorSelection).
+	 * [selection change events](#window.onDidChangeTextEditorSelection) を引き起こす可能性があるソースを表します
 	*/
 	export enum TextEditorSelectionChangeKind {
 		/**
-		 * Selection changed due to typing in the editor.
+		 * エディターでの入力によって選択範囲が変更
 		 */
 		Keyboard = 1,
 		/**
-		 * Selection change due to clicking in the editor.
+		 * エディターでのクリックによって選択範囲が変更
 		 */
 		Mouse = 2,
 		/**
-		 * Selection changed because a command ran.
+		 * コマンドが実行されたことによって選択範囲が変更
 		 */
 		Command = 3
 	}
 
 	/**
-	 * Represents an event describing the change in a [text editor's selections](#TextEditor.selections).
+	 *  [text editor's selections](#TextEditor.selections)での変更を説明するイベントを表します
 	 */
 	export interface TextEditorSelectionChangeEvent {
 		/**
-		 * The [text editor](#TextEditor) for which the selections have changed.
+		 * 選択が変更された [text editor](#TextEditor)
 		 */
 		textEditor: TextEditor;
 		/**
-		 * The new value for the [text editor's selections](#TextEditor.selections).
+		 * [text editor's selections](#TextEditor.selections) 用の新しい値
 		 */
 		selections: Selection[];
 		/**
-		 * The [change kind](#TextEditorSelectionChangeKind) which has triggered this
-		 * event. Can be `undefined`.
+		 * このイベントを発生させた [change kind](#TextEditorSelectionChangeKind)
+		 *
+		 *`undefined` にすることができます。
 		 */
 		kind?: TextEditorSelectionChangeKind;
 	}
