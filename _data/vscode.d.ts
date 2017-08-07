@@ -54,17 +54,17 @@ declare module 'vscode' {
 		readonly lineNumber: number;
 
 		/**
-		 * 行の区切り文字がない、この行のテキスト
+		 * 行の区切り文字を含まない、この行のテキスト
 		 */
 		readonly text: string;
 
 		/**
-		 * 行の区切り文字がない、この行の範囲
+		 * 行の区切り文字を含まない、この行の範囲
 		 */
 		readonly range: Range;
 
 		/**
-		 * 行の区切り文字で、この行の範囲
+		 * 行の区切り文字を含む、この行の範囲
 		 */
 		readonly rangeIncludingLineBreak: Range;
 
@@ -124,14 +124,14 @@ declare module 'vscode' {
 		readonly version: number;
 
 		/**
-		 * 無修正の変更がある場合は `true`
+		 * 無修正の変更がある場合は `true` です
 		 */
 		readonly isDirty: boolean;
 
 		/**
-		 * ドキュメントが閉じられている場合は `true`
+		 * ドキュメントが閉じられている場合は `true` です
 		 *
-		  *閉じたドキュメントは同期されず、同じリソースが再度開かれたときに再利用されません。
+		  *閉じたドキュメントは同期されず、同じリソースが再度開かれたとき再利用されません。
 		 */
 		readonly isClosed: boolean;
 
@@ -145,7 +145,7 @@ declare module 'vscode' {
 		save(): Thenable<boolean>;
 
 		/**
-		 * このドキュメントで主に使用されている [end of line](#EndOfLine)シークエンス
+		 * このドキュメントで主に使用されている [end of line](#EndOfLine) シークエンス
 
 		 */
 		readonly eol: EndOfLine;
@@ -158,7 +158,7 @@ declare module 'vscode' {
 		/**
 		 * 行番号を意味するテキスト行を返します
 		 *
-		 * 返されるオブジェクトは live では**なく**、ドキュメントへの変更は反映されないことに注意してください。
+		 * 返されるオブジェクトは live では**ありません**、ドキュメントへの変更は反映されないことに注意してください。
 
 		 *
 		 * @param line A line number [0, lineCount]
@@ -169,7 +169,7 @@ declare module 'vscode' {
 		/**
 		 * position を示すテキスト行を返します
 		 *
-		 * 返されるオブジェクトは live では**なく**、ドキュメントへの変更は反映されないことに注意してください。
+		 * 返されるオブジェクトは live では**ありません**、ドキュメントへの変更は反映されないことに注意してください。
 
 		 *
 		 * position は [adjusted](#TextDocument.validatePosition) されます。
@@ -201,7 +201,7 @@ declare module 'vscode' {
 		/**
 		 * このドキュメントのテキストを取得します
 		 *
-		 * 範囲を指定すると部分文字列を取得できます。範囲は [adjusted](#TextDocument.validateRange) されます。
+		 * 範囲を指定すると文字列の一部を取得できます。範囲は [adjusted](#TextDocument.validateRange) されます。
 		 *
 		 * @param range Include only the text included by the range.
 		 * @return 指定された範囲内のテキストまたはテキスト全体
@@ -248,7 +248,7 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * カーソルの位置のような行と文字の位置を表します
+	 * カーソルの位置を行と文字の位置で表します
 
 	 *
 	 * Position オブジェクトは  __immutable__ です。既存の位置から新しい位置を導出するには [with](#Position.with) か [translate](#Position.translate) メソッドを使用してください。
@@ -481,7 +481,7 @@ declare module 'vscode' {
 	export class Selection extends Range {
 
 		/**
-		 * 選択が始まる範囲の位置
+		 * 選択範囲が始まる範囲の位置
 		 *
 		 * この位置は [active](#Selection.active) の前後にある必要があります。
 		 */
@@ -557,164 +557,173 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Represents an event describing the change in a [text editor's options](#TextEditor.options).
+	 * [text editor's options](#TextEditor.options) での変更を説明するイベントを表します
 	 */
 	export interface TextEditorOptionsChangeEvent {
 		/**
-		 * The [text editor](#TextEditor) for which the options have changed.
+		 * オプションが変更された  [text editor](#TextEditor)
 		 */
 		textEditor: TextEditor;
 		/**
-		 * The new value for the [text editor's options](#TextEditor.options).
+		 * [text editor's options](#TextEditor.options) の新しい値
 		 */
 		options: TextEditorOptions;
 	}
 
 	/**
-	 * Represents an event describing the change of a [text editor's view column](#TextEditor.viewColumn).
+	 * [text editor's view column](#TextEditor.viewColumn) の変更を説明するイベントを表します
 	 */
 	export interface TextEditorViewColumnChangeEvent {
 		/**
-		 * The [text editor](#TextEditor) for which the options have changed.
+		 * オプションが変更された  [text editor](#TextEditor)
 		 */
 		textEditor: TextEditor;
 		/**
-		 * The new value for the [text editor's view column](#TextEditor.viewColumn).
+		 * [text editor's view column](#TextEditor.viewColumn) の新しい値
 		 */
 		viewColumn: ViewColumn;
 	}
 
 	/**
-	 * Rendering style of the cursor.
+	 * カーソルの描画スタイル
 	 */
 	export enum TextEditorCursorStyle {
 		/**
-		 * Render the cursor as a vertical thick line.
+		 * カーソルを垂直の太い線として描画します
 		 */
 		Line = 1,
 		/**
-		 * Render the cursor as a block filled.
+		 * カーソルを塗りつぶされたブロックで描画します
 		 */
 		Block = 2,
 		/**
-		 * Render the cursor as a thick horizontal line.
+		 * カーソルを太い水平線として描画します
 		 */
 		Underline = 3,
 		/**
-		 * Render the cursor as a vertical thin line.
+		 * カーソルを細い線として描画します
 		 */
 		LineThin = 4,
 		/**
-		 * Render the cursor as a block outlined.
+		 * カーソルをアウトラインのブロックとして描画します
 		 */
 		BlockOutline = 5,
 		/**
-		 * Render the cursor as a thin horizontal line.
+		 * カーソルを細い水平線として描画します
 		 */
 		UnderlineThin = 6
 	}
 
 	/**
-	 * Rendering style of the line numbers.
+	 * 行番号の描画スタイル
 	 */
 	export enum TextEditorLineNumbersStyle {
 		/**
-		 * Do not render the line numbers.
+		 * 秒番号を描画しない
 		 */
 		Off = 0,
 		/**
-		 * Render the line numbers.
+		 * 秒番号を描画する
 		 */
 		On = 1,
 		/**
-		 * Render the line numbers with values relative to the primary cursor location.
+		 * プライマリ カーソルの位置を基準にした値で行番号を描画します
 		 */
 		Relative = 2
 	}
 
 	/**
-	 * Represents a [text editor](#TextEditor)'s [options](#TextEditor.options).
+	 * [text editor](#TextEditor) の [options](#TextEditor.options) を示します
 	 */
 	export interface TextEditorOptions {
 
 		/**
-		 * The size in spaces a tab takes. This is used for two purposes:
-		 *  - the rendering width of a tab character;
-		 *  - the number of spaces to insert when [insertSpaces](#TextEditorOptions.insertSpaces) is true.
+		 * タブのスペース サイズ。これは 2 つの目的で使用されます:
+		 *  - タブ文字の描画幅;
+		 *  - [insertSpaces](#TextEditorOptions.insertSpaces) が true の時に挿入するスペースの数
 		 *
-		 * When getting a text editor's options, this property will always be a number (resolved).
-		 * When setting a text editor's options, this property is optional and it can be a number or `"auto"`.
+		 * テキスト エディターのオプションを取得するき、このプロパティは常に数値(解決済み)になります。
+		 *
+		 * テキスト エディターのオプションを設定するとき、このプロパティはオプションであり数値または `"auto"` にすることができます。
 		 */
 		tabSize?: number | string;
 
 		/**
-		 * When pressing Tab insert [n](#TextEditorOptions.tabSize) spaces.
-		 * When getting a text editor's options, this property will always be a boolean (resolved).
-		 * When setting a text editor's options, this property is optional and it can be a boolean or `"auto"`.
+		 * Tab を押したとき  [n](#TextEditorOptions.tabSize) 個のスペースを挿入します
+		 *
+		 * テキスト エディターのオプションを取得するとき、このプロパティは常にブール値(解決済み)になります。
+		 *
+		 * テキスト エディターのオプションを設定するとき、このプロパティはオプションであり数値または`"auto"`にすることができます。
 		 */
 		insertSpaces?: boolean | string;
 
 		/**
-		 * The rendering style of the cursor in this editor.
-		 * When getting a text editor's options, this property will always be present.
-		 * When setting a text editor's options, this property is optional.
+		 * このエディターでのカーソルの描画スタイル
+		 *
+		 * テキスト エディターのオプションを取得するとき、このプロパティは常に存在します。
+		 *
+		 * テキスト エディターのオプションを設定するとき、このプロパティはオプションです。
 		 */
 		cursorStyle?: TextEditorCursorStyle;
 
 		/**
-		 * Render relative line numbers w.r.t. the current line number.
-		 * When getting a text editor's options, this property will always be present.
-		 * When setting a text editor's options, this property is optional.
+		 * 現在の行番号を相対的な行番号で描画します
+		 *
+		 * テキスト エディターのオプションを取得するとき、このプロパティは常に存在します。
+		 *
+		 * テキスト エディターのオプションを設定するとき、このプロパティはオプションです。
 		 */
 		lineNumbers?: TextEditorLineNumbersStyle;
-	}
+}
 
 	/**
-	 * Represents a handle to a set of decorations
-	 * sharing the same [styling options](#DecorationRenderOptions) in a [text editor](#TextEditor).
+	 * [text editor](#TextEditor) で同じ [styling options](#DecorationRenderOptions) を共有する装飾のハンドルを表します
+
 	 *
-	 * To get an instance of a `TextEditorDecorationType` use
-	 * [createTextEditorDecorationType](#window.createTextEditorDecorationType).
+	 * `TextEditorDecorationType` のインスタンスを取得するには [createTextEditorDecorationType](#window.createTextEditorDecorationType) を使用してください。
+
 	 */
 	export interface TextEditorDecorationType {
 
 		/**
-		 * Internal representation of the handle.
+		 * ハンドルの内部表現
 		 */
 		readonly key: string;
 
 		/**
-		 * Remove this decoration type and all decorations on all text editors using it.
+		 * この装飾タイプとそれを使用するテキスト エディターのすべての装飾を削除します。
 		 */
 		dispose(): void;
 	}
 
 	/**
-	 * Represents different [reveal](#TextEditor.revealRange) strategies in a text editor.
+	 * テキスト エディターでの [reveal](#TextEditor.revealRange) strategies を表します
 	 */
 	export enum TextEditorRevealType {
 		/**
-		 * The range will be revealed with as little scrolling as possible.
+		 * 範囲はできるだけ少ないスクロールで表示されます
 		 */
 		Default = 0,
 		/**
-		 * The range will always be revealed in the center of the viewport.
+		 * 範囲は常にビューポートの中央に表示します
 		 */
 		InCenter = 1,
 		/**
-		 * If the range is outside the viewport, it will be revealed in the center of the viewport.
-		 * Otherwise, it will be revealed with as little scrolling as possible.
+		 * 範囲がビューポートの外側にある場合は、ビューポート中央に表示されます。
+		 *
+		 * それ以外の場合は、できるだけスクロールしないで表示します。
 		 */
 		InCenterIfOutsideViewport = 2,
 		/**
-		 * The range will always be revealed at the top of the viewport.
+		 * 範囲は常にビューポートの上部に表示します
 		 */
 		AtTop = 3
 	}
 
 	/**
-	 * Represents different positions for rendering a decoration in an [overview ruler](#DecorationRenderOptions.overviewRulerLane).
-	 * The overview ruler supports three lanes.
+	 * [overview ruler](#DecorationRenderOptions.overviewRulerLane)での装飾の描画用の異なる位置を表します
+	 *
+	 * 概要ルーラーは 3 つのレーンに対応しています。
 	 */
 	export enum OverviewRulerLane {
 		Left = 1,
@@ -724,224 +733,238 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Describes the behavior of decorations when typing/editing at their edges.
+	 * 入力/編集するとき、エッジでのデコレーションの動作を説明します
 	 */
 	export enum DecorationRangeBehavior {
 		/**
-		 * The decoration's range will widen when edits occur at the start or end.
+		 * 初めのまたは終わりで編集が行われるとデコレーションの範囲が広がります
 		 */
 		OpenOpen = 0,
 		/**
-		 * The decoration's range will not widen when edits occur at the start of end.
+		 * 終わりで変更が行われるときデコレーションの範囲は広がりません
 		 */
 		ClosedClosed = 1,
 		/**
-		 * The decoration's range will widen when edits occur at the start, but not at the end.
+		 * 初めで編集が行われるときにデコレーションの範囲が広がりますが、終わりでは行われません。
 		 */
 		OpenClosed = 2,
 		/**
-		 * The decoration's range will widen when edits occur at the end, but not at the start.
+		 * 終わりで編集が行われるときにデコレーションの範囲が広がりますが、初めでは行われません。
 		 */
 		ClosedOpen = 3
 	}
 
 	/**
-	 * Represents options to configure the behavior of showing a [document](#TextDocument) in an [editor](#TextEditor).
+	 * [document](#TextDocument) を [editor](#TextEditor) に表示する動作を構成するオプションを表します
 	 */
 	export interface TextDocumentShowOptions {
 		/**
-		 * An optional view column in which the [editor](#TextEditor) should be shown.
-		 * The default is the [one](#ViewColumn.One), other values are adjusted to
-		 * be __Min(column, columnCount + 1)__.
+		 * オプションのビュー列で、[editor](#TextEditor) を表示します
+		 *
+		 * 既定値は [one](#ViewColumn.One) で、他の値は __Min(column, columnCount + 1)__ に調整されます。
+
 		 */
 		viewColumn?: ViewColumn;
 
 		/**
-		 * An optional flag that when `true` will stop the [editor](#TextEditor) from taking focus.
+		 * オプション フラグ。 `true` を指定するとき、[editor](#TextEditor) はフォーカスをとりません。
 		 */
 		preserveFocus?: boolean;
 
 		/**
-		 * An optional flag that controls if an [editor](#TextEditor)-tab will be replaced
-		 * with the next editor or if it will be kept.
+		 * オプション フラグ。 [editor](#TextEditor)-tab を次のエディターに置き換えるかどうかまたはそれを保持するかどうか。
+
 		 */
 		preview?: boolean;
 
 		/**
-		 * An optional selection to apply for the document in the [editor](#TextEditor).
+		 * [editor](#TextEditor) のドキュメントを適応するオプションの選択範囲。
 		 */
 		selection?: Range;
 	}
 
 	/**
-	 * A reference to one of the workbench colors as defined in https://code.visualstudio.com/docs/getstarted/theme-color-reference.
-	 * Using a theme color is preferred over a custom color as it gives theme authors and users the possibility to change the color.
+	 * https://code.visualstudio.com/docs/getstarted/theme-color-reference で定義されているワークベンチ配色のいずれかへの参照
+	 *
+	 * テーマの配色を使用するとき、テーマ作成者とユーザーが色を変更する可能性があるため、カスタム配色よりも優先されます。
 	 */
 	export class ThemeColor {
 
 		/**
-		 * Creates a reference to a theme color.
+		 * テーマ配色への参照を作成します
 		 * @param id of the color. The available colors are listed in https://code.visualstudio.com/docs/getstarted/theme-color-reference.
 		 */
 		constructor(id: string);
 	}
 
 	/**
-	 * Represents theme specific rendering styles for a [text editor decoration](#TextEditorDecorationType).
+	 * [text editor decoration](#TextEditorDecorationType) 用のテーマ固有の描画スタイルを表します
 	 */
 	export interface ThemableDecorationRenderOptions {
 		/**
-		 * Background color of the decoration. Use rgba() and define transparent background colors to play well with other decorations.
-		 * Alternativly a color from the color registry an be [referenced](#ColorIdentifier).
+		 * デコレーションの背景色。rgba() を使用して透明な背景色を定義することで、他のデコレーションとうまく一緒になります。
+		 *
+		 * あるいはカラー レジストリの配色が [referenced](#ColorIdentifier) されます
 		 */
 		backgroundColor?: string | ThemeColor;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		outline?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'outline' for setting one or more of the individual outline properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のアウトライン プロパティを設定する場合は 'outline' を使用する方が効果的です。
 		 */
 		outlineColor?: string | ThemeColor;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'outline' for setting one or more of the individual outline properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のアウトライン プロパティを設定する場合は 'outline' を使用する方が効果的です。
 		 */
 		outlineStyle?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'outline' for setting one or more of the individual outline properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のアウトライン プロパティを設定する場合は 'outline' を使用する方が効果的です。
 		 */
 		outlineWidth?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		border?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'border' for setting one or more of the individual border properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のボーダー プロパティを設定する場合は 'border' を使用する方が効果的です。
 		 */
 		borderColor?: string | ThemeColor;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'border' for setting one or more of the individual border properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のボーダー プロパティを設定する場合は 'border' を使用する方が効果的です。
 		 */
 		borderRadius?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'border' for setting one or more of the individual border properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のボーダー プロパティを設定する場合は 'border' を使用する方が効果的です。
 		 */
 		borderSpacing?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'border' for setting one or more of the individual border properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のボーダー プロパティを設定する場合は 'border' を使用する方が効果的です。
 		 */
 		borderStyle?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
-		 * Better use 'border' for setting one or more of the individual border properties.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
+		 *
+		 * 1 つ以上のボーダー プロパティを設定する場合は 'border' を使用する方が効果的です。
 		 */
 		borderWidth?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		textDecoration?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		cursor?: string;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		color?: string | ThemeColor;
 
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		letterSpacing?: string;
 
 		/**
-		 * An **absolute path** or an URI to an image to be rendered in the gutter.
+		 * **絶対パス** または ガターに描画する画像への URI
 		 */
 		gutterIconPath?: string | Uri;
 
 		/**
-		 * Specifies the size of the gutter icon.
-		 * Available values are 'auto', 'contain', 'cover' and any percentage value.
-		 * For further information: https://msdn.microsoft.com/en-us/library/jj127316(v=vs.85).aspx
+		 * ガターアイコンのサイズを指定します
+		 *
+		 * 使用可能な値は  'auto', 'contain', 'cover', 任意のパーセント値です。
+		 *
+		 * 詳細: https://msdn.microsoft.com/en-us/library/jj127316(v=vs.85).aspx
 		 */
 		gutterIconSize?: string;
 
 		/**
-		 * The color of the decoration in the overview ruler. Use rgba() and define transparent colors to play well with other decorations.
+		 * 概要ルーラーのデコレーション色
+		 *rgba() を使用して透明な色を定義することで、他のデコレーションとうまく一緒になります。
 		 */
 		overviewRulerColor?: string | ThemeColor;
 
 		/**
-		 * Defines the rendering options of the attachment that is inserted before the decorated text
+		 * デコレーションされたテキストの前に挿入される attachment の描画オプションを定義します
 		 */
 		before?: ThemableDecorationAttachmentRenderOptions;
 
 		/**
-		 * Defines the rendering options of the attachment that is inserted after the decorated text
+		 * デコレーションされたテキストの後ろに挿入される attachment の描画オプションを定義します
 		 */
 		after?: ThemableDecorationAttachmentRenderOptions;
 	}
 
 	export interface ThemableDecorationAttachmentRenderOptions {
 		/**
-		 * Defines a text content that is shown in the attachment. Either an icon or a text can be shown, but not both.
+		 * attachment に表示されるテキスト コンテンツを定義します。アイコンまたはテキストのいずれかを表示できますが、両方を表示することはできません。
 		 */
 		contentText?: string;
 		/**
-		 * An **absolute path** or an URI to an image to be rendered in the attachment. Either an icon
-		 * or a text can be shown, but not both.
+		 * **絶対パス** または attachment に描画する画像への URI。アイコンまたはテキストのいずれかを表示できますが、両方を表示することはできません。
+
 		 */
 		contentIconPath?: string | Uri;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		border?: string;
 		/**
-		 * CSS styling property that will be applied to text enclosed by a decoration.
+		 * デコレーションで囲まれたテキストに適用される CSS スタイル プロパティ
 		 */
 		borderColor?: string | ThemeColor;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		textDecoration?: string;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		color?: string | ThemeColor;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		backgroundColor?: string | ThemeColor;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		margin?: string;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		width?: string;
 		/**
-		 * CSS styling property that will be applied to the decoration attachment.
+		 * デコレーション attachment に適応される CSS スタイル プロパティ
 		 */
 		height?: string;
 	}
@@ -3936,34 +3959,35 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Namespace describing the environment the editor runs in.
+	 * エディターが実行される環境を説明する名前空間
 	 */
 	export namespace env {
 
 		/**
-		 * The application name of the editor, like 'VS Code'.
+		 * 'VS Code' のようなエディターのアプリケーション名
 		 *
 		 * @readonly
 		 */
 		export let appName: string;
 
 		/**
-		 * Represents the preferred user-language, like `de-CH`, `fr`, or `en-US`.
+		 * `de-CH`, `fr`, `en-US` のようなユーザーが設定したユーザーの言語を表します
 		 *
 		 * @readonly
 		 */
 		export let language: string;
 
 		/**
-		 * A unique identifier for the computer.
+		 * そのコンピューターを示すユニークな識別子
 		 *
 		 * @readonly
 		 */
 		export let machineId: string;
 
 		/**
-		 * A unique identifier for the current session.
-		 * Changes each time the editor is started.
+		 * 現在のセッションを示すユニークな識別子
+		 *
+		 * エディターが起動されるたびに変更されます
 		 *
 		 * @readonly
 		 */
@@ -5593,11 +5617,12 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Namespace for dealing with installed extensions. Extensions are represented
-	 * by an [extension](#Extension)-interface which allows to reflect on them.
+	 * インストールされた拡張機能を扱うための名前空間
 	 *
-	 * Extension writers can provide APIs to other extensions by returning their API public
-	 * surface from the `activate`-call.
+	 * 拡張機能は、それらを反映することができる [extension](#Extension) インターフェイスに表示します。
+
+	 * 拡張機能の作成者は API の public surface を `activate`-call (アクティ化呼び出し) から返すことによって他の拡張機能に API を提供することができます。(?)
+
 	 *
 	 * ```javascript
 	 * export function activate(context: vscode.ExtensionContext) {
@@ -5613,9 +5638,9 @@ declare module 'vscode' {
 	 * 	return api;
 	 * }
 	 * ```
-	 * When depending on the API of another extension add an `extensionDependency`-entry
-	 * to `package.json`, and use the [getExtension](#extensions.getExtension)-function
-	 * and the [exports](#Extension.exports)-property, like below:
+	 * 別の拡張機能の API に依存するときは、`extensionDependency` エントリを `package.json` に追加し、 [getExtension](#extensions.getExtension)-関数と [getExtension](#extensions.getExtension)-関数を以下のように使用します:
+
+
 	 *
 	 * ```javascript
 	 * let mathExt = extensions.getExtension('genius.math');
@@ -5627,37 +5652,39 @@ declare module 'vscode' {
 	export namespace extensions {
 
 		/**
-		 * Get an extension by its full identifier in the form of: `publisher.name`.
+		 * 拡張機能を `publisher.name` の形で完全な識別子を取得します
 		 *
 		 * @param extensionId An extension identifier.
-		 * @return An extension or `undefined`.
+		 * @return 拡張機能または `undefined`
 		 */
 		export function getExtension(extensionId: string): Extension<any> | undefined;
 
 		/**
-		 * Get an extension its full identifier in the form of: `publisher.name`.
+		 * 拡張機能を `publisher.name` の形で識別子を取得します
 		 *
 		 * @param extensionId An extension identifier.
-		 * @return An extension or `undefined`.
+		 * @return 拡張機能または `undefined`
 		 */
 		export function getExtension<T>(extensionId: string): Extension<T> | undefined;
 
 		/**
-		 * All extensions currently known to the system.
+		 * 現在システムに登録されているすべての拡張機能
 		 */
 		export let all: Extension<any>[];
 	}
 }
 
 /**
- * Thenable is a common denominator between ES6 promises, Q, jquery.Deferred, WinJS.Promise,
- * and others. This API makes no assumption about what promise libary is being used which
- * enables reusing existing code without migrating to a specific promise implementation. Still,
- * we recommend the use of native promises which are available in this editor.
+ * Thenable は ES6 promises, Q, jquery.Deferred, WinJS.Promise, その他 の間で共通です。
+ *
+ * この API は 特定の promise の実装に移行せずに、既存のコードを再利用することができる promise libary が使用されることについては想定しません。
+ *
+
+ * それでも、このエディターで利用可能な native promises の使用を推奨します。
  */
 interface Thenable<T> {
 	/**
-	* Attaches callbacks for the resolution and/or rejection of the Promise.
+	* Promise の解決やリジェクトのコールバックをアタッチします。
 	* @param onfulfilled The callback to execute when the Promise is resolved.
 	* @param onrejected The callback to execute when the Promise is rejected.
 	* @returns A Promise for the completion of which ever callback is executed.
