@@ -674,7 +674,7 @@ declare module 'vscode' {
 		 * テキスト エディターのオプションを設定するとき、このプロパティはオプションです。
 		 */
 		lineNumbers?: TextEditorLineNumbersStyle;
-}
+	}
 
 	/**
 	 * [text editor](#TextEditor) で同じ [styling options](#DecorationRenderOptions) を共有する装飾のハンドルを表します
