@@ -784,7 +784,7 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * https://code.visualstudio.com/docs/getstarted/theme-color-reference で定義されているワークベンチ配色のいずれかへの参照
+	 * https://code.visualstudio.com/docs/getstarted/theme-color-reference で定義されるワークベンチ配色のいずれかへの参照
 	 *
 	 * テーマの配色を使用するとき、テーマ作成者とユーザーが色を変更する可能性があるため、カスタム配色よりも優先されます。
 	 */
@@ -970,79 +970,81 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Represents rendering styles for a [text editor decoration](#TextEditorDecorationType).
+	 * [text editor decoration](#TextEditorDecorationType) 用の描画スタイルを表します
 	 */
 	export interface DecorationRenderOptions extends ThemableDecorationRenderOptions {
 		/**
-		 * Should the decoration be rendered also on the whitespace after the line text.
-		 * Defaults to `false`.
+		 * デコレーションは行テキストの後ろの空白でも表示されるべきか
+		 *
+		 * 既定は `false` です
 		 */
 		isWholeLine?: boolean;
 
 		/**
-		 * Customize the growing behavior of the decoration when edits occur at the edges of the decoration's range.
-		 * Defaults to `DecorationRangeBehavior.OpenOpen`.
+		 * デコレーションの範囲のエッジで編集が行われたとき、デコレーションのどうだが変化するようにカスタマイズします
+		 *
+		 * 既定は `DecorationRangeBehavior.OpenOpen` です。
 		 */
 		rangeBehavior?: DecorationRangeBehavior;
 
 		/**
-		 * The position in the overview ruler where the decoration should be rendered.
+		 * デコレーションを描画するべき概要ルーラーの位置
 		 */
 		overviewRulerLane?: OverviewRulerLane;
 
 		/**
-		 * Overwrite options for light themes.
+		 * light theme 用の上書きオプション
 		 */
 		light?: ThemableDecorationRenderOptions;
 
 		/**
-		 * Overwrite options for dark themes.
+		 * dark theme 用の上書きオプション
 		 */
 		dark?: ThemableDecorationRenderOptions;
 	}
 
 	/**
-	 * Represents options for a specific decoration in a [decoration set](#TextEditorDecorationType).
+	 * [decoration set](#TextEditorDecorationType) 内で特定のデコレーション用のオプションを表します
 	 */
 	export interface DecorationOptions {
 
 		/**
-		 * Range to which this decoration is applied. The range must not be empty.
+		 * このデコレーションができようされる範囲。範囲は空にできません。
 		 */
 		range: Range;
 
 		/**
-		 * A message that should be rendered when hovering over the decoration.
+		 * デコレーション上をホバーするとき、描画されるべきメッセージ
 		 */
 		hoverMessage?: MarkedString | MarkedString[];
 
 		/**
-		 * Render options applied to the current decoration. For performance reasons, keep the
-		 * number of decoration specific options small, and use decoration types whereever possible.
+		 * 現在のデコレーションに適用される描画オプション
+		 * パフォーマンスの理由から、デコレーション固有のオプションの数はできるだけ少なくし、可能な限りデコレーション タイプを使用してください
 		 */
 		renderOptions?: DecorationInstanceRenderOptions;
 	}
 
 	export interface ThemableDecorationInstanceRenderOptions {
 		/**
-		 * Defines the rendering options of the attachment that is inserted before the decorated text
+		 * デコレーションされたテキストの前に挿入される attachment の描画オプションを定義します
 		 */
 		before?: ThemableDecorationAttachmentRenderOptions;
 
 		/**
-		 * Defines the rendering options of the attachment that is inserted after the decorated text
+		 * デコレーションされたテキストの後ろに挿入される attachment の描画オプションを定義します
 		 */
 		after?: ThemableDecorationAttachmentRenderOptions;
 	}
 
 	export interface DecorationInstanceRenderOptions extends ThemableDecorationInstanceRenderOptions {
 		/**
-		 * Overwrite options for light themes.
+		 * light theme 用の上書きオプション
 		 */
 		light?: ThemableDecorationInstanceRenderOptions;
 
 		/**
-		 * Overwrite options for dark themes.
+		 * dark theme 用の上書きオプション
 		 */
 		dark?: ThemableDecorationInstanceRenderOptions;
 	}
@@ -1142,30 +1144,33 @@ declare module 'vscode' {
 		hide(): void;
 	}
 
+
 	/**
-	 * Represents an end of line character sequence in a [document](#TextDocument).
+	 * [document](#TextDocument) 内の行末文字列を表します
 	 */
 	export enum EndOfLine {
 		/**
-		 * The line feed `\n` character.
+		 * 改行コード `\n`
 		 */
 		LF = 1,
 		/**
-		 * The carriage return line feed `\r\n` sequence.
+		 * キャリッジ リターン・改行コード `\r\n`
 		 */
 		CRLF = 2
 	}
 
 	/**
-	 * A complex edit that will be applied in one transaction on a TextEditor.
-	 * This holds a description of the edits and if the edits are valid (i.e. no overlapping regions, document was not changed in the meantime, etc.)
-	 * they can be applied on a [document](#TextDocument) associated with a [text editor](#TextEditor).
+	 * TextEditor で 1 つのトランザクションに適用する複雑な編集
 	 *
+	 * これは編集の内容を保持し、編集が有効な場合(領域が重複していない、文書が変更されていないなど)、これらは [text editor](#TextEditor) に関連付けられた  [text editor](#TextEditor) に適応されます。
+
+
 	 */
 	export interface TextEditorEdit {
 		/**
-		 * Replace a certain text region with a new value.
-		 * You can use \r\n or \n in `value` and they will be normalized to the current [document](#TextDocument).
+		 * 特定のテキスト領域を新しい値に置き換えます
+		 *
+		 * `value` には \r\n か \n を使用することができ、これらは現在の [document](#TextDocument) に正規化されます。
 		 *
 		 * @param location The range this operation should remove.
 		 * @param value The new text this operation should insert after removing `location`.
@@ -1173,9 +1178,10 @@ declare module 'vscode' {
 		replace(location: Position | Range | Selection, value: string): void;
 
 		/**
-		 * Insert text at a location.
-		 * You can use \r\n or \n in `value` and they will be normalized to the current [document](#TextDocument).
-		 * Although the equivalent text edit can be made with [replace](#TextEditorEdit.replace), `insert` will produce a different resulting selection (it will get moved).
+		 * 指定する場所にテキストを挿入します
+		 * `value` には \r\n か \n を使用することができ、これらは現在の [document](#TextDocument) に正規化されます。
+		 *
+		 * `insert` はことなる選択範囲を作成します(移動させることができる)。同等のテキスト編集は [replace](#TextEditorEdit.replace) で行うことができます。
 		 *
 		 * @param location The position where the new text should be inserted.
 		 * @param value The new text this operation should insert.
@@ -1183,14 +1189,14 @@ declare module 'vscode' {
 		insert(location: Position, value: string): void;
 
 		/**
-		 * Delete a certain text region.
+		 * 特定のテキスト範囲を削除します
 		 *
 		 * @param location The range this operation should remove.
 		 */
 		delete(location: Range | Selection): void;
 
 		/**
-		 * Set the end of line sequence.
+		 * EOF シーケンスを設定します
 		 *
 		 * @param endOfLine The new end of line for the [document](#TextDocument).
 		 */
@@ -1198,67 +1204,71 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * A universal resource identifier representing either a file on disk
-	 * or another resource, like untitled resources.
+	 * ディスク上のファイルまたは無題のリソースのような別のリソースを表すユニバーサル リソース識別子
+
 	 */
 	export class Uri {
 
 		/**
-		 * Create an URI from a file system path. The [scheme](#Uri.scheme)
-		 * will be `file`.
+		 * ファイル システム パスから URI を作成します
+		 *
+		 * [scheme](#Uri.scheme) は `file` になります
 		 *
 		 * @param path A file system or UNC path.
-		 * @return A new Uri instance.
+		 * @return 新しい Uri インスタンス
 		 */
 		static file(path: string): Uri;
 
 		/**
-		 * Create an URI from a string. Will throw if the given value is not
-		 * valid.
+		 * 文字列から URI を作成します
+		 *
+		 * 与えられた値が正しくない場合は throw します。
 		 *
 		 * @param value The string value of an Uri.
-		 * @return A new Uri instance.
+		 * @return 新しい Uri インスタンス
 		 */
 		static parse(value: string): Uri;
 
 		/**
-		 * Scheme is the `http` part of `http://www.msft.com/some/path?query#fragment`.
-		 * The part before the first colon.
+		 * Scheme は `http://www.msft.com/some/path?query#fragment` の `http` 部分です
+		 *
+		 * 最初のコロンの前部分を指します。
 		 */
 		readonly scheme: string;
 
 		/**
-		 * Authority is the `www.msft.com` part of `http://www.msft.com/some/path?query#fragment`.
-		 * The part between the first double slashes and the next slash.
+		 * Authority は `http://www.msft.com/some/path?query#fragment` の `www.msft.com` 部分です
+		 *
+		 * 最初の 2 重スラッシュから次のスラッシュまでの間の部分を指します。
 		 */
 		readonly authority: string;
 
 		/**
-		 * Path is the `/some/path` part of `http://www.msft.com/some/path?query#fragment`.
+		 * Path は `http://www.msft.com/some/path?query#fragment` の `/some/path` 部分です
 		 */
 		readonly path: string;
 
 		/**
-		 * Query is the `query` part of `http://www.msft.com/some/path?query#fragment`.
+		 * Query は `http://www.msft.com/some/path?query#fragment` の `query` 部分です
 		 */
 		readonly query: string;
 
 		/**
-		 * Fragment is the `fragment` part of `http://www.msft.com/some/path?query#fragment`.
+		 * Fragment は `http://www.msft.com/some/path?query#fragment` の `fragment` 部分です
 		 */
 		readonly fragment: string;
 
 		/**
-		 * The string representing the corresponding file system path of this Uri.
+		 * この Uri の 対応するファイル システム パスを表す文字列
 		 *
-		 * Will handle UNC paths and normalize windows drive letters to lower-case. Also
-		 * uses the platform specific path separator. Will *not* validate the path for
-		 * invalid characters and semantics. Will *not* look at the scheme of this Uri.
+		 * UNC  パスで処理し、Windows ドライブ文字を小文字に正規化します。また、プラットフォーム固有のパス区切り文字も使用されます。
+		 * 無効な文字とセマンティックのパスを検証**しません**。
+
 		 */
 		readonly fsPath: string;
 
 		/**
-		 * Derive a new Uri from this Uri.
+		 * この Uri から 新しい Uri を派生します
 		 *
 		 * ```ts
 		 * let file = Uri.parse('before:some/file/path');
@@ -1268,26 +1278,26 @@ declare module 'vscode' {
 		 *
 		 * @param change An object that describes a change to this Uri. To unset components use `null` or
 		 *  the empty string.
-		 * @return A new Uri that reflects the given change. Will return `this` Uri if the change
-		 *  is not changing anything.
+		 * @return 指定された変更を反映する新しい Uri。その変更が何も変更しない場合 `this`(こ) の Uri に戻ります。
+
 		 */
 		with(change: { scheme?: string; authority?: string; path?: string; query?: string; fragment?: string }): Uri;
 
 		/**
-		 * Returns a string representation of this Uri. The representation and normalization
-		 * of a URI depends on the scheme. The resulting string can be safely used with
-		 * [Uri.parse](#Uri.parse).
+		 * この Uri を文字列表記で返します
+		 * URI の表現と正規化はスキームに依存します。結果の文字列は  [Uri.parse](#Uri.parse) を使用して安全に使用できます。
+
 		 *
 		 * @param skipEncoding Do not percentage-encode the result, defaults to `false`. Note that
 		 *	the `#` and `?` characters occuring in the path will always be encoded.
-		 * @returns A string representation of this Uri.
+		 * @returns この Uri の文字列表記
 		 */
 		toString(skipEncoding?: boolean): string;
 
 		/**
-		 * Returns a JSON representation of this Uri.
+		 * この Uri を JSON 表記で返します
 		 *
-		 * @return An object.
+		 * @return オブジェクト
 		 */
 		toJSON(): any;
 	}
@@ -1728,11 +1738,11 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * A code lens represents a [command](#Command) that should be shown along with
-	 * source text, like the number of references, a way to run tests, etc.
+	 * CodeLens は参照の数、テストを実行する方法など、ソース テキストともに表示される [command](#Command) を表します
+
 	 *
-	 * A code lens is _unresolved_ when no command is associated to it. For performance
-	 * reasons the creation of a code lens and resolving should be done to two stages.
+	 *  CodeLens はコマンドが関連付けされていないときは _unresolved_ です。
+	 * パフォーマンス上の理由から、CodeLensの作成と解決は 2 つの段階に分かれていなければなりません。
 	 *
 	 * @see [CodeLensProvider.provideCodeLenses](#CodeLensProvider.provideCodeLenses)
 	 * @see [CodeLensProvider.resolveCodeLens](#CodeLensProvider.resolveCodeLens)
@@ -1740,22 +1750,22 @@ declare module 'vscode' {
 	export class CodeLens {
 
 		/**
-		 * The range in which this code lens is valid. Should only span a single line.
+		 * このCodeLens が有効な範囲。1 行のみ span します。
 		 */
 		range: Range;
 
 		/**
-		 * The command this code lens represents.
+		 * このCodeLens が示すコマンド
 		 */
 		command?: Command;
 
 		/**
-		 * `true` when there is a command associated.
+		 * 関連するコマンドがあるとき `true` です
 		 */
 		readonly isResolved: boolean;
 
 		/**
-		 * Creates a new code lens object.
+		 * 新しい CodeLens オブジェクトを作成します
 		 *
 		 * @param range The range to which this code lens applies.
 		 * @param command The command associated to this code lens.
@@ -1764,20 +1774,21 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * A code lens provider adds [commands](#Command) to source text. The commands will be shown
-	 * as dedicated horizontal lines in between the source text.
+	 * CodeLens プロバイダーはソース テキストに [commands](#Command) を追加します
+	 *
+	 * コマンドはソース テキストの間に専用の水平な行で表示されます。
 	 */
 	export interface CodeLensProvider {
 
 		/**
-		 * An optional event to signal that the code lenses from this provider have changed.
+		 * このプロバイダーが変更されたことを通知するオプションのイベント
 		 */
 		onDidChangeCodeLenses?: Event<void>;
 
 		/**
-		 * Compute a list of [lenses](#CodeLens). This call should return as fast as possible and if
-		 * computing the commands is expensive implementors should only return code lens objects with the
-		 * range set and implement [resolve](#CodeLensProvider.resolveCodeLens).
+		 *  [lenses](#CodeLens) のリストを計算します。
+		 * この呼び出しはできるだけ速く返す必要があります。もしコマンドの計算が複雑な実装の場合は範囲を指定する CodeLens オブジェクトを返すだけで [resolve](#CodeLensProvider.resolveCodeLens) するよう実装しなければなりません。
+
 		 *
 		 * @param document The document in which the command was invoked.
 		 * @param token A cancellation token.
@@ -1787,8 +1798,8 @@ declare module 'vscode' {
 		provideCodeLenses(document: TextDocument, token: CancellationToken): ProviderResult<CodeLens[]>;
 
 		/**
-		 * This function will be called for each visible code lens, usually when scrolling and after
-		 * calls to [compute](#CodeLensProvider.provideCodeLenses)-lenses.
+		 * この関数は CodeLens が表示されるたびに呼び出されます。通常はスクロール後と[compute](#CodeLensProvider.provideCodeLenses)-lenses を呼び出したあとです。
+
 		 *
 		 * @param codeLens code lens that must be resolved.
 		 * @param token A cancellation token.
@@ -1961,26 +1972,26 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * The document highlight provider interface defines the contract between extensions and
-	 * the word-highlight-feature.
+	 * document highlight provider interface は拡張機能と word-higliht-機能の間のコントラクトを定義します
+
 	 */
 	export interface DocumentHighlightProvider {
 
 		/**
-		 * Provide a set of document highlights, like all occurrences of a variable or
-		 * all exit-points of a function.
+		 * 変数のすべての出現箇所や、関数すべての exit-point のような一連のドキュメント ハイライトを提供します
+
 		 *
 		 * @param document The document in which the command was invoked.
 		 * @param position The position at which the command was invoked.
 		 * @param token A cancellation token.
-		 * @return An array of document highlights or a thenable that resolves to such. The lack of a result can be
-		 * signaled by returning `undefined`, `null`, or an empty array.
+		 * @return ドキュメント ハイライトの配列またはそう解決される thenable。結果の欠落は `undefined`, `null` または空の配列を返すことによって伝えることができます。
+
 		 */
 		provideDocumentHighlights(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<DocumentHighlight[]>;
 	}
 
 	/**
-	 * A symbol kind.
+	 * シンボルの種類
 	 */
 	export enum SymbolKind {
 		File = 0,
@@ -2012,33 +2023,33 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Represents information about programming constructs like variables, classes,
-	 * interfaces etc.
+	 * 変数、クラス、interface などのプログラミング構造に関する情報を表します
+
 	 */
 	export class SymbolInformation {
 
 		/**
-		 * The name of this symbol.
+		 * このシンボルの名前
 		 */
 		name: string;
 
 		/**
-		 * The name of the symbol containing this symbol.
+		 * このシンボルを含むシンボルの名前
 		 */
 		containerName: string;
 
 		/**
-		 * The kind of this symbol.
+		 * このシンボルの種類
 		 */
 		kind: SymbolKind;
 
 		/**
-		 * The location of this symbol.
+		 * このシンボルの位置
 		 */
 		location: Location;
 
 		/**
-		 * Creates a new symbol information object.
+		 * 新しいシンボル情報のオブジェクトを作成します
 		 *
 		 * @param name The name of the symbol.
 		 * @param kind The kind of the symbol.
@@ -2048,9 +2059,9 @@ declare module 'vscode' {
 		constructor(name: string, kind: SymbolKind, containerName: string, location: Location);
 
 		/**
-		 * ~~Creates a new symbol information object.~~
+		 * 新しいシンボル情報のオブジェクトを作成します~~
 		 *
-		 * @deprecated Please use the constructor taking a [location](#Location) object.
+		 * @deprecated [location](#Location) オブジェクトを使用するコンストラクタを使用してください
 		 *
 		 * @param name The name of the symbol.
 		 * @param kind The kind of the symbol.
@@ -2062,24 +2073,24 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * The document symbol provider interface defines the contract between extensions and
-	 * the [go to symbol](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-symbol)-feature.
+	 * document symbol provider interface は拡張機能と [go to symbol](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-symbol)-機能 の間のコントラクトを定義します
+
 	 */
 	export interface DocumentSymbolProvider {
 
 		/**
-		 * Provide symbol information for the given document.
+		 * 与えられたドキュメントのシンボル情報を提供する
 		 *
 		 * @param document The document in which the command was invoked.
 		 * @param token A cancellation token.
-		 * @return An array of document highlights or a thenable that resolves to such. The lack of a result can be
-		 * signaled by returning `undefined`, `null`, or an empty array.
+		 * @return ドキュメント ハイライトの配列またはそう解決される thenable。結果の欠落は `undefined`, `null` または空の配列を返すことによって伝えることができます。
+
 		 */
 		provideDocumentSymbols(document: TextDocument, token: CancellationToken): ProviderResult<SymbolInformation[]>;
 	}
 
 	/**
-	 * The workspace symbol provider interface defines the contract between extensions and
+	 * workspace symbol provider interface は拡張機能と [symbol search](https://code.visualstudio.com/docs/editor/editingevolved#_open-symbol-by-name)-機能の間のコントラクトを定義します
 	 * the [symbol search](https://code.visualstudio.com/docs/editor/editingevolved#_open-symbol-by-name)-feature.
 	 */
 	export interface WorkspaceSymbolProvider {
@@ -2445,26 +2456,30 @@ declare module 'vscode' {
 		provideOnTypeFormattingEdits(document: TextDocument, position: Position, ch: string, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
 	}
 
+
 	/**
-	 * Represents a parameter of a callable-signature. A parameter can
-	 * have a label and a doc-comment.
+	 * 呼び出し可能な signature(以下署名) のパラメーターを表します
+	 *
+	 * パラメーターはラベルと doc-comment を持ちます
 	 */
 	export class ParameterInformation {
 
 		/**
-		 * The label of this signature. Will be shown in
-		 * the UI.
+		 * この署名のラベル
+		 *
+		 * UI で表示されます
 		 */
 		label: string;
 
 		/**
-		 * The human-readable doc-comment of this signature. Will be shown
-		 * in the UI but can be omitted.
+		 * この署名の human-readable な doc-comment
+		 *
+		 * UI で表示されますが、省略できます
 		 */
 		documentation?: string;
 
 		/**
-		 * Creates a new parameter information object.
+		 * 新しいパラメーター情報オブジェクトを作成します
 		 *
 		 * @param label A label string.
 		 * @param documentation A doc string.
@@ -2473,31 +2488,34 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Represents the signature of something callable. A signature
-	 * can have a label, like a function-name, a doc-comment, and
-	 * a set of parameters.
+	 * 呼び出し可能な署名を表します
+	 *
+	 * 署名は関数名、doc-comment及びパラメーターのようなラベルを付けることができます
+
 	 */
 	export class SignatureInformation {
 
 		/**
-		 * The label of this signature. Will be shown in
-		 * the UI.
+		 * この署名のラベル
+		 *
+		 * UI で表示されます
 		 */
 		label: string;
 
 		/**
-		 * The human-readable doc-comment of this signature. Will be shown
-		 * in the UI but can be omitted.
+		 * この署名の human-readable な doc-comment
+		 *
+		 * UI で表示されますが、省略できます
 		 */
 		documentation?: string;
 
 		/**
-		 * The parameters of this signature.
+		 * この署名のパラメーター
 		 */
 		parameters: ParameterInformation[];
 
 		/**
-		 * Creates a new signature information object.
+		 *新しい署名情報オブジェクトを作成します
 		 *
 		 * @param label A label string.
 		 * @param documentation A doc string.
@@ -2506,36 +2524,37 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Signature help represents the signature of something
-	 * callable. There can be multiple signatures but only one
-	 * active and only one active parameter.
+	 * 呼び出し可能な署名を表します
+	 *
+	 *  複数の署名にすることができますが、アクティブなものは一つでアクティブなパラメーターは一つです。
+
 	 */
 	export class SignatureHelp {
 
 		/**
-		 * One or more signatures.
+		 * 1 つ以上の署名
 		 */
 		signatures: SignatureInformation[];
 
 		/**
-		 * The active signature.
+		 * アクティブな署名
 		 */
 		activeSignature: number;
 
 		/**
-		 * The active parameter of the active signature.
+		 * アクティな署名のアクティブ パラメーター
 		 */
 		activeParameter: number;
 	}
 
 	/**
-	 * The signature help provider interface defines the contract between extensions and
-	 * the [parameter hints](https://code.visualstudio.com/docs/editor/intellisense)-feature.
+	 * signature help provider interface は拡張機能と [parameter hints](https://code.visualstudio.com/docs/editor/intellisense)-機能の間のコントラクトを定義します
+
 	 */
 	export interface SignatureHelpProvider {
 
 		/**
-		 * Provide help for the signature at the given position and document.
+		 * 指定する位置とドキュメントで署名のヘルプを提供します
 		 *
 		 * @param document The document in which the command was invoked.
 		 * @param position The position at which the command was invoked.
@@ -2547,7 +2566,7 @@ declare module 'vscode' {
 	}
 
 	/**
-	 * Completion item kinds.
+	 * Completion の種類
 	 */
 	export enum CompletionItemKind {
 		Text = 0,
