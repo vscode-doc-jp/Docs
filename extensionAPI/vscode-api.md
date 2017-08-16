@@ -2,18 +2,18 @@
 title: Visual Studio Code API Reference
 MetaDescription: Visual Studio Code extensions (plug-ins) API Reference.
 layout: api-doc
+status: unknown
 ---
 
 # vscode namespace API
 
 ---
 
-数が多いため、一時的な状態でものっています
+翻訳途中でも掲載されています
 
 ---
 
 ## commands
-
 
 
 <div class="comment"><p>Namespace for dealing with commands. In short, a command is a function with a
@@ -10448,4 +10448,50 @@ the given <code>symbol</code> is used.</p>
 </div>
 </div>
 
+### <a name="Thenable"></a><span class="code-item" id=2>Thenable&lt;T&gt;</span>
+
+
+
+<div class="comment"><p>Thenable は ES6 promises, Q, jquery.Deferred, WinJS.Promise, その他 の間で共通です。</p>
+<p>この API は 特定の promise の実装に移行せずに、既存のコードを再利用することができる promise libary が使用されることについては想定しません。</p>
+<p>それでも、このエディターで利用可能な native promises の使用を推奨します。</p>
+</div>
+
+#### Methods
+
+
+
+<a name="Thenable.then"></a><span class="ts command-accordion" id=5 data-target="#details-5" data-toggle="collapse"><span class="ident">then</span><span>&lt;</span>TResult<span>&gt;</span><span>(</span><span class="ident">onfulfilled</span><span>?</span><span>: </span>(value: <a class="type-instrinct">T</a>) =&gt; <a class="type-instrinct">TResult</a> &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;, <span class="ident">onrejected</span><span>?</span><span>: </span>(reason: <a class="type-instrinct">any</a>) =&gt; <a class="type-instrinct">TResult</a> &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;<span>)</span><span>: </span><a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span>
+<div class="details collapse" id="details-5">
+<div class="comment"><p>Promise の解決やリジェクトのコールバックをアタッチします。</p>
+</div>
+<div class="signature">
+<table class="table table-bordered">
+<tr><th>Parameter</th><th>Description</th></tr>
+<tr><td><a name="onfulfilled"></a><span class="ts command-accordion" id=7 data-target="#details-7" data-toggle="collapse"><span class="ident">onfulfilled</span><span>?</span><span>: </span>(value: <a class="type-instrinct">T</a>) =&gt; <a class="type-instrinct">TResult</a> &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span></td><td><div class="comment"><p>The callback to execute when the Promise is resolved.</p>
+</div></td></tr>
+<tr><td><a name="onrejected"></a><span class="ts command-accordion" id=11 data-target="#details-11" data-toggle="collapse"><span class="ident">onrejected</span><span>?</span><span>: </span>(reason: <a class="type-instrinct">any</a>) =&gt; <a class="type-instrinct">TResult</a> &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span></td><td><div class="comment"><p>The callback to execute when the Promise is rejected.</p>
+</div></td></tr>
+<tr><th>Returns</th><th>Description</th></tr>
+<tr><td><span class="ts"><a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span></td><td><div class="comment"><p>A Promise for the completion of which ever callback is executed.</p>
+</div></td></tr>
+</table>
+</div>
+</div>
+
+
+
+<a name="Thenable.then"></a><span class="ts command-accordion" id=15 data-target="#details-15" data-toggle="collapse"><span class="ident">then</span><span>&lt;</span>TResult<span>&gt;</span><span>(</span><span class="ident">onfulfilled</span><span>?</span><span>: </span>(value: <a class="type-instrinct">T</a>) =&gt; <a class="type-instrinct">TResult</a> &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;, <span class="ident">onrejected</span><span>?</span><span>: </span>(reason: <a class="type-instrinct">any</a>) =&gt; <a class="type-instrinct">void</a><span>)</span><span>: </span><a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span>
+<div class="details collapse" id="details-15">
+<div class="comment"></div>
+<div class="signature">
+<table class="table table-bordered">
+<tr><th>Parameter</th><th>Description</th></tr>
+<tr><td><a name="onfulfilled"></a><span class="ts command-accordion" id=17 data-target="#details-17" data-toggle="collapse"><span class="ident">onfulfilled</span><span>?</span><span>: </span>(value: <a class="type-instrinct">T</a>) =&gt; <a class="type-instrinct">TResult</a> &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span></td><td><div class="comment"></div></td></tr>
+<tr><td><a name="onrejected"></a><span class="ts command-accordion" id=21 data-target="#details-21" data-toggle="collapse"><span class="ident">onrejected</span><span>?</span><span>: </span>(reason: <a class="type-instrinct">any</a>) =&gt; <a class="type-instrinct">void</a></span></td><td><div class="comment"></div></td></tr>
+<tr><th>Returns</th><th>Description</th></tr>
+<tr><td><span class="ts"><a class="type-ref" href="#Thenable">Thenable</a>&lt;<a class="type-instrinct">TResult</a>&gt;</span></td><td><div class="comment"></div></td></tr>
+</table>
+</div>
+</div>
 
