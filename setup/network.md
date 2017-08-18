@@ -1,5 +1,5 @@
 ---
-ttle: VS Code のネットワーク接続をセットアップ
+title: ネットワーク接続
 MetaDescription: Setup VS Code's Network Connection.
 commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---

@@ -9,7 +9,7 @@ title: ようこそ
     * [Linux](/docs/setup/linux.html)
     * ~~Mac~~
     * [Windows](/docs/setup/windows.html)
-    * [NetWork](docs/setup/network.html)
+    * [Network](/docs/setup/network.html)
     * [Additional Compnents](/docs/setup/additional-components.html)
 * GET STARTED
     * [Intro Videos](/docs/getstarted/introvideos.html)

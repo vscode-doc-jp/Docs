@@ -5,7 +5,7 @@
     * [Linux](setup/linux.md)
     * ~~Mac~~
     * [Windows](setup/windows.md)
-    * [NetWork](docs/setup/network.md)
+    * [Network](setup/network.md)
     * [Additional Compnents](setup/additional-components.md)
 * GET STARTED
     * [Intro Videos](getstarted/introvideos.md)
