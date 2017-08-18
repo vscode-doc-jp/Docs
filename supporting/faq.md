@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Code FAQ
 MetaDescription: Our docs contain a Common Questions section. Here are items that don't fit in the other topics.
-commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
+commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---
 
 私たちのドキュメントには、特定のトピックについて必要に応じて**よくある質問**のセクションを設けています。そのトピックに当てはまらない項目をここにまとめました。

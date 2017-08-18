@@ -1,7 +1,7 @@
 ---
 title: タスク
 MetaDescription: Expand your development workflow with task integration in Visual Studio Code.
-commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
+commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---
 # タスクを利用して外部ツールと統合する <a id="integrate-with-external-tools-via-tasks"></a>
 

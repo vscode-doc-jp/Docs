@@ -1,12 +1,12 @@
 ---
 title: イントロ ビデオ
 MetaDescription: Overview of VS Code's Introductory Videos.
-commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
+commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---
 
-この入門ビデオでVisual Studio Codeの旅を始めましょう。ビデオはVS Codeのさまざまな機能の概要を簡単に把握できるように設計しています。なお、VS CodeはJavaScriptとTypeScript標準でサポートしているためJavaScriptを動画で使用しています。
+この入門ビデオで Visual Studio Code の旅を始めましょう。ビデオは VS Code のさまざまな機能の概要を簡単に把握できるように設計しています。なお VS Code は JavaScript と TypeScript 標準でサポートしているため JavaScript を動画で使用しています。
 
-> Note: その他トピックを希望する場合は[フィードバック](https://www.surveymonkey.com/r/H9W7K8J)。
+> Note: その他トピックを希望する場合は[フィードバック](https://www.surveymonkey.com/r/H9W7K8J)してください。
 
 <ul class="video-list">
 	<li class="video">

@@ -1,7 +1,7 @@
 ---
 title: Code Navigation
 MetaDescription: Visual Studio Code is a first class editor - but it's also so much more with features such as IntelliSense and smart code navigation.
-commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
+commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---
 
 Visual Studio Codeには機能性の高いコードエディターが備わっています。これを言語サービスと組み合わせることにより、IDEの機能とテキストエディターの快適性を得ることが可能です。このトピックではまず、VS Codeの言語インテリジェンス機能(提案、パラメータヒント、スマートコードナビゲーション)について説明し、コアテキストエディターの機能を紹介します。

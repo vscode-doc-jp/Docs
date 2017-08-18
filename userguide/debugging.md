@@ -2,7 +2,7 @@
 pagetitle: Visual Studio Code でデバッグ
 title: デバッグ
 MetaDescription: One of the great things in Visual Studio Code is debugging support.  Set breakpoints, step-in, inspect variables and more.
-commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
+commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---
 
 Visual Studio Codeの魅力的な機能の1つは優れたデバッグの対応です。VS Codeのデバッガは編集、コンパイル、デバッグのループを高速化します。

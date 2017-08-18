@@ -1,7 +1,7 @@
 ---
 title: IntelliSense
 MetaDescription:  Learn about Visual Studio Code IntelliSense (intelligent code completion).
-commitid: cb7fea9ffdf45442cba2666b4855d70339685bba
+commitid: 8f449295b321510871e357b12f9aaa6070944db3
 ---
 
 IntelliSenseとは、メンバーの一覧、パラメーター ヒント、クイック ヒント、入力候補など多数の機能を指す総称です。その特徴から「code completion」「content assist」「code hinting」と呼ばれることもあります。
@@ -47,23 +47,23 @@ IntelliSenseを起動するときには、エディタで`kb(editor.action.trigg
 
 IntelliSenseは言語サーバーの候補、スニペット、単純な単語のテキスト補完などさまざまな種類の補完を提供します。
 
-|       |         |
-| ----- | ------- |
-| ![method icon](images/intellisense/Method_16x.svg) | メソッド、関数、コンストラクター
-| ![variable icon](images/intellisense/Field_16x.svg) | 変数またはフィールド |
-| ![class](images/intellisense/Class_16x.svg) | クラス |
-| ![interface](images/intellisense/Interface_16x.svg) | インターフェイス |
-| ![module](images/intellisense/Namespace_16x.svg) | モジュール |
-| ![property](images/intellisense/Property_16x.svg) | プロパティまたは属性 |
-| ![enumeration icon](images/intellisense/EnumItem_16x.svg) | 値と列挙 |
-| ![color](images/intellisense/Enumerator_16x.svg) | 参照 |
-| ![keyword](images/intellisense/IntelliSenseKeyword_16x.svg) | キーワード |
-| ![global identifiers](images/intellisense/Document_16x.svg) | グローバル識別子 |
-| ![color](images/intellisense/ColorPalette_16x.svg) | 色 |
-| ![unit](images/intellisense/Ruler_16x.svg) | ユニット |
-| ![a square with ellipses forming the bottom show snippet prefix](images/intellisense/Snippet_16x.svg) | スニペットプレフィックス |
-| ![a square with letters abc word completion](images/intellisense/String_16x.svg) | 単語 |
-| ![Miscellaneous](images/intellisense/Misc_16x.svg) | その他 |
+|                                                                                                       |                      |
+| ----------------------------------------------------------------------------------------------------- | -------------------- |
+| ![method icon](images/intellisense/Method_16x.svg)                                                    | メソッド、関数、コンストラクター |
+| ![variable icon](images/intellisense/Field_16x.svg)                                                   | 変数またはフィールド         |
+| ![class](images/intellisense/Class_16x.svg)                                                           | クラス                  |
+| ![interface](images/intellisense/Interface_16x.svg)                                                   | インターフェイス             |
+| ![module](images/intellisense/Namespace_16x.svg)                                                      | モジュール                |
+| ![property](images/intellisense/Property_16x.svg)                                                     | プロパティまたは属性         |
+| ![enumeration icon](images/intellisense/EnumItem_16x.svg)                                             | 値と列挙              |
+| ![color](images/intellisense/Enumerator_16x.svg)                                                      | 参照                 |
+| ![keyword](images/intellisense/IntelliSenseKeyword_16x.svg)                                           | キーワード                |
+| ![global identifiers](images/intellisense/Document_16x.svg)                                           | グローバル識別子          |
+| ![color](images/intellisense/ColorPalette_16x.svg)                                                    | 色                   |
+| ![unit](images/intellisense/Ruler_16x.svg)                                                            | ユニット                 |
+| ![a square with ellipses forming the bottom show snippet prefix](images/intellisense/Snippet_16x.svg) | スニペットプレフィックス         |
+| ![a square with letters abc word completion](images/intellisense/String_16x.svg)                      | 単語                 |
+| ![Miscellaneous](images/intellisense/Misc_16x.svg)                                                    | その他                 |
 
 ## IntelliSenseのカスタマイズ <a id="customizing-intellisense"></a>
 
