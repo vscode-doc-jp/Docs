@@ -28,6 +28,7 @@ title: ようこそ
     * [Integrated Terminal](/docs/userguide/integrated-terminal.html)
     * [Tasks](/docs/userguide/tasks.html)
     * [Creating your own Snippets](/docs/userguide/userdefinedsnippets.html)
+    * [Emmet](/docs/userguide/emmet.html)
     * [Command Line](/docs/userguide/command-line.html)
     * [Accesibility](/docs/userguide/accessibility.html)
     * [Why VS Code](/docs/userguide/whyvscode.html)

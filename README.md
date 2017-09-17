@@ -24,6 +24,7 @@
     * [Integrated Terminal](userguide/integrated-terminal.md)
     * [Tasks](userguide/tasks.md)
     * [Creating your own Snippets](userguide/userdefinedsnippets.md)
+    * [Emmet](userguide/emmet.md)
     * [Command Line](userguide/command-line.md)
     * [Accesibility](userguide/accessibility.md)
     * [Why VS Code](userguide/whyvscode.md)
