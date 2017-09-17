@@ -104,7 +104,9 @@ Topic | Old Emmet | Emmet 2.0
 Snippets vs Abbreviations | `snippets` と `abbreviations` の 2 つのプロパティ両方をサポートします 。| 2 つはスニペットと呼ばれる単一のプロパティに統合されています。既定の [html snippets](https://github.com/emmetio/snippets/blob/master/html.json) と [css snippets](https://github.com/emmetio/snippets/blob/master/css.json) を参照してください。
 CSS snippet names | `:` を含むことができます。| スニペットの定義に `:` を使用できません。Emmet が指定された略語からスニペットをあいまい一致で選択するときに、プロパティ名と値を区切るために使用されます。
 CSS snippet values | 最後に `;` を使用できます。 | 最後に `;` を使用できません。Emmet は ファイル タイプ (css/less/scss vs sass/stylus) または `css.propertyEnd`, `sass.propertyEnd`, `stylus.propertyEnd` に設定した Emmet プロパティに基づいて `;` を追加します。
-Cursor location | `${cursor}` か `|` を使用できます。 | タブ ストップとカーソルの位置には `${1}`  のような textmate syntax しか使用できません。
+Cursor location | `${cursor}` か `vertical bar` を使用できます。 | タブ ストップとカーソルの位置には `${1}`  のような textmate syntax しか使用できません。
+
+> `A` = `|` です エスケープを抜けられなかった
 
 ### HTML Emmet スニペット <a id="html-emmet-snipets"></a>
 
