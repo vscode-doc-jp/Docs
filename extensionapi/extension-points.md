@@ -7,17 +7,18 @@ status: old
 
 このドキュメントでは[`package.json`](/docs/extensionapi/extension-manifest.md)で定義する様々なコントリビューションポイントについて説明します。
 
-* [`configuration`](/docs/extensionapi/extension-points.md#contributesconfiguration)
-* [`commands`](/docs/extensionapi/extension-points.md#contributescommands)
-* [`menus`](/docs/extensionapi/extension-points.md#contributesmenus)
-* [`keybindings`](/docs/extensionapi/extension-points.md#contributeskeybindings)
-* [`languages`](/docs/extensionapi/extension-points.md#contributeslanguages)
-* [`debuggers`](/docs/extensionapi/extension-points.md#contributesdebuggers)
-* [`breakpoints`](/docs/extensionapi/extension-points.md#contributesbreakpoints)
-* [`grammars`](/docs/extensionapi/extension-points.md#contributesgrammars)
-* [`themes`](/docs/extensionapi/extension-points.md#contributesthemes)
-* [`snippets`](/docs/extensionapi/extension-points.md#contributessnippets)
-* [`jsonValidation`](/docs/extensionapi/extension-points.md#contributesjsonvalidation)
+* [`configuration`](/docs/extensionapi/extension-points.md#contributes-configuration)
+* [`configurationDefaults`](/docs/extensionapi/extension-points.md#contributes-configurationDefaults)
+* [`commands`](/docs/extensionapi/extension-points.md#contributes-commands)
+* [`menus`](/docs/extensionapi/extension-points.md#contributes-menus)
+* [`keybindings`](/docs/extensionapi/extension-points.md#contributes-keybindings)
+* [`languages`](/docs/extensionapi/extension-points.md#contributes-languages)
+* [`debuggers`](/docs/extensionapi/extension-points.md#contributes-debuggers)
+* [`breakpoints`](/docs/extensionapi/extension-points.md#contributes-breakpoints)
+* [`grammars`](/docs/extensionapi/extension-points.md#contributes-grammars)
+* [`themes`](/docs/extensionapi/extension-points.md#contributes-themes)
+* [`snippets`](/docs/extensionapi/extension-points.md#contributes-snippets)
+* [`jsonValidation`](/docs/extensionapi/extension-points.md#contributes-jsonValidation)
 
 ## contributes.configuration
 
