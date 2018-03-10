@@ -8,7 +8,7 @@ commitid: d957ba336aae16d4a6330875044372eae2bd1514
 
 Visual Studio Code ではエディターの起動方法を制御できる強力なコマンドラインインターフェイスを用意しています。ファイルの比較、拡張機能のインストール、表示言語の変更でさえも起動時に設定できます。
 
-**Note:** macOS のユーザーはまず `PATH` 環境変数に VS Code 実行可能ファイルを追加するコマンド (**Shell Command: Install 'code' command in PATH**) を実行する必要があります。詳細は [macOS Setup guide](/docs/setup/mac.md) を確認してください。
+> **Note:** macOS のユーザーはまず `PATH` 環境変数に VS Code 実行可能ファイルを追加するコマンド (**Shell Command: Install 'code' command in PATH**) を実行する必要があります。詳細は [macOS Setup guide](/docs/setup/mac.md) を確認してください。
 
 ## コマンドラインから起動 <a id="launching-from-the-command-line"></a>
 
@@ -20,7 +20,7 @@ code .
 code-insiders .
 ```
 
-**Note**: Windows と Linux ではインストール時にシステム パスへ VS Code バイナリーの場所を追加します。インストール時に追加しなかった場合でも Path/$PATH 変数に手動で場所追加することができます。たとえば Windows では `Program Files\Microsoft VS Code\bin` の下に VS Code がインストールされます。プラットホーム固有の設定手順は  [Setup](/docs/setup/setup-overview.md) を参照してください。
+> **Note**: Windows と Linux ではインストール時にシステム パスへ VS Code バイナリーの場所を追加します。インストール時に追加しなかった場合でも Path/$PATH 変数に手動で場所追加することができます。たとえば Windows では `Program Files\Microsoft VS Code\bin` の下に VS Code がインストールされます。プラットホーム固有の設定手順は  [Setup](/docs/setup/setup-overview.md) を参照してください。
 
 ## Core CLI オプション <a id="core-cli-options"></a>
 
