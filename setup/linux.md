@@ -1,21 +1,22 @@
 ---
-title: Linux で VS Code を実行する
+title: Linux で VSCode を実行する
 MetaDescription: Get Visual Studio Code up and running on Linux.
-commitid: 8f449295b321510871e357b12f9aaa6070944db3
+original: https://code.visualstudio.com/docs/setup/linux
+commitid: 3757951059fe6a162623ad1ea4bfc5a9d06812ca
 ---
 
-## インストール <a id="installation"></a>
+## インストール
 
 ### Debian と Ubuntu <a id="debian-and-ubuntu-based-distributions"></a>
 
-Debian / Ubuntu のディストリビューションで最も簡単にインストールする方法は [.deb package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760868) をダウンロードしてソフトウェアセンターからインストールするか、次のコマンドラインからインストールする方法です:
+Debian/Ubuntu のディストリビューションで最も簡単にインストールする方法は [.deb package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760868) をダウンロードしてソフトウェアセンターからインストールするか、次のコマンドラインからインストールする方法です:
 
 ```bash
 sudo dpkg -i <file>.deb
 sudo apt-get install -f # Install dependencies
 ```
 
-.deb パッケージをインストールすると apt リポジトリーと署名キーが自動的にインストールされ、パッケージシステムのメカニズムを使用して自動更新が有効になります。なお 32-bit や .tar.gz でも利用できます。~~[download page](/Download)~~
+.deb パッケージをインストールすると apt リポジトリーと署名キーが自動的にインストールされ、パッケージシステムのメカニズムを使用して自動更新が有効になります。なお 32-bit や .tar.gz でも利用できます。~~[download page](/Download)~~ (上部のリンクから利用できる公式サイトで入手してください)
 
 リポジトリとキーは次のスクリプトを使用して手動でインストールすることもできます:
 
@@ -25,7 +26,7 @@ sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 ```
 
-インストールしたら、パッケージキャッシュを更新してインストールします:
+インストールしたら、パッケージキャッシュを更新してインストールしてください:
 
 ```bash
 sudo apt-get update
@@ -34,7 +35,7 @@ sudo apt-get install code # or code-insiders
 
 ### RHEL と Fedora と CentOS ディストリビューション
 
-現在 yum リポジトリーに VS Code の安定版 64-bit が用意されています。次のスクリプトでキーとリポジトリをインストールしてください:
+現在 yum リポジトリーに VS Code の安定版 64-bit が用意されています。次のスクリプトでキーとリポジトリをインストールします:
 
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -55,16 +56,18 @@ yum check-update
 sudo yum install code
 ```
 
+手動の署名方法と公開に使用するシステムにより yum レポでは VS Code の最新バージョンをすぐにインストールできないことに注意してください。
+
 ### openSUSE と SLE
 
-上記の yum リポジトリーは openSURE と SLE OS でも動作します。次のスクリプトでキーとリポジトリをインストールしてください:
+上記の yum リポジトリーは openSURE と SLE OS でも動作します。次のスクリプトでキーとリポジトリをインストールします:
 
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
 ```
 
-インストールしたら、パッケージキャッシュを更新してインストールします:
+インストールしたら、パッケージキャッシュを更新してインストールしてください:
 
 ```bash
 sudo zypper refresh
@@ -75,6 +78,14 @@ sudo zypper install code
 
 コミュニティーが管理している Arch User Repository(AUR) [package for VS Code](https://aur.archlinux.org/packages/visual-studio-code) があります。
 
+### NixOS の Nix パッケージ (または Nix を使用する Linux ディストリビューション)
+
+nixpkgs リポジトリーにはコミュニティーが管理している [Nix package](https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/default.nix) があります。Nix を使用してインストールするには `config.nix` の `allowUnfree` オプションを true にして次を実行します:
+
+```bash
+nix-env -i vscode
+```
+
 ### .rpm パッケージを手動でインストール
 
 [.rpm package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760867) をダウンロードしてインストールすることもできますが、上記のリポジトリがインストールされていない限り自動更新は機能しません。一度ダウンロードしたパッケージは、`dnf` などのパッケージマネージャーを使用してインストールすることができます:
@@ -83,7 +94,7 @@ sudo zypper install code
 sudo dnf install <file>.rpm
 ```
 
-32-bitや.tar.gzでも利用できます。~~[download page](/Download)~~
+なお 32-bit や .tar.gz でも利用できます。~~[download page](/Download)~~ (上部のリンクから利用できる公式サイトで入手してください)
 
 ## アップデート
 
@@ -109,7 +120,7 @@ xdg-mime default code.desktop text/plain
 
 ### Debian alternatives システム
 
-Debian ディストリビューションでは、MIME タイプを気にすることなく [alternatives system](https://wiki.debian.org/DebianAlternatives) を使用して、既定の**エディタ**を設定できます。次を実行して code を選択してください:
+Debian ディストリビューションでは、MIME タイプを気にすることなく [alternatives system](https://wiki.debian.org/DebianAlternatives) を使用して、既定の**エディタ**を設定できます。次を実行して code を選択します:
 
 ```bash
 sudo update-alternatives --set editor /usr/bin/code
@@ -131,19 +142,19 @@ VS Code のインストールが終わったら、次のトピックは VS Code 
 
 気にしなくて平気です。無視してください。
 
-### Debian とファイルの削除
+### Debian でごみ箱にファイルを移動する
 
 Debian OS の VS Code エクスプローラーからファイルを削除するときにエラーを表示する場合は、 VS Code が使用するごみ箱を実装していない可能性があります。
 
-この問題を解決するには次のコマンドを実行してください:
+この問題を解決するには次のコマンドを実行します:
 
 ```bash
 sudo apt-get install gvfs-bin
 ```
 
-### ENOSPC エラー
+### "Visual Studio Code is unable to watch for file changes in this large workspace" (error ENOSPC)
 
-このエラーは VS Code の file watcher にハンドルが不足していることを示します。現在の監視対象数上限を次のコマンドで表示します:
+この通知が表示されるとき、ワークスペースが大きく多くのファイルが含まれているため VS Code の file watcher にハンドルが不足していることを示します。現在の監視対象数上限を次のコマンドで表示します:
 
 ```bash
 cat /proc/sys/fs/inotify/max_user_watches
@@ -155,7 +166,7 @@ cat /proc/sys/fs/inotify/max_user_watches
 fs.inotify.max_user_watches=524288
 ```
 
-新しい値は `sudo sysctl -p` を実行して適用してください。[Arch Linux](https://www.archlinux.org/) では少し異なる動作をすることに注意してください。 [view this page for advice](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)
+新しい値は `sudo sysctl -p` を実行して適用してください。[Arch Linux](https://www.archlinux.org/) では少し異なる動作をすることに注意してください [view this page for advice](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)。
 
 監視可能なファイルの最大数は 524288 ですが、特にメモリーが制限される環境ではその数を減らすことをお勧めします。各ファイル監視は [540bytes(32bit) ~ 1kB(64bit)](https://stackoverflow.com/a/7091897/1156119) 消費します。ですから524288 wathces すべてを消費すると仮定すれば、上限が 256MB(32bit)  か 512MB(64bit) になると仮定できます。
 

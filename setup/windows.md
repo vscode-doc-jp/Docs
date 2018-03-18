@@ -1,20 +1,25 @@
 ---
 title: Windows で Visual Studio Code を起動する
 MetaDescription: Get Visual Studio Code up and running on Windows
-commitid: 8f449295b321510871e357b12f9aaa6070944db3
+original: https://code.visualstudio.com/docs/setup/windows
+commitid: 3757951059fe6a162623ad1ea4bfc5a9d06812ca
 ---
 
 ## インストール
 
 1. Windows 用の [Visual Studio Code](https://go.microsoft.com/fwlink/?LinkID=534107) を入手します。
-2. ダウンロードを完了したら、インストーラー (VSCodeSetup-version.exe) を実行します。これには 1 分ほどかかります。
+2.ダウンロードを完了したら、インストーラー (VSCodeSetup-version.exe) を実行します。これには 1 分ほどかかります。
 3. デフォルトでは 64 bit の場合 `C:\Program Files\Microsoft VS Code` にインストールされます。
 
-Zip archive は~~[こちら](/docs/?dv=winzip)~~
+Zip archive は[こちら](https://code.visualstudio.com/docs/?dv=winzip) ※公式サイトに飛びます
 
->**Note:** 起動には .NET Framework 4.5.2 が必要です。Windows 7 を利用している場合には [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42643) がインストールされていることを確認してください。
+>**Note:** 起動には.NET Framework 4.5.2 以上が必要です。Windows 7 を利用している場合には、少なくとも [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42643) がインストールされていることを確認してください。
 
->**Tip:** オプションで `%PATH%` に Visual Studio Code を追加するので、コンソールから 'code.' を入力してそのフォルダーで VS  Code を開くようにできます。ただしコンソールでの環境変数の変更を有効にするにはインストール後にコンソールを再起動する必要があります。
+>**Tip:** セットアップのときオプションで `%PATH%` に Visual Studio Code を追加するので、コンソールから 'code.' を入力してそのフォルダーで VS  Code を開くようにできます。ただしコンソールでの環境変数の変更を有効にするにはインストール後にコンソールを再起動する必要があります。
+
+## 32 bit バージョン
+
+VS Code の 32 bit バージョンを実行する必要がある場合は 32 bit [Installer](https://go.microsoft.com/fwlink/?LinkId=723965) や [Zip archive](https://go.microsoft.com/fwlink/?LinkID=733265) が利用可能です。
 
 ## アップデート
 
@@ -32,7 +37,7 @@ VS Code のインストールが終わったら、次のトピックは VS Code 
 
 ### インストーラーのトラブル
 
-まずインストーラーの代わりに~~[zip file](/docs/?dv=winzip)~~を試してください。この場合には VS Code を **Program Files** に解凍します(解凍場所は自由)。
+インストールの代わりに [zip file](https://code.visualstudio.com/docs/?dv=winzip) (※公式サイトに飛びます)。この場合には VS Code を **Program Files** に解凍します (解凍場所は自由です)。
 
 >**Note:** Zip ファイルによるインストールの場合には[新しいリリース](/updates)ごとに手動で更新する必要があります。
 
